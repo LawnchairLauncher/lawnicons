@@ -16,7 +16,12 @@ import com.google.accompanist.insets.LocalWindowInsets
 @ExperimentalFoundationApi
 fun IconPreviewGrid(searchTerm: String) {
     val context = LocalContext.current
-    val iconInfo = remember { getIconInfo(context = context).sortedBy { it.name } }
+    val iconInfo = remember {
+        getIconInfo(context = context)
+            .associateBy { it.name }
+            .values
+            .sortedBy { it.name }
+    }
     val filteredIconInfo = remember(searchTerm) { iconInfo.filter { it.name.lowercase().contains(searchTerm.lowercase()) } }
     val density = LocalDensity.current
     LazyVerticalGrid(
