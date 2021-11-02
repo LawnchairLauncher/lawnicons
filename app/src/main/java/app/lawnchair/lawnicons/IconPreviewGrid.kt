@@ -16,7 +16,7 @@ import com.google.accompanist.insets.LocalWindowInsets
 @ExperimentalFoundationApi
 fun IconPreviewGrid() {
     val context = LocalContext.current
-    val iconIds = remember { getIconIds(context = context) }
+    val iconInfo = remember { getIconInfo(context = context).sortedBy { it.name } }
     val density = LocalDensity.current
     LazyVerticalGrid(
         cells = GridCells.Fixed(count = 5),
@@ -27,8 +27,8 @@ fun IconPreviewGrid() {
             bottom = with(density) { LocalWindowInsets.current.navigationBars.bottom.toDp() }
         )
     ) {
-        items(items = iconIds) { iconId ->
-            IconPreview(iconId = iconId)
+        items(items = iconInfo) { iconInfo ->
+            IconPreview(iconId = iconInfo.id)
         }
     }
 }
