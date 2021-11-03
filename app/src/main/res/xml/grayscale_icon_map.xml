@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <icons>
     <icon drawable="@drawable/camera" package="com.android.camera2" name="Camera" />
+    <icon drawable="@drawable/camera" package="org.codeaurora.snapcam" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.google.android.GoogleCameraEng" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.android.mgc" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.android.MGC.not.stable" name="Camera" />
     <icon drawable="@drawable/files" package="com.google.android.documentsui" name="Files" />
     <icon drawable="@drawable/spark_email" package="com.readdle.spark" name="Spark Email" />
     <icon drawable="@drawable/pocket_casts" package="au.com.shiftyjelly.pocketcasts" name="Pocket Casts" />
