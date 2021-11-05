@@ -25,7 +25,7 @@ fun IconPreviewGrid(searchTerm: String) {
     val filteredIconInfo = remember(searchTerm) { iconInfo.filter { it.name.lowercase().contains(searchTerm.lowercase()) } }
     val density = LocalDensity.current
     LazyVerticalGrid(
-        cells = GridCells.Fixed(count = 5),
+        cells = GridCells.Adaptive(minSize = 80.dp),
         contentPadding = PaddingValues(
             start = 8.dp,
             top = 16.dp,
