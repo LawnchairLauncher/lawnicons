@@ -7,6 +7,8 @@ import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -24,7 +26,13 @@ fun IconPreviewGrid(searchTerm: String) {
             .values
             .sortedBy { it.name }
     }
-    val filteredIconInfo = remember(searchTerm) { iconInfo.filter { it.name.lowercase().contains(searchTerm.lowercase()) } }
+    val filteredIconInfo by derivedStateOf {
+        val searchLowerCase = searchTerm.lowercase()
+        when {
+            searchLowerCase.isEmpty() -> iconInfo
+            else -> iconInfo.filter { it.name.lowercase().contains(searchLowerCase) }
+        }
+    }
     val density = LocalDensity.current
     LazyVerticalGrid(
         modifier = Modifier
