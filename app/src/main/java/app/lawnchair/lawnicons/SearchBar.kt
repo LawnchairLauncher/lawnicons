@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import com.google.accompanist.insets.statusBarsPadding
 
 @Composable
@@ -36,7 +37,7 @@ fun SearchBar(
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
-            .statusBarsPadding()
+            .zIndex(1f)
             .padding(top = 8.dp)
             .padding(horizontal = 16.dp)
             .fillMaxWidth()

@@ -1,12 +1,13 @@
 package app.lawnchair.lawnicons
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import com.google.accompanist.insets.statusBarsPadding
 
 @Composable
 @ExperimentalFoundationApi
@@ -18,7 +19,10 @@ fun Lawnicons() {
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                Column {
+                Box(
+                    modifier = Modifier
+                        .statusBarsPadding()
+                ) {
                     SearchBar(
                         value = searchTerm,
                         onValueChange = { searchTerm = it }
