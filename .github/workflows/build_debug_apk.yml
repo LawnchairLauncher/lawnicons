@@ -31,7 +31,7 @@ jobs:
         run: ./gradlew assembleDebug
       - name: Rename artifact
         run: |
-          oldArtifactPath="${{ releaseDirectory: app/build/outputs/apk/debug }}"
+          oldArtifactPath="${{ app/build/outputs/apk/debug }}"
           newArtifactPath="${oldArtifactPath%'-signed.apk'}.apk"
           echo "ARTIFACT_PATH=$newArtifactPath" >> $GITHUB_ENV
           mv "$oldArtifactPath" "$newArtifactPath"
