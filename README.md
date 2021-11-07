@@ -13,4 +13,5 @@ Additional Icon support includes following apps:-
 11.ADM
 12.Swift Backup
 13.IRCTC
-14.And many more on your request....
+14.Facebook Lite
+15.And many more on your request....
