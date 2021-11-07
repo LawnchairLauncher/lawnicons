@@ -31,7 +31,7 @@ jobs:
         run: ./gradlew assembleDebug
       - name: Rename artifact
         run:
-          newArtifactPath="${'-signed.apk'}.apk"
+          newArtifactPath="${time%'-signed.apk'}.apk"
           echo "ARTIFACT_PATH=$newArtifactPath" >> $GITHUB_ENV
       - name: Upload artifact
         uses: actions/upload-artifact@v2
