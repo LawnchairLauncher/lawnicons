@@ -31,13 +31,6 @@ jobs:
         run: ./gradlew assembleDebug
       - name: Sign debug APK
         uses: r0adkll/sign-android-release@v1
-        id: sign-debug-apk
-        with:
-          releaseDirectory: app/build/outputs/apk/debug
-          signingKeyBase64: ${{ secrets.KEYSTORE }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
       - name: Rename artifact
         run: |
           oldArtifactPath="${{ steps.sign-debug-apk.outputs.signedReleaseFile }}"
