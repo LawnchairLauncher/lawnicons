@@ -30,9 +30,17 @@ jobs:
       - name: Build debug APK
         run: ./gradlew assembleDebug
       - name: Rename artifact
-        run:
-          newArtifactPath="${time%'-signed.apk'}.apk"
+        run: |
+          oldArtifactPath="${{ releaseDirectory: app/build/outputs/apk/debug }}"
+          newArtifactPath="${oldArtifactPath%'-signed.apk'}.apk"
           echo "ARTIFACT_PATH=$newArtifactPath" >> $GITHUB_ENV
+          mv "$oldArtifactPath" "$newArtifactPath"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Debug APK
+          path: ${{ env.ARTIFACT_PATH }}
+
   send-notifications:
     runs-on: ubuntu-latest
     needs: build-debug-apk
