@@ -29,14 +29,6 @@ jobs:
         run: chmod +x gradlew
       - name: Build debug APK
         run: ./gradlew assembleDebug
-      - name: Sign debug APK
-        uses: r0adkll/sign-android-release@v1
-      - name: Rename artifact
-        run: |
-          oldArtifactPath="${{ steps.sign-debug-apk.outputs.signedReleaseFile }}"
-          newArtifactPath="${oldArtifactPath%'-signed.apk'}.apk"
-          echo "ARTIFACT_PATH=$newArtifactPath" >> $GITHUB_ENV
-          mv "$oldArtifactPath" "$newArtifactPath"
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
