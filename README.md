@@ -25,4 +25,5 @@ Extra Icons added:-
     Digilocker
     Swift Backup
     My Airtel
+    PUBG New State
     More on your request....
