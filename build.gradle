@@ -9,6 +9,9 @@ plugins {
     id 'com.android.library' version '7.1.0-beta04' apply false
     id 'org.jetbrains.kotlin.android' version '1.5.31' apply false
 }
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
