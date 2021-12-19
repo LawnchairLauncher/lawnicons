@@ -24,10 +24,11 @@
     <icon drawable="@drawable/focus_todo" package="com.superelement.pomodoro" name="Focus To-Do" />
     <icon drawable="@drawable/files" package="com.google.android.documentsui" name="Files" />
     <icon drawable="@drawable/files" package="com.android.documentsui" name="Files" />
-    <icon drawable="@drawable/myjio" package="com.jio.myjio" name="MyJio" />
-    <icon drawable="@drawable/nekogram_x" package="nekox.messenger" name="Nekogram X" />
     <icon drawable="@drawable/files" package="com.sec.android.app.myfiles" name="Files" />
     <icon drawable="@drawable/files" package="com.coloros.files" name="Files" />
+    <icon drawable="@drawable/myjio" package="com.jio.myjio" name="MyJio" />
+    <icon drawable="@drawable/nekogram" package="nekox.messenger" name="Nekogram X" />
+    <icon drawable="@drawable/nekogram" package="tw.nekomimi.nekogram" name="Nekogram" />
     <icon drawable="@drawable/spark_email" package="com.readdle.spark" name="Spark Email" />
     <icon drawable="@drawable/pocket_casts" package="au.com.shiftyjelly.pocketcasts" name="Pocket Casts" />
     <icon drawable="@drawable/citymapper" package="com.citymapper.app.release" name="Citymapper" />
@@ -36,6 +37,7 @@
     <icon drawable="@drawable/telegram" package="org.telegram.messenger.web" name="Telegram" />
     <icon drawable="@drawable/telegram" package="org.telegram.messenger.beta" name="Telegram" />
     <icon drawable="@drawable/bgram" package="org.telegram.BifToGram" name="BGram" />
+    <icon drawable="@drawable/exteragram" package="com.exteragram.messenger" name="exteraGram" />
     <icon drawable="@drawable/binance" package="com.binance.dev" name="Binance" />
     <icon drawable="@drawable/spotify" package="com.spotify.music" name="Spotify" />
     <icon drawable="@drawable/spotify" package="com.spotify.lite" name="Spotify" />
@@ -174,6 +176,8 @@
     <icon drawable="@drawable/microsoft_teams" package="com.microsoft.teams" name="Teams" />
     <icon drawable="@drawable/rabobank" package="nl.rabomobiel" name="rabobank" />
     <icon drawable="@drawable/karwei" package="nl.karwei.app.android" name="KARWEI" />
+    <icon drawable="@drawable/kakaotalk" package="com.kakao.talk" name="KakaoTalk" />
+    <icon drawable="@drawable/line" package="jp.naver.line.android" name="LINE" />
     <icon drawable="@drawable/mijn_hr" package="com.hogeschoolrotterdam.student" name="Mijn HR" />
     <icon drawable="@drawable/authy" package="com.authy.authy" name="Authy" />
     <icon drawable="@drawable/pushbullet" package="com.pushbullet.android" name="Pushbullet" />
@@ -197,4 +201,5 @@
     <icon drawable="@drawable/yandex_mail" package="ru.yandex.mail" name="Mail" />
     <icon drawable="@drawable/coinvero" package="com.candlestick_app" name="Coinvero" />
     <icon drawable="@drawable/wordweb" package="com.wordwebsoftware.android.wordweb" name="WordWeb" />
+    <icon drawable="@drawable/vivaldi" package="com.vivaldi.browser" name="Vivaldi" />
 </icons>
