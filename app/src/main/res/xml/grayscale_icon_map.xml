@@ -97,6 +97,7 @@
     <icon drawable="@drawable/google_assistant" package="com.google.android.apps.googleassistant" name="Google Assistant" />
     <icon drawable="@drawable/google_authenticator" package="com.google.android.apps.authenticator2" name="Google Authenticator" />
     <icon drawable="@drawable/google_chat" package="com.google.android.apps.dynamite" name="Google Chat" />
+    <icon drawable="@drawable/google_calculator" package="com.google.android.calculator" name="Google Calculator" />
     <icon drawable="@drawable/google_chrome_beta" package="com.chrome.beta" name="Google Chrome Beta" />
     <icon drawable="@drawable/google_chrome_canary" package="com.chrome.canary" name="Google Chrome Canary" />
     <icon drawable="@drawable/google_chrome_dev" package="com.chrome.dev" name="Google Chrome Dev" />
@@ -212,24 +213,6 @@
     <icon drawable="@drawable/spotify" package="com.spotify.music" name="Spotify" />
     <icon drawable="@drawable/stellio" package="io.stellio.music" name="Stellio" />
     <icon drawable="@drawable/strava" package="com.strava" name="Strava" />
-    <icon drawable="@drawable/dialer" package="com.truecaller" name="Dialer" />
-    <icon drawable="@drawable/amazon_primevideo" package="com.amazon.avod.thirdpartyclient" name="Amazon Prime Video" />
-    <icon drawable="@drawable/ymusic" package="com.kapp.youtube.final" name="YMusic" />
-    <icon drawable="@drawable/simple_gallery_pro" package="com.simplemobiletools.gallery.pro" name="Simple Gallery Pro" />
-    <icon drawable="@drawable/swift_backup" package="org.swiftapps.swiftbackup" name="Swift Backup" />
-    <icon drawable="@drawable/sweech" package="com.sweech" name="Sweech" />
-    <icon drawable="@drawable/shopee" package="com.shopee.ph" name="Shopee" />
-    <icon drawable="@drawable/sky_cotl" package="com.tgc.sky.android" name="Sky: Children of the Light" />
-    <icon drawable="@drawable/bitwarden" package="com.x8bit.bitwarden" name="Bitwarden" />
-    <icon drawable="@drawable/myairtel" package="com.myairtelapp" name="Airtel" />
-    <icon drawable="@drawable/microsoft_authenticator" package="com.azure.authenticator" name="Microsoft Authenticator" />
-    <icon drawable="@drawable/binance" package="com.binance.dev" name="Binance" />
-    <icon drawable="@drawable/kucoin" package="com.kubi.kucoin" name="Kucoin" />
-    <icon drawable="@drawable/gcash" package="com.globe.gcash.android" name="GCash" />
-    <icon drawable="@drawable/coinsph" package="asia.coins.mobile" name="Coins.ph" />
-    <icon drawable="@drawable/instapaper" package="com.instapaper.android" name="Instapaper" />
-    <icon drawable="@drawable/ebay" package="com.ebay.mobile" name="eBay" />
-    <icon drawable="@drawable/amazon_shopping" package="com.amazon.mShop.android.shopping" name="Amazon Shopping" />
     <icon drawable="@drawable/substratum_lite" package="projekt.substratum.lite" name="substratum Lite" />
     <icon drawable="@drawable/sweech" package="com.sweech" name="Sweech" />
     <icon drawable="@drawable/swift_backup" package="org.swiftapps.swiftbackup" name="Swift Backup" />
@@ -269,15 +252,13 @@
     <icon drawable="@drawable/youtube" package="com.google.android.youtube" name="YouTube" />
     <icon drawable="@drawable/youtube_tv" package="com.google.android.apps.youtube.unplugged" name="YouTube TV" />
     <icon drawable="@drawable/youtube_vanced" package="com.vanced.android.youtube" name="YouTube Vanced" />
-    <icon drawable="@drawable/coinvero" package="com.candlestick_app" name="Coinvero" />
-    <icon drawable="@drawable/wordweb" package="com.wordwebsoftware.android.wordweb" name="WordWeb" />
     <icon drawable="@drawable/ithome" package="com.ruanmei.ithome" name="IT之家" />
     <icon drawable="@drawable/cloudmusic" package="com.netease.cloudmusic" name="网易云" />"
     <icon drawable="@drawable/baidumap" package="com.baidu.BaiduMap" name="百度地图" />"
     <icon drawable="@drawable/minimap" package="com.autonavi.minimap" name="高德地图" />"
     <icon drawable="@drawable/jingdong" package="com.jingdong.app.mall" name="京东" />"
     <icon drawable="@drawable/jdlite" package="com.jd.jdlite" name="京东极速版" />"
-    <icon drawable="@drawable/recorder" package="com.kimcy929.screenrecorder" name="Screen Recorder" />"
+    <icon drawable="@drawable/screenrecorder" package="com.kimcy929.screenrecorder" name="Screen Recorder" />"
     <icon drawable="@drawable/wemeet" package="com.tencent.wemeet.app" name="腾讯会议" />"
     <icon drawable="@drawable/wechat" package="com.tencent.mm" name="微信" />"
     <icon drawable="@drawable/qq" package="com.tencent.mobileqq" name="QQ" />"
