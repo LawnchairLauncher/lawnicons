@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - develop
+      - main-wip
 
 jobs:
   build-debug-apk:
