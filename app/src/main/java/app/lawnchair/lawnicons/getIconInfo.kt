@@ -6,10 +6,9 @@ import org.xmlpull.v1.XmlPullParser
 fun getIconInfo(context: Context): List<IconInfo> {
     val iconInfo = mutableListOf<IconInfo>()
     val resources = context.resources
-    val packageName = context.packageName
 
     try {
-        val xmlId = resources.getIdentifier("grayscale_icon_map", "xml", packageName)
+        val xmlId = R.xml.grayscale_icon_map
         if (xmlId != 0) {
             val parser = resources.getXml(xmlId)
             val depth = parser.depth
