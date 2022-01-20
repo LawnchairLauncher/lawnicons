@@ -22,10 +22,11 @@ fun LawniconsTheme(
     } else {
         if (darkTheme) darkColorScheme() else lightColorScheme()
     }
+
     MaterialTheme {
         Material3Theme(
             colorScheme = colorScheme,
-            content = content
+            content = content,
         )
     }
 }

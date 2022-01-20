@@ -18,31 +18,27 @@ import com.google.accompanist.insets.LocalWindowInsets
 
 @Composable
 @ExperimentalFoundationApi
-fun IconPreviewGrid(searchTerm: String) {
-    val context = LocalContext.current
-    val iconInfo = remember {
-        getIconInfo(context = context)
-            .associateBy { it.name }
-            .values
-            .sortedBy { it.name }
-    }
+fun IconPreviewGrid(
+    iconInfo: List<IconInfo>,
+    searchTerm: String,
+) {
+    val density = LocalDensity.current
     val filteredIconInfo by derivedStateOf {
-        val searchLowerCase = searchTerm.lowercase()
-        when {
-            searchLowerCase.isEmpty() -> iconInfo
-            else -> iconInfo.filter { it.name.lowercase().contains(searchLowerCase) }
+        if (searchTerm.isEmpty()) {
+            iconInfo
+        } else {
+            iconInfo.filter { it.name.lowercase().contains(searchTerm.lowercase()) }
         }
     }
-    val density = LocalDensity.current
+
     LazyVerticalGrid(
-        modifier = Modifier
-            .padding(top = 34.dp),
+        modifier = Modifier.padding(top = 34.dp),
         cells = GridCells.Adaptive(minSize = 80.dp),
         contentPadding = PaddingValues(
             start = 8.dp,
             top = 42.dp,
             end = 8.dp,
-            bottom = with(density) { LocalWindowInsets.current.navigationBars.bottom.toDp() }
+            bottom = with(density) { LocalWindowInsets.current.navigationBars.bottom.toDp() },
         )
     ) {
         items(items = filteredIconInfo) { iconInfo ->

@@ -3,9 +3,8 @@ package app.lawnchair.lawnicons
 import android.content.Context
 import org.xmlpull.v1.XmlPullParser
 
-fun getIconInfo(context: Context): List<IconInfo> {
+fun Context.getIconInfo(): List<IconInfo> {
     val iconInfo = mutableListOf<IconInfo>()
-    val resources = context.resources
 
     try {
         val xmlId = R.xml.grayscale_icon_map
@@ -28,7 +27,9 @@ fun getIconInfo(context: Context): List<IconInfo> {
                 }
             }
         }
-    } catch (e: Exception) { }
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
 
     return iconInfo
 }

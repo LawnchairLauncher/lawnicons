@@ -29,36 +29,26 @@ import com.google.accompanist.insets.statusBarsPadding
 @Composable
 fun SearchBar(
     value: String,
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
+    iconCount: Int,
 ) {
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
     var focused by remember { mutableStateOf(value = false) }
-    Row(
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
-            .zIndex(1f)
-            .padding(top = 8.dp)
-            .padding(horizontal = 16.dp)
-            .fillMaxWidth()
-            .height(52.dp)
-            .background(
-                color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level2),
-                shape = CircleShape
-            )
-    ) {
+
+    SearchBarBase {
         Box(
             contentAlignment = Alignment.CenterStart,
             modifier = Modifier
                 .padding(start = 16.dp)
                 .fillMaxHeight()
-                .weight(1F)
+                .weight(1F),
         ) {
             if (value.isEmpty()) {
                 Text(
-                    text = stringResource(id = R.string.search_bar_hint),
+                    text = stringResource(id = R.string.search_bar_hint, iconCount),
                     style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium)
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium),
                 )
             }
             BasicTextField(
@@ -69,7 +59,7 @@ fun SearchBar(
                 modifier = Modifier
                     .focusRequester(focusRequester)
                     .fillMaxWidth()
-                    .onFocusChanged { focused = it.isFocused }
+                    .onFocusChanged { focused = it.isFocused },
             )
         }
         Crossfade(targetState = focused) {
@@ -82,12 +72,12 @@ fun SearchBar(
                         .clickable {
                             onValueChange("")
                             focusManager.clearFocus()
-                        }
+                        },
                 ) {
                     Icon(
                         imageVector = Icons.Rounded.Clear,
                         contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onSurface
+                        tint = MaterialTheme.colorScheme.onSurface,
                     )
                 }
             }
