@@ -7,11 +7,7 @@ import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import com.google.accompanist.insets.LocalWindowInsets
@@ -20,15 +16,10 @@ import com.google.accompanist.insets.LocalWindowInsets
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
     iconInfo: List<IconInfo>,
-    searchTerm: String,
 ) {
     val density = LocalDensity.current
-    val filteredIconInfo by derivedStateOf {
-        if (searchTerm.isEmpty()) {
-            iconInfo
-        } else {
-            iconInfo.filter { it.name.lowercase().contains(searchTerm.lowercase()) }
-        }
+    val navigationBarHeight = with(density) {
+        LocalWindowInsets.current.navigationBars.bottom.toDp()
     }
 
     LazyVerticalGrid(
@@ -38,10 +29,10 @@ fun IconPreviewGrid(
             start = 8.dp,
             top = 42.dp,
             end = 8.dp,
-            bottom = with(density) { LocalWindowInsets.current.navigationBars.bottom.toDp() },
+            bottom = navigationBarHeight,
         )
     ) {
-        items(items = filteredIconInfo) { iconInfo ->
+        items(items = iconInfo) { iconInfo ->
             IconPreview(iconId = iconInfo.id)
         }
     }
