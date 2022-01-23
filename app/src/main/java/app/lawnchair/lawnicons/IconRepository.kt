@@ -5,6 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class IconRepository @Inject constructor(application: Application) {
@@ -27,16 +28,31 @@ class IconRepository @Inject constructor(application: Application) {
         }
     }
 
-    fun search(query: String) {
-        coroutineScope.launch {
-            iconInfoModel.value = _iconInfo?.let {
-                IconInfoModel(
-                    iconCount = it.size,
-                    iconInfo = it.filter { candidate ->
-                        candidate.name.lowercase().contains(query.lowercase())
-                    },
+    suspend fun search(query: String) = withContext(Dispatchers.Default) {
+        iconInfoModel.value = _iconInfo?.let {
+            val filtered = it.mapNotNull { candidate ->
+                val indexOfMatch =
+                    candidate.name.indexOf(string = query, ignoreCase = true).also { index ->
+                        if (index == -1) return@mapNotNull null
+                    }
+                val matchAtWordStart = indexOfMatch == 0 || candidate.name[indexOfMatch - 1] == ' '
+                SearchInfo(
+                    iconInfo = candidate,
+                    indexOfMatch = indexOfMatch,
+                    matchAtWordStart = matchAtWordStart,
                 )
+            }.sortedWith(
+                compareBy(
+                    { searchInfo -> !searchInfo.matchAtWordStart },
+                    { searchInfo -> searchInfo.indexOfMatch },
+                )
+            ).map { searchInfo ->
+                searchInfo.iconInfo
             }
+            IconInfoModel(
+                iconCount = it.size,
+                iconInfo = filtered,
+            )
         }
     }
 }
