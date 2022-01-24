@@ -14,7 +14,7 @@ fun SystemUi(content: @Composable () -> Unit) {
     SideEffect {
         systemUiController.setSystemBarsColor(
             color = Color.Transparent,
-            darkIcons = useDarkIcons
+            darkIcons = useDarkIcons,
         )
     }
     ProvideWindowInsets(content = content)
