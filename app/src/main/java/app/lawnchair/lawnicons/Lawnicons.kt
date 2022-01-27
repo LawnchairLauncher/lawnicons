@@ -12,36 +12,14 @@ import com.google.accompanist.insets.statusBarsPadding
 
 @Composable
 @ExperimentalFoundationApi
-fun Lawnicons(lawniconsViewModel: LawniconsViewModel = viewModel()) {
-    val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
-    var searchTerm by remember { mutableStateOf(value = "") }
-
+fun Lawnicons() {
     LawniconsTheme {
         SystemUi {
             Surface(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background,
             ) {
-                Crossfade(
-                    targetState = iconInfoModel != null,
-                    modifier = Modifier.statusBarsPadding(),
-                ) { targetState ->
-                    if (targetState) {
-                        iconInfoModel?.let {
-                            SearchBar(
-                                value = searchTerm,
-                                iconCount = it.iconCount,
-                                onValueChange = { newValue ->
-                                    searchTerm = newValue
-                                    lawniconsViewModel.searchIcons(newValue)
-                                },
-                            )
-                            IconPreviewGrid(iconInfo = it.iconInfo)
-                        }
-                    } else {
-                        SearchBarBase()
-                    }
-                }
+                Home()
             }
         }
     }
