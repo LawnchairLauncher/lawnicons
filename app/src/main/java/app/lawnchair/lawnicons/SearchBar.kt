@@ -1,7 +1,6 @@
 package app.lawnchair.lawnicons
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -23,8 +22,6 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.zIndex
-import com.google.accompanist.insets.statusBarsPadding
 
 @Composable
 fun SearchBar(
@@ -64,22 +61,14 @@ fun SearchBar(
         }
         Crossfade(targetState = focused) {
             if (it) {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .size(52.dp)
-                        .clip(CircleShape)
-                        .clickable {
-                            onValueChange("")
-                            focusManager.clearFocus()
-                        },
-                ) {
-                    Icon(
-                        imageVector = Icons.Rounded.Clear,
-                        contentDescription = null,
-                        tint = MaterialTheme.colorScheme.onSurface,
-                    )
-                }
+                ClickableIcon(
+                    imageVector = Icons.Rounded.Clear,
+                    size = 52.dp,
+                    onClick = {
+                        onValueChange("")
+                        focusManager.clearFocus()
+                    },
+                )
             }
         }
     }
