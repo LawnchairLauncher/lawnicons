@@ -26,12 +26,14 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 @Composable
 fun SearchBar(
     value: String,
     onValueChange: (String) -> Unit,
     iconCount: Int,
+    navController: NavController,
 ) {
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
@@ -88,7 +90,7 @@ fun SearchBar(
                         y = (-64).dp,
                     )
                 ) {
-                    DropdownMenuItem(onClick = {}) {
+                    DropdownMenuItem(onClick = { navController.navigate(Destinations.ACKNOWLEDGEMENTS) }) {
                         Text(text = stringResource(id = R.string.acknowledgements))
                     }
                 }

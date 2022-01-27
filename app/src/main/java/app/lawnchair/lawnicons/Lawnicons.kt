@@ -26,7 +26,10 @@ fun Lawnicons() {
                     startDestination = Destinations.HOME
                 ) {
                     composable(route = Destinations.HOME) {
-                        Home()
+                        Home(navController = navController)
+                    }
+                    composable(route = Destinations.ACKNOWLEDGEMENTS) {
+                        Acknowledgements()
                     }
                 }
             }
