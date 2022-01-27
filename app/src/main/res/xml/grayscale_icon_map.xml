@@ -18,20 +18,20 @@
     <icon drawable="@drawable/bromite" package="org.bromite.bromite" name="Bromite" />
     <icon drawable="@drawable/browser" package="org.droidtr.jelly" name="Browser" />
     <icon drawable="@drawable/browser" package="org.lineageos.jelly" name="Browser" />
-    <icon drawable="@drawable/calculator" package="com.google.android.calculator" name="Calculator" />
     <icon drawable="@drawable/calculator" package="com.android.calculator2" name="Calculator" />
+    <icon drawable="@drawable/calculator" package="com.google.android.calculator" name="Calculator" />
     <icon drawable="@drawable/calculator" package="com.miui.calculator" name="Calculator" />
     <icon drawable="@drawable/calculator" package="com.oneplus.calculator" name="Calculator" />
     <icon drawable="@drawable/calculator" package="com.sec.android.app.popupcalculator" name="Calculator" />
     <icon drawable="@drawable/camera" package="app.grapheneos.camera" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.android.camera2" name="Camera" />
     <icon drawable="@drawable/camera" package="com.android.camera" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.android.mgc" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.android.camera2" name="Camera" />
     <icon drawable="@drawable/camera" package="com.android.MGC.not.stable" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.android.mgc" name="Camera" />
     <icon drawable="@drawable/camera" package="com.google.android.apps.cameralite" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCameraEng" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera.Urnyx" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera" name="Camera" />
+    <icon drawable="@drawable/camera" package="com.google.android.GoogleCameraEng" name="Camera" />
     <icon drawable="@drawable/camera" package="com.honor.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.huawei.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.motorola.cameraone" name="Camera" />
@@ -112,8 +112,6 @@
     <icon drawable="@drawable/google_meet" package="com.google.android.app.meetings" name="Google Meet" />
     <icon drawable="@drawable/google_news" package="com.google.android.apps.magazines" name="Google News" />
     <icon drawable="@drawable/google_one" package="com.google.android.apps.subscriptions.red" name="Google One" />
-    <icon drawable="@drawable/google" package="com.google.android.apps.searchlite" name="Google" />
-    <icon drawable="@drawable/google" package="com.google.android.googlequicksearchbox" name="Google" />
     <icon drawable="@drawable/google_pay" package="com.google.android.apps.nbu.paisa.user" name="Google Pay" />
     <icon drawable="@drawable/google_photos" package="com.google.android.apps.photos" name="Google Photos" />
     <icon drawable="@drawable/google_play_books" package="com.google.android.apps.books" name="Google Play Books" />
@@ -125,6 +123,8 @@
     <icon drawable="@drawable/google_tasks" package="com.google.android.apps.tasks" name="Google Tasks" />
     <icon drawable="@drawable/google_translate" package="com.google.android.apps.translate" name="Google Translate" />
     <icon drawable="@drawable/google_tv" package="com.google.android.videos" name="Google TV" />
+    <icon drawable="@drawable/google" package="com.google.android.apps.searchlite" name="Google" />
+    <icon drawable="@drawable/google" package="com.google.android.googlequicksearchbox" name="Google" />
     <icon drawable="@drawable/ime" package="com.iMe.android" name="iMe" />
     <icon drawable="@drawable/instagram" package="com.instagram.android" name="Instagram" />
     <icon drawable="@drawable/instagram" package="com.instagram.lite" name="Instagram" />
@@ -138,17 +138,18 @@
     <icon drawable="@drawable/line" package="jp.naver.line.android" name="LINE" />
     <icon drawable="@drawable/linkedin" package="com.linkedin.android" name="LinkedIn" />
     <icon drawable="@drawable/magisk" package="com.topjohnwu.magisk" name="Magisk" />
-    <icon drawable="@drawable/maps" package="com.google.android.apps.mapslite" name="Google Maps" />
     <icon drawable="@drawable/maps" package="com.google.android.apps.maps" name="Google Maps" />
+    <icon drawable="@drawable/maps" package="com.google.android.apps.mapslite" name="Google Maps" />
     <icon drawable="@drawable/marindeck" package="online.hisubway.marindeck" name="MarinDeck" />
     <icon drawable="@drawable/mbank" package="pl.mbank" name="mBank" />
+    <icon drawable="@drawable/messages" package="com.android.messaging" name="Messages" />
     <icon drawable="@drawable/messages" package="com.android.mms" name="Messages" />
     <icon drawable="@drawable/messages" package="com.google.android.apps.messaging" name="Messages" />
     <icon drawable="@drawable/messages" package="com.samsung.android.messaging" name="Messages" />
-    <icon drawable="@drawable/messages" package="com.android.messaging" name="Messages" />
     <icon drawable="@drawable/messenger" package="com.facebook.mlite" name="Messenger" />
     <icon drawable="@drawable/messenger" package="com.facebook.orca" name="Messenger" />
     <icon drawable="@drawable/microsoft_authenticator" package="com.azure.authenticator" name="Microsoft Authenticator" />
+    <icon drawable="@drawable/microsoft_edge_canary" package="com.microsoft.emmx.canary" name="Microsoft Edge Canary" />
     <icon drawable="@drawable/microsoft_edge" package="com.microsoft.emmx" name="Microsoft Edge" />
     <icon drawable="@drawable/microsoft_office" package="com.microsoft.office.officehubrow" name="Microsoft Office" />
     <icon drawable="@drawable/microsoft_outlook" package="com.microsoft.office.outlook" name="Microsoft Outlook" />
@@ -156,8 +157,8 @@
     <icon drawable="@drawable/microsoft_todo" package="com.microsoft.todos" name="Microsoft To Do" />
     <icon drawable="@drawable/mijn_hr" package="com.hogeschoolrotterdam.student" name="Mijn HR" />
     <icon drawable="@drawable/mixplorer" package="com.mixplorer.beta" name="MiXplorer" />
-    <icon drawable="@drawable/mixplorer" package="com.mixplorer" name="MiXplorer" />
     <icon drawable="@drawable/mixplorer" package="com.mixplorer.silver" name="MiXplorer" />
+    <icon drawable="@drawable/mixplorer" package="com.mixplorer" name="MiXplorer" />
     <icon drawable="@drawable/musicolet" package="in.krosbits.musicolet" name="Musicolet" />
     <icon drawable="@drawable/mx_player" package="com.mxtech.videoplayer.ad" name="MX Player" />
     <icon drawable="@drawable/mx_player" package="com.mxtech.videoplayer.pro" name="MX Player" />
@@ -170,8 +171,8 @@
     <icon drawable="@drawable/onedrive" package="com.microsoft.skydrive" name="OneDrive" />
     <icon drawable="@drawable/opera_browser" package="com.opera.browser" name="Opera Browser" />
     <icon drawable="@drawable/opera_gx" package="com.opera.gx" name="Opera GX" />
-    <icon drawable="@drawable/osmand" package="net.osmand" name="OsmAnd" />
     <icon drawable="@drawable/osmand_plus" package="net.osmand.plus" name="OsmAnd+" />
+    <icon drawable="@drawable/osmand" package="net.osmand" name="OsmAnd" />
     <icon drawable="@drawable/oto_music" package="com.piyush.music" name="Oto Music" />    
     <icon drawable="@drawable/paypal" package="com.paypal.android.p2pmobile" name="PayPal" />
     <icon drawable="@drawable/personal_safety" package="com.google.android.apps.safetyhub" name="Personal Safety" />
@@ -217,14 +218,14 @@
     <icon drawable="@drawable/sweech" package="com.sweech" name="Sweech" />
     <icon drawable="@drawable/swift_backup" package="org.swiftapps.swiftbackup" name="Swift Backup" />
     <icon drawable="@drawable/sync" package="com.laurencedawson.reddit_sync.dev" name="Sync" />
-    <icon drawable="@drawable/sync" package="com.laurencedawson.reddit_sync" name="Sync" />
     <icon drawable="@drawable/sync" package="com.laurencedawson.reddit_sync.pro" name="Sync" />
+    <icon drawable="@drawable/sync" package="com.laurencedawson.reddit_sync" name="Sync" />
     <icon drawable="@drawable/tapatalk_pro" package="com.quoord.tapatalk" name="Tapatalk Pro" />
-    <icon drawable="@drawable/telegram" package="org.telegram.messenger.beta" name="Telegram" />
-    <icon drawable="@drawable/telegram" package="org.telegram.messenger" name="Telegram" />
-    <icon drawable="@drawable/telegram" package="org.telegram.messenger.web" name="Telegram" />
     <icon drawable="@drawable/telegram_x" package="org.thunderdog.challegram" name="Telegram X" />
     <icon drawable="@drawable/telegram_x" package="org.thunderdog.challegramtwo" name="Telegram X" />
+    <icon drawable="@drawable/telegram" package="org.telegram.messenger.beta" name="Telegram" />
+    <icon drawable="@drawable/telegram" package="org.telegram.messenger.web" name="Telegram" />
+    <icon drawable="@drawable/telegram" package="org.telegram.messenger" name="Telegram" />
     <icon drawable="@drawable/termux" package="com.termux" name="Termux" />
     <icon drawable="@drawable/theathletic" package="com.theathletic" name="The Athletic" />
     <icon drawable="@drawable/tidal" package="com.aspiro.tidal" name="Tidal" />
@@ -249,8 +250,7 @@
     <icon drawable="@drawable/yeelight" package="com.yeelight.cherry" name="Yeelight" />
     <icon drawable="@drawable/ymusic" package="com.kapp.youtube.final" name="YMusic" />
     <icon drawable="@drawable/youtube_music" package="com.google.android.apps.youtube.music" name="YouTube Music" />
-    <icon drawable="@drawable/youtube" package="com.google.android.youtube" name="YouTube" />
     <icon drawable="@drawable/youtube_tv" package="com.google.android.apps.youtube.unplugged" name="YouTube TV" />
     <icon drawable="@drawable/youtube_vanced" package="com.vanced.android.youtube" name="YouTube Vanced" />
-    <icon drawable="@drawable/microsoft_edge_canary" package="com.microsoft.emmx.canary" name="Microsoft Edge Canary" />
+    <icon drawable="@drawable/youtube" package="com.google.android.youtube" name="YouTube" />
 </icons>
