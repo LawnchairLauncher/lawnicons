@@ -29,7 +29,7 @@ fun Lawnicons() {
                         Home(navController = navController)
                     }
                     composable(route = Destinations.ACKNOWLEDGEMENTS) {
-                        Acknowledgements()
+                        Acknowledgements(navController = navController)
                     }
                 }
             }
