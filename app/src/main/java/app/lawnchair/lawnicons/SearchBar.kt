@@ -6,8 +6,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.ContentAlpha
+import androidx.compose.material.DropdownMenu
+import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Clear
+import androidx.compose.material.icons.rounded.MoreVert
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -21,6 +24,7 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -32,6 +36,7 @@ fun SearchBar(
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
     var focused by remember { mutableStateOf(value = false) }
+    var dropdownMenuExpanded by remember { mutableStateOf(value = false) }
 
     SearchBarBase {
         Box(
@@ -69,6 +74,24 @@ fun SearchBar(
                         focusManager.clearFocus()
                     },
                 )
+            } else {
+                ClickableIcon(
+                    imageVector = Icons.Rounded.MoreVert,
+                    size = 52.dp,
+                    onClick = { dropdownMenuExpanded = true },
+                )
+                DropdownMenu(
+                    expanded = dropdownMenuExpanded,
+                    onDismissRequest = { dropdownMenuExpanded = false },
+                    offset = DpOffset(
+                        x = (16).dp,
+                        y = (-64).dp,
+                    )
+                ) {
+                    DropdownMenuItem(onClick = {}) {
+                        Text(text = stringResource(id = R.string.acknowledgements))
+                    }
+                }
             }
         }
     }
