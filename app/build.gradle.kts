@@ -54,7 +54,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE}")
     debugImplementation("androidx.compose.ui:ui-tooling:${Versions.COMPOSE}")
-    implementation("androidx.compose.material3:material3:1.0.0-alpha03")
+    implementation("androidx.compose.material3:material3:1.0.0-alpha04")
     implementation("com.google.accompanist:accompanist-insets:${Versions.ACCOMPANIST}")
     implementation("com.google.accompanist:accompanist-systemuicontroller:${Versions.ACCOMPANIST}")
     implementation("com.google.dagger:hilt-android:2.40.5")
