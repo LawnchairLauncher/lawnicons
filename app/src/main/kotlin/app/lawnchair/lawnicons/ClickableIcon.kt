@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun ClickableIcon(
+    modifier: Modifier = Modifier,
     size: Dp = 48.dp,
     onClick: () -> Unit,
     imageVector: ImageVector,
@@ -24,7 +25,7 @@ fun ClickableIcon(
 ) {
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier
+        modifier = modifier
             .size(size)
             .clip(CircleShape)
             .clickable(onClick = onClick),
