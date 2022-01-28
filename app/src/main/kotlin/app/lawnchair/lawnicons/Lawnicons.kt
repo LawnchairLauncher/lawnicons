@@ -6,9 +6,11 @@ import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
 @Composable
 @ExperimentalFoundationApi
@@ -30,6 +32,20 @@ fun Lawnicons() {
                     }
                     composable(route = Destinations.ACKNOWLEDGEMENTS) {
                         Acknowledgements(navController = navController)
+                    }
+                    composable(
+                        route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
+                        arguments = listOf(
+                            navArgument(
+                                name = "id",
+                                builder = { type = NavType.StringType }
+                            )
+                        ),
+                    ) { backStackEntry ->
+                        Acknowledgement(
+                            name = backStackEntry.arguments?.getString("id"),
+                            navController = navController,
+                        )
                     }
                 }
             }

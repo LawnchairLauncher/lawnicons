@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -35,35 +36,24 @@ fun Acknowledgements(
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
     val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
-    val topBarColors = TopAppBarDefaults.smallTopAppBarColors()
-    val scrollFraction = scrollBehavior.scrollFraction
-    val statusBarColor by topBarColors.containerColor(scrollFraction)
     val density = LocalDensity.current
     val navigationBarHeight = with (density) { LocalWindowInsets.current.navigationBars.bottom.toDp() }
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            Column {
-                Spacer(
-                    modifier = Modifier
-                        .statusBarsHeight()
-                        .fillMaxWidth()
-                        .background(statusBarColor)
-                )
-                SmallTopAppBar(
-                    title = { Text(text = stringResource(id = R.string.acknowledgements)) },
-                    scrollBehavior = scrollBehavior,
-                    navigationIcon = {
-                        ClickableIcon(
-                            onClick = { navController.popBackStack() },
-                            imageVector = Icons.Rounded.ArrowBack,
-                            size = 40.dp,
-                            modifier = Modifier.padding(horizontal = 4.dp),
-                        )
-                    }
-                )
-            }
+            TopBarWithInsets(
+                scrollBehavior = scrollBehavior,
+                title = stringResource(id = R.string.acknowledgements),
+                navigationIcon = {
+                    ClickableIcon(
+                        onClick = { navController.popBackStack() },
+                        imageVector = Icons.Rounded.ArrowBack,
+                        size = 40.dp,
+                        modifier = Modifier.padding(horizontal = 4.dp),
+                    )
+                },
+            )
         }
     ) { innerPadding ->
         Crossfade(
@@ -80,6 +70,9 @@ fun Acknowledgements(
                                     maxLines = 1,
                                     overflow = TextOverflow.Ellipsis,
                                 )
+                            },
+                            modifier = Modifier.clickable {
+                                navController.navigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
                             }
                         )
                     }
