@@ -17,12 +17,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import app.lawnchair.ossnotices.OssLibrary
+import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
 
 @Composable
@@ -36,6 +38,8 @@ fun Acknowledgements(
     val topBarColors = TopAppBarDefaults.smallTopAppBarColors()
     val scrollFraction = scrollBehavior.scrollFraction
     val statusBarColor by topBarColors.containerColor(scrollFraction)
+    val density = LocalDensity.current
+    val navigationBarHeight = with (density) { LocalWindowInsets.current.navigationBars.bottom.toDp() }
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -67,7 +71,7 @@ fun Acknowledgements(
             modifier = Modifier.padding(innerPadding)
         ) {
             if (it != null) {
-                LazyColumn {
+                LazyColumn(contentPadding = PaddingValues(bottom = navigationBarHeight + 16.dp)) {
                     items(it) {
                         ListItem(
                             text = {
