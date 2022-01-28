@@ -1,6 +1,7 @@
 buildscript {
     dependencies {
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.40.5")
+        classpath("com.google.android.gms:oss-licenses-plugin:0.10.4")
     }
 }
 
