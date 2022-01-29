@@ -4,6 +4,7 @@ import android.app.Application
 import android.text.SpannableString
 import android.text.style.URLSpan
 import android.text.util.Linkify
+import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.lifecycle.ViewModel
@@ -28,30 +29,37 @@ class AcknowledgementViewModel @Inject constructor(
     ) = flow {
         ossLibraryRepository.ossLibraries.value?.find { it.name == name }?.run {
             val notice = getNotice(application, R.raw.third_party_licenses)
-            val spannable = SpannableString(notice)
-            Linkify.addLinks(spannable, Linkify.WEB_URLS)
-            val urlSpans = spannable.getSpans(0, notice.length, URLSpan::class.java)
-            val annotated = buildAnnotatedString {
-                append(notice)
-                urlSpans.forEach {
-                    val start = spannable.getSpanStart(it)
-                    val end = spannable.getSpanEnd(it)
-                    addStyle(
-                        start = start,
-                        end = end,
-                        style = linkStyle,
-                    )
-                    addStringAnnotation(
-                        tag = "URL",
-                        annotation = it.url,
-                        start = start,
-                        end = end,
-                    )
-                }
-            }
+            val annotated = annotate(notice, linkStyle)
             emit(annotated)
         }
     }
         .flowOn(Dispatchers.Default)
         .stateIn(viewModelScope, SharingStarted.Lazily, null)
+
+    private fun annotate(
+        notice: String,
+        linkStyle: SpanStyle,
+    ): AnnotatedString {
+        val spannable = SpannableString(notice)
+        Linkify.addLinks(spannable, Linkify.WEB_URLS)
+        val urlSpans = spannable.getSpans(0, notice.length, URLSpan::class.java)
+        return buildAnnotatedString {
+            append(notice)
+            urlSpans.forEach {
+                val start = spannable.getSpanStart(it)
+                val end = spannable.getSpanEnd(it)
+                addStyle(
+                    start = start,
+                    end = end,
+                    style = linkStyle,
+                )
+                addStringAnnotation(
+                    tag = "URL",
+                    annotation = it.url,
+                    start = start,
+                    end = end,
+                )
+            }
+        }
+    }
 }
