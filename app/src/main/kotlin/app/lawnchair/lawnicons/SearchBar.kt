@@ -93,6 +93,9 @@ fun SearchBar(
                     DropdownMenuItem(onClick = { navController.navigate(Destinations.ACKNOWLEDGEMENTS) }) {
                         Text(text = stringResource(id = R.string.acknowledgements))
                     }
+                    DropdownMenuItem(onClick = { navController.navigate(Destinations.ABOUT) }) {
+                        Text(text = stringResource(id = R.string.about))
+                    }
                 }
             }
         }

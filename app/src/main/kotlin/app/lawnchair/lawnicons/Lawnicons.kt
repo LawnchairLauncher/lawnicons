@@ -47,6 +47,9 @@ fun Lawnicons() {
                             navController = navController,
                         )
                     }
+                    composable(route = Destinations.ABOUT) {
+                        About(navController = navController)
+                    }
                 }
             }
         }
