@@ -41,8 +41,8 @@ fun Acknowledgement(
         LocalWindowInsets.current.navigationBars.bottom.toDp()
     }
 
-    val notice by acknowledgementViewModel.getNotice(
-        name = name,
+    val notice by acknowledgementViewModel.getNoticeForOssLibrary(
+        ossLibraryName = name,
         linkStyle = SpanStyle(
             color = MaterialTheme.colorScheme.primary,
             textDecoration = TextDecoration.Underline,
