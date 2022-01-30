@@ -25,7 +25,7 @@ fun IconPreviewGrid(
     }
 
     LazyVerticalGrid(
-        modifier = Modifier.padding(top = 34.dp),
+        modifier = Modifier.padding(top = 26.dp),
         cells = GridCells.Adaptive(minSize = 80.dp),
         contentPadding = PaddingValues(
             start = 8.dp,
