@@ -64,3 +64,6 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
 }
+kotlin.sourceSets.all {
+    languageSettings.optIn("kotlin.RequiresOptIn")
+}
