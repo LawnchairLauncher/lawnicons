@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.viewmodel
 
 import android.text.SpannableString
 import android.text.style.URLSpan
@@ -8,6 +8,7 @@ import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import app.lawnchair.lawnicons.repository.OssLibraryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted

@@ -1,7 +1,6 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -24,9 +23,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import app.lawnchair.ossnotices.OssLibrary
+import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.ui.component.ClickableIcon
+import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.util.Destinations
+import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel
 import com.google.accompanist.insets.LocalWindowInsets
-import com.google.accompanist.insets.statusBarsHeight
 
 @Composable
 @OptIn(ExperimentalMaterialApi::class, ExperimentalMaterial3Api::class)

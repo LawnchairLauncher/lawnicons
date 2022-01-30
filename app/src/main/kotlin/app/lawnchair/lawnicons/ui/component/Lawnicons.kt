@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.ui.component
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
@@ -11,6 +11,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import app.lawnchair.lawnicons.ui.destination.About
+import app.lawnchair.lawnicons.ui.destination.Acknowledgement
+import app.lawnchair.lawnicons.ui.destination.Acknowledgements
+import app.lawnchair.lawnicons.ui.destination.Home
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.Destinations
 
 @Composable
 @ExperimentalFoundationApi

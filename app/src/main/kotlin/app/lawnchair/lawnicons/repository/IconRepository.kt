@@ -1,6 +1,10 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.repository
 
 import android.app.Application
+import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoModel
+import app.lawnchair.lawnicons.model.SearchInfo
+import app.lawnchair.lawnicons.util.getIconInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.model
 
 data class SearchInfo(
     val iconInfo: IconInfo,

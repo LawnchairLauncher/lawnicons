@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

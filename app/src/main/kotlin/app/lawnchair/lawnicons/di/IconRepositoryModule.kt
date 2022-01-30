@@ -1,6 +1,7 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.di
 
 import android.app.Application
+import app.lawnchair.lawnicons.repository.IconRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

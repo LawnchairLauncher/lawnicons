@@ -1,7 +1,8 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import app.lawnchair.lawnicons.repository.IconRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

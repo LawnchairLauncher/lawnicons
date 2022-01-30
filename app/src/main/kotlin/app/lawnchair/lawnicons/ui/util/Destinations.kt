@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.ui.util
 
 object Destinations {
     const val HOME = "home"

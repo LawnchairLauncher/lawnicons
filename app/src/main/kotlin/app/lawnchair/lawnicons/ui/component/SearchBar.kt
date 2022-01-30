@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.ui.component
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
@@ -27,6 +27,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.ui.util.Destinations
+import app.lawnchair.lawnicons.ui.util.Elevation
+import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
 fun SearchBar(
@@ -83,7 +87,8 @@ fun SearchBar(
                     onClick = { dropdownMenuExpanded = true },
                 )
                 DropdownMenu(
-                    modifier = Modifier.background(MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level2)),
+                    modifier = Modifier.background(MaterialTheme.colorScheme.surfaceColorAtElevation(
+                        Elevation.Level2)),
                     expanded = dropdownMenuExpanded,
                     onDismissRequest = { dropdownMenuExpanded = false },
                     offset = DpOffset(

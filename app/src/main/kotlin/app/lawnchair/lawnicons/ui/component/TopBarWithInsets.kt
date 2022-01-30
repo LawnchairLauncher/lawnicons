@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.ui.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

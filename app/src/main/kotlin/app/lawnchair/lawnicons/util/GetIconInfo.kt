@@ -1,6 +1,8 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.util
 
 import android.content.Context
+import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.model.IconInfo
 import org.xmlpull.v1.XmlPullParser
 
 fun Context.getIconInfo(): List<IconInfo> {

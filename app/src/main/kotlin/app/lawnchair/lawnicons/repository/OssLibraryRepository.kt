@@ -1,7 +1,8 @@
-package app.lawnchair.lawnicons
+package app.lawnchair.lawnicons.repository
 
 import android.app.Application
 import androidx.compose.ui.text.AnnotatedString
+import app.lawnchair.lawnicons.R
 import app.lawnchair.ossnotices.OssLibrary
 import app.lawnchair.ossnotices.getOssLibraries
 import kotlinx.coroutines.CoroutineScope
