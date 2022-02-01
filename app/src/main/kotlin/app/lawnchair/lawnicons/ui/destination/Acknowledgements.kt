@@ -63,7 +63,7 @@ fun Acknowledgements(
             modifier = Modifier.padding(innerPadding)
         ) {
             if (it != null) {
-                LazyColumn(contentPadding = PaddingValues(bottom = navigationBarHeight + 16.dp)) {
+                LazyColumn(contentPadding = PaddingValues(bottom = navigationBarHeight)) {
                     items(it) {
                         ListItem(
                             text = {
