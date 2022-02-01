@@ -4,6 +4,7 @@ This is a fork from [LawnchairLauncher/lawnicons](https://github.com/LawnchairLa
 # How to install
 - Download the APK from the [releases](https://github.com/JordyEGNL/lawnicons/releases) page
 - Transfer the APK file to your phone and install the app
+- Open Lawnchair settings and select 'General'. Enable 'Themed Icons'
 
 # How to contribute
 Please read [CONTRIBUTING.md](https://github.com/JordyEGNL/lawnicons/blob/develop/CONTRIBUTING.md) for more information.
