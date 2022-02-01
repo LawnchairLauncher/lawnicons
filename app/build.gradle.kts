@@ -68,6 +68,8 @@ dependencies {
     implementation("com.google.accompanist:accompanist-insets:${Versions.ACCOMPANIST}")
     implementation("com.google.accompanist:accompanist-systemuicontroller:${Versions.ACCOMPANIST}")
     implementation("com.google.accompanist:accompanist-placeholder-material:${Versions.ACCOMPANIST}")
+    implementation("com.google.accompanist:accompanist-navigation-animation:${Versions.ACCOMPANIST}")
+    implementation("com.github.fornewid:material-motion-compose:0.8.0-beta01")
     implementation("com.google.dagger:hilt-android:2.40.5")
     kapt("com.google.dagger:hilt-compiler:2.40.5")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0")
