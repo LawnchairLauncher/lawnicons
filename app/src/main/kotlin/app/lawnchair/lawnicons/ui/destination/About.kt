@@ -83,7 +83,7 @@ fun About(navController: NavController) {
                         text = stringResource(id = R.string.app_name),
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.padding(top = 16.dp),
+                        modifier = Modifier.padding(top = 12.dp),
                     )
                     Text(
                         text = stringResource(id = R.string.version_x, BuildConfig.VERSION_NAME),
@@ -107,7 +107,7 @@ fun About(navController: NavController) {
             item {
                 ListItem(
                     modifier = Modifier
-                        .padding(top = 16.dp)
+                        .padding(top = 12.dp)
                         .clickable {
                             val website = Uri.parse("https://github.com/LawnchairLauncher/lawnicons/graphs/contributors")
                             val intent = Intent(Intent.ACTION_VIEW, website)
