@@ -1,10 +1,11 @@
 package app.lawnchair.lawnicons.ui.destination
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ContentAlpha
@@ -28,16 +29,19 @@ import app.lawnchair.lawnicons.ui.component.ClickableIcon
 import app.lawnchair.lawnicons.ui.component.ContributorRow
 import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Contributor
+import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.util.appIcon
 
 private val coreContributors = listOf(
     Contributor(
         name = "paphonb",
+        username = "paphonb",
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
         socialUrl = "https://twitter.com/paphonb",
     ),
     Contributor(
         name = "Patryk Michalik",
+        username = "patrykmichalik",
         photoUrl = "https://raw.githubusercontent.com/patrykmichalik/brand/master/logo-on-indigo.png",
         socialUrl = "https://patrykmichalik.com",
     ),
@@ -102,6 +106,7 @@ fun About(navController: NavController) {
                 ContributorRow(
                     name = it.name,
                     photoUrl = it.photoUrl,
+                    profileUrl = "https://github.com/${it.username}"
                 )
             }
             item {
@@ -109,9 +114,7 @@ fun About(navController: NavController) {
                     modifier = Modifier
                         .padding(top = 12.dp)
                         .clickable {
-                            val website = Uri.parse("https://github.com/LawnchairLauncher/lawnicons/graphs/contributors")
-                            val intent = Intent(Intent.ACTION_VIEW, website)
-                            context.startActivity(intent)
+                            navController.navigate(Destinations.CONTRIBUTORS)
                         }
                 ) {
                     Text(text = stringResource(id = R.string.see_all_contributors))

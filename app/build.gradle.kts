@@ -67,12 +67,15 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.0.0-alpha04")
     implementation("com.google.accompanist:accompanist-insets:${Versions.ACCOMPANIST}")
     implementation("com.google.accompanist:accompanist-systemuicontroller:${Versions.ACCOMPANIST}")
+    implementation("com.google.accompanist:accompanist-placeholder-material:${Versions.ACCOMPANIST}")
     implementation("com.google.dagger:hilt-android:2.40.5")
     kapt("com.google.dagger:hilt-compiler:2.40.5")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
     implementation("io.coil-kt:coil-compose:1.4.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }
 
 kotlin.sourceSets.all {

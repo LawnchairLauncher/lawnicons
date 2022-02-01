@@ -11,10 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import app.lawnchair.lawnicons.ui.destination.About
-import app.lawnchair.lawnicons.ui.destination.Acknowledgement
-import app.lawnchair.lawnicons.ui.destination.Acknowledgements
-import app.lawnchair.lawnicons.ui.destination.Home
+import app.lawnchair.lawnicons.ui.destination.*
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Destinations
 
@@ -55,6 +52,9 @@ fun Lawnicons() {
                     }
                     composable(route = Destinations.ABOUT) {
                         About(navController = navController)
+                    }
+                    composable(route = Destinations.CONTRIBUTORS) {
+                        Contributors(navController = navController)
                     }
                 }
             }

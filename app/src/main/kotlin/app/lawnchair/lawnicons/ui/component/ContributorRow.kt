@@ -21,12 +21,13 @@ import coil.compose.rememberImagePainter
 fun ContributorRow(
     name: String,
     photoUrl: String,
+    profileUrl: String,
 ) {
     val context = LocalContext.current
 
     ListItem(
         modifier = Modifier.clickable {
-            val website = Uri.parse(photoUrl)
+            val website = Uri.parse(profileUrl)
             val intent = Intent(Intent.ACTION_VIEW, website)
             context.startActivity(intent)
         },
@@ -43,6 +44,9 @@ fun ContributorRow(
             )
         }
     ) {
-        Text(text = name)
+        Text(
+            text = name,
+            maxLines = 1
+        )
     }
 }
