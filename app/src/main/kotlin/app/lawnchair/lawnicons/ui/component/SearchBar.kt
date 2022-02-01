@@ -43,7 +43,6 @@ fun SearchBar(
     val focusRequester = remember { FocusRequester() }
     val focusManager = LocalFocusManager.current
     var focused by remember { mutableStateOf(value = false) }
-    var dropdownMenuExpanded by remember { mutableStateOf(value = false) }
 
     SearchBarBase {
         Box(
@@ -85,25 +84,17 @@ fun SearchBar(
                     },
                 )
             } else {
-                ClickableIcon(
-                    imageVector = Icons.Rounded.MoreVert,
-                    size = 52.dp,
-                    onClick = { dropdownMenuExpanded = true },
-                )
-                DropdownMenu(
-                    modifier = Modifier.background(MaterialTheme.colorScheme.surfaceColorAtElevation(
-                        Elevation.Level2)),
-                    expanded = dropdownMenuExpanded,
-                    onDismissRequest = { dropdownMenuExpanded = false },
-                    offset = DpOffset(
-                        x = (16).dp,
-                        y = (-64).dp,
-                    )
-                ) {
-                    DropdownMenuItem(onClick = { navController.navigate(Destinations.ACKNOWLEDGEMENTS) }) {
+                OverflowMenu {
+                    DropdownMenuItem(onClick = {
+                        hideMenu()
+                        navController.navigate(Destinations.ACKNOWLEDGEMENTS)
+                    }) {
                         Text(text = stringResource(id = R.string.acknowledgements))
                     }
-                    DropdownMenuItem(onClick = { navController.navigate(Destinations.ABOUT) }) {
+                    DropdownMenuItem(onClick = {
+                        hideMenu()
+                        navController.navigate(Destinations.ABOUT)
+                    }) {
                         Text(text = stringResource(id = R.string.about))
                     }
                 }
