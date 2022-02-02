@@ -2,16 +2,13 @@ package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.gestures.detectTapGestures
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.input.pointer.pointerInput
@@ -26,8 +23,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.component.ClickableIcon
 import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.util.Elevation
+import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 import com.google.accompanist.insets.LocalWindowInsets
+import com.google.accompanist.placeholder.PlaceholderHighlight
+import com.google.accompanist.placeholder.material.fade
+import com.google.accompanist.placeholder.material.placeholder
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
@@ -73,27 +75,27 @@ fun Acknowledgement(
             targetState = notice,
             modifier = Modifier.padding(innerPadding),
         ) {
-            if (it != null) {
-                val uriHandler = LocalUriHandler.current
-                var textLayoutResult by remember { mutableStateOf<TextLayoutResult?>(null) }
+            Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
+                if (it != null) {
+                    val uriHandler = LocalUriHandler.current
+                    var textLayoutResult by remember { mutableStateOf<TextLayoutResult?>(null) }
 
-                val clickHandler = Modifier.pointerInput(Unit) {
-                    detectTapGestures { offset ->
-                        textLayoutResult?.let { layoutResult ->
-                            val position = layoutResult.getOffsetForPosition(offset)
-                            val annotation = it.getStringAnnotations(
-                                start = position,
-                                end = position,
-                            ).firstOrNull()
+                    val clickHandler = Modifier.pointerInput(Unit) {
+                        detectTapGestures { offset ->
+                            textLayoutResult?.let { layoutResult ->
+                                val position = layoutResult.getOffsetForPosition(offset)
+                                val annotation = it.getStringAnnotations(
+                                    start = position,
+                                    end = position,
+                                ).firstOrNull()
 
-                            if (annotation?.tag == "URL") {
-                                uriHandler.openUri(annotation.item)
+                                if (annotation?.tag == "URL") {
+                                    uriHandler.openUri(annotation.item)
+                                }
                             }
                         }
                     }
-                }
 
-                Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
                     Text(
                         text = it,
                         fontFamily = FontFamily.Monospace,
@@ -106,13 +108,24 @@ fun Acknowledgement(
                             textLayoutResult = result
                         },
                     )
-                }
-            } else {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier.fillMaxSize(),
-                ) {
-                    CircularProgressIndicator()
+                } else {
+                    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        repeat(2) {
+                            Box(
+                                modifier = Modifier
+                                    .padding(horizontal = 16.dp)
+                                    .fillMaxWidth()
+                                    .height(20.dp)
+                                    .placeholder(
+                                        visible = true,
+                                        highlight = PlaceholderHighlight.fade(),
+                                        color = MaterialTheme.colorScheme.surfaceColorAtElevation(
+                                            Elevation.Level2
+                                        ),
+                                    )
+                            )
+                        }
+                    }
                 }
             }
         }
