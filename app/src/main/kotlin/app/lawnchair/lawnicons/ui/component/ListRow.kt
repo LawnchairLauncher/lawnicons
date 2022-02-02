@@ -34,7 +34,7 @@ fun ListRow(
     val height = if (tall) 72.dp else 56.dp
     val dividerHeight = 1.dp
     val dividerHeightPx = with(LocalDensity.current) { dividerHeight.toPx() }
-    val dividerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(152.dp)
+    val dividerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(32.dp)
     val topCornerRadius = if (first) 16.dp else 0.dp
     val bottomCornerRadius = if (last) 16.dp else 0.dp
     val basePaddingPx = with(LocalDensity.current) { basePadding.toPx() }
