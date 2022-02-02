@@ -2,11 +2,9 @@ package app.lawnchair.lawnicons.ui.destination
 
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -29,7 +27,6 @@ import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
 import com.google.accompanist.insets.LocalWindowInsets
-import com.google.accompanist.insets.navigationBarsPadding
 import com.google.accompanist.insets.rememberInsetsPaddingValues
 
 @Composable
@@ -81,14 +78,20 @@ fun Contributors(
 fun ContributorList(contributors: List<GitHubContributor>) {
     LazyColumn(
         contentPadding = rememberInsetsPaddingValues(
-            LocalWindowInsets.current.navigationBars
+            insets = LocalWindowInsets.current.navigationBars,
+            additionalTop = 8.dp,
+            additionalBottom = 8.dp,
         )
     ) {
-        items(contributors) {
+        itemsIndexed(contributors) { index, it ->
             ContributorRow(
                 name = it.login,
                 photoUrl = it.avatarUrl,
-                profileUrl = it.htmlUrl
+                profileUrl = it.htmlUrl,
+                background = true,
+                first = index == 0,
+                last = index == contributors.lastIndex,
+                divider = index != contributors.lastIndex,
             )
         }
     }
@@ -96,13 +99,20 @@ fun ContributorList(contributors: List<GitHubContributor>) {
 
 @Composable
 fun ContributorListPlaceholder() {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .navigationBarsPadding()
+    val itemCount = 20
+    LazyColumn(
+        contentPadding = rememberInsetsPaddingValues(
+            insets = LocalWindowInsets.current.navigationBars,
+            additionalTop = 8.dp,
+            additionalBottom = 8.dp,
+        )
     ) {
-        for (i in 0 until 20) {
-            ContributorRowPlaceholder()
+        items(itemCount) {
+            ContributorRowPlaceholder(
+                first = it == 0,
+                last = it == itemCount - 1,
+                divider = it < itemCount - 1,
+            )
         }
     }
 }

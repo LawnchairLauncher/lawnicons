@@ -3,12 +3,9 @@ package app.lawnchair.lawnicons.ui.component
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.ListItem
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -21,16 +18,32 @@ import coil.compose.rememberImagePainter
 fun ContributorRow(
     name: String,
     photoUrl: String,
-    profileUrl: String,
+    profileUrl: String? = null,
+    socialUrl: String? = null,
+    description: String? = null,
+    divider: Boolean = true,
+    background: Boolean = false,
+    first: Boolean = false,
+    last: Boolean = false,
 ) {
     val context = LocalContext.current
-
-    ListItem(
-        modifier = Modifier.clickable {
-            val website = Uri.parse(profileUrl)
+    val url = profileUrl ?: socialUrl
+    val onClick = if (url != null) {
+        {
+            val website = Uri.parse(url)
             val intent = Intent(Intent.ACTION_VIEW, website)
             context.startActivity(intent)
-        },
+        }
+    } else null
+
+    SimpleListRow(
+        background = background,
+        first = first,
+        last = last,
+        divider = divider,
+        label = name,
+        description = description,
+        onClick = onClick,
         icon = {
             Image(
                 contentDescription = name,
@@ -39,14 +52,9 @@ fun ContributorRow(
                     builder = { crossfade(enable = true) },
                 ),
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(32.dp)
                     .clip(CircleShape),
             )
-        }
-    ) {
-        Text(
-            text = name,
-            maxLines = 1
-        )
-    }
+        },
+    )
 }

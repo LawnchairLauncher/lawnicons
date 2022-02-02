@@ -7,9 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material.ContentAlpha
-import androidx.compose.material.ListItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.*
@@ -25,9 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.component.ClickableIcon
-import app.lawnchair.lawnicons.ui.component.ContributorRow
-import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.component.*
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.util.appIcon
@@ -44,6 +40,21 @@ private val coreContributors = listOf(
         username = "patrykmichalik",
         photoUrl = "https://raw.githubusercontent.com/patrykmichalik/brand/master/logo-on-indigo.png",
         socialUrl = "https://patrykmichalik.com",
+    ),
+)
+
+private val specialThanks = listOf(
+    Contributor(
+        name = "Eatos",
+        photoUrl = "https://avatars.githubusercontent.com/u/52837599",
+        socialUrl = "https://twitter.com/eatosapps",
+        descriptionRes = R.string.special_thanks_icon,
+    ),
+    Contributor(
+        name = "Rik Koedoot",
+        photoUrl = "https://avatars.githubusercontent.com/u/29402532",
+        username = "rikkoedoot",
+        descriptionRes = R.string.special_thanks_name,
     ),
 )
 
@@ -76,7 +87,10 @@ fun About(navController: NavController) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 8.dp),
+                        .padding(
+                            top = 8.dp,
+                            bottom = 32.dp,
+                        ),
                 ) {
                     Image(
                         bitmap = context.appIcon().asImageBitmap(),
@@ -97,42 +111,43 @@ fun About(navController: NavController) {
                 }
             }
             item {
-                SectionLabel(
-                    text = stringResource(id = R.string.core_contributors),
-                    modifier = Modifier.padding(top = 32.dp),
-                )
-            }
-            items(items = coreContributors) {
-                ContributorRow(
-                    name = it.name,
-                    photoUrl = it.photoUrl,
-                    profileUrl = "https://github.com/${it.username}"
-                )
+                Card(label = stringResource(id = R.string.core_contributors)) {
+                    coreContributors.mapIndexed { index, it ->
+                        ContributorRow(
+                            name = it.name,
+                            photoUrl = it.photoUrl,
+                            profileUrl = "https://github.com/${it.username}",
+                            divider = index != coreContributors.lastIndex,
+                        )
+                    }
+                }
             }
             item {
-                ListItem(
-                    modifier = Modifier
-                        .padding(top = 12.dp)
-                        .clickable {
-                            navController.navigate(Destinations.CONTRIBUTORS)
-                        }
+                Card(modifier = Modifier.padding(top = 16.dp)) {
+                    SimpleListRow(
+                        onClick = { navController.navigate(Destinations.CONTRIBUTORS) },
+                        label = stringResource(id = R.string.see_all_contributors),
+                        divider = false,
+                    )
+                }
+            }
+            item {
+                Card(
+                    label = stringResource(id = R.string.special_thanks),
+                    modifier = Modifier.padding(top = 16.dp),
                 ) {
-                    Text(text = stringResource(id = R.string.see_all_contributors))
+                    specialThanks.mapIndexed { index, it ->
+                        ContributorRow(
+                            name = it.name,
+                            photoUrl = it.photoUrl,
+                            profileUrl = it.username?.let { "https://github.com/${it}" },
+                            description = it.descriptionRes?.let { stringResource(id = it) },
+                            divider = index != specialThanks.lastIndex,
+                            socialUrl = it.socialUrl,
+                        )
+                    }
                 }
             }
         }
     }
-}
-
-@Composable
-private fun SectionLabel(
-    text: String,
-    modifier: Modifier = Modifier,
-) {
-    Text(
-        text = text,
-        style = MaterialTheme.typography.titleSmall,
-        color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(start = 16.dp, bottom = 8.dp),
-    )
 }
