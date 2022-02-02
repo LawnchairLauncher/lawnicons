@@ -39,7 +39,6 @@ fun Acknowledgements(
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
     val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
-    val density = LocalDensity.current
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
