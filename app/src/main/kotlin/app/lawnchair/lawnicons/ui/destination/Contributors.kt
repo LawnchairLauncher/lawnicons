@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons.ui.destination
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -66,10 +67,12 @@ fun Contributors(
             )
         }
     ) {
-        when (uiState) {
-            is ContributorsUiState.Success -> ContributorList(contributors = uiState.contributors)
-            is ContributorsUiState.Loading -> ContributorListPlaceholder()
-            is ContributorsUiState.Error -> ContributorListError(onBack = onBack)
+        Crossfade(targetState = uiState) {
+            when (it) {
+                is ContributorsUiState.Success -> ContributorList(contributors = it.contributors)
+                is ContributorsUiState.Loading -> ContributorListPlaceholder()
+                is ContributorsUiState.Error -> ContributorListError(onBack = onBack)
+            }
         }
     }
 }
