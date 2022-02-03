@@ -1,7 +1,9 @@
 package app.lawnchair.lawnicons.model
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class GitHubContributor(
     val id: Int,
     val login: String,
