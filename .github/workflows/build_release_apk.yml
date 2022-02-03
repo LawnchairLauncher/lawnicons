@@ -7,7 +7,7 @@ on:
       - main-wip
 
 jobs:
-  build-debug-apk:
+  build-release-apk:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
