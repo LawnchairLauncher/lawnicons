@@ -1,10 +1,10 @@
-name: Build debug APK
+name: Build release APK
 
 on:
   workflow_dispatch:
   push:
     branches:
-      - develop
+      - main-wip
 
 jobs:
   build-debug-apk:
@@ -29,31 +29,31 @@ jobs:
           java-version: 11
       - name: Grant execution permission to Gradle Wrapper
         run: chmod +x gradlew
-      - name: Build debug APK
-        run: ./gradlew assembleDebug
-      - name: Sign debug APK
+      - name: Build release APK
+        run: ./gradlew assembleRelease
+      - name: Sign release APK
         uses: r0adkll/sign-android-release@v1
-        id: sign-debug-apk
+        id: sign-release-apk
         with:
-          releaseDirectory: app/build/outputs/apk/debug
+          releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.KEYSTORE }}
           alias: ${{ secrets.KEY_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
           keyPassword: ${{ secrets.KEY_PASSWORD }}
       - name: Rename artifact
         run: |
-          oldArtifactPath="${{ steps.sign-debug-apk.outputs.signedReleaseFile }}"
+          oldArtifactPath="${{ steps.sign-release-apk.outputs.signedReleaseFile }}"
           newArtifactPath="${oldArtifactPath%'-signed.apk'}.apk"
           echo "ARTIFACT_PATH=$newArtifactPath" >> $GITHUB_ENV
           mv "$oldArtifactPath" "$newArtifactPath"
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Debug APK
+          name: Release APK
           path: ${{ env.ARTIFACT_PATH }}
   send-notifications:
     runs-on: ubuntu-latest
-    needs: build-debug-apk
+    needs: build-release-apk
     steps:
       - name: Check out repository
         uses: actions/checkout@v2.3.4
@@ -71,8 +71,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: Debug APK
-          path: artifacts/debug-apk
+          name: Release APK
+          path: artifacts/release-apk
       - name: Send notifications
         run: python send_notifications.py
         env:
@@ -80,5 +80,5 @@ jobs:
           TELEGRAM_CI_BOT_TOKEN: ${{ secrets.TELEGRAM_CI_BOT_TOKEN }}
           TELEGRAM_CI_CHANNEL_ID: ${{ secrets.TELEGRAM_CI_CHANNEL_ID }}
           TELEGRAM_TEAM_GROUP_ID: ${{ secrets.TELEGRAM_TEAM_GROUP_ID }}
-          ARTIFACT_DIRECTORY: artifacts/debug-apk
+          ARTIFACT_DIRECTORY: artifacts/release-apk
           GITHUB_REF: ${{ github.ref }}
