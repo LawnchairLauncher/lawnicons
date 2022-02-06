@@ -29,10 +29,10 @@
     <icon drawable="@drawable/camera" package="com.android.mgc" name="Camera" />
     <icon drawable="@drawable/camera" package="com.android.MGC.not.stable" name="Camera" />
     <icon drawable="@drawable/camera" package="com.google.android.apps.cameralite" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCameraEng" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera.Cameight" name="Camera" />
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera.Urnyx" name="Camera" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCameraEng" name="Camera" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera" name="Camera" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera.Cameight" name="Camera" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera.Urnyx" name="Camera" />
     <icon drawable="@drawable/camera" package="com.GoogleCamera.mwp83" name="Camera" />
     <icon drawable="@drawable/camera" package="com.honor.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.huawei.camera" name="Camera" />
@@ -43,7 +43,7 @@
     <icon drawable="@drawable/camera" package="com.sec.android.app.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.transsion.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="org.codeaurora.qcamera3" name="Camera" />
-    <icon drawable="@drawable/camera" package="org.codeaurora.snapcam" name="Camera" />
+    <icon drawable="@drawable/gcam" package="org.codeaurora.snapcam" name="Camera" />
     <icon drawable="@drawable/camera" package="org.lineageos.snap" name="Camera" />
     <icon drawable="@drawable/catogram" package="ua.itaysonlab.messenger" name="Catogram" />
     <icon drawable="@drawable/citymapper" package="com.citymapper.app.release" name="Citymapper" />
@@ -59,14 +59,14 @@
     <icon drawable="@drawable/dashlane" package="com.dashlane" name="Dashlane" />
     <icon drawable="@drawable/deviantart" package="com.deviantart.android.damobile" name="DeviantArt" />
     <icon drawable="@drawable/dialer" package="com.android.contacts.activities.DialtactsActivity" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.dialer" name="Phone" />
+    <icon drawable="@drawable/phone_aosp" package="com.android.dialer" name="Phone" />
     <icon drawable="@drawable/dialer" package="com.android.incallui" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.android.phone" name="Phone" />
+    <icon drawable="@drawable/phone_aosp" package="com.android.phone" name="Phone" />
     <icon drawable="@drawable/dialer" package="com.google.android.dialer" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.oneplus.dialer" name="Phone" />
+    <icon drawable="@drawable/phone_aosp" package="com.oneplus.dialer" name="Phone" />
     <icon drawable="@drawable/dialer" package="com.samsung.android.dialer" name="Phone" />
     <icon drawable="@drawable/dialer" package="com.sh.smart.caller" name="Phone" />
-    <icon drawable="@drawable/dialer" package="com.truecaller" name="Phone" />
+    <icon drawable="@drawable/phone_aosp" package="com.truecaller" name="Phone" />
     <icon drawable="@drawable/digital_wellbeing" package="com.google.android.apps.wellbeing" name="Digital Wellbeing" />
     <icon drawable="@drawable/discord" package="com.discord" name="Discord" />
     <icon drawable="@drawable/drivedroid" package="com.softwarebakery.drivedroid" name="DriveDroid" />
@@ -151,8 +151,8 @@
     <icon drawable="@drawable/maps" package="com.google.android.apps.maps" name="Google Maps" />
     <icon drawable="@drawable/marindeck" package="online.hisubway.marindeck" name="MarinDeck" />
     <icon drawable="@drawable/mbank" package="pl.mbank" name="mBank" />
-    <icon drawable="@drawable/messages" package="com.android.mms" name="Messages" />
-    <icon drawable="@drawable/messages" package="com.android.messaging" name="Messages" />
+    <icon drawable="@drawable/messages_aosp" package="com.android.mms" name="Messages" />
+    <icon drawable="@drawable/messages_aosp" package="com.android.messaging" name="Messages" />
     <icon drawable="@drawable/messages" package="com.google.android.apps.messaging" name="Messages" />
     <icon drawable="@drawable/messages" package="com.samsung.android.messaging" name="Messages" />
     <icon drawable="@drawable/messenger" package="com.facebook.mlite" name="Messenger" />
@@ -341,4 +341,14 @@
     <icon drawable="@drawable/ytstudio" package="com.google.android.apps.youtube.creator" name="YouTube Studio" />
     <icon drawable="@drawable/stremio" package="com.stremio.one" name="Stremio" />
     <icon drawable="@drawable/pixel_wallpapers" package="dev.wacko1805.pixel.wallpapers" name="Pixel Walls" />
+	<icon drawable="@drawable/nightwaveplaza" package="one.plaza.nightwaveplaza" name="Nightwave Plaza" />
+	<icon drawable="@drawable/unicode_pad" package="jp.ddo.hotmist.unicodepad" name="Unicode Pad" />
+	<icon drawable="@drawable/photon" package="com.particlesdevs.photoncamera" name="Photon" />
+	<icon drawable="@drawable/overlayer" package="de.dertyp7214.overlayer" name="Overlayer" />
+    <icon drawable="@drawable/razer_camera" package="com.razer.camera" name="Razer Camera" />
+    <icon drawable="@drawable/razer_camera" package="com.razerzone.camera" name="Razer Camera" />
+    <icon drawable="@drawable/camera_moto" package="com.motorola.camera2" name="Moto Camera" />
+    <icon drawable="@drawable/camera_moto" package="com.motorola.camera" name="Moto Camera" />
+    <icon drawable="@drawable/briar" package="org.briarproject.briar.android" name="briar" />
+    <icon drawable="@drawable/session" package="network.loki.messenger" name="Session" />
 </icons>
