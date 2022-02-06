@@ -128,7 +128,7 @@ fun ContributorListError(
     SideEffect {
         onBack()
         // we might be rate-limited, open the web ui instead
-        val website = Uri.parse("https://github.com/RadekBledowski/lawnicons/graphs/contributors")
+        val website = Uri.parse("https://github.com/RadekBledowski/rkicons/graphs/contributors")
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
     }
