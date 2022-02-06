@@ -44,15 +44,15 @@ private val coreContributors = listOf(
 
 private val specialThanks = listOf(
     Contributor(
-        name = "Eatos",
-        photoUrl = "https://avatars.githubusercontent.com/u/52837599",
-        socialUrl = "https://twitter.com/eatosapps",
+        name = "RKBDI",
+        photoUrl = "https://avatars.githubusercontent.com/u/22264125?v=4",
+        socialUrl = "https://twitter.com/rkbdi",
         descriptionRes = R.string.special_thanks_icon,
     ),
     Contributor(
-        name = "Rik Koedoot",
-        photoUrl = "https://avatars.githubusercontent.com/u/29402532",
-        username = "rikkoedoot",
+        name = "Radek",
+        photoUrl = "https://avatars.githubusercontent.com/u/22264125?v=4",
+        username = "RadekBledowski",
         descriptionRes = R.string.special_thanks_name,
     ),
 )
