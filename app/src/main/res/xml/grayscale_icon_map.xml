@@ -29,10 +29,10 @@
     <icon drawable="@drawable/camera" package="com.android.mgc" name="Camera" />
     <icon drawable="@drawable/camera" package="com.android.MGC.not.stable" name="Camera" />
     <icon drawable="@drawable/camera" package="com.google.android.apps.cameralite" name="Camera" />
-    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCameraEng" name="Camera" />
-    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera" name="Camera" />
-    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera.Cameight" name="Camera" />
-    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera.Urnyx" name="Camera" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCameraEng" name="gcam" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera" name="gcam" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera.Cameight" name="gcam" />
+    <icon drawable="@drawable/gcam" package="com.google.android.GoogleCamera.Urnyx" name="gcam" />
     <icon drawable="@drawable/camera" package="com.GoogleCamera.mwp83" name="Camera" />
     <icon drawable="@drawable/camera" package="com.honor.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.huawei.camera" name="Camera" />
@@ -43,7 +43,7 @@
     <icon drawable="@drawable/camera" package="com.sec.android.app.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="com.transsion.camera" name="Camera" />
     <icon drawable="@drawable/camera" package="org.codeaurora.qcamera3" name="Camera" />
-    <icon drawable="@drawable/gcam" package="org.codeaurora.snapcam" name="Camera" />
+    <icon drawable="@drawable/gcam" package="org.codeaurora.snapcam" name="gcam" />
     <icon drawable="@drawable/camera" package="org.lineageos.snap" name="Camera" />
     <icon drawable="@drawable/catogram" package="ua.itaysonlab.messenger" name="Catogram" />
     <icon drawable="@drawable/citymapper" package="com.citymapper.app.release" name="Citymapper" />
@@ -309,7 +309,6 @@
     <icon drawable="@drawable/cpu_z" package="com.cpuid.cpu_z" name="CPU Z" />
     <icon drawable="@drawable/imdb" package="com.imdb.mobile" name="IMDb" />
     <icon drawable="@drawable/files" package="com.oneplus.filemanager" name="Files" />
-    <icon drawable="@drawable/twitch" package="tv.twitch.android.app" name="Twitch" />
     <icon drawable="@drawable/twitch" package="tv.twitch.bttvandroid.app" name="Twitch" />
     <icon drawable="@drawable/twitter" package="com.twitter.android.lite" name="Twitter" />
     <icon drawable="@drawable/twitter" package="com.twitter.android" name="Twitter" />
@@ -349,7 +348,19 @@
     <icon drawable="@drawable/razer_camera" package="com.razerzone.camera" name="Razer Camera" />
     <icon drawable="@drawable/camera_moto" package="com.motorola.camera2" name="Moto Camera" />
     <icon drawable="@drawable/camera_moto" package="com.motorola.camera" name="Moto Camera" />
+    <icon drawable="@drawable/nokia_camera" package="com.hmdglobal.camera2" name="Nokia Camera" />
+    <icon drawable="@drawable/nokia_camera" package="com.hmdglobal.app.camera" name="Nokia Camera" />
+    <icon drawable="@drawable/nokia_camera" package="com.evenwell.camera2" name="Nokia Camera" />
     <icon drawable="@drawable/briar" package="org.briarproject.briar.android" name="briar" />
     <icon drawable="@drawable/session" package="network.loki.messenger" name="Session" />
-    <icon drawable="@drawable/lawncons" package="app.lawnchair.lawnicons" name="lawncons" />
+    <icon drawable="@drawable/lawncons" package="app.lawnchair.lawnicons" name="RKicons" />
+    <icon drawable="@drawable/olx" package="com.schibsted.bomnegocio.androidApp" name="OLX" />
+    <icon drawable="@drawable/olx" package="pl.tablica" name="OLX" />
+    <icon drawable="@drawable/xiaomi_remote" package="com.duokan.phone.remotecontroller" name="Mi Remote" />
+    <icon drawable="@drawable/xiaomi_fit" package="com.xiaomi.hm.health" name="Mi fit" />
+    <icon drawable="@drawable/pixel_heroes" package="com.headupgames.pixelheroes" name="Session" />
+    <icon drawable="@drawable/aliexpress" package="com.alibaba.aliexpresshd" name="aliexpress" />
+    <icon drawable="@drawable/kiwi" package="com.kiwibrowser.browser" name="Kiwi Browser" />
+    <icon drawable="@drawable/ninegag" package="com.ninegag.android.app" name="9gag" />
+    <icon drawable="@drawable/chromium" package="org.chromium.chrome" name="Chromium" />
 </icons>
