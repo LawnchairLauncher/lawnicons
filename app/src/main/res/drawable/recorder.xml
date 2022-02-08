@@ -1,55 +1,18 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="192dp"
     android:height="192dp"
-    android:viewportWidth="192"
-    android:viewportHeight="192">
-  <path
-      android:pathData="M72,26L72,166"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
-  <path
-      android:pathData="M48,61L48,131"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
-  <path
-      android:pathData="M96,61L96,131"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
-  <path
-      android:pathData="M144,61L144,131"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
-  <path
-      android:pathData="M24,88L24,112"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
-  <path
-      android:pathData="M120,88L120,112"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
-  <path
-      android:pathData="M168,88L168,112"
-      android:strokeLineJoin="round"
-      android:strokeWidth="12"
-      android:fillColor="#00000000"
-      android:strokeColor="#000000"
-      android:strokeLineCap="round"/>
+    android:viewportWidth="144"
+    android:viewportHeight="144">
+    <path
+        android:fillColor="#FF000000"
+        android:fillAlpha="1"
+        android:pathData="M14.06 52.89c-0.41-5.8 4.98-11.32 10.83-10.83 23.63-0.02 47.27 0.06 70.91-0.04 0.06 21.99 0.06 43.97 0 65.96-23.62-0.11-47.24-0.02-70.86-0.04-5.88 0.42-11.37-5.06-10.89-10.94 0.03-14.71 0.03-29.41 0.01-44.11m13.54 6.69c-0.05 10.27-0.05 20.54-0.01 30.81l4.09 0.16c1.31-3.88 0.16-8.09 0.69-12.1 0.97 0.26 2.46-0.02 2.85 1.21 0.94 3.56 1.6 7.18 2.51 10.74l5 0.03c-1.05-4.48-2.45-8.86-3.43-13.35 3.65-3.52 2.34-9.07 1.98-13.54-2.53-5.21-9-3.8-13.68-3.96m18.9 0.02c-0.02 10.27-0.02 20.53 0 30.8 4.39 0.02 8.78 0 13.17 0.04l0.05-4.71c-2.55 0-5.1 0.02-7.65 0.1-0.22-2.64-0.49-5.27-0.79-7.9-0.09 2.71-0.19 5.43 0.26 8.12l-0.67 0.05c-0.04-2.84-0.06-5.68-0.07-8.53 2.17-0.07 4.34-0.12 6.52-0.17l0.09-4.13c-1.96-0.05-3.93-0.07-5.9-0.07-0.73-2.81-1.32-6.11-0.23-8.82 2.81-0.26 5.65-0.11 8.47-0.12l-0.09-4.7c-4.39 0.04-8.77 0.02-13.16 0.04m21.54 0.21c-2.51 0.98-5.22 3.21-4.82 6.21 0.02 6.3-0.07 12.61 0.04 18.92-0.18 2.75 2.78 3.92 4.49 5.51 1.48-0.02 2.95-0.02 4.42 0 2.02-1.39 4.36-2.86 4.92-5.44 0.26-1.94 0.15-3.89 0.15-5.83l-4.6-0.07c-0.02 1.59 0.04 3.19-0.15 4.77-0.01 2.24-3.29 2.38-4.66 1.31-0.89-1.92-0.53-4.12-0.62-6.16 0.21-4.81-0.38-9.67 0.46-14.44 1.46-0.15 3.16-0.77 4.41 0.36 0.82 1.68 0.43 3.64 0.59 5.44l4.57-0.02c-0.01-1.8 0.09-3.6-0.14-5.38-1.05-3.71-5.24-6.49-9.06-5.18m12.42 25.9l0.03 4.73h4.22c0.05-1.54 0.09-3.09 0.16-4.64l-4.41-0.09Z"/>
+    <path
+        android:fillColor="#FF000000"
+        android:fillAlpha="1"
+        android:pathData="M122.52 48.53c2.17-1.56 4.96-0.89 7.44-1.01-0.04 18.08-0.07 36.17 0.01 54.25-3.09 0.16-6.39 0.28-8.93-1.8-6.43-4.09-13.17-7.66-19.53-11.86 0.1-8.66-0.01-17.31 0.04-25.96-0.21-1.3 1.23-1.76 2.04-2.4 6.31-3.74 12.68-7.38 18.93-11.22Z"/>
+    <path
+        android:fillColor="#FF000000"
+        android:fillAlpha="1"
+        android:pathData="M32.3 64.09c1.68 0.3 4.16-0.26 4.85 1.82 0.21 2.13 0.12 4.27 0.14 6.41l-1.34 1.92-3.56 0.2c-0.22-3.44-0.17-6.9-0.09-10.35Z"/>
 </vector>
