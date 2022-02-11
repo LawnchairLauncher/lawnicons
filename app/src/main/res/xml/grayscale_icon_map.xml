@@ -18,6 +18,7 @@
     <icon drawable="@drawable/bitwarden" package="com.x8bit.bitwarden" name="Bitwarden" />
     <icon drawable="@drawable/boom_and_megaboom" package="com.logitech.ueboom" name="BOOM &amp; MEGABOOM" />
     <icon drawable="@drawable/boost_for_reddit" package="com.rubenmayayo.reddit" name="Boost for Reddit" />
+    <icon drawable="@drawable/bose_music" package="com.bose.bosemusic" name="Bose Music" />
     <icon drawable="@drawable/brave_browser" package="com.brave.browser" name="Brave Browser" />
     <icon drawable="@drawable/bromite" package="org.bromite.bromite" name="Bromite" />
     <icon drawable="@drawable/browser" package="org.droidtr.jelly" name="Browser" />
@@ -82,6 +83,7 @@
     <icon drawable="@drawable/dialer" package="com.truecaller" name="Phone" />
     <icon drawable="@drawable/digital_wellbeing" package="com.google.android.apps.wellbeing" name="Digital Wellbeing" />
     <icon drawable="@drawable/discord" package="com.discord" name="Discord" />
+    <icon drawable="@drawable/discord" package="com.aliucord" name="Aliucord" />
     <icon drawable="@drawable/disneyplus" package="com.disney.disneyplus" name="Disney+" />
     <icon drawable="@drawable/drivedroid" package="com.softwarebakery.drivedroid" name="DriveDroid" />
     <icon drawable="@drawable/duckduckgo" package="com.duckduckgo.mobile.android" name="DuckDuckGo" />
@@ -96,6 +98,7 @@
     <icon drawable="@drawable/files" package="com.android.documentsui" name="Files" />
     <icon drawable="@drawable/files" package="com.coloros.files" name="Files" />
     <icon drawable="@drawable/files" package="com.google.android.documentsui" name="Files" />
+    <icon drawable="@drawable/files" package="com.huawei.hidisk" name="Files" />
     <icon drawable="@drawable/files" package="com.oneplus.filemanager" name="Files" />
     <icon drawable="@drawable/files" package="com.sec.android.app.myfiles" name="Files" />
     <icon drawable="@drawable/files_by_google" package="com.google.android.apps.nbu.files" name="Files by Google" />
@@ -105,11 +108,13 @@
     <icon drawable="@drawable/firefox_beta" package="org.mozilla.firefox_beta" name="Firefox Beta" />
     <icon drawable="@drawable/focus_todo" package="com.superelement.pomodoro" name="Focus To-Do" />
     <icon drawable="@drawable/gallery" package="com.android.gallery3d" name="Gallery" />
+    <icon drawable="@drawable/gallery" package="com.huawei.photos" name="Gallery" />
     <icon drawable="@drawable/gallery" package="com.miui.gallery" name="Gallery" />
     <icon drawable="@drawable/gallery" package="com.oneplus.gallery" name="Gallery" />
     <icon drawable="@drawable/gallery" package="com.oppo.gallery3d" name="Gallery" />
     <icon drawable="@drawable/gallery" package="com.sec.android.gallery3d" name="Gallery" />
     <icon drawable="@drawable/gallery_go" package="com.google.android.apps.photosgo" name="Gallery Go" />
+    <icon drawable="@drawable/gboard" package="com.google.android.inputmethod.latin" name="Gboard" />
     <icon drawable="@drawable/gcash" package="com.globe.gcash.android" name="GCash" />
     <icon drawable="@drawable/genius" package="com.genius.android" name="Genius" />
     <icon drawable="@drawable/github" package="com.github.android" name="GitHub" />
@@ -138,6 +143,7 @@
     <icon drawable="@drawable/google_news" package="com.google.android.apps.magazines" name="Google News" />
     <icon drawable="@drawable/google_one" package="com.google.android.apps.subscriptions.red" name="Google One" />
     <icon drawable="@drawable/google_pay" package="com.google.android.apps.nbu.paisa.user" name="Google Pay" />
+    <icon drawable="@drawable/google_pay" package="com.google.android.apps.walletnfcrel" name="Google Pay" />
     <icon drawable="@drawable/google_photos" package="com.google.android.apps.photos" name="Google Photos" />
     <icon drawable="@drawable/google_play_books" package="com.google.android.apps.books" name="Google Play Books" />
     <icon drawable="@drawable/google_play_games" package="com.google.android.play.games" name="Google Play Games" />
@@ -160,6 +166,7 @@
     <icon drawable="@drawable/instagram" package="com.instagram.android" name="Instagram" />
     <icon drawable="@drawable/instagram" package="com.instagram.lite" name="Instagram" />
     <icon drawable="@drawable/instapaper" package="com.instapaper.android" name="Instapaper" />
+    <icon drawable="@drawable/inware" package="com.evo.inware" name="Inware" />
     <icon drawable="@drawable/jellyfin" package="org.jellyfin.mobile" name="Jellyfin" />
     <icon drawable="@drawable/juicessh" package="com.sonelli.juicessh" name="JuiceSSH" />
     <icon drawable="@drawable/kakaotalk" package="com.kakao.talk" name="KakaoTalk" />
@@ -175,6 +182,7 @@
     <icon drawable="@drawable/maps" package="com.google.android.apps.maps" name="Google Maps" />
     <icon drawable="@drawable/maps" package="com.google.android.apps.mapslite" name="Google Maps" />
     <icon drawable="@drawable/marindeck" package="online.hisubway.marindeck" name="MarinDeck" />
+    <icon drawable="@drawable/material_catalog" package="io.material.catalog" name="Material Catalog" />
     <icon drawable="@drawable/mbank" package="pl.mbank" name="mBank" />
     <icon drawable="@drawable/mega" package="mega.privacy.android.app" name="Mega" />
     <icon drawable="@drawable/messages" package="com.android.messaging" name="Messages" />
@@ -212,6 +220,7 @@
     <icon drawable="@drawable/nekogram" package="tw.nekomimi.nekogram" name="Nekogram" />
     <icon drawable="@drawable/netflix" package="com.netflix.mediaclient" name="Netflix" />
     <icon drawable="@drawable/newpipe" package="org.schabi.newpipe" name="NewPipe" />
+    <icon drawable="@drawable/newpipe" package="org.polymorphicshade.newpipe" name="NewPipe" />
     <icon drawable="@drawable/nextcloud" package="com.nextcloud.client" name="Nextcloud" />
     <icon drawable="@drawable/ns" package="nl.ns.android.activity" name="NS" />
     <icon drawable="@drawable/onedotonedotonedotone" package="com.cloudflare.onedotonedotonedotone" name="1.1.1.1" />
@@ -287,8 +296,8 @@
     <icon drawable="@drawable/telegram" package="org.telegram.messenger" name="Telegram" />
     <icon drawable="@drawable/telegram" package="org.telegram.messenger.beta" name="Telegram" />
     <icon drawable="@drawable/telegram" package="org.telegram.messenger.web" name="Telegram" />
-    <icon drawable="@drawable/telegram_x" package="org.thunderdog.challegram" name="Telegram X" />
-    <icon drawable="@drawable/telegram_x" package="org.thunderdog.challegramtwo" name="Telegram X" />
+    <icon drawable="@drawable/telegram" package="org.thunderdog.challegram" name="Telegram X" />
+    <icon drawable="@drawable/telegram" package="org.thunderdog.challegramtwo" name="Telegram X" />
     <icon drawable="@drawable/termux" package="com.termux" name="Termux" />
     <icon drawable="@drawable/theathletic" package="com.theathletic" name="The Athletic" />
     <icon drawable="@drawable/tidal" package="com.aspiro.tidal" name="Tidal" />
@@ -302,7 +311,7 @@
     <icon drawable="@drawable/twitch" package="tv.twitchmod.android.app" name="TwitchMod" />
     <icon drawable="@drawable/twitter" package="com.twitter.android" name="Twitter" />
     <icon drawable="@drawable/twitter" package="com.twitter.android.lite" name="Twitter" />
-    <icon drawable="@drawable/ungoogled_chromium" package="org.ungoogled.chromium.stable" name="ungoogled-chromium" />
+    <icon drawable="@drawable/google_chrome" package="org.ungoogled.chromium.stable" name="Ungoogled Chromium" />
     <icon drawable="@drawable/vanced_youtube_music" package="com.vanced.android.apps.youtube.music" name="Vanced YouTube Music" />
     <icon drawable="@drawable/via_browser" package="mark.via.gp" name="Via Browser" />
     <icon drawable="@drawable/viber" package="com.viber.voip" name="Viber" />
