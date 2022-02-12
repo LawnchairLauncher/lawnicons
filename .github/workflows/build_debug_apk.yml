@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - develop
-      - main-wip
 
 jobs:
   build-debug-apk:
