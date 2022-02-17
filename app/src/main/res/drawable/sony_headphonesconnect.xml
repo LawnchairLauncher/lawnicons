@@ -1,11 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+  <group>
+    <clip-path
+        android:pathData="M0,0h192v192h-192z"/>
     <path
+        android:pathData="M59,35.914C23.606,56.349 11.48,101.606 31.914,137C36.489,144.924 42.308,151.681 48.981,157.168L65.699,147.517C69.525,145.307 70.836,140.415 68.627,136.588L50.627,105.411C48.418,101.585 43.525,100.274 39.699,102.483L23.244,111.983"
+        android:strokeLineJoin="round"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M133,35.914C168.394,56.349 180.52,101.606 160.086,137C155.511,144.924 149.692,151.681 143.019,157.168L126.301,147.517C122.475,145.307 121.164,140.415 123.373,136.588L141.373,105.411C143.582,101.585 148.475,100.274 152.301,102.483L168.756,111.983"
+        android:strokeLineJoin="round"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M47.834,52C60.146,39.646 77.18,32 96,32C114.82,32 131.854,39.646 144.166,52H160.006C145.411,32.569 122.173,20 96,20C69.827,20 46.589,32.569 31.994,52H47.834Z"
         android:fillColor="#000000"
-        android:pathData="M12,2.15986 A9.99969,9.99969,0,0,0,5.488,19.7501 L7.87785,18.3362 A0.58463,0.58463,0,0,0,8.08312,17.5355 L5.37035,12.9499 A0.58411,0.58411,0,0,0,4.56966,12.7441 L3.50359,13.3747 A8.68467,8.68467,0,0,1,3.41853,12.1599 A8.58147,8.58147,0,0,1,20.5815,12.1599 A8.68467,8.68467,0,0,1,20.4964,13.3747 L19.4303,12.7441 A0.58411,0.58411,0,0,0,18.6296,12.9499 L15.9169,17.5355 A0.58463,0.58463,0,0,0,16.1221,18.3362 L18.512,19.7501 A10.00082,10.00082,0,0,0,12,2.15986 Z" />
+        android:fillType="evenOdd"/>
+  </group>
 </vector>
