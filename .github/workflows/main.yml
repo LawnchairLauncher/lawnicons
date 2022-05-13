@@ -1,2 +1,28 @@
-- name: Create Release with Debug APK
-  uses: underwindfall/create-release-with-debugapk@v2.0.0
+name: Build & Publish Debug APK
+
+on:
+ push:
+  branches:
+   - master
+   
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - name: Make Gradle executable
+      run: chmod +x ./gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
+    - name: Build Debug APK
+      run: ./gradlew assembleDebug
+    - name: Releasing using Hub
+      uses: ShaunLWM/action-release-debugapk@master
+      env:
+       GITHUB_TOKEN: ${{ secrets.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 }}
+       APP_FOLDER: app
+       RELEASE_TITLE: New Build
