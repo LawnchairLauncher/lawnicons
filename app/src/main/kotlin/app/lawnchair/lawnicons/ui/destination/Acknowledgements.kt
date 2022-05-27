@@ -1,6 +1,8 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -26,6 +28,7 @@ import app.lawnchair.lawnicons.ui.component.ClickableIcon
 import app.lawnchair.lawnicons.ui.component.SimpleListRow
 import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Destinations
+import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel
 import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.insets.rememberInsetsPaddingValues
@@ -61,11 +64,10 @@ fun Acknowledgements(
             modifier = Modifier.padding(innerPadding)
         ) { libraries ->
             LazyColumn(
-                contentPadding = rememberInsetsPaddingValues(
-                    insets = LocalWindowInsets.current.navigationBars,
+                contentPadding = WindowInsets.navigationBars.toPaddingValues(
                     additionalTop = 8.dp,
                     additionalBottom = 8.dp,
-                )
+                ),
             ) {
                 if (libraries != null) {
                     itemsIndexed(libraries) { index, it ->

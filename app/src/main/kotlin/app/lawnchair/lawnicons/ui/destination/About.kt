@@ -9,7 +9,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -22,7 +26,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.component.*
+import app.lawnchair.lawnicons.ui.component.Card
+import app.lawnchair.lawnicons.ui.component.ClickableIcon
+import app.lawnchair.lawnicons.ui.component.ContributorRow
+import app.lawnchair.lawnicons.ui.component.SimpleListRow
+import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.util.appIcon
