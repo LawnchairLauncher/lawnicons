@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.SmallTopAppBar
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -27,9 +28,9 @@ fun TopBarWithInsets(
     Column {
         Spacer(
             modifier = Modifier
-                .statusBarsHeight()
                 .fillMaxWidth()
                 .background(statusBarColor)
+                .statusBarsPadding(),
         )
         SmallTopAppBar(
             scrollBehavior = scrollBehavior,

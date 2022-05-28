@@ -2,19 +2,17 @@ package app.lawnchair.lawnicons.ui.component
 
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
-@OptIn(ExperimentalMaterialApi::class)
 fun ContributorRow(
     name: String,
     photoUrl: String,
@@ -45,12 +43,12 @@ fun ContributorRow(
         description = description,
         onClick = onClick,
         icon = {
-            Image(
+            AsyncImage(
                 contentDescription = name,
-                painter = rememberImagePainter(
-                    data = photoUrl,
-                    builder = { crossfade(enable = true) },
-                ),
+                model = ImageRequest.Builder(context = LocalContext.current)
+                    .data(data = photoUrl)
+                    .crossfade(enable = true)
+                    .build(),
                 modifier = Modifier
                     .size(32.dp)
                     .clip(CircleShape),

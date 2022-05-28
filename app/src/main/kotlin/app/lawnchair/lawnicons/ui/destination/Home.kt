@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -10,7 +11,6 @@ import app.lawnchair.lawnicons.ui.component.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.component.SearchBar
 import app.lawnchair.lawnicons.ui.component.SearchBarBase
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
-import com.google.accompanist.insets.statusBarsPadding
 
 @Composable
 @OptIn(ExperimentalFoundationApi::class)
