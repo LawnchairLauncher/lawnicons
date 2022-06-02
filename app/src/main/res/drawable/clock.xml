@@ -3,8 +3,6 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-  <path android:name="path" android:pathData="M 59.569 158.599 C 94.462 178.747 139.079 166.79 159.224 131.89 C 179.369 96.99 167.414 52.363 132.522 32.214 C 97.629 12.064 53.012 24.022 32.867 58.922 C 12.722 93.822 24.677 138.449 59.569 158.599 Z" android:fillColor="#000000" android:fillAlpha="0" android:strokeColor="#000000" android:strokeWidth="14.1213" android:strokeLineCap="round" android:strokeLineJoin="round" android:fillType="evenOdd"/>
-  <group android:name="group">
-    <path android:name="path_1" android:pathData="M 94.383 49.639 L 93.907 94.334 Z M 93.907 94.334 L 122.093 116.814 Z" android:fillColor="#000000" android:strokeColor="#000000" android:strokeWidth="12" android:strokeLineJoin="round" android:fillType="evenOdd"/>
-  </group>
+  <path android:name="path" android:pathData="M 96 170 C 136.869 170 170 136.869 170 96 C 170 55.131 136.869 22 96 22 C 55.131 22 22 55.131 22 96 C 22 136.869 55.131 170 96 170 Z" android:fillColor="#000" android:fillAlpha="0" android:strokeColor="#000000" android:strokeWidth="12" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+  <path android:name="path_1" android:pathData="M 125.922 118.402 L 94.078 101.282 L 94.354 45.598" android:fillColor="#000" android:fillAlpha="0" android:strokeColor="#000000" android:strokeWidth="12" android:strokeLineCap="round" android:strokeLineJoin="round"/>
 </vector>
