@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192">
+  <defs>
+    <style>
+      .a, .b {
+        fill: none;
+        stroke: #1d1d1b;
+        stroke-width: 12px;
+      }
+
+      .a {
+        stroke-miterlimit: 10;
+      }
+
+      .b {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <circle class="a" cx="60" cy="60" r="25"/>
+  <circle class="a" cx="132" cy="132" r="25"/>
+  <rect class="b" x="35" y="107" width="50" height="50"/>
+  <polygon class="b" points="132 38.349 107 81.651 157 81.651 132 38.349"/>
+</svg>
