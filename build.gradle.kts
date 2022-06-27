@@ -1,3 +1,8 @@
+task generateVersionTxt {
+    doLast {
+        file("./version.txt").text = android.defaultConfig.versionName
+    }
+}
 buildscript {
     dependencies {
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.42")
