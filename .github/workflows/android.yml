@@ -4,6 +4,11 @@ on:
  push:
   branches:
    - master
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - develop   
    
 jobs:
   build:
