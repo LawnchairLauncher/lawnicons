@@ -1,11 +1,21 @@
-# Saricons
-Saricons is a fork of Lawnicons that is always up-to-date with the latest version of Lawnicons and includes additional icons to make your app drawer feel more complete. Another perk, if you don't know how to contribute to the main project, you can request icons to be added here.
-These icons can be used normally as an add-on for adding themed icons to [Lawnchair 12](https://github.com/LawnchairLauncher/lawnchair).
-
-**Be sure to uninstall any previous version of Saricons or Lawnicons before installing any new version of Saricons**
+# Lawnicons
+Lawnicons is an add-on for adding themed icons to [Lawnchair 12](https://github.com/LawnchairLauncher/lawnchair), the latest version of Lawnchair Launcher.
+This addon is now the source of all themed icons, for simplicity.
 
 ## Download
-See the [Releases](https://github.com/SARRAF-5757/Saricons/releases) section to download the latest build of Saricons.
+See the [Releases](https://github.com/LawnchairLauncher/lawnicons/releases) section to download the latest stable build of Lawnicons.
 
-## Icon Request
-To request an icon, follow the [guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) to create an icon and send me the .png or .svg along with the app's package name via discord at SARRAF#1030. If you need instructions on how to get the package name, [download this app](https://github.com/MuntashirAkon/AppManager).
+For the development versions with new icons, go to the [Actions](https://github.com/LawnchairLauncher/lawnicons/actions) tab,
+click the first workflow run, and scroll and find the `Debug Apk`.
+
+Note that you'll need to have a GitHub account to download the debug apk.
+
+## Adding icons
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for info on adding icons.
+
+## License
+Lawnicons is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE](LICENSE) for additional information.
+
+## Quick links
+* [Lawnchair GitHub page](https://github.com/LawnchairLauncher/lawnchair)
+
