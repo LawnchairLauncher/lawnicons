@@ -1,8 +1,10 @@
-<vector android:autoMirrored="true" android:height="200dp"
-    android:viewportHeight="1024" android:viewportWidth="1092"
-    android:width="213.3dp" xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#000000" android:pathData="M604.4,1014.7c-193,0 -338.6,-153.5 -338.6,-356.9a43.5,43.5 0,1 1,87 0c0,153.5 108.2,269.8 251.6,269.8 104.7,0 227.2,-70.6 227.2,-269.8V358.2a43.5,43.5 0,1 1,87 0v299.6c0,210.1 -129.2,356.9 -314.2,356.9z"/>
-    <path android:fillColor="#000000" android:pathData="M1047.3,0.4H668.5a43.5,43.5 0,0 0,-43.5 43l-3.1,619.7c0,153.5 -114.7,273.5 -261.3,273.5a273.9,273.9 0,0 1,-270.1 -230.9l219.7,-4.6a43.5,43.5 0,0 0,-1 -86.7h-0.9l-265.7,5.5a43.6,43.6 0,0 0,-42.6 43.5,360.9 360.9,0 0,0 360.6,360.5c195.4,0 348.4,-158.3 348.4,-360.3l2.8,-576.1h335.5a43.5,43.5 0,1 0,0 -87z"/>
-    <path android:fillColor="#000000" android:pathData="M668.6,300.3A483.5,483.5 0,0 1,252.6 66.2a43.5,43.5 0,1 1,74.4 -45.3,396.9 396.9,0 0,0 341.9,192.3 397.1,397.1 0,0 0,341.5 -192,43.5 43.5,0 0,1 74.4,45.3 483.6,483.6 0,0 1,-416.1 233.7z"/>
-    <path android:fillColor="#000000" android:pathData="M360.6,936.6a272.2,272.2 0,0 1,-147.2 -43.2v99a359.3,359.3 0,0 0,147.2 31.5,345.5 345.5,0 0,0 134.3,-26.9 323.7,323.7 0,0 1,-108.2 -61.5c-8.6,1 -17.3,1 -26.2,1zM710.8,298.4c-14,1.2 -27.9,1.8 -41.9,1.8s-30.1,-0.7 -44.9,-2l-1.2,243.8h87z"/>
+<vector android:autoMirrored="true" android:height="192dp"
+    android:viewportHeight="192" android:viewportWidth="192"
+    android:width="192dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <clip-path android:pathData="M0,0h192v192h-192z"/>
+        <path android:fillColor="#00000000"
+            android:pathData="M69.09,146L64.59,142L59.09,138.48L48.08,133.55L35,131.86L35,176L82.09,176L81.09,169.8L80.09,163.59L78.09,158.5L75.09,153.14L72.09,149.5L69.09,146ZM148.21,169.47L154.75,163.59L157.91,153.14L157.91,16L148.21,16L134.62,17.96L120.03,21.55L106.45,28.41L99.91,36.24L95.38,45.39L95.38,176L115,176L133.62,173.39L148.21,169.47Z"
+            android:strokeColor="#000000" android:strokeWidth="12"/>
+    </group>
 </vector>
