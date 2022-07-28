@@ -56,6 +56,12 @@ private val specialThanks = listOf(
         username = "rikkoedoot",
         descriptionRes = R.string.special_thanks_name,
     ),
+    Contributor(
+        name = "Sarraf",
+        photoUrl = "https://avatars.githubusercontent.com/u/61262059",
+        username = "SARRAF-5757",
+        descriptionRes = R.string.special_thanks_fork,
+    ),
 )
 
 @Composable
