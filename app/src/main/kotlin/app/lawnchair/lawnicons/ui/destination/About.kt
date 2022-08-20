@@ -9,9 +9,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.rememberTopAppBarScrollState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
@@ -22,7 +26,11 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.component.*
+import app.lawnchair.lawnicons.ui.component.Card
+import app.lawnchair.lawnicons.ui.component.ClickableIcon
+import app.lawnchair.lawnicons.ui.component.ContributorRow
+import app.lawnchair.lawnicons.ui.component.SimpleListRow
+import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.util.appIcon
@@ -33,12 +41,6 @@ private val coreContributors = listOf(
         username = "paphonb",
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
         socialUrl = "https://twitter.com/paphonb",
-    ),
-    Contributor(
-        name = "Patryk Michalik",
-        username = "patrykmichalik",
-        photoUrl = "https://raw.githubusercontent.com/patrykmichalik/brand/master/logo-on-indigo.png",
-        socialUrl = "https://patrykmichalik.com",
     ),
 )
 
@@ -60,8 +62,13 @@ private val specialThanks = listOf(
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
 fun About(navController: NavController) {
-    val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
+
     val context = LocalContext.current
+    val scrollState = rememberTopAppBarScrollState()
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
+        state = scrollState,
+        canScroll = { true },
+    )
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
