@@ -1,5 +1,5 @@
 # Lawnicons
-Lawnicons is an add-on for adding themed icons to [Lawnchair 12](https://github.com/LawnchairLauncher/lawnchair), the latest version of Lawnchair Launcher.
+Lawnicons is an add-on for adding themed icons to [Lawnchair 12 Alpha 5](https://github.com/LawnchairLauncher/lawnchair) and above, the latest version of Lawnchair Launcher.
 This addon is now the source of all themed icons, for simplicity.
 
 ## Download
