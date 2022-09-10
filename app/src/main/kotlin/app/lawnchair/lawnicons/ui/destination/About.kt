@@ -58,9 +58,8 @@ private val specialThanks = listOf(
     ),
     Contributor(
         name = "SARRAF",
-        photoUrl = "https://avatars.githubusercontent.com/u/29402532",
+        photoUrl = "https://avatars.githubusercontent.com/u/61262059",
         username = "SARRAF-5757",
-        descriptionRes = R.string.special_thanks_name,
     ),
 
 )
