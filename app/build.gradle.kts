@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -74,6 +75,13 @@ android {
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
+    }
+
+    applicationVariants.all {
+        outputs.all {
+            (this as? ApkVariantOutputImpl)?.outputFileName =
+                "Lawnicons_${versionName}_${versionCode}_${buildType.name}.apk"
+        }
     }
 }
 
