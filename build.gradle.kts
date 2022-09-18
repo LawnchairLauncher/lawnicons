@@ -6,6 +6,14 @@ plugins {
     id("com.google.android.gms.oss-licenses-plugin") version "0.10.5" apply false
 }
 
+allprojects {
+    tasks.matching {
+        it.name.contains("OssLicensesTask")
+    }.configureEach {
+        notCompatibleWithConfigurationCache("https://github.com/google/play-services-plugins/issues/206")
+    }
+}
+
 tasks.register("clean") {
     delete(rootProject.buildDir)
 }
