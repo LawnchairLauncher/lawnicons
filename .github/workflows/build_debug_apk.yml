@@ -22,7 +22,7 @@ jobs:
           java-version: 17
       - uses: gradle/gradle-build-action@v2
       - name: Write sign info
-        if: github.repository == 'LawnchairLauncher/lawnchair'
+        if: github.repository_owner == 'LawnchairLauncher'
         run: |
           if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
             echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
