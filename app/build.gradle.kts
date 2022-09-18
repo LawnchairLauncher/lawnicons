@@ -8,6 +8,7 @@ plugins {
 
 android {
     compileSdk = 32
+    namespace = "app.lawnchair.lawnicons"
 
     defaultConfig {
         applicationId = "app.lawnchair.lawnicons"
