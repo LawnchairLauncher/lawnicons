@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -20,10 +23,28 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
+    val keystorePropertiesFile = rootProject.file("keystore.properties")
+    val releaseSigning = if (keystorePropertiesFile.exists()) {
+        val keystoreProperties = Properties()
+        keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+        signingConfigs.create("release") {
+            keyAlias = keystoreProperties["keyAlias"].toString()
+            keyPassword = keystoreProperties["keyPassword"].toString()
+            storeFile = rootProject.file(keystoreProperties["storeFile"].toString())
+            storePassword = keystoreProperties["storePassword"].toString()
+        }
+    } else {
+        signingConfigs["debug"]
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
+            signingConfig = releaseSigning
             proguardFiles("proguard-rules.pro")
+        }
+        debug {
+            signingConfig = releaseSigning
         }
     }
 
@@ -61,7 +82,7 @@ dependencies {
     val composeVersion = "1.2.1"
     val accompanistVersion = "0.25.1"
     val hiltVersion = "2.43.2"
-    
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("androidx.compose.material:material:$composeVersion")

@@ -22,26 +22,12 @@ jobs:
       - uses: gradle/gradle-build-action@v2
       - name: Build release APK
         run: ./gradlew assembleRelease
-      - name: Sign release APK
-        uses: r0adkll/sign-android-release@v1
-        id: sign-release-apk
-        with:
-          releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.KEYSTORE }}
-          alias: ${{ secrets.KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
-          keyPassword: ${{ secrets.KEY_PASSWORD }}
-      - name: Rename artifact
-        run: |
-          oldArtifactPath="${{ steps.sign-release-apk.outputs.signedReleaseFile }}"
-          newArtifactPath="${oldArtifactPath%'-unsigned-signed.apk'}.apk"
-          echo "ARTIFACT_PATH=$newArtifactPath" >> $GITHUB_ENV
-          mv "$oldArtifactPath" "$newArtifactPath"
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: Release APK
-          path: ${{ env.ARTIFACT_PATH }}
+          path: app/build/outputs/apk/release/*.apk
+
   send-notifications:
     runs-on: ubuntu-latest
     needs: build-release-apk
