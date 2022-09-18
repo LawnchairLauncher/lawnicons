@@ -90,6 +90,7 @@ dependencies {
     val composeVersion = "1.2.1"
     val accompanistVersion = "0.25.1"
     val hiltVersion = "2.43.2"
+    val retrofitVersion = "2.9.0"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.compose.ui:ui:$composeVersion")
@@ -98,7 +99,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("androidx.activity:activity-compose:1.5.1")
-    debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
     implementation("androidx.compose.material3:material3:1.0.0-alpha13")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
@@ -110,6 +111,6 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
     implementation("io.coil-kt:coil-compose:2.2.1")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
 }
