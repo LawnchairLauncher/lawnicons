@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - develop
+  pull_request:
 
 jobs:
   build-debug-apk:
