@@ -1,0 +1,12 @@
+name: General Discussion
+description: Discuss something related to Lawnicons.
+title: "[DISCUSSION] "
+labels: [discussion]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: About this discussion
+      description: Add the contents of your discussion here.
+    validations:
+      required: true
