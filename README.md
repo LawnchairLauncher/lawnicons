@@ -23,6 +23,10 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for info on adding icons.
 
 To request new icons, please use [the icon request form](https://forms.gle/Fx8vZAiWdW1Tyjo57).
 
+If you want to see the requested icons (for contributing purposes), you can view the form responses in our 
+[publicly available Google Sheets](https://docs.google.com/spreadsheets/d/1h3eiJnG2nEdR1DbvemaF1lYthHkzYbXvVFPP0TEEt5k/edit?usp=sharing) file.
+Note that we currently don't show whether an icon request has been completed or not.
+
 ## License
 
 Lawnicons is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE](LICENSE) for additional information.
