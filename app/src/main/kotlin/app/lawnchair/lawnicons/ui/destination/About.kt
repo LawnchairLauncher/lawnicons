@@ -14,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -64,11 +63,7 @@ private val specialThanks = listOf(
 fun About(navController: NavController) {
 
     val context = LocalContext.current
-    val scrollState = rememberTopAppBarScrollState()
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
-        state = scrollState,
-        canScroll = { true },
-    )
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
