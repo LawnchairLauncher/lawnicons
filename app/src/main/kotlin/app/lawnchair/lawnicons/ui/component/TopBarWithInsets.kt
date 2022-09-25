@@ -9,6 +9,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
+import app.lawnchair.lawnicons.ui.util.Elevation
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -18,7 +19,7 @@ fun TopBarWithInsets(
     title: String,
 ) {
     val containerColor: Color = MaterialTheme.colorScheme.surface
-    val scrolledContainerColor: Color = MaterialTheme.colorScheme.surfaceColorAtElevation(3.0.dp)
+    val scrolledContainerColor: Color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level2)
 
     val backgroundColor: Color = lerp(
         containerColor,
@@ -34,15 +35,19 @@ fun TopBarWithInsets(
                 .statusBarsPadding()
                 .fillMaxWidth()
                 .padding(horizontal = 4.dp),
-        scrollBehavior = scrollBehavior,
-        navigationIcon = navigationIcon,
-        title = {
-            Text(
-                text = title,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis,
+            scrollBehavior = scrollBehavior,
+            navigationIcon = navigationIcon,
+            title = {
+                Text(
+                    text = title,
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            },
+            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = Color.Transparent,
+                scrolledContainerColor = Color.Transparent
             )
-        },
         )
     }
 }

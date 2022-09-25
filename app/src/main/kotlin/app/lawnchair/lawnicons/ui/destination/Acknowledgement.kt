@@ -38,7 +38,6 @@ import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.component.ClickableIcon
 import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
