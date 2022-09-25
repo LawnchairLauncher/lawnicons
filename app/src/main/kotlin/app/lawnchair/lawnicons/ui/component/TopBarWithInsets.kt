@@ -1,11 +1,7 @@
 package app.lawnchair.lawnicons.ui.component
 
 import androidx.compose.animation.core.FastOutLinearInEasing
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.dp
@@ -24,29 +20,29 @@ fun TopBarWithInsets(
     val containerColor: Color = MaterialTheme.colorScheme.surface
     val scrolledContainerColor: Color = MaterialTheme.colorScheme.surfaceColorAtElevation(3.0.dp)
 
-    val statusBarColor: Color = lerp(
+    val backgroundColor: Color = lerp(
         containerColor,
         scrolledContainerColor,
         FastOutLinearInEasing.transform(scrollBehavior.state.overlappedFraction)
     )
 
-    Column {
-        Spacer(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(statusBarColor)
-                .statusBarsPadding(),
-        )
+    Surface (
+        color = backgroundColor
+    ) {
         TopAppBar(
-            scrollBehavior = scrollBehavior,
-            navigationIcon = navigationIcon,
-            title = {
-                Text(
-                    text = title,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            },
+            modifier = Modifier
+                .statusBarsPadding()
+                .fillMaxWidth()
+                .padding(horizontal = 4.dp),
+        scrollBehavior = scrollBehavior,
+        navigationIcon = navigationIcon,
+        title = {
+            Text(
+                text = title,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        },
         )
     }
 }
