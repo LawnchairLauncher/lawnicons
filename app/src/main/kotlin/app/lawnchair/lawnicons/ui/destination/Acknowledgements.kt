@@ -11,7 +11,6 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -37,11 +36,7 @@ fun Acknowledgements(
     navController: NavController,
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
-    val scrollState = rememberTopAppBarScrollState()
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
-        state = scrollState,
-        canScroll = { true },
-    )
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
