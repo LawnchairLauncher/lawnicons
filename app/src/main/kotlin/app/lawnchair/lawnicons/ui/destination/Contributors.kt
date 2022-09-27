@@ -13,7 +13,6 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
@@ -53,11 +52,7 @@ fun Contributors(
     uiState: ContributorsUiState,
     onBack: () -> Unit
 ) {
-    val scrollState = rememberTopAppBarScrollState()
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
-        state = scrollState,
-        canScroll = { true },
-    )
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),

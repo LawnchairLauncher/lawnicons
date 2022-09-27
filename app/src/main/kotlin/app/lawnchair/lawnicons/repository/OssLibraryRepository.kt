@@ -29,7 +29,7 @@ class OssLibraryRepository @Inject constructor(private val application: Applicat
     fun getNoticeForOssLibrary(
         ossLibraryName: String,
         annotate: (String) -> AnnotatedString,
-    ) = ossLibraries.filterNotNull().map {
+    ) = ossLibraries.filterNotNull().map { it ->
         it.find { it.name == ossLibraryName }?.run {
             val notice = getNotice(application, R.raw.third_party_licenses)
             annotate(notice)
