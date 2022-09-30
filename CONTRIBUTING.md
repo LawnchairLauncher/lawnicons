@@ -11,17 +11,17 @@ In addition to the above, the icons must have an outlined (not filled) style. If
 ![](./contributing-image-2.png)
 
 ## Adding an icon to Lawnicons
-Here’s how to add an icon to&nbsp;Lawnicons.
+Here’s how to add an icon to&nbsp;Lawnicons:
 
 1. Prepare your icon in the SVG format, adhering to the [above guidelines](#icon-guidelines). Use snake case for the filename (e.g.,&nbsp;`youtube_music.svg`).
 
 1. Add the ready SVG to the `svgs`&nbsp;directory.
 
-1. Using Android Studio, convert the SVG to an XML drawable, and add the XML drawable to the `app/src/main/res/drawable` directory. Use snake case for the drawable name (e.g., `youtube_music`). You can keep all settings at their&nbsp;defaults.
+1. Using Android Studio, convert the SVG to an XML drawable, and add the XML drawable to the `app/src/main/res/drawable` directory. Use snake case for the drawable name (e.g. `youtube_music`). You can keep all settings at their&nbsp;defaults.
 
     ![](./contributing-image-3.png) ![](./contributing-image-4.png)
 
-1. Add a new line to `app/src/main/res/xml/grayscale_icon_map.xml`, and map the new icon to a package name and app name. For&nbsp;example:
+1. Add a new line to `app/src/main/res/xml/grayscale_icon_map.xml` (in alphabetical order), and map the new icon to a package name and app name. For&nbsp;example:
 
     ```xml
     <icon drawable="@drawable/twitter" package="com.twitter.android" name="Twitter" />

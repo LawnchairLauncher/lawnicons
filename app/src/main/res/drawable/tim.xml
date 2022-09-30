@@ -1,5 +1,35 @@
-<vector android:autoMirrored="true" android:height="200dp"
-    android:viewportHeight="1024" android:viewportWidth="1024"
-    android:width="200dp" xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#FF000000" android:pathData="M685.3,862.8L685.3,1006.9l-236.3,-144.1h-146.6C197.1,868 102.4,770.2 102.4,664.6L102.4,232.3C102.4,125.2 192.5,34.1 302.4,34.1h436.3C848.6,34.1 938.7,125.2 938.7,232.3v432.3c0,105.6 -90,203.3 -200,198.2h-53.4zM617,794.6h121.7l3.2,0.1c67.2,3.1 128.5,-59.4 128.5,-130L870.4,232.3C870.4,162.3 810.3,102.4 738.7,102.4L302.4,102.4C230.8,102.4 170.7,162.3 170.7,232.3v432.3c0,68.7 64.2,133.1 128.4,130l3.3,-0.1h165.7l148.9,90.8v-90.8zM512.4,497.3l-115.9,159.5L341.3,616.7l113.9,-156.8L290.1,406.3 311.2,341.3 477.9,395.5L477.9,221.9h68.3v176.4L721.3,341.3l21.1,64.9 -171.3,55.7 112.5,154.8 -55.2,40.1 -115.9,-159.5z"/>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+  <group>
+    <clip-path
+        android:pathData="M0,0h192v192h-192z"/>
+    <path
+        android:pathData="M30,33C30,31.34 31.34,30 33,30H159C160.66,30 162,31.34 162,33V57C162,58.66 160.66,60 159,60H33C31.34,60 30,58.66 30,57V33Z"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"/>
+    <path
+        android:pathData="M30,84C30,82.34 31.34,81 33,81H79C80.66,81 82,82.34 82,84V108C82,109.66 80.66,111 79,111H33C31.34,111 30,109.66 30,108V84Z"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"/>
+    <path
+        android:pathData="M110,84C110,82.34 111.34,81 113,81H159C160.66,81 162,82.34 162,84V108C162,109.66 160.66,111 159,111H113C111.34,111 110,109.66 110,108V84Z"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"/>
+    <path
+        android:pathData="M30,135C30,133.34 31.34,132 33,132H79C80.66,132 82,133.34 82,135V159C82,160.66 80.66,162 79,162H33C31.34,162 30,160.66 30,159V135Z"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"/>
+    <path
+        android:pathData="M110,135C110,133.34 111.34,132 113,132H159C160.66,132 162,133.34 162,135V159C162,160.66 160.66,162 159,162H113C111.34,162 110,160.66 110,159V135Z"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"/>
+  </group>
 </vector>
