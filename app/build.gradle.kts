@@ -86,6 +86,8 @@ android {
     }
 }
 
+hilt.enableAggregatingTask = false
+
 dependencies {
     val lifecycleVersion = "2.5.1"
     val composeVersion = "1.2.1"
