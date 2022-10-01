@@ -5,7 +5,7 @@ import java.util.Properties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.kapt")
+    id("com.sergei-lapin.napt")
     id("dagger.hilt.android.plugin")
     id("com.google.android.gms.oss-licenses-plugin")
 }
@@ -109,7 +109,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-navigation-animation:$accompanistVersion")
     implementation("com.github.fornewid:material-motion-compose:0.8.0-beta01")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
-    kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
     implementation("io.coil-kt:coil-compose:2.2.1")
