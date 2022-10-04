@@ -52,7 +52,8 @@ fun Acknowledgement(
     navController: NavController,
 ) {
     requireNotNull(name)
-    val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
+
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     val notice by acknowledgementViewModel.getNoticeForOssLibrary(
         ossLibraryName = name,
