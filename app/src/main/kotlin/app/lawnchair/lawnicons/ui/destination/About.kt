@@ -15,7 +15,6 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
@@ -42,12 +41,6 @@ private val coreContributors = listOf(
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
         socialUrl = "https://twitter.com/paphonb",
     ),
-    Contributor(
-        name = "Patryk Michalik",
-        username = "patrykmichalik",
-        photoUrl = "https://raw.githubusercontent.com/patrykmichalik/brand/master/logo-on-indigo.png",
-        socialUrl = "https://patrykmichalik.com",
-    ),
 )
 
 private val specialThanks = listOf(
@@ -68,8 +61,9 @@ private val specialThanks = listOf(
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
 fun About(navController: NavController) {
-    val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
+
     val context = LocalContext.current
+    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
