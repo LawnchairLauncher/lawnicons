@@ -12,7 +12,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextLayoutResult
@@ -26,7 +25,6 @@ import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
-import com.google.accompanist.insets.LocalWindowInsets
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
@@ -40,11 +38,7 @@ fun Acknowledgement(
 ) {
     requireNotNull(name)
 
-    val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
-    val density = LocalDensity.current
-    val navigationBarHeight = with(density) {
-        LocalWindowInsets.current.navigationBars.bottom.toDp()
-    }
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     val notice by acknowledgementViewModel.getNoticeForOssLibrary(
         ossLibraryName = name,
@@ -99,11 +93,9 @@ fun Acknowledgement(
                     Text(
                         text = it,
                         fontFamily = FontFamily.Monospace,
-                        modifier = clickHandler.padding(
-                            start = 16.dp,
-                            end = 16.dp,
-                            bottom = navigationBarHeight,
-                        ),
+                        modifier = clickHandler
+                            .padding(horizontal = 16.dp)
+                            .navigationBarsPadding(),
                         onTextLayout = { result ->
                             textLayoutResult = result
                         },

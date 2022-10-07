@@ -20,9 +20,9 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import soup.compose.material.motion.materialSharedAxisX
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 @ExperimentalFoundationApi
+@OptIn(ExperimentalAnimationApi::class)
 fun Lawnicons() {
     val navController = rememberAnimatedNavController()
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
@@ -30,45 +30,44 @@ fun Lawnicons() {
     val density = LocalDensity.current
 
     LawniconsTheme {
-        SystemUi {
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background,
+        SystemUi()
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background,
+        ) {
+            AnimatedNavHost(
+                navController = navController,
+                startDestination = Destinations.HOME,
+                enterTransition = { motionSpec.enter.transition(!isRtl, density) },
+                exitTransition = { motionSpec.exit.transition(!isRtl, density) },
+                popEnterTransition = { motionSpec.enter.transition(isRtl, density) },
+                popExitTransition = { motionSpec.exit.transition(isRtl, density) },
             ) {
-                AnimatedNavHost(
-                    navController = navController,
-                    startDestination = Destinations.HOME,
-                    enterTransition = { motionSpec.enter.transition(!isRtl, density) },
-                    exitTransition = { motionSpec.exit.transition(!isRtl, density) },
-                    popEnterTransition = { motionSpec.enter.transition(isRtl, density) },
-                    popExitTransition = { motionSpec.exit.transition(isRtl, density) },
-                ) {
-                    composable(route = Destinations.HOME) {
-                        Home(navController = navController)
-                    }
-                    composable(route = Destinations.ACKNOWLEDGEMENTS) {
-                        Acknowledgements(navController = navController)
-                    }
-                    composable(
-                        route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
-                        arguments = listOf(
-                            navArgument(
-                                name = "id",
-                                builder = { type = NavType.StringType }
-                            )
+                composable(route = Destinations.HOME) {
+                    Home(navController = navController)
+                }
+                composable(route = Destinations.ACKNOWLEDGEMENTS) {
+                    Acknowledgements(navController = navController)
+                }
+                composable(
+                    route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
+                    arguments = listOf(
+                        navArgument(
+                            name = "id",
+                            builder = { type = NavType.StringType },
                         ),
-                    ) { backStackEntry ->
-                        Acknowledgement(
-                            name = backStackEntry.arguments?.getString("id"),
-                            navController = navController,
-                        )
-                    }
-                    composable(route = Destinations.ABOUT) {
-                        About(navController = navController)
-                    }
-                    composable(route = Destinations.CONTRIBUTORS) {
-                        Contributors(navController = navController)
-                    }
+                    ),
+                ) { backStackEntry ->
+                    Acknowledgement(
+                        name = backStackEntry.arguments?.getString("id"),
+                        navController = navController,
+                    )
+                }
+                composable(route = Destinations.ABOUT) {
+                    About(navController = navController)
+                }
+                composable(route = Destinations.CONTRIBUTORS) {
+                    Contributors(navController = navController)
                 }
             }
         }
