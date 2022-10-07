@@ -53,7 +53,7 @@ fun Acknowledgement(
 ) {
     requireNotNull(name)
 
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     val notice by acknowledgementViewModel.getNoticeForOssLibrary(
         ossLibraryName = name,

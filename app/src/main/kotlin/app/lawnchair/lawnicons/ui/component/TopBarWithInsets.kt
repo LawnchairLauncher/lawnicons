@@ -30,7 +30,7 @@ fun TopBarWithInsets(
     Surface (
         color = backgroundColor
     ) {
-        TopAppBar(
+        LargeTopAppBar(
             modifier = Modifier
                 .statusBarsPadding()
                 .fillMaxWidth()
@@ -44,7 +44,7 @@ fun TopBarWithInsets(
                     overflow = TextOverflow.Ellipsis,
                 )
             },
-            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+            colors = TopAppBarDefaults.largeTopAppBarColors(
                 containerColor = Color.Transparent,
                 scrolledContainerColor = Color.Transparent
             )
