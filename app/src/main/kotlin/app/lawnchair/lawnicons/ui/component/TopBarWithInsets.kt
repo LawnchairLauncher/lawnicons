@@ -4,7 +4,14 @@ import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.material3.*
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.LargeTopAppBar
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarScrollBehavior
+import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,16 +28,17 @@ fun TopBarWithInsets(
     title: String,
 ) {
     val containerColor: Color = MaterialTheme.colorScheme.surface
-    val scrolledContainerColor: Color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level2)
+    val scrolledContainerColor: Color =
+        MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level2)
 
     val backgroundColor: Color = lerp(
         containerColor,
         scrolledContainerColor,
-        FastOutLinearInEasing.transform(scrollBehavior.state.overlappedFraction)
+        FastOutLinearInEasing.transform(scrollBehavior.state.overlappedFraction),
     )
 
-    Surface (
-        color = backgroundColor
+    Surface(
+        color = backgroundColor,
     ) {
         LargeTopAppBar(
             modifier = Modifier
@@ -48,8 +56,8 @@ fun TopBarWithInsets(
             },
             colors = TopAppBarDefaults.largeTopAppBarColors(
                 containerColor = Color.Transparent,
-                scrolledContainerColor = Color.Transparent
-            )
+                scrolledContainerColor = Color.Transparent,
+            ),
         )
     }
 }

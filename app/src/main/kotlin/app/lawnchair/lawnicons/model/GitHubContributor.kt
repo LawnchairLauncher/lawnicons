@@ -9,5 +9,5 @@ data class GitHubContributor(
     val login: String,
     @SerializedName("avatar_url") val avatarUrl: String,
     @SerializedName("html_url") val htmlUrl: String,
-    val contributions: Int
+    val contributions: Int,
 )

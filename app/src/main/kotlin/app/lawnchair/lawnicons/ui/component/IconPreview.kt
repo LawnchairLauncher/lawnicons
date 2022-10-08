@@ -26,7 +26,9 @@ fun IconPreview(@DrawableRes iconId: Int) {
             .padding(all = 8.dp)
             .aspectRatio(ratio = 1F)
             .clip(shape = CircleShape)
-            .background(color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level1)),
+            .background(
+                color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level1),
+            ),
     ) {
         Icon(
             painter = painterResource(id = iconId),
