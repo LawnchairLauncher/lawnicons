@@ -32,7 +32,9 @@ fun ContributorRow(
             val intent = Intent(Intent.ACTION_VIEW, website)
             context.startActivity(intent)
         }
-    } else null
+    } else {
+        null
+    }
 
     SimpleListRow(
         background = background,

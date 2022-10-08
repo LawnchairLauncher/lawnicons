@@ -61,9 +61,8 @@ private val specialThanks = listOf(
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
 fun About(navController: NavController) {
-
     val context = LocalContext.current
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -80,7 +79,7 @@ fun About(navController: NavController) {
                     )
                 },
             )
-        }
+        },
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {
@@ -107,7 +106,9 @@ fun About(navController: NavController) {
                     Text(
                         text = stringResource(id = R.string.version_x, BuildConfig.VERSION_NAME),
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = ContentAlpha.medium),
+                        color = MaterialTheme.colorScheme.onBackground.copy(
+                            alpha = ContentAlpha.medium,
+                        ),
                     )
                 }
             }
@@ -141,7 +142,7 @@ fun About(navController: NavController) {
                         ContributorRow(
                             name = it.name,
                             photoUrl = it.photoUrl,
-                            profileUrl = it.username?.let { "https://github.com/${it}" },
+                            profileUrl = it.username?.let { "https://github.com/$it" },
                             description = it.descriptionRes?.let { stringResource(id = it) },
                             divider = index != specialThanks.lastIndex,
                             socialUrl = it.socialUrl,

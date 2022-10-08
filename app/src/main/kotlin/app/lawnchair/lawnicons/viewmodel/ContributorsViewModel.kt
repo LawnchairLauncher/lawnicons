@@ -6,14 +6,18 @@ import androidx.lifecycle.viewModelScope
 import app.lawnchair.lawnicons.model.GitHubContributor
 import app.lawnchair.lawnicons.repository.GitHubContributorsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.*
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 sealed interface ContributorsUiState {
 
     data class Success(
-        val contributors: List<GitHubContributor>
+        val contributors: List<GitHubContributor>,
     ) : ContributorsUiState
 
     object Loading : ContributorsUiState
@@ -23,7 +27,7 @@ sealed interface ContributorsUiState {
 private data class ContributorsViewModelState(
     val isRefreshing: Boolean,
     val contributors: List<GitHubContributor>? = null,
-    val hasError: Boolean = false
+    val hasError: Boolean = false,
 ) {
     fun toUiState(): ContributorsUiState = when {
         hasError -> ContributorsUiState.Error
@@ -34,7 +38,7 @@ private data class ContributorsViewModelState(
 
 @HiltViewModel
 class ContributorsViewModel @Inject constructor(
-    private val repository: GitHubContributorsRepository
+    private val repository: GitHubContributorsRepository,
 ) : ViewModel() {
 
     private val viewModelState = MutableStateFlow(ContributorsViewModelState(isRefreshing = true))
@@ -43,7 +47,7 @@ class ContributorsViewModel @Inject constructor(
         .stateIn(
             viewModelScope,
             SharingStarted.Eagerly,
-            viewModelState.value.toUiState()
+            viewModelState.value.toUiState(),
         )
 
     init {
@@ -58,17 +62,18 @@ class ContributorsViewModel @Inject constructor(
                     result.isSuccess -> it.copy(
                         isRefreshing = false,
                         contributors = result.getOrThrow(),
-                        hasError = false
+                        hasError = false,
                     )
+
                     else -> {
                         Log.e(
                             "ContributorsViewModel",
                             "Failed to load contributors",
-                            result.exceptionOrNull()
+                            result.exceptionOrNull(),
                         )
                         it.copy(
                             isRefreshing = false,
-                            hasError = true
+                            hasError = true,
                         )
                     }
                 }
