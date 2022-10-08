@@ -1,6 +1,10 @@
 package app.lawnchair.lawnicons.ui.component
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -33,7 +37,9 @@ fun ContributorRowPlaceholder(
                         .placeholder(
                             visible = true,
                             shape = CircleShape,
-                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level4),
+                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(
+                                Elevation.Level4,
+                            ),
                             highlight = PlaceholderHighlight.fade(),
                         ),
                 )
@@ -45,11 +51,13 @@ fun ContributorRowPlaceholder(
                         .height(18.dp)
                         .placeholder(
                             visible = true,
-                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level4),
+                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(
+                                Elevation.Level4,
+                            ),
                             highlight = PlaceholderHighlight.fade(),
-                        )
+                        ),
                 )
-            }
+            },
         )
     }
 }
