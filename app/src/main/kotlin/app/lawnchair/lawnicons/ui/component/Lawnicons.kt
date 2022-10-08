@@ -12,11 +12,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
-import app.lawnchair.lawnicons.ui.destination.About
-import app.lawnchair.lawnicons.ui.destination.Acknowledgement
-import app.lawnchair.lawnicons.ui.destination.Acknowledgements
-import app.lawnchair.lawnicons.ui.destination.Contributors
-import app.lawnchair.lawnicons.ui.destination.Home
+import app.lawnchair.lawnicons.ui.destination.*
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Destinations
 import com.google.accompanist.navigation.animation.AnimatedNavHost
