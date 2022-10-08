@@ -53,11 +53,11 @@ fun Acknowledgements(
                     )
                 },
             )
-        }
+        },
     ) { innerPadding ->
         Crossfade(
             targetState = ossLibraries,
-            modifier = Modifier.padding(innerPadding)
+            modifier = Modifier.padding(innerPadding),
         ) { libraries ->
             LazyColumn(
                 contentPadding = WindowInsets.navigationBars.toPaddingValues(
@@ -75,7 +75,7 @@ fun Acknowledgements(
                             divider = index != libraries.lastIndex,
                             onClick = {
                                 navController.navigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
-                            }
+                            },
                         )
                     }
                 } else {

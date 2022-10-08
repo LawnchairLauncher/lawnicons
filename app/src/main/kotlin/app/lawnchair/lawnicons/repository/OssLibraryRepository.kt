@@ -5,13 +5,13 @@ import androidx.compose.ui.text.AnnotatedString
 import app.lawnchair.lawnicons.R
 import app.lawnchair.ossnotices.OssLibrary
 import app.lawnchair.ossnotices.getOssLibraries
+import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 class OssLibraryRepository @Inject constructor(private val application: Application) {
 
