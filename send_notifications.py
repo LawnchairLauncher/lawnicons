@@ -65,8 +65,9 @@ for commit in reversed(commits):
     encoded_message = html.escape(commit_message)
     message += f'\n• {commit_link_tag}: {encoded_message}'
 
-send_message_to_ci_channel(message=message)
-send_silent_message_to_team_group(message=message)
+if len(commits) != 0:
+    send_message_to_ci_channel(message=message)
+    send_silent_message_to_team_group(message=message)
 
-with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
-    send_document_to_ci_channel(document=apk)
+    with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
+        send_document_to_ci_channel(document=apk)
