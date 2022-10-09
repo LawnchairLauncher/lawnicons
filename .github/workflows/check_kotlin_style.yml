@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - develop
-    path:
-      - '.**/**.kt'
-      - '.**/**.kts'
+    paths:
+      - '**.kt'
+      - '**.kts'
   pull_request:
-    path:
-      - '.**/**.kt'
-      - '.**/**.kts'
+    paths:
+      - '**.kt'
+      - '**.kts'
 
 jobs:
   ktlint:
