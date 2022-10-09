@@ -16,4 +16,5 @@ jobs:
           days-before-issue-stale: -1
           exempt-draft-pr: true
           ignore-updates: true
-          debug-only: true
+          operations-per-run: 100
+          labels-to-add-when-unstale: unstale
