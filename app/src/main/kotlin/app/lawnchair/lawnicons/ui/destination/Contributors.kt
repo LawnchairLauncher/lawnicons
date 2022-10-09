@@ -37,12 +37,12 @@ import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
 @Composable
 fun Contributors(
     contributorsViewModel: ContributorsViewModel = hiltViewModel(),
-    navController: NavController
+    navController: NavController,
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
     Contributors(
         uiState = uiState,
-        onBack = navController::popBackStack
+        onBack = navController::popBackStack,
     )
 }
 
@@ -50,7 +50,7 @@ fun Contributors(
 @Composable
 fun Contributors(
     uiState: ContributorsUiState,
-    onBack: () -> Unit
+    onBack: () -> Unit,
 ) {
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
@@ -69,7 +69,7 @@ fun Contributors(
                     )
                 },
             )
-        }
+        },
     ) { paddingValues ->
         Crossfade(
             targetState = uiState,
@@ -127,13 +127,14 @@ fun ContributorListPlaceholder() {
 
 @Composable
 fun ContributorListError(
-    onBack: () -> Unit
+    onBack: () -> Unit,
 ) {
     val context = LocalContext.current
     SideEffect {
         onBack()
         // we might be rate-limited, open the web ui instead
-        val website = Uri.parse("https://github.com/LawnchairLauncher/lawnicons/graphs/contributors")
+        val website =
+            Uri.parse("https://github.com/LawnchairLauncher/lawnicons/graphs/contributors")
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
     }

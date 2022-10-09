@@ -10,21 +10,24 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.lawnchair.lawnicons.repository.OssLibraryRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
-import javax.inject.Inject
 
 @HiltViewModel
-class AcknowledgementViewModel @Inject constructor(private val ossLibraryRepository: OssLibraryRepository) : ViewModel() {
+class AcknowledgementViewModel @Inject constructor(
+    private val ossLibraryRepository: OssLibraryRepository,
+) :
+    ViewModel() {
 
     fun getNoticeForOssLibrary(
         ossLibraryName: String,
         linkStyle: SpanStyle,
     ) = ossLibraryRepository.getNoticeForOssLibrary(
         ossLibraryName = ossLibraryName,
-        annotate = { annotate(it, linkStyle) }
+        annotate = { annotate(it, linkStyle) },
     )
         .flowOn(Dispatchers.Default)
         .stateIn(viewModelScope, SharingStarted.Lazily, null)

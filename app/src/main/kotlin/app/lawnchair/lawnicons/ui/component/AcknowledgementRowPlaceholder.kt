@@ -34,10 +34,12 @@ fun AcknowledgementRowPlaceholder(
                         .placeholder(
                             visible = true,
                             highlight = PlaceholderHighlight.fade(),
-                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level4),
-                        )
+                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(
+                                Elevation.Level4,
+                            ),
+                        ),
                 )
-            }
+            },
         )
     }
 }

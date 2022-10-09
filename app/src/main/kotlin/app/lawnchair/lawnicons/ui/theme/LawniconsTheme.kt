@@ -4,7 +4,12 @@ import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material3.*
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme as Material3Theme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.dynamicDarkColorScheme
+import androidx.compose.material3.dynamicLightColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
@@ -13,7 +18,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import kotlin.math.ln
-import androidx.compose.material3.MaterialTheme as Material3Theme
 
 private val LightColors = lightColorScheme(
     primary = md_theme_light_primary,
@@ -45,7 +49,6 @@ private val LightColors = lightColorScheme(
     surfaceTint = md_theme_light_surfaceTint,
 )
 
-
 private val DarkColors = darkColorScheme(
     primary = md_theme_dark_primary,
     onPrimary = md_theme_dark_onPrimary,
@@ -76,11 +79,10 @@ private val DarkColors = darkColorScheme(
     surfaceTint = md_theme_dark_surfaceTint,
 )
 
-
 @Composable
 fun LawniconsTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val context = LocalContext.current
     val colorScheme = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -90,7 +92,7 @@ fun LawniconsTheme(
     }
 
     MaterialTheme(
-        colors = materialColors(colorScheme = colorScheme, isDark = darkTheme)
+        colors = materialColors(colorScheme = colorScheme, isDark = darkTheme),
     ) {
         Material3Theme(
             colorScheme = colorScheme,
@@ -122,6 +124,6 @@ fun materialColors(colorScheme: ColorScheme, isDark: Boolean) = remember(colorSc
         onBackground = colorScheme.onBackground,
         onSurface = colorScheme.onSurface,
         onError = colorScheme.onError,
-        isLight = !isDark
+        isLight = !isDark,
     )
 }

@@ -6,7 +6,11 @@ Please include a summary of the change. Please also include relevant motivation 
 If this PR is an icon addition one, please provide a short summary on what icons you added, changed, or linked
 -->
 
-Fixes #(issue) <!-- optional -->
+Fixes #(issue)
+
+<!--
+Note: You can remove the "Fixes #(issue)" if you don't plan on making this PR close an issue.
+-->
 
 ## Type of change
 <!-- Replace :x: with :white_check_mark: to "check" the specified bullet -->
