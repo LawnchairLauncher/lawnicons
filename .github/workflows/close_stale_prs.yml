@@ -14,3 +14,6 @@ jobs:
           days-before-pr-stale: 60
           days-before-pr-close: 14
           days-before-issue-stale: -1
+          exempt-draft-pr: true
+          ignore-updates: true
+          debug-only: true
