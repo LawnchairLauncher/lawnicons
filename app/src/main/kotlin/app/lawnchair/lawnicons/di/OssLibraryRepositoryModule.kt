@@ -14,5 +14,6 @@ object OssLibraryRepositoryModule {
 
     @Provides
     @Singleton
-    fun provideOssLibraryRepository(application: Application) = OssLibraryRepository(application = application)
+    fun provideOssLibraryRepository(application: Application) =
+        OssLibraryRepository(application = application)
 }
