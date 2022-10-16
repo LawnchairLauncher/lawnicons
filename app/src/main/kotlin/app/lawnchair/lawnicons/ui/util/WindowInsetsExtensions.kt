@@ -18,17 +18,22 @@ fun WindowInsets.toPaddingValues(
     additionalEnd: Dp = 0.dp,
     additionalBottom: Dp = 0.dp,
 ): PaddingValues {
-
     val density = LocalDensity.current
     val layoutDirection = LocalLayoutDirection.current
 
     val additionalLeft =
-        if (layoutDirection == LayoutDirection.Ltr) additionalStart
-        else additionalEnd
+        if (layoutDirection == LayoutDirection.Ltr) {
+            additionalStart
+        } else {
+            additionalEnd
+        }
 
     val additionalRight =
-        if (layoutDirection == LayoutDirection.Ltr) additionalEnd
-        else additionalStart
+        if (layoutDirection == LayoutDirection.Ltr) {
+            additionalEnd
+        } else {
+            additionalStart
+        }
 
     return object : PaddingValues {
 
