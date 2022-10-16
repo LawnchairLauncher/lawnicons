@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -16,7 +15,6 @@ import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
 
 @Composable
-@OptIn(ExperimentalMaterialApi::class)
 fun AcknowledgementRowPlaceholder(
     first: Boolean = false,
     last: Boolean = false,
@@ -36,10 +34,12 @@ fun AcknowledgementRowPlaceholder(
                         .placeholder(
                             visible = true,
                             highlight = PlaceholderHighlight.fade(),
-                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level4),
-                        )
+                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(
+                                Elevation.Level4,
+                            ),
+                        ),
                 )
-            }
+            },
         )
     }
 }

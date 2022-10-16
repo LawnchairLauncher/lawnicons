@@ -52,7 +52,8 @@ fun Acknowledgement(
     navController: NavController,
 ) {
     requireNotNull(name)
-    val scrollBehavior = remember { TopAppBarDefaults.pinnedScrollBehavior() }
+
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     val notice by acknowledgementViewModel.getNoticeForOssLibrary(
         ossLibraryName = name,
@@ -126,9 +127,9 @@ fun Acknowledgement(
                                         visible = true,
                                         highlight = PlaceholderHighlight.fade(),
                                         color = MaterialTheme.colorScheme.surfaceColorAtElevation(
-                                            Elevation.Level2
+                                            Elevation.Level2,
                                         ),
-                                    )
+                                    ),
                             )
                         }
                     }
