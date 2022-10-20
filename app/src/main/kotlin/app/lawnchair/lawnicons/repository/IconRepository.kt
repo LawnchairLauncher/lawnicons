@@ -5,12 +5,12 @@ import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchInfo
 import app.lawnchair.lawnicons.util.getIconInfo
+import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class IconRepository @Inject constructor(application: Application) {
 
@@ -49,7 +49,7 @@ class IconRepository @Inject constructor(application: Application) {
                 compareBy(
                     { searchInfo -> !searchInfo.matchAtWordStart },
                     { searchInfo -> searchInfo.indexOfMatch },
-                )
+                ),
             ).map { searchInfo ->
                 searchInfo.iconInfo
             }

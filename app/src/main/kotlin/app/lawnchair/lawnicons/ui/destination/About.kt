@@ -14,7 +14,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -62,13 +61,8 @@ private val specialThanks = listOf(
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
 fun About(navController: NavController) {
-
     val context = LocalContext.current
-    val scrollState = rememberTopAppBarScrollState()
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
-        state = scrollState,
-        canScroll = { true },
-    )
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -85,7 +79,7 @@ fun About(navController: NavController) {
                     )
                 },
             )
-        }
+        },
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {
@@ -112,7 +106,9 @@ fun About(navController: NavController) {
                     Text(
                         text = stringResource(id = R.string.version_x, BuildConfig.VERSION_NAME),
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = ContentAlpha.medium),
+                        color = MaterialTheme.colorScheme.onBackground.copy(
+                            alpha = ContentAlpha.medium,
+                        ),
                     )
                 }
             }
@@ -146,7 +142,7 @@ fun About(navController: NavController) {
                         ContributorRow(
                             name = it.name,
                             photoUrl = it.photoUrl,
-                            profileUrl = it.username?.let { "https://github.com/${it}" },
+                            profileUrl = it.username?.let { "https://github.com/$it" },
                             description = it.descriptionRes?.let { stringResource(id = it) },
                             divider = index != specialThanks.lastIndex,
                             socialUrl = it.socialUrl,

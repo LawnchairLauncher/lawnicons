@@ -18,7 +18,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.rememberTopAppBarScrollState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -54,11 +53,7 @@ fun Acknowledgement(
 ) {
     requireNotNull(name)
 
-    val scrollState = rememberTopAppBarScrollState()
-    val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(
-        state = scrollState,
-        canScroll = { true },
-    )
+    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     val notice by acknowledgementViewModel.getNoticeForOssLibrary(
         ossLibraryName = name,
@@ -132,9 +127,9 @@ fun Acknowledgement(
                                         visible = true,
                                         highlight = PlaceholderHighlight.fade(),
                                         color = MaterialTheme.colorScheme.surfaceColorAtElevation(
-                                            Elevation.Level2
+                                            Elevation.Level2,
                                         ),
-                                    )
+                                    ),
                             )
                         }
                     }
