@@ -3,22 +3,10 @@
     android:height="192dp"
     android:viewportWidth="192"
     android:viewportHeight="192">
-    <path
-        android:fillColor="#000000"
-        android:strokeColor="#000000"
-        android:strokeWidth="12"
-        android:strokeLineJoin="round"
-        android:pathData="M22 122V170H52V122H22Z" />
-    <path
-        android:fillColor="#000000"
-        android:strokeColor="#000000"
-        android:strokeWidth="12"
-        android:strokeLineJoin="round"
-        android:pathData="M81 72V170H111V72H81Z" />
-    <path
-        android:fillColor="#000000"
-        android:strokeColor="#000000"
-        android:strokeWidth="12"
-        android:strokeLineJoin="round"
-        android:pathData="M140 22V170H170V22H140Z" />
+  <path
+      android:pathData="M22,122v48h30v-48L22,122ZM81,72v98h30L111,72L81,72ZM140,22v148h30L170,22h-30Z"
+      android:strokeLineJoin="round"
+      android:strokeWidth="12"
+      android:fillColor="#00000000"
+      android:strokeColor="#000"/>
 </vector>
