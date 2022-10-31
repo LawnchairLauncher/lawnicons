@@ -42,18 +42,10 @@ fun Lawnicons() {
             AnimatedNavHost(
                 navController = navController,
                 startDestination = Destinations.HOME,
-                enterTransition = {
-                    materialSharedAxisXIn(forward = !isRtl, slideDistance = slideDistance)
-                },
-                exitTransition = {
-                    materialSharedAxisXOut(forward = !isRtl, slideDistance = slideDistance)
-                },
-                popEnterTransition = {
-                    materialSharedAxisXIn(forward = isRtl, slideDistance = slideDistance)
-                },
-                popExitTransition = {
-                    materialSharedAxisXOut(forward = isRtl, slideDistance = slideDistance)
-                },
+                enterTransition = { materialSharedAxisXIn(!isRtl, slideDistance) },
+                exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
+                popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
+                popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
                 composable(route = Destinations.HOME) {
                     Home(navController = navController)
