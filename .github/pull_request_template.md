@@ -21,7 +21,9 @@ Note: You can remove the "Fixes #(issue)" if you don't plan on making this PR cl
 
 <!-- Erase the below text if you are not making an icon addition -->
 ## Icons addition information
+<!-- Please specify if you added an icon that was requested in the icon request form, as seen below -->
 ### Icons added
+* App Name (`package.name`) - added from icon request form
 * App Name (`package.name`)
 * App Name (`package.name`)
 
