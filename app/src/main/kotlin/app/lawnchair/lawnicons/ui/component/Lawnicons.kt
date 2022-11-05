@@ -7,7 +7,6 @@ import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavType
@@ -22,7 +21,9 @@ import app.lawnchair.lawnicons.ui.util.Destinations
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
-import soup.compose.material.motion.materialSharedAxisX
+import soup.compose.material.motion.animation.materialSharedAxisXIn
+import soup.compose.material.motion.animation.materialSharedAxisXOut
+import soup.compose.material.motion.animation.rememberSlideDistance
 
 @Composable
 @ExperimentalFoundationApi
@@ -30,8 +31,7 @@ import soup.compose.material.motion.materialSharedAxisX
 fun Lawnicons() {
     val navController = rememberAnimatedNavController()
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-    val motionSpec = materialSharedAxisX()
-    val density = LocalDensity.current
+    val slideDistance = rememberSlideDistance()
 
     LawniconsTheme {
         SystemUi()
@@ -42,10 +42,10 @@ fun Lawnicons() {
             AnimatedNavHost(
                 navController = navController,
                 startDestination = Destinations.HOME,
-                enterTransition = { motionSpec.enter.transition(!isRtl, density) },
-                exitTransition = { motionSpec.exit.transition(!isRtl, density) },
-                popEnterTransition = { motionSpec.enter.transition(isRtl, density) },
-                popExitTransition = { motionSpec.exit.transition(isRtl, density) },
+                enterTransition = { materialSharedAxisXIn(!isRtl, slideDistance) },
+                exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
+                popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
+                popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
                 composable(route = Destinations.HOME) {
                     Home(navController = navController)
