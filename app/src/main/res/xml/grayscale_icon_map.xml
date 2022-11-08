@@ -648,7 +648,9 @@
     <icon drawable="@drawable/nekogram" package="nekox.messenger" name="Nekogram" />
     <icon drawable="@drawable/nekogram" package="tw.nekomimi.nekogram" name="Nekogram" />
     <icon drawable="@drawable/neo_backup" package="com.machiav3lli.backup" name="Neo Backup" />
-    <icon drawable="@drawable/neo_store" package="com.machiav3lli.fdroid" name="Neo Store" />
+	  <icon drawable="@drawable/neo_backup" package="com.machiav3lli.backup.neo" name="Neo Backup" />
+	  <icon drawable="@drawable/neo_store" package="com.machiav3lli.fdroid" name="Neo Store" />
+	  <icon drawable="@drawable/neo_store" package="com.machiav3lli.fdroid.neo" name="Neo Store" />
     <icon drawable="@drawable/netflix" package="com.netflix.mediaclient" name="Netflix" />
     <icon drawable="@drawable/netguard" package="eu.faircode.netguard" name="NetGuard" />
     <icon drawable="@drawable/netzclub" package="com.telefonica.netzclub.csc" name="Netzclub" />
