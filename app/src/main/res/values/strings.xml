@@ -1,13 +1,38 @@
 <resources>
+    <!-- General -->
+
+    <!-- Application name -->
     <string name="app_name">Lawnicons</string>
-    <string name="search_bar_hint">Search %d Icons</string>
-    <string name="acknowledgements">Acknowledgements</string>
-    <string name="about">About</string>
+    <!-- Version name, with %s as the version code -->
     <string name="version_x">Version %s</string>
-    <string name="core_contributors">Core Contributors</string>
-    <string name="see_all_contributors">See All Contributors</string>
+
+    <!-- Search bar -->
+
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Search %d Icons</string>
+
+    <!-- Popup menu in search bar -->
+    <!-- Popup menu item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Acknowledgements</string>
+    <!-- Popup menu item that links to the About page -->
+    <string name="about">About</string>
+
+    <!-- About page -->
+
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
     <string name="contributors">Contributors</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Core Contributors</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">See All Contributors</string>
+
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
     <string name="special_thanks">Special Thanks</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">For inspiring the app icon.</string>
+    <!-- Subtitle displayed below the user who named the app -->
     <string name="special_thanks_name">For naming the app.</string>
 </resources>
