@@ -23,5 +23,4 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 17
-      - uses: gradle/gradle-build-action@v2
       - run: ./gradlew lintKotlin
