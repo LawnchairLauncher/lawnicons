@@ -91,7 +91,7 @@ dependencies {
     val lifecycleVersion = "2.5.1"
     val composeVersion = "1.3.0"
     val accompanistVersion = "0.27.0"
-    val hiltVersion = "2.44.1"
+    val hiltVersion = "2.44.2"
     val retrofitVersion = "2.9.0"
 
     implementation("androidx.core:core-ktx:1.9.0")
