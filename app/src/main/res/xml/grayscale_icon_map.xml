@@ -55,6 +55,7 @@
     <icon drawable="@drawable/aves_gallery" package="deckers.thibault.aves" name="Aves Gallery" />
     <icon drawable="@drawable/axisnet" package="com.axis.net" name="AXISnet" />
     <icon drawable="@drawable/babbel" package="com.babbel.mobile.android.en" name="Babbel" />
+    <icon drawable="@drawable/backdrops" package="com.backdrops.wallpapers" name="Backdrops" />
     <icon drawable="@drawable/bandlab" package="com.bandlab.bandlab" name="BandLab" />
     <icon drawable="@drawable/bandsintown" package="com.bandsintown" name="Bandsintown" />
     <icon drawable="@drawable/bank_jago" package="com.jago.digitalbanking" name="Jago" />
@@ -69,6 +70,7 @@
     <icon drawable="@drawable/bima_plus" package="com.linkit.bimatri" name="Bima+" />
     <icon drawable="@drawable/binance" package="com.binance.dev" name="Binance" />
     <icon drawable="@drawable/binary_eye" package="de.markusfisch.android.binaryeye" name="Binary Eye" />
+    <icon drawable="@drawable/joyn" package="de.prosiebensat1digital.seventv" name="Joyn" />
     <icon drawable="@drawable/birday" package="com.minar.birday" name="Birday" />
     <icon drawable="@drawable/bitmoji" package="com.bitstrips.imoji" name="Bitmoji" />
     <icon drawable="@drawable/bitwarden" package="com.x8bit.bitwarden" name="Bitwarden" />
@@ -248,6 +250,7 @@
     <icon drawable="@drawable/crunchyroll" package="com.crunchyroll.crunchyroid" name="Crunchyroll" />
     <icon drawable="@drawable/crypto_prices" package="de.cloneapps.crypto_prices" name="Crypto Prices / Krypto Preise" />
     <icon drawable="@drawable/curiosity_stream" package="com.curiosity.curiositystream" name="Curiosity Stream" />
+    <icon drawable="@drawable/currencies" package="de.salomax.currencies" name="Currencies" />
     <icon drawable="@drawable/dana" package="id.dana" name="DANA" />
     <icon drawable="@drawable/darq" package="com.kieronquinn.app.darq" name="DarQ" />
     <icon drawable="@drawable/dashlane" package="com.dashlane" name="Dashlane" />
@@ -265,6 +268,7 @@
     <icon drawable="@drawable/deezer" package="f.f.freezer" name="Freezer" />
     <icon drawable="@drawable/degiro" package="nl.degiro.trader" name="DEGIRO" />
     <icon drawable="@drawable/delta_icons" package="website.leifs.delta" name="Delta" />
+    <icon drawable="@drawable/denon_avr" package="com.dmholdings.DenonAVRRemote" name="Denon AVR Remote" />
     <icon drawable="@drawable/designer_tools" package="com.scheffsblend.designertools" name="Designer Tools" />
     <icon drawable="@drawable/deviantart" package="com.deviantart.android.damobile" name="DeviantArt" />
     <icon drawable="@drawable/device_info_hw" package="ru.andr7e.deviceinfohw" name="Device Info HW" />
@@ -409,6 +413,8 @@
     <icon drawable="@drawable/geizhals" package="at.geizhals.pv" name="Geizhals" />
     <icon drawable="@drawable/generic_downloader" package="repost.share.instagram.videodownloader.photodownloader" name="InsMate Pro" />
     <icon drawable="@drawable/generic_downloader" package="tweeter.gif.twittervideodownloader" name="Download Twitter Videos" />
+    <icon drawable="@drawable/generic_games" package="com.oplus.games" name="Games" />
+    <icon drawable="@drawable/generic_games" package="com.oneplus.gamespace" name="Games" />
     <icon drawable="@drawable/generic_player" package="com.kapp.youtube.final" name="YMusic" />
     <icon drawable="@drawable/generic_player" package="com.maxmpz.audioplayer" name="Poweramp" />
     <icon drawable="@drawable/generic_player" package="com.mxtech.videoplayer.ad" name="MX Player" />
@@ -591,6 +597,7 @@
     <icon drawable="@drawable/maps" package="com.google.android.apps.mapslite" name="Google Maps" />
     <icon drawable="@drawable/marindeck" package="online.hisubway.marindeck" name="MarinDeck" />
     <icon drawable="@drawable/mastodon" package="org.joinmastodon.android" name="Mastodon" />
+    <icon drawable="@drawable/mastodon" package="org.joinmastodon.android.sk" name="Mastodon" />
     <icon drawable="@drawable/material_catalog" package="androidx.compose.material.catalog" name="Compose Material Catalog" />
     <icon drawable="@drawable/material_catalog" package="com.numero.material_gallery" name="MaterialGallery " />
     <icon drawable="@drawable/material_catalog" package="io.material.catalog" name="Material Catalog" />
@@ -709,6 +716,7 @@
     <icon drawable="@drawable/notion" package="notion.id" name="Notion" />
     <icon drawable="@drawable/noto" package="com.noto" name="Noto" />
     <icon drawable="@drawable/ns" package="nl.ns.android.activity" name="NS" />
+	<icon drawable="@drawable/ntv" package="de.lineas.lit.ntv.android" name="ntv Nachrichten" />
     <icon drawable="@drawable/nubank" package="com.nu.production" name="Nubank" />
     <icon drawable="@drawable/obimy" package="com.empat.wory" name="Obimy" />
     <icon drawable="@drawable/obsidian" package="md.obsidian" name="Obsidian" />
@@ -739,6 +747,7 @@
     <icon drawable="@drawable/osmand" package="net.osmand" name="OsmAnd" />
     <icon drawable="@drawable/osmand_plus" package="net.osmand.plus" name="OsmAnd+" />
     <icon drawable="@drawable/oto_music" package="com.piyush.music" name="Oto Music" />
+    <icon drawable="@drawable/oto_music" package="de.moekadu.tuner" name="Oto Music" />
     <icon drawable="@drawable/overdrop" package="widget.dd.com.overdrop.free" name="Overdrop" />
     <icon drawable="@drawable/overdrop" package="widget.dd.com.overdrop.pro" name="Overdrop Pro" />
     <icon drawable="@drawable/ovinfo" package="nl.skywave.ovinfo" name="OVinfo" />
@@ -999,7 +1008,9 @@
     <icon drawable="@drawable/tagesschau" package="de.tagesschau" name="tagesschau" />
     <icon drawable="@drawable/talon" package="com.klinker.android.twitter_l" name="Talon for Twitter" />
     <icon drawable="@drawable/tapatalk_pro" package="com.quoord.tapatalk" name="Tapatalk Pro" />
+    <icon drawable="@drawable/tapo" package="com.tplink.iot" name="Tapo" />
     <icon drawable="@drawable/tasks" package="org.tasks" name="Tasks" />
+    <icon drawable="@drawable/teamsnap" package="com.teamsnap.teamsnap" name="TeamSnap" />
     <icon drawable="@drawable/teamspeak" package="com.teamspeak.ts3client" name="TeamSpeak" />
     <icon drawable="@drawable/tele2" package="nl.tele2.mytele2" name="Mijn Tele2" />
     <icon drawable="@drawable/telegram" package="org.telegram.messenger" name="Telegram" />
@@ -1109,6 +1120,7 @@
     <icon drawable="@drawable/xplayer" package="video.player.videoplayer" name="XPlayer" />
     <icon drawable="@drawable/xstream" package="tv.accedo.airtel.wynk" name="Xstream" />
     <icon drawable="@drawable/xtra" package="com.github.andreyasadchy.xtra" name="Xtra" />
+    <icon drawable="@drawable/xvii" package="com.twoeightnine.root.xvii" name="xvii" />
     <icon drawable="@drawable/yandex" package="ru.yandex.searchplugin" name="Yandex" />
     <icon drawable="@drawable/yandex_mail" package="ru.yandex.mail" name="Mail" />
     <icon drawable="@drawable/yasnac" package="rikka.safetynetchecker" name="YASNAC" />
