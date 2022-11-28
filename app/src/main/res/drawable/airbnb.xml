@@ -1,158 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Aps>
-	<Group>
-		<Page Width="144" Height="144" PaperTray="0">
-			<Canvas>
-				<Canvas>
-					<Clip>
-						<Path FillMode="Winding">
-							<PathFigure IsClosed="True">
-								<PolyLine LineColor="#FF000000">
-									<Point X="0" Y="144" />
-									<Point X="0" Y="0" />
-								</PolyLine>
-								<PolyLine LineColor="#FF000000">
-									<Point X="0" Y="0" />
-									<Point X="144" Y="0" />
-								</PolyLine>
-								<PolyLine LineColor="#FF000000">
-									<Point X="144" Y="0" />
-									<Point X="144" Y="144" />
-								</PolyLine>
-								<PolyLine LineColor="#FF000000">
-									<Point X="144" Y="144" />
-									<Point X="0" Y="144" />
-								</PolyLine>
-							</PathFigure>
-						</Path>
-					</Clip>
-					<Path FillMode="Alternate" RenderTransform="1 0 0 -1 0 144">
-						<Pen Alignment="Center" DashCap="Flat" DashOffset="0" DashStyle="Solid" EndCap="Square" LineJoin="Round" MiterLimit="10" StartCap="Square" Width="9">
-							<Brush>
-								<SolidBrush Color="#FF231815" />
-							</Brush>
-						</Pen>
-						<PathFigure IsClosed="True">
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="71.99925" Y="127.5" />
-								<ControlPoint1 X="65.4795" Y="127.4955" />
-								<ControlPoint2 X="59.544003" Y="123.738" />
-								<EndPoint X="56.748753" Y="117.8475" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="56.748753" Y="117.8475" />
-								<Point X="56.748753" Y="117.8475" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="56.748753" Y="117.8475" />
-								<ControlPoint1 X="48.447754" Y="100.1355" />
-								<ControlPoint2 X="31.701752" Y="65.0025" />
-								<EndPoint X="23.400753" Y="47.385757" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="23.400753" Y="47.385757" />
-								<Point X="23.400753" Y="47.385757" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="23.400753" Y="47.385757" />
-								<ControlPoint1 X="22.039503" Y="44.522255" />
-								<ControlPoint2 X="21.330004" Y="41.388756" />
-								<EndPoint X="21.325502" Y="38.21701" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="21.325502" Y="38.21701" />
-								<Point X="21.325502" Y="38.21701" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="21.325502" Y="38.21701" />
-								<ControlPoint1 X="21.325502" Y="26.221512" />
-								<ControlPoint2 X="31.047752" Y="16.49926" />
-								<EndPoint X="43.04325" Y="16.49926" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="43.04325" Y="16.49926" />
-								<Point X="43.04325" Y="16.49926" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="43.04325" Y="16.49926" />
-								<ControlPoint1 X="60.85125" Y="16.49926" />
-								<ControlPoint2 X="88.89" Y="46.371765" />
-								<EndPoint X="88.89" Y="67.172264" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="88.89" Y="67.172264" />
-								<Point X="88.89" Y="67.172264" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="88.89" Y="67.172264" />
-								<ControlPoint1 X="88.89" Y="76.50076" />
-								<ControlPoint2 X="81.3285" Y="84.06302" />
-								<EndPoint X="72" Y="84.06302" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="72" Y="84.06302" />
-								<Point X="72" Y="84.06302" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="72" Y="84.06302" />
-								<ControlPoint1 X="62.67075" Y="84.06302" />
-								<ControlPoint2 X="55.10925" Y="76.50076" />
-								<EndPoint X="55.10925" Y="67.172264" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="55.10925" Y="67.172264" />
-								<Point X="55.10925" Y="67.172264" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="55.10925" Y="67.172264" />
-								<ControlPoint1 X="55.10925" Y="46.371765" />
-								<ControlPoint2 X="83.147995" Y="16.49926" />
-								<EndPoint X="100.956" Y="16.49926" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="100.956" Y="16.49926" />
-								<Point X="100.956" Y="16.49926" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="100.956" Y="16.49926" />
-								<ControlPoint1 X="112.95" Y="16.49926" />
-								<ControlPoint2 X="122.67375" Y="26.221512" />
-								<EndPoint X="122.67375" Y="38.21701" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="122.67375" Y="38.21701" />
-								<Point X="122.67375" Y="38.21701" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="122.67375" Y="38.21701" />
-								<ControlPoint1 X="122.66925" Y="41.388763" />
-								<ControlPoint2 X="121.9605" Y="44.52001" />
-								<EndPoint X="120.597755" Y="47.385757" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="120.597755" Y="47.385757" />
-								<Point X="120.597755" Y="47.385757" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="120.597755" Y="47.385757" />
-								<ControlPoint1 X="112.298256" Y="65.001755" />
-								<ControlPoint2 X="95.598755" Y="100.135506" />
-								<EndPoint X="87.299255" Y="117.750755" />
-							</Bezier>
-							<PolyLine LineColor="#FF000000">
-								<Point X="87.299255" Y="117.750755" />
-								<Point X="87.299255" Y="117.750755" />
-							</PolyLine>
-							<Bezier CurveColor="#FF000000">
-								<StartPoint X="87.299255" Y="117.750755" />
-								<ControlPoint1 X="84.5235" Y="123.696" />
-								<ControlPoint2 X="78.558754" Y="127.49775" />
-								<EndPoint X="71.99925" Y="127.5" />
-							</Bezier>
-						</PathFigure>
-					</Path>
-				</Canvas>
-			</Canvas>
-		</Page>
-	</Group>
-</Aps>
+﻿<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="192dp"
+    android:height="192dp"
+    android:viewportWidth="192"
+    android:viewportHeight="192">
+  <group>
+    <clip-path
+        android:pathData="M0,0h192v192h-192z"/>
+    <path
+        android:pathData="M96,22C87.31,22.01 79.39,27.02 75.67,34.87C64.6,58.49 42.27,105.33 31.2,128.82C29.39,132.64 28.44,136.82 28.43,141.04C28.43,157.04 41.4,170 57.39,170C81.14,170 118.52,130.17 118.52,102.44C118.52,90 108.44,79.92 96,79.92C83.56,79.92 73.48,90 73.48,102.44C73.48,130.17 110.86,170 134.61,170C150.6,170 163.57,157.04 163.57,141.04C163.56,136.82 162.61,132.64 160.8,128.82C149.73,105.33 127.46,58.49 116.4,35C112.7,27.07 104.75,22 96,22Z"
+        android:strokeLineJoin="round"
+        android:strokeWidth="12"
+        android:fillColor="#00000000"
+        android:strokeColor="#000000"
+        android:strokeLineCap="round"/>
+  </group>
+</vector>
