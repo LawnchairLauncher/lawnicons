@@ -9,7 +9,6 @@ github_repository = os.getenv('GITHUB_REPOSITORY')
 github_ref = os.getenv('GITHUB_REF')
 telegram_ci_bot_token = os.getenv('TELEGRAM_CI_BOT_TOKEN')
 telegram_ci_channel_id = os.getenv('TELEGRAM_CI_CHANNEL_ID')
-telegram_team_group_id = os.getenv('TELEGRAM_TEAM_GROUP_ID')
 artifact_directory = os.getenv('ARTIFACT_DIRECTORY')
 
 def send_message_to_ci_channel(message):
@@ -37,19 +36,6 @@ def send_document_to_ci_channel(document):
         files = files
     )
 
-def send_silent_message_to_team_group(message):
-    data = {
-        'chat_id': telegram_team_group_id,
-        'parse_mode': 'HTML',
-        'text': message,
-        'disable_web_page_preview': 'true',
-        'disable_notification': 'true'
-    }
-    requests.post(
-        url = f'https://api.telegram.org/bot{telegram_ci_bot_token}/sendMessage',
-        data = data
-    )
-
 repository = git.Repo('.')
 commits_range = f'{github_event_before}...{github_sha}'
 commits = list(repository.iter_commits(commits_range))
@@ -67,7 +53,5 @@ for commit in reversed(commits):
 
 if len(commits) != 0:
     send_message_to_ci_channel(message=message)
-    send_silent_message_to_team_group(message=message)
-
     with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
         send_document_to_ci_channel(document=apk)
