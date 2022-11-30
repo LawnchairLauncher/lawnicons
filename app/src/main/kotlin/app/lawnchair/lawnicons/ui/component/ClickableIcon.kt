@@ -39,6 +39,7 @@ fun ClickableIcon(
         )
     }
 }
+
 @Composable
 fun ClickableIcon(
     modifier: Modifier = Modifier,
@@ -46,10 +47,10 @@ fun ClickableIcon(
     painter: Painter,
     tint: Color = MaterialTheme.colorScheme.onSurface,
 ) {
-        Icon(
-            painter = painter,
-            contentDescription = null,
-            modifier = modifier.fillMaxSize(fraction = 0.6f).clickable(onClick = onClick),
-            tint = tint,
-        )
+    Icon(
+        painter = painter,
+        contentDescription = null,
+        modifier = modifier.fillMaxSize(fraction = 0.6f).clickable(onClick = onClick),
+        tint = tint,
+    )
 }

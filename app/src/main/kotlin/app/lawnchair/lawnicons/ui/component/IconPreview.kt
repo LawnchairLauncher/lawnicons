@@ -19,7 +19,12 @@ import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
-fun IconPreview(@DrawableRes iconId: Int, iconName: String, iconDrawableName: String, iconPackageName: String) {
+fun IconPreview(
+    @DrawableRes iconId: Int,
+    iconName: String,
+    iconDrawableName: String,
+    iconPackageName: String,
+) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -35,9 +40,9 @@ fun IconPreview(@DrawableRes iconId: Int, iconName: String, iconDrawableName: St
             painter = painterResource(id = iconId),
             modifier = Modifier,
             tint = MaterialTheme.colorScheme.onBackground,
-            onClick = { isIconInfoShown.value = true }
+            onClick = { isIconInfoShown.value = true },
         )
-        if(isIconInfoShown.value) {
+        if (isIconInfoShown.value) {
             IconInfoPopup(
                 iconId = iconId,
                 iconDrawableName = iconDrawableName,
