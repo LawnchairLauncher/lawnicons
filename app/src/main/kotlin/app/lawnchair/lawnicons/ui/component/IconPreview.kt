@@ -1,11 +1,13 @@
 package app.lawnchair.lawnicons.ui.component
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -15,16 +17,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
 fun IconPreview(
-    @DrawableRes iconId: Int,
-    iconName: String,
-    iconDrawableName: String,
-    iconPackageName: String,
+    iconInfo: IconInfo,
 ) {
+    val isIconInfoShown = remember { mutableStateOf(false) }
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -32,24 +33,31 @@ fun IconPreview(
             .aspectRatio(ratio = 1F)
             .clip(shape = CircleShape)
             .background(
-                color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level1),
-            ),
-    ) {
-        val isIconInfoShown = remember { mutableStateOf(false) }
-        ClickableIcon(
-            painter = painterResource(id = iconId),
-            modifier = Modifier,
-            tint = MaterialTheme.colorScheme.onBackground,
-            onClick = { isIconInfoShown.value = true },
-        )
-        if (isIconInfoShown.value) {
-            IconInfoPopup(
-                iconId = iconId,
-                iconDrawableName = iconDrawableName,
-                iconPackageName = iconPackageName,
-                iconName = iconName,
-                isPopupShown = isIconInfoShown,
+                color = if (isIconInfoShown.value) {
+                    MaterialTheme.colorScheme.surfaceVariant
+                } else {
+                    MaterialTheme.colorScheme.surfaceColorAtElevation(
+                        Elevation.Level1,
+                    )
+                },
             )
-        }
+            .clickable(onClick = { isIconInfoShown.value = true }),
+    ) {
+        Icon(
+            painter = painterResource(id = iconInfo.id),
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(0.6f),
+            tint = if (isIconInfoShown.value) {
+                MaterialTheme.colorScheme.onSurfaceVariant
+            } else {
+                MaterialTheme.colorScheme.onBackground
+            },
+        )
+    }
+    if (isIconInfoShown.value) {
+        IconInfoPopup(
+            iconInfo = iconInfo,
+            isPopupShown = isIconInfoShown,
+        )
     }
 }
