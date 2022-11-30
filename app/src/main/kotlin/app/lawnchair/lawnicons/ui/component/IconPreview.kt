@@ -4,12 +4,12 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -19,7 +19,7 @@ import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
-fun IconPreview(@DrawableRes iconId: Int) {
+fun IconPreview(@DrawableRes iconId: Int, iconName: String, iconDrawableName: String, iconPackageName: String) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
@@ -30,11 +30,21 @@ fun IconPreview(@DrawableRes iconId: Int) {
                 color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level1),
             ),
     ) {
-        Icon(
+        val isIconInfoShown = remember { mutableStateOf(false) }
+        ClickableIcon(
             painter = painterResource(id = iconId),
-            contentDescription = null,
-            modifier = Modifier.fillMaxSize(fraction = 0.6f),
+            modifier = Modifier,
             tint = MaterialTheme.colorScheme.onBackground,
+            onClick = { isIconInfoShown.value = true }
         )
+        if(isIconInfoShown.value) {
+            IconInfoPopup(
+                iconId = iconId,
+                iconDrawableName = iconDrawableName,
+                iconPackageName = iconPackageName,
+                iconName = iconName,
+                isPopupShown = isIconInfoShown,
+            )
+        }
     }
 }
