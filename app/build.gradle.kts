@@ -58,7 +58,7 @@ android {
             dimension = "variant"
             applicationIdSuffix = ".light"
             versionNameSuffix = "-light"
-            resValue("string", "apps_name", "Lawnicons-light")
+            resValue("string", "apps_name", "Lawnicons (light)")
         }
     }
     sourceSets.named("dark") {
