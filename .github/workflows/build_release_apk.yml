@@ -33,7 +33,7 @@ jobs:
             echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
           fi
       - name: Prepare Prebuild
-        run: ./gradlew others:run
+        run: ./gradlew svgprocessor:run
       - name: Build release APK
         run: ./gradlew app:assembleRelease
       - name: Upload artifact
