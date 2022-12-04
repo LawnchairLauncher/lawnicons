@@ -36,7 +36,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "Lawnicons"
-
-enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
-
-include(":app")
+include(
+    ":svgprocessor",
+    ":app",
+)

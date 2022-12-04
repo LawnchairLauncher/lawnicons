@@ -18,8 +18,8 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = 31
-        versionCode = 3
-        versionName = "1.2.0"
+        versionCode = 4
+        versionName = "1.3.0"
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -48,6 +48,25 @@ android {
         }
     }
 
+    flavorDimensions += "variant"
+    productFlavors {
+        create("dark") {
+            dimension = "variant"
+            resValue("string", "apps_name", "Lawnicons")
+        }
+        create("light") {
+            dimension = "variant"
+            applicationIdSuffix = ".light"
+            versionNameSuffix = "-light"
+            resValue("string", "apps_name", "Lawnicons-light")
+        }
+    }
+    sourceSets.named("dark") {
+        res.srcDirs("src/dark/res/")
+    }
+    sourceSets.named("light") {
+        res.srcDirs("src/light/res/")
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -60,6 +79,7 @@ android {
     buildFeatures {
         buildConfig = true
         compose = true
+        resValues = true
     }
 
     composeOptions {
