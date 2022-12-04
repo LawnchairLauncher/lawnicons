@@ -28,7 +28,9 @@ fun IconPreviewGrid(
         ),
     ) {
         items(items = iconInfo) { iconInfo ->
-            IconPreview(iconId = iconInfo.id)
+            IconPreview(
+                iconInfo = iconInfo,
+            )
         }
     }
 }
