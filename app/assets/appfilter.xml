@@ -321,6 +321,7 @@
   <item component="ComponentInfo{com.oplus.camera/com.oplus.camera.OPCameraActivity}" drawable="camera" name="Camera"/>
   <item component="ComponentInfo{com.android.camera2/com.android.camera.CameraActivity}" drawable="camera" name="Camera"/>
   <item component="ComponentInfo{com.lge.camera/com.lge.camera.CamLoading}" drawable="camera" name="Camera"/>
+  <item component="ComponentInfo{com.google.android.GoogleCamera.cameralite/com.google.android.apps.cameralite.capture.CaptureActivity}" drawable="camera" name="Camera"/>
   <item component="ComponentInfo{foundation.e.camera/net.sourceforge.opencamera.MainActivity}" drawable="camera" name="Camera"/>
   <item component="ComponentInfo{com.oplus.camera/com.oplus.camera.Camera#0}" drawable="camera" name="Camera"/>
   <item component="ComponentInfo{com.huawei.camera/com.huawei.camera}" drawable="camera" name="Camera"/>
@@ -1901,6 +1902,7 @@
   <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.MainActivity}" drawable="mi_files" name="Mi Files"/>
   <item component="ComponentInfo{com.xiaomi.wearable/com.xiaomi.fitness.login.SplashActivity}" drawable="mi_fitness" name="Mi Fitness"/>
   <item component="ComponentInfo{com.xiaomi.wearable/com.xiaomi.wearable.start.privacy.PrivacyActivity}" drawable="mi_fitness" name="Mi Fitness"/>
+  <item component="ComponentInfo{com.xiaomi.smarthome/com.xiaomi.smarthome.SmartHomeMainActivity}" drawable="mi_home" name="Mi Home"/>
   <item component="ComponentInfo{com.miui.player/.ui.MusicBrowserActivity}" drawable="mi_music" name="Music"/>
   <item component="ComponentInfo{com.zionhuang.music/com.zionhuang.music.ui.activities.MainActivity}" drawable="mi_music" name="InnerTune"/>
   <item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="mi_music" name="Music"/>
@@ -2188,7 +2190,20 @@
   <item component="ComponentInfo{com.telkom.tracencare/com.telkom.tracencare.ui.MainActivity}" drawable="pedulilindungi" name="PeduliLindungi"/>
   <item component="ComponentInfo{com.google.android.apps.safetyhub/com.google.android.apps.safetyhub.LauncherActivity}" drawable="personal_safety" name="Personal Safety"/>
   <item component="ComponentInfo{com.vincentengelsoftware.vesandroidimagecompare/com.vincentengelsoftware.androidimagecompare.MainActivity}" drawable="photo_compare" name="VES - Image and Photo Compare"/>
+  <item component="ComponentInfo{com.mt.mtxx.mtxx/com.mt.mtxx.mtxx.MainActivity}" drawable="photo_editor" name="Meitu"/>
+  <item component="ComponentInfo{com.adobe.lrmobile/com.adobe.lrmobile.LrMobileActivity}" drawable="photo_editor" name="Lightroom"/>
+  <item component="ComponentInfo{com.adobe.psmobile/com.adobe.psmobile.MainActivity}" drawable="photo_editor" name="Photoshop Express"/>
+  <item component="ComponentInfo{photo.editor.polarr/android.support.main.a}" drawable="photo_editor" name="Polarr"/>
   <item component="ComponentInfo{com.iudesk.android.photo.editor/app.activity.MainActivity}" drawable="photo_editor" name="Photo Editor"/>
+  <item component="ComponentInfo{com.adobe.psmobile/com.adobe.psmobile.PhotoshopMobile}" drawable="photo_editor" name="Photoshop Express"/>
+  <item component="ComponentInfo{com.adobe.psmobile/com.adobe.psmobile.SplashScreen}" drawable="photo_editor" name="Photoshop Express"/>
+  <item component="ComponentInfo{com.mt.mtxx.mtxx/com.mt.mtxx.mtxx.TopViewActivity}" drawable="photo_editor" name="Meitu"/>
+  <item component="ComponentInfo{com.adobe.adobephotoshopfix/com.adobe.adobephotoshopfix.FCSplashScreenActivity}" drawable="photo_editor" name="Adobe Photoshop Fix"/>
+  <item component="ComponentInfo{com.adobe.photoshopmix/com.adobe.photoshopmix.SplashScreenActivity}" drawable="photo_editor" name="Adobe Photoshop Mix"/>
+  <item component="ComponentInfo{com.adobe.lrmobile/com.adobe.lrmobile.StorageCheckActivity}" drawable="photo_editor" name="Lightroom"/>
+  <item component="ComponentInfo{com.adobe.photoshopmix/com.adobe.photoshopmix.activity.SplashScreenActivity}" drawable="photo_editor" name="Adobe Photoshop Mix"/>
+  <item component="ComponentInfo{com.adobe.adobephotoshopfix/com.adobe.adobephotoshopfix.activity.FCSplashScreenActivity}" drawable="photo_editor" name="Adobe Photoshop Fix"/>
+  <item component="ComponentInfo{photo.editor.polarr/co.polarr.polarrphotoeditor.EditorActivity}" drawable="photo_editor" name="Polarr"/>
   <item component="ComponentInfo{ch.raiffeisen.phototan/ch.raiffeisen.phototan.SplashActivity}" drawable="phototan" name="PhotoTAN"/>
   <item component="ComponentInfo{xyz.penpencil.physicswala/com.penpencil.physicswallah.activity.SplashActivity}" drawable="physics_wallah" name="Physics Wallah"/>
   <item component="ComponentInfo{xyz.penpencil.physicswala/xyz.penpencil.physicswala.MainActivity}" drawable="physics_wallah" name="Physics Wallah"/>
@@ -2598,6 +2613,7 @@
   <item component="ComponentInfo{com.shazam.android/com.shazam.android.Home}" drawable="shazam" name="Shazam"/>
   <item component="ComponentInfo{com.shazam.android/com.shazam.android.activities.Splash}" drawable="shazam" name="Shazam"/>
   <item component="ComponentInfo{com.shazam.android/com.shazam.android.activities.SplashActivity}" drawable="shazam" name="Shazam"/>
+  <item component="ComponentInfo{allterco.bg.shelly/allterco.bg.shelly.activities.MainActivity}" drawable="shelly" name="Shelly"/>
   <item component="ComponentInfo{net.typeblog.shelter/net.typeblog.shelter.ui.MainActivity}" drawable="shelter" name="Shelter"/>
   <item component="ComponentInfo{net.typeblog.shelter/net.typeblog.shelter.ui.DummyActivity}" drawable="shelter" name="Shelter"/>
   <item component="ComponentInfo{com.miraisoft.shiori/com.miraisoft.shiori.MainActivity}" drawable="shiori" name="Shiori"/>
@@ -2908,6 +2924,7 @@
   <item component="ComponentInfo{com.termux/com.termux.app.TermuxFailsafeActivity}" drawable="termux" name="Termux"/>
   <item component="ComponentInfo{com.termux/com.termux.app.TermuxActivity}" drawable="termux" name="Termux"/>
   <item component="ComponentInfo{com.termux/.app.TermuxActivity}" drawable="termux" name="Termux"/>
+  <item component="ComponentInfo{com.teufel.SmartAudio/com.teufel.SmartAudio.SplashScreenActivity}" drawable="teufel" name="Teufel Remote"/>
   <item component="ComponentInfo{com.textra/com.mplus.lib.Main_ffec407a_bare}" drawable="textra" name="Textra"/>
   <item component="ComponentInfo{com.textra/com.mplus.lib.Main_ff4caf50}" drawable="textra" name="Textra"/>
   <item component="ComponentInfo{com.textra/com.mplus.lib.Main_ff90a4ae}" drawable="textra" name="Textra"/>
