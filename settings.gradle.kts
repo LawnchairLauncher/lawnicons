@@ -15,7 +15,7 @@ pluginManagement {
 
 // https://docs.gradle.com/enterprise/gradle-plugin/
 plugins {
-    id("com.gradle.enterprise") version "3.11.4"
+    id("com.gradle.enterprise") version "3.12"
 }
 
 gradleEnterprise {
@@ -39,4 +39,7 @@ rootProject.name = "Lawnicons"
 
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
-include(":app")
+include(
+    ":app",
+    ":svgprocessor",
+)
