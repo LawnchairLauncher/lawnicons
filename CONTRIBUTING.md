@@ -26,7 +26,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
 1. Add a new line to `app/src/main/res/xml/grayscale_icon_map.xml` (in alphabetical order), and map the new icon to a package name and app name. For&nbsp;example:
 
     ```xml
-    <icon drawable="@drawable/twitter" package="com.twitter.android" name="Twitter" />
+    <icon drawable="@drawable/files_by_google" package="com.google.android.apps.nbu.files" name="Files by Google" />
     ```
 
     A general template is as&nbsp;follows:
