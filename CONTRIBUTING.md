@@ -8,7 +8,7 @@ See the below image for a summary of the icon guidelines. If you don't follow th
 
 Each icon must fit the 160x160px or 144x144px (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
-The stroke should be kept at 12px for most lines. If 12px is too thick, a stroke of 8px can be applied.
+The stroke should be kept at 12px for most lines. If 12px is too thick, a stroke of 8px can be used.
 
 In addition to the above, the icons must have an outlined (not filled) style. If the original icon has a filled style, you should change the icon to adhere to the guidelines as seen below.
 
@@ -25,7 +25,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
 
     ![](./contributing-image-3.png) ![](./contributing-image-4.png)
 
-1. Add a new line to `app/src/main/res/xml/grayscale_icon_map.xml` (in alphabetical order), and map the new icon to a package name and app name. For&nbsp;example:
+1. Add a new line to `app/src/main/res/xml/grayscale_icon_map.xml` (sorted alphabetically by drawable name), and map the new icon to a package name and app name. For&nbsp;example:
 
     ```xml
     <icon drawable="@drawable/files_by_google" package="com.google.android.apps.nbu.files" name="Files by Google" />
