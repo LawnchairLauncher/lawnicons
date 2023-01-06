@@ -15,13 +15,13 @@ val buildCommit = providers.exec {
 }.standardOutput.asText.get().trim()
 
 val ciBuild = System.getenv("CI") == "true"
-val ciRef = System.getenv("GITHUB_REF") ?: ""
-val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER") ?: ""
+val ciRef = System.getenv("GITHUB_REF").orEmpty()
+val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
 val isReleaseBuild = ciBuild && ciRef == "main"
-val devReleaseName = if (ciBuild) { "(Dev #$ciRunNumber)" } else { "($buildCommit)" }
+val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
 val version = "1.2.0"
-val versionDisplayName = "$version ${if (isReleaseBuild) { "" } else {devReleaseName}}"
+val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
     compileSdk = 33
@@ -32,7 +32,7 @@ android {
         minSdk = 26
         targetSdk = 31
         versionCode = 3
-        versionName = "$versionDisplayName"
+        versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -93,7 +93,7 @@ android {
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons ${versionName} v${versionCode}_${buildType.name}.apk"
+                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
     }
 }
@@ -114,7 +114,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha02")
+    implementation("androidx.compose.material3:material3:1.1.0-alpha03")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
