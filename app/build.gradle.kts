@@ -10,6 +10,19 @@ plugins {
     id("com.google.android.gms.oss-licenses-plugin")
 }
 
+val buildCommit = providers.exec {
+    commandLine("git", "rev-parse", "--short=7", "HEAD")
+}.standardOutput.asText.get().trim()
+
+val ciBuild = System.getenv("CI") == "true"
+val ciRef = System.getenv("GITHUB_REF").orEmpty()
+val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
+val isReleaseBuild = ciBuild && ciRef == "main"
+val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
+
+val version = "1.2.0"
+val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
+
 android {
     compileSdk = 33
     namespace = "app.lawnchair.lawnicons"
@@ -19,7 +32,7 @@ android {
         minSdk = 26
         targetSdk = 31
         versionCode = 3
-        versionName = "1.2.0"
+        versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
 
@@ -80,7 +93,7 @@ android {
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons_${versionName}_${versionCode}_${buildType.name}.apk"
+                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
     }
 }
@@ -89,19 +102,19 @@ hilt.enableAggregatingTask = false
 
 dependencies {
     val lifecycleVersion = "2.5.1"
-    val composeVersion = "1.3.0"
-    val accompanistVersion = "0.27.0"
-    val hiltVersion = "2.44"
+    val accompanistVersion = "0.28.0"
+    val hiltVersion = "2.44.2"
     val retrofitVersion = "2.9.0"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.activity:activity-compose:1.6.1")
-    implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
-    implementation("androidx.compose.ui:ui-tooling:$composeVersion")
-    implementation("androidx.compose.animation:animation:$composeVersion")
-    implementation("androidx.compose.material:material:$composeVersion")
-    implementation("androidx.compose.material3:material3:1.0.0")
+    implementation(platform("androidx.compose:compose-bom:2022.12.00"))
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.ui:ui-tooling")
+    implementation("androidx.compose.animation:animation")
+    implementation("androidx.compose.material:material")
+    implementation("androidx.compose.material3:material3:1.1.0-alpha03")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
