@@ -111,7 +111,7 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2022.12.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.ui:ui-tooling")
+    debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
     implementation("androidx.compose.material3:material3:1.1.0-alpha03")
