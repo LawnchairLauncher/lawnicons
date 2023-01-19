@@ -61,14 +61,14 @@ android {
         }
     }
 
-    flavorDimensions += "variant"
+    flavorDimensions += "product"
     productFlavors {
         create("dark") {
-            dimension = "variant"
+            dimension = "product"
             resValue("string", "apps_name", "Lawnicons")
         }
         create("light") {
-            dimension = "variant"
+            dimension = "product"
             applicationIdSuffix = ".light"
             versionNameSuffix = "-light"
             resValue("string", "apps_name", "Lawnicons (light)")
