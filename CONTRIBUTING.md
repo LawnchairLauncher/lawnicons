@@ -6,7 +6,9 @@ See the below image for a summary of the icon guidelines. If you don't follow th
 
 ![](./contributing-image-1.png)
 
-The stroke should be kept at 12px for most lines. If 12px is too thick, a stroke of 8px can be applied.
+Each icon must fit the 160x160px or 144x144px (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
+
+The stroke should be kept at 12px for most lines. If 12px is too thick, a stroke of 8px can be used.
 
 In addition to the above, the icons must have an outlined (not filled) style. If the original icon has a filled style, you should change the icon to adhere to the guidelines as seen below.
 
