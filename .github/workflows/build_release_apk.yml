@@ -71,5 +71,5 @@ jobs:
           TELEGRAM_CI_BOT_TOKEN: ${{ secrets.TELEGRAM_CI_BOT_TOKEN }}
           TELEGRAM_CI_CHANNEL_ID: ${{ secrets.TELEGRAM_CI_CHANNEL_ID }}
           TELEGRAM_TEAM_GROUP_ID: ${{ secrets.TELEGRAM_TEAM_GROUP_ID }}
-          ARTIFACT_DIRECTORY: artifacts/release-apk/*/release
+          ARTIFACT_DIRECTORY: artifacts/release-apk/*/release/*.apk
           GITHUB_REF: ${{ github.ref }}
