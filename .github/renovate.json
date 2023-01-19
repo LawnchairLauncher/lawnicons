@@ -1,0 +1,12 @@
+{
+    "labels": [
+        "dependencies"
+    ],
+    "extends": [
+        "config:base"
+    ],
+    "ignoreDeps": [
+        "org.jetbrains.kotlin",
+        "com.google.devtools.ksp"
+    ]
+}
