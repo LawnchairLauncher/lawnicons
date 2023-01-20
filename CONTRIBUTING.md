@@ -25,7 +25,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
 1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order), and map the new icon to a package name and app's activity. For&nbsp;example:
 
     ```xml
-    <item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons"/> 
+      <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google"/> 
     ```
 
     A general template is as&nbsp;follows:
@@ -38,7 +38,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
 ## How to find the package and activity name of your app
 
 
-### Using adb via computer/phone with OTG.
+### Using adb via computer/phone with OTG
 
   1. Connect your Android device or emulator to the PC/Mac/Phone via otg and open the app whose details you want to inspect, i.e. Files by Google.
   1. Open a new Command Prompt or Terminal window and input `adb devices`
