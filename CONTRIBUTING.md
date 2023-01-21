@@ -50,7 +50,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
   adb shell dumpsys window | grep -E 'mCurrentFocus'  
   ```
 
-  #### For Windows:
+  **For Windows**:
 
   ```xml
   adb shell dumpsys window | find "mCurrentFocus"
