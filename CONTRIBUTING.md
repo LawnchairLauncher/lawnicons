@@ -60,8 +60,8 @@ Here’s how to add an icon to&nbsp;Lawnicons:
   Here, the part before the `/` character i.e `org.telegram.messenger` is the package name `[PACKAGE_NAME]` and the part after that i.e `org.telegram.messenger_.DefaultIcon` is the Activity name `[APP_ACIVITY_NAME]`.
 
 ### Using 3rd Party Apps.
-  1. Download [Icon Request App] (https://github.com/Kaiserdragon2/IconRequest/releases). 
-  1. Launch the app and click ok,let's start.
+  1. Download [Icon Request App](https://github.com/Kaiserdragon2/IconRequest/releases). 
+  1. Launch the app and click ok, let's start.
   1. Get the Activity details for each app.
 
   ![](./contributing-image-6.png)
