@@ -8,7 +8,7 @@ See the below image for a summary of the icon guidelines. If you don't follow th
 
 Each icon must fit the 20x20 or 18x18 (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
-In addition to the above, the icons must have an filled (not outlined) style.
+In addition to the above, the icons must have a filled (not outlined) style.
 
 ![](./contributing-image-2.png)
 
