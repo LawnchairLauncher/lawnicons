@@ -65,13 +65,13 @@ android {
     productFlavors {
         create("dark") {
             dimension = "product"
-            resValue("string", "apps_name", "Lawnicons")
+            resValue("string", "apps_name", "Lawnicons reFilled")
         }
         create("light") {
             dimension = "product"
             applicationIdSuffix = ".light"
             versionNameSuffix = "-light"
-            resValue("string", "apps_name", "Lawnicons (light)")
+            resValue("string", "apps_name", "Lawnicons reFilled (light)")
         }
     }
     compileOptions {
@@ -107,7 +107,7 @@ android {
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
+                "Lawnicons reFilled $versionName v${versionCode}_${buildType.name}.apk"
         }
     }
 }

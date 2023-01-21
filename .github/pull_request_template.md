@@ -1,6 +1,6 @@
 ## Description
 
-<!-- 
+<!--
 Please include a summary of the change. Please also include relevant motivation and context.
 
 If this PR is an icon addition one, please provide a short summary on what icons you added, changed, or linked
@@ -16,7 +16,7 @@ Note: You can remove the "Fixes #(issue)" if you don't plan on making this PR cl
 <!-- Replace :x: with :white_check_mark: to "check" the specified bullet -->
 
 :x: Bug fix (non-breaking change which fixes an issue)
-:x: Icon addition (non-breaking change that adds/modifies Lawnicons's icons)
+:x: Icon addition (non-breaking change that adds/modifies Lawnicons reFilled's icons)
 :x: General change (non-breaking change that doesn't fit the above categories like copyediting)
 
 <!-- Erase the below text if you are not making an icon addition -->

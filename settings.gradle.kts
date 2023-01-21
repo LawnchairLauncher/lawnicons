@@ -35,7 +35,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Lawnicons"
+rootProject.name = "Lawnicons reFilled"
 
 enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
