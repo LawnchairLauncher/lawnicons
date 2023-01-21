@@ -71,7 +71,7 @@ android {
             dimension = "product"
             applicationIdSuffix = ".light"
             versionNameSuffix = "-light"
-            resValue("string", "apps_name", "Lawnicons-light")
+            resValue("string", "apps_name", "Lawnicons (light)")
         }
     }
     compileOptions {
