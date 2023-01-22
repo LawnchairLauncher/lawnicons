@@ -28,7 +28,7 @@ android {
     namespace = "app.lawnchair.lawnicons"
 
     defaultConfig {
-        applicationId = "app.lawnchair.lawnicons"
+        applicationId = "app.yfunk.lawnicons.refilled"
         minSdk = 26
         targetSdk = 31
         versionCode = 4
