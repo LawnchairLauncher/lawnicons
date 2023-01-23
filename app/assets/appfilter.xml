@@ -18,6 +18,7 @@
   <calendar component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" prefix="themed_icon_calendar_" name="Calendar"/>
   <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar"/>
   <item component="ComponentInfo{dev.kdrag0n.android12ext/dev.kdrag0n.android12ext.ui.main.MainActivity}" drawable="a12_extensions" name="Android 12 Extensions"/>
+  <item component="ComponentInfo{app.accrescent.client/app.accrescent.client.ui.MainActivity}" drawable="generic_moon" name="Accrescent"/>
   <item component="ComponentInfo{com.digibites.accubattery/com.digibites.abatterysaver.BatterySaverActivity}" drawable="accubattery" name="AccuBattery"/>
   <item component="ComponentInfo{com.acronis.acronistrueimage/com.acronis.mobile.ui2.TheMainActivity}" drawable="acronis_mobile" name="Acronis Mobile"/>
   <item component="ComponentInfo{de.actionbound/de.actionbound.MainActivity}" drawable="actionbound" name="Actionbound"/>
@@ -190,6 +191,7 @@
   <item component="ComponentInfo{com.rim.mobilefusion.client/com.blackberry.ema.ui.SplashScreenActivity}" drawable="blackberry_uem" name="BlackBerry UEM"/>
   <item component="ComponentInfo{com.rim.mobilefusion.client/com.blackberry.ema.ui.HomeActivity}" drawable="blackberry_uem" name="BlackBerry UEM"/>
   <item component="ComponentInfo{com.good.gcs/com.good.gcs.activity.GCSMainActivity}" drawable="blackberry_work" name="BlackBerry Work"/>
+  <item component="ComponentInfo{eu.appiphany.blindmate/eu.appiphany.blindmate.MainActivity}" drawable="blindmate" name="blindmate"/>
   <item component="ComponentInfo{org.blockinger.game/org.blockinger.game.activities.MainActivity}" drawable="blockinger" name="Blockinger"/>
   <item component="ComponentInfo{org.blokada.fem.fdroid/ui.MainActivity}" drawable="blokada" name="Blokada"/>
   <item component="ComponentInfo{org.blokada.alarm.dnschanger/ui.MainActivity}" drawable="blokada" name="Blokada"/>
@@ -613,8 +615,9 @@
   <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Deep_orange}" drawable="contacts" name="Simple Contacts"/>
   <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Yellow}" drawable="contacts" name="Simple Contacts"/>
   <item component="ComponentInfo{com.samsung.android.app.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="contacts" name="Contacts"/>
-  <item component="ComponentInfo{com.nextcloud_cookbook_flutter/com.nextcloud_cookbook_flutter.MainActivity}" drawable="cookbook" name="Nextcloud Cookbook"/>
-  <item component="ComponentInfo{de.micmun.android.nextcloudcookbook/de.micmun.android.nextcloudcookbook.ui.MainActivity}" drawable="cookbook" name="Nextcloud Cookbook"/>
+  <item component="ComponentInfo{com.nextcloud_cookbook_flutter/com.nextcloud_cookbook_flutter.MainActivity}" drawable="generic_silverware" name="Nextcloud Cookbook"/>
+  <item component="ComponentInfo{de.micmun.android.nextcloudcookbook/de.micmun.android.nextcloudcookbook.ui.MainActivity}" drawable="generic_silverware" name="Nextcloud Cookbook"/>
+
   <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.view.main.MainActivity}" drawable="coolapk" name="CoolApk"/>
   <item component="ComponentInfo{co.coolors.android/co.coolors.android.MainActivity}" drawable="coolors" name="Coolors"/>
   <item component="ComponentInfo{de.corona.tracing/de.rki.coronawarnapp.ui.launcher.LauncherActivity}" drawable="corona_tracing" name="Corona Tracing"/>
@@ -2238,6 +2241,7 @@
   <item component="ComponentInfo{openfoodfacts.github.scrachx.openfood/openfoodfacts.github.scrachx.openfood.views.MainActivity}" drawable="openfoodfacts" name="OpenFoodFacts"/>
   <item component="ComponentInfo{org.sufficientlysecure.keychain/org.sufficientlysecure.keychain.ui.MainActivity}" drawable="openkeychain" name="OpenKeychain"/>
   <item component="ComponentInfo{org.sufficientlysecure.keychain/org.sufficientlysecure.keychain.ui.KeyListActivity}" drawable="openkeychain" name="OpenKeychain"/>
+  <item component="ComponentInfo{de.uni_potsdam.hpi.openmensa/de.uni_potsdam.hpi.openmensa.MainActivity" drawable="generic_silverware" name="OpenMensa"/>
   <item component="ComponentInfo{com.health.openscale/com.health.openscale.gui.MainActivity}" drawable="openscale" name="openScale"/>
   <item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.TrackListActivity}" drawable="opentracks" name="OpenTracks"/>
   <item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks" name="OpenTracks"/>
@@ -2657,6 +2661,7 @@
   <item component="ComponentInfo{com.stevesoltys.seedvault/com.stevesoltys.seedvault.settings.SettingsLink}" drawable="seedvault" name="Backup"/>
   <item component="ComponentInfo{com.sennheiser.control/com.tns.NativeScriptActivity}" drawable="sennheiser_smart_control" name="Sennheiser Smart Control"/>
   <item component="ComponentInfo{imoblife.androidsensorbox/imoblife.androidsensorbox.SplashActivity}" drawable="sensor_box" name="Sensor Box"/>
+  <item component="ComponentInfo{de.kai_morich.serial_bluetooth_terminal/de.kai_morich.serial_bluetooth_terminal.MainActivity}" drawable="generic_bluetooth" name="Serial Bluetooth Terminal"/>
   <item component="ComponentInfo{com.battlelancer.seriesguide/com.battlelancer.seriesguide.ui.ShowsActivity}" drawable="seriesguide" name="SeriesGuide"/>
   <item component="ComponentInfo{ninja.sesame.app.edge/ninja.sesame.app.edge.activities.MainActivity}" drawable="sesame" name="Sesame"/>
   <item component="ComponentInfo{network.loki.messenger/network.loki.messenger.RoutingActivity}" drawable="session" name="Session"/>
@@ -3747,6 +3752,7 @@
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.MainActivity}" drawable="zdfmediathek" name="ZDFmediathek"/>
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.ui.splash.SplashActivity}" drawable="zdfmediathek" name="ZDFmediathek"/>
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.PlatformSwitch}" drawable="zdfmediathek" name="ZDFmediathek"/>
+  <item component="ComponentInfo{com.zeus.app/rideatom.app.features.SecondActivity}" drawable="zeus" name="ZEUS Deutschland"/>
   <item component="ComponentInfo{com.xiaomi.hm.health/cn.com.smartdevices.bracelet.activity.StartUpActivity}" drawable="zepp_life" name="Zepp Life"/>
   <item component="ComponentInfo{com.xiaomi.hm.health/com.xiaomi.hm.health.activity.StartUpActivity}" drawable="zepp_life" name="Zepp Life"/>
   <item component="ComponentInfo{com.xiaomi.hm.health/cn.com.smartdevices.bracelet.activity.MainActivity}" drawable="zepp_life" name="Zepp Life"/>
