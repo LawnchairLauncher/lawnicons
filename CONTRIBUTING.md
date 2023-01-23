@@ -47,7 +47,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
   **For Mac/Linux**:
 
   ```xml
-  adb shell dumpsys window | grep -E 'mCurrentFocus'  
+  adb shell dumpsys window | grep 'mCurrentFocus'  
   ```
 
   **For Windows**:
