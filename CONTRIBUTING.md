@@ -22,7 +22,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
 1. Add the ready SVG to the `svgs`&nbsp;directory.
 
 
-1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order), and map the new icon to a package name and app's activity. For&nbsp;example:
+1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name`-tag), and map the new icon to a package name and app's activity. For&nbsp;example:
 
     ```xml
       <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google"/> 
