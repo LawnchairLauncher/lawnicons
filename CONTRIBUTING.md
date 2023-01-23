@@ -31,7 +31,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
     A general template is as&nbsp;follows:
 
     ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]"/> 
+    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/> 
     ```
 1. Done! You’re ready to open a pull request. Please set `develop` as the base&nbsp;branch.
 
