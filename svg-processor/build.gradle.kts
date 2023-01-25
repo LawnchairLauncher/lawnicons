@@ -9,5 +9,5 @@ application {
 
 dependencies {
     implementation("com.android.tools:sdk-common:30.4.0")
-    implementation("org.dom4j:dom4j:2.1.3")
+    implementation("org.dom4j:dom4j:2.1.4")
 }
