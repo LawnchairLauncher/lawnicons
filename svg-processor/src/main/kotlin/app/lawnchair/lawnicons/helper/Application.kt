@@ -1,7 +1,7 @@
 package app.lawnchair.lawnicons.helper
 
 fun main() {
-    val rootDir = ".."
+    val rootDir = "E:\\git\\singleicons"
     val sourceDir = "$rootDir/svgs/"
     val darkResDir = "$rootDir/app/src/dark/res"
     val lightResDir = "$rootDir/app/src/light/res"

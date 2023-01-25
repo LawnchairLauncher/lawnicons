@@ -66,7 +66,7 @@ object ConfigProcessor {
                 drawable.replace("_".toRegex(), " ").capitalize(),
             )
             iconsDocument.rootElement.addElement(ICON)
-                .addAttribute(DRAWABLE, "@drawable/$drawable")
+                .addAttribute(DRAWABLE, "@drawable/${drawable}_foreground")
                 .addAttribute(PACKAGE, component[0])
                 .addAttribute(NAME, name)
         }

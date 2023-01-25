@@ -1,8 +1,11 @@
 package app.lawnchair.lawnicons.helper
 
 import com.android.ide.common.vectordrawable.Svg2Vector
+import java.io.File
 import java.io.FileOutputStream
+import java.io.FileWriter
 import java.io.IOException
+import java.nio.charset.StandardCharsets
 import java.nio.file.FileVisitOption
 import java.nio.file.FileVisitResult
 import java.nio.file.FileVisitor
@@ -11,7 +14,12 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.nio.file.attribute.BasicFileAttributes
 import java.util.EnumSet
+import org.apache.commons.io.FileUtils
+import org.dom4j.Document
 import org.dom4j.DocumentException
+import org.dom4j.DocumentHelper
+import org.dom4j.io.OutputFormat
+import org.dom4j.io.XMLWriter
 
 object SvgFilesProcessor {
     private lateinit var sourceSvgPath: Path
@@ -71,18 +79,46 @@ object SvgFilesProcessor {
             val targetFile = XmlUtil.getFileWithExtension(vectorTargetPath)
             val fileOutputStream = FileOutputStream(targetFile)
             Svg2Vector.parseSvgToXml(svgSource.toFile(), fileOutputStream)
+            val fg = if (mode == "dark") "#000" else "#fff"
+            val bg = if (mode == "dark") "@color/white" else "@color/black"
             try {
-                val attrValue = if (mode == "dark") "#000" else "#fff"
-                updateXmlPath(targetFile, "android:strokeColor", attrValue)
-                updateXmlPath(targetFile, "android:fillColor", attrValue)
+                updateXmlPath(targetFile, "android:strokeColor", fg)
+                updateXmlPath(targetFile, "android:fillColor", fg)
             } catch (e: DocumentException) {
                 throw RuntimeException(e)
             }
+            createAdaptive(targetFile, bg)
         } else {
             println("Skipping file as its not svg " + svgSource.fileName)
         }
     }
-
+    @Throws(IOException::class)
+    private fun createAdaptive(xmlPath: String, bgColor: String) {
+        val forgroundXml = xmlPath.replace(".xml", "_foreground.xml")
+        val foregroundFile = FileUtils.getFile(forgroundXml)
+        foregroundFile.delete()
+        FileUtils.moveFile(
+            FileUtils.getFile(xmlPath),
+            foregroundFile,
+        )
+        val drawableName: String = org.apache.commons.io.FilenameUtils.getBaseName(xmlPath)
+        val resPath: String = org.apache.commons.io.FilenameUtils.getFullPath(xmlPath)
+        val document = DocumentHelper.createDocument()
+        val root = document.addElement("adaptive-icon")
+            .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
+        root.addElement("background")
+            .addAttribute("android:drawable", bgColor)
+        root.addElement("foreground").addElement("inset")
+            .addAttribute("android:inset", "33.33%")
+            .addAttribute(
+                "android:drawable",
+                "@drawable/" + org.apache.commons.io.FilenameUtils.getBaseName(forgroundXml),
+            )
+//        root.addElement("monochrome").addElement("inset")
+//            .addAttribute("android:inset", "32%")
+//            .addAttribute("android:drawable", "@drawable/" + drawableName + "_monochrome")
+        updateDocumentToFile(document, "$resPath$drawableName.xml")
+    }
     private fun updateXmlPath(xmlPath: String, searchKey: String, attributeValue: String) {
         val xmlDocument = XmlUtil.getDocument(xmlPath)
         val keyWithoutNameSpace = searchKey.substring(searchKey.indexOf(":") + 1)
@@ -97,5 +133,14 @@ object SvgFilesProcessor {
             }
             XmlUtil.writeDocumentToFile(xmlDocument, xmlPath)
         }
+    }
+    @Throws(IOException::class)
+    private fun updateDocumentToFile(outDocument: Document, outputConfigPath: String) {
+        val fileWriter = FileWriter(outputConfigPath)
+        val format = OutputFormat.createPrettyPrint()
+        format.encoding = StandardCharsets.UTF_8.name()
+        val writer = XMLWriter(fileWriter, format)
+        writer.write(outDocument)
+        writer.close()
     }
 }
