@@ -80,7 +80,7 @@ object SvgFilesProcessor {
             try {
                 updateXmlPath(targetFile, "android:strokeColor", fg)
                 updateXmlPath(targetFile, "android:fillColor", fg)
-                updateRootElement(targetFile,"android:tint", fg)
+                updateRootElement(targetFile, "android:tint", fg)
             } catch (e: DocumentException) {
                 throw RuntimeException(e)
             }
@@ -89,7 +89,6 @@ object SvgFilesProcessor {
             println("Skipping file as its not svg " + svgSource.fileName)
         }
     }
-
 
 
     @Throws(IOException::class)
@@ -116,9 +115,13 @@ object SvgFilesProcessor {
             )
         root.addElement("monochrome").addElement("inset")
             .addAttribute("android:inset", "32%")
-            .addAttribute("android:drawable", "@drawable/" + FilenameUtils.getBaseName(foregroundXml))
+            .addAttribute(
+                "android:drawable",
+                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
+            )
         XmlUtil.writeDocumentToFile(document, "$resPath$drawableName.xml")
     }
+
     private fun updateRootElement(xmlPath: String, key: String, value: String) {
         val aDocument: Document = XmlUtil.getDocument(xmlPath)
         val keyWithoutNameSpace = key.substring(key.indexOf(":") + 1)
@@ -132,6 +135,7 @@ object SvgFilesProcessor {
         }
         XmlUtil.writeDocumentToFile(aDocument, xmlPath)
     }
+
     private fun updateXmlPath(xmlPath: String, searchKey: String, attributeValue: String) {
         val xmlDocument = XmlUtil.getDocument(xmlPath)
         val keyWithoutNameSpace = searchKey.substring(searchKey.indexOf(":") + 1)
