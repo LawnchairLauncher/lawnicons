@@ -1,11 +1,8 @@
 package app.lawnchair.lawnicons.helper
 
 import com.android.ide.common.vectordrawable.Svg2Vector
-import java.io.File
 import java.io.FileOutputStream
-import java.io.FileWriter
 import java.io.IOException
-import java.nio.charset.StandardCharsets
 import java.nio.file.FileVisitOption
 import java.nio.file.FileVisitResult
 import java.nio.file.FileVisitor
@@ -18,8 +15,6 @@ import org.apache.commons.io.FileUtils
 import org.dom4j.Document
 import org.dom4j.DocumentException
 import org.dom4j.DocumentHelper
-import org.dom4j.io.OutputFormat
-import org.dom4j.io.XMLWriter
 
 object SvgFilesProcessor {
     private lateinit var sourceSvgPath: Path
@@ -79,11 +74,14 @@ object SvgFilesProcessor {
             val targetFile = XmlUtil.getFileWithExtension(vectorTargetPath)
             val fileOutputStream = FileOutputStream(targetFile)
             Svg2Vector.parseSvgToXml(svgSource.toFile(), fileOutputStream)
-            val fg = if (mode == "dark") "#000" else "#fff"
-            val bg = if (mode == "dark") "@color/white" else "@color/black"
+//            val fg = if (mode == "dark") "#000" else "#fff"
+//            val bg = if (mode == "dark") "@color/white" else "@color/black"
+            val fg = "@color/primaryForeground"
+            val bg = "@color/primaryBackground"
             try {
                 updateXmlPath(targetFile, "android:strokeColor", fg)
                 updateXmlPath(targetFile, "android:fillColor", fg)
+                updateRootElement(targetFile,"android:tint", fg)
             } catch (e: DocumentException) {
                 throw RuntimeException(e)
             }
@@ -92,10 +90,13 @@ object SvgFilesProcessor {
             println("Skipping file as its not svg " + svgSource.fileName)
         }
     }
+
+
+
     @Throws(IOException::class)
     private fun createAdaptive(xmlPath: String, bgColor: String) {
-        val forgroundXml = xmlPath.replace(".xml", "_foreground.xml")
-        val foregroundFile = FileUtils.getFile(forgroundXml)
+        val foregroundXml = xmlPath.replace(".xml", "_foreground.xml")
+        val foregroundFile = FileUtils.getFile(foregroundXml)
         foregroundFile.delete()
         FileUtils.moveFile(
             FileUtils.getFile(xmlPath),
@@ -112,12 +113,25 @@ object SvgFilesProcessor {
             .addAttribute("android:inset", "32%")
             .addAttribute(
                 "android:drawable",
-                "@drawable/" + org.apache.commons.io.FilenameUtils.getBaseName(forgroundXml),
+                "@drawable/" + org.apache.commons.io.FilenameUtils.getBaseName(foregroundXml),
             )
 //        root.addElement("monochrome").addElement("inset")
 //            .addAttribute("android:inset", "32%")
 //            .addAttribute("android:drawable", "@drawable/" + drawableName + "_monochrome")
-        updateDocumentToFile(document, "$resPath$drawableName.xml")
+        XmlUtil.writeDocumentToFile(document, "$resPath$drawableName.xml")
+    }
+    private fun updateRootElement(xmlPath: String, key: String, value: String) {
+        val aDocument: Document = XmlUtil.getDocument(xmlPath)
+        val keyWithoutNameSpace = key.substring(key.indexOf(":") + 1)
+        val attr = aDocument.rootElement.attribute(keyWithoutNameSpace)
+        if (attr != null) {
+            if (attr.value != "#00000000") {
+                attr.value = value
+            }
+        } else {
+            aDocument.rootElement.addAttribute(key, value)
+        }
+        XmlUtil.writeDocumentToFile(aDocument, xmlPath)
     }
     private fun updateXmlPath(xmlPath: String, searchKey: String, attributeValue: String) {
         val xmlDocument = XmlUtil.getDocument(xmlPath)
@@ -133,14 +147,5 @@ object SvgFilesProcessor {
             }
             XmlUtil.writeDocumentToFile(xmlDocument, xmlPath)
         }
-    }
-    @Throws(IOException::class)
-    private fun updateDocumentToFile(outDocument: Document, outputConfigPath: String) {
-        val fileWriter = FileWriter(outputConfigPath)
-        val format = OutputFormat.createPrettyPrint()
-        format.encoding = StandardCharsets.UTF_8.name()
-        val writer = XMLWriter(fileWriter, format)
-        writer.write(outDocument)
-        writer.close()
     }
 }
