@@ -67,12 +67,6 @@ android {
             dimension = "product"
             resValue("string", "apps_name", "Lawnicons")
         }
-        create("light") {
-            dimension = "product"
-            applicationIdSuffix = ".light"
-            versionNameSuffix = "-light"
-            resValue("string", "apps_name", "Lawnicons (light)")
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
