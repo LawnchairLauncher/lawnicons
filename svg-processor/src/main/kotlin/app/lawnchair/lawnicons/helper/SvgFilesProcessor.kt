@@ -90,7 +90,6 @@ object SvgFilesProcessor {
         }
     }
 
-
     @Throws(IOException::class)
     private fun createAdaptive(xmlPath: String, bgColor: String) {
         val foregroundXml = xmlPath.replace(".xml", "_foreground.xml")
