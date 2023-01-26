@@ -32,13 +32,15 @@ jobs:
             echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties
             echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
           fi
+      - name: Prepare Prebuild
+        run: ./gradlew svg-processor:run
       - name: Build release APK
         run: ./gradlew app:assembleRelease
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: Release APK
-          path: app/build/outputs/apk/release/*.apk
+          path: app/build/outputs/apk/*/release/*.apk
 
   send-notifications:
     runs-on: ubuntu-latest
@@ -69,5 +71,5 @@ jobs:
           TELEGRAM_CI_BOT_TOKEN: ${{ secrets.TELEGRAM_CI_BOT_TOKEN }}
           TELEGRAM_CI_CHANNEL_ID: ${{ secrets.TELEGRAM_CI_CHANNEL_ID }}
           TELEGRAM_TEAM_GROUP_ID: ${{ secrets.TELEGRAM_TEAM_GROUP_ID }}
-          ARTIFACT_DIRECTORY: artifacts/release-apk
+          ARTIFACT_DIRECTORY: artifacts/release-apk/*/release/
           GITHUB_REF: ${{ github.ref }}

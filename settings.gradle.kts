@@ -41,5 +41,5 @@ enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
 
 include(
     ":app",
-    ":svgprocessor",
+    ":svg-processor",
 )
