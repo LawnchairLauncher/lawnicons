@@ -12,6 +12,7 @@ import java.nio.file.Paths
 import java.nio.file.attribute.BasicFileAttributes
 import java.util.EnumSet
 import org.apache.commons.io.FileUtils
+import org.apache.commons.io.FilenameUtils
 import org.dom4j.Document
 import org.dom4j.DocumentException
 import org.dom4j.DocumentHelper
@@ -102,8 +103,8 @@ object SvgFilesProcessor {
             FileUtils.getFile(xmlPath),
             foregroundFile,
         )
-        val drawableName: String = org.apache.commons.io.FilenameUtils.getBaseName(xmlPath)
-        val resPath: String = org.apache.commons.io.FilenameUtils.getFullPath(xmlPath)
+        val drawableName: String = FilenameUtils.getBaseName(xmlPath)
+        val resPath: String = FilenameUtils.getFullPath(xmlPath)
         val document = DocumentHelper.createDocument()
         val root = document.addElement("adaptive-icon")
             .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
@@ -113,11 +114,11 @@ object SvgFilesProcessor {
             .addAttribute("android:inset", "32%")
             .addAttribute(
                 "android:drawable",
-                "@drawable/" + org.apache.commons.io.FilenameUtils.getBaseName(foregroundXml),
+                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
             )
-//        root.addElement("monochrome").addElement("inset")
-//            .addAttribute("android:inset", "32%")
-//            .addAttribute("android:drawable", "@drawable/" + drawableName + "_monochrome")
+        root.addElement("monochrome").addElement("inset")
+            .addAttribute("android:inset", "32%")
+            .addAttribute("android:drawable", "@drawable/" + FilenameUtils.getBaseName(foregroundXml))
         XmlUtil.writeDocumentToFile(document, "$resPath$drawableName.xml")
     }
     private fun updateRootElement(xmlPath: String, key: String, value: String) {
