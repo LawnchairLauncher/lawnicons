@@ -31,7 +31,7 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = 31
-        versionCode = 3
+        versionCode = 4
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
@@ -61,6 +61,19 @@ android {
         }
     }
 
+    flavorDimensions += "product"
+    productFlavors {
+        create("dark") {
+            dimension = "product"
+            resValue("string", "apps_name", "Lawnicons")
+        }
+        create("light") {
+            dimension = "product"
+            applicationIdSuffix = ".light"
+            versionNameSuffix = "-light"
+            resValue("string", "apps_name", "Lawnicons (light)")
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -73,6 +86,7 @@ android {
     buildFeatures {
         buildConfig = true
         compose = true
+        resValues = true
     }
 
     composeOptions {
@@ -114,14 +128,14 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha04")
+    implementation("androidx.compose.material3:material3:1.1.0-alpha05")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-placeholder-material:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-navigation-animation:$accompanistVersion")
-    implementation("io.github.fornewid:material-motion-compose-core:0.10.3")
+    implementation("io.github.fornewid:material-motion-compose-core:0.10.4")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
