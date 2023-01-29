@@ -1,17 +1,20 @@
 package app.lawnchair.lawnicons.helper
 
 import java.util.Locale
+import java.util.stream.Collectors
 import org.dom4j.Document
 import org.dom4j.tree.DefaultDocument
 
 object ConfigProcessor {
     private const val ITEM = "item"
+    private const val CATEGORY = "category"
     private const val COMPONENT = "component"
     private const val PACKAGE = "package"
     private const val DRAWABLE = "drawable"
     private const val ICONS = "icons"
     private const val ICON = "icon"
     private const val RESOURCES = "resources"
+    private const val TITLE = "title"
     private const val NAME = "name"
     private const val VERSION = "version"
 
@@ -78,7 +81,13 @@ object ConfigProcessor {
             addElement(RESOURCES)
             rootElement.addElement(VERSION).addText("1")
         }
-        drawableMap.values.distinct().forEach { drawable: String? ->
+        var groupNames= mutableListOf<Char>()
+        drawableMap.values.distinct().forEach { drawable: String ->
+            val groupName = drawable[0].uppercaseChar()
+            if(groupName !in groupNames){
+                resourceDocument.rootElement.addElement(CATEGORY).addAttribute(TITLE, groupName.toString())
+                groupNames.add(groupName)
+            }
             resourceDocument.rootElement.addElement(ITEM).addAttribute(DRAWABLE, drawable)
         }
         XmlUtil.writeDocumentToFile(resourceDocument, filename)
