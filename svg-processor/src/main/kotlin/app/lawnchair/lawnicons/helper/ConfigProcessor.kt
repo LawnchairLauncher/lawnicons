@@ -1,7 +1,6 @@
 package app.lawnchair.lawnicons.helper
 
 import java.util.Locale
-import java.util.stream.Collectors
 import org.dom4j.Document
 import org.dom4j.tree.DefaultDocument
 
@@ -81,11 +80,12 @@ object ConfigProcessor {
             addElement(RESOURCES)
             rootElement.addElement(VERSION).addText("1")
         }
-        var groupNames= mutableListOf<Char>()
+        var groupNames = mutableListOf<Char>()
         drawableMap.values.distinct().forEach { drawable: String ->
             val groupName = drawable[0].uppercaseChar()
-            if(groupName !in groupNames){
-                resourceDocument.rootElement.addElement(CATEGORY).addAttribute(TITLE, groupName.toString())
+            if (groupName !in groupNames) {
+                resourceDocument.rootElement.addElement(CATEGORY)
+                    .addAttribute(TITLE, groupName.toString())
                 groupNames.add(groupName)
             }
             resourceDocument.rootElement.addElement(ITEM).addAttribute(DRAWABLE, drawable)
