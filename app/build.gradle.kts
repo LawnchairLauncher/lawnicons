@@ -63,16 +63,13 @@ android {
 
     flavorDimensions += "product"
     productFlavors {
-        create("dark") {
+        create("app") {
             dimension = "product"
             resValue("string", "apps_name", "Lawnicons")
         }
-        create("light") {
-            dimension = "product"
-            applicationIdSuffix = ".light"
-            versionNameSuffix = "-light"
-            resValue("string", "apps_name", "Lawnicons (light)")
-        }
+    }
+    sourceSets.getByName("app") {
+        res.setSrcDirs(listOf("src/runtime/res"))
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
