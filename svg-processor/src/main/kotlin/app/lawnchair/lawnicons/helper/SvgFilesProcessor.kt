@@ -20,12 +20,9 @@ import org.dom4j.DocumentHelper
 object SvgFilesProcessor {
     private lateinit var sourceSvgPath: Path
     private lateinit var destinationVectorPath: Path
-    private lateinit var mode: String
-
-    fun process(sourceDirectory: String, destDirectory: String, mode: String) {
+    fun process(sourceDirectory: String, destDirectory: String) {
         this.sourceSvgPath = Paths.get(sourceDirectory)
         this.destinationVectorPath = Paths.get(destDirectory)
-        this.mode = mode
         try {
             val options = EnumSet.of(FileVisitOption.FOLLOW_LINKS)
             // check first if source is a directory
