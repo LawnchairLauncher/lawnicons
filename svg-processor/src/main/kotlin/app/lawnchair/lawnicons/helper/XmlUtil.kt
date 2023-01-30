@@ -33,6 +33,8 @@ object XmlUtil {
 
     fun writeDocumentToFile(outDocument: Document, outputConfigPath: String) {
         File(outputConfigPath).parentFile.mkdirs()
+        // Delete existing file If any
+        File(outputConfigPath).delete()
         FileWriter(outputConfigPath).use { fw ->
             XMLWriter(fw, OutputFormat.createPrettyPrint()).apply {
                 write(outDocument)
