@@ -1,7 +1,7 @@
 package app.lawnchair.lawnicons.helper
 
 fun main() {
-    val rootDir = "."
+    val rootDir = ".."
     val sourceDir = "$rootDir/svgs/"
     val resDir = "$rootDir/app/src/runtime/res"
     val appFilterFile = "$rootDir/app/assets/appfilter.xml"
