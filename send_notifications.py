@@ -2,8 +2,6 @@ import git
 import html
 import os
 import requests
-import glob
-
 
 github_event_before = os.getenv('GITHUB_EVENT_BEFORE')
 github_sha = os.getenv('GITHUB_SHA')
@@ -55,6 +53,5 @@ for commit in reversed(commits):
 
 if len(commits) != 0:
     send_message_to_ci_channel(message=message)
-    for artifact_sub_directory in glob.glob(artifact_directory):
-        with open(f'{artifact_sub_directory}/{os.listdir(artifact_sub_directory)[0]}', 'rb') as apk:
-            send_document_to_ci_channel(document=apk)
+    with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
+        send_document_to_ci_channel(document=apk)
