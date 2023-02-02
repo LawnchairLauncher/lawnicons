@@ -9,8 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  svgs:
-    name: SVGs
+  optimize-svgs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
