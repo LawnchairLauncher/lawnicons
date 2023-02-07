@@ -2,10 +2,10 @@ name: Optimize SVGs
 
 on:
   schedule:
-    - cron: "52 * * * *"
+    - cron: "0 * * * *"
     pull_request:
-  - branches_ignore:
-    - main
+    - branches_ignore:
+      - main
   workflow_dispatch:
 
 permissions:
