@@ -41,11 +41,13 @@
   <item component="ComponentInfo{com.acronis.acronistrueimage/com.acronis.mobile.ui2.TheMainActivity}" drawable="acronis_mobile" name="Acronis Mobile"/>
   <item component="ComponentInfo{com.google.android.apps.accessibility.maui.actionblocks/com.google.android.apps.accessibility.maui.actionblocks.home.HomeActivity}" drawable="action_blocks" name="Action Blocks"/>
   <item component="ComponentInfo{de.actionbound/de.actionbound.MainActivity}" drawable="actionbound" name="Actionbound"/>
+  <item component="ComponentInfo{com.accuweather.android/com.accuweather.android.splashscreen.SplashActivity}" drawable="accuweather" name="AccuWeather"/>
   <item component="ComponentInfo{org.adaway/org.adaway.AdAway}" drawable="adaway" name="AdAway"/>
   <item component="ComponentInfo{org.adaway/org.adaway.ui.BaseActivity}" drawable="adaway" name="AdAway"/>
   <item component="ComponentInfo{org.adaway/org.adaway.ui.MainActivity}" drawable="adaway" name="AdAway"/>
   <item component="ComponentInfo{org.adaway/org.adaway.ui.home.HomeActivity}" drawable="adaway" name="AdAway"/>
   <item component="ComponentInfo{com.adidas.app/com.adidas.app.intro.IntroActivity}" drawable="adidas" name="adidas"/>
+  <item component="ComponentInfo{com.adguard.android/com.adguard.android.ui.SplashActivity}" drawable="adguard" name="AdGuard"/>
   <item component="ComponentInfo{com.adidas.app/com.adidas.intro.IntroActivity}" drawable="adidas" name="adidas"/>
   <item component="ComponentInfo{com.adobe.reader/com.adobe.reader.AdobeReader}" drawable="adobe" name="Adobe Acrobat Reader"/>
   <item component="ComponentInfo{com.adobe.scan.android/com.adobe.scan.android.SplashActivity}" drawable="adobe_scan" name="Adobe Scan"/>
@@ -146,6 +148,7 @@
   <item component="ComponentInfo{com.asana.app/com.asana.ui.activities.LoginActivity}" drawable="asana" name="Asana"/>
   <item component="ComponentInfo{com.asos.app/com.asos.app.ui.activities.ConfigActivity}" drawable="asos" name="Asos"/>
   <item component="ComponentInfo{org.lineageos.audiofx/org.lineageos.audiofx.activity.ActivityMusic}" drawable="audiofx" name="AudioFX"/>
+  <item component="ComponentInfo{com.audible.application/com.audible.application.SplashScreen}" drawable="audible" name="Audible"/>
   <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.activity.AuroraActivity}" drawable="aurora_droid" name="Aurora Droid"/>
   <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.ui.activity.AuroraActivity}" drawable="aurora_droid" name="Aurora Droid"/>
   <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.ui.activity.SplashActivity}" drawable="aurora_droid" name="Aurora Droid"/>
@@ -486,6 +489,7 @@
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.launcher.WelcomeDefaultActivity}" drawable="camscanner" name="CamScanner"/>
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.launcher.WelcomePremiumActivity}" drawable="camscanner" name="CamScanner"/>
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.mainmenu.mainactivity.MainActivity}" drawable="camscanner" name="CamScanner"/>
+  <item component="ComponentInfo{com.canva.editor/com.canva.app.editor.splash.SplashActivity}" drawable="canva" name="Canva"/>
   <item component="ComponentInfo{com.lemon.lvoverseas/com.vega.launcher.precondition.PreInstallConfirmActivity}" drawable="capcut" name="CapCut"/>
   <item component="ComponentInfo{com.lemon.lvoverseas/com.vega.main.MainActivity}" drawable="capcut" name="CapCut"/>
   <item component="ComponentInfo{com.google.samples.apps.cardboarddemo/com.google.research.airbender.paperscope.android.launcher.Launcher2D}" drawable="cardboard" name="Cardboard"/>
@@ -1101,6 +1105,7 @@
   <item component="ComponentInfo{com.radio.fmradio/com.radio.fmradio.activities.SplashActivity}" drawable="fm_radio" name="Radio FM - Podcast App"/>
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="fm_radio" name="Radio"/>
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity}" drawable="fm_radio" name="Radio"/>
+  <item component="ComponentInfo{com.fb.fluid/com.fb.fluid.ui.ActivitySettings}" drawable="fluid_navigation_gestures" name="FNG"/>
   <item component="ComponentInfo{com.superelement.pomodoro/com.superelement.project.LauncherActivity}" drawable="focus_todo" name="Focus To-Do"/>
   <item component="ComponentInfo{com.superelement.pomodoro/com.superelement.project.ProjectActivity}" drawable="focus_todo" name="Focus To-Do"/>
   <item component="ComponentInfo{dk.tacit.android.foldersync.full/dk.tacit.android.foldersync.activity.MainActivity}" drawable="foldersync_pro" name="FolderSync Pro"/>
@@ -2301,6 +2306,10 @@
   <item component="ComponentInfo{com.machiav3lli.backup/com.machiav3lli.backup.activities.SplashActivity}" drawable="neo_backup" name="Neo Backup"/>
   <item component="ComponentInfo{com.machiav3lli.fdroid.neo/com.machiav3lli.fdroid.ui.activities.MainActivityX}" drawable="neo_store" name="Neo Store"/>
   <item component="ComponentInfo{com.machiav3lli.fdroid/com.machiav3lli.fdroid.ui.activities.MainActivityX}" drawable="neo_store" name="Neo Store"/>
+  <item component="ComponentInfo{com.nordvpn.android/com.nordvpn.android.MainActivity}" drawable="nord_android" name="NordVPN"/>
+  <item component="ComponentInfo{com.nordvpn.android.teams/com.nordvpn.android.nordlayer.MainActivity}" drawable="nord_android" name="NordLayer"/>
+  <item component="ComponentInfo{com.nordlocker.android.encrypt.cloud/com.nordlocker.android.encrypt.cloud.activity.MainActivity}" drawable="nord_android" name="NordLocker"/>
+  <item component="ComponentInfo{com.nordpass.android.app.password.manager/com.nordpass.android.ui.splash.SplashActivity}" drawable="nord_android" name="NordPass"/>
   <item component="ComponentInfo{com.netflix.mediaclient/com.battlenet.showguide.SplashActivity}" drawable="netflix" name="Netflix"/>
   <item component="ComponentInfo{com.netflix.mediaclient/com.netflix.mediaclient.UIWebViewActivity}" drawable="netflix" name="Netflix"/>
   <item component="ComponentInfo{com.netflix.mediaclient/com.netflix.mediaclient.UIWebViewTabletActivity}" drawable="netflix" name="Netflix"/>
@@ -3200,6 +3209,8 @@
   <item component="ComponentInfo{com.creativetrends.simple.app/com.creativetrends.simple.app.free.activities.SimpleLogin}" drawable="simple_social" name="Simple"/>
   <item component="ComponentInfo{com.automattic.simplenote/com.automattic.simplenote.NotesActivity}" drawable="simplenote" name="Simplenote"/>
   <item component="ComponentInfo{com.simplytranslate_mobile/com.simplytranslate_mobile.MainActivity}" drawable="simplytranslate" name="SimplyTranslate"/>
+  <item component="ComponentInfo{io.simplelogin.android/io.simplelogin.android.module.startup.StartUpActivity}" drawable="simple_login" name="SimpleLogin"/>
+  <item component="ComponentInfo{io.simplelogin.android.fdroid/io.simplelogin.android.module.startup.StartUpActivity}" drawable="simple_login" name="SimpleLogin"/>
   <item component="ComponentInfo{com.adsk.sketchbook/com.adsk.sketchbook.SketchBook}" drawable="sketchbook" name="Sketchbook"/>
   <item component="ComponentInfo{com.tgc.sky.android/com.google.android.gms.security.ProviderInstall}" drawable="sky_children_of_the_light" name="Sky: Children of the Light"/>
   <item component="ComponentInfo{com.tgc.sky.android/com.tgc.sky.GameActivity}" drawable="sky_children_of_the_light" name="Sky: Children of the Light"/>
@@ -3366,6 +3377,7 @@
   <item component="ComponentInfo{com.klinker.android.twitter_l/com.klinker.android.twitter_l.activities.MainActivity}" drawable="talon" name="Talon for Twitter"/>
   <item component="ComponentInfo{com.klinker.android.twitter_l/com.klinker.android.twitter_l.ui.MainActivity}" drawable="talon" name="Talon for Twitter"/>
   <item component="ComponentInfo{com.tplink.iot/com.tplink.iot.view.welcome.StartupActivity}" drawable="tapo" name="Tapo"/>
+  <item component="ComponentInfo{com.kieronquinn.app.taptap/com.kieronquinn.app.taptap.ui.activities.MainActivity}" drawable="taptap" name="Tap, Tap"/>
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.ShortcutActivity}" drawable="tasks" name="Tasks"/>
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Amber}" drawable="tasks" name="Tasks"/>
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.BlueGrey}" drawable="tasks" name="Tasks"/>
@@ -3771,6 +3783,7 @@
   <item component="ComponentInfo{com.pittvandewitt.viperfx/com.pittvandewitt.viperfx.MainActivity}" drawable="viper4android" name="ViPER4Android FX"/>
   <item component="ComponentInfo{com.pittvandewitt.viperfx/com.pittvandewitt.viperfx.StartActivity}" drawable="viper4android" name="ViPER4Android FX"/>
   <item component="ComponentInfo{com.pittvandewitt.viperfx/com.pittvandewitt.viperfx.main.StartActivity}" drawable="viper4android" name="ViPER4Android FX"/>
+  <item component="ComponentInfo{com.aam.viper4android/com.aam.viper4android.MainActivity}" drawable="viperfx" name="ViperFX"/>
   <item component="ComponentInfo{ch.viseca.visecaone/com.netcetera.visecaone.android.feature.branding.alias_activities.VisecaBrandAliasActivity}" drawable="viseca_one" name="One"/>
   <item component="ComponentInfo{com.vivaldi.browser/com.google.android.apps.chrome.Main}" drawable="vivaldi" name="Vivaldi"/>
   <item component="ComponentInfo{com.vkontakte.android/com.vk.android.launcher.icons.IconAlias.DefaultIcon}" drawable="vkontakte" name="VK"/>
@@ -4061,6 +4074,7 @@
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.MainActivity}" drawable="zdfmediathek" name="ZDFmediathek"/>
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.PlatformSwitch}" drawable="zdfmediathek" name="ZDFmediathek"/>
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.ui.splash.SplashActivity}" drawable="zdfmediathek" name="ZDFmediathek"/>
+  <item component="ComponentInfo{net.zedge.android/net.zedge.android.MainDefault}" drawable="zedge" name="Zedge"/>
   <item component="ComponentInfo{com.xiaomi.hm.health/cn.com.smartdevices.bracelet.activity.MainActivity}" drawable="zepp_life" name="Zepp Life"/>
   <item component="ComponentInfo{com.xiaomi.hm.health/cn.com.smartdevices.bracelet.activity.StartUpActivity}" drawable="zepp_life" name="Zepp Life"/>
   <item component="ComponentInfo{com.xiaomi.hm.health/com.xiaomi.hm.health.activity.StartUpActivity}" drawable="zepp_life" name="Zepp Life"/>
