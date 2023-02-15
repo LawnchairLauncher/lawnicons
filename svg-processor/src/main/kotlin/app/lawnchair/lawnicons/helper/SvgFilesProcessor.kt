@@ -11,17 +11,18 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.nio.file.attribute.BasicFileAttributes
 import java.util.EnumSet
+import org.apache.commons.io.FileUtils
+import org.apache.commons.io.FilenameUtils
+import org.dom4j.Document
 import org.dom4j.DocumentException
+import org.dom4j.DocumentHelper
 
 object SvgFilesProcessor {
     private lateinit var sourceSvgPath: Path
     private lateinit var destinationVectorPath: Path
-    private lateinit var mode: String
-
-    fun process(sourceDirectory: String, destDirectory: String, mode: String) {
+    fun process(sourceDirectory: String, destDirectory: String) {
         this.sourceSvgPath = Paths.get(sourceDirectory)
         this.destinationVectorPath = Paths.get(destDirectory)
-        this.mode = mode
         try {
             val options = EnumSet.of(FileVisitOption.FOLLOW_LINKS)
             // check first if source is a directory
@@ -71,16 +72,64 @@ object SvgFilesProcessor {
             val targetFile = XmlUtil.getFileWithExtension(vectorTargetPath)
             val fileOutputStream = FileOutputStream(targetFile)
             Svg2Vector.parseSvgToXml(svgSource.toFile(), fileOutputStream)
+            val fg = "@color/primaryForeground"
+            val bg = "@color/primaryBackground"
             try {
-                val attrValue = if (mode == "dark") "#000" else "#fff"
-                updateXmlPath(targetFile, "android:strokeColor", attrValue)
-                updateXmlPath(targetFile, "android:fillColor", attrValue)
+                updateXmlPath(targetFile, "android:strokeColor", fg)
+                updateXmlPath(targetFile, "android:fillColor", fg)
+                updateRootElement(targetFile, "android:tint", fg)
             } catch (e: DocumentException) {
                 throw RuntimeException(e)
             }
+            createAdaptive(targetFile, bg)
         } else {
             println("Skipping file as its not svg " + svgSource.fileName)
         }
+    }
+
+    @Throws(IOException::class)
+    private fun createAdaptive(xmlPath: String, bgColor: String) {
+        val foregroundXml = xmlPath.replace(".xml", "_foreground.xml")
+        val foregroundFile = FileUtils.getFile(foregroundXml)
+        foregroundFile.delete()
+        FileUtils.moveFile(
+            FileUtils.getFile(xmlPath),
+            foregroundFile,
+        )
+        val drawableName: String = FilenameUtils.getBaseName(xmlPath)
+        val resPath: String = FilenameUtils.getFullPath(xmlPath)
+        val document = DocumentHelper.createDocument()
+        val root = document.addElement("adaptive-icon")
+            .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
+        root.addElement("background")
+            .addAttribute("android:drawable", bgColor)
+        root.addElement("foreground").addElement("inset")
+            .addAttribute("android:inset", "32%")
+            .addAttribute(
+                "android:drawable",
+                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
+            )
+        root.addElement("monochrome").addElement("inset")
+            .addAttribute("android:inset", "28%")
+            .addAttribute(
+                "android:drawable",
+                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
+            )
+        XmlUtil.writeDocumentToFile(document, "$resPath$drawableName.xml")
+    }
+
+    private fun updateRootElement(xmlPath: String, key: String, value: String) {
+        val aDocument: Document = XmlUtil.getDocument(xmlPath)
+        val keyWithoutNameSpace = key.substring(key.indexOf(":") + 1)
+        val attr = aDocument.rootElement.attribute(keyWithoutNameSpace)
+        if (attr != null) {
+            if (attr.value != "#00000000") {
+                attr.value = value
+            }
+        } else {
+            aDocument.rootElement.addAttribute(key, value)
+        }
+        XmlUtil.writeDocumentToFile(aDocument, xmlPath)
     }
 
     private fun updateXmlPath(xmlPath: String, searchKey: String, attributeValue: String) {

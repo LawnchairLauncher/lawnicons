@@ -20,7 +20,7 @@ val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
 val isReleaseBuild = ciBuild && ciRef == "main"
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "1.2.0"
+val version = "2.0.0"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -63,16 +63,13 @@ android {
 
     flavorDimensions += "product"
     productFlavors {
-        create("dark") {
+        create("app") {
             dimension = "product"
             resValue("string", "apps_name", "Lawnicons")
         }
-        create("light") {
-            dimension = "product"
-            applicationIdSuffix = ".light"
-            versionNameSuffix = "-light"
-            resValue("string", "apps_name", "Lawnicons (light)")
-        }
+    }
+    sourceSets.getByName("app") {
+        res.setSrcDirs(listOf("src/runtime/res"))
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -90,7 +87,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
+        kotlinCompilerExtensionVersion = "1.4.2"
     }
 
     packagingOptions {
@@ -117,7 +114,7 @@ hilt.enableAggregatingTask = false
 dependencies {
     val lifecycleVersion = "2.5.1"
     val accompanistVersion = "0.28.0"
-    val hiltVersion = "2.44.2"
+    val hiltVersion = "2.45"
     val retrofitVersion = "2.9.0"
 
     implementation("androidx.core:core-ktx:1.9.0")
@@ -128,7 +125,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha04")
+    implementation("androidx.compose.material3:material3:1.1.0-alpha06")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
