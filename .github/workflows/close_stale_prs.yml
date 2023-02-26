@@ -1,4 +1,5 @@
 name: Close stale PRs
+
 on:
   schedule:
     - cron: 0 0 1-31 * *

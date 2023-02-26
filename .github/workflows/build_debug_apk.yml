@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Debug APK
-          path: app/build/outputs/apk/*/debug/*.apk
+          path: app/build/outputs/apk/app/debug/*.apk
 
   send-notifications:
     runs-on: ubuntu-latest
@@ -88,5 +88,5 @@ jobs:
           TELEGRAM_CI_BOT_TOKEN: ${{ secrets.TELEGRAM_CI_BOT_TOKEN }}
           TELEGRAM_CI_CHANNEL_ID: ${{ secrets.TELEGRAM_CI_CHANNEL_ID }}
           TELEGRAM_TEAM_GROUP_ID: ${{ secrets.TELEGRAM_TEAM_GROUP_ID }}
-          ARTIFACT_DIRECTORY: artifacts/debug-apk/*/debug/
+          ARTIFACT_DIRECTORY: artifacts/debug-apk
           GITHUB_REF: ${{ github.ref }}
