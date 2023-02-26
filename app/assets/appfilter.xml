@@ -41,10 +41,8 @@
   <item component="ComponentInfo{com.tunnelbear.android/com.tunnelbear.android.mvvmReDesign.NavGraphActivity}" drawable="tunnelbear" name="Tunnelbear"/>
   <item component="ComponentInfo{tipster.evolutioit.app/info.androidhive.evolutioit.ui.common.base_activity.BaseActivity}" drawable="tipster" name="Tipster"/>
   <item component="ComponentInfo{se.virtualtrainer.dumbbell/se.starkapps.starkfitness.MainActivity}" drawable="stark_hantel" name="Stark Dumbell"/>
-# The Skiline Icon does not work
-  <item component="ComponentInfo{cc.skiline.android/cc.skiline.android.screens.main.MainActivity}" drawable="skiline" name="Skiline"/>
-# The RVK Icon does not work
-  <item component="ComponentInfo{koeln.kvb.ticket.rvkapp/com.cubic.cumo.mts.MainActivity}" drawable="rvk" name="RVK"/>
+  <item component="ComponentInfo{cc.skiline.android/cc.skiline.android.screens.startup.StartupActivity}" drawable="skiline" name="Skiline"/>
+  <item component="ComponentInfo{koeln.kvb.ticket.rvkapp/com.cubic.cumo.mts.SplashActivity}" drawable="rvk" name="RVK"/>
   <item component="ComponentInfo{com.Afterburn.Railbound/com.unity3d.player.UnityPlayerActivity}" drawable="railbound" name="Railbound"/>
   <item component="ComponentInfo{be.martinelli.miniflutt/io.flutter.embedding.android.FlutterActivity}" drawable="miniflutt" name="Miniflutt"/>
   <item component="ComponentInfo{net.distantmelody.application.duelyst/net.distantmelody.application.duelyst.MainActivity}" drawable="duelyst" name="Duelyst"/>
