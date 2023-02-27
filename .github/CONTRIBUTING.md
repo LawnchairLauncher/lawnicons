@@ -4,7 +4,7 @@ Welcome to the Lawnicons contributing guide! This file will tell you  what you n
 ## Icon guidelines
 See the below image for a summary of the icon guidelines. If you don't follow them, a team member will likely request changing the icons.
 
-![](./contributing-image-1.png)
+![](images/contributing-image-1.png)
 
 Each icon must fit the 160x160px or 144x144px (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
@@ -12,7 +12,7 @@ The stroke should be kept at 12px for most lines. If 12px is too thick, a stroke
 
 In addition to the above, the icons must have an outlined (not filled) style. If the original icon has a filled style, you should change the icon to adhere to the guidelines as seen below.
 
-![](./contributing-image-2.png)
+![](images/contributing-image-2.png)
 
 ## Adding an icon to Lawnicons
 Here’s how to add an icon to&nbsp;Lawnicons:
@@ -55,7 +55,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
   ```xml
   adb shell dumpsys window | find "mCurrentFocus"
   ```
-  ![](./contributing-image-5.png)
+  ![](images/contributing-image-3.png)
 
   Here, the part before the `/` character i.e `org.telegram.messenger` is the package name `[PACKAGE_NAME]` and the part after that i.e `org.telegram.messenger.DefaultIcon` is the Activity name `[APP_ACIVITY_NAME]`.
 
@@ -65,7 +65,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
   2. Launch the app and click ok, let's start.
   3. Get the Activity details for each app.
 
-  ![](./contributing-image-6.png)
+  ![](images/contributing-image-4.png)
   
   ### OR
   
