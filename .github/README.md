@@ -18,7 +18,7 @@ click the first workflow run, and scroll and find the `Debug Apk`.
 
 ## Adding icons
 
-Please see the [contrubuting guide](CONTRIBUTING.md) for information on adding icons.
+Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons.
 
 ## Requesting icons
 
