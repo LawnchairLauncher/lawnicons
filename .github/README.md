@@ -14,11 +14,11 @@ See the [Releases](https://github.com/LawnchairLauncher/lawnicons/releases) sect
 For the development versions with new icons, go to the [Actions](https://github.com/LawnchairLauncher/lawnicons/actions) tab,
 click the first workflow run, and scroll and find the `Debug Apk`.
 
-Note that you'll need to have a GitHub account to download the debug apk.
+**(Note that you'll need to have a GitHub account to download the debug apk)**
 
 ## Adding icons
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for info on adding icons.
+Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons.
 
 ## Requesting icons
 
