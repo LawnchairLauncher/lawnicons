@@ -749,11 +749,13 @@
   <item component="ComponentInfo{com.scheffsblend.designertools/org.cyanogenmod.designertools.ui.DesignerToolsActivity}" drawable="designer_tools" name="Designer Tools"/>
   <item component="ComponentInfo{com.deviantart.android.damobile/com.deviantart.android.damobile.activity.HomeActivity}" drawable="deviantart" name="DeviantArt"/>
   <item component="ComponentInfo{ru.andr7e.deviceinfohw/ru.andr7e.deviceinfohw.MainActivity}" drawable="device_info_hw" name="Device Info HW"/>
+    <item component="ComponentInfo{com.motorola.genie/com.motorola.genie.main.start.LaunchActivity}" drawable="device_info_hw" name="Device Info"/>
   <item component="ComponentInfo{de.dhl.paket/de.dhl.packet.MainActivity}" drawable="dhl" name="Post &amp; DHL"/>
   <item component="ComponentInfo{de.dhl.paket/de.dhl.packet.MigrationScreenActivity}" drawable="dhl" name="Post &amp; DHL"/>
   <item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.base.MainActivity}" drawable="dhl" name="Post &amp; DHL"/>
   <item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.base.main.MainActivity}" drawable="dhl" name="Post &amp; DHL"/>
   <item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.ui.MainActivity}" drawable="dhl" name="Post &amp; DHL"/>
+  <item component="ComponentInfo{com.lifeonair.postparty/com.lifeonair.postparty.root.MainActivity}" drawable="postparty" name="Postparty"/>
   <item component="ComponentInfo{com.android.dialer/.DialtactsActivity}" drawable="dialer" name="Phone"/>
   <item component="ComponentInfo{com.android.dialer/.app.DialtactsActivity}" drawable="dialer" name="Phone"/>
   <item component="ComponentInfo{com.android.dialer/.main.impl.MainActivity}" drawable="dialer" name="Phone"/>
@@ -1273,6 +1275,7 @@
   <item component="ComponentInfo{com.oneplus.gamespace/com.oplus.games.ui.main.MainGameActivity}" drawable="generic_games" name="Games"/>
   <item component="ComponentInfo{com.oplus.games/com.oplus.games.ui.main.MainGameActivity#0}" drawable="generic_games" name="Games"/>
   <item component="ComponentInfo{com.oplus.games/com.oplus.games.ui.main.MainGameActivity}" drawable="generic_games" name="Games"/>
+  <item component="ComponentInfo{com.motorola.gamemode/com.motorola.gamemode.ui.launcher.main.GameCenterActivity}" drawable="generic_games" name="Games"/>
   <item component="ComponentInfo{ai.asleep.android_aaron/ai.asleep.android_aaron.presentation.splash.SplashActivity}" drawable="generic_moon" name="Sleep Tracker"/>
   <item component="ComponentInfo{app.accrescent.client/app.accrescent.client.ui.MainActivity}" drawable="generic_moon" name="Accrescent"/>
   <item component="ComponentInfo{com.dealwatch24.sleepcalculator/com.dealwatch24.sleepcalculator.MainActivity}" drawable="generic_moon" name="Sleep Tracker"/>
@@ -1494,6 +1497,7 @@
   <item component="ComponentInfo{com.google.earth/com.google.earth.MainActivity}" drawable="google_earth" name="Google Earth"/>
   <item component="ComponentInfo{com.google.android.apps.tycho/com.google.android.apps.tycho.AccountDetailsActivity}" drawable="google_fi" name="Google Fi"/>
   <item component="ComponentInfo{com.google.android.apps.fitness/com.google.android.apps.fitness.welcome.WelcomeActivity}" drawable="google_fit" name="Google Fit"/>
+  <item component="ComponentInfo{com.fitbit.FitbitMobile/com.fitbit.FirstActivity}" drawable="fitbit" name="Fitbit"/>
   <item component="ComponentInfo{com.google.android.apps.healthdata/com.google.android.apps.healthdata.LauncherActivity}" drawable="google_health_connect" name="Google Health Connect"/>
   <item component="ComponentInfo{com.google.android.apps.healthdata/com.google.android.apps.healthdata.home.phone.root.RootActivity}" drawable="google_health_connect" name="Google Health Connect"/>
   <item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.apps.chromecast.app.DiscoveryActivity}" drawable="google_home" name="Google Home"/>
@@ -2887,6 +2891,7 @@
   <item component="ComponentInfo{com.teacapps.barcodescanner/net.qrbot.ui.scan.ScanActivity}" drawable="qr_reader" name="QR Reader"/>
   <item component="ComponentInfo{com.tomfong.simpleqr/com.tomfong.simpleqr.MainActivity}" drawable="qr_reader" name="Simple QR"/>
   <item component="ComponentInfo{org.barcodescanner/com.example.barcodescanner.feature.tabs.BottomTabsActivity}" drawable="qr_reader" name="QR &amp; Barcode Scanner"/>
+  <item component="ComponentInfo{com.barclays.android.barclaysmobilebanking/com.barclays.android.registration.NRegSplashActivity}" drawable="barclays" name="Barclays"/>
   <item component="ComponentInfo{io.github.subhamtyagi.quickcalculation/io.github.subhamtyagi.quickcalculation.LaunchActivity}" drawable="quick_calculation" name="Quick Calculation"/>
   <item component="ComponentInfo{com.rhmsoft.edit.pro/com.rhmsoft.edit.activity.MainActivity}" drawable="quickedit" name="QuickEdit"/>
   <item component="ComponentInfo{com.lagradost.quicknovel/com.lagradost.quicknovel.MainActivity}" drawable="quick_novel" name="QuickNovel"/>
@@ -2941,6 +2946,7 @@
   <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.LauncherActivity}" drawable="recorder" name="Recorder"/>
   <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.MainActivity}" drawable="recorder" name="Recorder"/>
   <item component="ComponentInfo{com.motorola.audiorecorder/com.motorola.audiorecorder.ui.main.MainActivity}" drawable="recorder" name="Recorder"/>
+  <item component="ComponentInfo{com.motorola.moto/com.motorola.assist.ui.screens.MainActivity}" drawable="moto" name="Moto"/>
   <item component="ComponentInfo{com.oneplus.soundrecorder/.SoundRecorder}" drawable="recorder" name="Recorder"/>
   <item component="ComponentInfo{com.oneplus.soundrecorder/com.oneplus.soundrecorder.SoundRecorder}" drawable="recorder" name="Recorder"/>
   <item component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="recorder" name="Recorder"/>
@@ -2973,6 +2979,7 @@
   <item component="ComponentInfo{com.bnyro.recorder/com.bnyro.recorder.ui.MainActivity}" drawable="recorder" name="Record You"/>
   <item component="ComponentInfo{in.redbus.android/in.redbus.android.activity.SplashScreen}" drawable="redbus" name="RedBus"/>
   <item component="ComponentInfo{in.redbus.android/in.redbus.android.root.SplashScreen}" drawable="redbus" name="RedBus"/>
+  <item component="ComponentInfo{travel.ticketless.app.ipswich/travel.ticketless.app.activities.splashScreen.SpashScreenActivity}" drawable="redbus" name="Ipswich"/>
   <item component="ComponentInfo{com.devgary.ready/com.devgary.ready.activity.MainActivity}" drawable="reddit" name="Ready"/>
   <item component="ComponentInfo{com.devgary.ready/com.devgary.ready.activity.ReadyDrawerActivity}" drawable="reddit" name="Ready"/>
   <item component="ComponentInfo{com.reddit.frontpage/com.reddit.frontpage.StartActivity}" drawable="reddit" name="Reddit"/>
@@ -3034,6 +3041,7 @@
   <item component="ComponentInfo{com.aefyr.sai.fdroid/com.aefyr.sai.ui.activities.MainActivity}" drawable="sai" name="SAI"/>
   <item component="ComponentInfo{com.aefyr.sai/com.aefyr.sai.ui.activities.MainActivity}" drawable="sai" name="SAI"/>
   <item component="ComponentInfo{ani.saikou.beta/ani.saikou.MainActivity}" drawable="saikou" name="Saikou β"/>
+  <item component="ComponentInfo{uk.co.smhw.android/uk.co.smhw.android.ui.DefaultMainActivity}" drawable="satchel_one" name="SatchelOne"/>
   <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeDashboardActivity}" drawable="samsung_health" name="Samsung Health"/>
   <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="samsung_health" name="Samsung Health"/>
   <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}" drawable="samsung_health" name="Samsung Health"/>
