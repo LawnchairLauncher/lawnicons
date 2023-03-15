@@ -15,13 +15,13 @@ on:
       - 'NOTICE'
   pull_request:
     paths-ignore:
-    - '.idea/**'
-    - '.gitattributes'
-    - '.github/**.json'
-    - '.gitignore'
-    - '**.md'
-    - 'LICENSE'
-    - 'NOTICE'
+      - '.idea/**'
+      - '.gitattributes'
+      - '.github/**.json'
+      - '.gitignore'
+      - '**.md'
+      - 'LICENSE'
+      - 'NOTICE'
 
 jobs:
   build-debug-apk:
