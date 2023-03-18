@@ -36,7 +36,31 @@
   <item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar"/>
   <item component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
   <!--  Lawnicons -->
-  <item component="ComponentInfo{com.divvydiary.twa/com.divvydiary.twa.LauncherActivity}" drawable="divvydiary" name="DivvyDiary"/>
+
+  <item component="ComponentInfo{com.chamberlain.android.liftmaster.myq/com.chamberlain.myq.main.HomeTabsActivity}" drawable="my_q" name="myQ"/>
+  <item component="ComponentInfo{com.bilkon.easypiano/com.unity3d.player.UnityPlayerActivity}" drawable="piano" name="Real Piano"/>
+    <item component="ComponentInfo{com.habitrpg.android.habitica/com.habitrpg.android.habitica.ui.activities.MainActivity}" drawable="habitica" name="Habitica"/>
+    <item component="ComponentInfo{com.desmos.calculator/com.desmos.calculator.MainActivity}" drawable="desmos" name="Desmos"/>
+    <item component="ComponentInfo{com.feit.smart/com.tuya.smart.hometab.activity.FamilyHomeActivity}" drawable="feit_electric" name="Feit Electric"/>
+<!--  <item component="ComponentInfo{ /}" drawable="" name=""/>-->
+
+    <item component="ComponentInfo{com.hulu.plus/com.hulu.features.splash.SplashActivity}" drawable="hulu" name="Hulu"/>
+
+    <item component="ComponentInfo{com.lgeha.nuts/.MainActivity}" drawable="lg_thinq" name="LG ThinQ"/>
+    <item component="ComponentInfo{com.mcom.firstcitizens/com.q2.app.core.ui.MainActivity}" drawable="first_citizens_bank" name="First Citizens Bank"/>
+    <item component="ComponentInfo{com.chartcross.gpstest/com.chartcross.gpstest.MainActivity}" drawable="gps_test" name="GPS Test"/>
+      <item component="ComponentInfo{com.dronedeploy.beta/com.dronedeploy.beta.ui.MainActivity}" drawable="drone_deploy" name="DroneDeploy"/>
+      <item component="ComponentInfo{dji.go.v5/com.dji.component.application.activity.DJILauncherActivity}" drawable="dji" name="DJI"/>
+    <item component="ComponentInfo{cc.forestapp/cc.forestapp.activities.main.MainActivity}" drawable="forest" name="Forest"/>
+    <item component="ComponentInfo{com.weatherflow.smartweather/com.weatherflow.smartweather.presentation.home.MainActivity}" drawable="tempest" name="Tempest"/>
+    <item component="ComponentInfo{com.noodlecake.altosodyssey/com.unity3d.player.UnityPlayerActivity}" drawable="altos_odyssey" name="Alto's Odyssey"/>
+    <item component="ComponentInfo{com.google.audio.hearing.visualization.accessibility.scribe/com.google.audio.hearing.visualization.accessibility.scribe.LauncherActivity}" drawable="live_transcribe" name="Live Transcribe"/>
+    <item component="ComponentInfo{com.ovelin.guitartuna/com.yousician.yousiciannative.GuitarTunaActivity}" drawable="guitartuna" name="Guitartuna"/>
+  <item component="ComponentInfo{com.gamepass/com.gamepass.MainActivity}" drawable="xbox_game_pass" name="Xbox Game Pass"/>
+    <item component="ComponentInfo{com.twinkly/com.twinklyv2.com.presentation.ui.features.main.MainMenuActivity}" drawable="twinkly" name="Twinkly"/>
+    <item component="ComponentInfo{com.amazon.kindle/com.amazon.kcp.oob.MainActivity}" drawable="kindle" name="Kindle"/>
+
+    <item component="ComponentInfo{com.divvydiary.twa/com.divvydiary.twa.LauncherActivity}" drawable="divvydiary" name="DivvyDiary"/>
   <item component="ComponentInfo{com.nintendo.zaka/com.google.firebase.MessagingUnityPlayerActivity}" drawable="mario_kart_tour" name="Mario Kart Tour"/>
   <item component="ComponentInfo{com.nintendo.zara/com.snslinkage.dena.snslinkageunityplugin.SnsLinkageSafeUnityPlayerNativeActivity}" drawable="super_mario_run" name="Super Mario Run"/>
   <item component="ComponentInfo{com.quinncasey.paperless_share/com.quinncasey.paperless_share.MainActivity}" drawable="paperless" name="Paperless Share"/>
@@ -884,7 +908,7 @@
   <item component="ComponentInfo{in.startv.hotstar.dplus/in.startv.hotstar.rocky.launch.splash.SplashActivity}" drawable="hotstar" name="Disney+ Hotstar" />
   <item component="ComponentInfo{in.startv.hotstar/in.startv.hotstar.activities.splash.SplashActivity}" drawable="hotstar" name="Disney+ Hotstar" />
   <item component="ComponentInfo{in.startv.hotstar/in.startv.hotstar.rocky.launch.splash.SplashActivity}" drawable="hotstar" name="Disney+ Hotstar" />
-  <item component="ComponentInfo{com.dji.ronin/com.dji.ronin.RoninHubActivity}" drawable="dji_ronin" name="DJI Ronin" />
+  <item component="ComponentInfo{com.dji.ronin/com.dji.ronin.RoninHubActivity}" drawable="dji" name="DJI" />
   <item component="ComponentInfo{com.starfinanz.mobile.android.dkbpushtan/com.starfinanz.mobile.android.dkbpushtan.DKBPushTan}" drawable="dkb_pushtan" name="DKB TAN2go" />
   <item component="ComponentInfo{com.dolby/com.dolby.ds1appUI.MainActivity}" drawable="dolby" name="Dolby" />
   <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphin_emulator" name="Dolphin Emulator" />
