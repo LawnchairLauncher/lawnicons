@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    "-s", "--svg", help="Path to the svg", metavar='"svg path"', required=True
+    "-s", "--svg", help="Path to the svg", metavar='"svg path"', required=False
 )
 parser.add_argument(
     "-c",
@@ -22,40 +22,67 @@ parser.add_argument(
 parser.add_argument(
     "-n", "--name", help="App name", metavar='"App name"', required=True
 )
+parser.add_argument(
+    "-l", "--link", help="Icon to link", metavar='"icon name"', required=False
+)
 
 # parse args
 args = parser.parse_args()
-# add drawable name to args
-vars(args)["drawable"] = os.path.basename(args.svg[:-4])
 
 # open the appfilter file
 appfilter = "app/assets/appfilter.xml"
 xmlfile = open(appfilter, "r").read()
 
-errorprefix = "\033[91mError:\033[0m "
-addedsvg = "svgs/" + os.path.basename(args.svg)
+def printerror(msg):
+    print("\033[91mError:\033[0m " + msg)
 
-# check if the svg exists, exits if it doesn't
-if os.path.isfile(args.svg) == False:
-    print(errorprefix + "svg doesn't exist")
+# Check if it's an addition or a link
+if (args.svg != None) != (args.link != None):
+    if args.svg != None:
+        linkmode = False
+    else:
+        linkmode = True
+else:
+    printerror("you must specify either adding an icon (-s) or linking (-l)")
     exit()
+
+if linkmode == False:
+    addedsvg = "svgs/" + os.path.basename(args.svg)
+    # add drawable name to args
+    vars(args)["drawable"] = os.path.basename(args.svg[:-4])
+    # check if the svg exists, exits if it doesn't
+    if os.path.isfile(args.svg) == False:
+        printerror("svg doesn't exist")
+        exit()
+else:
+    if args.link.endswith(".svg"):
+        vars(args)["drawable"] = args.link[:-4]
+    else:
+        vars(args)["drawable"] = args.link
 
 # check if the entry exists
 if args.component in xmlfile:
-    print(errorprefix + "entry already exists")
+    printerror("entry already exists")
     exit()
 
-#check if the svg exists in the svg directory
-if os.path.isfile(addedsvg) == True:
-    print(errorprefix + "svg exists in the svg directory")
-    exit()
+# check if the svg exists in the svg directory
+if linkmode == False:
+    if os.path.isfile(addedsvg) == True:
+        printerror("svg exists in the svg directory")
+        exit()
+
+# check if svg exists in svgs when linking
+if linkmode == True:
+    if os.path.isfile("svgs/" + args.drawable + ".svg") == False:
+        printerror("svg doesn't exist in the svg directory")
+        exit()
 
 # add the svg to the svg directory
-shutil.copyfile(args.svg, addedsvg)
+if linkmode == False:
+    shutil.copyfile(args.svg, addedsvg)
 
 # generate the line
 line = f'  <item component="ComponentInfo{{{args.component}}}" drawable="{args.drawable}" name="{args.name}" />'
-
 
 # xml without calendar stuff
 purexmlfile = re.sub(
@@ -98,8 +125,12 @@ with open(appfilter) as file:
 
 for number, line in enumerate(lines, 1):
     if args.component in line:
+        if linkmode == False:
+            action = "added"
+        else:
+            action = "linked"
         print(
-            f"added \033[92m{args.name}\033[0m icon to appfilter.xml in line \033[92m{number}\033[0m"
+            f"{action} \033[92m{args.name}\033[0m icon to appfilter.xml in line \033[92m{number}\033[0m"
         )
 
 # todo: command to remove existing entry/svg from the folder
