@@ -113,7 +113,7 @@ hilt.enableAggregatingTask = false
 
 dependencies {
     val lifecycleVersion = "2.6.1"
-    val accompanistVersion = "0.28.0"
+    val accompanistVersion = "0.30.0"
     val hiltVersion = "2.45"
     val retrofitVersion = "2.9.0"
 
