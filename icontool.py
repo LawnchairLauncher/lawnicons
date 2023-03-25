@@ -13,17 +13,32 @@ parser.add_argument(
     "-s", "--svg", help="Path to the svg", metavar='"svg path"', required=False
 )
 parser.add_argument(
+    "-l", "--link", help="Icon to link", metavar='"icon name"', required=False
+)
+parser.add_argument(
     "-c",
     "--component",
     help="Component information",
     metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
-    required=True,
+    required=False,
 )
 parser.add_argument(
-    "-n", "--name", help="App name", metavar='"App name"', required=True
+    "-n", "--name", help="App name", metavar='"App name"', required=False
 )
 parser.add_argument(
-    "-l", "--link", help="Icon to link", metavar='"icon name"', required=False
+    "-r", "--remove", help="Package to remove", metavar='"package name"', required=False
+)
+parser.add_argument(
+    "-d",
+    "--delete",
+    help="Enable deleting the icon file when removing the icon entry",
+    action="store_true",
+)
+parser.add_argument(
+    "-m",
+    "--message",
+    help="Enable generating a message to use in pr",
+    action="store_true",
 )
 
 # parse args
@@ -33,10 +48,50 @@ args = parser.parse_args()
 appfilter = "app/assets/appfilter.xml"
 xmlfile = open(appfilter, "r").read()
 
+
 def printerror(msg):
     print("\033[91mError:\033[0m " + msg)
+    exit()
 
-# Check if it's an addition or a link
+
+# removing an icon from appfilter.xml
+if args.remove != None:
+    # check for unnecessary arguments
+    for i in [
+        [args.svg, "svg"],
+        [args.link, "link"],
+        [args.component, "component"],
+        [args.name, "name"],
+    ]:
+        if i[0] != None:
+            if i[1][0] == "s":
+                errormsgarticle = "an "
+            else:
+                errormsgarticle = "a "
+            printerror(
+                "don't specify " + errormsgarticle + i[1] + " when removing an icon"
+            )
+    # remove the line
+    with open(appfilter, "r") as file:
+        lines = file.readlines()
+    with open(appfilter, "w") as f:
+        for linenumber, line in enumerate(lines, 1):
+            if args.remove not in line:
+                f.write(line)
+            elif args.remove in line:
+                deletedline = line
+                number = linenumber
+                print(
+                    f"removed \033[92m{args.remove}\033[0m icon in line \033[92m{number}\033[0m"
+                )
+    # delete the icon when asked to
+    if args.delete == True:
+        deletedfile = ET.fromstring(deletedline).get("drawable") + ".svg"
+        os.remove("svgs/" + deletedfile)
+        print(f"deleted \033[92m{deletedfile}\033[0m")
+    exit()
+
+# check if it's an addition or a link
 if (args.svg != None) != (args.link != None):
     if args.svg != None:
         linkmode = False
@@ -44,7 +99,12 @@ if (args.svg != None) != (args.link != None):
         linkmode = True
 else:
     printerror("you must specify either adding an icon (-s) or linking (-l)")
-    exit()
+
+
+# check if the component and name are specified
+for i in [[args.component, "component (-c)"], [args.name, "name (-n)"]]:
+    if i[0] == None:
+        printerror("you must specify a " + i[1])
 
 if linkmode == False:
     addedsvg = "svgs/" + os.path.basename(args.svg)
@@ -53,7 +113,7 @@ if linkmode == False:
     # check if the svg exists, exits if it doesn't
     if os.path.isfile(args.svg) == False:
         printerror("svg doesn't exist")
-        exit()
+
 else:
     if args.link.endswith(".svg"):
         vars(args)["drawable"] = args.link[:-4]
@@ -63,19 +123,16 @@ else:
 # check if the entry exists
 if args.component in xmlfile:
     printerror("entry already exists")
-    exit()
 
 # check if the svg exists in the svg directory
 if linkmode == False:
     if os.path.isfile(addedsvg) == True:
         printerror("svg exists in the svg directory")
-        exit()
 
 # check if svg exists in svgs when linking
 if linkmode == True:
     if os.path.isfile("svgs/" + args.drawable + ".svg") == False:
         printerror("svg doesn't exist in the svg directory")
-        exit()
 
 # add the svg to the svg directory
 if linkmode == False:
@@ -132,5 +189,12 @@ for number, line in enumerate(lines, 1):
         print(
             f"{action} \033[92m{args.name}\033[0m icon to appfilter.xml in line \033[92m{number}\033[0m"
         )
-
-# todo: command to remove existing entry/svg from the folder
+        if args.message == True:
+            if linkmode == False:
+                print(
+                    f"* {args.name} (`{args.component}`)"
+                )
+            elif linkmode == True:
+                print(
+                    f"* {args.name} (linked `{args.component}` to `@drawable/{args.drawable}`)"
+                )
