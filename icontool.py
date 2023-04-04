@@ -157,11 +157,11 @@ editedxmlfile = purexmlfile[:52] + line + purexmlfile[52:]
 xmldata = ET.fromstring(editedxmlfile)
 
 
-def sortchildrenby(parent, attr):
-    parent[:] = sorted(parent, key=lambda child: child.get(attr))
+#def sortchildrenby(parent, attr):
+#    parent[:] = sorted(parent, key=lambda child: child.get(attr))
 
-
-sortchildrenby(xmldata, "name")
+#sortchildrenby(xmldata, "name")
+xmldata[:] = sorted(xmldata, key=lambda child: child.get("name").casefold())
 
 sortedxmldata = ET.tostring(xmldata, encoding="unicode")
 sortedxmldata = (
