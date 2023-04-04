@@ -217,6 +217,7 @@
   <item component="ComponentInfo{com.governikus.ausweisapp2.dev/com.governikus.ausweisapp2.MainActivity}" drawable="ausweisapp2" name="AusweisApp2" />
   <item component="ComponentInfo{com.authy.authy/.activities.InitializationActivity}" drawable="authy" name="Authy" />
   <item component="ComponentInfo{com.authy.authy/com.authy.authy.activities.InitializationActivity}" drawable="authy" name="Authy" />
+  <item component="ComponentInfo{com.jens.automation2/com.jens.automation2.ActivityMainTabLayout}" drawable="automation" name="Automation" />
   <item component="ComponentInfo{com.ttxapps.drivesync/com.ttxapps.sync.app.MainActivity}" drawable="autosync" name="Autosync for Google Drive" />
   <item component="ComponentInfo{org.oxycblt.auxio/org.oxycblt.auxio.MainActivity}" drawable="auxio" name="Auxio" />
   <item component="ComponentInfo{deckers.thibault.aves/deckers.thibault.aves.MainActivity}" drawable="aves_gallery" name="Aves Gallery" />
@@ -1713,6 +1714,7 @@
   <item component="ComponentInfo{com.netbiscuits.kicker/com.netbiscuits.kicker.Kicker}" drawable="kicker" name="kicker" />
   <item component="ComponentInfo{com.netbiscuits.kicker/com.netbiscuits.kicker.splash.SplashActivity}" drawable="kicker" name="kicker" />
   <item component="ComponentInfo{com.netbiscuits.kicker/com.tickaroo.kickerxml.ui.home.HomeActivity}" drawable="kicker" name="kicker" />
+  <item component="ComponentInfo{net.sourceforge.kid3/net.sourceforge.kid3.Kid3Activity}" drawable="kid3" name="Kid3" />
   <item component="ComponentInfo{com.amazon.kindle/com.amazon.kcp.oob.MainActivity}" drawable="kindle" name="Kindle" />
   <item component="ComponentInfo{com.nexstreaming.app.kinemasterfree/com.nexstreaming.kinemaster.ui.splash.SplashActivity}" drawable="kinemaster" name="KineMaster" />
   <item component="ComponentInfo{com.nexstreaming.app.kinemasterfree/com.nextreaming.nexeditorui.MainActivity}" drawable="kinemaster" name="KineMaster" />
@@ -2540,6 +2542,7 @@
   <item component="ComponentInfo{org.ligi.passandroid/org.ligi.passandroid.ui.PassListActivity}" drawable="passandroid" name="PassAndroid" />
   <item component="ComponentInfo{com.reneph.passwordsafe/com.reneph.passwordsafe.login.Login_Activity}" drawable="password_safe_manager" name="Password Safe and Manager" />
   <item component="ComponentInfo{com.reneph.passwordsafe/com.reneph.passwordsafe.login.LoginActivity}" drawable="password_safe_manager" name="Password Safe and Manager" />
+  <item component="ComponentInfo{dev.msfjarvis.aps/com.zeapo.pwdstore.PasswordStore}" drawable="password_store" name="Password Store" />
   <item component="ComponentInfo{com.patreon.android/com.patreon.android.ui.shared.LauncherActivity}" drawable="patreon" name="Patreon" />
   <item component="ComponentInfo{com.patreon.android/com.patreon.app.RootActivity}" drawable="patreon" name="Patreon" />
   <item component="ComponentInfo{de.payback.client.android/de.payback.app.ui.main.MainActivity}" drawable="payback" name="Payback" />
@@ -3718,6 +3721,8 @@
   <item component="ComponentInfo{com.nintendo.zara/com.snslinkage.dena.snslinkageunityplugin.SnsLinkageSafeUnityPlayerNativeActivity}" drawable="super_mario_run" name="Super Mario Run" />
   <item component="ComponentInfo{superfreeze.tool.android/superfreeze.tool.android.userInterface.FreezeShortcutActivity}" drawable="superfreezz_shortcut" name="superfreezz" />
   <item component="ComponentInfo{superfreeze.tool.android/superfreeze.tool.android.userInterface.mainActivity.MainActivity}" drawable="superfreezz" name="superfreezz" />
+  <item component="ComponentInfo{com.zhenxiang.superimage/com.zhenxiang.superimage.MainActivity}" drawable="superimage" name="SuperImage" />
+  <item component="ComponentInfo{com.nintendo.zara/com.snslinkage.dena.snslinkageunityplugin.SnsLinkageSafeUnityPlayerNativeActivity}" drawable="super_mario_run" name="Super Mario Run" />
   <item component="ComponentInfo{com.sweech/com.sweech.MainActivity}" drawable="sweech" name="Sweech" />
   <item component="ComponentInfo{org.swiftapps.swiftbackup/org.swiftapps.swiftbackup.home.HomeActivity}" drawable="swift_backup" name="Swift Backup" />
   <item component="ComponentInfo{org.swiftapps.swiftbackup/org.swiftapps.swiftbackup.intro.IntroActivity}" drawable="swift_backup" name="Swift Backup" />
@@ -4169,6 +4174,7 @@
   <item component="ComponentInfo{com.vanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="vanced_youtube_music" name="Vanced YouTube Music" />
   <item component="ComponentInfo{com.inglesdivino.vectorassetcreator/com.inglesdivino.vectorassetcreator.MainActivity}" drawable="vector_asset_creator" name="Vector Asset Creator" />
   <item component="ComponentInfo{com.vincentengelsoftware.vesandroidimagecompare/com.vincentengelsoftware.androidimagecompare.MainActivity}" drawable="photo_compare" name="VES - Image and Photo Compare" />
+  <item component="ComponentInfo{de.blau.android/de.blau.android.Main}" drawable="vespucci" name="Vespucci" />
   <item component="ComponentInfo{com.voyagerx.scanner/com.voyagerx.livedewarp.EntryActivity}" drawable="vflat" name="vFlat" />
   <item component="ComponentInfo{com.voyagerx.scanner/com.voyagerx.livedewarp.EntryActivity}" drawable="vflat" name="vFlat" />
   <item component="ComponentInfo{mark.via.gp/mark.via.Shell}" drawable="via_browser" name="Via Browser" />
@@ -4448,9 +4454,12 @@
   <item component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.HomePage}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.google.android.youtube/net.ogmods.youtube.OGDownloadManager1}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music ReVanced Extended" />
   <item component="ComponentInfo{app.revanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music Revanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
+  <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
+  <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.activities.SplashActivity}" drawable="ytstudio" name="YouTube Studio" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.main.MainActivity}" drawable="ytstudio" name="YouTube Studio" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/.main.MainActivity}" drawable="ytstudio" name="YouTube Studio" />
