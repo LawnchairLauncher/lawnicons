@@ -117,7 +117,7 @@ dependencies {
     val hiltVersion = "2.45"
     val retrofitVersion = "2.9.0"
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.0")
     implementation("androidx.activity:activity-compose:1.7.0")
     implementation(platform("androidx.compose:compose-bom:2023.04.00"))
     implementation("androidx.compose.ui:ui")
