@@ -1,5 +1,5 @@
 # Lawnicons contributing guide
-Welcome to the Lawnicons contributing guide! This file will tell you  what you need to know to contribute to Lawnicons.
+Welcome to the Lawnicons contributing guide! This file will tell you what you need to know to contribute to Lawnicons.
 
 ## Icon guidelines
 See the below image for a summary of the icon guidelines. If you don't follow them, a team member will likely request changing the icons.
