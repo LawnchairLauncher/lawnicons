@@ -20,7 +20,7 @@ click the first workflow run, and scroll and find the `Debug Apk`.
 
 Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons.
 
-For users familiar with the guidelines, checkout how to use (icontool.py)[icontool_guide.md] to speedup the process of adding icons.
+For users familiar with the guidelines, checkout how to use (icontool.py)[/icontool_guide.md] to speedup the process of adding icons.
 
 ## Requesting icons
 
