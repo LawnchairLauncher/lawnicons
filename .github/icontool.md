@@ -8,7 +8,12 @@
 ```python3 icontool.py -s /path/to/icon.svg -c com.app.app/com.app.app.appActivity -n "App Name" -m ```
 
 It'll print a message with the icons added along with the package/activity name:
-f.lux (`com.justgetflux.flux/com.justgetflux.flux.FluxActivity`)
+App Name (`com.app.app/com.app.app.appActivity`)
+
+# Add link to an existing icon
+```python3 icontool.py -l icon.svg -c com.app.app/com.app.app.appActivity -n "App Name"```
+
+**Note: The path to the icon is not required as it should already exist in the `svgs` folder**
 
 # Removing a link
 
