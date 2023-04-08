@@ -19,7 +19,7 @@ Here’s how to add an icon to&nbsp;Lawnicons:
 
 ## Via `icontool.py`
 
-Please check the [icon tool guide](/icontool_guide.md) for more information.
+Please check the [icon tool guide](https://github.com/LawnchairLauncher/lawnicons/blob/develop/.github/icontool_guide.md) for more information.
 
 ## Via manual process
 
