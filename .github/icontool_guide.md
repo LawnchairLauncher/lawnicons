@@ -44,7 +44,7 @@ python3 icontool.py -r com.app.app/com.app.app.appActivity
 python3 icontool.py -r com.app.app
 ```
 
-## Remove a link and SVG
+## Remove a link and its SVG
 
 ```xml
 python3 icontool.py -r com.app.app -d
