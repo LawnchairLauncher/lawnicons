@@ -8,27 +8,14 @@
 python3 icontool.py -s /path/to/icon.svg -c com.app.app/com.app.app.appActivity -n "App Name"
 ```
 
-## Add an icon (with generated message)
-```xml
-python3 icontool.py -s /path/to/icon.svg -c com.app.app/com.app.app.appActivity -n "App Name" -m
-```
-
-When adding, it'll print out the name of the app with the package and activity name.
-```xml
-App Name (`com.app.app/com.app.app.appActivity`)
-```
-When linking, it'll print out the name of the app, the package and activity name and the icon its been linked to.
-```xml
-App Name (linked to `com.app.app/com.app.app.appActivities` to `@drawable/icon`)
-```
+**Note**: `-m` can be added at the end of the command to generate a message.
 
 ## Add a link to an existing icon
 ```xml
 python3 icontool.py -l icon.svg -c com.app.app/com.app.app.appActivity -n "App Name"
 ```
 
-**Note: The path to the icon is not required as it should already exist in the `svgs` folder**
-
+**Note:** The path to the icon is not required as it should already exist in the `svgs` folder.
 
 # Removing icons/links
 
