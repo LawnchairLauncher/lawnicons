@@ -10,23 +10,39 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    "-s", "--svg", help="Path to the svg", metavar='"svg path"', required=False
+    "-s",
+    "--svg",
+    help="Path to the svg",
+    metavar='"svg path"',
+    required=False
 )
 parser.add_argument(
-    "-l", "--link", help="Icon to link", metavar='"icon name"', required=False
+    "-l",
+    "--link",
+    help="Icon to link",
+    metavar='"icon name"',
+    required=False
 )
 parser.add_argument(
     "-c",
     "--component",
     help="Component information",
     metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
-    required=False,
+    required=False
 )
 parser.add_argument(
-    "-n", "--name", help="App name", metavar='"App name"', required=False
+    "-n",
+    "--name",
+    help="App name",
+    metavar='"App name"',
+    required=False
 )
 parser.add_argument(
-    "-r", "--remove", help="Package to remove", metavar='"package name"', required=False
+    "-r",
+    "--remove",
+    help="Package to remove",
+    metavar='"package name"',
+    required=False
 )
 parser.add_argument(
     "-d",
@@ -157,11 +173,11 @@ editedxmlfile = purexmlfile[:52] + line + purexmlfile[52:]
 xmldata = ET.fromstring(editedxmlfile)
 
 
-def sortchildrenby(parent, attr):
-    parent[:] = sorted(parent, key=lambda child: child.get(attr))
+#def sortchildrenby(parent, attr):
+#    parent[:] = sorted(parent, key=lambda child: child.get(attr))
 
-
-sortchildrenby(xmldata, "name")
+#sortchildrenby(xmldata, "name")
+xmldata[:] = sorted(xmldata, key=lambda child: child.get("name").casefold())
 
 sortedxmldata = ET.tostring(xmldata, encoding="unicode")
 sortedxmldata = (

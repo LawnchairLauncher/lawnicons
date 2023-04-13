@@ -1,5 +1,5 @@
 # Lawnicons contributing guide
-Welcome to the Lawnicons contributing guide! This file will tell you  what you need to know to contribute to Lawnicons.
+Welcome to the Lawnicons contributing guide! This file will tell you what you need to know to contribute to Lawnicons.
 
 ## Icon guidelines
 See the below image for a summary of the icon guidelines. If you don't follow them, a team member will likely request changing the icons.
@@ -16,6 +16,12 @@ In addition to the above, the icons must have an outlined (not filled) style. If
 
 ## Adding an icon to Lawnicons
 Here’s how to add an icon to&nbsp;Lawnicons:
+
+## Via `icontool.py`
+
+Please check the [icon tool guide](/.github/icontool_guide.md) for more information.
+
+## Via manual process
 
 1. Prepare your icon in the SVG format, adhering to the [above guidelines](#icon-guidelines). Use snake case for the filename (e.g.&nbsp;`files_by_google.svg`).
 
