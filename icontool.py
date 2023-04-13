@@ -10,49 +10,42 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    "-s",
-    "--svg",
+    "-s", "--svg",
     help="Path to the svg",
     metavar='"svg path"',
     required=False
 )
 parser.add_argument(
-    "-l",
-    "--link",
+    "-l", "--link",
     help="Icon to link",
     metavar='"icon name"',
     required=False
 )
 parser.add_argument(
-    "-c",
-    "--component",
+    "-c", "--component",
     help="Component information",
     metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
     required=False
 )
 parser.add_argument(
-    "-n",
-    "--name",
+    "-n", "--name",
     help="App name",
     metavar='"App name"',
     required=False
 )
 parser.add_argument(
-    "-r",
-    "--remove",
+    "-r", "--remove",
     help="Package to remove",
     metavar='"package name"',
     required=False
 )
 parser.add_argument(
-    "-d",
-    "--delete",
+    "-d", "--delete",
     help="Enable deleting the icon file when removing the icon entry",
     action="store_true",
 )
 parser.add_argument(
-    "-m",
-    "--message",
+    "-m", "--message",
     help="Enable generating a message to use in pr",
     action="store_true",
 )
@@ -71,7 +64,7 @@ def printerror(msg):
 
 
 # removing an icon from appfilter.xml
-if args.remove != None:
+if args.remove:
     # check for unnecessary arguments
     for i in [
         [args.svg, "svg"],
@@ -79,7 +72,7 @@ if args.remove != None:
         [args.component, "component"],
         [args.name, "name"],
     ]:
-        if i[0] != None:
+        if i[0]:
             if i[1][0] == "s":
                 errormsgarticle = "an "
             else:
@@ -101,7 +94,7 @@ if args.remove != None:
                     f"removed \033[92m{args.remove}\033[0m icon in line \033[92m{number}\033[0m"
                 )
     # delete the icon when asked to
-    if args.delete == True:
+    if args.delete:
         deletedfile = ET.fromstring(deletedline).get("drawable") + ".svg"
         os.remove("svgs/" + deletedfile)
         print(f"deleted \033[92m{deletedfile}\033[0m")
@@ -109,7 +102,7 @@ if args.remove != None:
 
 # check if it's an addition or a link
 if (args.svg != None) != (args.link != None):
-    if args.svg != None:
+    if args.svg:
         linkmode = False
     else:
         linkmode = True
@@ -122,7 +115,7 @@ for i in [[args.component, "component (-c)"], [args.name, "name (-n)"]]:
     if i[0] == None:
         printerror("you must specify a " + i[1])
 
-if linkmode == False:
+if not linkmode:
     addedsvg = "svgs/" + os.path.basename(args.svg)
     # add drawable name to args
     vars(args)["drawable"] = os.path.basename(args.svg[:-4])
@@ -141,17 +134,17 @@ if args.component in xmlfile:
     printerror("entry already exists")
 
 # check if the svg exists in the svg directory
-if linkmode == False:
+if not linkmode:
     if os.path.isfile(addedsvg) == True:
         printerror("svg exists in the svg directory")
 
 # check if svg exists in svgs when linking
-if linkmode == True:
+if linkmode:
     if os.path.isfile("svgs/" + args.drawable + ".svg") == False:
         printerror("svg doesn't exist in the svg directory")
 
 # add the svg to the svg directory
-if linkmode == False:
+if not linkmode:
     shutil.copyfile(args.svg, addedsvg)
 
 # generate the line
@@ -198,19 +191,19 @@ with open(appfilter) as file:
 
 for number, line in enumerate(lines, 1):
     if args.component in line:
-        if linkmode == False:
+        if not linkmode:
             action = "added"
         else:
             action = "linked"
         print(
             f"{action} \033[92m{args.name}\033[0m icon to appfilter.xml in line \033[92m{number}\033[0m"
         )
-        if args.message == True:
-            if linkmode == False:
+        if args.message:
+            if not linkmode:
                 print(
                     f"* {args.name} (`{args.component}`)"
                 )
-            elif linkmode == True:
+            elif linkmode:
                 print(
                     f"* {args.name} (linked `{args.component}` to `@drawable/{args.drawable}`)"
                 )
