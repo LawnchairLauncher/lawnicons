@@ -1,142 +1,66 @@
-eximport xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET
 import argparse
 import shutil
 import os
 import re
 
 parser = argparse.ArgumentParser(
-    prog="icontool",
-    description="A cli tool to help contributors with adding, linking, or removing icons",
+    prog="icon tool",
+    description="A cli tool to help contributors with adding icons",
+)
+
+parser.add_argument(
+    "-s", "--svg",
+    help="Path to the svg",
+    metavar='"svg path"',
+    required=False
+)
+parser.add_argument(
+    "-l", "--link",
+    help="Icon to link",
+    metavar='"icon name"',
+    required=False
+)
+parser.add_argument(
+    "-c", "--component",
+    help="Component information",
+    metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
+    required=False
+)
+parser.add_argument(
+    "-n", "--name",
+    help="App name",
+    metavar='"App name"',
+    required=False
+)
+parser.add_argument(
+    "-r", "--remove",
+    help="Package to remove",
+    metavar='"package name"',
+    required=False
+)
+parser.add_argument(
+    "-d", "--delete",
+    help="Enable deleting the icon file when removing the icon entry",
+    action="store_true",
 )
 parser.add_argument(
     "-m", "--message",
-    help="Enable generating a message to use in PR.",
-    action="store_true"
+    help="Enable generating a message to use in pr",
+    action="store_true",
 )
 
-#
-#https://docs.python.org/3/library/argparse.html#sub-commands
-subparser = parser.add_subparsers(help='sub-command help', metavar=[
-"a","v","c"
-])
-
-# Add parser
-parser_add = subparser.add_parser(
-    "add",
-    help="Adds an svg and links it to an app. You must specify the path of the said svg.",
-)
-
-parser_add.add_argument(
-    "-s", "--svg", "-p", "--path",
-    help="Path of the said svg.",
-    metavar="\"path/to/icon.svg\"",
-)
-
-parser_add.add_argument(
-    "-c", "--component",
-    help="Information about the said app, i.e the package and activity name.",
-    metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
-)
-
-parser_add.add_argument(
-    "-n",
-    "--name",
-    help="The name of the app.",
-    metavar='"App name"',
-)
-
-# Link parser
-parser_link = subparser.add_parser(
-    "link",
-    help="Links an svg from the svgs/ folder to an app.",
-)
-
-parser_link.add_argument(
-    "-s", "--svg",
-    help="The name of the svg file.",
-    metavar="\"icon.svg\"",
-)
-
-parser_link.add_argument(
-    "-c", "--component",
-    help="Information about the said app, i.e the package and activity name.",
-    metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
-)
-
-parser_link.add_argument(
-    "-n",
-    "--name",
-    help="The name of the app.",
-    metavar='"App name"',
-)
-
-# Remove parser
-parser_remove = subparser.add_parser(
-    "remove",
-    help="Removes the link of an svg to an app.",
-    
-)
-parser_remove.add_argument(
-    "-c", "--component",
-    help="The component to remove.",
-    metavar="[PACKAGE_NAME] or [PACKAGE_NAME]/[APP_ACIVITY_NAME]",
-)
-parser_remove.add_argument(
-    "-d", "--delete-file",
-    help="Delete the said icon file on the svgs/ folder."
-)
+# parse args
+args = parser.parse_args()
 
 # open the appfilter file
 appfilter = "app/assets/appfilter.xml"
 xmlfile = open(appfilter, "r").read()
 
-# parse args
 
-
-add_args = parser_add.parse_args()
-link_args = parser_link.parse_args()
-rm_args = parser_remove.parse_args()
-
-# Helper functions
 def printerror(msg):
-    print("\033[91mError:\033[0m " + msg + "\n")
+    print("\033[91mError:\033[0m " + msg)
     exit()
-
-def p_add():
-    print('a')
-
-
-def p_link():
-    print('b')
-
-def p_rm():
-    print('c')
-
-
-parser_add.set_defaults(func=p_add)
-parser_link.set_defaults(func=p_link)
-parser_remove.set_defaults(func=p_rm)
-
-"""
-with open(appfilter, "r") as file:
-        lines = file.readlines()
-with open(appfilter, "w") as f:
-for linenumber, line in enumerate(lines, 1):
-    if args.remove not in line:
-        f.write(line)
-    elif args.remove in line:
-        deletedline = line
-        number = linenumber
-        print(
-            f"removed \033[92m{args.remove}\033[0m icon in line \033[92m{number}\033[0m"
-        )
-if args.delete:
-deletedfile = ET.fromstring(deletedline).get("drawable") + ".svg"
-os.remove("svgs/" + deletedfile)
-print(f"deleted \033[92m{deletedfile}\033[0m")
-exit()
-
-
 
 
 # removing an icon from appfilter.xml
@@ -177,8 +101,8 @@ if args.remove:
     exit()
 
 # check if it's an addition or a link
-if args.svg != args.link:
-    if args.svg != None:
+if (args.svg != None) != (args.link != None):
+    if args.svg:
         linkmode = False
     else:
         linkmode = True
@@ -215,12 +139,12 @@ if not linkmode:
         printerror("svg exists in the svg directory")
 
 # check if svg exists in svgs when linking
-if linkmode == True:
+if linkmode:
     if os.path.isfile("svgs/" + args.drawable + ".svg") == False:
         printerror("svg doesn't exist in the svg directory")
 
 # add the svg to the svg directory
-if linkmode == False:
+if not linkmode:
     shutil.copyfile(args.svg, addedsvg)
 
 # generate the line
@@ -267,14 +191,14 @@ with open(appfilter) as file:
 
 for number, line in enumerate(lines, 1):
     if args.component in line:
-        if linkmode == False:
+        if not linkmode:
             action = "added"
         else:
             action = "linked"
         print(
             f"{action} \033[92m{args.name}\033[0m icon to appfilter.xml in line \033[92m{number}\033[0m"
         )
-        if args.message == True:
+        if args.message:
             if not linkmode:
                 print(
                     f"* {args.name} (`{args.component}`)"
@@ -282,4 +206,4 @@ for number, line in enumerate(lines, 1):
             elif linkmode:
                 print(
                     f"* {args.name} (linked `{args.component}` to `@drawable/{args.drawable}`)"
-                )"""
+                )
