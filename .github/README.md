@@ -4,11 +4,14 @@
 [![Build release APK](https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml/badge.svg)](https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml)
 [![Discord](https://img.shields.io/discord/803299970169700402?label=server&logo=discord)](https://discord.gg/lawnchair-803299970169700402)
 
-Lawnicons is an add-on for adding themed icons to [Lawnchair 12 Alpha 5](https://github.com/LawnchairLauncher/lawnchair) and above.
-This addon is now the source of all themed icons, for simplicity.
+**Lawnicons** is a icon pack developed by the Lawnchair team.
+Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons, it can now be used on many launchers. Some launchers may also support Lawnicons for themed icons.
+
+Lawnicons is best used on Lawnchair 12.1. You can enable themed icons on Lawnchair by going to `Home Settings > General > Icon Style > Themed Icons`, choosing "Home Screen" or "Home Screen and App Drawer".
+
+This project is mostly supported by our community. If you wish to contribute, see the [adding icons](README.md#Adding_icons) section below.
 
 ## Download
-
 See the [Releases](https://github.com/LawnchairLauncher/lawnicons/releases) section to download the latest stable build of Lawnicons.
 
 For the development versions with new icons, go to the [Actions](https://github.com/LawnchairLauncher/lawnicons/actions) tab,
