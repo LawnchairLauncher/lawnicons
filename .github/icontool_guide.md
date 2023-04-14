@@ -1,3 +1,4 @@
+# TODO: UPDATE
 # Icon Tool Guide
 [icontool.py](/icontool.py) is a simple tool which can be used to automatically add/remove icons and sort `appfilter.xml` link in alphabtical order.
 
