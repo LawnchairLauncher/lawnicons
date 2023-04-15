@@ -71,7 +71,7 @@ object SvgFilesProcessor {
         if (svgSource.fileName.toString().endsWith(".svg")) {
             val targetFile = XmlUtil.getFileWithExtension(vectorTargetPath)
             val fileOutputStream = FileOutputStream(targetFile)
-            Svg2Vector.parseSvgToXml(svgSource.toFile(), fileOutputStream)
+            Svg2Vector.parseSvgToXml(svgSource, fileOutputStream)
             val fg = "@color/primaryForeground"
             val bg = "@color/primaryBackground"
             try {
