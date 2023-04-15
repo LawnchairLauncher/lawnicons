@@ -40,4 +40,4 @@ Lawnicons is licensed under the [Apache License 2.0](https://www.apache.org/lice
 ## Quick links
 
 - [Lawnchair GitHub page](https://github.com/LawnchairLauncher/lawnchair)
-
+- [Lawnicons Guidelines | Figma document](https://www.figma.com/community/file/1227718471680779613)

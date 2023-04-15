@@ -8,9 +8,11 @@ See the below image for a summary of the icon guidelines. If you don't follow th
 
 Each icon must fit the 160x160px or 144x144px (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
-The stroke should be kept at 12px for most lines. If 12px is too thick, a stroke of 8px can be used.
+The default stroke should be kept at 12px. For fine detail, a stroke of 6px can be used. The standard widths are 6px, 8px, 10px, 12px and 14px.
 
-In addition to the above, the icons must have an outlined (not filled) style. If the original icon has a filled style, you should change the icon to adhere to the guidelines as seen below.
+If an icon is too minimal or does not have enough surrounding details, 14px should be used. You can check whether to use it if the stroke width looks too thin alongside other icons. ([More information in the Figma document](https://www.figma.com/community/file/1227718471680779613))
+
+In addition to the above, the icons must have an outlined (not filled) style and the colour must be black `#000000`. If the original icon has a filled style, change the icon to adhere to the guidelines as seen below.
 
 ![](images/contributing-image-2.png)
 
