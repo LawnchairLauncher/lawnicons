@@ -1,5 +1,5 @@
 # Icon Tool Guide
-[icontool.py](/icontool.py) is a simple tool which can be used to automatically add/remove icons and sort `appfilter.xml` links in alphabtical order.
+[icontool.py](/icontool.py) is a simple tool which can be used to automatically add/remove icons and sort `appfilter.xml` links in alphabetical order.
 
 ## Summary of usage
 ```sh
