@@ -8,7 +8,7 @@ See the below image for a summary of the icon guidelines. If you don't follow th
 
 Each icon must fit the 160x160px or 144x144px (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
-The default stroke width should be kept at 12px. For fine detail a stroke of 6px can be used. The standard widths are 6px, 8px, 10px, 12px and 14px.
+The default stroke should be kept at 12px. For fine detail a stroke of 6px can be used. The standard widths are 6px, 8px, 10px, 12px and 14px.
 
 Note that the 14px width should be used if an icon is too minimal or does not have enough surrounding details. You can check whether it should use 14px if the stroke width looks too thin alongside other icons. (More information in the [Figma document](https://www.figma.com/community/file/1227718471680779613))
 
