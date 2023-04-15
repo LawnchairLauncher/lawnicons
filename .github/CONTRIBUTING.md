@@ -52,13 +52,13 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
 
   **For Mac/Linux**:
 
-  ```xml
+  ```sh
   adb shell dumpsys window | grep 'mCurrentFocus'  
   ```
 
   **For Windows**:
 
-  ```xml
+  ```sh
   adb shell dumpsys window | find "mCurrentFocus"
   ```
   ![](images/contributing-image-3.png)
