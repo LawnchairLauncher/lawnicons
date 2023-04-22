@@ -1,38 +1,50 @@
 # Icon Tool Guide
-[icontool.py](/icontool.py) is a simple tool which can be used to automatically add/remove icons and sort `appfilter.xml` link in alphabtical order.
+[icontool.py](/icontool.py) is a simple tool which can be used to automatically add/remove icons and sort `appfilter.xml` links in alphabetical order.
 
-# Add icons/links
-
-## Add an icon
-```xml
-python3 icontool.py -s /path/to/icon.svg -c com.app.app/com.app.app.appActivity -n "App Name"
+## Summary of usage
+```sh
+icontool [-m] [-h]
+         add (a)    svg component name
+         link (l)   svg component name
+         remove (r) component [-d]
 ```
 
-**Note**: `-m` can be added at the end of the command to generate a message.
-
-## Add a link to an existing icon
-```xml
-python3 icontool.py -l icon.svg -c com.app.app/com.app.app.appActivity -n "App Name"
+## General syntax
+Adding the flag `-m` will generate a list item (depending on the subcommand), like:
+```
+* App Name (component info)
 ```
 
-**Note:** The path to the icon is not required as it should already exist in the `svgs` folder.
-
-# Removing icons/links
-
-## Remove a link
-
-```xml
-python3 icontool.py -r com.app.app/com.app.app.appActivity
+## Adding icons
+```sh
+python3 icontool.py add /path/to/icon com.app.app/com.app.app.appActivity "App Name"
 ```
 
-## Remove links with same package name
+The `.svg` extension for `icon.svg` is optional, since the program automatically adds them.
 
-```xml
-python3 icontool.py -r com.app.app
+## Linking icons
+```sh
+python3 icontool.py link icon com.app.app/com.app.app.appActivity "App Name"
 ```
 
-## Remove a link and its SVG
+Note that `icon.svg` should be a svg file located in the `svgs/` directory. The `.svg` extension for `icon.svg` is optional as well.
 
-```xml
-python3 icontool.py -r com.app.app -d
+## Removing icons
+### Normal usage
+```sh
+python3 icontool.py remove com.app.app/com.app.app.appActivity
 ```
+
+### Removing components with the same package name
+```sh
+python3 icontool.py remove com.app.app
+```
+
+### Removing a component and its SVG file
+Simply pass the `-d` or `--delete` flag:
+
+```sh
+python3 icontool.py remove com.app.app -d
+```
+
+Note that the SVG file is based of the `drawable` attribute in the first `<item>` element.

@@ -1,216 +1,243 @@
+#!/usr/bin/env python3
 import xml.etree.ElementTree as ET
 import argparse
 import shutil
 import os
 import re
 
-parser = argparse.ArgumentParser(
-    prog="icon tool",
-    description="A cli tool to help contributors with adding icons",
-)
-
-parser.add_argument(
-    "-s",
-    "--svg",
-    help="Path to the svg",
-    metavar='"svg path"',
-    required=False
-)
-parser.add_argument(
-    "-l",
-    "--link",
-    help="Icon to link",
-    metavar='"icon name"',
-    required=False
-)
-parser.add_argument(
-    "-c",
-    "--component",
-    help="Component information",
-    metavar="[PACKAGE_NAME]/[APP_ACIVITY_NAME]",
-    required=False
-)
-parser.add_argument(
-    "-n",
-    "--name",
-    help="App name",
-    metavar='"App name"',
-    required=False
-)
-parser.add_argument(
-    "-r",
-    "--remove",
-    help="Package to remove",
-    metavar='"package name"',
-    required=False
-)
-parser.add_argument(
-    "-d",
-    "--delete",
-    help="Enable deleting the icon file when removing the icon entry",
-    action="store_true",
-)
-parser.add_argument(
-    "-m",
-    "--message",
-    help="Enable generating a message to use in pr",
-    action="store_true",
-)
-
-# parse args
-args = parser.parse_args()
-
-# open the appfilter file
-appfilter = "app/assets/appfilter.xml"
-xmlfile = open(appfilter, "r").read()
-
-
+# helper functions
 def printerror(msg):
-    print("\033[91mError:\033[0m " + msg)
+    print("\033[91merror:\033[0m " + msg + "\n")
     exit()
 
 
-# removing an icon from appfilter.xml
-if args.remove != None:
-    # check for unnecessary arguments
-    for i in [
-        [args.svg, "svg"],
-        [args.link, "link"],
-        [args.component, "component"],
-        [args.name, "name"],
-    ]:
-        if i[0] != None:
-            if i[1][0] == "s":
-                errormsgarticle = "an "
-            else:
-                errormsgarticle = "a "
+def printsuccess():
+    print("\033[96msuccessfully completed task\033")
+    exit()
+
+
+def check_lawnicons_corruption():
+    replyreason = "this may be due to a broken local copy of lawnicons. please clone lawnicons again."
+
+    if not os.path.exists("svgs/"):
+        printerror(f"svgs folder does not exist. {replyreason}")
+
+    if not os.path.isfile("app/assets/appfilter.xml"):
+        printerror(f"appfilter.xml file does not exist. {replyreason}")
+
+
+def parse_component(linkmode, svg, component, name, showMessage):
+    #
+    # init
+    #
+
+    # general checks
+    if not svg.endswith(".svg"):
+        svg += ".svg"
+    
+    # see https://regex101.com/r/xC9Kh3/1
+    pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+    if not pattern.match(component):
+        printerror("invalid component entry. must be in format \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m, i.e: package.name/component.name")
+
+    # linkmode true
+    if linkmode:
+        if not os.path.isfile(f"svgs/{svg}"):
+            printerror(f"svg '{svg}' doesn't exist in the svgs directory.")
+
+    # linkmode false
+    else:
+        if not os.path.isfile(svg):
+            path = f"directory `{os.path.dirname(svg)}/`"
+            print(path)
+            if path == "directory `.`" or path == "directory ``":
+                path = "current directory"
+
             printerror(
-                "don't specify " + errormsgarticle + i[1] + " when removing an icon"
+                f"svg '{os.path.basename(svg)}' doesn't exist in {path}. check if the file exists or try again.")
+
+        print("note: ensure that your icon follows the lawnicons guidelines found in CONTRIBUTING.md")
+
+        addedsvg = f"svgs/{os.path.basename(svg)}"
+        try:
+            shutil.copyfile(svg, addedsvg)
+        except shutil.SameFileError:
+            printerror(
+                f"\033[4m{os.path.basename(svg)}\033[0m has the same contents of \033[4m{addedsvg}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
+
+    #
+    # writing to file
+    #
+
+    # remove .svg extension
+    drawable = svg[:-4]
+
+    # line           the actual xml element in string form
+    # purexmlfile    the xml file without the calendar declarations
+    # calendarstuff  the lines of the calendar declerations
+    line = f'  <item component="ComponentInfo{{{component}}}" drawable="{drawable}" name="{name}" />'
+    purexmlfile = re.sub(
+        r"(?s)  <!--  Dynamic Calendars-->.*?  <!--  Lawnicons -->", "", xmlfile
+    )
+    calendarstuff = re.findall(
+        "(?s)  <!--  Dynamic Calendars-->.*?  <!--  Lawnicons -->", xmlfile
+    )
+
+    # add the line
+    editedxmlfile = purexmlfile[:52] + line + purexmlfile[52:]
+
+    # sort the xml by the name tag, thx https://stackoverflow.com/a/25339725
+    xmldata = ET.fromstring(editedxmlfile)
+    xmldata[:] = sorted(
+        xmldata, key=lambda child: child.get("name").casefold())
+
+    sortedxmldata = ET.tostring(xmldata, encoding="unicode")
+    sortedxmldata = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n\n' + sortedxmldata)
+    sortedxmldata = (
+        sortedxmldata[:52] + calendarstuff[0] +
+        "\n" + sortedxmldata[52:] + "\n")
+
+    f = open(appfilter, "w")
+    f.write(sortedxmldata)
+    f.close()
+
+    #
+    # print success message
+    #
+    with open(appfilter) as file:
+        lines = file.readlines()
+
+    for number, line in enumerate(lines, 1):
+        if component in line:
+            if linkmode:
+                action = "linked"
+            else:
+                action = "added"
+            print(
+                f"{action} \033[92m{name}\033[0m app to \033[92m`@drawable/{drawable}`\033[0m in line \033[92m{number}\033[0m of appfilter.xml"
             )
-    # remove the line
+
+            if showMessage:
+                if linkmode:
+                    print(
+                        f"* {name} (linked `{component}` to `@drawable/{drawable}`)"
+                    )
+                    continue
+
+                print(
+                    f"* {name} (`{component}`)"
+                )
+
+
+# parser logic
+def add_parser(args):
+    parse_component(False, args.svg, args.component, args.name, args.message)
+    printsuccess()
+
+
+def link_parser(args):
+    parse_component(True, args.svg, args.component, args.name, args.message)
+    printsuccess()
+
+
+def remove_parser(args, appfilter):
+    component = args.component
+    doDelete = args.delete
+    message = args.message
+
+    pattern1 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+    pattern2 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+    errormsg = "invalid component name. format must be either \033[4m[PACKAGE_NAME]\033[0m or \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m"
+
+    if not pattern1.match(component):
+        printerror(errormsg)
+    elif not pattern2.match(component):
+        if ("/" in component):
+            printerror(errormsg)
+
     with open(appfilter, "r") as file:
         lines = file.readlines()
+
     with open(appfilter, "w") as f:
         for linenumber, line in enumerate(lines, 1):
-            if args.remove not in line:
+            if component not in line:
                 f.write(line)
-            elif args.remove in line:
+
+            elif component in line:
                 deletedline = line
                 number = linenumber
                 print(
-                    f"removed \033[92m{args.remove}\033[0m icon in line \033[92m{number}\033[0m"
+                    f"removed \033[92m{component}\033[0m icon in line \033[92m{number}\033[0m"
                 )
-    # delete the icon when asked to
-    if args.delete == True:
+
+                if message:
+                    print(f"* {component} (removed)")
+
+    if doDelete:
         deletedfile = ET.fromstring(deletedline).get("drawable") + ".svg"
         os.remove("svgs/" + deletedfile)
         print(f"deleted \033[92m{deletedfile}\033[0m")
-    exit()
 
-# check if it's an addition or a link
-if (args.svg != None) != (args.link != None):
-    if args.svg != None:
-        linkmode = False
-    else:
-        linkmode = True
-else:
-    printerror("you must specify either adding an icon (-s) or linking (-l)")
+    printsuccess()
 
+#
+# parser initialization
+#
+parser = argparse.ArgumentParser(
+    prog="icontool", description="a cli tool to help contributors with adding icons. requires the use of subcommands {add,link,remove}. for help with a specific subcommand, type 'icontool.py <subcommand> -h'")
+parser.add_argument(
+    "-m", "--message", action="store_true", help="shows a list item for use in a pull request")
 
-# check if the component and name are specified
-for i in [[args.component, "component (-c)"], [args.name, "name (-n)"]]:
-    if i[0] == None:
-        printerror("you must specify a " + i[1])
+subparsers = parser.add_subparsers(
+    help='what action icontool should use', dest="subcommand")
 
-if linkmode == False:
-    addedsvg = "svgs/" + os.path.basename(args.svg)
-    # add drawable name to args
-    vars(args)["drawable"] = os.path.basename(args.svg[:-4])
-    # check if the svg exists, exits if it doesn't
-    if os.path.isfile(args.svg) == False:
-        printerror("svg doesn't exist")
+parser_add = subparsers.add_parser(
+    "add", help='adds an icon svg and an entry to appfilter.xml, links svg to component', aliases=['a'])
+parser_link = subparsers.add_parser(
+    "link", help='adds an entry to appfilter.xml, links svg to component', aliases=['l'])
+parser_remove = subparsers.add_parser(
+    "remove", help='removes an entry on appfilter.xml, can optionally delete svg', aliases=['d'])
 
-else:
-    if args.link.endswith(".svg"):
-        vars(args)["drawable"] = args.link[:-4]
-    else:
-        vars(args)["drawable"] = args.link
+# remove parser
+parser_remove.add_argument(
+    "component", help="the component to remove. can be [PACKAGE_NAME]/[APP_ACIVITY_NAME] or [PACKAGE_NAME]")
+parser_remove.add_argument(
+    "-d", "--delete", help="enables svg deletion. svg derived from `drawable` entry in each `<item>`", action="store_true")
 
-# check if the entry exists
-if args.component in xmlfile:
-    printerror("entry already exists")
+# add parser
+parser_add.add_argument(
+    "svg", help="the path of the svg file that will be added")
+parser_add.add_argument(
+    "component", help="the component name. format must be `[PACKAGE_NAME]/[APP_ACIVITY_NAME]")
+parser_add.add_argument(
+    "name", help="the displayed name of the app. if multiple lines, use a string like ``\"App Name\"`")
 
-# check if the svg exists in the svg directory
-if linkmode == False:
-    if os.path.isfile(addedsvg) == True:
-        printerror("svg exists in the svg directory")
+# link parser
+parser_link.add_argument("svg", help="the file name of the svg icon.")
+parser_link.add_argument(
+    "component", help="the component name. format must be `[PACKAGE_NAME]/[APP_ACIVITY_NAME]")
+parser_link.add_argument(
+    "name", help="the displayed name of the app. if multiple lines, use a string like ``\"App Name\"`")
 
-# check if svg exists in svgs when linking
-if linkmode == True:
-    if os.path.isfile("svgs/" + args.drawable + ".svg") == False:
-        printerror("svg doesn't exist in the svg directory")
+args = parser.parse_args()
 
-# add the svg to the svg directory
-if linkmode == False:
-    shutil.copyfile(args.svg, addedsvg)
+check_lawnicons_corruption()
 
-# generate the line
-line = f'  <item component="ComponentInfo{{{args.component}}}" drawable="{args.drawable}" name="{args.name}" />'
+# open appfilter file
+appfilter = "app/assets/appfilter.xml"
+xmlfile = open(appfilter, "r").read()
 
-# xml without calendar stuff
-purexmlfile = re.sub(
-    r"(?s)  <!--  Dynamic Calendars-->.*?  <!--  Lawnicons -->", "", xmlfile
-)
-# calendar stuff
-calendarstuff = re.findall(
-    "(?s)  <!--  Dynamic Calendars-->.*?  <!--  Lawnicons -->", xmlfile
-)
+# match proper subcommand
+match args.subcommand:
+    case "add":
+        add_parser(args)
 
-# add the line
-editedxmlfile = purexmlfile[:52] + line + purexmlfile[52:]
+    case "link":
+        link_parser(args)
 
-# sort the xml by the name tag, thx https://stackoverflow.com/a/25339725
-xmldata = ET.fromstring(editedxmlfile)
+    case "remove":
+        remove_parser(args, appfilter)
 
-
-#def sortchildrenby(parent, attr):
-#    parent[:] = sorted(parent, key=lambda child: child.get(attr))
-
-#sortchildrenby(xmldata, "name")
-xmldata[:] = sorted(xmldata, key=lambda child: child.get("name").casefold())
-
-sortedxmldata = ET.tostring(xmldata, encoding="unicode")
-sortedxmldata = (
-    '<?xml version="1.0" encoding="UTF-8"?>\n\n' + sortedxmldata
-)  # readd XML declaration
-sortedxmldata = (
-    sortedxmldata[:52] + calendarstuff[0] + "\n" + sortedxmldata[52:] + "\n"
-)  # readd the calendar stuff
-
-# save to the xml file
-f = open(appfilter, "w")
-f.write(sortedxmldata)
-f.close()
-
-# print success message
-with open(appfilter) as file:
-    lines = file.readlines()
-
-for number, line in enumerate(lines, 1):
-    if args.component in line:
-        if linkmode == False:
-            action = "added"
-        else:
-            action = "linked"
-        print(
-            f"{action} \033[92m{args.name}\033[0m icon to appfilter.xml in line \033[92m{number}\033[0m"
-        )
-        if args.message == True:
-            if linkmode == False:
-                print(
-                    f"* {args.name} (`{args.component}`)"
-                )
-            elif linkmode == True:
-                print(
-                    f"* {args.name} (linked `{args.component}` to `@drawable/{args.drawable}`)"
-                )
+    case _:
+        printerror("you must specify a subcommand {add,link,remove}")
