@@ -7,12 +7,12 @@
         android:label="@string/apps_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lawnicons"
+        android:theme="@style/Theme.Lawnicons.SplashScreen"
         android:name=".LawniconsApplication">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Lawnicons">
+            android:theme="@style/Theme.Lawnicons.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
