@@ -87,7 +87,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.6"
+        kotlinCompilerExtensionVersion = "1.4.7"
     }
 
     packagingOptions {
@@ -114,7 +114,7 @@ hilt.enableAggregatingTask = false
 dependencies {
     val lifecycleVersion = "2.6.1"
     val accompanistVersion = "0.30.1"
-    val hiltVersion = "2.45"
+    val hiltVersion = "2.46"
     val retrofitVersion = "2.9.0"
 
     implementation("androidx.core:core-ktx:1.10.0")
