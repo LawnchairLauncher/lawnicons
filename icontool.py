@@ -5,6 +5,9 @@ import shutil
 import os
 import re
 
+# see https://regex101.com/r/xC9Kh3/1
+pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+
 # helper functions
 def printerror(msg):
     print("\033[91merror:\033[0m " + msg + "\n")
@@ -35,8 +38,7 @@ def parse_component(linkmode, svg, component, name, showMessage):
     if not svg.endswith(".svg"):
         svg += ".svg"
     
-    # see https://regex101.com/r/xC9Kh3/1
-    pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+
     if not pattern.match(component):
         printerror("invalid component entry. must be in format \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m, i.e: package.name/component.name")
 
@@ -146,8 +148,8 @@ def remove_parser(args, appfilter):
     doDelete = args.delete
     message = args.message
 
-    pattern1 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
-    pattern2 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+    pattern1 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+    pattern2 = pattern
     errormsg = "invalid component name. format must be either \033[4m[PACKAGE_NAME]\033[0m or \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m"
 
     if not pattern1.match(component):
