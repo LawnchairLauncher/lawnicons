@@ -38,6 +38,7 @@ def parse_component(linkmode, svg, component, name, showMessage):
     if not svg.endswith(".svg"):
         svg += ".svg"
     
+    basename = os.path.basename(svg)
 
     if not pattern.match(component):
         printerror("invalid component entry. must be in format \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m, i.e: package.name/component.name")
@@ -56,23 +57,23 @@ def parse_component(linkmode, svg, component, name, showMessage):
                 path = "current directory"
 
             printerror(
-                f"svg '{os.path.basename(svg)}' doesn't exist in {path}. check if the file exists or try again.")
+                f"svg '{basename}' doesn't exist in {path}. check if the file exists or try again.")
 
         print("note: ensure that your icon follows the lawnicons guidelines found in CONTRIBUTING.md")
 
-        addedsvg = f"svgs/{os.path.basename(svg)}"
+        addedsvg = f"svgs/{basename}"
         try:
             shutil.copyfile(svg, addedsvg)
         except shutil.SameFileError:
             printerror(
-                f"\033[4m{os.path.basename(svg)}\033[0m has the same contents of \033[4m{addedsvg}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
+                f"\033[4m{basename}\033[0m has the same contents of \033[4m{addedsvg}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
 
     #
     # writing to file
     #
 
     # remove .svg extension
-    drawable = svg[:-4]
+    drawable = basename[:-4]
 
     # line           the actual xml element in string form
     # purexmlfile    the xml file without the calendar declarations
