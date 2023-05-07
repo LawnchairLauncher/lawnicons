@@ -5,6 +5,9 @@ import shutil
 import os
 import re
 
+# see https://regex101.com/r/xC9Kh3/1
+pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+
 # helper functions
 def printerror(msg):
     print("\033[91merror:\033[0m " + msg + "\n")
@@ -35,8 +38,8 @@ def parse_component(linkmode, svg, component, name, showMessage):
     if not svg.endswith(".svg"):
         svg += ".svg"
     
-    # see https://regex101.com/r/xC9Kh3/1
-    pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+    basename = os.path.basename(svg)
+
     if not pattern.match(component):
         printerror("invalid component entry. must be in format \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m, i.e: package.name/component.name")
 
@@ -54,23 +57,23 @@ def parse_component(linkmode, svg, component, name, showMessage):
                 path = "current directory"
 
             printerror(
-                f"svg '{os.path.basename(svg)}' doesn't exist in {path}. check if the file exists or try again.")
+                f"svg '{basename}' doesn't exist in {path}. check if the file exists or try again.")
 
         print("note: ensure that your icon follows the lawnicons guidelines found in CONTRIBUTING.md")
 
-        addedsvg = f"svgs/{os.path.basename(svg)}"
+        addedsvg = f"svgs/{basename}"
         try:
             shutil.copyfile(svg, addedsvg)
         except shutil.SameFileError:
             printerror(
-                f"\033[4m{os.path.basename(svg)}\033[0m has the same contents of \033[4m{addedsvg}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
+                f"\033[4m{basename}\033[0m has the same contents of \033[4m{addedsvg}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
 
     #
     # writing to file
     #
 
     # remove .svg extension
-    drawable = svg[:-4]
+    drawable = basename[:-4]
 
     # line           the actual xml element in string form
     # purexmlfile    the xml file without the calendar declarations
@@ -146,8 +149,8 @@ def remove_parser(args, appfilter):
     doDelete = args.delete
     message = args.message
 
-    pattern1 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
-    pattern2 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9]+)+)", re.IGNORECASE)
+    pattern1 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+    pattern2 = pattern
     errormsg = "invalid component name. format must be either \033[4m[PACKAGE_NAME]\033[0m or \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m"
 
     if not pattern1.match(component):
