@@ -9,7 +9,7 @@ Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons
 
 Lawnicons is best used on Lawnchair 12.1. You can enable themed icons on Lawnchair by going to `Home Settings > General > Icon Style > Themed Icons`, choosing "Home Screen" or "Home Screen and App Drawer".
 
-This project is mostly supported by our community. If you wish to contribute, see the [adding icons](README.md#Adding_icons) section below.
+This project is mostly supported by our community. If you wish to contribute, see the [contributing section](README.md#Contributing) section below.
 
 ## Download
 See the [Releases](https://github.com/LawnchairLauncher/lawnicons/releases) section to download the latest stable build of Lawnicons.
@@ -19,11 +19,11 @@ click the first workflow run, and scroll and find the `Debug Apk`.
 
 **(Note that you'll need to have a GitHub account to download the debug apk)**
 
-## Adding icons
+## Contributing
 
-Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons.
+Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code.
 
-For users familiar with the guidelines, check out how to use [icontool.py](/.github/icontool_guide.md) to speedup the process of adding icons.
+For users familiar with the guidelines, check out [how to use icontool.py](/.github/icontool_guide.md) to speedup the process of adding icons.
 
 ## Requesting icons
 
