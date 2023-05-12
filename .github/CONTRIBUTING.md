@@ -1,11 +1,7 @@
 # Lawnicons contributing guide
 Welcome to the Lawnicons contributing guide! This file will tell you what you need to know to contribute to Lawnicons.
 
-Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. You can use Git to clone this repository:
-
-```sh
-git clone --recursive https://github.com/LawnchairLauncher/lawnicons.git
-```
+Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. 
 
 Afterwards, you can either contribute icons or code.
 
