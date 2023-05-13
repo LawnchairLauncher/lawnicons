@@ -10,6 +10,7 @@ object ConfigProcessor {
     private const val COMPONENT = "component"
     private const val PACKAGE = "package"
     private const val DRAWABLE = "drawable"
+    private const val DRAWABLEIGNORE = "drawableIgnore"
     private const val ICONS = "icons"
     private const val ICON = "icon"
     private const val RESOURCES = "resources"
@@ -43,6 +44,9 @@ object ConfigProcessor {
             val componentInfo = element.attribute(COMPONENT).value
             val drawable = element.attribute(DRAWABLE).value
             val name = element.attribute(NAME).value
+            val shouldIgnore: String? = element.attributeValue(DRAWABLEIGNORE)
+            if (shouldIgnore != null) continue
+
             if (componentInfo.startsWith(componentStart) && componentInfo.endsWith(componentEnd)) {
                 val component = componentInfo.substring(
                     componentStart.length,
