@@ -435,6 +435,7 @@
   <item component="ComponentInfo{ru.burgerking/ru.burgerking.ui.activity.SplashScreenActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{se.burgerking.ordersapp/se.burgerking.ordersapp.MainActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{com.busuu.android.enc/com.busuu.android.bootstrap.presentation.BootStrapActivity}" drawable="busuu" name="Busuu" />
+  <item component="ComponentInfo{dev.linwood.butterfly.nightly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly" name="Butterfly Nightly" />
   <item component="ComponentInfo{com.byu.id/com.byu.id.MainActivity}" drawable="by_u" name="by.U" />
   <item component="ComponentInfo{com.byu.id/com.byu.id.MainActivity}" drawable="by_u" name="by.U" />
   <item component="ComponentInfo{com.cainiao.wireless/com.cainiao.wireless.homepage.view.activity.WelcomeActivity}" drawable="cainiao" name="Cainiao" />
@@ -1080,14 +1081,6 @@
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.eBay$}" drawable="ebay" name="eBay" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.eBay}" drawable="ebay" name="eBay" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.MainActivity}" drawable="ebay" name="eBay" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
   <item component="ComponentInfo{com.economist.lamarr/com.economist.lamarr.MainActivity}" drawable="the_economist" name="Economist" />
   <item component="ComponentInfo{com.economist.lamarr/com.economist.lamarr.SplashActivity}" drawable="the_economist" name="Economist" />
   <item component="ComponentInfo{com.eco.global.app/com.eco.main.activity.EcoLauncherActivity}" drawable="ecovacs_home" name="Ecovacs Home" />
@@ -1810,6 +1803,14 @@
   <item component="ComponentInfo{com.myklarnamobile/com.myklarnamobile.MainActivity}" drawable="klarna" name="Klarna" />
   <item component="ComponentInfo{org.kustom.lockscreen/org.kustom.app.OnBoardingActivity}" drawable="klck" name="KLCK" />
   <item component="ComponentInfo{org.kustom.lockscreen/org.kustom.lib.editor.LockAdvancedEditorActivity}" drawable="klck" name="KLCK" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.app.OnBoardingActivity}" drawable="klwp" name="KLWP" />
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.lib.editor.WpAdvancedEditorActivity}" drawable="klwp" name="KLWP" />
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.lib.settings.SettingsActivity}" drawable="klwp" name="KLWP" />
@@ -2288,6 +2289,9 @@
   <item component="ComponentInfo{ua.vodafone.myvodafone/ua.vodafone.myvodafone.MainActivity}" drawable="meinvodafone" name="My Vodafone" />
   <item component="ComponentInfo{ie.months.my48/ie.months.my48.MainActivity}" drawable="my48" name="My48" />
   <item component="ComponentInfo{cn.wq.myandroidtools/cn.wq.myandroidtoolspro.MainActivity}" drawable="myandroidtools" name="MyAndroidTools" />
+  <item component="ComponentInfo{com.arena.banglalinkmela.app/com.arena.banglalinkmela.app.ui.splash.SplashActivity}" drawable="banglalink" name="MyBL" />
+  <item component="ComponentInfo{com.arena.banglalinkmela.app/com.arena.banglalinkmela.app.ui.main.activity.MainActivity}" drawable="banglalink" name="MyBL" />
+  <item component="ComponentInfo{net.banglalink.mybllite/net.banglalink.mybllite.MainActivity}" drawable="banglalink" name="MyBL Lite" />
   <item component="ComponentInfo{com.swisscom.mycloud/com.swisscom.ngti.mycloud.SplashActivity}" drawable="mycloud" name="myCloud" />
   <item component="ComponentInfo{com.swisscom.mycloud/md58a5dbafdbe3eda61a029d94da491aa2d.SplashActivity}" drawable="mycloud" name="myCloud" />
   <item component="ComponentInfo{com.swisscom.mycloud/com.swisscom.ngti.mycloud.SplashActivity}" drawable="mycloud" name="myCloud" />
