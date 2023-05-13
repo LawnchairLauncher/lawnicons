@@ -19,23 +19,23 @@
   <calendar component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" prefix="themed_icon_calendar_" name="Calendar"/>
   <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar"/>
   <!--  Static Calendars-->
-  <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <item component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
-  <!--  Lawnicons -->
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar"/>
+  <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar"/>
+    <!--  Lawnicons -->
   <item component="ComponentInfo{com.cloudflare.onedotonedotonedotone/com.cloudflare.app.presentation.main.MainActivity}" drawable="onedotonedotonedotone" name="1.1.1.1" />
   <item component="ComponentInfo{com.cloudflare.onedotonedotonedotone/com.cloudflare.app.presentation.main.SplashActivity}" drawable="onedotonedotonedotone" name="1.1.1.1" />
   <item component="ComponentInfo{dev.lonami.klooni/dev.lonami.klooni.AndroidLauncher}" drawable="klooni" name="1010 Klooni" />
@@ -435,6 +435,7 @@
   <item component="ComponentInfo{ru.burgerking/ru.burgerking.ui.activity.SplashScreenActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{se.burgerking.ordersapp/se.burgerking.ordersapp.MainActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{com.busuu.android.enc/com.busuu.android.bootstrap.presentation.BootStrapActivity}" drawable="busuu" name="Busuu" />
+  <item component="ComponentInfo{dev.linwood.butterfly.nightly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly" name="Butterfly Nightly" />
   <item component="ComponentInfo{com.byu.id/com.byu.id.MainActivity}" drawable="by_u" name="by.U" />
   <item component="ComponentInfo{com.byu.id/com.byu.id.MainActivity}" drawable="by_u" name="by.U" />
   <item component="ComponentInfo{com.cainiao.wireless/com.cainiao.wireless.homepage.view.activity.WelcomeActivity}" drawable="cainiao" name="Cainiao" />
@@ -645,66 +646,67 @@
   <item component="ComponentInfo{com.supercell.clashroyale/com.supercell.titan.GameApp}" drawable="clash_royale" name="Clash Royale" />
   <item component="ComponentInfo{com.dencreak.esmemo/com.dencreak.esmemo.ActivityESMemo}" drawable="clevnote" name="ClevNote" />
   <item component="ComponentInfo{com.wb.clipboard.pro/clipto.AppContainer}" drawable="clipto" name="Clipto" />
-  <item component="ComponentInfo{com.coloros.alarmclock/com.oplus.alarmclock.AlarmClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.oneplus.deskclock/com.oplus.alarmclock.AlarmClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.oneplus.deskclock/com.oneplus.deskclock.DeskClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/.AlarmsMainActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.clock.Clock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.clock.Clockk}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmsMainActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.ClockActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.ClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.ClockTabStyle}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockGroupActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockMainActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockTabActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.InitTab}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.MainActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.MultiClockTab}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.StopwatchActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.TabDetails}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.main.TabsActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.android.worldclock.TYClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.apalon.myclockfree.MainActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.hisense.timetools.TimeToolsMainActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.jrdcom.timetool.TimeToolActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/com.pantech.app.clock.ClockLauncher}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.android.deskclock/.DeskClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.best.deskclock/com.best.deskclock.DeskClock}" drawable="desk_clock" name="Clock" />
-  <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/.ClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.AlarmActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.alarm.Alarm}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.common.activity.ClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.common.activity.ClockPackage VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.TabletClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.TabletClockPackageWC}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Amber}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue_grey}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Brown}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Cyan}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_orange}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_purple}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Green}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Grey_black}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Indigo}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_blue}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_green}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Lime}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Orange}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Pink}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Purple}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Red}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Teal}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Yellow}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.coloros.alarmclock/com.coloros.alarmclock.AlarmClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.coloros.alarmclock/com.oplus.alarmclock.AlarmClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.oneplus.deskclock/com.oplus.alarmclock.AlarmClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.oneplus.deskclock/com.oneplus.deskclock.DeskClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/.AlarmsMainActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.clock.Clock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.clock.Clockk}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmsMainActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.ClockActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.ClockPackage}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.ClockTabStyle}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockGroupActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockMainActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockTabActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.InitTab}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.MainActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.MultiClockTab}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.StopwatchActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.deskclock.TabDetails}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.main.TabsActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.android.worldclock.TYClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.apalon.myclockfree.MainActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.hisense.timetools.TimeToolsMainActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.jrdcom.timetool.TimeToolActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/com.pantech.app.clock.ClockLauncher}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/.DeskClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.best.deskclock/com.best.deskclock.DeskClock}" drawable="desk_clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/.ClockPackage}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.AlarmActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.alarm.Alarm}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.common.activity.ClockPackage}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.common.activity.ClockPackage VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.TabletClockPackage}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.TabletClockPackageWC}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Amber}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue_grey}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Brown}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Cyan}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_orange}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_purple}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Green}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Grey_black}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Indigo}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_blue}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_green}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Lime}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Orange}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Pink}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Purple}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Red}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Teal}" drawable="clock" name="Clock" />
+  <item drawableIgnore="true" component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Yellow}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.coloros.backuprestore/com.oplus.phoneclone.PhoneCloneMainActivity}" drawable="clone_phone" name="Clone Phone" />
   <item component="ComponentInfo{com.lagradost.cloudstream3/com.lagradost.cloudstream3.MainActivity}" drawable="cloudstream" name="Cloudstream" />
   <item component="ComponentInfo{com.lagradost.cloudstream3.prerelease/com.lagradost.cloudstream3.MainActivity}" drawable="cloudstream" name="Cloudstream" />
@@ -782,7 +784,6 @@
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.ContactsMainFromHomeActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialerActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.dialer.DialerPhoneActivity}" drawable="google_contacts" name="Contacts" />
-  <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsActivityAlias}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsCallListEntryActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsCallLogActivity}" drawable="google_contacts" name="Contacts" />
@@ -840,6 +841,7 @@
   <item component="ComponentInfo{com.android.contacts/com.sec.android.app.contacts.RecntcallEntryActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.google.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.samsung.android.app.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="contacts" name="Contacts" />
+    <item component="ComponentInfo{eu.siacs.conversations/eu.siacs.conversations.ui.ConversationActivity}" drawable="conversations" name="Conversations"/>
   <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.view.main.MainActivity}" drawable="coolapk" name="CoolApk" />
   <item component="ComponentInfo{co.coolors.android/co.coolors.android.MainActivity}" drawable="coolors" name="Coolors" />
   <item component="ComponentInfo{de.corona.tracing/de.rki.coronawarnapp.ui.LauncherActivity}" drawable="corona_tracing" name="Corona Tracing" />
@@ -1079,14 +1081,6 @@
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.eBay$}" drawable="ebay" name="eBay" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.eBay}" drawable="ebay" name="eBay" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.MainActivity}" drawable="ebay" name="eBay" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
-  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="ebay_kleinanzeigen" name="eBay Kleinanzeigen" />
   <item component="ComponentInfo{com.economist.lamarr/com.economist.lamarr.MainActivity}" drawable="the_economist" name="Economist" />
   <item component="ComponentInfo{com.economist.lamarr/com.economist.lamarr.SplashActivity}" drawable="the_economist" name="Economist" />
   <item component="ComponentInfo{com.eco.global.app/com.eco.main.activity.EcoLauncherActivity}" drawable="ecovacs_home" name="Ecovacs Home" />
@@ -1809,6 +1803,14 @@
   <item component="ComponentInfo{com.myklarnamobile/com.myklarnamobile.MainActivity}" drawable="klarna" name="Klarna" />
   <item component="ComponentInfo{org.kustom.lockscreen/org.kustom.app.OnBoardingActivity}" drawable="klck" name="KLCK" />
   <item component="ComponentInfo{org.kustom.lockscreen/org.kustom.lib.editor.LockAdvancedEditorActivity}" drawable="klck" name="KLCK" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/com.ebay.kleinanzeigen.SplashScreenActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.home.HomeActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
+  <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="kleinanzeigen" name="Kleinanzeigen" />
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.app.OnBoardingActivity}" drawable="klwp" name="KLWP" />
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.lib.editor.WpAdvancedEditorActivity}" drawable="klwp" name="KLWP" />
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.lib.settings.SettingsActivity}" drawable="klwp" name="KLWP" />
@@ -2201,6 +2203,9 @@
   <item component="ComponentInfo{ru.nspk.mirpay/ru.nspk.mirpay.b34rqwEd1vSkvA}" drawable="mir_pay" name="Mir Pay" />
   <item component="ComponentInfo{ru.nspk.mirpay/ru.nspk.mirpay.olcDxABqhyieE}" drawable="mir_pay" name="Mir Pay" />
   <item component="ComponentInfo{com.ojhdtapp.miraipluginforparabox/com.ojhdtapp.miraipluginforparabox.MainActivity}" drawable="mirai_plugin_for_parabox" name="Mirai Plugin for Parabox" />
+  <item component="ComponentInfo{no.telenor.faktura/no.telenor.faktura.MainActivity}" drawable="telenor" name="Mitt Telenor" />
+  <item component="ComponentInfo{com.telenor.self_service/com.telenor.self_service.ui.login.auth.LoginAuthTelenorActivity}" drawable="telenor" name="Mit Telenor" />
+  <item component="ComponentInfo{com.telenor.self_service/com.telenor.self_service.ui.main.MainActivity}" drawable="telenor" name="Mit Telenor" />
   <item component="ComponentInfo{com.miui.securitycenter/com.miui.securitycenter.MainActivity}" drawable="mi_security" name="MIUI Security" />
   <item component="ComponentInfo{com.miui.securitycenter/com.miui.securityscan.MainActivity}" drawable="mi_security" name="MIUI Security" />
   <item component="ComponentInfo{com.mixplorer.beta/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" name="MiXplorer" />
@@ -2243,6 +2248,7 @@
   <item component="ComponentInfo{bin.mt.plus.canary/bin.mt.plus.MainNoBgIcon}" drawable="mt_manager_canary" name="MT Manager" />
   <item component="ComponentInfo{us.spotco.fennec_dos/us.spotco.fennec_dos.App}" drawable="mull" name="Mull" />
   <item component="ComponentInfo{net.mullvad.mullvadvpn/net.mullvad.mullvadvpn.ui.MainActivity}" drawable="mullvad_vpn" name="Mullvad VPN" />
+  <item component="ComponentInfo{com.oppo.music/com.oppo.music.MainListActivity}" drawable="yandex_music" name="Music" />
   <item component="ComponentInfo{com.miui.player/com.miui.player.component.MusicBrowserActivity}" drawable="mi_music" name="Music" />
   <item component="ComponentInfo{com.miui.player/com.miui.player.drawerActivityGroup.MainActivityGroup}" drawable="mi_music" name="Music" />
   <item component="ComponentInfo{com.miui.player/com.miui.player.home.LauncherActivity}" drawable="mi_music" name="Music" />
@@ -2276,9 +2282,16 @@
   <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.activities.HomeActivity}" drawable="myairtel" name="My Airtel" />
   <item component="ComponentInfo{com.heytap.vip/com.platform.usercenter.vip.UCVIPMainActivity}" drawable="my_oneplus" name="My OnePlus" />
   <item component="ComponentInfo{com.dafturn.mypertamina/com.dafturn.mypertamina.presentation.onboarding.splash.SplashActivity}" drawable="mypertamina" name="My Pertamina" />
+  <item component="ComponentInfo{se.telenor.mytelenor/com.telenor.app.mytelenor.ui.MainActivity}" drawable="telenor" name="My Telenor" />
+  <item component="ComponentInfo{se.telenor.mytelenor/com.telenor.app.mytelenor.ui.LoginActivity}" drawable="telenor" name="My Telenor" />
+  <item component="ComponentInfo{com.telenor.pakistan.mytelenor/com.telenor.pakistan.mytelenor.Main.MainActivity}" drawable="telenor" name="My Telenor" />
+  <item component="ComponentInfo{com.telenor.pakistan.mytelenor/com.telenor.pakistan.mytelenor.SplashScreen.Splash}" drawable="telenor" name="My Telenor" />
   <item component="ComponentInfo{ua.vodafone.myvodafone/ua.vodafone.myvodafone.MainActivity}" drawable="meinvodafone" name="My Vodafone" />
   <item component="ComponentInfo{ie.months.my48/ie.months.my48.MainActivity}" drawable="my48" name="My48" />
   <item component="ComponentInfo{cn.wq.myandroidtools/cn.wq.myandroidtoolspro.MainActivity}" drawable="myandroidtools" name="MyAndroidTools" />
+  <item component="ComponentInfo{com.arena.banglalinkmela.app/com.arena.banglalinkmela.app.ui.splash.SplashActivity}" drawable="banglalink" name="MyBL" />
+  <item component="ComponentInfo{com.arena.banglalinkmela.app/com.arena.banglalinkmela.app.ui.main.activity.MainActivity}" drawable="banglalink" name="MyBL" />
+  <item component="ComponentInfo{net.banglalink.mybllite/net.banglalink.mybllite.MainActivity}" drawable="banglalink" name="MyBL Lite" />
   <item component="ComponentInfo{com.swisscom.mycloud/com.swisscom.ngti.mycloud.SplashActivity}" drawable="mycloud" name="myCloud" />
   <item component="ComponentInfo{com.swisscom.mycloud/md58a5dbafdbe3eda61a029d94da491aa2d.SplashActivity}" drawable="mycloud" name="myCloud" />
   <item component="ComponentInfo{com.swisscom.mycloud/com.swisscom.ngti.mycloud.SplashActivity}" drawable="mycloud" name="myCloud" />
@@ -2293,6 +2306,8 @@
   <item component="ComponentInfo{com.tippingcanoe.mydealz/com.tippingcanoe.launchpad.Launcher}" drawable="mydealz" name="mydealz" />
   <item component="ComponentInfo{com.myfitnesspal.android/com.myfitnesspal.android.login.WelcomeActivity}" drawable="my_fitness_pal" name="MyFitnessPal" />
   <item component="ComponentInfo{com.myfitnesspal.android/com.myfitnesspal.android.login.Welcome}" drawable="my_fitness_pal" name="MyFitnessPal" />
+  <item component="ComponentInfo{com.portonics.mygp/com.portonics.mygp.ui.MainActivity}" drawable="telenor" name="MyGP" />
+  <item component="ComponentInfo{com.portonics.mygp/com.portonics.mygp.ui.SplashActivity}" drawable="telenor" name="MyGP" />
   <item component="ComponentInfo{com.pure.indosat.care/com.lotusflare.connect.LauncherActivity}" drawable="myim3" name="myIM3" />
   <item component="ComponentInfo{com.pure.indosat.care/com.pure.indosat.care.activities.SplashActivity}" drawable="myim3" name="myIM3" />
   <item component="ComponentInfo{com.pure.indosat.care/com.pure.indosat.care.MainActivity}" drawable="myim3" name="myIM3" />
@@ -2679,6 +2694,7 @@
   <item component="ComponentInfo{mendeleev.redlime/mendeleev.redlime.ui.main.MainActivity}" drawable="periodic_table" name="Periodic Table" />
   <item component="ComponentInfo{com.google.android.apps.safetyhub/com.google.android.apps.safetyhub.LauncherActivity}" drawable="personal_safety" name="Personal Safety" />
   <item component="ComponentInfo{com.huawei.genexcloud.speedtest/com.huawei.genexcloud.speedtest.ui.SpeedMainActivity}" drawable="petal_speed" name="Petal Speed" />
+  <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsActivityAlias}" drawable="dialer" name="Phone" />
   <item component="ComponentInfo{com.android.dialer/.app.DialtactsActivity}" drawable="dialer" name="Phone" />
   <item component="ComponentInfo{com.android.dialer/com.android.contacts.activities.PeopleActivity}" drawable="dialer" name="Phone" />
   <item component="ComponentInfo{com.android.dialer/com.android.dcm.Dialer}" drawable="dialer" name="Phone" />
@@ -3113,6 +3129,7 @@
   <item component="ComponentInfo{nl.rabomobiel/nl.rabomobiel.SplashScreen}" drawable="rabobank" name="rabobank" />
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity}" drawable="fm_radio" name="Radio" />
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="fm_radio" name="Radio" />
+  <item component="ComponentInfo{de.radiobob.radio/com.computerrock.radiolikemee.ui.intro.IntroActivity}" drawable="bob" name="Radio BOB"/>
   <item component="ComponentInfo{com.radio.fmradio/com.radio.fmradio.activities.SplashActivity}" drawable="fm_radio" name="Radio FM - Podcast App" />
   <item component="ComponentInfo{com.radio.fmradio/com.radio.fmradio.InitFM}" drawable="fm_radio" name="Radio FM - Podcast App" />
   <item component="ComponentInfo{com.radio.fmradio/com.radio.fmradio.RadioFM}" drawable="fm_radio" name="Radio FM - Podcast App" />
@@ -3130,6 +3147,7 @@
   <item component="ComponentInfo{com.devgary.ready/com.devgary.ready.activity.ReadyDrawerActivity}" drawable="reddit" name="Ready" />
   <item component="ComponentInfo{com.bilkon.easypiano/com.unity3d.player.UnityPlayerActivity}" drawable="piano" name="Real Piano" />
   <item component="ComponentInfo{com.bnyro.recorder/com.bnyro.recorder.ui.MainActivity}" drawable="recorder" name="Record You" />
+  <item component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.coloros.soundrecorder/oplus.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.ReclistActivity}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.SoundRecorder}" drawable="recorder" name="Recorder" />
@@ -3219,6 +3237,7 @@
   <item component="ComponentInfo{com.revolt/com.revolt.LauncherActivity}" drawable="revolt" name="Revolt" />
   <item component="ComponentInfo{site.endl.taiku.rvmob/site.endl.taiku.rvmob.LoginActivity}" drawable="revolt" name="Revolt" />
   <item component="ComponentInfo{com.revolut.revolut/com.revolut.ui.login.pin.LoginActivity}" drawable="revolut" name="Revolut" />
+    <item component="ComponentInfo{de.rewe.app.mobile/de.rewe.app.app.view.MainActivity}" drawable="rewe" name="Rewe"/>
   <item component="ComponentInfo{com.andrewshu.android.reddit/com.andrewshu.android.reddit.MainActivity}" drawable="rif_reddit" name="rif is fun" />
   <item component="ComponentInfo{com.andrewshu.android.reddit/com.andrewshu.android.reddit.MainActivity}" drawable="rif_reddit" name="rif is fun" />
   <item component="ComponentInfo{com.andrewshu.android.redditdonation/com.andrewshu.android.reddit.MainActivity}" drawable="rif_reddit" name="rif is fun golden platinum" />
@@ -4353,6 +4372,7 @@
   <item component="ComponentInfo{com.viber.voip/com.viber.voip.SplashActivity}" drawable="viber" name="Viber" />
   <item component="ComponentInfo{com.viber.voip/com.viber.voip.ViberApplication}" drawable="viber" name="Viber" />
   <item component="ComponentInfo{com.viber.voip/com.viber.voip.WelcomeActivity}" drawable="viber" name="Viber" />
+  <item component="ComponentInfo{com.coloros.video/com.oppo.video.VideoListActivity}" drawable="generic_player" name="Videos" />
   <item component="ComponentInfo{com.heytap.yoli/com.heytap.yoli.icon_org}" drawable="videos" name="Videos" />
   <item component="ComponentInfo{net.petafuel.mobile.vimpay/net.petafuel.mobile.vimpay.StartActivity}" drawable="vimpay" name="Vimpay" />
   <item component="ComponentInfo{it.vfsfitvnm.vimusic/it.vfsfitvnm.vimusic.MainActivity}" drawable="vimusic" name="ViMusic" />

@@ -1,7 +1,14 @@
 # Lawnicons contributing guide
 Welcome to the Lawnicons contributing guide! This file will tell you what you need to know to contribute to Lawnicons.
 
-## Icon guidelines
+Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. 
+
+Afterwards, you can either contribute icons or code.
+
+## Contributing icons
+To contribute icons, you only need to have your icon editor, a file explorer, and a terminal window.
+
+### Icon guidelines
 See the below image for a summary of the icon guidelines. If you don't follow them, a team member will likely request changing the icons.
 
 ![](images/contributing-image-1.png)
@@ -18,17 +25,17 @@ In addition to the above, the icons must have an outlined (not filled) style and
 
 See also [this Figma repository](https://www.figma.com/community/file/1227718471680779613) made by Grabstertv.
 
-## Adding an icon to Lawnicons
+### Adding an icon to Lawnicons
 Here’s how to add an icon to&nbsp;Lawnicons:
 
-### Prerequesties
-* Your icon in the SVG format, adhering to the [above guidelines](#icon-guidelines). The filename should also be snake case (e.g.&nbsp;`files_by_google.svg`).
+#### Prerequesties
+* Your icon in the SVG format, adhering to the [above guidelines](#icon-guidelines). The filename must also be snake case (e.g.&nbsp;`files_by_google.svg`).
 * The package and activity name of the app.
 
-### Via `icontool.py`
+#### Via `icontool.py`
 Please check the [icon tool guide](/.github/icontool_guide.md) for more information.
 
-### Via manual process
+#### Via manual process
 1. Add the ready SVG to the `svgs`&nbsp;directory.
 
 1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity. For&nbsp;example:
@@ -45,13 +52,13 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
 
 1. Done! You’re ready to open a pull request. Please set `develop` as the base&nbsp;branch.
 
-## Finding the package and activity name of an app
-### Using adb via computer/phone with OTG
-1. Connect your Android device or emulator to the PC/Mac/Phone via otg and open the app whose details you want to inspect, i.e. Files by Google.
+### Finding the package and activity name of an app
+#### Using `adb`
+1. Connect your Android device or emulator to the device with `adb` and open the app whose details you want to inspect, i.e. Telegram.
 1. Open a new Command Prompt or Terminal window and input `adb devices`.
 1. Finally, type the below-given command to get the information about the currently open application.
 
-  **For Mac/Linux**:
+  **For Mac or Linux**:
 
   ```sh
   adb shell dumpsys window | grep 'mCurrentFocus'  
@@ -64,18 +71,40 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
   ```
   ![](images/contributing-image-3.png)
 
-  The part before the `/` character in the above image, i.e `org.telegram.messenger`, is the package name `[PACKAGE_NAME]`, while the part after it, i.e `org.telegram.messenger.DefaultIcon`, is the activity name `[APP_ACIVITY_NAME]`.
+  The part before the `/` character in the above image, i.e `org.telegram.messenger`, is the package name `[PACKAGE_NAME]`. The part after it, i.e `org.telegram.messenger.DefaultIcon`, is the activity name `[APP_ACIVITY_NAME]`.
 
-### Using 3rd party apps
-#### Icon Request app
+#### Using 3rd-party apps
+##### Icon Request app
 1. Download [Icon Request App](https://github.com/Kaiserdragon2/IconRequest/releases). 
 2. Launch the app and click ok, let's start.
 3. Get the Activity details for each app.
 
 ![](images/contributing-image-4.png)
   
-#### Icon Pusher App
+##### Icon Pusher app
 1. Download [Icon Pusher App](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
 2. Launch the app.
 3. Select the icon(s) you want to upload or select all by pressing the square in the top right. Then press send.
 4. View the Activity details for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
+
+## Contributing code
+While adding icons is the main focus for most contrubutors, code-related contributions are welcome.
+
+To build the app, ensure that you create the icon drawables by running:
+
+```sh
+./gradlew svg-processor:run
+```
+
+Afterwards, you can build the app using the `appDebug` build variant.
+
+Here are a few contributing tips:
+- [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that turns SVGs in the `svgs` folder to Android Drawables. Generally, the `app` module is where you should make most of your contributions.
+
+- You can use either Java or, preferably, Kotlin.
+
+- Make sure your code is logical and well formatted. If using Kotlin, see [“Coding conventions” in the Kotlin documentation](https://kotlinlang.org/docs/coding-conventions.html).
+
+- Set `develop` as the base branch for pull requests.
+
+- Significant changes to the UI should be discussed on our [Lawnchair’s Telegram group chat](https://t.me/lawnchairci). Generally, we want to keep things clean and simple.
