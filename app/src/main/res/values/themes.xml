@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.Lawnicons" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:statusBarColor">@color/teal_700</item>
+    <style name="Theme.Lawnicons.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppCompat.DayNight.NoActionBar</item>
     </style>
 </resources>

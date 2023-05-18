@@ -20,7 +20,7 @@ val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.0.0"
+val version = "2.1.0"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -117,6 +117,7 @@ dependencies {
     val hiltVersion = "2.46"
     val retrofitVersion = "2.9.0"
 
+    implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.activity:activity-compose:1.7.1")
     implementation(platform("androidx.compose:compose-bom:2023.05.01"))
@@ -126,6 +127,7 @@ dependencies {
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
     implementation("androidx.compose.material3:material3:1.1.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
