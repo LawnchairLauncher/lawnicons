@@ -10,7 +10,7 @@ icontool [-m] [-h]
 ```
 
 ## General syntax
-Adding the flag `-m` will generate a list item (depending on the subcommand), like:
+Adding the flag `-m` will generate a list item (depending on the subcommand) that looks like this:
 ```
 * App Name (component info)
 ```
@@ -27,7 +27,7 @@ The `.svg` extension for `icon.svg` is optional, since the program automatically
 python3 icontool.py link icon com.app.app/com.app.app.appActivity "App Name"
 ```
 
-Note that `icon.svg` should be a svg file located in the `svgs/` directory. The `.svg` extension for `icon.svg` is optional as well.
+Note that `icon.svg` should be an SVG file located in the `svgs/` directory. The `.svg` extension for `icon.svg` is optional as well.
 
 ## Removing icons
 ### Normal usage
@@ -47,4 +47,4 @@ Simply pass the `-d` or `--delete` flag:
 python3 icontool.py remove com.app.app -d
 ```
 
-Note that the SVG file is based of the `drawable` attribute in the first `<item>` element.
+Note that the SVG file's name is based on the `drawable` attribute of the first `<item>` element.
