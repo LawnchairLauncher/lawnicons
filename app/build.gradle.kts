@@ -20,7 +20,7 @@ val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.0.0"
+val version = "2.1.0"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -87,10 +87,10 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.5"
+        kotlinCompilerExtensionVersion = "1.4.7"
     }
 
-    packagingOptions {
+    packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
@@ -114,25 +114,27 @@ hilt.enableAggregatingTask = false
 dependencies {
     val lifecycleVersion = "2.6.1"
     val accompanistVersion = "0.30.1"
-    val hiltVersion = "2.45"
+    val hiltVersion = "2.46.1"
     val retrofitVersion = "2.9.0"
 
-    implementation("androidx.core:core-ktx:1.10.0")
-    implementation("androidx.activity:activity-compose:1.7.0")
-    implementation(platform("androidx.compose:compose-bom:2023.04.00"))
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.activity:activity-compose:1.7.1")
+    implementation(platform("androidx.compose:compose-bom:2023.05.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material3:material3:1.1.0-beta02")
+    implementation("androidx.compose.material3:material3:1.1.0")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-insets:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-systemuicontroller:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-placeholder-material:$accompanistVersion")
     implementation("com.google.accompanist:accompanist-navigation-animation:$accompanistVersion")
-    implementation("io.github.fornewid:material-motion-compose-core:1.0.1")
+    implementation("io.github.fornewid:material-motion-compose-core:0.12.3")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
