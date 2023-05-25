@@ -80,10 +80,10 @@ def parse_component(linkmode, svg, component, name, showMessage):
     # calendarstuff  the lines of the calendar declerations
     line = f'  <item component="ComponentInfo{{{component}}}" drawable="{drawable}" name="{name}" />'
     purexmlfile = re.sub(
-        r"(?s)  <!--  Dynamic Calendars-->.*?  <!--  Lawnicons -->", "", xmlfile
+        r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->", "", xmlfile
     )
     calendarstuff = re.findall(
-        "(?s)  <!--  Dynamic Calendars-->.*?  <!--  Lawnicons -->", xmlfile
+        r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->", xmlfile
     )
 
     # add the line
