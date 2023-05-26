@@ -14,10 +14,7 @@ This project is mostly supported by our community. If you wish to contribute, se
 ## Download
 See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) to download the latest stable build of Lawnicons.
 
-For the development versions with new icons, go to the [Actions tab](https://github.com/LawnchairLauncher/lawnicons/actions),
-click the first workflow run, and scroll to find the `Debug Apk`.
-
-**Note that you'll need to have a GitHub account to download the debug apk.**
+For the development versions with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
 ## Contributing
 
