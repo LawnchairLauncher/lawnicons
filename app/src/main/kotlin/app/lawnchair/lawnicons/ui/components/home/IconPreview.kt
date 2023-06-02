@@ -72,7 +72,7 @@ fun IconPreviewComposablePreview() {
             name = "Camera",
             drawableName = "@drawable/camera",
             packageName = "com.android.camera",
-            id = R.drawable.camera
-        )
+            id = R.drawable.camera,
+        ),
     )
 }

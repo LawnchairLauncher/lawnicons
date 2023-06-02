@@ -25,12 +25,12 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.components.core.Card
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
+import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.components.core.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
@@ -39,12 +39,12 @@ import app.lawnchair.lawnicons.util.appIcon
 private val externalLinks = listOf(
     ExternalLink(
         name = "GitHub",
-        url = "https://github.com/LawnchairLauncher/lawnicons"
+        url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
         name = "Icon Request Form",
-        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57"
-    )
+        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57",
+    ),
 )
 
 private val coreContributors = listOf(

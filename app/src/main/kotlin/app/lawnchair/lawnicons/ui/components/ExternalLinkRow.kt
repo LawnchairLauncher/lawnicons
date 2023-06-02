@@ -33,12 +33,12 @@ fun ExternalLinkRow(
     )
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun ContributorRowPreview() {
+// @Preview(showBackground = true)
+// @Composable
+// fun ContributorRowPreview() {
 //    ContributorRow(
 //        name = "User",
 //        photoUrl = "https://lawnchair.app/images/lawnchair.png",
 //        description = "The Lawnchair Logo",
 //    )
-//}
+// }
