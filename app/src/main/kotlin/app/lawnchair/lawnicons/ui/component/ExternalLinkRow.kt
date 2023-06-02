@@ -1,0 +1,43 @@
+package app.lawnchair.lawnicons.ui.component
+
+import android.content.Intent
+import android.net.Uri
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+
+@Composable
+fun ExternalLinkRow(
+    name: String,
+    url: String,
+    divider: Boolean = true,
+    background: Boolean = false,
+    first: Boolean = false,
+    last: Boolean = false,
+) {
+    val context = LocalContext.current
+    val onClick =
+        {
+            val website = Uri.parse(url)
+            val intent = Intent(Intent.ACTION_VIEW, website)
+            context.startActivity(intent)
+        }
+
+    SimpleListRow(
+        background = background,
+        first = first,
+        last = last,
+        divider = divider,
+        label = name,
+        onClick = onClick,
+    )
+}
+
+//@Preview(showBackground = true)
+//@Composable
+//fun ContributorRowPreview() {
+//    ContributorRow(
+//        name = "User",
+//        photoUrl = "https://lawnchair.app/images/lawnchair.png",
+//        description = "The Lawnchair Logo",
+//    )
+//}

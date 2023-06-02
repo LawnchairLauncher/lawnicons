@@ -28,11 +28,24 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.component.Card
 import app.lawnchair.lawnicons.ui.component.ClickableIcon
 import app.lawnchair.lawnicons.ui.component.ContributorRow
+import app.lawnchair.lawnicons.ui.component.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.component.SimpleListRow
 import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
+import app.lawnchair.lawnicons.ui.util.ExternalLink
 import app.lawnchair.lawnicons.util.appIcon
+
+private val externalLinks = listOf(
+    ExternalLink(
+        name = "GitHub",
+        url = "https://github.com/LawnchairLauncher/lawnicons"
+    ),
+    ExternalLink(
+        name = "Icon Request Form",
+        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57"
+    )
+)
 
 private val coreContributors = listOf(
     Contributor(
@@ -113,7 +126,18 @@ fun About(navController: NavController) {
                 }
             }
             item {
-                Card(label = stringResource(id = R.string.core_contributors)) {
+                Card(label = "External Links") {
+                    externalLinks.mapIndexed { index, it ->
+                        ExternalLinkRow(
+                            name = it.name,
+                            url = it.url,
+                            divider = index != externalLinks.lastIndex,
+                        )
+                    }
+                }
+            }
+            item {
+                Card(label = stringResource(id = R.string.core_contributors), modifier = Modifier.padding(top = 16.dp)) {
                     coreContributors.mapIndexed { index, it ->
                         ContributorRow(
                             name = it.name,
