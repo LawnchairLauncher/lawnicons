@@ -3,7 +3,9 @@ package app.lawnchair.lawnicons.ui.destination
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.Crossfade
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -29,10 +31,13 @@ import app.lawnchair.lawnicons.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.component.ClickableIcon
 import app.lawnchair.lawnicons.ui.component.ContributorRow
 import app.lawnchair.lawnicons.ui.component.ContributorRowPlaceholder
+import app.lawnchair.lawnicons.ui.component.SimpleListRow
 import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
+
+const val contributorsUrl = "https://github.com/LawnchairLauncher/lawnicons/graphs/contributors"
 
 @Composable
 fun Contributors(
@@ -92,6 +97,24 @@ fun ContributorList(contributors: List<GitHubContributor>) {
             additionalBottom = 8.dp,
         ),
     ) {
+        item {
+            val context = LocalContext.current
+            SimpleListRow(
+                label = stringResource(R.string.view_on_github),
+                background = true,
+                first = true,
+                last = true,
+                divider = false,
+                onClick = {
+                    val website = Uri.parse(contributorsUrl)
+                    val intent = Intent(Intent.ACTION_VIEW, website)
+                    context.startActivity(intent)
+                },
+            )
+        }
+        item {
+            Spacer(modifier = Modifier.height(16.dp))
+        }
         itemsIndexed(contributors) { index, it ->
             ContributorRow(
                 name = it.login,
@@ -134,7 +157,7 @@ fun ContributorListError(
         onBack()
         // we might be rate-limited, open the web ui instead
         val website =
-            Uri.parse("https://github.com/LawnchairLauncher/lawnicons/graphs/contributors")
+            Uri.parse(contributorsUrl)
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
     }
