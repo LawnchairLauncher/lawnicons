@@ -7,7 +7,7 @@ import org.dom4j.tree.DefaultDocument
 object ConfigProcessor {
     private const val ITEM = "item"
     private const val CATEGORY = "category"
-    private const val COMPONENT = "components"
+    private const val COMPONENT = "component"
     private const val PACKAGE = "package"
     private const val DRAWABLE = "drawable"
     private const val DRAWABLEIGNORE = "drawableIgnore"
