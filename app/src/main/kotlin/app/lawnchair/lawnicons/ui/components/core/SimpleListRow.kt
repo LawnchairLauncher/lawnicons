@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components.core
 
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material3.MaterialTheme

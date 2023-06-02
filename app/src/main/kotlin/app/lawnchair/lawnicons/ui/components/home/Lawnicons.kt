@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -11,6 +11,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import app.lawnchair.lawnicons.ui.components.core.SystemUi
 import app.lawnchair.lawnicons.ui.destination.About
 import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements

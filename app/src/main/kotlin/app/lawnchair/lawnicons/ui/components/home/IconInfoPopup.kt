@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.AlertDialog

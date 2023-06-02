@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components.core
 
 import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.foundation.layout.fillMaxWidth

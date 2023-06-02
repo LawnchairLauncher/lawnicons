@@ -4,9 +4,9 @@
 ## Summary of usage
 ```sh
 icontool [-m] [-h]
-         add (a)    svg component name
-         link (l)   svg component name
-         remove (r) component [-d]
+         add (a)    svg components name
+         link (l)   svg components name
+         remove (r) components [-d]
 ```
 
 ## General syntax

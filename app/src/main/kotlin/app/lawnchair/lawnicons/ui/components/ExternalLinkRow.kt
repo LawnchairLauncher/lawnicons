@@ -1,9 +1,10 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components
 
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 
 @Composable
 fun ExternalLinkRow(

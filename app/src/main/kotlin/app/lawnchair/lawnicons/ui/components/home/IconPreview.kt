@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,7 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
@@ -60,4 +62,17 @@ fun IconPreview(
             isPopupShown = isIconInfoShown,
         )
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun IconPreviewComposablePreview() {
+    IconPreview(
+        iconInfo = IconInfo(
+            name = "Camera",
+            drawableName = "@drawable/camera",
+            packageName = "com.android.camera",
+            id = R.drawable.camera
+        )
+    )
 }

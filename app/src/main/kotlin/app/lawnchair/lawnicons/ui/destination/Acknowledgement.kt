@@ -35,8 +35,8 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import app.lawnchair.lawnicons.ui.component.ClickableIcon
-import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.core.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel

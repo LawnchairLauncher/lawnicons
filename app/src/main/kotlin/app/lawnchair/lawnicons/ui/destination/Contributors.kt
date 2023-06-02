@@ -28,11 +28,11 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.GitHubContributor
-import app.lawnchair.lawnicons.ui.component.ClickableIcon
-import app.lawnchair.lawnicons.ui.component.ContributorRow
-import app.lawnchair.lawnicons.ui.component.ContributorRowPlaceholder
-import app.lawnchair.lawnicons.ui.component.SimpleListRow
-import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.ContributorRow
+import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
+import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
+import app.lawnchair.lawnicons.ui.components.core.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
@@ -98,18 +98,13 @@ fun ContributorList(contributors: List<GitHubContributor>) {
         ),
     ) {
         item {
-            val context = LocalContext.current
-            SimpleListRow(
-                label = stringResource(R.string.view_on_github),
+            ExternalLinkRow(
+                name = stringResource(R.string.view_on_github),
                 background = true,
                 first = true,
                 last = true,
                 divider = false,
-                onClick = {
-                    val website = Uri.parse(contributorsUrl)
-                    val intent = Intent(Intent.ACTION_VIEW, website)
-                    context.startActivity(intent)
-                },
+                url = contributorsUrl,
             )
         }
         item {

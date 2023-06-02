@@ -21,10 +21,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.component.AcknowledgementRowPlaceholder
-import app.lawnchair.lawnicons.ui.component.ClickableIcon
-import app.lawnchair.lawnicons.ui.component.SimpleListRow
-import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.components.AcknowledgementRowPlaceholder
+import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.components.core.TopBarWithInsets
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel

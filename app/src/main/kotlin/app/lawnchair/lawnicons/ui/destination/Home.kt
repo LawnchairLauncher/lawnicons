@@ -12,9 +12,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import app.lawnchair.lawnicons.ui.component.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.component.SearchBar
-import app.lawnchair.lawnicons.ui.component.SearchBarBase
+import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
+import app.lawnchair.lawnicons.ui.components.home.SearchBar
+import app.lawnchair.lawnicons.ui.components.home.SearchBarBase
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 
 @Composable
