@@ -2,7 +2,10 @@ package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -10,37 +13,52 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import app.lawnchair.lawnicons.ui.components.home.IconPopupHint
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.SearchBar
 import app.lawnchair.lawnicons.ui.components.home.SearchBarBase
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 
-@Composable
 @OptIn(ExperimentalFoundationApi::class)
+@Composable
 fun Home(
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
     navController: NavController,
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
     var searchTerm by remember { mutableStateOf(value = "") }
+
     Crossfade(
         targetState = iconInfoModel != null,
         modifier = Modifier.statusBarsPadding(),
     ) { targetState ->
         if (targetState) {
             iconInfoModel?.let {
-                SearchBar(
-                    value = searchTerm,
-                    iconCount = it.iconCount,
-                    navController = navController,
-                    onValueChange = { newValue ->
-                        searchTerm = newValue
-                        lawniconsViewModel.searchIcons(newValue)
+                val icons = it
+                val isButtonShown = remember { mutableStateOf(true)}
+                Scaffold(
+                    topBar = {
+                        Column(modifier = Modifier.padding(bottom = 0.dp)) {
+                            SearchBar(
+                                value = searchTerm,
+                                iconCount = icons.iconCount,
+                                navController = navController,
+                                onValueChange = { newValue ->
+                                    searchTerm = newValue
+                                    lawniconsViewModel.searchIcons(newValue)
+                                },
+                            )
+                            IconPopupHint(isButtonShown = isButtonShown)
+                        }
                     },
-                )
-                IconPreviewGrid(iconInfo = it.iconInfo)
+                ) { paddingValues ->
+                    Column (modifier = Modifier.padding(paddingValues)) {
+                        IconPreviewGrid(iconInfo = icons.iconInfo)
+                    }
+                }
             }
         } else {
             SearchBarBase()

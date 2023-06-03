@@ -23,7 +23,6 @@ fun IconPreviewGrid(
         columns = GridCells.Adaptive(minSize = 80.dp),
         contentPadding = WindowInsets.navigationBars.toPaddingValues(
             additionalStart = 8.dp,
-            additionalTop = 42.dp,
             additionalEnd = 8.dp,
         ),
     ) {
