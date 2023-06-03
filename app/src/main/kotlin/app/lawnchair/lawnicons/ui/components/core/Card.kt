@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.util.Elevation
 
@@ -39,5 +40,15 @@ fun Card(
                 content()
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CardPreview() {
+    Card(
+        label = "Example"
+    ) {
+        SimpleListRow(label = "Example text in card", background = true, first = true, last = true, divider = false)
     }
 }

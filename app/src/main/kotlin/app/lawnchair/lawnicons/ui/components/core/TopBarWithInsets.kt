@@ -4,6 +4,8 @@ import androidx.compose.animation.core.FastOutLinearInEasing
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.MaterialTheme
@@ -17,7 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.util.Elevation
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -60,4 +64,22 @@ fun TopBarWithInsets(
             ),
         )
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Preview(showBackground = true)
+@Composable
+fun TopBarWithInsetsPreview() {
+    TopBarWithInsets(
+        navigationIcon = {
+            ClickableIcon(
+                onClick = {},
+                imageVector = Icons.Rounded.ArrowBack,
+                size = 40.dp,
+                modifier = Modifier.padding(horizontal = 4.dp),
+            )
+        },
+        scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
+        title = "Example",
+    )
 }
