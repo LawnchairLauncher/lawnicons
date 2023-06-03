@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.components.home
+package app.lawnchair.lawnicons.ui.components
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi

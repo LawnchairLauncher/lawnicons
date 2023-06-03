@@ -7,7 +7,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.WindowCompat
-import app.lawnchair.lawnicons.ui.components.home.Lawnicons
+import app.lawnchair.lawnicons.ui.components.Lawnicons
 import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalFoundationApi
