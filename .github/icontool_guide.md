@@ -4,9 +4,9 @@
 ## Summary of usage
 ```sh
 icontool [-m] [-h]
-         add (a)    svg components name
-         link (l)   svg components name
-         remove (r) components [-d]
+         add    (a) svg component name
+         link   (l) svg component name
+         remove (r) component [-d]
 ```
 
 ## General syntax
@@ -47,4 +47,4 @@ Simply pass the `-d` or `--delete` flag:
 python3 icontool.py remove com.app.app -d
 ```
 
-Note that the SVG file's name is based on the `drawable` attribute of the first `<item>` element.
+Note that the SVG's file name is based on the `drawable` attribute of the first `<item>` element.
