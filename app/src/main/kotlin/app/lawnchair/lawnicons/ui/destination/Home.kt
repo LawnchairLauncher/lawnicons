@@ -38,7 +38,7 @@ fun Home(
         if (targetState) {
             iconInfoModel?.let {
                 val icons = it
-                val isButtonShown = remember { mutableStateOf(true)}
+                val isButtonShown = remember { mutableStateOf(true) }
                 Scaffold(
                     topBar = {
                         Column(modifier = Modifier.padding(bottom = 0.dp)) {
@@ -55,7 +55,7 @@ fun Home(
                         }
                     },
                 ) { paddingValues ->
-                    Column (modifier = Modifier.padding(paddingValues)) {
+                    Column(modifier = Modifier.padding(paddingValues)) {
                         IconPreviewGrid(iconInfo = icons.iconInfo)
                     }
                 }

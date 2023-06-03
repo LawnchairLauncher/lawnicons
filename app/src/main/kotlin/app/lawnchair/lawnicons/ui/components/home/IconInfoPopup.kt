@@ -50,22 +50,22 @@ fun IconInfoPopup(
                     fontWeight = FontWeight.Bold,
                     text = stringResource(
                         id = R.string.drawable_prefix,
-                    )
+                    ),
                 )
                 Text(
                     fontFamily = FontFamily.Monospace,
-                    text = iconInfo.drawableName
+                    text = iconInfo.drawableName,
                 )
                 Spacer(Modifier.height(16.dp))
                 Text(
                     fontWeight = FontWeight.Bold,
                     text = stringResource(
                         id = R.string.package_prefix,
-                    )
+                    ),
                 )
                 Text(
                     fontFamily = FontFamily.Monospace,
-                    text = iconInfo.packageName
+                    text = iconInfo.packageName,
                 )
             }
         },
@@ -83,6 +83,6 @@ fun IconInfoPopupPreview() {
             packageName = "pkg.name",
             id = R.drawable.splashscreen,
         ),
-        isPopupShown = showPopup
+        isPopupShown = showPopup,
     )
 }

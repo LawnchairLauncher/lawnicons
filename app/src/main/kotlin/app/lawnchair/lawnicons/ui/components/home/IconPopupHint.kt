@@ -14,7 +14,7 @@ import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 
 @Composable
 fun IconPopupHint(
-    isButtonShown: MutableState<Boolean>
+    isButtonShown: MutableState<Boolean>,
 ) {
     if (isButtonShown.value) {
         Spacer(modifier = Modifier.height(12.dp))
@@ -37,4 +37,3 @@ fun IconPopupHint(
         )
     }
 }
-

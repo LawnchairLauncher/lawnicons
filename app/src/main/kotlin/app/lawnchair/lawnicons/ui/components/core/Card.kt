@@ -47,7 +47,7 @@ fun Card(
 @Composable
 fun CardPreview() {
     Card(
-        label = "Example"
+        label = "Example",
     ) {
         SimpleListRow(label = "Example text in card", background = true, first = true, last = true, divider = false)
     }
