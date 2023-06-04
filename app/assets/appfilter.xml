@@ -296,6 +296,7 @@
   <item component="ComponentInfo{tv.danmaku.bili/tv.danmaku.bili.MainActivityV2}" drawable="bilibili" name="bilibili" />
   <item component="ComponentInfo{com.bilibili.app.in/tv.danmaku.bili.MainActivityV2}" drawable="bilibili" name="bilibili" />
   <item component="ComponentInfo{com.bilibili.app.blue/tv.danmaku.bili.MainActivityV2}" drawable="bilibili" name="bilibili" />
+  <item component="ComponentInfo{com.bilibili.comic/com.bilibili.comic.splash.view.activity.SplashActivity}" drawable="bilibili" name="bilibili" />
   <item component="ComponentInfo{in.usefulapp.timelybills/in.usefulapps.timelybills.activity.AppStartupActivity}" drawable="bills_reminder" name="Bills Reminder" />
   <item component="ComponentInfo{com.linkit.bimatri/com.linkit.bimatri.presentation.activity.SplashScreenActivity}" drawable="bima_plus" name="Bima+" />
   <item component="ComponentInfo{com.linkit.bimatri/crc646706112c2f8853b0.SplashActivity}" drawable="bima_plus" name="Bima+" />
@@ -497,6 +498,7 @@
   <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.floating.FloatingCalculatorActivity}" drawable="calculator_plusplus" name="Calculator Plus Plus" />
   <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.onscreen.CalculatorOnscreenStartActivity}" drawable="calculator_plusplus" name="Calculator Plus Plus" />
   <item component="ComponentInfo{com.coloros.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar" name="Calendar" />
+  <item component="ComponentInfo{com.motorola.cn.calendar/com.motorola.cn.calendar.AllInOneActivity}" drawable="calendar" name="Calendar" />
   <item component="ComponentInfo{com.gustavoas.calendarqst/com.gustavoas.calendarqst.SettingsActivity}" drawable="calentile" name="CalenTile" />
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.PermissionGrantActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
@@ -706,6 +708,7 @@
   <item drawableIgnore="true" component="ComponentInfo{com.android.deskclock/.DeskClock}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.best.deskclock/com.best.deskclock.DeskClock}" drawable="desk_clock" name="Clock" />
   <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" name="Clock" />
+  <item component="ComponentInfo{com.asus.deskclock/com.asus.deskclock.DeskClock}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.AlarmActivity}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.alarm.Alarm}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="clock" name="Clock" />
@@ -1379,6 +1382,7 @@
   <item component="ComponentInfo{com.miui.gallery/.activity.HomePageActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.app.Gallery}" drawable="gallery" name="Gallery" />
+  <item component="ComponentInfo{com.motorola.cn.gallery/com.motorola.cn.gallery.app.GalleryActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.oneplus.gallery/com.coloros.gallery3d.app.MainActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.app.MainActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.app.MainActivity#0}" drawable="gallery" name="Gallery" />
@@ -2455,6 +2459,7 @@
   <item component="ComponentInfo{com.oneplus.note/com.nearme.note.main.MainActivity}" drawable="notes" name="Notes" />
   <item component="ComponentInfo{com.oneplus.note/com.oneplus.note.ui.MainActivity}" drawable="notes" name="Notes" />
   <item component="ComponentInfo{com.oneplus.note/.ui.MainActivity}" drawable="notes" name="Notes" />
+  <item component="ComponentInfo{com.motorola.stylus/com.motorola.stylus.manager.NoteManagerActivity}" drawable="notes" name="Notes" />
   <item component="ComponentInfo{com.streetwriters.notesnook/com.streetwriters.notesnook.MainActivity}" drawable="notesnook" name="Notesnook" />
   <item component="ComponentInfo{com.yygg.note.app/com.yygg.note.app.home.HomeActivity}" drawable="notewise" name="Notewise" />
   <item component="ComponentInfo{com.nothing.smartcenter/com.nothing.home.activity.WelcomeActivity}" drawable="nothing_x" name="Nothing X" />
@@ -4444,6 +4449,7 @@
   <item component="ComponentInfo{net.oneplus.weather/com.oplus.weather.main.view.WeatherMainActivity}" drawable="weather" name="Weather" />
   <item component="ComponentInfo{net.oneplus.weather/net.oneplus.weather.app.MainActivity}" drawable="weather" name="Weather" />
   <item component="ComponentInfo{org.secuso.privacyfriendlyweather/org.secuso.privacyfriendlyweather.activities.SplashActivity}" drawable="weather" name="Weather" />
+  <item component="ComponentInfo{com.meizu.flyme.weather/com.hy.weather.mz.modules.home.WeatherMainActivity}" drawable="weather" name="Weather" />
   <item component="ComponentInfo{com.instantbits.cast.webvideo/com.instantbits.cast.webvideo.SplashActivity}" drawable="web_video_caster" name="Web Video Caster" />
   <item component="ComponentInfo{com.qidian.Int.reader/com.qidian.Int.reader.MainActivity}" drawable="webnovel" name="Webnovel" />
   <item component="ComponentInfo{com.naver.linewebtoon/com.naver.linewebtoon.splash.SplashActivity}" drawable="webtoon" name="WEBTOON" />
