@@ -1,6 +1,8 @@
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.io.FileInputStream
+import java.util.Locale
 import java.util.Properties
+import org.jetbrains.kotlin.incremental.deleteRecursivelyOrThrow
 
 plugins {
     id("com.android.application")
@@ -70,6 +72,7 @@ android {
         }
     }
     sourceSets.getByName("app") {
+        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
     compileOptions {
@@ -103,6 +106,22 @@ android {
     }
 
     applicationVariants.all {
+        val variantName = name
+        val capitalizedName =
+            name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        val copyArtifactList =
+            tasks.register("copy${capitalizedName}ArtifactList", Copy::class.java) {
+                dependsOn(tasks.named("licensee${capitalizedName}"))
+                from(
+                    project.extensions.getByType(ReportingExtension::class.java)
+                        .file("licensee/${variantName}/artifacts.json"),
+                )
+                into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+            }
+        tasks.named("merge${capitalizedName}Assets").configure {
+            dependsOn(copyArtifactList)
+        }
+
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
