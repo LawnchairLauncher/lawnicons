@@ -5,7 +5,6 @@ plugins {
     id("com.sergei-lapin.napt") version "1.19" apply false
     id("com.google.dagger.hilt.android") version "2.46.1" apply false
     id("app.cash.licensee") version "1.7.0" apply false
-    id("com.google.android.gms.oss-licenses-plugin") version "0.10.6" apply false
     id("org.jmailen.kotlinter") version "3.15.0" apply false
 }
 

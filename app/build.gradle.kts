@@ -10,7 +10,6 @@ plugins {
     id("com.sergei-lapin.napt")
     id("dagger.hilt.android.plugin")
     id("app.cash.licensee")
-    id("com.google.android.gms.oss-licenses-plugin")
 }
 
 val buildCommit = providers.exec {
@@ -169,7 +168,6 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
