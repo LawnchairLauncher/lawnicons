@@ -7,6 +7,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.sergei-lapin.napt")
     id("dagger.hilt.android.plugin")
+    id("app.cash.licensee")
     id("com.google.android.gms.oss-licenses-plugin")
 }
 
