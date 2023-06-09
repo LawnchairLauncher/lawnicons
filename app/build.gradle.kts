@@ -1,5 +1,6 @@
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.io.FileInputStream
+import java.util.Locale
 import java.util.Properties
 
 plugins {
@@ -7,7 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.sergei-lapin.napt")
     id("dagger.hilt.android.plugin")
-    id("com.google.android.gms.oss-licenses-plugin")
+    id("app.cash.licensee")
 }
 
 val buildCommit = providers.exec {
@@ -69,6 +70,7 @@ android {
         }
     }
     sourceSets.getByName("app") {
+        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
     compileOptions {
@@ -102,6 +104,22 @@ android {
     }
 
     applicationVariants.all {
+        val variantName = name
+        val capitalizedName =
+            name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        val copyArtifactList =
+            tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
+                dependsOn(tasks.named("licensee${capitalizedName}"))
+                from(
+                    project.extensions.getByType<ReportingExtension>()
+                        .file("licensee/${variantName}/artifacts.json"),
+                )
+                into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+            }
+        tasks.named("merge${capitalizedName}Assets").configure {
+            dependsOn(copyArtifactList)
+        }
+
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
@@ -110,6 +128,10 @@ android {
 }
 
 hilt.enableAggregatingTask = false
+
+licensee {
+    allow("Apache-2.0")
+}
 
 dependencies {
     val lifecycleVersion = "2.6.1"
@@ -138,7 +160,6 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
