@@ -2,7 +2,6 @@ import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
-import org.jetbrains.kotlin.incremental.deleteRecursivelyOrThrow
 
 plugins {
     id("com.android.application")
@@ -109,10 +108,10 @@ android {
         val capitalizedName =
             name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
         val copyArtifactList =
-            tasks.register("copy${capitalizedName}ArtifactList", Copy::class.java) {
+            tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
                 dependsOn(tasks.named("licensee${capitalizedName}"))
                 from(
-                    project.extensions.getByType(ReportingExtension::class.java)
+                    project.extensions.getByType<ReportingExtension>()
                         .file("licensee/${variantName}/artifacts.json"),
                 )
                 into(layout.buildDirectory.dir("generated/dependencyAssets/"))
@@ -132,13 +131,6 @@ hilt.enableAggregatingTask = false
 
 licensee {
     allow("Apache-2.0")
-    allow("BSD-3-Clause")
-    allowUrl("https://api.github.com/licenses/apache-2.0")
-    allowUrl("https://api.github.com/licenses/bsd-3-clause")
-    allowUrl("https://github.com/patrykmichalik/opto/blob/master/LICENSE")
-    allowUrl("https://github.com/RikkaApps/HiddenApiRefinePlugin/blob/main/LICENSE")
-    allowUrl("https://github.com/stleary/JSON-java/blob/master/LICENSE")
-    allowUrl("https://www.gnu.org/licenses/old-licenses/gpl-2.0.html")
 }
 
 dependencies {
