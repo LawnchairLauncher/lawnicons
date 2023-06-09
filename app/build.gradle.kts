@@ -112,6 +112,17 @@ android {
 
 hilt.enableAggregatingTask = false
 
+licensee {
+    allow("Apache-2.0")
+    allow("BSD-3-Clause")
+    allowUrl("https://api.github.com/licenses/apache-2.0")
+    allowUrl("https://api.github.com/licenses/bsd-3-clause")
+    allowUrl("https://github.com/patrykmichalik/opto/blob/master/LICENSE")
+    allowUrl("https://github.com/RikkaApps/HiddenApiRefinePlugin/blob/main/LICENSE")
+    allowUrl("https://github.com/stleary/JSON-java/blob/master/LICENSE")
+    allowUrl("https://www.gnu.org/licenses/old-licenses/gpl-2.0.html")
+}
+
 dependencies {
     val lifecycleVersion = "2.6.1"
     val accompanistVersion = "0.30.1"
