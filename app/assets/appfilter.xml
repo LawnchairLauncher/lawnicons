@@ -1371,6 +1371,7 @@
   <item component="ComponentInfo{com.Funimation.FunimationNow/com.funimation.ui.splash.SplashActivity_}" drawable="funimation" name="Funimation" />
   <item component="ComponentInfo{com.Funimation.FunimationNow/com.funimation.ui.splash.SplashActivity}" drawable="funimation" name="Funimation" />
   <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.ExplorerActivity}" drawable="fx_file_explorer" name="FX" />
+  <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge" name="Gadgetbridge" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.Main}" drawable="galaxy_store" name="Galaxy Store" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity}" drawable="galaxy_store" name="Galaxy Store" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 }}" drawable="galaxy_store" name="Galaxy Store" />
@@ -1649,6 +1650,7 @@
   <item component="ComponentInfo{com.yy.hiyo/com.yy.hiyo.LaunchActivity}" drawable="hago" name="Hago" />
   <item component="ComponentInfo{com.yy.hiyo/com.yy.hiyo.MainActivity}" drawable="hago" name="Hago" />
   <item component="ComponentInfo{com.aistra.hail/com.aistra.hail.ui.main.MainActivity}" drawable="hail" name="Hail" />
+  <item component="ComponentInfo{de.freehamburger/de.freehamburger.MainActivity}" drawable="hamburger" name="Hamburger" />
   <item component="ComponentInfo{com.supercell.hayday/com.supercell.hayday.GameApp}" drawable="hay_day" name="Hay Day" />
   <item component="ComponentInfo{com.hbo.hbonow/com.hbo.go.LaunchActivity}" drawable="hbo_max" name="HBO Max" />
   <item component="ComponentInfo{com.hbo.hbonow/com.hbo.hbonow.LaunchActivity}" drawable="hbo_max" name="HBO Max" />
@@ -1775,6 +1777,7 @@
   <item component="ComponentInfo{com.jago.digitalBanking/com.jago.digitalBanking.MainActivity}" drawable="bank_jago" name="Jago" />
   <item component="ComponentInfo{com.citynav.jakdojade.pl.android/com.citynav.jakdojade.pl.android.SplashScreenActivity}" drawable="jakdojade" name="Jakdojade" />
   <item component="ComponentInfo{com.google.android.apps.jam/com.google.android.apps.jam.jelly.home.HomeActivity}" drawable="jamboard" name="Jamboard" />
+  <item component="ComponentInfo{cx.ring/cx.ring.client.HomeActivity}" drawable="jami" name="Jami" />
   <item component="ComponentInfo{jbl.stc.com/jbl.stc.com.activity.SplashActivity}" drawable="jbl_headphones" name="JBL Headphones" />
   <item component="ComponentInfo{com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity}" drawable="jd" name="JD" />
   <item component="ComponentInfo{org.jellyfin.mobile/org.jellyfin.mobile.MainActivity}" drawable="jellyfin" name="Jellyfin" />
@@ -2351,6 +2354,7 @@
   <item component="ComponentInfo{com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityTxt}" drawable="moon_reader" name="Moon+ Reader" />
   <item component="ComponentInfo{com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain}" drawable="moon_reader" name="Moon+ Reader" />
   <item component="ComponentInfo{com.flyersoft.moonreader/com.flyersoft.moonreader.ActivityMain}" drawable="moon_reader" name="Moon+ Reader" />
+  <item component="ComponentInfo{com.limelight/com.limelight.PcView}" drawable="moonlight" name="Moonlight" />
   <item component="ComponentInfo{com.tranzmate/com.moovit.app.home.HomeActivity}" drawable="moovit" name="Moovit" />
   <item component="ComponentInfo{rocks.poopjournal.morse/rocks.poopjournal.morse.MainActivity}" drawable="morse" name="Morse" />
   <item component="ComponentInfo{org.joinmastodon.android.moshinda/org.joinmastodon.android.MainActivity}" drawable="moshidon" name="Moshidon" />
@@ -3399,7 +3403,7 @@
   <item component="ComponentInfo{com.roku.remote/com.roku.remote.ui.WelcomeActivity}" drawable="roku" name="Roku" />
   <item component="ComponentInfo{me.timschneeberger.rootlessjamesdsp/me.timschneeberger.rootlessjamesdsp.activity.MainActivity}" drawable="rootless_james_dsp" name="RootlessJamesDSP" />
   <item component="ComponentInfo{me.timschneeberger.rootlessjamesdsp/me.timschneeberger.rootlessjamesdsp.activity.OnboardingActivity}" drawable="rootless_james_dsp" name="RootlessJamesDSP" />
-  <item component="ComponentInfo{de.rtli.tvnow/de.rtli.everest.activity.SplashActivity}" drawable="rtl" name="RTL+"/>
+  <item component="ComponentInfo{de.rtli.tvnow/de.rtli.everest.activity.SplashActivity}" drawable="rtl" name="RTL+" />
   <item component="ComponentInfo{com.octopod.russianpost.client.android/com.octopod.russianpost.client.android.ui.splash.SplashActivity}" drawable="russian_post" name="Russian Post" />
   <item component="ComponentInfo{com.carriez.flutter_hbb/com.carriez.flutter_hbb.MainActivity}" drawable="rustdesk" name="RustDesk" />
   <item component="ComponentInfo{ru.vk.store/ru.vk.store.app.MainActivity}" drawable="rustore" name="RuStore" />
@@ -4815,7 +4819,7 @@
   <item component="ComponentInfo{com.deniscerri.ytdl/com.deniscerri.ytdlnis.MainActivity}" drawable="ytdlnis" name="YTDLnis" />
   <item component="ComponentInfo{com.yubico.yubioath/com.yubico.authenticator.MainActivity}" drawable="yubico_authenticator" name="Yubico Authenticator" />
   <item component="ComponentInfo{io.yuka.android/io.yuka.android.Main.RootActivity}" drawable="yuka" name="Yuka" />
-  <item component="ComponentInfo{org.yuzu.yuzu_emu/org.yuzu.yuzu_emu.ui.main.MainActivity}" drawable="yuzu" name="yuzu"/>
+  <item component="ComponentInfo{org.yuzu.yuzu_emu/org.yuzu.yuzu_emu.ui.main.MainActivity}" drawable="yuzu" name="yuzu" />
   <item component="ComponentInfo{de.zalando.mobile/de.zalando.mobile.ui.start.SplashActivity}" drawable="zalando" name="Zalando" />
   <item component="ComponentInfo{de.christinecoenen.code.zapp/de.christinecoenen.code.zapp.app.MainActivity}" drawable="zapp" name="Zapp" />
   <item component="ComponentInfo{de.christinecoenen.code.zapp/de.christinecoenen.code.zapp.app.main.MainActivity}" drawable="zapp" name="Zapp" />
