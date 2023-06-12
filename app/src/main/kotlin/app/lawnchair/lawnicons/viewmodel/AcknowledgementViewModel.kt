@@ -13,6 +13,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.stateIn
 
@@ -25,7 +26,7 @@ class AcknowledgementViewModel @Inject constructor(
     fun getNoticeForOssLibrary(
         ossLibraryName: String,
         linkStyle: SpanStyle,
-    ) = ossLibraryRepository.getNoticeForOssLibrary(
+    ): StateFlow<AnnotatedString?> = ossLibraryRepository.getNoticeForOssLibrary(
         ossLibraryName = ossLibraryName,
         annotate = { annotate(it, linkStyle) },
     )
