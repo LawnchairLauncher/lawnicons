@@ -119,6 +119,11 @@ android {
         tasks.named("merge${capitalizedName}Assets").configure {
             dependsOn(copyArtifactList)
         }
+        if (buildType.name == "release") {
+            tasks.named("lintVitalAnalyze${capitalizedName}").configure {
+                dependsOn(copyArtifactList)
+            }
+        }
 
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
