@@ -1,12 +1,16 @@
 # Icon Tool Guide
-[icontool.py](/icontool.py) is a simple tool which can be used to automatically add/remove icons and sort `appfilter.xml` links in alphabetical order.
+[`icontool.py`](/icontool.py) is a simple python tool which can be used to automatically add/remove icons and sort `appfilter.xml` links in alphabetical order.
+
+For Mac/Linux users, you can simply type `./icontool` to run the program. Otherwise, you must run `python3 ./icontool.py`.
 
 ## Summary of usage
 ```sh
-icontool [-m] [-h]
-         add (a)    svg component name
-         link (l)   svg component name
-         remove (r) component [-d]
+./icontool [-m] [-h]
+           add    (a)    svg component name
+           link   (l)    svg component name
+           remove (r, d) component [-d]
+           sort   (s)
+           find   (f)    {duplicates, unused}
 ```
 
 ## General syntax
@@ -48,3 +52,23 @@ python3 icontool.py remove com.app.app -d
 ```
 
 Note that the SVG file's name is based on the `drawable` attribute of the first `<item>` element.
+
+## Utilities
+Some common utilities are described below.
+
+### Sorting appfilter.xml
+```sh
+python3 ./icontool.py sort
+```
+
+This will sort the `appfilter.xml` file via the `name` attribute.
+
+### Finding duplicate entries in appfilter.xml
+```sh
+python3 ./icontool.py find duplicates
+```
+
+### Finding unused icons
+```sh
+python3 ./icontool.py find unused
+```
