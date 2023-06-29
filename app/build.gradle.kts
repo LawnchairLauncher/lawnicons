@@ -1,5 +1,6 @@
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.io.FileInputStream
+import java.util.Locale
 import java.util.Properties
 
 plugins {
@@ -7,7 +8,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.sergei-lapin.napt")
     id("dagger.hilt.android.plugin")
-    id("com.google.android.gms.oss-licenses-plugin")
+    id("app.cash.licensee")
 }
 
 val buildCommit = providers.exec {
@@ -20,7 +21,7 @@ val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.1.0"
+val version = "2.2.1"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -31,7 +32,7 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = 31
-        versionCode = 4
+        versionCode = 5
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
@@ -69,6 +70,7 @@ android {
         }
     }
     sourceSets.getByName("app") {
+        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
     compileOptions {
@@ -87,7 +89,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.4.8"
     }
 
     packaging {
@@ -102,6 +104,27 @@ android {
     }
 
     applicationVariants.all {
+        val variantName = name
+        val capitalizedName =
+            name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+        val copyArtifactList =
+            tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
+                dependsOn(tasks.named("licensee${capitalizedName}"))
+                from(
+                    project.extensions.getByType<ReportingExtension>()
+                        .file("licensee/${variantName}/artifacts.json"),
+                )
+                into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+            }
+        tasks.named("merge${capitalizedName}Assets").configure {
+            dependsOn(copyArtifactList)
+        }
+        if (buildType.name == "release") {
+            tasks.named("lintVitalAnalyze${capitalizedName}").configure {
+                dependsOn(copyArtifactList)
+            }
+        }
+
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
@@ -110,6 +133,10 @@ android {
 }
 
 hilt.enableAggregatingTask = false
+
+licensee {
+    allow("Apache-2.0")
+}
 
 dependencies {
     val lifecycleVersion = "2.6.1"
@@ -120,13 +147,13 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.activity:activity-compose:1.7.2")
-    implementation(platform("androidx.compose:compose-bom:2023.05.01"))
+    implementation(platform("androidx.compose:compose-bom:2023.06.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
-    implementation("androidx.compose.material3:material3:1.1.0")
+    implementation("androidx.compose.material3:material3")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
@@ -138,7 +165,6 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
-    implementation("com.github.LawnchairLauncher:oss-notices:1.0.2")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-gson:$retrofitVersion")
