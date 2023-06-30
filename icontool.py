@@ -12,7 +12,8 @@ import re
 _pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
 
 _appfilter = "app/assets/appfilter.xml"
-_svgs = "svgs/"
+_svgs_folder = "svgs/"
+_calendarregex = r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->"
 
 # helper functions
 def _printerror(msg):
@@ -28,47 +29,34 @@ def printsuccess():
 # Logic
 #
 def _sort_components(xmlfile):
-    # TODO: we need to DRY
     def _checkCalendarComponents():
         calendarstuff = re.findall(
-            r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->", xmlfile
+            _calendarregex, xmlfile
         )
 
-        if calendarstuff == None:
-            return False
-        
-        return True
+        return True if calendarstuff == None else False
 
     def _getCalendarComponents():
         # always get original file for safety
         originalfile = open(_appfilter, "r").read()
 
         calendarstuff = re.findall(
-            r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->", originalfile
+            _calendarregex, originalfile
         )
-
         return calendarstuff
         
     def _removeCalendarComponents(hascalendar):
-        file = xmlfile
-
-        if (hascalendar):
-            file = re.sub(
-                r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->", "", xmlfile
-            )
-        
-        return file
+        return (
+            re.sub(_calendarregex, "", xmlfile)
+        ) if hascalendar else xmlfile
 
     def _readdCalendarComponents(xmldata, calendarstuff):
-        xmldata = (
+        return (
             xmldata[:52] + calendarstuff[0] + "\n" + xmldata[52:] + "\n"
         )
 
-        return xmldata
-
-    hascalendar = _checkCalendarComponents()
     calendarstuff = _getCalendarComponents()
-    purexmlfile = _removeCalendarComponents(hascalendar)
+    purexmlfile = _removeCalendarComponents(_checkCalendarComponents())
 
 
     # sort the xml by the name tag, thx https://stackoverflow.com/a/25339725
@@ -87,7 +75,7 @@ def _sort_components(xmlfile):
 def check_lawnicons_corruption():
     replyreason = "this may be due to a broken local copy of lawnicons. please clone lawnicons again."
 
-    if not os.path.exists(_svgs):
+    if not os.path.exists(_svgs_folder):
         _printerror(f"svgs folder does not exist. {replyreason}")
 
     if not os.path.isfile(_appfilter):
@@ -95,13 +83,13 @@ def check_lawnicons_corruption():
 
 def find_logic(mode):
     root = ET.parse(_appfilter).getroot()
-    svgs = os.listdir(_svgs)
+    svgs = os.listdir(_svgs_folder)
 
     def _find_duplicates():
         packages = [i.attrib["component"] for i in root]
         duplicates = {i for i in packages if (packages.count(i) > 1) and not ("calendar" in i)}
 
-        print("Duplicates:")
+        print("duplicates:")
         for i in duplicates:
             print("* " + i)
 
@@ -112,7 +100,7 @@ def find_logic(mode):
             drawable = str(i.attrib.get("drawable", None)) + ".svg"
             drawables.append(drawable)
 
-        print("Unused SVG files:")
+        print("unused svg files:")
         for i in svgs:
             if i not in drawables:
                 if not i.startswith("themed_icon_calendar_"):
@@ -131,7 +119,7 @@ def find_logic(mode):
 def sort_logic():
     print("sorting icons...")
     xmlfile = open(_appfilter, "r").read()
-    sorted_data = _sort_components(xmlfile)
+    sorted_data  = _sort_components(xmlfile)
 
     f = open(_appfilter, "w")
     f.write(sorted_data)
@@ -151,7 +139,7 @@ def parse_component(linkmode, svg, component, name, showMessage):
 
     # linkmode true
     if linkmode:
-        if not os.path.isfile(_svgs + svg):
+        if not os.path.isfile(_svgs_folder + svg):
             _printerror(f"svg '{svg}' doesn't exist in the svgs directory.")
 
     # linkmode false
@@ -164,15 +152,14 @@ def parse_component(linkmode, svg, component, name, showMessage):
 
             _printerror(
                 f"svg '{basename}' doesn't exist in {path}. check if the file exists or try again.")
-        
-        print("note: ensure that your icon follows the lawnicons guidelines found in CONTRIBUTING.md")
 
-        addedsvg = _svgs + basename
+        svg_with_folder = _svgs_folder + basename
+
         try:
-            shutil.copyfile(svg, addedsvg)
+            shutil.copyfile(svg, svg_with_folder)
         except shutil.SameFileError:
             _printerror(
-                f"\033[4m{basename}\033[0m has the same contents of \033[4m{addedsvg}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
+                f"\033[4m{basename}\033[0m has the same contents of \033[4m{svg_with_folder}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
 
     #
     # writing to file
@@ -188,7 +175,7 @@ def parse_component(linkmode, svg, component, name, showMessage):
 
     line = f'  <item component="ComponentInfo{{{component}}}" drawable="{drawable}" name="{name}" />'
     purexmlfile = re.sub(
-        r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->", "", xmlfile
+        _calendarregex, "", xmlfile
     )
 
     # add the line
@@ -259,9 +246,8 @@ def remove_component(component, doDelete, message):
 
     if doDelete:
         deletedfile = ET.fromstring(deletedline).get("drawable") + ".svg"
-        os.remove(_svgs + deletedfile)
+        os.remove(_svgs_folder + deletedfile)
         print(f"deleted \033[92m{deletedfile}\033[0m")
-
 
 # parser logic
 def add_parser(args):
