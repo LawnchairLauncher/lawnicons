@@ -60,13 +60,13 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
 
   **For Mac or Linux**:
 
-  ```sh
+  ```console
   adb shell dumpsys window | grep 'mCurrentFocus'  
   ```
 
   **For Windows**:
 
-  ```sh
+  ```console
   adb shell dumpsys window | find "mCurrentFocus"
   ```
   ![](images/contributing-image-3.png)
@@ -92,7 +92,7 @@ While adding icons is the main focus for most contributors, code-related contrib
 
 Before building the app, ensure that you create the icon drawables by running:
 
-```sh
+```console
 ./gradlew svg-processor:run
 ```
 
