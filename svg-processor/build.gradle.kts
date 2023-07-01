@@ -4,7 +4,7 @@ plugins {
 }
 
 application {
-    mainClass.set("app.lawnchair.lawnicons.helper.ApplicationKt")
+    mainClass = "app.lawnchair.lawnicons.helper.ApplicationKt"
 }
 
 dependencies {
