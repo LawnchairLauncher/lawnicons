@@ -1,0 +1,156 @@
+name: PR SVG Check
+
+on:
+  pull_request:
+    branches: [develop]
+    types: [opened]
+
+env:
+  viewbox: false
+  strokeColor: false
+  strokeWidth: false
+  fillColor: false
+  strokeLineJoin: false
+  issues: false
+
+jobs:
+  check-svg:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get added/changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v37
+
+      - name: Create issue file
+        run: |
+          echo "# Some of the svgs don't conform to the Lawnicon guidelines. Fix the svgs so that reviewers would have less to check and clarify deficiencies." > issues.json
+          echo "issue file created"
+      
+      - name: Check for issue(s)
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            # check if file is an svg
+            if [[ $file == *.svg ]]; then
+              # read file content as xml
+              xml=$(cat $file)
+              
+              # check if xml has svg element with viewbox attribute equal to '0 0 192 192'
+              if [[ ! $xml == *"<svg"*"viewBox=\"0 0 192 192\""* ]]; then
+                echo "File $file is invalid"
+                if [[ $viewbox == false ]]; then
+                  echo "" >> issues.txt
+                  echo "### **Incorrect viewbox size**. Viewbox should be \`0 0 192 192\` in file(s):" >> issues.txt
+                  viewbox=true
+                fi
+                echo "- \`$file\`" >> issues.txt
+              fi
+            fi
+          done
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            # check if file is an svg
+            if [[ $file == *.svg ]]; then
+              # read file content as xml
+              xml=$(cat $file)
+              
+              # check if xml contains "stroke" attrribute with value of "black, #000000, #000, rgb(0,0,0), rgb(0%,0%,0%)"
+              if [[ ! $xml == *"stroke=\"black\""* && ! $xml == *"stroke=\"#000000\""* && ! $xml == *"stroke=\"#000\""* && ! $xml == *"stroke=\"rgb(0,0,0)\""* && ! $xml == *"stroke=\"rgb(0%,0%,0%)\""* ]]; then
+                echo "File $file is invalid"
+                if [[ $strokeColor == false ]]; then
+                  echo "" >> issues.txt
+                  echo "### **Incorrect stroke color**. Stroke color should be black (\`black\`, \`#000000\`, \`#000\`, \`rgb(0,0,0)\`, or \`rgb(0%,0%,0%)\`) in file(s):" >> issues.txt
+                  strokeColor=true
+                fi
+                echo "- \`$file\`" >> issues.txt
+              fi
+            fi
+          done
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            # check if file is an svg
+            if [[ $file == *.svg ]]; then
+              # read file content as xml
+              xml=$(cat $file)
+              
+              # check if xml contains "stroke-width" attrribute with value of "12"
+              if [[ ! $xml == *"stroke-width=\"12\""* ]]; then
+                echo "File $file is invalid"
+                if [[ $strokeWidth == false ]]; then
+                  echo "" >> issues.txt
+                  echo "### **Incorrect stroke width**. Standard stroke width should be \`12\`px in file(s):  " >> issues.txt
+                  echo "*Other width can be used but 12 should be the main width*" >> issues.txt
+                  strokeWidth=true
+                fi
+                echo "- \`$file\`" >> issues.txt
+              fi
+            fi
+          done
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            # check if file is an svg
+            if [[ $file == *.svg ]]; then
+              # read file content as xml
+              xml=$(cat $file)
+              
+              # check if xml contains "fill" attrribute with value of "none"
+              if [[ ! $xml == *"fill=\"none\""* ]]; then
+                echo "File $file is invalid"
+                if [[ $fillColor == false ]]; then
+                  echo "" >> issues.txt
+                  echo "### **Incorrect fill value**. No attribute \`fill\` with value \`none\` was found in file(s):  " >> issues.txt
+                  echo "*Icons must be outlined (not filled)*  " >> issues.txt
+                  echo "*If your icon does not contain any \`<path>\` (only \`<circle>\` or \`<rect>\`), you can ignore this warning.*" >> issues.txt
+                  fillColor=true
+                fi
+                echo "- \`$file\`" >> issues.txt
+              fi
+            fi
+          done
+          
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            # check if file is an svg
+            if [[ $file == *.svg ]]; then
+              # read file content as xml
+              xml=$(cat $file)
+              
+              # check if xml contains "stroke-linejoin" attrribute with value of "round"
+              if [[ ! $xml == *"stroke-linejoin=\"round\""* ]]; then
+                echo "File $file is invalid"
+                if [[ $strokeLineJoin == false ]]; then
+                  echo "" >> issues.txt
+                  echo "### **Incorrect corner radius**. No attribute \`stroke-linejoin\` with value \`round\` was found. Icons must have a rounded corners in file(s):  " >> issues.txt
+                  echo "*If your icon does not contain any \`<path>\` (only \`<circle>\` or \`<rect>\`), you can ignore this warning.*" >> issues.txt
+                  strokeLineJoin=true
+                fi
+                echo "- \`$file\`" >> issues.txt
+              fi
+            fi
+          done
+          
+          # if any error were found, we add "see contributing.md for more details" at the end of the file
+          if [[ $viewbox == true || $strokeColor == true || $strokeWidth == true || $fillColor == true || $strokeLineJoin == true ]]; then
+            echo "" >> issues.txt
+            echo "See [CONTRIBUTING](https://github.com/LawnchairLauncher/lawnicons/blob/develop/.github/CONTRIBUTING.md) guide for more details" >> issues.txt
+          fi
+      
+      - name: Check for issue file
+        id: file_check
+        run: |
+          if [[ -f issues.txt ]]; then
+            echo "check_result=true" >> $GITHUB_OUTPUT
+          else
+            echo "check_result=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create comment
+        if: steps.file_check.outputs.check_result == 'true'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-path: issues.txt
