@@ -30,7 +30,7 @@ jobs:
 
       - name: Create issue file
         run: |
-          echo "# Some of the svgs don't conform to the Lawnicon guidelines. Fix the svgs so that reviewers would have less to check and clarify deficiencies." > issues.json
+          echo "# Some of the svgs don't conform to the Lawnicon guidelines. Fix the svgs so that reviewers would have less to check and clarify deficiencies." > issues.txt
           echo "issue file created"
       
       - name: Check for issue(s)
