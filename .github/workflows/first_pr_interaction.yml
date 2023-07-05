@@ -4,12 +4,18 @@ on:
   pull_request:
     branches: [develop]
     types: [opened]
+    paths:
+      - '**.svg'
+      - 'app/assets/appfilter.xml'
+      - '!app/src/**'
+      - '!**.gradle.kts'
 
 jobs:
   check_pr:
     continue-on-error: true
     runs-on: ubuntu-latest
     steps:
+    # additional checks, might remove later
     - name: Check if PR contains svg change
       uses: JJ/github-pr-contains-action@releases/v10
       with:
