@@ -6,7 +6,6 @@ on:
     types: [opened]
     paths:
       - '**.svg'
-      - 'app/assets/appfilter.xml'
       - '!app/src/**'
       - '!**.gradle.kts'
 
