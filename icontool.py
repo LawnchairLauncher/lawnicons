@@ -8,8 +8,8 @@ import re
 #
 # Global Vars
 #
-# see https://regex101.com/r/xC9Kh3/1
-_pattern = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+# see https://regex101.com/r/xC9Kh3/2
+_pattern = re.compile(r"([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
 
 _appfilter = "app/assets/appfilter.xml"
 _svgs_folder = "svgs/"
@@ -216,7 +216,7 @@ def parse_component(linkmode, svg, component, name, showMessage):
                 )
 
 def remove_component(component, doDelete, message):
-    pattern1 = re.compile(r"([A-Za-z0-9]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+    pattern1 = re.compile(r"([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
     pattern2 = _pattern
     errormsg = "invalid component name. format must be either \033[4m[PACKAGE_NAME]\033[0m or \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m"
 
