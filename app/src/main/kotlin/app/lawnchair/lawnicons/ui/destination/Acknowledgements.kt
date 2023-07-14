@@ -65,28 +65,17 @@ fun Acknowledgements(
                     additionalBottom = 8.dp,
                 ),
             ) {
-                if (libraries != null) {
-                    itemsIndexed(libraries) { index, it ->
-                        SimpleListRow(
-                            label = it.name,
-                            first = index == 0,
-                            background = true,
-                            last = index == libraries.lastIndex,
-                            divider = index != libraries.lastIndex,
-                            onClick = {
-                                navController.navigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
-                            },
-                        )
-                    }
-                } else {
-                    val itemCount = 20
-                    items(itemCount) {
-                        AcknowledgementRowPlaceholder(
-                            first = it == 0,
-                            last = it == itemCount - 1,
-                            divider = it < itemCount - 1,
-                        )
-                    }
+                itemsIndexed(libraries) { index, it ->
+                    SimpleListRow(
+                        label = it.name,
+                        first = index == 0,
+                        background = true,
+                        last = index == libraries.lastIndex,
+                        divider = index != libraries.lastIndex,
+                        onClick = {
+                            navController.navigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
+                        },
+                    )
                 }
             }
         }
