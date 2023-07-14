@@ -41,13 +41,14 @@ fun IconPopupHint(
         )
     }
 }
+
 @Preview(showBackground = true)
 @Composable
 fun IconPopupHintPreview() {
     val isButtonShown = remember { mutableStateOf(true) }
     LawniconsTheme {
         IconPopupHint(
-            isButtonShown = isButtonShown
+            isButtonShown = isButtonShown,
         )
     }
 }

@@ -41,7 +41,7 @@ fun SearchBarBasePreview() {
     LawniconsTheme {
         SearchBarBase {
             Text(
-                text = "Sample text"
+                text = "Sample text",
             )
         }
     }

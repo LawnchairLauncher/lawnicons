@@ -35,14 +35,13 @@ fun ExternalLinkRow(
     )
 }
 
- @Preview(showBackground = true)
- @Composable
- fun ExternalLinkRowPreview() {
-     LawniconsTheme {
-         ExternalLinkRow(
-             name = "User",
-             url = "https://lawnchair.app/",
-         )
-     }
-
- }
+@Preview(showBackground = true)
+@Composable
+fun ExternalLinkRowPreview() {
+    LawniconsTheme {
+        ExternalLinkRow(
+            name = "User",
+            url = "https://lawnchair.app/",
+        )
+    }
+}
