@@ -4,12 +4,13 @@
 For Mac/Linux users, you can simply type `./icontool` to run the program. Otherwise, you must run `python3 ./icontool.py`.
 
 ## Summary of usage
-```
+```console
 ./icontool [-m] [-h]
            add    (a)    svg component name
            link   (l)    svg component name
            remove (r, d) component [-d]
            sort   (s)
+           find   (f)    {duplicates, unused}
 ```
 
 ## General syntax
