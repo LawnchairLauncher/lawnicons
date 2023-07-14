@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -29,7 +29,7 @@ fun Home(
     navController: NavController,
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
-    var searchTerm by remember { mutableStateOf(value = "") }
+    var searchTerm by rememberSaveable { mutableStateOf(value = "") }
 
     Crossfade(
         targetState = iconInfoModel != null,
@@ -38,7 +38,7 @@ fun Home(
         if (targetState) {
             iconInfoModel?.let {
                 val icons = it
-                val isButtonShown = remember { mutableStateOf(true) }
+                val isButtonShown = rememberSaveable { mutableStateOf(true) }
                 Scaffold(
                     topBar = {
                         Column(modifier = Modifier.padding(bottom = 0.dp)) {
