@@ -17,6 +17,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 
 @Composable
 fun ClickableIcon(
@@ -44,9 +45,11 @@ fun ClickableIcon(
 @Preview(showBackground = true)
 @Composable
 fun ClickableIconPreview() {
-    ClickableIcon(
-        imageVector = Icons.Rounded.Clear,
-        size = 52.dp,
-        onClick = {},
-    )
+    LawniconsTheme {
+        ClickableIcon(
+            imageVector = Icons.Rounded.Clear,
+            size = 52.dp,
+            onClick = {},
+        )
+    }
 }

@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
@@ -67,12 +68,14 @@ fun IconPreview(
 @Preview(showBackground = true)
 @Composable
 fun IconPreviewComposablePreview() {
-    IconPreview(
-        iconInfo = IconInfo(
-            name = "Camera",
-            drawableName = "@drawable/camera",
-            packageName = "com.android.camera",
-            id = R.drawable.camera,
-        ),
-    )
+    LawniconsTheme {
+        IconPreview(
+            iconInfo = IconInfo(
+                name = "Camera",
+                drawableName = "@drawable/camera",
+                packageName = "com.android.camera",
+                id = R.drawable.camera,
+            ),
+        )
+    }
 }

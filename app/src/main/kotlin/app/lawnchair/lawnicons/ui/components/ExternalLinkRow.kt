@@ -4,7 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 
 @Composable
 fun ExternalLinkRow(
@@ -33,12 +35,14 @@ fun ExternalLinkRow(
     )
 }
 
-// @Preview(showBackground = true)
-// @Composable
-// fun ContributorRowPreview() {
-//    ContributorRow(
-//        name = "User",
-//        photoUrl = "https://lawnchair.app/images/lawnchair.png",
-//        description = "The Lawnchair Logo",
-//    )
-// }
+ @Preview(showBackground = true)
+ @Composable
+ fun ExternalLinkRowPreview() {
+     LawniconsTheme {
+         ExternalLinkRow(
+             name = "User",
+             url = "https://lawnchair.app/",
+         )
+     }
+
+ }

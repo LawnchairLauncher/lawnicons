@@ -12,13 +12,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.ListRow
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 import com.google.accompanist.placeholder.PlaceholderHighlight
 import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
 
-@Preview(showBackground = true)
 @Composable
 fun ContributorRowPlaceholder(
     first: Boolean = false,
@@ -60,5 +60,13 @@ fun ContributorRowPlaceholder(
                 )
             },
         )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ContributorRowPlaceholderPreview() {
+    LawniconsTheme {
+        ContributorRowPlaceholder()
     }
 }

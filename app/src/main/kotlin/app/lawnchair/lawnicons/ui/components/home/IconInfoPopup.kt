@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 
 @Composable
 fun IconInfoPopup(
@@ -76,13 +77,15 @@ fun IconInfoPopup(
 @Composable
 fun IconInfoPopupPreview() {
     val showPopup = remember { mutableStateOf(true) }
-    IconInfoPopup(
-        iconInfo = IconInfo(
-            name = "Example",
-            drawableName = "example",
-            packageName = "pkg.name",
-            id = R.drawable.splashscreen,
-        ),
-        isPopupShown = showPopup,
-    )
+    LawniconsTheme {
+        IconInfoPopup(
+            iconInfo = IconInfo(
+                name = "Example",
+                drawableName = "example",
+                packageName = "pkg.name",
+                id = R.drawable.splashscreen,
+            ),
+            isPopupShown = showPopup,
+        )
+    }
 }

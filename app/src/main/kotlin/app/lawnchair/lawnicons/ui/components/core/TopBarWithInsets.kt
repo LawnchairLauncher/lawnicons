@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -70,16 +71,18 @@ fun TopBarWithInsets(
 @Preview(showBackground = true)
 @Composable
 fun TopBarWithInsetsPreview() {
-    TopBarWithInsets(
-        navigationIcon = {
-            ClickableIcon(
-                onClick = {},
-                imageVector = Icons.Rounded.ArrowBack,
-                size = 40.dp,
-                modifier = Modifier.padding(horizontal = 4.dp),
-            )
-        },
-        scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
-        title = "Example",
-    )
+    LawniconsTheme {
+        TopBarWithInsets(
+            navigationIcon = {
+                ClickableIcon(
+                    onClick = {},
+                    imageVector = Icons.Rounded.ArrowBack,
+                    size = 40.dp,
+                    modifier = Modifier.padding(horizontal = 4.dp),
+                )
+            },
+            scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
+            title = "Example",
+        )
+    }
 }

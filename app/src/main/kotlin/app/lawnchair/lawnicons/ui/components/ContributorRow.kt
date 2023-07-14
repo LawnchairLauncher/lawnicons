@@ -11,6 +11,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
@@ -64,9 +65,11 @@ fun ContributorRow(
 @Preview(showBackground = true)
 @Composable
 fun ContributorRowPreview() {
-    ContributorRow(
-        name = "User",
-        photoUrl = "https://lawnchair.app/images/lawnchair.png",
-        description = "The Lawnchair Logo",
-    )
+    LawniconsTheme {
+        ContributorRow(
+            name = "User",
+            photoUrl = "https://lawnchair.app/images/lawnchair.png",
+            description = "The Lawnchair Logo",
+        )
+    }
 }

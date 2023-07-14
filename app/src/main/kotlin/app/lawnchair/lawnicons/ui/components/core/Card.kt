@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
 
 @Composable
@@ -46,9 +47,17 @@ fun Card(
 @Preview(showBackground = true)
 @Composable
 fun CardPreview() {
-    Card(
-        label = "Example",
-    ) {
-        SimpleListRow(label = "Example text in card", background = true, first = true, last = true, divider = false)
+    LawniconsTheme {
+        Card(
+            label = "Example",
+        ) {
+            SimpleListRow(
+                label = "Example text in card",
+                background = true,
+                first = true,
+                last = true,
+                divider = false,
+            )
+        }
     }
 }
