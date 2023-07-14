@@ -15,6 +15,23 @@
   <defs
      id="defs18">
     <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1012"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,6,0,1 @ F,0,0,1,0,6,0,1 @ F,0,0,1,0,6,0,1 @ F,0,0,1,0,6,0,1"
+       unit="px"
+       method="auto"
+       mode="F"
+       radius="6"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
        effect="powerclip"
        id="path-effect5969"
        is_visible="true"
@@ -153,9 +170,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="4"
-     inkscape:cx="109"
-     inkscape:cy="91.25"
+     inkscape:zoom="2.5174718"
+     inkscape:cx="77.26005"
+     inkscape:cy="122.74219"
      inkscape:window-width="1920"
      inkscape:window-height="1011"
      inkscape:window-x="0"
@@ -178,8 +195,13 @@
      sodipodi:nodetypes="cccccccccccccccccccccccccccccccc"
      style="stroke-width:12;stroke-dasharray:none" />
   <path
-     id="rect5961"
-     clip-path="url(#clipPath5965)"
-     d="M 64.303001,58.303001 H 127.697 c 3.324,0 6,2.676 6,6 V 127.697 c 0,3.324 -2.676,6 -6,6 H 64.303001 c -3.324,0 -6,-2.676 -6,-6 V 64.303001 c 0,-3.324 2.676,-6 6,-6 z"
-     style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:12;stroke-dasharray:none" />
+     id="rect360"
+     d="M 70.303001,64.303001 H 121.697 a 6,6 45 0 1 6,6 V 121.697 a 6,6 135 0 1 -6,6 H 70.303001 a 6,6 45 0 1 -6,-6 V 70.303001 a 6,6 135 0 1 6,-6 z"
+     style="opacity:1;fill:none;stroke:#000000;stroke-width:12;stroke-linecap:round;stroke-linejoin:miter" />
+  <circle
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:12;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+     id="path1071"
+     cx="109.7"
+     cy="109.643"
+     r="6" />
 </svg>
