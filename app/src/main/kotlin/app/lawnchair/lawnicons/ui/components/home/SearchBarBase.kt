@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.zIndex
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
@@ -24,6 +25,7 @@ fun SearchBarBase(content: (@Composable RowScope.() -> Unit)? = null) {
         content = content ?: {},
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
+            .zIndex(1f)
             .padding(top = 8.dp)
             .padding(horizontal = 16.dp)
             .fillMaxWidth()
