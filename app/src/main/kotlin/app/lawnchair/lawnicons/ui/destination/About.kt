@@ -7,18 +7,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -28,9 +24,8 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.Card
+import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
-import app.lawnchair.lawnicons.ui.components.core.TopBarWithInsets
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
@@ -73,26 +68,13 @@ private val specialThanks = listOf(
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
-fun About(navController: NavController) {
+fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
     val context = LocalContext.current
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
-    Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            TopBarWithInsets(
-                scrollBehavior = scrollBehavior,
-                title = stringResource(id = R.string.about),
-                navigationIcon = {
-                    ClickableIcon(
-                        onClick = { navController.popBackStack() },
-                        imageVector = Icons.Rounded.ArrowBack,
-                        size = 40.dp,
-                        modifier = Modifier.padding(horizontal = 4.dp),
-                    )
-                },
-            )
-        },
+    LawniconsScaffold(
+        title = stringResource(id = R.string.about),
+        navController = navController,
+        windowSizeClass = windowSizeClass,
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {

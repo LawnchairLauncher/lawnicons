@@ -10,17 +10,12 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -31,8 +26,7 @@ import app.lawnchair.lawnicons.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
 import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
-import app.lawnchair.lawnicons.ui.components.core.TopBarWithInsets
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
@@ -43,38 +37,26 @@ const val contributorsUrl = "https://github.com/LawnchairLauncher/lawnicons/grap
 fun Contributors(
     contributorsViewModel: ContributorsViewModel = hiltViewModel(),
     navController: NavController,
+    windowSizeClass: WindowSizeClass,
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
     Contributors(
         uiState = uiState,
-        onBack = navController::popBackStack,
+        navController = navController,
+        windowSizeClass = windowSizeClass,
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Contributors(
     uiState: ContributorsUiState,
-    onBack: () -> Unit,
+    navController: NavController,
+    windowSizeClass: WindowSizeClass,
 ) {
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
-
-    Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            TopBarWithInsets(
-                scrollBehavior = scrollBehavior,
-                title = stringResource(id = R.string.contributors),
-                navigationIcon = {
-                    ClickableIcon(
-                        onClick = onBack,
-                        imageVector = Icons.Rounded.ArrowBack,
-                        size = 40.dp,
-                        modifier = Modifier.padding(horizontal = 4.dp),
-                    )
-                },
-            )
-        },
+    LawniconsScaffold(
+        title = stringResource(id = R.string.contributors),
+        navController = navController,
+        windowSizeClass = windowSizeClass,
     ) { paddingValues ->
         Crossfade(
             targetState = uiState,
@@ -83,7 +65,7 @@ fun Contributors(
             when (it) {
                 is ContributorsUiState.Success -> ContributorList(contributors = it.contributors)
                 is ContributorsUiState.Loading -> ContributorListPlaceholder()
-                is ContributorsUiState.Error -> ContributorListError(onBack = onBack)
+                is ContributorsUiState.Error -> ContributorListError(onBack = navController::popBackStack)
             }
         }
     }
