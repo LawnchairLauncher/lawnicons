@@ -6,7 +6,7 @@ import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,10 +29,10 @@ fun SearchBarBase(content: (@Composable RowScope.() -> Unit)? = null) {
             .padding(top = 8.dp)
             .padding(horizontal = 16.dp)
             .fillMaxWidth()
-            .height(52.dp)
+            .height(56.dp)
             .background(
-                color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level2),
-                shape = CircleShape,
+                color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level3),
+                shape = RoundedCornerShape(100),
             ),
     )
 }

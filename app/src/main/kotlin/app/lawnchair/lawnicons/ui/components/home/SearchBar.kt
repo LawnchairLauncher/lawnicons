@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.material.ContentAlpha
 import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Clear
@@ -26,7 +25,6 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.util.Destinations
@@ -53,16 +51,15 @@ fun SearchBar(
             if (value.isEmpty()) {
                 Text(
                     text = stringResource(id = R.string.search_bar_hint, iconCount),
-                    style = MaterialTheme.typography.titleLarge.copy(fontSize = 20.sp),
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium),
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                 )
             }
             BasicTextField(
                 value = value,
                 onValueChange = onValueChange,
-                textStyle = MaterialTheme.typography.titleLarge.copy(
+                textStyle = MaterialTheme.typography.bodyLarge.copy(
                     color = MaterialTheme.colorScheme.onSurface,
-                    fontSize = 20.sp,
                 ),
                 cursorBrush = SolidColor(MaterialTheme.colorScheme.primary),
                 modifier = Modifier
