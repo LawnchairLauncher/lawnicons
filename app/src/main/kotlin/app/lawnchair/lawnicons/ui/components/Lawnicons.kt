@@ -1,16 +1,18 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
+import app.lawnchair.lawnicons.ui.components.core.SystemUi
 import app.lawnchair.lawnicons.ui.destination.About
 import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
@@ -28,7 +30,7 @@ import soup.compose.material.motion.animation.rememberSlideDistance
 @Composable
 @ExperimentalFoundationApi
 @OptIn(ExperimentalAnimationApi::class)
-fun Lawnicons() {
+fun Lawnicons(windowSizeClass: WindowSizeClass) {
     val navController = rememberAnimatedNavController()
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val slideDistance = rememberSlideDistance()
@@ -48,10 +50,10 @@ fun Lawnicons() {
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
                 composable(route = Destinations.HOME) {
-                    Home(navController = navController)
+                    Home(navController = navController, windowSizeClass = windowSizeClass)
                 }
                 composable(route = Destinations.ACKNOWLEDGEMENTS) {
-                    Acknowledgements(navController = navController)
+                    Acknowledgements(navController = navController, windowSizeClass = windowSizeClass)
                 }
                 composable(
                     route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
@@ -65,13 +67,14 @@ fun Lawnicons() {
                     Acknowledgement(
                         name = backStackEntry.arguments?.getString("id"),
                         navController = navController,
+                        windowSizeClass = windowSizeClass,
                     )
                 }
                 composable(route = Destinations.ABOUT) {
-                    About(navController = navController)
+                    About(navController = navController, windowSizeClass = windowSizeClass)
                 }
                 composable(route = Destinations.CONTRIBUTORS) {
-                    Contributors(navController = navController)
+                    Contributors(navController = navController, windowSizeClass = windowSizeClass)
                 }
             }
         }
