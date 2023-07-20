@@ -31,7 +31,7 @@ android {
     defaultConfig {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
-        targetSdk = 31
+        targetSdk = 33
         versionCode = 5
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
@@ -154,6 +154,7 @@ dependencies {
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material")
     implementation("androidx.compose.material3:material3")
+    implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
