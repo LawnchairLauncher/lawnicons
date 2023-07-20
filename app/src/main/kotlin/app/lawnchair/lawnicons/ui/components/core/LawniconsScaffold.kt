@@ -1,6 +1,9 @@
 package app.lawnchair.lawnicons.ui.components.core
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -15,6 +18,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -48,5 +52,20 @@ fun LawniconsScaffold(
                 isExpandedScreen = isExpandedScreen,
             )
         },
-    ) { content(it) }
+    ) {
+        Box(
+            modifier = Modifier.then(
+                if (isExpandedScreen) {
+                    Modifier.padding(
+                        WindowInsets.navigationBars.toPaddingValues(
+                            additionalStart = 32.dp,
+                            additionalEnd = 32.dp,
+                        ),
+                    )
+                } else {
+                    Modifier
+                },
+            ),
+        ) { content(it) }
+    }
 }
