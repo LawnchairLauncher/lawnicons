@@ -50,7 +50,7 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
                 composable(route = Destinations.HOME) {
-                    Home(navController = navController)
+                    Home(navController = navController, windowSizeClass = windowSizeClass)
                 }
                 composable(route = Destinations.ACKNOWLEDGEMENTS) {
                     Acknowledgements(navController = navController, windowSizeClass = windowSizeClass)

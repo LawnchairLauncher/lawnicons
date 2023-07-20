@@ -2,13 +2,12 @@ package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,12 +19,13 @@ import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
-fun SearchBarBase(content: (@Composable RowScope.() -> Unit)? = null) {
+fun PlaceholderSearchBar() {
     Row(
-        content = content ?: {},
+        content = {},
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier
             .zIndex(1f)
+            .statusBarsPadding()
             .padding(top = 8.dp)
             .padding(horizontal = 16.dp)
             .fillMaxWidth()
@@ -39,12 +39,8 @@ fun SearchBarBase(content: (@Composable RowScope.() -> Unit)? = null) {
 
 @Preview(showBackground = true)
 @Composable
-fun SearchBarBasePreview() {
+fun PlaceholderSearchBarPreview() {
     LawniconsTheme {
-        SearchBarBase {
-            Text(
-                text = "Sample text",
-            )
-        }
+        PlaceholderSearchBar()
     }
 }

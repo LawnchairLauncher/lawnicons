@@ -12,6 +12,9 @@
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
     <string name="search_bar_hint">Search %d Icons</string>
 
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">No icons found.</string>
+
     <!-- Popup menu in search bar -->
     <!-- Popup menu item that links to the Acknowledgements page -->
     <string name="acknowledgements">Acknowledgements</string>
@@ -47,5 +50,6 @@
     <string name="package_prefix">Package:</string>
     <!-- OK button -->
     <string name="ok_button">OK</string>
+
 
 </resources>
