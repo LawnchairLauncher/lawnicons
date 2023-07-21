@@ -62,7 +62,8 @@ fun Acknowledgement(
     ) { innerPadding ->
         Crossfade(
             targetState = notice,
-            modifier = Modifier.padding(innerPadding), label = "",
+            modifier = Modifier.padding(innerPadding),
+            label = "",
         ) {
             Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
                 if (it != null) {

@@ -37,7 +37,8 @@ fun Acknowledgements(
     ) { innerPadding ->
         Crossfade(
             targetState = ossLibraries,
-            modifier = Modifier.padding(innerPadding), label = "",
+            modifier = Modifier.padding(innerPadding),
+            label = "",
         ) { libraries ->
             LazyColumn(
                 contentPadding = WindowInsets.navigationBars.toPaddingValues(
