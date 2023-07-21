@@ -30,7 +30,7 @@ fun Home(
     val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
     Crossfade(
-        targetState = iconInfoModel != null,
+        targetState = iconInfoModel != null, label = "",
     ) { targetState ->
         if (targetState) {
             searchedIconInfoModel?.let {

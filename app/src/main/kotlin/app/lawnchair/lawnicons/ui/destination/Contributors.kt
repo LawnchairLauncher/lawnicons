@@ -60,7 +60,7 @@ fun Contributors(
     ) { paddingValues ->
         Crossfade(
             targetState = uiState,
-            modifier = Modifier.padding(paddingValues = paddingValues),
+            modifier = Modifier.padding(paddingValues = paddingValues), label = "",
         ) {
             when (it) {
                 is ContributorsUiState.Success -> ContributorList(contributors = it.contributors)
