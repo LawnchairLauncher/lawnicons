@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -24,7 +23,6 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class)
 fun Acknowledgements(
     acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
     navController: NavController,
@@ -40,6 +38,7 @@ fun Acknowledgements(
         Crossfade(
             targetState = ossLibraries,
             modifier = Modifier.padding(innerPadding),
+            label = "",
         ) { libraries ->
             LazyColumn(
                 contentPadding = WindowInsets.navigationBars.toPaddingValues(

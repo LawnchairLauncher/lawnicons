@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
@@ -67,7 +66,6 @@ private val specialThanks = listOf(
 )
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
 fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
     val context = LocalContext.current
 

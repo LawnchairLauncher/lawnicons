@@ -197,7 +197,7 @@ private fun SearchMenu(
     navController: NavController,
     onClearAndBackClick: () -> Unit,
 ) {
-    Crossfade(isQueryEmpty) {
+    Crossfade(isQueryEmpty, label = "") {
         if (it) {
             OverflowMenu {
                 DropdownMenuItem(

@@ -20,8 +20,8 @@ sealed interface ContributorsUiState {
         val contributors: List<GitHubContributor>,
     ) : ContributorsUiState
 
-    object Loading : ContributorsUiState
-    object Error : ContributorsUiState
+    data object Loading : ContributorsUiState
+    data object Error : ContributorsUiState
 }
 
 private data class ContributorsViewModelState(

@@ -25,13 +25,13 @@ val version = "2.2.1"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "app.lawnchair.lawnicons"
 
     defaultConfig {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 5
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
