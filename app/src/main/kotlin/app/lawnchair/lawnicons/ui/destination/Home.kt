@@ -31,6 +31,7 @@ fun Home(
 
     Crossfade(
         targetState = iconInfoModel != null,
+        label = "",
     ) { targetState ->
         if (targetState) {
             searchedIconInfoModel?.let {
