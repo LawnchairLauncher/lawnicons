@@ -1,10 +1,10 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,8 +16,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.DropdownMenuItem
 import androidx.compose.material.icons.Icons
@@ -28,7 +29,6 @@ import androidx.compose.material3.DockedSearchBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,6 +40,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -52,8 +53,6 @@ import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.ui.util.Destinations
-import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -130,10 +129,10 @@ fun LawniconsSearchBar(
                         )
                     },
                     modifier = Modifier
-                        .width(screenWidth / 2),
+                        .width(screenWidth / 0.5f),
 
                 ) {
-                    SearchContents(iconInfo = iconInfo, isQueryEmpty = isQueryEmpty)
+                    SearchContents(iconInfo = iconInfo)
                 }
                 Spacer(modifier = Modifier.weight(0.5f))
             }
@@ -171,7 +170,7 @@ fun LawniconsSearchBar(
                 modifier = Modifier.fillMaxWidth(),
 
             ) {
-                SearchContents(iconInfo = iconInfo, isQueryEmpty = isQueryEmpty)
+                SearchContents(iconInfo = iconInfo)
             }
         }
     }
@@ -198,7 +197,7 @@ private fun SearchMenu(
     navController: NavController,
     onClearAndBackClick: () -> Unit,
 ) {
-    Crossfade(isQueryEmpty) {
+    Crossfade(isQueryEmpty, label = "") {
         if (it) {
             OverflowMenu {
                 DropdownMenuItem(
@@ -230,59 +229,67 @@ private fun SearchMenu(
 @Composable
 private fun SearchContents(
     iconInfo: IconInfoModel,
-    isQueryEmpty: Boolean,
 ) {
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(16.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-    ) {
-        items(iconInfo.iconInfo) {
-            val isIconInfoShown = remember { mutableStateOf(false) }
+    when (iconInfo.iconInfo.size) {
+        1 -> {
+            Column(
+                modifier = Modifier.fillMaxWidth().padding(PaddingValues(16.dp)),
+                verticalArrangement = Arrangement.spacedBy(4.dp),
+            ) {
+                val it = iconInfo.iconInfo[0]
+                val isIconInfoShown = remember { mutableStateOf(false) }
 
-            ListItem(
-                headlineContent = { Text(it.name) },
-                supportingContent = { Text(it.packageName) },
-                leadingContent = {
-                    Box(
-                        contentAlignment = Alignment.Center,
-                        modifier = Modifier
-                            .padding(all = 8.dp)
-                            .clip(shape = CircleShape)
-                            .size(48.dp),
-                    ) {
-                        Icon(
-                            painter = painterResource(id = it.id),
-                            contentDescription = null,
-                            modifier = Modifier.fillMaxSize(0.6f),
-                        )
-                    }
-                },
-                modifier = Modifier
-                    .background(
-                        color = if (isIconInfoShown.value) {
-                            MaterialTheme.colorScheme.surfaceVariant
-                        } else {
-                            MaterialTheme.colorScheme.surfaceColorAtElevation(
-                                Elevation.Level1,
+                ListItem(
+                    headlineContent = { Text(it.name) },
+                    supportingContent = { Text(it.packageName) },
+                    leadingContent = {
+                        Box(
+                            contentAlignment = Alignment.Center,
+                            modifier = Modifier
+                                .padding(all = 8.dp)
+                                .clip(shape = CircleShape)
+                                .size(48.dp),
+                        ) {
+                            Icon(
+                                painter = painterResource(id = it.id),
+                                contentDescription = null,
+                                modifier = Modifier.fillMaxSize(0.6f),
                             )
-                        },
+                        }
+                    },
+                    modifier = Modifier
+                        .clickable(onClick = { isIconInfoShown.value = true }),
+                )
+                if (isIconInfoShown.value) {
+                    IconInfoPopup(
+                        iconInfo = it,
+                        isPopupShown = isIconInfoShown,
                     )
-                    .clickable(onClick = { isIconInfoShown.value = true }),
-            )
-            if (isIconInfoShown.value) {
-                IconInfoPopup(
-                    iconInfo = it,
-                    isPopupShown = isIconInfoShown,
+                }
+            }
+        }
+        0 -> {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(PaddingValues(16.dp)),
+                contentAlignment = Alignment.Center,
+            ) {
+                Text(
+                    textAlign = TextAlign.Center,
+                    text = stringResource(R.string.no_items_found),
                 )
             }
         }
-        if (iconInfo.iconInfo.isEmpty() && !isQueryEmpty) {
-            item {
-                Box {
-                    Text(
-                        textAlign = TextAlign.Center,
-                        text = stringResource(R.string.no_items_found),
+        else -> {
+            LazyVerticalGrid(
+                columns = GridCells.Adaptive(minSize = 80.dp),
+                contentPadding = PaddingValues(16.dp),
+            ) {
+                items(items = iconInfo.iconInfo) { iconInfo ->
+                    IconPreview(
+                        iconInfo = iconInfo,
+                        iconBackground = Color.Transparent,
                     )
                 }
             }

@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
@@ -40,7 +39,6 @@ import com.google.accompanist.placeholder.material.fade
 import com.google.accompanist.placeholder.material.placeholder
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class)
 fun Acknowledgement(
     name: String?,
     acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
@@ -65,6 +63,7 @@ fun Acknowledgement(
         Crossfade(
             targetState = notice,
             modifier = Modifier.padding(innerPadding),
+            label = "",
         ) {
             Box(modifier = Modifier.verticalScroll(rememberScrollState())) {
                 if (it != null) {

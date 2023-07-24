@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -27,24 +28,28 @@ import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
+    iconBackground: Color? = null,
 ) {
     val isIconInfoShown = remember { mutableStateOf(false) }
+
+    val modifier = Modifier
+        .padding(all = 8.dp)
+        .aspectRatio(ratio = 1F)
+        .clip(shape = CircleShape)
+        .clickable(onClick = { isIconInfoShown.value = true })
+        .background(
+            color = iconBackground ?: if (isIconInfoShown.value) {
+                MaterialTheme.colorScheme.surfaceVariant
+            } else {
+                MaterialTheme.colorScheme.surfaceColorAtElevation(
+                    Elevation.Level1,
+                )
+            },
+        )
+
     Box(
         contentAlignment = Alignment.Center,
-        modifier = Modifier
-            .padding(all = 8.dp)
-            .aspectRatio(ratio = 1F)
-            .clip(shape = CircleShape)
-            .background(
-                color = if (isIconInfoShown.value) {
-                    MaterialTheme.colorScheme.surfaceVariant
-                } else {
-                    MaterialTheme.colorScheme.surfaceColorAtElevation(
-                        Elevation.Level1,
-                    )
-                },
-            )
-            .clickable(onClick = { isIconInfoShown.value = true }),
+        modifier = modifier,
     ) {
         Icon(
             painter = painterResource(id = iconInfo.id),
