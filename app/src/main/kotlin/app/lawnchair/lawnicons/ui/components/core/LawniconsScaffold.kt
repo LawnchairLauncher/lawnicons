@@ -1,0 +1,71 @@
+package app.lawnchair.lawnicons.ui.components.core
+
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.navigationBars
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.util.toPaddingValues
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun LawniconsScaffold(
+    title: String,
+    navController: NavController,
+    windowSizeClass: WindowSizeClass,
+    content: @Composable (PaddingValues) -> Unit,
+) {
+    val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
+
+    var scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+    if (isExpandedScreen) {
+        scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+    }
+
+    Scaffold(
+        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            TopBarWithInsets(
+                scrollBehavior = scrollBehavior,
+                title = title,
+                navigationIcon = {
+                    ClickableIcon(
+                        onClick = { navController.popBackStack() },
+                        imageVector = Icons.Rounded.ArrowBack,
+                        size = 40.dp,
+                        modifier = Modifier.padding(horizontal = 4.dp),
+                    )
+                },
+                isExpandedScreen = isExpandedScreen,
+            )
+        },
+    ) {
+        Box(
+            modifier = Modifier.then(
+                if (isExpandedScreen) {
+                    Modifier.padding(
+                        WindowInsets.navigationBars.toPaddingValues(
+                            additionalStart = 32.dp,
+                            additionalEnd = 32.dp,
+                        ),
+                    )
+                } else {
+                    Modifier
+                },
+            ),
+        ) { content(it) }
+    }
+}
