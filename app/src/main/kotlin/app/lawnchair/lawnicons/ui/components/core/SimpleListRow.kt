@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.component
+package app.lawnchair.lawnicons.ui.components.core
 
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material3.MaterialTheme
@@ -6,6 +6,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.tooling.preview.Preview
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 
 @Composable
 fun SimpleListRow(
@@ -48,4 +50,19 @@ fun SimpleListRow(
             }
         },
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SimpleListRowPreview() {
+    LawniconsTheme {
+        SimpleListRow(
+            label = "Example",
+            description = "Example description",
+            divider = false,
+            background = true,
+            first = false,
+            last = false,
+        )
+    }
 }
