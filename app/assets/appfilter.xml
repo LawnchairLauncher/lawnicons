@@ -471,6 +471,7 @@
   <item component="ComponentInfo{com.rubenmayayo.reddit/com.rubenmayayo.reddit.ui.submissions.subreddit.MainActivity}" drawable="boost_for_reddit" name="Boost for Reddit" />
   <item component="ComponentInfo{com.boostedproductivity.app/com.boostedproductivity.app.activities.LauncherActivity}" drawable="boosted" name="Boosted" />
   <item component="ComponentInfo{com.elektropepi.bootboi/com.elektropepi.bootboi.MainActivity}" drawable="bootboi" name="BootBoi" />
+  <item component="ComponentInfo{com.bose.monet/com.bose.monet.activity.discovery.SplashSearchingActivity}" drawable="bose_connect" name="Bose Connect" />
   <item component="ComponentInfo{com.bose.bosemusic/com.bose.bosemusic.SplashScreenActivity}" drawable="bose_music" name="Bose Music" />
   <item component="ComponentInfo{com.bose.bosemusic/com.bose.madrid.SplashScreenActivity}" drawable="bose_music" name="Bose Music" />
   <item component="ComponentInfo{com.boursorama.android.clients/com.boursorama.android.clients.app.splash.SplashActivity_}" drawable="boursorama" name="Boursorama Banque" />
@@ -640,11 +641,47 @@
   <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   
+  <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  
   <item component="ComponentInfo{com.coloros.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar" name="Calendar" />
   <item component="ComponentInfo{com.motorola.cn.calendar/com.motorola.cn.calendar.AllInOneActivity}" drawable="calendar" name="Calendar" />
   <item component="ComponentInfo{com.gustavoas.calendarqst/com.gustavoas.calendarqst.SettingsActivity}" drawable="calentile" name="CalenTile" />
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.PermissionGrantActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
+  
+  <item component="ComponentInfo{com.calm.android/com.calm.android.ui.splash.SplashActivity}" drawable="calm" name="Calm" />
   <item component="ComponentInfo{app.grapheneos.camera/app.grapheneos.camera.ui.activities.MainActivity}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{app.grapheneos.camera.play/app.grapheneos.camera.ui.activities.MainActivity}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.agc.cam/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
@@ -1065,6 +1102,7 @@
   <item component="ComponentInfo{com.cpuid.cpu_z/com.cpuid.cpu_z.MainActivity}" drawable="cpu_z" name="CPU Z" />
   <item component="ComponentInfo{com.dreamplug.androidapp/com.dreamplug.androidapp.SplashActivity}" drawable="cred" name="Cred" />
   <item component="ComponentInfo{com.creditkarma.mobile/com.creditkarma.mobile.welcome.ui.WelcomeActivity}" drawable="credit_karma" name="Credit Karma" />
+  <item component="ComponentInfo{com.crewmeister.employeeapp/com.crewmeister.employeeapp.MainActivity}" drawable="crewmeister" name="Crewmeister" />
   <item component="ComponentInfo{com.cricbuzz.android/com.cricbuzz.android.lithium.app.view.activity.NyitoActivity}" drawable="cricbuzz" name="Cricbuzz" />
   <item component="ComponentInfo{com.yodo1.crossyroad/com.hipsterwhale.hwutils.OverrideUnityActivity}" drawable="crossy_road" name="Crossy Road" />
   <item component="ComponentInfo{com.crunchyroll.crunchyroid/com.crunchyroll.crunchyroid.activities.SplashActivity}" drawable="crunchyroll" name="Crunchyroll" />
@@ -1178,6 +1216,7 @@
   <item component="ComponentInfo{in.startv.hotstar/com.hotstar.MainActivity}" drawable="hotstar" name="Disney+ Hotstar" />
   <item component="ComponentInfo{com.mydito/com.mydito.ui.login.GuidePageActivity}" drawable="dito" name="DITO" />
   <item component="ComponentInfo{com.divvydiary.twa/com.divvydiary.twa.LauncherActivity}" drawable="divvydiary" name="DivvyDiary" />
+  <item component="ComponentInfo{dji.go.v4/dji.pilot.main.activity.DJILauncherActivity}" drawable="dji" name="DJI" />
   <item component="ComponentInfo{com.dji.ronin/com.dji.ronin.RoninHubActivity}" drawable="dji" name="DJI" />
   <item component="ComponentInfo{dji.go.v5/com.dji.component.application.activity.DJILauncherActivity}" drawable="dji" name="DJI" />
   <item component="ComponentInfo{com.dkbcodefactory.banking/com.dkbcodefactory.banking.screens.home.HomeActivity}" drawable="dkb" name="DKB" />
@@ -1977,6 +2016,18 @@
   <item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.activities.MainActivity}" drawable="infinity_for_reddit" name="Infinity" />
   <item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.Activity.MainActivity}" drawable="infinity_for_reddit" name="Infinity" />
   <item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.MainActivity}" drawable="infinity_for_reddit" name="Infinity" />
+  <item component="ComponentInfo{lu.ing.myingpro/com.ing.lu.mobile.activities.WrapperActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{lu.ing.mying.app/com.ing.banking.framework.features.welcome.WelcomeActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{com.ing.lu.mobile/com.ing.lu.mobile.activities.WrapperActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{it.ingdirect.app/com.opentecheng.otml.OtmlSplashActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{com.comarch.security.mobilebanking/pl.ing.ingflutter.MainActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{de.ingdiba.bankingapp/com.ing.mobile.diba.startup.SplashActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{com.ing.banking/com.ing.banking.framework.features.welcome.WelcomeActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{www.ingdirect.nativeframe/es.ingdirect.www.main.ui.MainRouterActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{ro.ing.mobile.banking.android.activity/ro.ing.mobile.banking.android.activity.main.MainActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{com.ing.mobile/com.ing.mobile.app.activities.SplashActivity}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{com.ingbanktr.ingmobil/com.ingbanktr.login.ui.splash.ACSplash}" drawable="ing" name="ING" />
+  <item component="ComponentInfo{de.ingdiba.bankingapp/com.ing.mobile.diba.startup.SplashActivity}" drawable="ing" name="ING" />
   <item component="ComponentInfo{com.nianticproject.ingress/com.nianticproject.ingress.IngressActivity}" drawable="ingress" name="Ingress" />
   <item component="ComponentInfo{com.zionhuang.music/com.zionhuang.music.ui.activities.MainActivity}" drawable="mi_music" name="InnerTune" />
   <item component="ComponentInfo{com.zionhuang.music.debug/com.zionhuang.music.ui.activities.MainActivity}" drawable="mi_music" name="InnerTune Debug" />
@@ -3936,6 +3987,7 @@
   <item component="ComponentInfo{ru.sberbankmobile/ru.sberbankmobile.section.authorization.AuthorizationActivity}" drawable="sber" name="Sberbank" />
   <item component="ComponentInfo{ru.sberbankmobile/ru.sberbankmobile.SplashActivity}" drawable="sber" name="Sberbank" />
   <item component="ComponentInfo{ru.goods.marketplace/ru.goods.marketplace.SingleActivity}" drawable="sber_mega_market" name="SberMegaMarket" />
+  <item component="ComponentInfo{capital.scalable.droid/capital.scalable.droid.redesign.screens.cockpit.CockpitActivity}" drawable="scalable_capital" name="Scalable Capital" />
   <item component="ComponentInfo{capital.scalable.droid/capital.scalable.droid.redesign.screens.cockpit.CockpitActivity}" drawable="scalable_capital" name="Scalable Capital" />
   <item component="ComponentInfo{com.xiaomi.scanner/com.example.emptyscan.MainActivity}" drawable="scanner" name="Scanner" />
   <item component="ComponentInfo{com.xiaomi.scanner/com.xiaomi.scanner.app.ScanActivity}" drawable="scanner" name="Scanner" />
