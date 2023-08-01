@@ -83,7 +83,7 @@ object ConfigProcessor {
             addElement(RESOURCES)
             rootElement.addElement(VERSION).addText("1")
         }
-        var groupNames = mutableListOf<Char>()
+        val groupNames = mutableListOf<Char>()
         drawableMap.values.distinct().forEach { drawable: String ->
             val groupName = drawable[0].uppercaseChar()
             if (groupName !in groupNames) {
