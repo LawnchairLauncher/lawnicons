@@ -110,10 +110,7 @@ android {
         val copyArtifactList =
             tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
                 dependsOn(tasks.named("licensee${capitalizedName}"))
-                from(
-                    project.extensions.getByType<ReportingExtension>()
-                        .file("licensee/${variantName}/artifacts.json"),
-                )
+                from(reporting.file("licensee/${variantName}/artifacts.json"),)
                 into(layout.buildDirectory.dir("generated/dependencyAssets/"))
             }
         tasks.named("merge${capitalizedName}Assets").configure {
