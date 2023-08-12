@@ -5,6 +5,7 @@ import javax.inject.Inject
 
 val coreContributorIds = listOf(
     8080853,
+    29139614,
     56888459,
 )
 

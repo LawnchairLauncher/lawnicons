@@ -1,6 +1,5 @@
 package app.lawnchair.lawnicons.ui.components
 
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
@@ -11,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import app.lawnchair.lawnicons.ui.components.core.SystemUi
 import app.lawnchair.lawnicons.ui.destination.About
@@ -20,18 +22,14 @@ import app.lawnchair.lawnicons.ui.destination.Contributors
 import app.lawnchair.lawnicons.ui.destination.Home
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Destinations
-import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.google.accompanist.navigation.animation.composable
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import soup.compose.material.motion.animation.materialSharedAxisXIn
 import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
 
 @Composable
 @ExperimentalFoundationApi
-@OptIn(ExperimentalAnimationApi::class)
 fun Lawnicons(windowSizeClass: WindowSizeClass) {
-    val navController = rememberAnimatedNavController()
+    val navController = rememberNavController()
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val slideDistance = rememberSlideDistance()
 
@@ -41,7 +39,7 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background,
         ) {
-            AnimatedNavHost(
+            NavHost(
                 navController = navController,
                 startDestination = Destinations.HOME,
                 enterTransition = { materialSharedAxisXIn(!isRtl, slideDistance) },
