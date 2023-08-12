@@ -3,6 +3,7 @@ package app.lawnchair.lawnicons.repository
 import android.app.Application
 import androidx.compose.ui.text.AnnotatedString
 import app.lawnchair.lawnicons.model.OssLibrary
+import app.lawnchair.lawnicons.util.kotlinxJson
 import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -13,7 +14,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.serialization.json.Json
 
 class OssLibraryRepository @Inject constructor(private val application: Application) {
 
@@ -22,7 +22,7 @@ class OssLibraryRepository @Inject constructor(private val application: Applicat
     val ossLibraries: StateFlow<List<OssLibrary>> = flow {
         val jsonString = application.resources.assets.open("artifacts.json")
             .bufferedReader().use { it.readText() }
-        val ossLibraries = Json.decodeFromString<List<OssLibrary>>(jsonString)
+        val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
             .asSequence()
             .distinctBy { "${it.groupId}:${it.artifactId}" }
             .sortedBy { it.name }
