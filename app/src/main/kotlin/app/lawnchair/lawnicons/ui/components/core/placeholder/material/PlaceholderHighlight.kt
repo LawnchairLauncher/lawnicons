@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.accompanist.placeholder.material
+package app.lawnchair.lawnicons.ui.components.core.placeholder.material
 
 import androidx.annotation.FloatRange
 import androidx.compose.animation.core.AnimationSpec
 import androidx.compose.animation.core.InfiniteRepeatableSpec
 import androidx.compose.runtime.Composable
-import com.google.accompanist.placeholder.PlaceholderDefaults
-import com.google.accompanist.placeholder.PlaceholderHighlight
-import com.google.accompanist.placeholder.fade
-import com.google.accompanist.placeholder.shimmer
+import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderDefaults
+import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
+import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
+import app.lawnchair.lawnicons.ui.components.core.placeholder.shimmer
 
 /**
  * Creates a [PlaceholderHighlight] which fades in an appropriate color, using the

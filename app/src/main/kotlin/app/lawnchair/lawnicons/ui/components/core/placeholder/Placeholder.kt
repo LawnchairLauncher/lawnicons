@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.accompanist.placeholder
+package app.lawnchair.lawnicons.ui.components.core.placeholder
 
 import androidx.compose.animation.core.FiniteAnimationSpec
 import androidx.compose.animation.core.InfiniteRepeatableSpec

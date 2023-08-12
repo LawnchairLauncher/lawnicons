@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.accompanist.placeholder.material
+package app.lawnchair.lawnicons.ui.components.core.placeholder.material
 
 import androidx.compose.animation.core.FiniteAnimationSpec
 import androidx.compose.animation.core.Transition
@@ -28,9 +28,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.graphics.isSpecified
-import com.google.accompanist.placeholder.PlaceholderDefaults
-import com.google.accompanist.placeholder.PlaceholderHighlight
-import com.google.accompanist.placeholder.placeholder
+import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderDefaults
+import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
+import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 
 /**
  * Returns the value used as the the `color` parameter value on [Modifier.placeholder].
