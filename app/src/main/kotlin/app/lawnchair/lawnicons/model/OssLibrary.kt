@@ -1,8 +1,8 @@
 package app.lawnchair.lawnicons.model
 
-import androidx.annotation.Keep
+import kotlinx.serialization.Serializable
 
-@Keep
+@Serializable
 data class OssLibrary(
     val groupId: String,
     val artifactId: String,
@@ -12,13 +12,13 @@ data class OssLibrary(
     val spdxLicenses: List<License>? = null,
     val unknownLicenses: List<License>? = null,
 ) {
-    @Keep
+    @Serializable
     data class License(
         val identifier: String? = null,
         val name: String,
         val url: String,
     )
 
-    @Keep
+    @Serializable
     data class Scm(val url: String)
 }
