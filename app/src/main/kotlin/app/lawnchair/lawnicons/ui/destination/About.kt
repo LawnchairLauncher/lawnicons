@@ -122,7 +122,7 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
                         ContributorRow(
                             name = it.name,
                             photoUrl = it.photoUrl,
-                            profileUrl = "https://github.com/${it.username}",
+                            profileUrl = it.socialUrl,
                             divider = index != coreContributors.lastIndex,
                         )
                     }
