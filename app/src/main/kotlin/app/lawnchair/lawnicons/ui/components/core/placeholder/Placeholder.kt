@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-@file:Suppress("DEPRECATION")
 package com.google.accompanist.placeholder
 
 import androidx.compose.animation.core.FiniteAnimationSpec
@@ -30,7 +29,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -53,18 +52,11 @@ import androidx.compose.ui.unit.LayoutDirection
 /**
  * Contains default values used by [Modifier.placeholder] and [PlaceholderHighlight].
  */
-@Deprecated(
-    """
-accompanist/placeholder is deprecated and the API is no longer maintained. 
-We recommend forking the implementation and customising it to your needs. 
-For more information please visit https://google.github.io/accompanist/placeholder
-"""
-)
-public object PlaceholderDefaults {
+object PlaceholderDefaults {
     /**
      * The default [InfiniteRepeatableSpec] to use for [fade].
      */
-    public val fadeAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
+    val fadeAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
         infiniteRepeatable(
             animation = tween(delayMillis = 200, durationMillis = 600),
             repeatMode = RepeatMode.Reverse,
@@ -74,10 +66,10 @@ public object PlaceholderDefaults {
     /**
      * The default [InfiniteRepeatableSpec] to use for [shimmer].
      */
-    public val shimmerAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
+    val shimmerAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
         infiniteRepeatable(
             animation = tween(durationMillis = 1700, delayMillis = 200),
-            repeatMode = RepeatMode.Restart
+            repeatMode = RepeatMode.Restart,
         )
     }
 }
@@ -99,8 +91,6 @@ public object PlaceholderDefaults {
  * [Placeholder UI](https://material.io/design/communication/launch-screen.html#placeholder-ui)
  * guidelines.
  *
- * @sample com.google.accompanist.sample.placeholder.DocSample_Foundation_Placeholder
- *
  * @param visible whether the placeholder should be visible or not.
  * @param color the color used to draw the placeholder UI.
  * @param shape desired shape of the placeholder. Defaults to [RectangleShape].
@@ -110,14 +100,7 @@ public object PlaceholderDefaults {
  * @param contentFadeTransitionSpec The transition spec to use when fading the content
  * on/off screen. The boolean parameter defined for the transition is [visible].
  */
-@Deprecated(
-    """
-accompanist/placeholder is deprecated and the API is no longer maintained. 
-We recommend forking the implementation and customising it to your needs. 
-For more information please visit https://google.github.io/accompanist/placeholder
-"""
-)
-public fun Modifier.placeholder(
+fun Modifier.placeholder(
     visible: Boolean,
     color: Color,
     shape: Shape = RectangleShape,
@@ -132,7 +115,7 @@ public fun Modifier.placeholder(
         properties["color"] = color
         properties["highlight"] = highlight
         properties["shape"] = shape
-    }
+    },
 ) {
     // Values used for caching purposes
     val lastSize = remember { Ref<Size>() }
@@ -140,7 +123,7 @@ public fun Modifier.placeholder(
     val lastOutline = remember { Ref<Outline>() }
 
     // The current highlight animation progress
-    var highlightProgress: Float by remember { mutableStateOf(0f) }
+    var highlightProgress: Float by remember { mutableFloatStateOf(0f) }
 
     // This is our crossfade transition
     val transitionState = remember { MutableTransitionState(visible) }.apply {
@@ -151,22 +134,23 @@ public fun Modifier.placeholder(
     val placeholderAlpha by transition.animateFloat(
         transitionSpec = placeholderFadeTransitionSpec,
         label = "placeholder_fade",
-        targetValueByState = { placeholderVisible -> if (placeholderVisible) 1f else 0f }
+        targetValueByState = { placeholderVisible -> if (placeholderVisible) 1f else 0f },
     )
     val contentAlpha by transition.animateFloat(
         transitionSpec = contentFadeTransitionSpec,
         label = "content_fade",
-        targetValueByState = { placeholderVisible -> if (placeholderVisible) 0f else 1f }
+        targetValueByState = { placeholderVisible -> if (placeholderVisible) 0f else 1f },
     )
 
     // Run the optional animation spec and update the progress if the placeholder is visible
     val animationSpec = highlight?.animationSpec
     if (animationSpec != null && (visible || placeholderAlpha >= 0.01f)) {
-        val infiniteTransition = rememberInfiniteTransition()
+        val infiniteTransition = rememberInfiniteTransition(label = "")
         highlightProgress = infiniteTransition.animateFloat(
             initialValue = 0f,
             targetValue = 1f,
             animationSpec = animationSpec,
+            label = "",
         ).value
     }
 
