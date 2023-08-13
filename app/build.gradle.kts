@@ -157,7 +157,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
-    implementation("io.github.fornewid:material-motion-compose-core:1.0.4")
+    implementation("io.github.fornewid:material-motion-compose-core:1.0.6")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
