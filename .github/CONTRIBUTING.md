@@ -17,11 +17,11 @@ Each icon must fit the 160x160px or 144x144px (depending on the shape) content a
 
 The default stroke should be kept at 12px. For finer detail, a stroke of 6px can be used. The standard widths are 6px, 8px, 10px, 12px and 14px.
 
-In addition to the above, the icons must have an outlined style and the colour must be black `#000000`. If the original icon has a filled style, change the icon to adhere to the guidelines as seen below.
+In addition to the above, the icons must have an outlined (not filled) style, joins and start/end points must be rounded and the colour must be black `#000000`. If the original icon has a filled style, change the icon to adhere to the guidelines as seen below.
 
 ![](images/contributing-image-2.png)
 
-For additional information on designing icons, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by Grabstertv.
+For additional information on designing icons, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
 
 ### Adding an icon to Lawnicons
 Here's how to add an icon to Lawnicons:
