@@ -15,6 +15,15 @@ module.exports = {
                 },
             },
         },
-        "convertStyleToAttrs",
+        {
+            name: "convertStyleToAttrs",
+        },
+        {
+            name: "removeAttrs",
+            params: {
+                attrs: ["xml:space", "data-name"],
+                elemSeparator: "^",
+            },
+        },
     ],
 };
