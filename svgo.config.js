@@ -1,13 +1,20 @@
 module.exports = {
-  plugins: [
-    {
-      name: 'preset-default',
-      params: {
-        overrides: {
-          removeViewBox: false,
-          removeXMLNS: false
+    multipass: true,
+    plugins: [
+        {
+            name: "preset-default",
+            params: {
+                overrides: {
+                    removeViewBox: false,
+                    cleanupIds: {
+                        force: true,
+                    },
+                    inlineStyles: {
+                        onlyMatchedOnce: false,
+                    },
+                },
+            },
         },
-      },
-    },
-  ],
+        "convertStyleToAttrs",
+    ],
 };
