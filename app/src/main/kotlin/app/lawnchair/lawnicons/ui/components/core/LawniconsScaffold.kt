@@ -10,13 +10,10 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
@@ -24,12 +21,10 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @Composable
 fun LawniconsScaffold(
     title: String,
-    navController: NavController,
-    windowSizeClass: WindowSizeClass,
+    onBack: () -> Unit,
+    isExpandedScreen: Boolean,
     content: @Composable (PaddingValues) -> Unit,
 ) {
-    val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
-
     var scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     if (isExpandedScreen) {
         scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
@@ -43,7 +38,7 @@ fun LawniconsScaffold(
                 title = title,
                 navigationIcon = {
                     ClickableIcon(
-                        onClick = { navController.popBackStack() },
+                        onClick = onBack,
                         imageVector = Icons.Rounded.ArrowBack,
                         size = 40.dp,
                         modifier = Modifier.padding(horizontal = 4.dp),
