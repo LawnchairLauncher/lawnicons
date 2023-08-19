@@ -29,7 +29,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
 import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
@@ -42,7 +41,7 @@ import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 fun Acknowledgement(
     name: String?,
     acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
-    navController: NavController,
+    onBack: () -> Unit,
     windowSizeClass: WindowSizeClass,
 ) {
     requireNotNull(name)
@@ -57,7 +56,7 @@ fun Acknowledgement(
 
     LawniconsScaffold(
         title = name,
-        navController = navController,
+        onBack = onBack,
         windowSizeClass = windowSizeClass,
     ) { innerPadding ->
         Crossfade(

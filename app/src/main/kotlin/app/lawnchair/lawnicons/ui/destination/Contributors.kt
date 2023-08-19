@@ -20,7 +20,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -36,13 +35,13 @@ const val contributorsUrl = "https://github.com/LawnchairLauncher/lawnicons/grap
 @Composable
 fun Contributors(
     contributorsViewModel: ContributorsViewModel = hiltViewModel(),
-    navController: NavController,
+    onBack: () -> Unit,
     windowSizeClass: WindowSizeClass,
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
     Contributors(
         uiState = uiState,
-        navController = navController,
+        onBack = onBack,
         windowSizeClass = windowSizeClass,
     )
 }
@@ -50,12 +49,12 @@ fun Contributors(
 @Composable
 fun Contributors(
     uiState: ContributorsUiState,
-    navController: NavController,
+    onBack: () -> Unit,
     windowSizeClass: WindowSizeClass,
 ) {
     LawniconsScaffold(
         title = stringResource(id = R.string.contributors),
-        navController = navController,
+        onBack = onBack,
         windowSizeClass = windowSizeClass,
     ) { paddingValues ->
         Crossfade(
@@ -66,7 +65,7 @@ fun Contributors(
             when (it) {
                 is ContributorsUiState.Success -> ContributorList(contributors = it.contributors)
                 is ContributorsUiState.Loading -> ContributorListPlaceholder()
-                is ContributorsUiState.Error -> ContributorListError(onBack = navController::popBackStack)
+                is ContributorsUiState.Error -> ContributorListError(onBack = onBack)
             }
         }
     }

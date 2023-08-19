@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
@@ -24,7 +23,7 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @Composable
 fun LawniconsScaffold(
     title: String,
-    navController: NavController,
+    onBack: () -> Unit,
     windowSizeClass: WindowSizeClass,
     content: @Composable (PaddingValues) -> Unit,
 ) {
@@ -43,7 +42,7 @@ fun LawniconsScaffold(
                 title = title,
                 navigationIcon = {
                     ClickableIcon(
-                        onClick = { navController.popBackStack() },
+                        onClick = onBack,
                         imageVector = Icons.Rounded.ArrowBack,
                         size = 40.dp,
                         modifier = Modifier.padding(horizontal = 4.dp),

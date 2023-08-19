@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -25,14 +24,15 @@ import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel
 @Composable
 fun Acknowledgements(
     acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
-    navController: NavController,
+    onBack: () -> Unit,
+    onNavigate: (String) -> Unit,
     windowSizeClass: WindowSizeClass,
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
 
     LawniconsScaffold(
         title = stringResource(id = R.string.acknowledgements),
-        navController = navController,
+        onBack = onBack,
         windowSizeClass = windowSizeClass,
     ) { innerPadding ->
         Crossfade(
@@ -54,7 +54,7 @@ fun Acknowledgements(
                         last = index == libraries.lastIndex,
                         divider = index != libraries.lastIndex,
                         onClick = {
-                            navController.navigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
+                            onNavigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
                         },
                     )
                 }

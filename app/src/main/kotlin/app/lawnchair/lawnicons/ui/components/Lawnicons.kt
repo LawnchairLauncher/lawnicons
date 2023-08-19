@@ -48,10 +48,10 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
                 composable(route = Destinations.HOME) {
-                    Home(navController = navController, windowSizeClass = windowSizeClass)
+                    Home(onNavigate = navController::navigate, windowSizeClass = windowSizeClass)
                 }
                 composable(route = Destinations.ACKNOWLEDGEMENTS) {
-                    Acknowledgements(navController = navController, windowSizeClass = windowSizeClass)
+                    Acknowledgements(onBack = navController::popBackStack, onNavigate = navController::navigate, windowSizeClass = windowSizeClass)
                 }
                 composable(
                     route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
@@ -64,15 +64,15 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
                 ) { backStackEntry ->
                     Acknowledgement(
                         name = backStackEntry.arguments?.getString("id"),
-                        navController = navController,
+                        onBack = navController::popBackStack,
                         windowSizeClass = windowSizeClass,
                     )
                 }
                 composable(route = Destinations.ABOUT) {
-                    About(navController = navController, windowSizeClass = windowSizeClass)
+                    About(onBack = navController::popBackStack, onNavigate = navController::navigate, windowSizeClass = windowSizeClass)
                 }
                 composable(route = Destinations.CONTRIBUTORS) {
-                    Contributors(navController = navController, windowSizeClass = windowSizeClass)
+                    Contributors(onBack = navController::popBackStack, windowSizeClass = windowSizeClass)
                 }
             }
         }

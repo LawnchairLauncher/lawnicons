@@ -17,7 +17,6 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -66,12 +65,12 @@ private val specialThanks = listOf(
 )
 
 @Composable
-fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
+fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, windowSizeClass: WindowSizeClass) {
     val context = LocalContext.current
 
     LawniconsScaffold(
         title = stringResource(id = R.string.about),
-        navController = navController,
+        onBack = onBack,
         windowSizeClass = windowSizeClass,
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
@@ -131,7 +130,7 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
             item {
                 Card(modifier = Modifier.padding(top = 16.dp)) {
                     SimpleListRow(
-                        onClick = { navController.navigate(Destinations.CONTRIBUTORS) },
+                        onClick = { onNavigate(Destinations.CONTRIBUTORS) },
                         label = stringResource(id = R.string.see_all_contributors),
                         divider = false,
                     )

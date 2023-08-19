@@ -11,7 +11,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
@@ -21,7 +20,7 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 @Composable
 fun Home(
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
-    navController: NavController,
+    onNavigate: (String) -> Unit,
     windowSizeClass: WindowSizeClass,
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
@@ -47,7 +46,7 @@ fun Home(
                         lawniconsViewModel.searchIcons(newValue)
                     },
                     iconInfo = it,
-                    navController = navController,
+                    onNavigate = onNavigate,
                     isExpandedScreen = isExpandedScreen,
                 )
             }
