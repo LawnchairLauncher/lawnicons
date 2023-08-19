@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -26,14 +25,14 @@ fun Acknowledgements(
     acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
     onBack: () -> Unit,
     onNavigate: (String) -> Unit,
-    windowSizeClass: WindowSizeClass,
+    isExpandedScreen: Boolean,
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
 
     LawniconsScaffold(
         title = stringResource(id = R.string.acknowledgements),
         onBack = onBack,
-        windowSizeClass = windowSizeClass,
+        isExpandedScreen = isExpandedScreen,
     ) { innerPadding ->
         Crossfade(
             targetState = ossLibraries,

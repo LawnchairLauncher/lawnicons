@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -32,6 +33,7 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
     val navController = rememberNavController()
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val slideDistance = rememberSlideDistance()
+    val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
     LawniconsTheme {
         SystemUi()
@@ -48,10 +50,10 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
                 composable(route = Destinations.HOME) {
-                    Home(onNavigate = navController::navigate, windowSizeClass = windowSizeClass)
+                    Home(onNavigate = navController::navigate, isExpandedScreen = isExpandedScreen)
                 }
                 composable(route = Destinations.ACKNOWLEDGEMENTS) {
-                    Acknowledgements(onBack = navController::popBackStack, onNavigate = navController::navigate, windowSizeClass = windowSizeClass)
+                    Acknowledgements(onBack = navController::popBackStack, onNavigate = navController::navigate, isExpandedScreen = isExpandedScreen)
                 }
                 composable(
                     route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
@@ -65,14 +67,14 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
                     Acknowledgement(
                         name = backStackEntry.arguments?.getString("id"),
                         onBack = navController::popBackStack,
-                        windowSizeClass = windowSizeClass,
+                        isExpandedScreen = isExpandedScreen,
                     )
                 }
                 composable(route = Destinations.ABOUT) {
-                    About(onBack = navController::popBackStack, onNavigate = navController::navigate, windowSizeClass = windowSizeClass)
+                    About(onBack = navController::popBackStack, onNavigate = navController::navigate, isExpandedScreen = isExpandedScreen)
                 }
                 composable(route = Destinations.CONTRIBUTORS) {
-                    Contributors(onBack = navController::popBackStack, windowSizeClass = windowSizeClass)
+                    Contributors(onBack = navController::popBackStack, isExpandedScreen = isExpandedScreen)
                 }
             }
         }

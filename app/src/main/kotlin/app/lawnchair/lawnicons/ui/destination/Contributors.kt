@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
@@ -36,13 +35,13 @@ const val contributorsUrl = "https://github.com/LawnchairLauncher/lawnicons/grap
 fun Contributors(
     contributorsViewModel: ContributorsViewModel = hiltViewModel(),
     onBack: () -> Unit,
-    windowSizeClass: WindowSizeClass,
+    isExpandedScreen: Boolean,
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
     Contributors(
         uiState = uiState,
         onBack = onBack,
-        windowSizeClass = windowSizeClass,
+        isExpandedScreen = isExpandedScreen,
     )
 }
 
@@ -50,12 +49,12 @@ fun Contributors(
 fun Contributors(
     uiState: ContributorsUiState,
     onBack: () -> Unit,
-    windowSizeClass: WindowSizeClass,
+    isExpandedScreen: Boolean,
 ) {
     LawniconsScaffold(
         title = stringResource(id = R.string.contributors),
         onBack = onBack,
-        windowSizeClass = windowSizeClass,
+        isExpandedScreen = isExpandedScreen,
     ) { paddingValues ->
         Crossfade(
             targetState = uiState,

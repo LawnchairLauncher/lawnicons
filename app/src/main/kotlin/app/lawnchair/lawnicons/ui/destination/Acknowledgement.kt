@@ -13,7 +13,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -42,7 +41,7 @@ fun Acknowledgement(
     name: String?,
     acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
     onBack: () -> Unit,
-    windowSizeClass: WindowSizeClass,
+    isExpandedScreen: Boolean,
 ) {
     requireNotNull(name)
 
@@ -57,7 +56,7 @@ fun Acknowledgement(
     LawniconsScaffold(
         title = name,
         onBack = onBack,
-        windowSizeClass = windowSizeClass,
+        isExpandedScreen = isExpandedScreen,
     ) { innerPadding ->
         Crossfade(
             targetState = notice,

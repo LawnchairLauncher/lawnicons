@@ -9,7 +9,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -65,13 +64,13 @@ private val specialThanks = listOf(
 )
 
 @Composable
-fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, windowSizeClass: WindowSizeClass) {
+fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Boolean) {
     val context = LocalContext.current
 
     LawniconsScaffold(
         title = stringResource(id = R.string.about),
         onBack = onBack,
-        windowSizeClass = windowSizeClass,
+        isExpandedScreen = isExpandedScreen,
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {

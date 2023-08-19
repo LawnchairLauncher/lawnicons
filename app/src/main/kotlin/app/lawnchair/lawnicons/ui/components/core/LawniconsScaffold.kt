@@ -10,8 +10,6 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
@@ -24,11 +22,9 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 fun LawniconsScaffold(
     title: String,
     onBack: () -> Unit,
-    windowSizeClass: WindowSizeClass,
+    isExpandedScreen: Boolean,
     content: @Composable (PaddingValues) -> Unit,
 ) {
-    val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
-
     var scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     if (isExpandedScreen) {
         scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()

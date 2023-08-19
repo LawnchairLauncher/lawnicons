@@ -2,8 +2,6 @@ package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -21,12 +19,11 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 fun Home(
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
     onNavigate: (String) -> Unit,
-    windowSizeClass: WindowSizeClass,
+    isExpandedScreen: Boolean,
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
     val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsState()
     var searchTerm by rememberSaveable { mutableStateOf(value = "") }
-    val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
     Crossfade(
         targetState = iconInfoModel != null,
