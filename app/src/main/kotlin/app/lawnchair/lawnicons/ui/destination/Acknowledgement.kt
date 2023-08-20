@@ -13,7 +13,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -29,7 +28,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
 import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
@@ -42,8 +40,8 @@ import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 fun Acknowledgement(
     name: String?,
     acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
-    navController: NavController,
-    windowSizeClass: WindowSizeClass,
+    onBack: () -> Unit,
+    isExpandedScreen: Boolean,
 ) {
     requireNotNull(name)
 
@@ -57,8 +55,8 @@ fun Acknowledgement(
 
     LawniconsScaffold(
         title = name,
-        navController = navController,
-        windowSizeClass = windowSizeClass,
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
     ) { innerPadding ->
         Crossfade(
             targetState = notice,
