@@ -23,8 +23,6 @@ For finer detail, a stroke of 6px can be used. The standard widths are *6px*, *8
 
 In addition to the above, joins and start/end points must be rounded and the colour must be black `#000000`. 
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/31ac14f7-946a-4da3-9f92-9a31d71281c8)
-
 ### Creating Icons 3/5 — Details
 
 ![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/c5478d4b-f971-4ba2-9303-b6c9039db22d)
