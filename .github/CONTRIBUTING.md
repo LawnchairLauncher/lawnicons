@@ -8,20 +8,57 @@ Afterwards, you can either contribute icons or code.
 ## Contributing icons
 To contribute icons, you only need an icon editor, a file explorer, a text editor, and a terminal window.
 
-### Icon guidelines
-See the below image for a summary of the icon guidelines. If you don't follow them, a team member will likely request changing the icons.
+### Creating Icons 1/5 — Artboard & Grid
 
-![](images/contributing-image-1.png)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/49e82cef-616a-40b0-8f45-3372d1ac8c8d)
 
-Each icon must fit the 160x160px or 144x144px (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
+Each icon must fit the *160x160px* or *144x144px* (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
-The default stroke should be kept at 12px. For finer detail, a stroke of 6px can be used. The standard widths are 6px, 8px, 10px, 12px and 14px.
+### Creating Icons 2/5 — Foundation
 
-In addition to the above, the icons must have an outlined (not filled) style, joins and start/end points must be rounded and the colour must be black `#000000`. If the original icon has a filled style, change the icon to adhere to the guidelines as seen below.
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/d4375238-1cee-4aff-818e-6806ca35ffff)
 
-![](images/contributing-image-2.png)
+The stroke should be kept at *12px* in most cases. If *12px* is too thick, a stroke of *8px* can be used.
+For finer detail, a stroke of 6px can be used. The standard widths are *6px*, *8px*, *10px*, *12px* and *14px*.
 
-For additional information on designing icons, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
+In addition to the above, joins and start/end points must be rounded and the colour must be black `#000000`. 
+
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/31ac14f7-946a-4da3-9f92-9a31d71281c8)
+
+### Creating Icons 3/5 — Details
+
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/84caea7b-3158-49b1-977e-0cfbd1289172)
+
+When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
+
+A great example of this is the Subway Surfers icon as seen in the example above. In Lawnicons, it was reimagined by using the graffiti-styled "S" from the game's logo instead of depicting the character, which would have required intricate shapes and varying stroke thicknesses.
+
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/47c12c25-7963-404a-aab0-caae0acd53ea)
+
+In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language. 
+
+In the Headspace example above, the circles usually have a face representing mood. By adding one of those faces to the circle, you can make the icon more recognizable.
+
+### Creating Icons 4/5 — Maintaining Consistency
+
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/1acaaa67-dab4-4228-a038-7a886628e694)
+
+All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline. 
+
+The key is to ensure that any filled elements do not overwhelm the overall icon design and align with the outlined style to create a harmonious and coherent icon set.
+
+### Creating Icons 5/5 — Mainting Balance
+
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/b201d134-9e0a-4a30-9632-2238ad1a4dd7)
+
+Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a *12px* stroke and suddenly decreasing it to *8px* creates an unbalanced visual effect in the final icon.
+
+To avoid sharp contrast, you can follow either of these two methods:
+
+1. **Uniform Stroke:** Instead of jumping between stroke thicknesses, use the next immediate increment in width. For example, transition from *12px* to *10px*.
+2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from *12px* to *10px* and then to *8px* you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
+
+For additional information on designing icons and samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
 
 ### Adding an icon to Lawnicons
 Here's how to add an icon to Lawnicons:
