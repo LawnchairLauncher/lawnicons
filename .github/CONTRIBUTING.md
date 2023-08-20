@@ -10,7 +10,7 @@ To contribute icons, you only need an icon editor, a file explorer, a text edito
 
 ### Creating Icons 1/5 — Artboard & Grid
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/063b94b3-eaa6-485a-af81-c64b7fa8330d)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/4b037c67-7349-4e21-8100-a46a91045123)
 
 Each icon must fit the *160x160px* or *144x144px* (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
