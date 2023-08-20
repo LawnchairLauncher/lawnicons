@@ -27,7 +27,7 @@ In addition to the above, joins and start/end points must be rounded and the col
 
 ### Creating Icons 3/5 — Details
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/84caea7b-3158-49b1-977e-0cfbd1289172)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/c5478d4b-f971-4ba2-9303-b6c9039db22d)
 
 When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
 
