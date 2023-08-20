@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -41,21 +39,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.semantics.isContainer
+import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LawniconsSearchBar(
     query: String,
@@ -63,7 +58,7 @@ fun LawniconsSearchBar(
     onClearAndBackClick: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconInfo: IconInfoModel,
-    navController: NavController,
+    onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean = false,
 ) {
     var active by rememberSaveable { mutableStateOf(false) }
@@ -85,93 +80,92 @@ fun LawniconsSearchBar(
                 },
             )
             .semantics {
-                isContainer = true
+                isTraversalGroup = true
             }
             .zIndex(1f)
             .fillMaxSize(),
     ) {
-        if (isExpandedScreen) {
-            val configuration = LocalConfiguration.current
-            val screenWidth = configuration.screenWidthDp.dp
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Spacer(modifier = Modifier.weight(0.5f))
-                DockedSearchBar(
-                    query = query,
-                    onQueryChange = onQueryChange,
-                    onSearch = { active = false },
+        ResponsiveSearchBar(
+            query = query,
+            onQueryChange = onQueryChange,
+            onSearch = { active = false },
+            active = active,
+            onActiveChange = { active = it },
+            placeholder = {
+                Text(
+                    stringResource(
+                        id = R.string.search_bar_hint,
+                        iconInfo.iconCount,
+                    ),
+                )
+            },
+            leadingIcon = {
+                SearchIcon(
                     active = active,
-                    onActiveChange = { active = it },
-                    placeholder = {
-                        Text(
-                            stringResource(
-                                id = R.string.search_bar_hint,
-                                iconInfo.iconCount,
-                            ),
-                        )
+                    onButtonClick = {
+                        onClearAndBackClick()
+                        active = !active
                     },
-                    leadingIcon = {
-                        SearchIcon(
-                            active = active,
-                            onButtonClick = {
-                                onClearAndBackClick()
-                                active = !active
-                            },
-                        )
-                    },
-                    trailingIcon = {
-                        SearchMenu(
-                            isQueryEmpty = isQueryEmpty,
-                            navController = navController,
-                            onClearAndBackClick = onClearAndBackClick,
-                        )
-                    },
-                    modifier = Modifier
-                        .width(screenWidth / 0.5f),
+                )
+            },
+            trailingIcon = {
+                SearchMenu(
+                    isQueryEmpty = isQueryEmpty,
+                    onNavigate = onNavigate,
+                    onClearAndBackClick = onClearAndBackClick,
+                )
+            },
+            isExpandedScreen = isExpandedScreen,
+        ) {
+            SearchContents(iconInfo = iconInfo)
+        }
+    }
+}
 
-                ) {
-                    SearchContents(iconInfo = iconInfo)
-                }
-                Spacer(modifier = Modifier.weight(0.5f))
-            }
-        } else {
-            SearchBar(
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun ResponsiveSearchBar(
+    query: String,
+    onQueryChange: (String) -> Unit,
+    onSearch: (String) -> Unit,
+    active: Boolean,
+    onActiveChange: (Boolean) -> Unit,
+    placeholder: @Composable () -> Unit,
+    leadingIcon: @Composable () -> Unit,
+    trailingIcon: @Composable () -> Unit,
+    isExpandedScreen: Boolean,
+    content: @Composable () -> Unit,
+) {
+    if (isExpandedScreen) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            DockedSearchBar(
                 query = query,
                 onQueryChange = onQueryChange,
-                onSearch = { active = false },
+                onSearch = onSearch,
                 active = active,
-                onActiveChange = { active = it },
-                placeholder = {
-                    Text(
-                        stringResource(
-                            id = R.string.search_bar_hint,
-                            iconInfo.iconCount,
-                        ),
-                    )
-                },
-                leadingIcon = {
-                    SearchIcon(
-                        active = active,
-                        onButtonClick = {
-                            onClearAndBackClick()
-                            active = !active
-                        },
-                    )
-                },
-                trailingIcon = {
-                    SearchMenu(
-                        isQueryEmpty = isQueryEmpty,
-                        navController = navController,
-                        onClearAndBackClick = onClearAndBackClick,
-                    )
-                },
-                modifier = Modifier.fillMaxWidth(),
-
+                onActiveChange = onActiveChange,
+                placeholder = placeholder,
+                leadingIcon = leadingIcon,
+                trailingIcon = trailingIcon,
             ) {
-                SearchContents(iconInfo = iconInfo)
+                content()
             }
+        }
+    } else {
+        SearchBar(
+            query = query,
+            onQueryChange = onQueryChange,
+            onSearch = onSearch,
+            active = active,
+            onActiveChange = onActiveChange,
+            placeholder = placeholder,
+            leadingIcon = leadingIcon,
+            trailingIcon = trailingIcon,
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            content()
         }
     }
 }
@@ -194,7 +188,7 @@ private fun SearchIcon(
 @Composable
 private fun SearchMenu(
     isQueryEmpty: Boolean,
-    navController: NavController,
+    onNavigate: (String) -> Unit,
     onClearAndBackClick: () -> Unit,
 ) {
     Crossfade(isQueryEmpty, label = "") {
@@ -203,7 +197,7 @@ private fun SearchMenu(
                 DropdownMenuItem(
                     onClick = {
                         hideMenu()
-                        navController.navigate(Destinations.ACKNOWLEDGEMENTS)
+                        onNavigate(Destinations.ACKNOWLEDGEMENTS)
                     },
                 ) {
                     Text(text = stringResource(id = R.string.acknowledgements))
@@ -211,7 +205,7 @@ private fun SearchMenu(
                 DropdownMenuItem(
                     onClick = {
                         hideMenu()
-                        navController.navigate(Destinations.ABOUT)
+                        onNavigate(Destinations.ABOUT)
                     },
                 ) {
                     Text(text = stringResource(id = R.string.about))
