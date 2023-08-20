@@ -39,15 +39,15 @@ In the Headspace example above, the circles usually have a face representing moo
 
 ### Creating Icons 4/5 — Maintaining Consistency
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/1acaaa67-dab4-4228-a038-7a886628e694)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/5eee7533-1dce-4f47-b214-c7c7aa3f886e)
 
 All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline. 
 
 The key is to ensure that any filled elements do not overwhelm the overall icon design and align with the outlined style to create a harmonious and coherent icon set.
 
-### Creating Icons 5/5 — Mainting Balance
+### Creating Icons 5/5 — Maintaining Balance
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/b201d134-9e0a-4a30-9632-2238ad1a4dd7)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/871fd535-93bd-4f5d-9944-1a07b9f1d307)
 
 Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a *12px* stroke and suddenly decreasing it to *8px* creates an unbalanced visual effect in the final icon.
 
