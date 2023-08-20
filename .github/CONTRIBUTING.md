@@ -10,13 +10,13 @@ To contribute icons, you only need an icon editor, a file explorer, a text edito
 
 ### Creating Icons 1/5 — Artboard & Grid
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/49e82cef-616a-40b0-8f45-3372d1ac8c8d)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/063b94b3-eaa6-485a-af81-c64b7fa8330d)
 
 Each icon must fit the *160x160px* or *144x144px* (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
 ### Creating Icons 2/5 — Foundation
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/d4375238-1cee-4aff-818e-6806ca35ffff)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/80626bb1-6514-4e61-b9a7-11f42871aa9b)
 
 The stroke should be kept at *12px* in most cases. If *12px* is too thick, a stroke of *8px* can be used.
 For finer detail, a stroke of 6px can be used. The standard widths are *6px*, *8px*, *10px*, *12px* and *14px*.
@@ -25,13 +25,13 @@ In addition to the above, joins and start/end points must be rounded and the col
 
 ### Creating Icons 3/5 — Details
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/d1b86f84-2cf1-4ab7-b957-27c301a1af24)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/5183f990-6e52-417d-be97-86aa8aa77ca5)
 
 When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
 
 A great example of this is the Subway Surfers icon as seen in the example above. In Lawnicons, it was reimagined by using the graffiti-styled "S" from the game's logo instead of depicting the character, which would have required intricate shapes and varying stroke thicknesses.
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/47c12c25-7963-404a-aab0-caae0acd53ea)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/5f0607ae-2daf-4b69-9d59-799f20d4caac)
 
 In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language. 
 
@@ -39,7 +39,7 @@ In the Headspace example above, the circles usually have a face representing moo
 
 ### Creating Icons 4/5 — Maintaining Consistency
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/5eee7533-1dce-4f47-b214-c7c7aa3f886e)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/afb9c812-9dc4-4245-bbcd-4983852c5f40)
 
 All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline. 
 
@@ -47,7 +47,7 @@ The key is to ensure that any filled elements do not overwhelm the overall icon 
 
 ### Creating Icons 5/5 — Maintaining Balance
 
-![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/871fd535-93bd-4f5d-9944-1a07b9f1d307)
+![image](https://github.com/LawnchairLauncher/lawnicons/assets/49114212/e90b7936-195c-4fed-a7ef-ef2dcbcd2221)
 
 Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a *12px* stroke and suddenly decreasing it to *8px* creates an unbalanced visual effect in the final icon.
 
