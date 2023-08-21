@@ -1,5 +1,5 @@
 # Description
-<!-- Please provide a short summary on what icons you added, changed, or linked
+<!-- Please provide a short summary of what icons you added, changed, or linked
 -->
 
 ## Icons addition information
