@@ -18,6 +18,6 @@
 * App Name (linked `package.name` to `@drawable/package`)
 
 ## Contributor's checklist
-[ ] I have followed the [Lawnicons Guidelines](./github/CONTRIBUTING.md)
-[ ] I have ensured that Lawnicons builds correctly
-[ ] I am willing to make changes to my icons if someone suggests changes
+- [ ] I have followed the [Lawnicons Guidelines](./github/CONTRIBUTING.md)
+- [ ] I have ensured that Lawnicons builds correctly
+- [ ] I am willing to make changes to my icons if someone suggests changes
