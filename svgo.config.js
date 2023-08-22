@@ -21,7 +21,7 @@ module.exports = {
         {
             name: "removeAttrs",
             params: {
-                attrs: ["xml:space", "data-name", "*^rx|ry^0"],
+                attrs: ["xml:space", "data-name", "class", "*^rx|ry^0"],
                 elemSeparator: "^",
             },
         },
