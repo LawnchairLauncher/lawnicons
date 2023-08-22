@@ -22,5 +22,5 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: 19
+          java-version: 20
       - run: ./gradlew lintKotlin
