@@ -73,7 +73,7 @@ jobs:
 
   send-notifications:
     runs-on: ubuntu-latest
-    needs: build-debug-apk, check-style
+    needs: [ build-debug-apk, check-style ]
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
