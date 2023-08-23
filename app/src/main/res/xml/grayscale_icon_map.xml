@@ -1,45 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <icons>
-    <icon drawable="@drawable/aliucord_installer" package="com.aliucord.manager" name="Aliucord Manager"/>
-    <icon drawable="@drawable/animiru" package="xyz.Quickdev.Animiru.mi" name="Animiru"/>
-    <icon drawable="@drawable/camera" package="com.google.android.GoogleCamera.CamFour" name="Camera"/>
-    <icon drawable="@drawable/camera_date_folders" package="de.kromke.andreas.cameradatefolders" name="Camera Date Folders"/>
-    <icon drawable="@drawable/coinvero" package="com.candlestick_app" name="Coinvero"/>
-    <icon drawable="@drawable/coolapk" package="com.coolapk.market.vn" name="CoolApk"/>
-    <icon drawable="@drawable/dialer" package="jp.ad.iij.miodial" name="Phone"/>
-    <icon drawable="@drawable/eksi_sozluk" package="com.drdisagree.iconify" name="ekşi sözlük"/>
-    <icon drawable="@drawable/erste_hilfe" package="com.cube.gdpc.che" name="Erste Hilfe"/>
-    <icon drawable="@drawable/files" package="com.coloros.files" name="Files"/>
-    <icon drawable="@drawable/fxxxs_given" package="rocks.poopjournal.fucksgiven" name="F***s Given"/>
-    <icon drawable="@drawable/gramotnee" package="com.gramotnee.orpho" name="Orthography"/>
-    <icon drawable="@drawable/kinopoisk" package="ru.kinopoisk.tv" name="Kinopoisk"/>
-    <icon drawable="@drawable/mi_fitness" package="com.metaflow.lumen" name="Lumen"/>
-    <icon drawable="@drawable/mi_freeform" package="com.sunshine.freeform" name="Mi Freeform"/>
-    <icon drawable="@drawable/movie_lab" package="com.movielab.mobile" name="MovieLab"/>
-    <icon drawable="@drawable/nc_photos" package="com.nkming.nc_photos.gitlab" name="Photos (for Nextcloud)"/>
-    <icon drawable="@drawable/penta" package="com.getpenta.app" name="Penta"/>
-    <icon drawable="@drawable/picpay" package="com.picpay.business" name="PicPay Empresas"/>
-    <icon drawable="@drawable/pixapencil" package="com.therealbluepandabear.pixapencil" name="PixaPencil"/>
-    <icon drawable="@drawable/pizza_hut" package="tr.com.pizzahut" name="Pizza Hut"/>
-    <icon drawable="@drawable/printer" package="org.savapage.android.print" name="Printer"/>
-    <icon drawable="@drawable/prognoza" package="hr.dtakac.prognoza" name="Prognoza"/>
-    <icon drawable="@drawable/revanced_extended" package="app.rvx.android.youtube" name="ReVanced Extended"/>
-    <icon drawable="@drawable/russian_language" package="com.greenkeycompany.exam" name="Russian language"/>
-    <icon drawable="@drawable/russian_language_quiz" package="com.yugyd.russianlanguagequiz" name="Russian Language Quiz"/>
-    <icon drawable="@drawable/samsung_health_monitor" package="com.sec.android.shealthmonitors" name="Samsung Health Monitor"/>
-    <icon drawable="@drawable/schulmanager" package="online.schulmanager.app" name="Schulmanager"/>
-    <icon drawable="@drawable/securego_plus" package="de.fiduciagad.securego.wl" name="SecureGo plus"/>
-    <icon drawable="@drawable/show_youtube_dislikes" package="com.jesperh.showyoutubedislikes" name="Show Youtube Dislikes"/>
-    <icon drawable="@drawable/sonic" package="com.sonicjump.sonicjump" name="Sonic"/>
-    <icon drawable="@drawable/teufel" package="com.wifiaudio.Teufel" name="Teufel HOLIST"/>
-    <icon drawable="@drawable/teufel" package="de.teufel.android.app.bluetooth.playstore" name="Teufel Headphones"/>
-    <icon drawable="@drawable/tinkoff_work" package="ru.tinkoff.twork" name="TWork"/>
-    <icon drawable="@drawable/tricount" package="com.trilab.tricount.android" name="Tricount"/>
-    <icon drawable="@drawable/wattz" package="dubrowgn.wattz" name="Wattz"/>
-    <icon drawable="@drawable/xvii" package="com.twoeightnine.root.xvii" name="xvii"/>
-    <icon drawable="@drawable/z1" package="app.z1.mobile" name="Z1"/>
-    <icon drawable="@drawable/zeus" package="zeuscroatia.app" name="ZEUS Tours Croatia"/>
-    <icon drawable="@drawable/zeus" package="zeusmalaysia.app" name="ZEUS Oogyaa"/>
-    <icon drawable="@drawable/zeus" package="zeusnorway.app" name="ZEUS Norway"/>
+    <icon
+        drawable="@drawable/aliucord_installer"
+        package="com.aliucord.manager"
+        name="Aliucord Manager" />
+    <icon
+        drawable="@drawable/animiru"
+        package="xyz.Quickdev.Animiru.mi"
+        name="Animiru" />
+    <icon
+        drawable="@drawable/camera"
+        package="com.google.android.GoogleCamera.CamFour"
+        name="Camera" />
+    <icon
+        drawable="@drawable/camera_date_folders"
+        package="de.kromke.andreas.cameradatefolders"
+        name="Camera Date Folders" />
+    <icon
+        drawable="@drawable/coinvero"
+        package="com.candlestick_app"
+        name="Coinvero" />
+    <icon
+        drawable="@drawable/coolapk"
+        package="com.coolapk.market.vn"
+        name="CoolApk" />
+    <icon
+        drawable="@drawable/dialer"
+        package="jp.ad.iij.miodial"
+        name="Phone" />
+    <icon
+        drawable="@drawable/eksi_sozluk"
+        package="com.drdisagree.iconify"
+        name="ekşi sözlük" />
+    <icon
+        drawable="@drawable/erste_hilfe"
+        package="com.cube.gdpc.che"
+        name="Erste Hilfe" />
+    <icon
+        drawable="@drawable/files"
+        package="com.coloros.files"
+        name="Files" />
+    <icon
+        drawable="@drawable/fxxxs_given"
+        package="rocks.poopjournal.fucksgiven"
+        name="F***s Given" />
+    <icon
+        drawable="@drawable/gramotnee"
+        package="com.gramotnee.orpho"
+        name="Orthography" />
+    <icon
+        drawable="@drawable/kinopoisk"
+        package="ru.kinopoisk.tv"
+        name="Kinopoisk" />
+    <icon
+        drawable="@drawable/mi_fitness"
+        package="com.metaflow.lumen"
+        name="Lumen" />
+    <icon
+        drawable="@drawable/mi_freeform"
+        package="com.sunshine.freeform"
+        name="Mi Freeform" />
+    <icon
+        drawable="@drawable/movie_lab"
+        package="com.movielab.mobile"
+        name="MovieLab" />
+    <icon
+        drawable="@drawable/nc_photos"
+        package="com.nkming.nc_photos.gitlab"
+        name="Photos (for Nextcloud)" />
+    <icon
+        drawable="@drawable/penta"
+        package="com.getpenta.app"
+        name="Penta" />
+    <icon
+        drawable="@drawable/picpay"
+        package="com.picpay.business"
+        name="PicPay Empresas" />
+    <icon
+        drawable="@drawable/pixapencil"
+        package="com.therealbluepandabear.pixapencil"
+        name="PixaPencil" />
+    <icon
+        drawable="@drawable/pizza_hut"
+        package="tr.com.pizzahut"
+        name="Pizza Hut" />
+    <icon
+        drawable="@drawable/printer"
+        package="org.savapage.android.print"
+        name="Printer" />
+    <icon
+        drawable="@drawable/prognoza"
+        package="hr.dtakac.prognoza"
+        name="Prognoza" />
+    <icon
+        drawable="@drawable/revanced_extended"
+        package="app.rvx.android.youtube"
+        name="ReVanced Extended" />
+    <icon
+        drawable="@drawable/russian_language"
+        package="com.greenkeycompany.exam"
+        name="Russian language" />
+    <icon
+        drawable="@drawable/russian_language_quiz"
+        package="com.yugyd.russianlanguagequiz"
+        name="Russian Language Quiz" />
+    <icon
+        drawable="@drawable/samsung_health_monitor"
+        package="com.sec.android.shealthmonitors"
+        name="Samsung Health Monitor" />
+    <icon
+        drawable="@drawable/schulmanager"
+        package="online.schulmanager.app"
+        name="Schulmanager" />
+    <icon
+        drawable="@drawable/securego_plus"
+        package="de.fiduciagad.securego.wl"
+        name="SecureGo plus" />
+    <icon
+        drawable="@drawable/show_youtube_dislikes"
+        package="com.jesperh.showyoutubedislikes"
+        name="Show Youtube Dislikes" />
+    <icon
+        drawable="@drawable/sonic"
+        package="com.sonicjump.sonicjump"
+        name="Sonic" />
+    <icon
+        drawable="@drawable/teufel"
+        package="com.wifiaudio.Teufel"
+        name="Teufel HOLIST" />
+    <icon
+        drawable="@drawable/teufel"
+        package="de.teufel.android.app.bluetooth.playstore"
+        name="Teufel Headphones" />
+    <icon
+        drawable="@drawable/tinkoff_work"
+        package="ru.tinkoff.twork"
+        name="TWork" />
+    <icon
+        drawable="@drawable/tricount"
+        package="com.trilab.tricount.android"
+        name="Tricount" />
+    <icon
+        drawable="@drawable/wattz"
+        package="dubrowgn.wattz"
+        name="Wattz" />
+    <icon
+        drawable="@drawable/xvii"
+        package="com.twoeightnine.root.xvii"
+        name="xvii" />
+    <icon
+        drawable="@drawable/z1"
+        package="app.z1.mobile"
+        name="Z1" />
+    <icon
+        drawable="@drawable/zeus"
+        package="zeuscroatia.app"
+        name="ZEUS Tours Croatia" />
+    <icon
+        drawable="@drawable/zeus"
+        package="zeusmalaysia.app"
+        name="ZEUS Oogyaa" />
+    <icon
+        drawable="@drawable/zeus"
+        package="zeusnorway.app"
+        name="ZEUS Norway" />
 </icons>
