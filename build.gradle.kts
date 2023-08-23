@@ -17,8 +17,7 @@ allprojects {
     extensions.configure<SpotlessExtension> {
         format("xml") {
             eclipseWtp(EclipseWtpFormatterStep.XML).configFile("$rootDir/spotless.xml.prefs")
-            target("**/*.xml")
-            targetExclude("**/build/**", "app/src/runtime/**")
+            target("app/assets/appfilter.xml")
         }
         kotlin {
             ktlint()
