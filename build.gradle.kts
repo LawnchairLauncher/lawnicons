@@ -1,4 +1,5 @@
 import com.diffplug.gradle.spotless.SpotlessExtension
+import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep
 
 plugins {
     id("com.android.application") version "8.1.1" apply false
@@ -14,6 +15,10 @@ plugins {
 allprojects {
     apply(plugin = "com.diffplug.spotless")
     extensions.configure<SpotlessExtension> {
+        format("xml") {
+            eclipseWtp(EclipseWtpFormatterStep.XML).configFile("$rootDir/spotless.xml.prefs")
+            target("app/assets/appfilter.xml")
+        }
         kotlin {
             ktlint()
             target("src/**/*.kt")
