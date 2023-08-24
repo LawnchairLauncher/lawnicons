@@ -110,15 +110,15 @@ android {
             name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
         val copyArtifactList =
             tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-                dependsOn(tasks.named("licensee${capitalizedName}"))
-                from(reporting.file("licensee/${variantName}/artifacts.json"),)
+                dependsOn(tasks.named("licensee$capitalizedName"))
+                from(reporting.file("licensee/$variantName/artifacts.json"))
                 into(layout.buildDirectory.dir("generated/dependencyAssets/"))
             }
         tasks.named("merge${capitalizedName}Assets").configure {
             dependsOn(copyArtifactList)
         }
         if (buildType.name == "release") {
-            tasks.named("lintVitalAnalyze${capitalizedName}").configure {
+            tasks.named("lintVitalAnalyze$capitalizedName").configure {
                 dependsOn(copyArtifactList)
             }
         }
@@ -152,7 +152,7 @@ dependencies {
     implementation("androidx.compose.material:material")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.7.0")
+    implementation("androidx.navigation:navigation-compose:2.7.1")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
