@@ -22,7 +22,7 @@ def _printerror(msg):
 
 
 def printsuccess():
-    print("\033[96m\nsuccessfully completed task(s)\033")
+    print("\033[96msuccessfully completed task(s)\033[0m")
     exit()
 
 #
@@ -88,6 +88,10 @@ def find_logic(mode):
     def _find_duplicates():
         packages = [i.attrib["component"] for i in root]
         duplicates = {i for i in packages if (packages.count(i) > 1) and not ("calendar" in i)}
+        
+        if len(duplicates) == 0:
+            print("no duplicates found")
+            return
 
         print("duplicates:")
         for i in duplicates:
@@ -100,11 +104,19 @@ def find_logic(mode):
             drawable = str(i.attrib.get("drawable", None)) + ".svg"
             drawables.append(drawable)
 
-        print("unused svg files:")
+        _list = []
+
         for i in svgs:
             if i not in drawables:
                 if not i.startswith("themed_icon_calendar_"):
-                    print(i)
+                    _list.append(i)
+        
+        if len(_list) == 0:
+            print("no duplicates found")
+            return
+        
+        print("unused svg files:")
+        for i in _list: print("* " + i)
     
     match mode:
         case "duplicates":
@@ -151,15 +163,28 @@ def parse_component(linkmode, svg, component, name, showMessage):
                 path = "current directory"
 
             _printerror(
-                f"svg '{basename}' doesn't exist in {path}. check if the file exists or try again.")
+                f"svg '{basename}' doesn't exist in {path}. check if the file exists and try again.")
+        
+        if os.path.isfile(_svgs_folder + basename):
+            _input = input(f"\033[93mwarning\033[0m: svg \033[4m{basename}\033[0m already exists in the svgs directory. replace? (Yes/No/Link) [N] ").lower()
+            if  _input == "" or _input[0] == "n":
+                exit()
+    
+            if _input[0] == "l":
+                parse_component(True, basename, component, name, showMessage)
+                return
+                
+            if _input[0] != "y": exit()
+            
+            print(f"replacing {basename} in svgs folder...")
 
-        svg_with_folder = _svgs_folder + basename
+        svg_in_svg_folder = _svgs_folder + basename
 
         try:
-            shutil.copyfile(svg, svg_with_folder)
+            shutil.copyfile(svg, svg_in_svg_folder)
         except shutil.SameFileError:
             _printerror(
-                f"\033[4m{basename}\033[0m has the same contents of \033[4m{svg_with_folder}\033[0m. ensure that you actually saved your changes in \033[4m{svg}\033[0m")
+                f"\033[4m{basename}\033[0m has the same contents of \033[4m{svg_in_svg_folder}\033[0m. can not continue")
 
     #
     # writing to file
