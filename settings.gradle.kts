@@ -3,19 +3,11 @@ pluginManagement {
         google()
         gradlePluginPortal()
     }
-    resolutionStrategy {
-        eachPlugin {
-            // https://github.com/google/play-services-plugins/issues/223
-            if (requested.id.id == "com.google.android.gms.oss-licenses-plugin") {
-                useModule("com.google.android.gms:oss-licenses-plugin:${requested.version}")
-            }
-        }
-    }
 }
 
 // https://docs.gradle.com/enterprise/gradle-plugin/
 plugins {
-    id("com.gradle.enterprise") version "3.13.3"
+    id("com.gradle.enterprise") version "3.14.1"
 }
 
 gradleEnterprise {
@@ -27,7 +19,7 @@ gradleEnterprise {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
     repositories {
         google()
         mavenCentral()

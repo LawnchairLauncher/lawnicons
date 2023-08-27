@@ -3,77 +3,63 @@ package app.lawnchair.lawnicons.ui.destination
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.animation.Crossfade
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.GitHubContributor
-import app.lawnchair.lawnicons.ui.component.ClickableIcon
-import app.lawnchair.lawnicons.ui.component.ContributorRow
-import app.lawnchair.lawnicons.ui.component.ContributorRowPlaceholder
-import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.components.ContributorRow
+import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
+import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
+import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
 
+const val contributorsUrl = "https://github.com/LawnchairLauncher/lawnicons/graphs/contributors"
+
 @Composable
 fun Contributors(
     contributorsViewModel: ContributorsViewModel = hiltViewModel(),
-    navController: NavController,
+    onBack: () -> Unit,
+    isExpandedScreen: Boolean,
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
     Contributors(
         uiState = uiState,
-        onBack = navController::popBackStack,
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Contributors(
     uiState: ContributorsUiState,
     onBack: () -> Unit,
+    isExpandedScreen: Boolean,
 ) {
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
-
-    Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            TopBarWithInsets(
-                scrollBehavior = scrollBehavior,
-                title = stringResource(id = R.string.contributors),
-                navigationIcon = {
-                    ClickableIcon(
-                        onClick = onBack,
-                        imageVector = Icons.Rounded.ArrowBack,
-                        size = 40.dp,
-                        modifier = Modifier.padding(horizontal = 4.dp),
-                    )
-                },
-            )
-        },
+    LawniconsScaffold(
+        title = stringResource(id = R.string.contributors),
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
     ) { paddingValues ->
         Crossfade(
             targetState = uiState,
             modifier = Modifier.padding(paddingValues = paddingValues),
+            label = "",
         ) {
             when (it) {
                 is ContributorsUiState.Success -> ContributorList(contributors = it.contributors)
@@ -92,6 +78,19 @@ fun ContributorList(contributors: List<GitHubContributor>) {
             additionalBottom = 8.dp,
         ),
     ) {
+        item {
+            ExternalLinkRow(
+                name = stringResource(R.string.view_on_github),
+                background = true,
+                first = true,
+                last = true,
+                divider = false,
+                url = contributorsUrl,
+            )
+        }
+        item {
+            Spacer(modifier = Modifier.height(16.dp))
+        }
         itemsIndexed(contributors) { index, it ->
             ContributorRow(
                 name = it.login,
@@ -134,7 +133,7 @@ fun ContributorListError(
         onBack()
         // we might be rate-limited, open the web ui instead
         val website =
-            Uri.parse("https://github.com/LawnchairLauncher/lawnicons/graphs/contributors")
+            Uri.parse(contributorsUrl)
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
     }

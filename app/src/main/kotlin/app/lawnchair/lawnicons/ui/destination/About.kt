@@ -7,32 +7,37 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
-import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.component.Card
-import app.lawnchair.lawnicons.ui.component.ClickableIcon
-import app.lawnchair.lawnicons.ui.component.ContributorRow
-import app.lawnchair.lawnicons.ui.component.SimpleListRow
-import app.lawnchair.lawnicons.ui.component.TopBarWithInsets
+import app.lawnchair.lawnicons.ui.components.ContributorRow
+import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
+import app.lawnchair.lawnicons.ui.components.core.Card
+import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
+import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
+import app.lawnchair.lawnicons.ui.util.ExternalLink
 import app.lawnchair.lawnicons.util.appIcon
+
+private val externalLinks = listOf(
+    ExternalLink(
+        name = "GitHub",
+        url = "https://github.com/LawnchairLauncher/lawnicons",
+    ),
+    ExternalLink(
+        name = "Icon Request Form",
+        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57",
+    ),
+)
 
 private val coreContributors = listOf(
     Contributor(
@@ -59,27 +64,13 @@ private val specialThanks = listOf(
 )
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
-fun About(navController: NavController) {
+fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Boolean) {
     val context = LocalContext.current
-    val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
-    Scaffold(
-        modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            TopBarWithInsets(
-                scrollBehavior = scrollBehavior,
-                title = stringResource(id = R.string.about),
-                navigationIcon = {
-                    ClickableIcon(
-                        onClick = { navController.popBackStack() },
-                        imageVector = Icons.Rounded.ArrowBack,
-                        size = 40.dp,
-                        modifier = Modifier.padding(horizontal = 4.dp),
-                    )
-                },
-            )
-        },
+    LawniconsScaffold(
+        title = stringResource(id = R.string.about),
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {
@@ -113,12 +104,23 @@ fun About(navController: NavController) {
                 }
             }
             item {
-                Card(label = stringResource(id = R.string.core_contributors)) {
+                Card(label = "External Links") {
+                    externalLinks.mapIndexed { index, it ->
+                        ExternalLinkRow(
+                            name = it.name,
+                            url = it.url,
+                            divider = index != externalLinks.lastIndex,
+                        )
+                    }
+                }
+            }
+            item {
+                Card(label = stringResource(id = R.string.core_contributors), modifier = Modifier.padding(top = 16.dp)) {
                     coreContributors.mapIndexed { index, it ->
                         ContributorRow(
                             name = it.name,
                             photoUrl = it.photoUrl,
-                            profileUrl = "https://github.com/${it.username}",
+                            profileUrl = it.socialUrl,
                             divider = index != coreContributors.lastIndex,
                         )
                     }
@@ -127,7 +129,7 @@ fun About(navController: NavController) {
             item {
                 Card(modifier = Modifier.padding(top = 16.dp)) {
                     SimpleListRow(
-                        onClick = { navController.navigate(Destinations.CONTRIBUTORS) },
+                        onClick = { onNavigate(Destinations.CONTRIBUTORS) },
                         label = stringResource(id = R.string.see_all_contributors),
                         divider = false,
                     )
