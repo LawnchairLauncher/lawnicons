@@ -9,7 +9,7 @@ plugins {
     id("com.sergei-lapin.napt") version "1.19" apply false
     id("com.google.dagger.hilt.android") version "2.47" apply false
     id("app.cash.licensee") version "1.7.0" apply false
-    id("com.diffplug.spotless") version "6.20.0" apply false
+    id("com.diffplug.spotless") version "6.21.0" apply false
 }
 
 allprojects {
