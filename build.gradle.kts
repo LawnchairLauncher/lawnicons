@@ -13,6 +13,14 @@ plugins {
 }
 
 allprojects {
+    plugins.withType<JavaBasePlugin>().configureEach {
+        extensions.configure<JavaPluginExtension> {
+            toolchain {
+                languageVersion = JavaLanguageVersion.of(17)
+            }
+        }
+    }
+
     apply(plugin = "com.diffplug.spotless")
     extensions.configure<SpotlessExtension> {
         format("xml") {

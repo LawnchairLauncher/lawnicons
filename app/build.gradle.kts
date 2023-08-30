@@ -74,14 +74,6 @@ android {
         assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
-    }
 
     buildFeatures {
         buildConfig = true
