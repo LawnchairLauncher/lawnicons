@@ -7,8 +7,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")
-    id("com.sergei-lapin.napt")
-    id("dagger.hilt.android.plugin")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
     id("app.cash.licensee")
 }
 
@@ -122,15 +122,13 @@ android {
     }
 }
 
-hilt.enableAggregatingTask = false
-
 licensee {
     allow("Apache-2.0")
 }
 
 dependencies {
     val lifecycleVersion = "2.6.1"
-    val hiltVersion = "2.47"
+    val hiltVersion = "2.48"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.10.1")
@@ -151,7 +149,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
     implementation("io.github.fornewid:material-motion-compose-core:1.0.6")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
-    annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
