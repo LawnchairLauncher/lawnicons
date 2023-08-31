@@ -122,8 +122,6 @@ android {
     }
 }
 
-hilt.enableAggregatingTask = false
-
 licensee {
     allow("Apache-2.0")
 }
