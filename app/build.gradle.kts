@@ -10,15 +10,16 @@ plugins {
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
     id("app.cash.licensee")
+    id("org.gradle.android.cache-fix")
 }
 
 val buildCommit = providers.exec {
     commandLine("git", "rev-parse", "--short=7", "HEAD")
 }.standardOutput.asText.get().trim()
 
-val ciBuild = System.getenv("CI") == "true"
-val ciRef = System.getenv("GITHUB_REF").orEmpty()
-val ciRunNumber = System.getenv("GITHUB_RUN_NUMBER").orEmpty()
+val ciBuild = providers.environmentVariable("CI").isPresent
+val ciRef = providers.environmentVariable("GITHUB_REF").orNull.orEmpty()
+val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEmpty()
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
