@@ -151,7 +151,7 @@ dependencies {
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
     implementation("io.github.fornewid:material-motion-compose-core:1.0.6")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
-    annotationProcessor("com.google.dagger:hilt-android-compiler:$hiltVersion")
+    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
