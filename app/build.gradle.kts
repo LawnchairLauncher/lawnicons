@@ -17,9 +17,9 @@ val buildCommit = providers.exec {
     commandLine("git", "rev-parse", "--short=7", "HEAD")
 }.standardOutput.asText.get().trim()
 
-val ciBuild: Boolean = providers.environmentVariable("CI").isPresent
-val ciRef: String = providers.environmentVariable("GITHUB_REF").orNull.orEmpty()
-val ciRunNumber: String = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEmpty()
+val ciBuild = providers.environmentVariable("CI").isPresent
+val ciRef = providers.environmentVariable("GITHUB_REF").orNull.orEmpty()
+val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEmpty()
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
