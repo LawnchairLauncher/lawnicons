@@ -10,7 +10,7 @@ plugins {
     id("com.google.dagger.hilt.android") version "2.48" apply false
     id("app.cash.licensee") version "1.7.0" apply false
     id("com.diffplug.spotless") version "6.21.0" apply false
-    id("org.gradle.android.cache-fix") version "2.7.4" apply false
+    id("org.gradle.android.cache-fix") version "2.8.0" apply false
 }
 
 allprojects {
