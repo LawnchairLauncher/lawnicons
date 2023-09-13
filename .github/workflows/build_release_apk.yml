@@ -12,13 +12,13 @@ jobs:
     continue-on-error: true
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: 20
+          java-version: 17
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-home-cache-cleanup: true
@@ -47,7 +47,7 @@ jobs:
     needs: build-release-apk
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
