@@ -103,7 +103,7 @@ android {
             name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
         val copyArtifactList =
             tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-                dependsOn(tasks.named("licensee$capitalizedName"))
+                dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
                 from(reporting.file("licensee/$variantName/artifacts.json"))
                 into(layout.buildDirectory.dir("generated/dependencyAssets/"))
             }
