@@ -21,7 +21,7 @@ For the development versions with new icons, go to [the nightly.link](https://ni
 
 Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code.
 
-If you know how to create proper icons already, you can use [icontool.py](/.github/icontool_guide.md) to speed up the process of adding icons. Also see the [Figma contributing guide](https://www.figma.com/community/file/1227718471680779613).
+If you're familiar with the guidelines and want to add an icon you made quickly, you can use [icontool.py](/.github/icontool_guide.md). You might also want to check out the [Figma contributing guide](https://www.figma.com/community/file/1227718471680779613).
 
 ## Requesting icons
 
