@@ -98,15 +98,12 @@ android {
     }
 
     applicationVariants.all {
-        val variantName = name
-        val capitalizedName =
-            name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
-        val copyArtifactList =
-            tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-                dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
-                from(reporting.file("licensee/$variantName/artifacts.json"))
-                into(layout.buildDirectory.dir("generated/dependencyAssets/"))
-            }
+        val capitalizedName = name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+        val copyArtifactList = tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
+            dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
+            from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
+            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+        }
         tasks.named("merge${capitalizedName}Assets").configure {
             dependsOn(copyArtifactList)
         }
