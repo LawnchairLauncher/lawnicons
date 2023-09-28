@@ -99,12 +99,11 @@ android {
 
     applicationVariants.all {
         val capitalizedName = name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val copyArtifactList =
-            tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-                dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
-                from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
-                into(layout.buildDirectory.dir("generated/dependencyAssets/"))
-            }
+        val copyArtifactList = tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
+            dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
+            from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
+            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+        }
         tasks.named("merge${capitalizedName}Assets").configure {
             dependsOn(copyArtifactList)
         }
