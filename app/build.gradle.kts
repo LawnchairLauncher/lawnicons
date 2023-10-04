@@ -126,7 +126,7 @@ licensee {
 
 dependencies {
     val lifecycleVersion = "2.6.2"
-    val hiltVersion = "2.48"
+    val hiltVersion = "2.48.1"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.12.0")
