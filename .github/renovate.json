@@ -24,8 +24,8 @@
         },
         {
             "groupName": "Hilt",
-            "matchPackagePatterns": [
-                "com.google.dagger*"
+            "matchPackagePrefixes": [
+                "com.google.dagger"
             ]
         }
     ]
