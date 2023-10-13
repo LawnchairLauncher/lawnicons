@@ -7,12 +7,12 @@
         android:label="@string/apps_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lawnicons"
+        android:theme="@style/Theme.Lawnicons.SplashScreen"
         android:name=".LawniconsApplication">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Lawnicons">
+            android:theme="@style/Theme.Lawnicons.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,7 +22,7 @@
                 <action android:name="app.lawnchair.icons.THEMED_ICON" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-             <!-- Nova Launcher Custom Icon Picker -->
+            <!-- Nova Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="com.novalauncher.THEME" />
                 <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />

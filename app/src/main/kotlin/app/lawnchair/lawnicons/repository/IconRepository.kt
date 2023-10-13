@@ -16,6 +16,7 @@ class IconRepository @Inject constructor(application: Application) {
 
     private var _iconInfo: List<IconInfo>? = null
     val iconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
+    val searchedIconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     init {
@@ -28,12 +29,16 @@ class IconRepository @Inject constructor(application: Application) {
                         iconInfo = it,
                         iconCount = it.size,
                     )
+                    searchedIconInfoModel.value = IconInfoModel(
+                        iconInfo = it,
+                        iconCount = it.size,
+                    )
                 }
         }
     }
 
     suspend fun search(query: String) = withContext(Dispatchers.Default) {
-        iconInfoModel.value = _iconInfo?.let {
+        searchedIconInfoModel.value = _iconInfo?.let {
             val filtered = it.mapNotNull { candidate ->
                 val indexOfMatch =
                     candidate.name.indexOf(string = query, ignoreCase = true).also { index ->
