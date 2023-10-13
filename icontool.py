@@ -6,86 +6,73 @@ import os
 import re
 
 #
-# Global Vars
+# Global Variables
 #
-# see https://regex101.com/r/xC9Kh3/2
-_pattern = re.compile(r"([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
+# See https://regex101.com/r/xC9Kh3/2
+PATTERN = re.compile(r"([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)\/([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
 
-_appfilter = "app/assets/appfilter.xml"
-_svgs_folder = "svgs/"
-_calendarregex = r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->"
+APPFILTER_PATH = "app/assets/appfilter.xml"
+SVGS_FOLDER = "svgs/"
+CALENDAR_REGEX = r"(?s)  <!-- Dynamic Calendars -->.*?  <!-- Lawnicons -->"
 
-# helper functions
-def _printerror(msg):
+# Helper Functions
+def print_error(msg):
     print("\033[91merror:\033[0m " + msg + "\n")
     exit()
 
-
-def printsuccess():
+def print_success():
     print("\033[96msuccessfully completed task(s)\033[0m")
     exit()
 
 #
 # Logic
 #
-def _sort_components(xmlfile):
-    def _checkCalendarComponents():
-        calendarstuff = re.findall(
-            _calendarregex, xmlfile
-        )
+def sort_components(xml_file):
+    """Sorts XML data by 'name' attribute."""
+    def check_calendar_components():
+        calendar_stuff = re.findall(CALENDAR_REGEX, xml_file)
+        return True if calendar_stuff == None else False
 
-        return True if calendarstuff == None else False
-
-    def _getCalendarComponents():
-        # always get original file for safety
-        originalfile = open(_appfilter, "r").read()
-
-        calendarstuff = re.findall(
-            _calendarregex, originalfile
-        )
-        return calendarstuff
+    def get_calendar_components():
+        # Always get the original file for safety
+        original_file = open(APPFILTER_PATH, "r").read()
+        calendar_stuff = re.findall(CALENDAR_REGEX, original_file)
+        return calendar_stuff
         
-    def _removeCalendarComponents(hascalendar):
-        return (
-            re.sub(_calendarregex, "", xmlfile)
-        ) if hascalendar else xmlfile
+    def remove_calendar_components(has_calendar):
+        return re.sub(CALENDAR_REGEX, "", xml_file) if has_calendar else xml_file
 
-    def _readdCalendarComponents(xmldata, calendarstuff):
-        return (
-            xmldata[:52] + calendarstuff[0] + "\n" + xmldata[52:] + "\n"
-        )
+    def read_calendar_components(xml_data, calendar_stuff):
+        return xml_data[:52] + calendar_stuff[0] + "\n" + xml_data[52:] + "\n"
 
-    calendarstuff = _getCalendarComponents()
-    purexmlfile = _removeCalendarComponents(_checkCalendarComponents())
+    calendar_stuff = get_calendar_components()
+    pure_xml_file = remove_calendar_components(check_calendar_components())
 
+    # Sort the XML by the name tag, thanks https://stackoverflow.com/a/25339725
+    xml_data = ET.fromstring(pure_xml_file)
+    xml_data[:] = sorted(xml_data, key=lambda child: child.get("name").casefold())
 
-    # sort the xml by the name tag, thx https://stackoverflow.com/a/25339725
-    xmldata = ET.fromstring(purexmlfile)
-    xmldata[:] = sorted(
-        xmldata, key=lambda child: child.get("name").casefold())
+    sorted_xml_data = ET.tostring(xml_data, encoding="unicode")
+    sorted_xml_data = '<?xml version="1.0" encoding="UTF-8"?>\n\n' + sorted_xml_data
 
-    sortedxmldata = ET.tostring(xmldata, encoding="unicode")
-    sortedxmldata = (
-        '<?xml version="1.0" encoding="UTF-8"?>\n\n' + sortedxmldata)
+    sorted_xml_data = read_calendar_components(sorted_xml_data, calendar_stuff)
 
-    sortedxmldata = _readdCalendarComponents(sortedxmldata, calendarstuff)
-
-    return sortedxmldata
+    return sorted_xml_data
 
 def check_lawnicons_corruption():
-    replyreason = "this may be due to a broken local copy of lawnicons. please clone lawnicons again."
+    reply_reason = "this may be due to a broken local copy of lawnicons. please clone lawnicons again."
 
-    if not os.path.exists(_svgs_folder):
-        _printerror(f"svgs folder does not exist. {replyreason}")
+    if not os.path.exists(SVGS_FOLDER):
+        print_error(f"svgs folder does not exist. {reply_reason}")
 
-    if not os.path.isfile(_appfilter):
-        _printerror(f"appfilter.xml file does not exist. {replyreason}")
+    if not os.path.isfile(APPFILTER_PATH):
+        print_error(f"appfilter.xml file does not exist. {reply_reason}")
 
 def find_logic(mode):
-    root = ET.parse(_appfilter).getroot()
-    svgs = os.listdir(_svgs_folder)
+    root = ET.parse(APPFILTER_PATH).getroot()
+    svgs = os.listdir(SVGS_FOLDER)
 
-    def _find_duplicates():
+    def find_duplicates():
         packages = [i.attrib["component"] for i in root]
         duplicates = {i for i in packages if (packages.count(i) > 1) and not ("calendar" in i)}
         
@@ -97,64 +84,63 @@ def find_logic(mode):
         for i in duplicates:
             print("* " + i)
 
-    def _find_unused_icons():
+    def find_unused_icons():
         drawables = []
 
         for i in root:
             drawable = str(i.attrib.get("drawable", None)) + ".svg"
             drawables.append(drawable)
 
-        _list = []
+        unused_list = []
 
         for i in svgs:
             if i not in drawables:
                 if not i.startswith("themed_icon_calendar_"):
-                    _list.append(i)
+                    unused_list.append(i)
         
-        if len(_list) == 0:
-            print("no duplicates found")
+        if len(unused_list) == 0:
+            print("no unused svg files found")
             return
         
         print("unused svg files:")
-        for i in _list: print("* " + i)
+        for i in unused_list: print("* " + i)
     
     match mode:
         case "duplicates":
-            _find_duplicates()
+            find_duplicates()
         
         case "unused":
-            _find_unused_icons()
+            find_unused_icons()
         
         case _:
-            _printerror("you must specify a mode {duplicates,unused}")
+            print_error("you must specify a mode {duplicates,unused}")
 
 def sort_logic():
     print("sorting icons...")
-    xmlfile = open(_appfilter, "r").read()
-    sorted_data  = _sort_components(xmlfile)
+    xml_file = open(APPFILTER_PATH, "r").read()
+    sorted_data  = sort_components(xml_file)
 
-    f = open(_appfilter, "w")
-    f.write(sorted_data)
-    f.close()
+    with open(APPFILTER_PATH, "w") as f:
+        f.write(sorted_data)
 
-def parse_component(linkmode, svg, component, name, showMessage):
+def parse_component(link_mode, svg, component, name, show_message):
     #
-    # initialization
+    # Initialization
     #
     if not svg.endswith(".svg"):
         svg += ".svg"
     
     basename = os.path.basename(svg)
 
-    if not _pattern.match(component):
-        _printerror("invalid component entry. must be in format \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m, i.e: package.name/component.name")
+    if not PATTERN.match(component):
+        print_error("invalid component entry. must be in format \033[4m[PACKAGE_NAME]/[APP_ACTIVITY_NAME]\033[0m, i.e: package.name/component.name")
 
-    # linkmode true
-    if linkmode:
-        if not os.path.isfile(_svgs_folder + svg):
-            _printerror(f"svg '{svg}' doesn't exist in the svgs directory.")
+    # Link mode true
+    if link_mode:
+        if not os.path.isfile(SVGS_FOLDER + svg):
+            print_error(f"svg '{svg}' doesn't exist in the svgs directory.")
 
-    # linkmode false
+    # Link mode false
     else:
         if not os.path.isfile(svg):
             path = f"directory `{os.path.dirname(svg)}/`"
@@ -162,66 +148,61 @@ def parse_component(linkmode, svg, component, name, showMessage):
             if path == "directory `.`" or path == "directory ``":
                 path = "current directory"
 
-            _printerror(
-                f"svg '{basename}' doesn't exist in {path}. check if the file exists and try again.")
+            print_error(f"svg '{basename}' doesn't exist in {path}. check if the file exists and try again.")
         
-        if os.path.isfile(_svgs_folder + basename):
-            _input = input(f"\033[93mwarning\033[0m: svg \033[4m{basename}\033[0m already exists in the svgs directory. replace? (Yes/No/Link) [N] ").lower()
-            if  _input == "" or _input[0] == "n":
+        if os.path.isfile(SVGS_FOLDER + basename):
+            user_input = input(f"\033[93mwarning\033[0m: svg \033[4m{basename}\033[0m already exists in the svgs directory. replace? (Yes/No/Link) [N] ").lower()
+            if  user_input == "" or user_input[0] == "n":
                 exit()
     
-            if _input[0] == "l":
-                parse_component(True, basename, component, name, showMessage)
+            if user_input[0] == "l":
+                parse_component(True, basename, component, name, show_message)
                 return
                 
-            if _input[0] != "y": exit()
+            if user_input[0] != "y": exit()
             
             print(f"replacing {basename} in svgs folder...")
 
-        svg_in_svg_folder = _svgs_folder + basename
+        svg_in_svgs_folder = SVGS_FOLDER + basename
 
         try:
-            shutil.copyfile(svg, svg_in_svg_folder)
+            shutil.copyfile(svg, svg_in_svgs_folder)
         except shutil.SameFileError:
-            _printerror(
-                f"\033[4m{basename}\033[0m has the same contents of \033[4m{svg_in_svg_folder}\033[0m. can not continue")
+            print_error(f"\033[4m{basename}\033[0m has the same contents as \033[4m{svg_in_svgs_folder}\033[0m. cannot continue")
 
     #
-    # writing to file
+    # Writing to file
     #
 
-    # remove .svg extension
+    # Remove .svg extension
     drawable = basename[:-4]
 
-    # xmlfile        the actual xml file
+    # xml_file        the actual xml file
     # line           the actual xml element in string form
-    # purexmlfile    the xml file without the calendar declarations
-    xmlfile = open(_appfilter, "r").read()
+    # pure_xml_file    the xml file without the calendar declarations
+    xml_file = open(APPFILTER_PATH, "r").read()
 
     line = f'  <item component="ComponentInfo{{{component}}}" drawable="{drawable}" name="{name}" />'
-    purexmlfile = re.sub(
-        _calendarregex, "", xmlfile
-    )
+    pure_xml_file = re.sub(CALENDAR_REGEX, "", xml_file)
 
-    # add the line
-    editedxmlfile = purexmlfile[:52] + line + purexmlfile[52:]
+    # Add the line
+    edited_xml_file = pure_xml_file[:52] + line + pure_xml_file[52:]
 
-    # sort
-    sortedxmldata = _sort_components(editedxmlfile)
+    # Sort
+    sorted_xml_data = sort_components(edited_xml_file)
 
-    f = open(_appfilter, "w")
-    f.write(sortedxmldata)
-    f.close()
+    with open(APPFILTER_PATH, "w") as f:
+        f.write(sorted_xml_data)
 
     #
-    # print success message
+    # Print success message
     #
-    with open(_appfilter) as file:
+    with open(APPFILTER_PATH) as file:
         lines = file.readlines()
 
     for number, line in enumerate(lines, 1):
         if component in line:
-            if linkmode:
+            if link_mode:
                 action = "linked"
             else:
                 action = "added"
@@ -229,8 +210,8 @@ def parse_component(linkmode, svg, component, name, showMessage):
                 f"{action} \033[92m{name}\033[0m app to \033[92m`@drawable/{drawable}`\033[0m in line \033[92m{number}\033[0m of appfilter.xml"
             )
 
-            if showMessage:
-                if linkmode:
+            if show_message:
+                if link_mode:
                     print(
                         f"* {name} (linked `{component}` to `@drawable/{drawable}`)"
                     )
@@ -240,27 +221,27 @@ def parse_component(linkmode, svg, component, name, showMessage):
                     f"* {name} (`{component}`)"
                 )
 
-def remove_component(component, doDelete, message):
+def remove_component(component, do_delete, message):
     pattern1 = re.compile(r"([A-Za-z0-9_]+(\.[A-Za-z0-9_]+)+)", re.IGNORECASE)
-    pattern2 = _pattern
-    errormsg = "invalid component name. format must be either \033[4m[PACKAGE_NAME]\033[0m or \033[4m[PACKAGE_NAME]/[APP_ACIVITY_NAME]\033[0m"
+    pattern2 = PATTERN
+    error_msg = "invalid component name. format must be either \033[4m[PACKAGE_NAME]\033[0m or \033[4m[PACKAGE_NAME]/[APP_ACTIVITY_NAME]\033[0m"
 
     if not pattern1.match(component):
-        _printerror(errormsg)
+        print_error(error_msg)
     elif not pattern2.match(component):
         if ("/" in component):
-            _printerror(errormsg)
+            print_error(error_msg)
 
-    with open(_appfilter, "r") as file:
+    with open(APPFILTER_PATH, "r") as file:
         lines = file.readlines()
 
-    with open(_appfilter, "w") as f:
+    with open(APPFILTER_PATH, "w") as f:
         for linenumber, line in enumerate(lines, 1):
             if component not in line:
                 f.write(line)
 
             elif component in line:
-                deletedline = line
+                deleted_line = line
                 number = linenumber
                 print(
                     f"removed \033[92m{component}\033[0m icon in line \033[92m{number}\033[0m"
@@ -269,15 +250,14 @@ def remove_component(component, doDelete, message):
                 if message:
                     print(f"* {component} (removed)")
 
-    if doDelete:
-        deletedfile = ET.fromstring(deletedline).get("drawable") + ".svg"
-        os.remove(_svgs_folder + deletedfile)
-        print(f"deleted \033[92m{deletedfile}\033[0m")
+    if do_delete:
+        deleted_file = ET.fromstring(deleted_line).get("drawable") + ".svg"
+        os.remove(SVGS_FOLDER + deleted_file)
+        print(f"deleted \033[92m{deleted_file}\033[0m")
 
-# parser logic
+# Parser Logic
 def add_parser(args):
     parse_component(False, args.svg, args.component, args.name, args.message)
-
 
 def link_parser(args):
     parse_component(True, args.svg, args.component, args.name, args.message)
@@ -292,10 +272,10 @@ def find_parser(args):
     find_logic(args.mode)
 
 #
-# parser initialization
+# Parser Initialization
 #
 parser = argparse.ArgumentParser(
-    prog="icontool", description="a cli tool to help contributors with adding icons. requires the use of subcommands {add,link,remove,sort,find}. for help with a specific subcommand, type 'icontool.py <subcommand> -h'")
+    prog="icontool", description="a CLI tool to help contributors with adding icons. requires the use of subcommands {add,link,remove,sort,find}. for help with a specific subcommand, type 'icontool.py <subcommand> -h'")
 parser.add_argument(
     "-m", "--message", action="store_true", help="shows a list item for use in a pull request")
 
@@ -303,40 +283,40 @@ subparsers = parser.add_subparsers(
     help='what action icontool should use', dest="subcommand")
 
 parser_add = subparsers.add_parser(
-    "add", help='adds an icon svg and an entry to appfilter.xml, links svg to component', aliases=['a'])
+    "add", help='adds an icon SVG and an entry to appfilter.xml, links SVG to component', aliases=['a'])
 parser_link = subparsers.add_parser(
-    "link", help='adds an entry to appfilter.xml, links svg to component', aliases=['l'])
+    "link", help='adds an entry to appfilter.xml, links SVG to component', aliases=['l'])
 parser_remove = subparsers.add_parser(
-    "remove", help='removes an entry on appfilter.xml, can optionally delete svg', aliases=['d', 'r'])
+    "remove", help='removes an entry on appfilter.xml, can optionally delete SVG', aliases=['d', 'r'])
 parser_sort = subparsers.add_parser(
     "sort", help='sorts the appfilter.xml file by component name', aliases=['s'])
 parser_find = subparsers.add_parser(
-    "find", help='find either duplicates in appfilter.xml or unlinked svgs', aliases=['f'])
+    "find", help='find either duplicates in appfilter.xml or unlinked SVGs', aliases=['f'])
 
-# remove parser
+# Remove parser
 parser_remove.add_argument(
-    "component", help="the component to remove. can be [PACKAGE_NAME]/[APP_ACIVITY_NAME] or [PACKAGE_NAME]")
+    "component", help="the component to remove. can be [PACKAGE_NAME]/[APP_ACTIVITY_NAME] or [PACKAGE_NAME]")
 parser_remove.add_argument(
-    "-d", "--delete", help="enables svg deletion. svg derived from `drawable` entry in each `<item>`", action="store_true")
+    "-d", "--delete", help="enables SVG deletion. SVG derived from `drawable` entry in each `<item>`", action="store_true")
 
-# add parser
+# Add parser
 parser_add.add_argument(
-    "svg", help="the path of the svg file that will be added")
+    "svg", help="the path of the SVG file that will be added")
 parser_add.add_argument(
-    "component", help="the component name. format must be `[PACKAGE_NAME]/[APP_ACIVITY_NAME]")
+    "component", help="the component name. format must be `[PACKAGE_NAME]/[APP_ACTIVITY_NAME]`")
 parser_add.add_argument(
     "name", help="the displayed name of the app. if multiple lines, use a string like ``\"App Name\"`")
 
-# link parser
-parser_link.add_argument("svg", help="the file name of the svg icon.")
+# Link parser
+parser_link.add_argument("svg", help="the file name of the SVG icon.")
 parser_link.add_argument(
-    "component", help="the component name. format must be `[PACKAGE_NAME]/[APP_ACIVITY_NAME]")
+    "component", help="the component name. format must be `[PACKAGE_NAME]/[APP_ACTIVITY_NAME]`")
 parser_link.add_argument(
     "name", help="the displayed name of the app. if multiple lines, use a string like ``\"App Name\"`")
 
-# no additional args for `sort` parser
+# No additional arguments for `sort` parser
 
-# find parser
+# Find parser
 parser_find.add_argument("mode", help="the mode to use {duplicates, unused}.`duplicates` = find duplicates in appfilter.xml.`unused` = find unused files in svgs/")
 
 args = parser.parse_args()
@@ -346,7 +326,7 @@ args = parser.parse_args()
 #
 check_lawnicons_corruption()
 
-# match proper subcommand
+# Match proper subcommand
 match args.subcommand:
     case "add" | "a":
         add_parser(args)
@@ -364,6 +344,6 @@ match args.subcommand:
         find_parser(args)
 
     case _:
-        _printerror("you must specify a subcommand {add,link,remove,sort,find}")
+        print_error("you must specify a subcommand {add,link,remove,sort,find}")
 
-printsuccess()
+print_success()
