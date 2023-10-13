@@ -42,7 +42,7 @@ def sort_components(xml_file):
     def remove_calendar_components(has_calendar):
         return re.sub(CALENDAR_REGEX, "", xml_file) if has_calendar else xml_file
 
-    def readd_calendar_components(xml_data, calendar_stuff):
+    def read_calendar_components(xml_data, calendar_stuff):
         return xml_data[:52] + calendar_stuff[0] + "\n" + xml_data[52:] + "\n"
 
     calendar_stuff = get_calendar_components()
@@ -55,7 +55,7 @@ def sort_components(xml_file):
     sorted_xml_data = ET.tostring(xml_data, encoding="unicode")
     sorted_xml_data = '<?xml version="1.0" encoding="UTF-8"?>\n\n' + sorted_xml_data
 
-    sorted_xml_data = readd_calendar_components(sorted_xml_data, calendar_stuff)
+    sorted_xml_data = read_calendar_components(sorted_xml_data, calendar_stuff)
 
     return sorted_xml_data
 
