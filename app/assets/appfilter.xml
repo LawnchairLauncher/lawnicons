@@ -2600,6 +2600,7 @@
   <item component="ComponentInfo{com.litatom.app/com.lit.app.ui.SplashActivity}" drawable="litmatch" name="Litmatch" />
   <item component="ComponentInfo{com.example.retouchephoto/com.example.litrato.activities.MainActivity}" drawable="photo_editor" name="Litrato" />
   <item component="ComponentInfo{com.google.audio.hearing.visualization.accessibility.scribe/com.google.audio.hearing.visualization.accessibility.scribe.LauncherActivity}" drawable="live_transcribe" name="Live Transcribe" />
+  <item component="ComponentInfo{com.pavostudio.live2dviewerex/com.pavostudio.exlib.wallpaper.LiveWallpaperActivity}" drawable="live2dviewerex" name="Live2DViewerEX" />
   <item component="ComponentInfo{me.livechart.android/me.livechart.android.ui.MainActivity}" drawable="livechartme" name="LiveChart.me" />
   <item component="ComponentInfo{com.riotgames.league.wildriftvn/com.tencent.lolm.lgame}" drawable="wild_rift" name="LMHT: Toc Chien" />
   <item component="ComponentInfo{com.rajarsheechatterjee.LNReader/com.rajarsheechatterjee.LNReader.MainActivity}" drawable="lnreader" name="LNReader" />
@@ -2897,10 +2898,10 @@
   <item component="ComponentInfo{com.azure.authenticator/com.azure.authenticator.ui.MainActivity}" drawable="microsoft_authenticator" name="Microsoft Authenticator" />
   <item component="ComponentInfo{com.microsoft.emmx/com.google.android.apps.chrome.Main}" drawable="microsoft_edge" name="Microsoft Edge" />
   <item component="ComponentInfo{com.microsoft.emmx/com.microsoft.ruby.Main}" drawable="microsoft_edge" name="Microsoft Edge" />
-  <item component="ComponentInfo{com.microsoft.emmx.dev/com.google.android.apps.chrome.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
-  <item component="ComponentInfo{com.microsoft.emmx.dev/com.microsoft.ruby.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
   <item component="ComponentInfo{com.microsoft.emmx.canary/com.google.android.apps.chrome.Main}" drawable="microsoft_edge_canary" name="Microsoft Edge Canary" />
   <item component="ComponentInfo{com.microsoft.emmx.canary/com.microsoft.ruby.Main}" drawable="microsoft_edge_canary" name="Microsoft Edge Canary" />
+  <item component="ComponentInfo{com.microsoft.emmx.dev/com.google.android.apps.chrome.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
+  <item component="ComponentInfo{com.microsoft.emmx.dev/com.microsoft.ruby.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.apphost.LaunchActivity}" drawable="microsoft_excel" name="Microsoft Excel" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.apphost.LaunchActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="microsoft_excel" name="Microsoft Excel" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.excel.excelMainActivity}" drawable="microsoft_excel" name="Microsoft Excel" />
@@ -4214,6 +4215,10 @@
   <item component="ComponentInfo{code.name.monkey.retromusic/code.name.monkey.retromusic.ui.activities.main.MainActivity}" drawable="retro_music" name="Retro Music" />
   <item component="ComponentInfo{com.retroarch/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch" />
   <item component="ComponentInfo{com.retroarch.aarch64/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch Plus" />
+  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.Shell$HomeActivity" drawable="revanced_extended" name="ReVanced Extended" />
+  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
+  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.application.Shell$HomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
+  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.apps.youtube.app.application.Shell_HomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
   <item component="ComponentInfo{app.revanced.manager.flutter/app.revanced.manager.flutter.MainActivity}" drawable="youtube_revanced" name="ReVanced Manager" />
   <item component="ComponentInfo{com.softissimo.reverso.context/com.softissimo.reverso.context.activity.CTXSplashActivity}" drawable="reverso_context" name="Reverso Context" />
   <item component="ComponentInfo{com.softissimo.reverso.context/com.softissimo.reverso.context.activity.SplashActivity}" drawable="reverso_context" name="Reverso Context" />
@@ -4260,6 +4265,7 @@
   <item component="ComponentInfo{ru.vk.store/ru.vk.store.app.MainActivity}" drawable="rustore" name="RuStore" />
   <item component="ComponentInfo{ru.rutube.app/ru.rutube.app.ui.activity.tabs.RootActivity}" drawable="rutube" name="RUTUBE" />
   <item component="ComponentInfo{koeln.kvb.ticket.rvkapp/com.cubic.cumo.mts.SplashActivity}" drawable="rvk" name="RVK" />
+  <item component="ComponentInfo{ytm.rvx.noname.exe/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="RVX Music" />
   <item component="ComponentInfo{com.newtechsys.rxlocalmobile/crc64cf08890f329bc7ff.MainActivity}" drawable="rxlocal" name="RxLocal" />
   <item component="ComponentInfo{com.entersekt.authapp.sparkasse/com.netcetera.tpmw.core.app.presentation.launch.launcher.view.LauncherActivity}" drawable="s_idcheck" name="S-ID-Check" />
   <item component="ComponentInfo{com.starfinanz.mobile.android.invest/de.starfinanz.sdepot.launch.MainActivity}" drawable="s_invest" name="S-Invest" />
@@ -5958,15 +5964,10 @@
   <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music" />
   <item component="ComponentInfo{app.revanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music Revanced" />
   <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music ReVanced Extended" />
-  <item component="ComponentInfo{ytm.rvx.noname.exe/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="RVX Music" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
-  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.Shell$HomeActivity" drawable="revanced_extended" name="ReVanced Extended" />
-  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
-  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.application.Shell$HomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
-  <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.apps.youtube.app.application.Shell_HomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.activities.SplashActivity}" drawable="ytstudio" name="YouTube Studio" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.main.MainActivity}" drawable="ytstudio" name="YouTube Studio" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/.main.MainActivity}" drawable="ytstudio" name="YouTube Studio" />
