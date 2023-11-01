@@ -1155,6 +1155,7 @@
   <item component="ComponentInfo{ch.admin.bag.covidcertificate.wallet/ch.admin.bag.covidcertificate.wallet.MainActivity}" drawable="covid_cert" name="Covid Cert" />
   <item component="ComponentInfo{de.rki.covpass.app/de.rki.covpass.app.main.MainActivity}" drawable="covpass" name="CovPass" />
   <item component="ComponentInfo{com.kgurgul.cpuinfo/com.kgurgul.cpuinfo.features.HostActivity}" drawable="cpu_info" name="CPU Info" />
+  <item component="ComponentInfo{skynet.cputhrottlingtest/skynet.cputhrottlingtest.MainActivity}" drawable="cpu_throttling_test" name="Cpu Throttling Test" />
   <item component="ComponentInfo{com.cpuid.cpu_z/com.cpuid.cpu_z.MainActivity}" drawable="cpu_z" name="CPU Z" />
   <item component="ComponentInfo{com.sega.CrazyTaxiplayhaven/com.sega.f2fdownloader.f2fDownloaderActivity}" drawable="crazy_taxi_classic" name="Crazy Taxi Classic" />
   <item component="ComponentInfo{com.dreamplug.androidapp/com.dreamplug.androidapp.SplashActivity}" drawable="cred" name="Cred" />
@@ -1561,6 +1562,7 @@
   <item component="ComponentInfo{com.fastaccess.github.revival/com.fastaccess.ui.modules.main.MainActivity}" drawable="fasthub_re" name="FastHub-RE" />
   <item component="ComponentInfo{com.fastmail.app/com.fastmail.app.ui.webview.WebViewActivity}" drawable="fastmail" name="Fastmail" />
   <item component="ComponentInfo{com.pinelabs.fave/com.pinelabs.fave.ui.splash.SplashActivity}" drawable="fave" name="Fave" />
+  <item component="ComponentInfo{org.fcitx.fcitx5.android/org.fcitx.fcitx5.android.ui.main.MainActivity}" drawable="fcitx5_for_android" name="Fcitx5 for Android" />
   <item component="ComponentInfo{app.fedilab.android/app.fedilab.android.activities.MainActivity.Bubbles}" drawable="fedilab" name="Fedilab" />
   <item component="ComponentInfo{com.nononsenseapps.feeder/com.nononsenseapps.feeder.ui.FeedActivity}" drawable="feeder" name="Feeder" />
   <item component="ComponentInfo{com.nononsenseapps.feeder/com.nononsenseapps.feeder.ui.MainActivity}" drawable="feeder" name="Feeder" />
@@ -1873,6 +1875,7 @@
   <item component="ComponentInfo{com.miHoYo.GenshinImpact/com.miHoYo.GenshinImpact.MainActivity}" drawable="genshin_impact" name="Genshin Impact" />
   <item component="ComponentInfo{com.miHoYo.GenshinImpact/com.miHoYo.GetMobileInfo.MainActivity}" drawable="genshin_impact" name="Genshin Impact" />
   <item component="ComponentInfo{com.miHoYo.Yuanshen/com.miHoYo.GetMobileInfo.MainActivity}" drawable="genshin_impact" name="Genshin Impact CN" />
+  <item component="ComponentInfo{com.hoyoverse.cloudgames.GenshinImpact/com.mihoyo.cloudgame.ui.SplashActivity}" drawable="genshin_impact_cloud" name="Genshin Impact · Cloud" />
   <item component="ComponentInfo{org.geogebra.android.calculator.suite/org.geogebra.android.privatelibrary.splashscreen.SplashScreenActivity}" drawable="geogebra_calculator_suite" name="GeoGebra Calculator Suite" />
   <item component="ComponentInfo{com.geoguessr.app/com.geoguessr.app.ui.StartActivity}" drawable="geoguessr" name="GeoGuessr" />
   <item component="ComponentInfo{wangdaye.com.geometricweather/wangdaye.com.geometricweather.main.MainActivity}" drawable="geometric_weather" name="Geometric Weather" />
@@ -4925,6 +4928,7 @@
   <item component="ComponentInfo{com.Splitwise.SplitwiseMobile/com.Splitwise.SplitwiseMobile.views.SplitwiseSplashScreen_}" drawable="splitwise" name="Splitwise" />
   <item component="ComponentInfo{com.Splitwise.SplitwiseMobile/com.Splitwise.SplitwiseMobile.views.SplitwiseSplashScreen}" drawable="splitwise" name="Splitwise" />
   <item component="ComponentInfo{com.juniorise.spooky/com.juniorise.spooky.MainActivity}" drawable="spooky" name="Spooky" />
+  <item component="ComponentInfo{com.shabinder.spotiflyer/com.shabinder.spotiflyer.ui.SplashScreenActivity}" drawable="spotiflyer" name="SpotiFlyer" />
   <item component="ComponentInfo{com.spotify.lite/com.spotify.lite.features.launcher.LauncherActivity}" drawable="spotify" name="Spotify" />
   <item component="ComponentInfo{com.spotify.music/com.duapps.ad.DuAd}" drawable="spotify" name="Spotify" />
   <item component="ComponentInfo{com.spotify.music/com.spotify.login.loginflowimpl.LoginActivity}" drawable="spotify" name="Spotify" />
@@ -5452,6 +5456,7 @@
   <item component="ComponentInfo{com.kylecorry.trail_sense/com.kylecorry.trail_sense.main.MainActivity}" drawable="trail_sense" name="Trail Sense" />
   <item component="ComponentInfo{org.paoloconte.treni_lite/org.paoloconte.orariotreni.app.activities.MainActivity}" drawable="train_timetable_italy" name="Train Timetable Italy" />
   <item component="ComponentInfo{tv.trakt.trakt/tv.trakt.trakt.ui.main.MainActivity}" drawable="trakt" name="Trakt" />
+  <item component="ComponentInfo{org.y20k.transistor/org.y20k.transistor.MainActivity}" drawable="transistor_radio" name="Transistor Radio" />
   <item component="ComponentInfo{com.thetransitapp.droid/com.thetransitapp.droid.shared.activity.SplashActivitytorontosubwayyellow}" drawable="transit" name="Transit" />
   <item component="ComponentInfo{com.thetransitapp.droid/com.thetransitapp.droid.shared.activity.SplashActivity}" drawable="transit" name="Transit" />
   <item component="ComponentInfo{ca.transitdb.mobile.android/ca.transitdb.mobile.android.MainActivity}" drawable="transitdb" name="TransitDB" />
@@ -5526,18 +5531,18 @@
   <item component="ComponentInfo{tv.twitch.android.app/tv.twitch.android.apps.TVLandingActivity}" drawable="twitch" name="Twitch" />
   <item component="ComponentInfo{tv.twitch.bttvandroid.app/tv.twitch.android.app.core.LandingActivity}" drawable="twitch" name="Twitch" />
   <item component="ComponentInfo{tv.twitchmod.android.app/tv.twitch.android.app.core.LandingActivity}" drawable="twitch" name="Twitch" />
-  <item component="ComponentInfo{com.twitter.android/com.example.nm.TwitterLauncherMainActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.android.LoginActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.android.MainActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.android.StartActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.android.stub.MainActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.applib.StartActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon5}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.seasonal_icon20}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android/com.yrwl.admanager.bytedance.SplashActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.BrowserActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.LauncherActivity}" drawable="twitter" name="Twitter" />
-  <item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.TwitterLiteActivity}" drawable="twitter" name="Twitter" />
+  <item component="ComponentInfo{com.twitter.android/com.example.nm.TwitterLauncherMainActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.android.LoginActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.android.MainActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.android.StartActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.android.stub.MainActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.applib.StartActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon5}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.seasonal_icon20}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android/com.yrwl.admanager.bytedance.SplashActivity}" drawable="x" name="X" />
+  <item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.BrowserActivity}" drawable="twitter" name="Twitter Lite" />
+  <item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.LauncherActivity}" drawable="twitter" name="Twitter Lite" />
+  <item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.TwitterLiteActivity}" drawable="twitter" name="Twitter Lite" />
   <item component="ComponentInfo{com.weplaydots.twodotsandroid/es.socialpoint.sparta.base.SpartaActivity}" drawable="two_dots" name="Two Dots" />
   <item component="ComponentInfo{com.viseksoftware.txdw/com.viseksoftware.txdw.activities.MainContentActivity}" drawable="txd_tool" name="TXD Tool" />
   <item component="ComponentInfo{com.tmob.AveaOIM/com.avea.oim.SplashActivity}" drawable="ttoim" name="Türk Telekom" />
