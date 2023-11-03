@@ -13,18 +13,15 @@ Lawnicons is best used on [Lawnchair 12.1](https://github.com/LawnchairLauncher/
 This project is mostly supported by our community. If you wish to contribute, check out the Contributing section below.
 
 ## Download
-See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) to download the latest stable build of Lawnicons.
-
-For the development versions with new icons, go to [the nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
+See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) to download the latest stable build. For debug builds with new icons go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
 ## Contributing
+Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code. It will help you avoid mistakes and save time.
 
-Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code.
+Before you make the icons, you can check out the examples [in Figma](https://www.figma.com/community/file/1227718471680779613). In addition, you can see which icons users want in the [popular requests](https://docs.google.com/spreadsheets/d/10_o0DjhAGfP8ToDDNQ8M7eCZKtbzXLhIvxuF1XZEql0/edit#gid=327531090) or [raw requests](https://docs.google.com/spreadsheets/d/1h3eiJnG2nEdR1DbvemaF1lYthHkzYbXvVFPP0TEEt5k/edit?usp=sharing). If you make icons regularly or dozens at once, you can speed up contributing with [icontool.py](/.github/icontool_guide.md).
 
-If you're familiar with the guidelines and want to add an icon you made quickly, you can use [icontool.py](/.github/icontool_guide.md). You might also want to check out the [Figma contributing guide](https://www.figma.com/community/file/1227718471680779613).
+If you are a developer, you may find the [contributing code section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/.github/CONTRIBUTING.md#contributing-code) useful.
 
 ## Requesting icons
+Please use the [icon request form](https://forms.gle/Fx8vZAiWdW1Tyjo57).
 
-To request new icons, please use the [icon request form](https://forms.gle/Fx8vZAiWdW1Tyjo57).
-
-You can also view the [raw requests](https://docs.google.com/spreadsheets/d/1h3eiJnG2nEdR1DbvemaF1lYthHkzYbXvVFPP0TEEt5k/edit?usp=sharing) or a [summary of the requests](https://docs.google.com/spreadsheets/d/10_o0DjhAGfP8ToDDNQ8M7eCZKtbzXLhIvxuF1XZEql0/edit).
