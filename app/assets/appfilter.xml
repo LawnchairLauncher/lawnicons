@@ -1335,7 +1335,8 @@
   <item component="ComponentInfo{com.cv.docscanner/com.cv.docscanner.Splash.SplashActivity}" drawable="doc_scanner" name="Doc Scanner" />
   <item component="ComponentInfo{com.dolap.android/com.dolap.android.splash.ui.SplashActivity}" drawable="dolap" name="Dolap" />
   <item component="ComponentInfo{com.dolby/com.dolby.ds1appUI.MainActivity}" drawable="dolby" name="Dolby" />
-  <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolby_on" name="Dolby On" />
+  <item component="ComponentInfo{com.dolby.daxappui/com.dolby.daxappui.MainActivity}" drawable="dolby_atmos" name="Dolby Atmos" />
+  <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolby" name="Dolby On" />
   <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphin_emulator" name="Dolphin Emulator" />
   <item component="ComponentInfo{org.domestika/org.domestika.splash.presentation.activities.SplashActivity}" drawable="domestika" name="Domestika" />
   <item component="ComponentInfo{by.mc.dominos.com/by.mc.dominos.com.Dominos}" drawable="dominos" name="Domino's Pizza" />
@@ -1798,9 +1799,9 @@
   <item component="ComponentInfo{com.luxdelux.frequencygenerator/com.luxdelux.frequencygenerator.activity.LauncherActivity}" drawable="frequency_generator" name="Frequency Generator" />
   <item component="ComponentInfo{com.techburner.freshwalls/com.oddlyspaced.walls.ui.activity.MainActivity}" drawable="freshwalls" name="FreshWalls" />
   <item component="ComponentInfo{com.jonjomckay.fritter/com.jonjomckay.fritter.MainActivity}" drawable="fritter" name="Fritter" />
+  <item component="ComponentInfo{com.pitchedapps.frost/com.pitchedapps.frost.StartActivity}" drawable="frost" name="Frost" />
   <item component="ComponentInfo{com.halfbrick.fruitninja/com.halfbrick.mortar.MortarGameLauncherActivity}" drawable="fruit_ninja" name="Fruit Ninja" />
   <item component="ComponentInfo{com.halfbrick.fruitninja/com.halfbrick.mortar.MortarGameActivity}" drawable="fruit_ninja" name="Fruit Ninja" />
-  <item component="ComponentInfo{com.pitchedapps.frost/com.pitchedapps.frost.StartActivity}" drawable="frost" name="Frost" />
   <item component="ComponentInfo{com.halfbrick.fruitninjafree/com.google.firebase.MessagingUnityPlayerActivity}" drawable="fruit_ninja" name="Fruit Ninja" />
   <item component="ComponentInfo{com.bocharov.xposed.fscb/com.bocharov.xposed.fscb.settings.Main}" drawable="fscb" name="fscb" />
   <item component="ComponentInfo{com.ft.news/com.ft.news.presentation.main.MainActivity}" drawable="ft" name="FT" />
@@ -2722,6 +2723,7 @@
   <item component="ComponentInfo{lds.cinema21/ldsboks.cinema.MainActivity}" drawable="mtix" name="m.tix" />
   <item component="ComponentInfo{io.materialdesign.catalog/io.materialdesign.catalog.main.MainActivity}" drawable="material_catalog" name="M3 Catalog" />
   <item component="ComponentInfo{app.peretti.m365tools/app.peretti.m365tools.MainActivity}" drawable="m365_tools" name="m365 Tools" />
+  <item component="ComponentInfo{in.gov.uidai.mAadhaarPlus/in.gov.uidai.mAadhaarPlus.MainActivity}" drawable="maadhaar" name="mAadhaar" />
   <item component="ComponentInfo{com.arlosoft.macrodroid/com.arlosoft.macrodroid.intro.IntroActivity}" drawable="macrodroid" name="MacroDroid" />
   <item component="ComponentInfo{com.maybank2u.life/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="mae" name="MAE" />
   <item component="ComponentInfo{com.wizards.mtga/com.wizards.mtga.MissingSplitDetectionActivity}" drawable="magic_arena" name="Magic Arena" />
@@ -3363,6 +3365,7 @@
   <item component="ComponentInfo{com.yygg.note.app/com.yygg.note.app.home.HomeActivity}" drawable="notewise" name="Notewise" />
   <item component="ComponentInfo{com.nothing.camera/com.nothing.camera.activity.CameraActivity}" drawable="nothing_camera" name="Nothing Camera" />
   <item component="ComponentInfo{com.nothing.soundrecorder/com.android.soundrecorder.view.MainActivity}" drawable="nothing_recorder" name="Nothing Recorder" />
+  <item component="ComponentInfo{com.nothing.weather/com.nothing.weather.main.ui.MainActivity}" drawable="nothing_weather" name="Nothing Weather" />
   <item component="ComponentInfo{com.nothing.smartcenter/com.nothing.home.activity.WelcomeActivity}" drawable="nothing_x" name="Nothing X" />
   <item component="ComponentInfo{com.ikvaesolutions.notificationhistorylog/com.ikvaesolutions.notificationhistorylog.views.activity.SplashScreenActivity}" drawable="notification_history_log" name="Notification History Log" />
   <item component="ComponentInfo{rk.android.app.notificationhistory/rk.android.app.notificationhistory.common.SplashScreenActivity}" drawable="notification_manager" name="Notification Manager" />
@@ -4407,6 +4410,7 @@
   <item component="ComponentInfo{ani.saikou.beta/ani.saikou.MainActivity}" drawable="saikou" name="Saikou β" />
   <item component="ComponentInfo{com.salesforce.chatter/com.salesforce.chatter.Chatter}" drawable="salesforce" name="Salesforce" />
   <item component="ComponentInfo{com.rfi.sams.android/com.rfi.sams.android.main.SplashActivity}" drawable="sams_club" name="Sam's Club" />
+  <item component="ComponentInfo{com.samsung.android.scloud/com.samsung.android.scloud.app.ui.bnr.view.WPCActivity}" drawable="samsung_cloud" name="Samsung Cloud" />
   <item component="ComponentInfo{com.samsung.android.app.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="samsung_contacts" name="Samsung Contacts" />
   <item component="ComponentInfo{com.samsung.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="samsung_contacts" name="Samsung Contacts" />
   <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="samsung_email" name="Samsung Email" />
@@ -4435,6 +4439,8 @@
   <item component="ComponentInfo{com.samsung.android.spaymini/com.samsung.android.spay.ui.SpayMainActivity}" drawable="samsung_pay_mini" name="Samsung Pay Mini" />
   <item component="ComponentInfo{com.samsung.android.app.reminder/com.samsung.android.app.reminder.ui.LaunchMainActivity}" drawable="samsung_reminder" name="Samsung Reminder" />
   <item component="ComponentInfo{com.samsung.ecomm/com.samsung.ecomm.MainActivity}" drawable="samsung_shop" name="Samsung Shop" />
+  <item component="ComponentInfo{com.samsung.android.soundassistant/com.sec.android.soundassistant.activities.MainActivity}" drawable="samsung_sound_assistant" name="Samsung Sound Assistant" />
+  <item component="ComponentInfo{com.samsung.android.themedesigner/com.samsung.android.themedesigner.SplashActivity}" drawable="samsung_theme_park" name="Samsung Theme Park" />
   <item component="ComponentInfo{com.samsung.android.tvplus/com.samsung.android.tvplus.MainActivity}" drawable="samsung_tv_plus" name="Samsung TV Plus" />
   <item component="ComponentInfo{com.samsung.android.videolist/com.samsung.android.videolist.list.activity.VideoList}" drawable="samsung_video_library" name="Samsung Video Library" />
   <item component="ComponentInfo{com.samsung.android.app.watchmanager/com.samsung.android.app.watchmanager.setupwizard.SetupWizardWelcomeActivity}" drawable="wear" name="Samsung Wear" />
@@ -4969,6 +4975,7 @@
   <item component="ComponentInfo{com.sony.songpal.mdr/com.scee.psxandroid.activity.TopActivity}" drawable="headphones" name="Sony Headphones Connect" />
   <item component="ComponentInfo{com.sony.songpal.mdr/com.sony.songpal.mdr.vim.activity.MdrMainActivity}" drawable="headphones" name="Sony Headphones Connect" />
   <item component="ComponentInfo{com.sonyliv/com.sonyliv.ui.splash.SplashActivity}" drawable="sony_liv" name="Sony LIV" />
+  <item component="ComponentInfo{com.sonyericsson.music/com.sonyericsson.music.MusicActivity}" drawable="sony_music" name="Sony Music" />
   <item component="ComponentInfo{com.sonymobile.support/com.sonymobile.support.InAppSupportLauncher}" drawable="sony_support" name="Sony Support" />
   <item component="ComponentInfo{com.sony.songpal/com.sony.songpal.app.view.overview.DeviceAndGroupActivity}" drawable="sony_music_center" name="Sony | Music Center" />
   <item component="ComponentInfo{com.mycompany.app.soulbrowser/com.mycompany.app.web.WebViewActivity}" drawable="soul" name="Soul" />
@@ -5012,8 +5019,8 @@
   <item component="ComponentInfo{com.Splitwise.SplitwiseMobile/com.Splitwise.SplitwiseMobile.views.SplitwiseSplashScreen_}" drawable="splitwise" name="Splitwise" />
   <item component="ComponentInfo{com.Splitwise.SplitwiseMobile/com.Splitwise.SplitwiseMobile.views.SplitwiseSplashScreen}" drawable="splitwise" name="Splitwise" />
   <item component="ComponentInfo{com.juniorise.spooky/com.juniorise.spooky.MainActivity}" drawable="spooky" name="Spooky" />
-  <item component="ComponentInfo{com.spotify.musix/com.spotify.musix.MainActivity}" drawable="spotify" name="Spotify" />
   <item component="ComponentInfo{com.shabinder.spotiflyer/com.shabinder.spotiflyer.ui.SplashScreenActivity}" drawable="spotiflyer" name="SpotiFlyer" />
+  <item component="ComponentInfo{com.spotify.musix/com.spotify.musix.MainActivity}" drawable="spotify" name="Spotify" />
   <item component="ComponentInfo{com.spotify.lite/com.spotify.lite.features.launcher.LauncherActivity}" drawable="spotify" name="Spotify" />
   <item component="ComponentInfo{com.spotify.music/com.duapps.ad.DuAd}" drawable="spotify" name="Spotify" />
   <item component="ComponentInfo{com.spotify.music/com.spotify.login.loginflowimpl.LoginActivity}" drawable="spotify" name="Spotify" />
@@ -5092,6 +5099,7 @@
   <item component="ComponentInfo{superfreeze.tool.android/superfreeze.tool.android.userInterface.FreezeShortcutActivity}" drawable="superfreezz_shortcut" name="superfreezz" />
   <item component="ComponentInfo{superfreeze.tool.android/superfreeze.tool.android.userInterface.mainActivity.MainActivity}" drawable="superfreezz" name="superfreezz" />
   <item component="ComponentInfo{com.zhenxiang.superimage/com.zhenxiang.superimage.MainActivity}" drawable="superimage" name="SuperImage" />
+  <item component="ComponentInfo{org.supertuxkart.stk/org.supertuxkart.stk.SuperTuxKartActivity}" drawable="supertuxkart" name="SuperTuxKart" />
   <item component="ComponentInfo{com.surfshark.vpnclient.android/com.surfshark.vpnclient.android.StartActivity}" drawable="surfshark" name="Surfshark" />
   <item component="ComponentInfo{org.ligi.survivalmanual/org.ligi.survivalmanual.ui.MainActivity}" drawable="survival_manual" name="Survival Manual" />
   <item component="ComponentInfo{com.svpteam.svp/com.svpteam.SVPActivity}" drawable="svplayer" name="SVPlayer" />
