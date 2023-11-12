@@ -13,7 +13,7 @@ Lawnicons is best used on [Lawnchair 12.1](https://github.com/LawnchairLauncher/
 This project is mostly supported by our community. If you wish to contribute, check out the Contributing section below.
 
 ## Download
-See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) to download the latest stable build. For debug builds with new icons go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
+See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) for the latest stable build. For development builds with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
 ## Contributing
 Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code. It will help you avoid mistakes and save time.
