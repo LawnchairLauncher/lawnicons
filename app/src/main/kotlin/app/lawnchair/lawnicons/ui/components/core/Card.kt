@@ -9,10 +9,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
+import app.lawnchair.lawnicons.ui.util.LawniconsPreview
 
 @Composable
 fun Card(
@@ -44,7 +44,7 @@ fun Card(
     }
 }
 
-@Preview(showBackground = true)
+@LawniconsPreview
 @Composable
 fun CardPreview() {
     LawniconsTheme {

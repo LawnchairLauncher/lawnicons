@@ -12,6 +12,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @Composable
@@ -45,5 +48,17 @@ fun IconPreviewGrid(
                 iconInfo = iconInfo,
             )
         }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@LawniconsPreview
+@Composable
+fun IconGridPreview() {
+    LawniconsTheme {
+        IconPreviewGrid(
+            SampleData.iconInfoList,
+            true,
+        )
     }
 }

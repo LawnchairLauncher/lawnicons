@@ -9,12 +9,15 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.LawniconsPreview
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,5 +65,43 @@ fun LawniconsScaffold(
                 },
             ),
         ) { content(it) }
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun LawniconsScaffoldPreview() {
+    LawniconsTheme {
+        LawniconsScaffold(
+            title = "Example small bar",
+            onBack = { },
+            isExpandedScreen = false,
+            content = {
+                Box(
+                    modifier = Modifier.padding(it),
+                ) {
+                    Text("Hello World")
+                }
+            },
+        )
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun LawniconsScaffoldExpandedPreview() {
+    LawniconsTheme {
+        LawniconsScaffold(
+            title = "Example small bar",
+            onBack = { },
+            isExpandedScreen = true,
+            content = {
+                Box(
+                    modifier = Modifier.padding(it),
+                ) {
+                    Text("Hello World")
+                }
+            },
+        )
     }
 }
