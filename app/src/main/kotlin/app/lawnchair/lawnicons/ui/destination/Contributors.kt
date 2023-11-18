@@ -126,7 +126,6 @@ fun ContributorListPlaceholder() {
     }
 }
 
-
 @Composable
 fun ContributorListError(
     onBack: () -> Unit,
@@ -145,17 +144,21 @@ fun ContributorListError(
 @LawniconsPreview
 @Composable
 fun ContributorsScreenPreview() {
-    val contributors = listOf(GitHubContributor(
-        id = 1,
-        login = "Example",
-        avatarUrl = "https://google.com",
-        htmlUrl = "https://google.com",
-        contributions = 1
-    ))
+    val contributors = listOf(
+        GitHubContributor(
+            id = 1,
+            login = "Example",
+            avatarUrl = "https://google.com",
+            htmlUrl = "https://google.com",
+            contributions = 1,
+        ),
+    )
 
     LawniconsTheme {
         Contributors(
-            ContributorsUiState.Success(contributors), {}, false
+            ContributorsUiState.Success(contributors),
+            {},
+            false,
         )
     }
 }
@@ -165,7 +168,9 @@ fun ContributorsScreenPreview() {
 fun ContributorsScreenLoadingPreview() {
     LawniconsTheme {
         Contributors(
-            ContributorsUiState.Loading, {}, false
+            ContributorsUiState.Loading,
+            {},
+            false,
         )
     }
 }
@@ -173,13 +178,15 @@ fun ContributorsScreenLoadingPreview() {
 @LawniconsPreview
 @Composable
 fun ContributorListPreview() {
-    val contributors = listOf(GitHubContributor(
-        id = 1,
-        login = "Example",
-        avatarUrl = "https://google.com",
-        htmlUrl = "https://google.com",
-        contributions = 1
-    ))
+    val contributors = listOf(
+        GitHubContributor(
+            id = 1,
+            login = "Example",
+            avatarUrl = "https://google.com",
+            htmlUrl = "https://google.com",
+            contributions = 1,
+        ),
+    )
 
     LawniconsTheme {
         ContributorList(contributors)
