@@ -1,8 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.core
 
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -20,7 +18,7 @@ import app.lawnchair.lawnicons.ui.util.LawniconsPreview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBarWithInsets(
+fun TopAppBar(
     navigationIcon: @Composable () -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
     title: String,
@@ -28,10 +26,6 @@ fun TopBarWithInsets(
 ) {
     if (!isExpandedScreen) {
         LargeTopAppBar(
-            modifier = Modifier
-                .statusBarsPadding()
-                .fillMaxWidth()
-                .padding(horizontal = 4.dp),
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
@@ -40,10 +34,6 @@ fun TopBarWithInsets(
         )
     } else {
         TopAppBar(
-            modifier = Modifier
-                .statusBarsPadding()
-                .fillMaxWidth()
-                .padding(horizontal = 4.dp),
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
@@ -56,9 +46,9 @@ fun TopBarWithInsets(
 @OptIn(ExperimentalMaterial3Api::class)
 @LawniconsPreview
 @Composable
-fun SmallTopBarWithInsetsPreview() {
+fun SmallTopAppBarPreview() {
     LawniconsTheme {
-        TopBarWithInsets(
+        TopAppBar(
             navigationIcon = {
                 ClickableIcon(
                     onClick = {},
@@ -77,9 +67,9 @@ fun SmallTopBarWithInsetsPreview() {
 @OptIn(ExperimentalMaterial3Api::class)
 @LawniconsPreview
 @Composable
-fun LargeTopBarWithInsetsPreview() {
+fun LargeTopAppBarPreview() {
     LawniconsTheme {
-        TopBarWithInsets(
+        TopAppBar(
             navigationIcon = {
                 ClickableIcon(
                     onClick = {},
