@@ -13,7 +13,6 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
@@ -38,10 +37,6 @@ fun TopBarWithInsets(
             title = {
                 Text(title)
             },
-            colors = TopAppBarDefaults.largeTopAppBarColors(
-                containerColor = Color.Transparent,
-                scrolledContainerColor = Color.Transparent,
-            ),
         )
     } else {
         TopAppBar(
@@ -54,10 +49,6 @@ fun TopBarWithInsets(
             title = {
                 Text(title)
             },
-            colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = Color.Transparent,
-                scrolledContainerColor = Color.Transparent,
-            ),
         )
     }
 }
@@ -76,7 +67,7 @@ fun SmallTopBarWithInsetsPreview() {
                     modifier = Modifier.padding(horizontal = 4.dp),
                 )
             },
-            scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
+            scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
             title = "Example",
             isExpandedScreen = true,
         )
