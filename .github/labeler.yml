@@ -1,9 +1,10 @@
-documentation:
-  - "**/*/.md"
+docs:
+  - .github/*.md
+  - .github/ISSUE_TEMPLATE/*.md
 
-icon change:
+icons:
   - svgs/*
   - app/assets/appfilter.xml
 
-needs review:
-  - "**"
+code:
+  - app/**
