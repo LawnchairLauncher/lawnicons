@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Send message if first interaction
-      if: success()
+      if: steps.outcome != 'failure'
       uses: actions/first-interaction@v1.2.0
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
