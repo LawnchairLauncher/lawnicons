@@ -24,6 +24,7 @@ class OssLibraryRepository @Inject constructor(private val application: Applicat
             .bufferedReader().use { it.readText() }
         val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
             .asSequence()
+            .filter { it.name != OssLibrary.UNKNOWN_NAME }
             .distinctBy { "${it.groupId}:${it.artifactId}" }
             .sortedBy { it.name }
             .toList()

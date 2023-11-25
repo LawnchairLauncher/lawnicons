@@ -35,7 +35,7 @@ def sort_components(xml_file):
 
     def get_calendar_components():
         # Always get the original file for safety
-        original_file = open(APPFILTER_PATH, "r").read()
+        original_file = open(APPFILTER_PATH, "r", encoding="utf-8").read()
         calendar_stuff = re.findall(CALENDAR_REGEX, original_file)
         return calendar_stuff
         
@@ -117,10 +117,10 @@ def find_logic(mode):
 
 def sort_logic():
     print("sorting icons...")
-    xml_file = open(APPFILTER_PATH, "r").read()
+    xml_file = open(APPFILTER_PATH, "r", encoding="utf-8").read()
     sorted_data  = sort_components(xml_file)
 
-    with open(APPFILTER_PATH, "w") as f:
+    with open(APPFILTER_PATH, "w", encoding="utf-8") as f:
         f.write(sorted_data)
 
 def parse_component(link_mode, svg, component, name, show_message):
@@ -180,7 +180,7 @@ def parse_component(link_mode, svg, component, name, show_message):
     # xml_file        the actual xml file
     # line           the actual xml element in string form
     # pure_xml_file    the xml file without the calendar declarations
-    xml_file = open(APPFILTER_PATH, "r").read()
+    xml_file = open(APPFILTER_PATH, "r", encoding="utf-8").read()
 
     line = f'  <item component="ComponentInfo{{{component}}}" drawable="{drawable}" name="{name}" />'
     pure_xml_file = re.sub(CALENDAR_REGEX, "", xml_file)
@@ -191,13 +191,13 @@ def parse_component(link_mode, svg, component, name, show_message):
     # Sort
     sorted_xml_data = sort_components(edited_xml_file)
 
-    with open(APPFILTER_PATH, "w") as f:
+    with open(APPFILTER_PATH, "w", encoding="utf-8") as f:
         f.write(sorted_xml_data)
 
     #
     # Print success message
     #
-    with open(APPFILTER_PATH) as file:
+    with open(APPFILTER_PATH, encoding="utf-8") as file:
         lines = file.readlines()
 
     for number, line in enumerate(lines, 1):
@@ -232,10 +232,10 @@ def remove_component(component, do_delete, message):
         if ("/" in component):
             print_error(error_msg)
 
-    with open(APPFILTER_PATH, "r") as file:
+    with open(APPFILTER_PATH, "r", encoding="utf-8") as file:
         lines = file.readlines()
 
-    with open(APPFILTER_PATH, "w") as f:
+    with open(APPFILTER_PATH, "w", encoding="utf-8") as f:
         for linenumber, line in enumerate(lines, 1):
             if component not in line:
                 f.write(line)
