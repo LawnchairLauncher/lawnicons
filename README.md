@@ -16,7 +16,7 @@ This project is mostly supported by our community. If you wish to contribute, ch
 See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) for the latest stable build. For development builds with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
 ## Contributing
-Please see the [contributing guide](docs/CONTRIBUTING.md) for information on adding icons or contributing code. It will help you avoid mistakes and save time.
+Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code. It will help you avoid mistakes and save time.
 
 Before you make the icons, you can check out the examples [in Figma](https://www.figma.com/community/file/1227718471680779613). In addition, you can see which icons users want in the [popular requests](https://docs.google.com/spreadsheets/d/10_o0DjhAGfP8ToDDNQ8M7eCZKtbzXLhIvxuF1XZEql0/edit#gid=327531090) or [raw requests](https://docs.google.com/spreadsheets/d/1h3eiJnG2nEdR1DbvemaF1lYthHkzYbXvVFPP0TEEt5k/edit?usp=sharing). If you make icons regularly or dozens at once, you can speed up contributing with [icontool.py](/docs/icontool_guide.md).
 

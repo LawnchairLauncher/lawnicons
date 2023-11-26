@@ -10,13 +10,13 @@ For additional information on designing icons and samples, see [the Lawnicons Fi
 
 ### Artboard & Grid
 
-![](images/creating-icons-1-artboard.png)
+![](docs/images/creating-icons-1-artboard.png)
 
 Each icon must fit the `160x160px` or `144x144px` (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
 ### Foundation
 
-![](images/creating-icons-2-foundation.png)
+![](docs/images/creating-icons-2-foundation.png)
 
 The stroke should be kept at `12px` in most cases. If `12px` is too thick, a stroke of `8px` can be used.
 For finer detail, a stroke of `6px` can be used. The standard widths are `6px`, `8px`, `10px`, `12px` and `14px`.
@@ -25,13 +25,13 @@ In addition to the above, joins and start/end points must be rounded and the col
 
 ### Details
 
-![](images/creating-icons-3-detail.png)
+![](docs/images/creating-icons-3-detail.png)
 
 When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
 
 A great example of this is the Subway Surfers icon as seen in the example above. In Lawnicons, it was reimagined by using the graffiti-styled "S" from the game's logo instead of depicting the character, which would have required intricate shapes and varying stroke thicknesses.
 
-![](images/creating-icons-3-balance.png)
+![](docs/images/creating-icons-3-balance.png)
 
 In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language.
 
@@ -39,7 +39,7 @@ In the Headspace example above, the circles usually have a face representing moo
 
 ### Maintaining Consistency
 
-![](images/creating-icons-4-outline.png)
+![](docs/images/creating-icons-4-outline.png)
 
 All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline.
 
@@ -47,7 +47,7 @@ The key is to ensure that any filled elements do not overwhelm the overall icon 
 
 ### Maintaining Visual Balance
 
-![](images/creating-icons-5-balance.png)
+![](docs/images/creating-icons-5-balance.png)
 
 Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a `12px` stroke and suddenly decreasing it to `8px` creates an unbalanced visual effect in the final icon.
 
@@ -100,7 +100,7 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
   ```console
   adb shell dumpsys window | find "mCurrentFocus"
   ```
-  ![](images/contributing-image-3.png)
+  ![](docs/images/contributing-image-3.png)
 
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
@@ -110,7 +110,7 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 2. Launch the app and click "REQUEST NEW" or "UPDATE EXISTING".
 3. Get the Activity details for each app.
 
-![](images/contributing-image-4.png)
+![](docs/images/contributing-image-4.png)
 
 #### Icon Pusher app
 1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
