@@ -7,6 +7,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -14,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.BuildConfig
@@ -23,9 +27,11 @@ import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
+import app.lawnchair.lawnicons.ui.util.LawniconsPreview
 import app.lawnchair.lawnicons.util.appIcon
 
 private val externalLinks = listOf(
@@ -83,11 +89,15 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
                             bottom = 32.dp,
                         ),
                 ) {
-                    Image(
-                        bitmap = context.appIcon().asImageBitmap(),
-                        contentDescription = stringResource(id = R.string.app_name),
-                        modifier = Modifier.size(72.dp),
-                    )
+                    if (LocalInspectionMode.current) {
+                        Icon(Icons.Rounded.Star, contentDescription = null, modifier = Modifier.size(72.dp))
+                    } else {
+                        Image(
+                            bitmap = context.appIcon().asImageBitmap(),
+                            contentDescription = stringResource(id = R.string.app_name),
+                            modifier = Modifier.size(72.dp),
+                        )
+                    }
                     Text(
                         text = stringResource(id = R.string.app_name),
                         style = MaterialTheme.typography.titleLarge,
@@ -153,5 +163,29 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
                 }
             }
         }
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun AboutPreview() {
+    LawniconsTheme {
+        About(
+            {},
+            {},
+            false,
+        )
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun AboutPreviewExpanded() {
+    LawniconsTheme {
+        About(
+            {},
+            {},
+            true,
+        )
     }
 }

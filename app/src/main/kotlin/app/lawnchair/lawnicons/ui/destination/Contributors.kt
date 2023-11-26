@@ -25,6 +25,8 @@ import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
 import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.LawniconsPreview
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
@@ -136,5 +138,65 @@ fun ContributorListError(
             Uri.parse(contributorsUrl)
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun ContributorsScreenPreview() {
+    val contributors = listOf(
+        GitHubContributor(
+            id = 1,
+            login = "Example",
+            avatarUrl = "https://google.com",
+            htmlUrl = "https://google.com",
+            contributions = 1,
+        ),
+    )
+
+    LawniconsTheme {
+        Contributors(
+            ContributorsUiState.Success(contributors),
+            {},
+            false,
+        )
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun ContributorsScreenLoadingPreview() {
+    LawniconsTheme {
+        Contributors(
+            ContributorsUiState.Loading,
+            {},
+            false,
+        )
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun ContributorListPreview() {
+    val contributors = listOf(
+        GitHubContributor(
+            id = 1,
+            login = "Example",
+            avatarUrl = "https://google.com",
+            htmlUrl = "https://google.com",
+            contributions = 1,
+        ),
+    )
+
+    LawniconsTheme {
+        ContributorList(contributors)
+    }
+}
+
+@LawniconsPreview
+@Composable
+fun ContributorListPlaceholderPreview() {
+    LawniconsTheme {
+        ContributorListPlaceholder()
     }
 }
