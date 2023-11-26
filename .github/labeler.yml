@@ -1,6 +1,7 @@
 docs:
-  - .github/*.md
-  - .github/ISSUE_TEMPLATE/*.md
+  - "*.md"
+  - .github/PULL_REQUEST_TEMPLATE/*.md
+  - .github/pull_request_template.md
 
 icons:
   - svgs/*
