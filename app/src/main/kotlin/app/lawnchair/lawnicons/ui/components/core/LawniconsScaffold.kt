@@ -36,7 +36,7 @@ fun LawniconsScaffold(
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            TopBarWithInsets(
+            TopAppBar(
                 scrollBehavior = scrollBehavior,
                 title = title,
                 navigationIcon = {

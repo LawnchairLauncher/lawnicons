@@ -9,7 +9,7 @@ plugins {
     id("com.google.devtools.ksp") version "1.9.20-1.0.14" apply false
     id("com.google.dagger.hilt.android") version "2.48.1" apply false
     id("app.cash.licensee") version "1.8.0" apply false
-    id("com.diffplug.spotless") version "6.22.0" apply false
+    id("com.diffplug.spotless") version "6.23.0" apply false
     id("org.gradle.android.cache-fix") version "3.0" apply false
 }
 
@@ -29,12 +29,11 @@ allprojects {
             target("app/assets/appfilter.xml")
         }
         kotlin {
-            ktlint("1.0.1")
+            ktlint()
             target("src/**/*.kt")
         }
         kotlinGradle {
-            ktlint("1.0.1")
-            target("*.kts")
+            ktlint()
         }
     }
 }
