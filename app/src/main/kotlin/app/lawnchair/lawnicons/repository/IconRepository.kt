@@ -14,14 +14,14 @@ import kotlinx.coroutines.withContext
 
 class IconRepository @Inject constructor(application: Application) {
 
-    private var _iconInfo: List<IconInfo>? = null
+    private var iconInfo: List<IconInfo>? = null
     val iconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     val searchedIconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     init {
         coroutineScope.launch {
-            _iconInfo = application.getIconInfo()
+            iconInfo = application.getIconInfo()
                 .associateBy { it.name }.values
                 .sortedBy { it.name.lowercase() }
                 .also {
@@ -38,7 +38,7 @@ class IconRepository @Inject constructor(application: Application) {
     }
 
     suspend fun search(query: String) = withContext(Dispatchers.Default) {
-        searchedIconInfoModel.value = _iconInfo?.let {
+        searchedIconInfoModel.value = iconInfo?.let {
             val filtered = it.mapNotNull { candidate ->
                 val indexOfMatch =
                     candidate.name.indexOf(string = query, ignoreCase = true).also { index ->
