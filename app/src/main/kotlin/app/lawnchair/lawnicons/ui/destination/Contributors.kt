@@ -31,7 +31,7 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
 
-const val contributorsUrl = "https://github.com/LawnchairLauncher/lawnicons/graphs/contributors"
+const val CONTRIBUTOR_URL = "https://github.com/LawnchairLauncher/lawnicons/graphs/contributors"
 
 @Composable
 fun Contributors(
@@ -87,7 +87,7 @@ fun ContributorList(contributors: List<GitHubContributor>) {
                 first = true,
                 last = true,
                 divider = false,
-                url = contributorsUrl,
+                url = CONTRIBUTOR_URL,
             )
         }
         item {
@@ -135,7 +135,7 @@ fun ContributorListError(
         onBack()
         // we might be rate-limited, open the web ui instead
         val website =
-            Uri.parse(contributorsUrl)
+            Uri.parse(CONTRIBUTOR_URL)
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
     }
