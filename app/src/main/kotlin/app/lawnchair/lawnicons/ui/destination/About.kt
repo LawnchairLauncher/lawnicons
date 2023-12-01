@@ -50,7 +50,7 @@ private val coreContributors = listOf(
         name = "paphonb",
         username = "paphonb",
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
-        socialUrl = "https://twitter.com/paphonb",
+        socialUrl = "https://x.com/paphonb",
     ),
 )
 
@@ -58,7 +58,7 @@ private val specialThanks = listOf(
     Contributor(
         name = "Eatos",
         photoUrl = "https://avatars.githubusercontent.com/u/52837599",
-        socialUrl = "https://twitter.com/eatosapps",
+        socialUrl = "https://x.com/eatosapps",
         descriptionRes = R.string.special_thanks_icon,
     ),
     Contributor(
