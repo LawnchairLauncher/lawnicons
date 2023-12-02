@@ -280,6 +280,7 @@
   <item component="ComponentInfo{dev.firebase.appdistribution/dev.firebase.appdistribution.main.MainActivity}" drawable="app_tester" name="App Tester" />
   <item component="ComponentInfo{com.mi.android.globalminusscreen/com.mi.android.globalminusscreen.tab.MainActivity}" drawable="app_vault" name="App vault" />
   <item component="ComponentInfo{com.bulk.uninstall/com.bulk.uninstall.main.LauncherActivity}" drawable="appdrop" name="AppDrop" />
+  <item component="ComponentInfo{com.appkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="appkb_twint" name="APPKB TWINT" />
   <item component="ComponentInfo{com.apple.android.music/com.apple.android.music.onboarding.activities.SplashActivity}" drawable="apple_music" name="Apple Music" />
   <item component="ComponentInfo{com.apple.android.music/.onboarding.activities.SplashActivity}" drawable="apple_music" name="Apple Music" />
   <item component="ComponentInfo{com.ubqsoft.sec01/com.ubqsoft.sec01.ItemListActivity}" drawable="application_inspector" name="Application Inspector" />
@@ -436,7 +437,13 @@
   <item component="ComponentInfo{com.bca/com.bca.mobile.MainActivity}" drawable="bca_mobile" name="BCA Mobile" />
   <item component="ComponentInfo{com.bca/com.bca.splash.Splash2}" drawable="bca_mobile" name="BCA Mobile" />
   <item component="ComponentInfo{com.bca/com.bca.splash.Splash}" drawable="bca_mobile" name="BCA Mobile" />
+  <item component="ComponentInfo{ch.bcf.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="bcf_twint" name="BCF TWINT" />
+  <item component="ComponentInfo{com.bcge.android.twt/ch.twint.payment.ui.activities.start.StartActivity}" drawable="bcge_twint" name="BCGE Twint" />
+  <item component="ComponentInfo{ch.bcj.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="bcj_twint" name="BCJ TWINT" />
+  <item component="ComponentInfo{ch.bcn.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="bcn_twint" name="BCN TWINT" />
   <item component="ComponentInfo{ch.bcv.mobile.android/ch.bcv.mobile.android.activity.SplashActivity}" drawable="bcv_mobile" name="BCV Mobile" />
+  <item component="ComponentInfo{ch.bcv.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="bcv_twint" name="BCV TWINT" />
+  <item component="ComponentInfo{ch.bcvs.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="bcvs_twint" name="BCVS TWINT" />
   <item component="ComponentInfo{com.bankislam.beu/com.bankislam.beu.screen.splash.SplashActivity}" drawable="be_u" name="Be U" />
   <item component="ComponentInfo{air.thix.sciencesense.beaker/air.thix.sciencesense.beaker.AppEntry}" drawable="beaker" name="BEAKER" />
   <item component="ComponentInfo{com.apple.bnd/com.apple.vienna.v3.presentation.welcome.WelcomeActivity}" drawable="beats" name="Beats" />
@@ -1230,6 +1237,7 @@
   <item component="ComponentInfo{com.dreamplug.androidapp/com.dreamplug.androidapp.SplashActivity}" drawable="cred" name="Cred" />
   <item component="ComponentInfo{it.caitalia.apphub/com.creditagricole.MainActivity}" drawable="credit_agricole_italia" name="Credit Agricole Italia" />
   <item component="ComponentInfo{com.creditkarma.mobile/com.creditkarma.mobile.welcome.ui.WelcomeActivity}" drawable="credit_karma" name="Credit Karma" />
+  <item component="ComponentInfo{com.csg.creditsuisse.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="credit_suisse_twint" name="Credit Suisse TWINT" />
   <item component="ComponentInfo{com.cricbuzz.android/com.cricbuzz.android.lithium.app.view.activity.NyitoActivity}" drawable="cricbuzz" name="Cricbuzz" />
   <item component="ComponentInfo{org.cromite.cromite/com.google.android.apps.chrome.Main}" drawable="cromite" name="Cromite" />
   <item component="ComponentInfo{com.cronto.crontosign.swiss/com.onespan.jemmic.crontosignswiss.feature.splash.SplashNotificationActivity}" drawable="crontosign_swiss" name="CrontoSign Swiss" />
@@ -2000,6 +2008,7 @@
   <item component="ComponentInfo{com.github.android/com.github.android.activities.MainActivity}" drawable="github" name="GitHub" />
   <item component="ComponentInfo{org.mian.gitnex/org.mian.gitnex.activities.MainActivity}" drawable="gitnex" name="GitNex" />
   <item component="ComponentInfo{com.netcetera.android.mbanking.gkb/com.netcetera.android.mbanking.base.controller.SplashScreenActivity}" drawable="gkb_bank" name="GKB Bank" />
+  <item component="ComponentInfo{com.gkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="gkb_twint" name="GKB TWINT" />
   <item component="ComponentInfo{li.songe.gkd/li.songe.gkd.MainActivity}" drawable="gkd" name="GKD" />
   <item component="ComponentInfo{nl.viter.glider/nl.viter.glider.MainActivity}" drawable="glider" name="Glider" />
   <item component="ComponentInfo{com.global.player/com.thisisglobal.guacamole.main.views.SplashActivity}" drawable="global_player" name="Global Player" />
@@ -3164,6 +3173,7 @@
   <item component="ComponentInfo{com.bethsoft.ubu/com.google.firebase.MessagingUnityPlayerActivity}" drawable="mighty_doom" name="Mighty Doom" />
   <item component="ComponentInfo{ch.migros.app/ch.migros.app.misc.MasterActivity}" drawable="migros_shop" name="Migros" />
   <item component="ComponentInfo{com.inomera.sm/com.inomera.sm.ui.deeplink.DeepLinkActivity}" drawable="migros" name="Migros" />
+  <item component="ComponentInfo{ch.migrosbank.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="migros_bank_twint" name="Migros Bank TWINT" />
   <item component="ComponentInfo{com.migrosmagazam/com.migrosmagazam.ui.SplashActivity}" drawable="migros_money" name="Migros Money" />
   <item component="ComponentInfo{com.hogeschoolrotterdam.student/com.hogeschoolrotterdam.student.MainActivity}" drawable="mijn_hr" name="Mijn HR" />
   <item component="ComponentInfo{nl.tele2.mytele2/nl.oberon.tmobile.my.activity.LoginActivity}" drawable="tele2" name="Mijn Tele2" />
@@ -3594,6 +3604,7 @@
   <item component="ComponentInfo{com.mobisystems.office/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="office_suite" name="OfficeSuite" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.activities.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
   <item component="ComponentInfo{ru.ok.android/ru.ok.android.ui.activity.main.OdklActivity}" drawable="ok" name="OK" />
+  <item component="ComponentInfo{com.owkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="okb_twint" name="OKB TWINT" />
   <item component="ComponentInfo{com.okta.android.auth/com.okta.android.auth.activity.SplashActivity}" drawable="okta_verify" name="Okta Verify" />
   <item component="ComponentInfo{com.okinc.okex.gp/com.okinc.okex.welcome.WelcomeActivity}" drawable="okx" name="OKX" />
   <item component="ComponentInfo{com.olacabs.customer/com.olacabs.customer.ui.SplashActivity}" drawable="ola_cabs" name="Ola Cabs" />
@@ -4227,6 +4238,7 @@
   <item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.ui.MainActivity}" drawable="dhl" name="Post &amp; DHL" />
   <item component="ComponentInfo{posteitaliane.posteapp.appposteid/posteitaliane.posteapp.appposteid.home.HomeAc}" drawable="posteid" name="PosteID" />
   <item component="ComponentInfo{posteitaliane.posteapp.apppostepay/posteitaliane.posteapp.apppostepay.ui.activity.SplashActivity}" drawable="postepay" name="Postepay" />
+  <item component="ComponentInfo{ch.postfinance.twint.android/ch.twint.payment.ui.activities.start.StartActivity}" drawable="postfinance_twint" name="PostFinance TWINT" />
   <item component="ComponentInfo{se.postnord.private/com.postnord.MaCMainActivity}" drawable="postnord" name="PostNord" />
   <item component="ComponentInfo{me.pou.app/me.pou.app.App}" drawable="pou" name="Pou" />
   <item component="ComponentInfo{com.microsoft.powerbim/com.microsoft.powerbi.ui.home.HomeActivity}" drawable="power_bi" name="Power BI" />
@@ -4785,6 +4797,7 @@
   <item component="ComponentInfo{com.android.settings/.Settings}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{se.perigee.android.seven/com.perigee.seven.ui.activity.SplashActivity}" drawable="seven" name="Seven" />
   <item component="ComponentInfo{ru.sibgenco.general/ru.sibgenco.general.ui.activity.LauncherActivity}" drawable="sgk" name="SGK" />
+  <item component="ComponentInfo{ch.sgkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="sgkb_twint" name="SGKB TWINT" />
   <item component="ComponentInfo{com.hengye.share/com.hengye.share.Launcher}" drawable="share" name="Share" />
   <item component="ComponentInfo{com.car2go/activity.MainActivity}" drawable="share_now" name="SHARE NOW" />
   <item component="ComponentInfo{in.mohalla.sharechat/in.mohalla.sharechat.EvaActivityDefault}" drawable="sharechat" name="ShareChat" />
@@ -5733,6 +5746,7 @@
   <item component="ComponentInfo{com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity}" drawable="titanium_backup" name="Titanium Backup" />
   <item component="ComponentInfo{id.tix.android/id.tix.android.splash.view.SplashActivity}" drawable="tix_id" name="TIX ID" />
   <item component="ComponentInfo{de.tk.tkapp/de.tk.tkapp.start.StartActivity}" drawable="tk" name="TK" />
+  <item component="ComponentInfo{ch.tkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="tkb_twint" name="TKB TWINT" />
   <item component="ComponentInfo{com.tmri.app.main/com.tmri.app.ui.activity.main.TmriNewActivity}" drawable="a12123" name="tmri12123" />
   <item component="ComponentInfo{my.com.tngdigital.ewallet/my.com.tngdigital.ewallet.ui.SplashActivity}" drawable="touch_and_go_ewallet" name="TNG eWallet" />
   <item component="ComponentInfo{rocks.poopjournal.todont/rocks.poopjournal.todont.MainActivity}" drawable="to_dont" name="To Donʼt" />
@@ -5882,6 +5896,7 @@
   <item component="ComponentInfo{com.uber.restaurants/com.uber.restaurants.MainActivity}" drawable="uber_eats_orders" name="Uber Eats Orders" />
   <item component="ComponentInfo{com.ubiqc.android/com.ubiqc.android.main.SplashActivity}" drawable="ubiqc" name="Ubiqc" />
   <item component="ComponentInfo{com.ubisoft.uplay/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="ubisoft_connect" name="Ubisoft Connect" />
+  <item component="ComponentInfo{com.ubs.Paymit.android/ch.twint.payment.ui.activities.start.StartActivity}" drawable="ubs_twint" name="UBS TWINT" />
   <item component="ComponentInfo{com.ubuy/com.app.mazade.ubuy.SplashActivity}" drawable="ubuy" name="Ubuy" />
   <item component="ComponentInfo{com.udemy.android/com.udemy.android.SplashActivity}" drawable="udemy" name="Udemy - Online Courses" />
   <item component="ComponentInfo{com.gorgeous.liteinternational/com.light.beauty.login.LoadingPageActivity}" drawable="ulike" name="Ulike" />
@@ -5942,6 +5957,7 @@
   <item component="ComponentInfo{com.vakifkatilim.mobil/boa.android.mobilebranch.v2.ui.splash.ACSplash}" drawable="vakif_katilim" name="Vakıf Katılım" />
   <item component="ComponentInfo{com.vakifbank.mobile/com.vakifbank.mobile.ui.SplashActivity}" drawable="vakifbank" name="VakıfBank" />
   <item component="ComponentInfo{cloud.valetudo.companion/cloud.valetudo.companion.MainActivity}" drawable="valetudo" name="Valetudo Companion" />
+  <item component="ComponentInfo{ch.vab.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="valiant_twint" name="Valiant TWINT" />
   <item component="ComponentInfo{com.poncle.vampiresurvivors/com.unity3d.player.UnityPlayerActivity}" drawable="vampire_survivors" name="Vampire Survivors" />
   <item component="ComponentInfo{app.vanadium.browser/com.google.android.apps.chrome.Main}" drawable="google_chrome" name="Vanadium" />
   <item component="ComponentInfo{com.vanced.manager/com.vanced.manager.ui.core.SplashScreenActivity}" drawable="vanced_manager" name="Vanced Manager" />
@@ -6463,6 +6479,7 @@
   <item component="ComponentInfo{com.zipmex/com.zipmex.features.splash.LauncherEntryActivity}" drawable="zipmex" name="Zipmex" />
   <item component="ComponentInfo{com.ziraat.ziraatmobil/com.ziraat.ziraatmobile.SplashActivity}" drawable="ziraat_mobile" name="Ziraat Mobile" />
   <item component="ComponentInfo{ch.zkb.slv.mobile.client.android/ch.zkb.slv.mobile.client.android.launcher_55ce0d2ce5fb5c81f12f022c4cd39701a7a8e5e3dd89b74f4867063316371cba}" drawable="zkb_banking" name="ZKB Banking" />
+  <item component="ComponentInfo{ch.zkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="zkb_twint" name="ZKB Twint" />
   <item component="ComponentInfo{com.positron_it.zlib/com.positron_it.zlib.ui.main.MainActivity}" drawable="zlib" name="Zlib" />
   <item component="ComponentInfo{com.zoho.crm/com.zoho.crm.ZohoCRMActivity}" drawable="zoho_crm" name="Zoho CRM" />
   <item component="ComponentInfo{com.zoho.mail/com.zoho.mail.android.activities.Login}" drawable="zoho_mail" name="Zoho Mail" />
@@ -6471,6 +6488,7 @@
   <item component="ComponentInfo{com.application.zomato/com.application.zomato.activities.Splash}" drawable="zomato" name="Zomato" />
   <item component="ComponentInfo{com.application.zomato/com.application.zomato.Splash}" drawable="zomato" name="Zomato" />
   <item component="ComponentInfo{us.zoom.videomeetings/com.zipow.videobox.LauncherActivity}" drawable="zoom" name="Zoom" />
+  <item component="ComponentInfo{com.zgkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="zugerkb_twint" name="ZugerKB TWINT" />
   <item component="ComponentInfo{com.zulipmobile/com.zulipmobile.MainActivity}" drawable="zulip" name="Zulip" />
   <item component="ComponentInfo{org.daimhim.zzzfun/org.daimhim.zzzfun.ui.SplashActivity}" drawable="zzzfun" name="zzzfun" />
 </resources>
