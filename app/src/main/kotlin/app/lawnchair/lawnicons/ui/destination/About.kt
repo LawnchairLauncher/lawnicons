@@ -114,7 +114,7 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
                 }
             }
             item {
-                Card(label = "External Links") {
+                Card(label = stringResource(id = R.string.external_links)) {
                     externalLinks.mapIndexed { index, it ->
                         ExternalLinkRow(
                             name = it.name,
