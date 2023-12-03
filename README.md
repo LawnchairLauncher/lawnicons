@@ -23,5 +23,5 @@ Before you make the icons, you can check out the examples [in Figma](https://www
 If you are a developer, you may find the [contributing code section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-code) useful.
 
 ## Requesting icons
-Please use the [icon request form](https://forms.gle/Fx8vZAiWdW1Tyjo57).
+Please use the [icon request form](https://forms.gle/xt7sJhgWEasuo9TR9).
 
