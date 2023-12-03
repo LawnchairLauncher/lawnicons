@@ -41,7 +41,7 @@ private val externalLinks = listOf(
     ),
     ExternalLink(
         name = "Icon Request Form",
-        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57",
+        url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),
 )
 
