@@ -1,4 +1,7 @@
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
+import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
+import com.android.build.gradle.internal.lint.LintModelWriterTask
+import com.android.build.gradle.tasks.MergeSourceSetFolders
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -104,11 +107,12 @@ android {
             from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
             into(layout.buildDirectory.dir("generated/dependencyAssets/"))
         }
-        tasks.named("merge${capitalizedName}Assets").configure {
-            dependsOn(copyArtifactList)
-        }
-        if (buildType.name == "release") {
-            tasks.named("lintVitalAnalyze$capitalizedName").configure {
+        listOf(
+            AndroidLintAnalysisTask::class,
+            LintModelWriterTask::class,
+            MergeSourceSetFolders::class,
+        ).forEach {
+            tasks.withType(it).configureEach {
                 dependsOn(copyArtifactList)
             }
         }
