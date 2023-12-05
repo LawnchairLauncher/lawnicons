@@ -27,6 +27,6 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          title: "Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s)"
+          title: "Optimize SVG(s)"
           branch: "svg-optimization"
           base: "develop"
