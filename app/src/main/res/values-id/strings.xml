@@ -1,0 +1,56 @@
+<resources>
+    <!-- General -->
+
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">Versi %s</string>
+
+    <!-- Search bar -->
+
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Telusuri melalui %d Ikon</string>
+
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">Tidak menemukan ikon.</string>
+
+    <!-- Popup menu in search bar -->
+    <!-- Popup menu item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Ucapan terima kasih</string>
+    <!-- Popup menu item that links to the About page -->
+    <string name="about">Tentang</string>
+    <!-- External Links label -->
+    <string name="external_links">Tautan Eksternal</string>
+
+    <!-- External Links labels -->
+    <!-- Icon Request form link -->
+    <string name="request_form">Permintaan Ikon Dari</string>
+
+    <!-- About page -->
+
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Kontributor</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Kontributor Inti</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Liat Semua Kontributor</string>
+
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Lihat di Github</string>
+
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Terima kasih Khusus</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Untuk inspirasi ikon aplikasi.</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">Untuk memberi nama aplikasi.</string>
+
+    <!-- Icon Information Popup window -->
+
+    <!-- Drawable prefix -->
+    <string name="drawable_prefix">Drawable:</string>
+    <!-- Package prefix -->
+    <string name="package_prefix">Paket nama:</string>
+
+</resources>
