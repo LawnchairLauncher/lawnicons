@@ -107,16 +107,21 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 ### Using 3rd-party apps
 #### IconRequest app
 1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
-2. Launch the app and click "REQUEST NEW" or "UPDATE EXISTING".
-3. Get the Activity details for each app.
+2. Launch the app and click one of the options:
+- UPDATE EXISTING — to copy packages with activities.
+- REQUEST NEW — to save icon images and packages with activities.
+3. Select the apps for which youʼd like to request or make icons.
+4. Copy, save or share.
+  
+https://github.com/x9136/lawnicons/assets/60105060/f27bf8cf-f9e0-4fb2-970e-8344fe2cee3e
 
-![](docs/images/contributing-image-4.png)
+
 
 #### Icon Pusher app
 1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
 2. Launch the app.
 3. Select the icon(s) you want to upload or select all by pressing the square in the top right. Then press "Send".
-4. View the Activity details for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
+4. View the packages with the activities for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
 
 ## Contributing code
 While adding icons is the main focus for most contributors, code-related contributions are welcome.
