@@ -2,9 +2,9 @@
     <!-- General -->
 
     <!-- Application name -->
-    <string name="app_name">Lawnicons</string>
+    <string name="app_name" translatable="false">Lawnicons</string>
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Versi %s</string>
+    <string name="version_x">Version %s</string>
 
     <!-- Search bar -->
 
@@ -25,9 +25,9 @@
 
     <!-- External Links labels -->
     <!-- GitHub repository link-->
-    <string name="github">GitHub</string>
+    <string name="github" translatable="false">GitHub</string>
     <!-- Icon Request form link -->
-    <string name="request_form">Permintaan Ikon Dari</string>
+    <string name="request_form">Icon Request Form</string>
 
     <!-- About page -->
 
@@ -55,9 +55,9 @@
     <!-- Drawable prefix -->
     <string name="drawable_prefix">Drawable:</string>
     <!-- Package prefix -->
-    <string name="package_prefix">Paket nama:</string>
+    <string name="package_prefix">Package:</string>
     <!-- OK button -->
-    <string name="ok_button">OK</string>
+    <string name="ok_button" translatable="false">OK</string>
 
 
 </resources>
