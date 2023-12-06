@@ -36,11 +36,11 @@ import app.lawnchair.lawnicons.util.appIcon
 
 private val externalLinks = listOf(
     ExternalLink(
-        name = "GitHub",
+        name = R.string.github,
         url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
-        name = "Icon Request Form",
+        name = R.string.request_form,
         url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),
 )
@@ -117,7 +117,7 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
                 Card(label = stringResource(id = R.string.external_links)) {
                     externalLinks.mapIndexed { index, it ->
                         ExternalLinkRow(
-                            name = it.name,
+                            name = stringResource(id = it.name),
                             url = it.url,
                             divider = index != externalLinks.lastIndex,
                         )
