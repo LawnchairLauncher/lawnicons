@@ -1,7 +1,5 @@
+import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
-import com.android.build.gradle.internal.lint.LintModelWriterTask
-import com.android.build.gradle.tasks.MergeSourceSetFolders
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -75,7 +73,6 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
 
@@ -100,23 +97,15 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        val capitalizedName = name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val copyArtifactList = tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-            dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
-            from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
-            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
-        }
-        listOf(
-            AndroidLintAnalysisTask::class,
-            LintModelWriterTask::class,
-            MergeSourceSetFolders::class,
-        ).forEach {
-            tasks.withType(it).configureEach {
-                dependsOn(copyArtifactList)
-            }
-        }
+    androidComponents.onVariants { variant ->
+        val capitalizedName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+        variant.sources.assets?.addGeneratedSourceDirectory(
+            tasks.named<LicenseeTask>("licenseeAndroid$capitalizedName"),
+            LicenseeTask::outputDir
+        )
+    }
 
+    applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
