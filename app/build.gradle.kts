@@ -1,4 +1,7 @@
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
+import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
+import com.android.build.gradle.internal.lint.LintModelWriterTask
+import com.android.build.gradle.tasks.MergeSourceSetFolders
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -23,7 +26,7 @@ val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEm
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.4.0"
+val version = "2.5.0"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -34,7 +37,7 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = 34
-        versionCode = 7
+        versionCode = 8
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
@@ -83,7 +86,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4"
+        kotlinCompilerExtensionVersion = "1.5.6"
     }
 
     packaging {
@@ -104,11 +107,12 @@ android {
             from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
             into(layout.buildDirectory.dir("generated/dependencyAssets/"))
         }
-        tasks.named("merge${capitalizedName}Assets").configure {
-            dependsOn(copyArtifactList)
-        }
-        if (buildType.name == "release") {
-            tasks.named("lintVitalAnalyze$capitalizedName").configure {
+        listOf(
+            AndroidLintAnalysisTask::class,
+            LintModelWriterTask::class,
+            MergeSourceSetFolders::class,
+        ).forEach {
+            tasks.withType(it).configureEach {
                 dependsOn(copyArtifactList)
             }
         }
@@ -152,5 +156,5 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.5.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
 }

@@ -1,0 +1,17 @@
+docs:
+  - "*.md"
+  - .github/PULL_REQUEST_TEMPLATE/*.md
+  - .github/pull_request_template.md
+  - docs/**
+
+icons:
+  - svgs/*
+  - app/assets/appfilter.xml
+
+code:
+  - any: ['app/**/*']
+    all: ['!app/assets/appfilter.xml', '!app/src/main/res/*/strings.xml']
+
+locale:
+  - app/src/main/res/*/strings.xml
+  
