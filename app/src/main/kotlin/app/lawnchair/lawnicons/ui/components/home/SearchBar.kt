@@ -51,9 +51,11 @@ import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Destinations
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.toPersistentList
 
 @Composable
 fun LawniconsSearchBar(
@@ -84,7 +86,7 @@ fun LawniconsSearchBar(
     onClearAndBackClick: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconCount: Int,
-    iconInfo: List<IconInfo>,
+    iconInfo: ImmutableList<IconInfo>,
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean = false,
 ) {
@@ -251,7 +253,7 @@ private fun SearchMenu(
 
 @Composable
 private fun SearchContents(
-    iconInfo: List<IconInfo>,
+    iconInfo: ImmutableList<IconInfo>,
 ) {
     when (iconInfo.size) {
         1 -> {
@@ -288,8 +290,9 @@ private fun SearchContents(
                 if (isIconInfoShown.value) {
                     IconInfoPopup(
                         iconInfo = it,
-                        isPopupShown = isIconInfoShown,
-                    )
+                    ) {
+                        isIconInfoShown.value = it
+                    }
                 }
             }
         }
@@ -322,9 +325,9 @@ private fun SearchContents(
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun SearchBarPreview() {
+private fun SearchBarPreview() {
     var searchTerm by remember { mutableStateOf(value = "") }
     val iconInfo = SampleData.iconInfoList
 
@@ -344,9 +347,9 @@ fun SearchBarPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun SearchIconPreview() {
+private fun SearchIconPreview() {
     LawniconsTheme {
         Column {
             SearchIcon(active = true) {}
@@ -355,9 +358,9 @@ fun SearchIconPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun SearchMenuPreview() {
+private fun SearchMenuPreview() {
     LawniconsTheme {
         Column {
             SearchMenu(isQueryEmpty = false, {}, {})
