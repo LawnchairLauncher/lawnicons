@@ -6,6 +6,7 @@ import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchInfo
 import app.lawnchair.lawnicons.util.getIconInfo
 import javax.inject.Inject
+import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,11 +27,11 @@ class IconRepository @Inject constructor(application: Application) {
                 .sortedBy { it.name.lowercase() }
                 .also {
                     iconInfoModel.value = IconInfoModel(
-                        iconInfo = it,
+                        iconInfo = it.toPersistentList(),
                         iconCount = it.size,
                     )
                     searchedIconInfoModel.value = IconInfoModel(
-                        iconInfo = it,
+                        iconInfo = it.toPersistentList(),
                         iconCount = it.size,
                     )
                 }
@@ -57,7 +58,7 @@ class IconRepository @Inject constructor(application: Application) {
                 ),
             ).map { searchInfo ->
                 searchInfo.iconInfo
-            }
+            }.toPersistentList()
             IconInfoModel(
                 iconCount = it.size,
                 iconInfo = filtered,

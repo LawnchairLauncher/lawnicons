@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun SimpleListRow(
@@ -52,9 +52,9 @@ fun SimpleListRow(
     )
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun SimpleListRowPreview() {
+private fun SimpleListRowPreview() {
     LawniconsTheme {
         SimpleListRow(
             label = "Example",

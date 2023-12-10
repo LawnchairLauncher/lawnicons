@@ -14,16 +14,16 @@ import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Home(
-    lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean,
+    lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
     val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsState()
@@ -61,9 +61,9 @@ fun Home(
 }
 
 @OptIn(ExperimentalFoundationApi::class)
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun HomePreview() {
+private fun HomePreview() {
     var searchTerm by remember { mutableStateOf(value = "") }
     val iconInfo = SampleData.iconInfoList
 

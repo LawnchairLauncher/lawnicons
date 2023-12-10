@@ -22,10 +22,10 @@ import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel
 
 @Composable
 fun Acknowledgements(
-    acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
     onBack: () -> Unit,
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean,
+    acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
 
