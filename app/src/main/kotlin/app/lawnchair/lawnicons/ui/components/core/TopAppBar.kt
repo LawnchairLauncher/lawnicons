@@ -14,7 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -44,9 +44,9 @@ fun TopAppBar(
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun SmallTopAppBarPreview() {
+private fun SmallTopAppBarPreview() {
     LawniconsTheme {
         TopAppBar(
             navigationIcon = {
@@ -65,9 +65,9 @@ fun SmallTopAppBarPreview() {
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun LargeTopAppBarPreview() {
+private fun LargeTopAppBarPreview() {
     LawniconsTheme {
         TopAppBar(
             navigationIcon = {

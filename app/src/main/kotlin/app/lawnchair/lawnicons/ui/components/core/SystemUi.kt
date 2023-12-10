@@ -24,7 +24,7 @@ fun SystemUi() {
     showSystemUi = true,
 )
 @Composable
-fun SystemUIPreview() {
+private fun SystemUIPreview() {
     LawniconsTheme {
         SystemUi()
     }

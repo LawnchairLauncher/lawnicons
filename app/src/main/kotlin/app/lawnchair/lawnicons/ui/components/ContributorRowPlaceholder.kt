@@ -16,7 +16,7 @@ import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
 import app.lawnchair.lawnicons.ui.components.core.placeholder.material.placeholder
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
@@ -63,9 +63,9 @@ fun ContributorRowPlaceholder(
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ContributorRowPlaceholderPreview() {
+private fun ContributorRowPlaceholderPreview() {
     LawniconsTheme {
         ContributorRowPlaceholder()
     }

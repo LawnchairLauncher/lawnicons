@@ -27,7 +27,16 @@ allprojects {
         }
         kotlin {
             target("src/**/*.kt")
-            ktlint()
+            ktlint().customRuleSets(
+                listOf(
+                    "io.nlopez.compose.rules:ktlint:0.3.5",
+                ),
+            ).editorConfigOverride(
+                mapOf(
+                    "ktlint_compose_modifier-missing-check" to "disabled",
+                    "ktlint_compose_compositionlocal-allowlist" to "disabled",
+                ),
+            )
         }
         kotlinGradle {
             ktlint()

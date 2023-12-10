@@ -15,7 +15,7 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
@@ -70,9 +70,9 @@ fun ContributorRow(
     )
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ContributorRowPreview() {
+private fun ContributorRowPreview() {
     LawniconsTheme {
         ContributorRow(
             name = "User",

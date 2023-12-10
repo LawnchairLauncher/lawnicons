@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun Card(
@@ -26,7 +26,7 @@ fun Card(
                 text = label,
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = modifier.padding(start = 32.dp, bottom = 12.dp),
+                modifier = Modifier.padding(start = 32.dp, bottom = 12.dp),
             )
         }
         Surface(
@@ -44,9 +44,9 @@ fun Card(
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun CardPreview() {
+private fun CardPreview() {
     LawniconsTheme {
         Card(
             label = "Example",
