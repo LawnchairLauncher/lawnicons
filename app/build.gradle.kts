@@ -98,9 +98,9 @@ android {
     }
 
     androidComponents.onVariants { variant ->
-        val capitalizedName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capitalizedName")
-        val copyArtifactsTask = tasks.register<Copy>("copy${capitalizedName}Artifacts") {
+        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
             dependsOn(licenseeTask)
             from(licenseeTask.map { it.outputDir.file("artifacts.json") })
             into(layout.buildDirectory.dir("generated/dependencyAssets/"))
