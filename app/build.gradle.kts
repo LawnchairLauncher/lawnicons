@@ -105,9 +105,7 @@ android {
             from(licenseeTask.map { it.outputDir.file("artifacts.json") })
             into(layout.buildDirectory.dir("generated/dependencyAssets/"))
         }
-        variant.sources.assets?.addGeneratedSourceDirectory(
-            licenseeTask,
-        ) {
+        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
             objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
         }
     }
