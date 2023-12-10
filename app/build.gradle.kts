@@ -1,3 +1,4 @@
+import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.io.FileInputStream
 import java.util.Locale
@@ -23,7 +24,7 @@ val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEm
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.4.0"
+val version = "2.5.0"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -34,7 +35,7 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = 34
-        versionCode = 7
+        versionCode = 8
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
@@ -72,7 +73,6 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
 
@@ -83,7 +83,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4"
+        kotlinCompilerExtensionVersion = "1.5.6"
     }
 
     packaging {
@@ -97,22 +97,20 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        val capitalizedName = name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val copyArtifactList = tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-            dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
-            from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
-            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+    androidComponents.onVariants { variant ->
+        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
+            dependsOn(licenseeTask)
+            from(licenseeTask.map { it.outputDir.file("artifacts.json") })
+            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
         }
-        tasks.named("merge${capitalizedName}Assets").configure {
-            dependsOn(copyArtifactList)
+        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
+            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
         }
-        if (buildType.name == "release") {
-            tasks.named("lintVitalAnalyze$capitalizedName").configure {
-                dependsOn(copyArtifactList)
-            }
-        }
+    }
 
+    applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
@@ -126,7 +124,7 @@ licensee {
 
 dependencies {
     val lifecycleVersion = "2.6.2"
-    val hiltVersion = "2.48.1"
+    val hiltVersion = "2.49"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.12.0")
@@ -152,5 +150,6 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.5.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.6")
 }

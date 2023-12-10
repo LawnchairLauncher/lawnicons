@@ -18,6 +18,7 @@
 * App Name (linked `package.name` to `@drawable/package`)
 
 ## Contributor's checklist
-- [ ] I have followed the [Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/.github/CONTRIBUTING.md)
+<!-- Replace [ ] with [x] to check -->
+- [ ] I have followed the [Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md)
 - [ ] I have ensured that Lawnicons builds correctly
 - [ ] I am willing to make changes to my icons if someone suggests changes

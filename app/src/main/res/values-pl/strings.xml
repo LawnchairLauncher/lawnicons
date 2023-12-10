@@ -1,0 +1,57 @@
+<resources>
+    <!-- General -->
+
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">Wersja %s</string>
+
+    <!-- Search bar -->
+
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Przeszukaj %d Ikon</string>
+
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">Nie znaleziono ikon.</string>
+
+    <!-- Popup menu in search bar -->
+    <!-- Popup menu item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Podziękowanie</string>
+    <!-- Popup menu item that links to the About page -->
+    <string name="about">O aplikacji</string>
+    <!-- External Links label -->
+    <string name="external_links">Linki zewnętrzne</string>
+
+    <!-- External Links labels -->
+    <!-- Icon Request form link -->
+    <string name="request_form">Formularz Zgłoszeniowy Ikony</string>
+
+    <!-- About page -->
+
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Współautorzy</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Główni współautorzy</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Zobacz wszystkich Współtwórców</string>
+
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Zobacz na GitHub</string>
+
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Specjalne podziękowania</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Za zainspirowanie ikony aplikacji.</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">Za nazwanie aplikacji.</string>
+
+    <!-- Icon Information Popup window -->
+
+    <!-- Drawable prefix -->
+    <string name="drawable_prefix">Element graficzny:</string>
+    <!-- Package prefix -->
+    <string name="package_prefix">Pakiet:</string>
+
+
+</resources>

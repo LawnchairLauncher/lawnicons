@@ -4,6 +4,7 @@ import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
 import app.lawnchair.lawnicons.model.IconInfo
+import kotlinx.collections.immutable.persistentListOf
 
 @Preview(
     name = "Normal",
@@ -27,7 +28,7 @@ import app.lawnchair.lawnicons.model.IconInfo
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     wallpaper = Wallpapers.RED_DOMINATED_EXAMPLE,
 )
-annotation class LawniconsPreview
+annotation class PreviewLawnicons
 
 object SampleData {
     val iconInfoSample = IconInfo(
@@ -36,7 +37,7 @@ object SampleData {
         packageName = "com.android.email",
         id = 1,
     )
-    val iconInfoList = listOf(
+    val iconInfoList = persistentListOf(
         IconInfo(
             name = "Email",
             drawableName = "@drawable/email",

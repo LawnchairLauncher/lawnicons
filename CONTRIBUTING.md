@@ -10,44 +10,44 @@ For additional information on designing icons and samples, see [the Lawnicons Fi
 
 ### Artboard & Grid
 
-![](images/creating-icons-1-artboard.png)
+![](docs/images/creating-icons-1-artboard.png)
 
 Each icon must fit the `160x160px` or `144x144px` (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
 
 ### Foundation
 
-![](images/creating-icons-2-foundation.png)
+![](docs/images/creating-icons-2-foundation.png)
 
 The stroke should be kept at `12px` in most cases. If `12px` is too thick, a stroke of `8px` can be used.
 For finer detail, a stroke of `6px` can be used. The standard widths are `6px`, `8px`, `10px`, `12px` and `14px`.
 
-In addition to the above, joins and start/end points must be rounded and the colour must be black `#000000`. 
+In addition to the above, joins and start/end points must be rounded and the colour must be black `#000000`.
 
 ### Details
 
-![](images/creating-icons-3-detail.png)
+![](docs/images/creating-icons-3-detail.png)
 
 When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
 
 A great example of this is the Subway Surfers icon as seen in the example above. In Lawnicons, it was reimagined by using the graffiti-styled "S" from the game's logo instead of depicting the character, which would have required intricate shapes and varying stroke thicknesses.
 
-![](images/creating-icons-3-balance.png)
+![](docs/images/creating-icons-3-balance.png)
 
-In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language. 
+In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language.
 
 In the Headspace example above, the circles usually have a face representing mood. By adding one of those faces to the circle, you can make the icon more recognizable.
 
 ### Maintaining Consistency
 
-![](images/creating-icons-4-outline.png)
+![](docs/images/creating-icons-4-outline.png)
 
-All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline. 
+All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline.
 
 The key is to ensure that any filled elements do not overwhelm the overall icon design and align with the outlined style to create a harmonious and coherent icon set.
 
 ### Maintaining Visual Balance
 
-![](images/creating-icons-5-balance.png)
+![](docs/images/creating-icons-5-balance.png)
 
 Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a `12px` stroke and suddenly decreasing it to `8px` creates an unbalanced visual effect in the final icon.
 
@@ -64,7 +64,7 @@ Here's how to add an icon to Lawnicons:
 * The package and activity name of the app.
 
 ### Via `icontool.py`
-Please check the [icon tool guide](/.github/icontool_guide.md) for more information.
+Please check the [icon tool guide](/docs/icontool_guide.md) for more information.
 
 ### Via manual process
 1. Add the ready SVG to the `svgs` directory.
@@ -72,13 +72,13 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
 1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity. For example:
 
     ```xml
-      <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google"/> 
+      <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google"/>
     ```
 
     A general template is as follows:
 
     ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/> 
+    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/>
     ```
 
 1. Done! You're ready to open a pull request. Please set `develop` as the base branch.
@@ -92,7 +92,7 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
   **For Mac or Linux**:
 
   ```console
-  adb shell dumpsys window | grep 'mCurrentFocus'  
+  adb shell dumpsys window | grep 'mCurrentFocus'
   ```
 
   **For Windows**:
@@ -100,23 +100,28 @@ Please check the [icon tool guide](/.github/icontool_guide.md) for more informat
   ```console
   adb shell dumpsys window | find "mCurrentFocus"
   ```
-  ![](images/contributing-image-3.png)
+  ![](docs/images/contributing-image-3.png)
 
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
 ### Using 3rd-party apps
 #### IconRequest app
-1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases). 
-2. Launch the app and click "REQUEST NEW" or "UPDATE EXISTING".
-3. Get the Activity details for each app.
-
-![](images/contributing-image-4.png)
+1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
+2. Launch the app and click one of the options:
+- UPDATE EXISTING — to copy packages with activities.
+- REQUEST NEW — to save icon images and packages with activities.
+3. Select the apps for which youʼd like to request or make icons.
+4. Copy, save or share.
   
+https://github.com/x9136/lawnicons/assets/60105060/f27bf8cf-f9e0-4fb2-970e-8344fe2cee3e
+
+
+
 #### Icon Pusher app
 1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
 2. Launch the app.
 3. Select the icon(s) you want to upload or select all by pressing the square in the top right. Then press "Send".
-4. View the Activity details for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
+4. View the packages with the activities for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
 
 ## Contributing code
 While adding icons is the main focus for most contributors, code-related contributions are welcome.

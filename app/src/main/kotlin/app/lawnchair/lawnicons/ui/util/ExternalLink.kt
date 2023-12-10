@@ -1,6 +1,6 @@
 package app.lawnchair.lawnicons.ui.util
 
 data class ExternalLink(
-    val name: String,
+    val name: Int,
     val url: String,
 )

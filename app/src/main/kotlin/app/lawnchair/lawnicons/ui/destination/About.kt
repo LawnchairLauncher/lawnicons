@@ -31,17 +31,17 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.util.appIcon
 
 private val externalLinks = listOf(
     ExternalLink(
-        name = "GitHub",
+        name = R.string.github,
         url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
-        name = "Icon Request Form",
-        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57",
+        name = R.string.request_form,
+        url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),
 )
 
@@ -50,7 +50,7 @@ private val coreContributors = listOf(
         name = "paphonb",
         username = "paphonb",
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
-        socialUrl = "https://twitter.com/paphonb",
+        socialUrl = "https://x.com/paphonb",
     ),
 )
 
@@ -58,7 +58,7 @@ private val specialThanks = listOf(
     Contributor(
         name = "Eatos",
         photoUrl = "https://avatars.githubusercontent.com/u/52837599",
-        socialUrl = "https://twitter.com/eatosapps",
+        socialUrl = "https://x.com/eatosapps",
         descriptionRes = R.string.special_thanks_icon,
     ),
     Contributor(
@@ -114,10 +114,10 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
                 }
             }
             item {
-                Card(label = "External Links") {
+                Card(label = stringResource(id = R.string.external_links)) {
                     externalLinks.mapIndexed { index, it ->
                         ExternalLinkRow(
-                            name = it.name,
+                            name = stringResource(id = it.name),
                             url = it.url,
                             divider = index != externalLinks.lastIndex,
                         )
@@ -166,9 +166,9 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun AboutPreview() {
+private fun AboutPreview() {
     LawniconsTheme {
         About(
             {},
@@ -178,9 +178,9 @@ fun AboutPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun AboutPreviewExpanded() {
+private fun AboutPreviewExpanded() {
     LawniconsTheme {
         About(
             {},
