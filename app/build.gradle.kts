@@ -103,7 +103,7 @@ android {
         val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
             dependsOn(licenseeTask)
             from(licenseeTask.map { it.outputDir.file("artifacts.json") })
-            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
         }
         variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
             objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
