@@ -1,7 +1,5 @@
+import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
-import com.android.build.gradle.internal.lint.LintModelWriterTask
-import com.android.build.gradle.tasks.MergeSourceSetFolders
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -75,7 +73,6 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
 
@@ -100,23 +97,20 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        val capitalizedName = name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val copyArtifactList = tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-            dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
-            from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
-            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+    androidComponents.onVariants { variant ->
+        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
+            dependsOn(licenseeTask)
+            from(licenseeTask.map { it.outputDir.file("artifacts.json") })
+            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
         }
-        listOf(
-            AndroidLintAnalysisTask::class,
-            LintModelWriterTask::class,
-            MergeSourceSetFolders::class,
-        ).forEach {
-            tasks.withType(it).configureEach {
-                dependsOn(copyArtifactList)
-            }
+        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
+            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
         }
+    }
 
+    applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
