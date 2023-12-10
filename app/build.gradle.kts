@@ -106,9 +106,9 @@ android {
             into(layout.buildDirectory.dir("generated/dependencyAssets/"))
         }
         variant.sources.assets?.addGeneratedSourceDirectory(
-            copyArtifactsTask,
+            licenseeTask,
         ) {
-            objects.directoryProperty().fileValue(it.destinationDir)
+            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
         }
     }
 
