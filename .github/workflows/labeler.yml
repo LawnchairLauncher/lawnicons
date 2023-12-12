@@ -4,7 +4,7 @@ on:
   - pull_request_target
 
 jobs:
-  triage:
+  label-prs:
     permissions:
       contents: read
       pull-requests: write
