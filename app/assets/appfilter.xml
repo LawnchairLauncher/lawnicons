@@ -36,6 +36,7 @@
   <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <!-- Lawnicons -->
+
   <item component="ComponentInfo{com.cloudflare.onedotonedotonedotone/com.cloudflare.app.presentation.main.MainActivity}" drawable="onedotonedotonedotone" name="1.1.1.1" />
   <item component="ComponentInfo{com.cloudflare.onedotonedotonedotone/com.cloudflare.app.presentation.main.SplashActivity}" drawable="onedotonedotonedotone" name="1.1.1.1" />
   <item component="ComponentInfo{dev.lonami.klooni/dev.lonami.klooni.AndroidLauncher}" drawable="klooni" name="1010 Klooni" />
@@ -772,6 +773,40 @@
   <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.CalculatorActivity}" drawable="calculator_plusplus" name="Calculator Plus Plus" />
   <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.floating.FloatingCalculatorActivity}" drawable="calculator_plusplus" name="Calculator Plus Plus" />
   <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.onscreen.CalculatorOnscreenStartActivity}" drawable="calculator_plusplus" name="Calculator Plus Plus" />
+  <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+
   <item component="ComponentInfo{com.coloros.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar" name="Calendar" />
   <item component="ComponentInfo{com.motorola.cn.calendar/com.motorola.cn.calendar.AllInOneActivity}" drawable="calendar" name="Calendar" />
   <item component="ComponentInfo{com.gustavoas.calendarqst/com.gustavoas.calendarqst.SettingsActivity}" drawable="calentile" name="CalenTile" />
@@ -1609,6 +1644,7 @@
   <item component="ComponentInfo{com.ss.edgegestures/com.ss.edgegestures.SettingsActivity}" drawable="edge_gestures" name="Edge Gestures" />
   <item component="ComponentInfo{air.org.edupage/org.edupage.app.ui.MainActivity}" drawable="edupage" name="Edupage" />
   <item component="ComponentInfo{org.edx.mobile/org.edx.mobile.view.MainDashboardActivity}" drawable="edx" name="edX" />
+  <item component="ComponentInfo{com.auxbrain.egginc/com.auxbrain.egginc.EggIncActivity}" drawable="egg_inc" name="Egg, Inc." />
   <item component="ComponentInfo{moe.tarsin.ehviewer/com.hippo.ehviewer.ui.MainActivity}" drawable="ehviewer" name="EhViewer Overhualed" />
   <item component="ComponentInfo{com.eksiteknoloji.eksisozluk/com.eksiteknoloji.eksisozluk.ui.launcher.LauncherActivity}" drawable="eksi_sozluk" name="ekşi sözlük" />
   <item component="ComponentInfo{com.eksiteknoloji.eksisozluk/md5ca6cfc07e22d3c2c787aa5e94848191a.SplashActivity}" drawable="eksi_sozluk" name="ekşi sözlük" />
@@ -2454,6 +2490,7 @@
   <item component="ComponentInfo{com.ddm.iptools/com.ddm.iptools.ui.MainActivity}" drawable="ip_tools" name="IP Tools" />
   <item component="ComponentInfo{pl.plus.plusonline/pl.plus.plusonline.activity.SSO_WelcomeActivity}" drawable="iplus" name="iPlus" />
   <item component="ComponentInfo{cris.org.in.prs.ima/cris.org.in.ima.activities.IRCTCConnectActivity}" drawable="irctc" name="IRCTC Rail Connect" />
+  <item component="ComponentInfo{com.massimobiolcati.irealb/com.massimobiolcati.irealb.main.MainActivity}" drawable="ireal_pro" name="iReal Pro" />
   <item component="ComponentInfo{com.jacksoftw.webcam/com.iriun.webcam.IntroActivity}" drawable="iriun_webcam" name="Iriun Webcam" />
   <item component="ComponentInfo{com.jacksoftw.webcam/com.jacksoftw.webcam.IntroActivity}" drawable="iriun_webcam" name="Iriun Webcam" />
   <item component="ComponentInfo{com.irobot.home/com.irobot.home.appstartup.SplashActivity}" drawable="irobot" name="iRobot" />
@@ -3151,6 +3188,7 @@
   <item component="ComponentInfo{ch.admin.meteoswiss/ch.admin.meteoswiss.MainActivity}" drawable="meteo_swiss" name="MeteoSwiss" />
   <item component="ComponentInfo{io.github.muntashirakon.Music/io.github.muntashirakon.music.activities.MainActivity}" drawable="retro_music" name="Metro" />
   <item component="ComponentInfo{ridewithvia.metroflexseattle/via.rider.features.splash.SplashActivityKt}" drawable="metro_flex" name="Metro Flex" />
+  <item component="ComponentInfo{com.bobek.metronome/com.bobek.metronome.MainActivity}" drawable="metronome" name="Metronome" />
   <item component="ComponentInfo{br.com.timbrasil.meutim/br.com.timbrasil.meutim.MeuTIM}" drawable="tim" name="Meu Tim" />
   <item component="ComponentInfo{br.com.timbrasil.meutim/com.accenture.meutim.activities.SplashScreenActivity}" drawable="tim" name="Meu Tim" />
   <item component="ComponentInfo{br.com.timbrasil.meutim/com.accenture.meutim.activities.SplashScreen}" drawable="tim" name="Meu Tim" />
@@ -4377,6 +4415,7 @@
   <item component="ComponentInfo{com.playstation.remoteplay/com.playstation.remoteplay.RpActivityMain}" drawable="ps_remote_play" name="PS Remote Play" />
   <item component="ComponentInfo{com.psono.psono/com.psono.psono.MainActivity}" drawable="psono" name="Psono" />
   <item component="ComponentInfo{com.pttem.epttavm/com.pttem.epttavm.SplashActivityAlias1}" drawable="pttavm" name="PttAVM" />
+  <item component="ComponentInfo{au.gov.vic.ptv/au.gov.vic.ptv.ui.main.MainActivity}" drawable="ptv" name="PTV" />
   <item component="ComponentInfo{com.xyhui/com.xyhui.start.PrivacyTipActivity}" drawable="pu" name="PU" />
   <item component="ComponentInfo{com.pubg.newstate/com.epicgames.ue4.SplashActivity}" drawable="pubg" name="PUBG" />
   <item component="ComponentInfo{com.tencent.ig/com.epicgames.ue4.SplashActivity}" drawable="pubg" name="PUBG" />
@@ -4756,6 +4795,7 @@
   <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.switcher.SecureFolderShortcutActivity}" drawable="samsung_secure_folder" name="Secure Folder" />
   <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.launcher.view.LauncherActivity}" drawable="secure_folder" name="Secure Folder" />
   <item component="ComponentInfo{de.fiduciagad.securego.wl/de.fiduciagad.securego.MainActivity}" drawable="securego_plus" name="SecureGo plus" />
+  <item component="ComponentInfo{com.companyname.andriodapp1/crc64c9fbd4a1c52464df.MainActivity}" drawable="seeker" name="Seeker" />
   <item component="ComponentInfo{com.yablio.sendfilestotv/com.yablio.sendfilestotv.ui.MainActivity}" drawable="send_files_to_tv" name="Send Files To TV" />
   <item component="ComponentInfo{com.fullsenders.sendit/io.flutter.embedding.android.FlutterActivity}" drawable="sendit" name="sendit" />
   <item component="ComponentInfo{com.sennheiser.control/com.tns.NativeScriptActivity}" drawable="sennheiser_smart_control" name="Sennheiser Smart Control" />
@@ -6166,6 +6206,7 @@
   <item component="ComponentInfo{de.dwd.warnapp/de.dwd.warnapp.base.MainActivity}" drawable="warnwetter" name="WarnWetter" />
   <item component="ComponentInfo{de.dwd.warnapp/de.dwd.warnapp.MainActivity}" drawable="warnwetter" name="WarnWetter" />
   <item component="ComponentInfo{slowscript.warpinator/slowscript.warpinator.MainActivity}" drawable="warpinator" name="Warpinator" />
+  <item component="ComponentInfo{com.moseoridev.warpshare/org.mokee.warpshare.MainActivity}" drawable="warpshare" name="WarpShare" />
   <item component="ComponentInfo{de.pietsmiet.watchbuddy/com.example.pietsmiet_live_event_app.MainActivity}" drawable="watchbuddy" name="watchbuddy" />
   <item component="ComponentInfo{wp.wattpad/wp.wattpad.ui.activities.LoginActivity}" drawable="wattpad" name="Wattpad" />
   <item component="ComponentInfo{dubrowgn.wattz/dubrowgn.wattz.MainActivity}" drawable="wattz" name="Wattz" />
