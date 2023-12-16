@@ -15,7 +15,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
@@ -28,16 +27,16 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 
 @Composable
 fun IconInfoPopup(
     iconInfo: IconInfo,
-    isPopupShown: MutableState<Boolean>,
+    isPopupShown: (Boolean) -> Unit,
 ) {
     AlertDialog(
-        onDismissRequest = { isPopupShown.value = false },
+        onDismissRequest = { isPopupShown(false) },
         title = { Text(text = iconInfo.name) },
         icon = {
             if (LocalInspectionMode.current) {
@@ -63,7 +62,7 @@ fun IconInfoPopup(
             }
         },
         confirmButton = {
-            TextButton(onClick = { isPopupShown.value = false }) {
+            TextButton(onClick = { isPopupShown(false) }) {
                 Text(text = stringResource(id = R.string.ok_button))
             }
         },
@@ -95,14 +94,15 @@ fun IconInfoPopup(
     )
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun IconInfoPopupPreview() {
+private fun IconInfoPopupPreview() {
     val showPopup = remember { mutableStateOf(true) }
     LawniconsTheme {
         IconInfoPopup(
             iconInfo = SampleData.iconInfoSample,
-            isPopupShown = showPopup,
-        )
+        ) {
+            showPopup.value = it
+        }
     }
 }

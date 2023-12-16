@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
@@ -90,14 +90,15 @@ fun IconPreview(
     if (isIconInfoShown.value) {
         IconInfoPopup(
             iconInfo = iconInfo,
-            isPopupShown = isIconInfoShown,
-        )
+        ) {
+            isIconInfoShown.value = it
+        }
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun IconPreviewComposablePreview() {
+private fun IconPreviewComposablePreview() {
     LawniconsTheme {
         IconPreview(
             iconInfo = SampleData.iconInfoSample,

@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun ExternalLinkRow(
@@ -35,9 +35,9 @@ fun ExternalLinkRow(
     )
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ExternalLinkRowPreview() {
+private fun ExternalLinkRowPreview() {
     LawniconsTheme {
         ExternalLinkRow(
             name = "User",

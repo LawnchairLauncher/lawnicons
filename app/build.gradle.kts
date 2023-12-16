@@ -1,7 +1,5 @@
+import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.android.build.gradle.internal.lint.AndroidLintAnalysisTask
-import com.android.build.gradle.internal.lint.LintModelWriterTask
-import com.android.build.gradle.tasks.MergeSourceSetFolders
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -75,7 +73,6 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        assets.srcDir(layout.buildDirectory.dir("generated/dependencyAssets/"))
         res.setSrcDirs(listOf("src/runtime/res"))
     }
 
@@ -100,23 +97,20 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        val capitalizedName = name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val copyArtifactList = tasks.register<Copy>("copy${capitalizedName}ArtifactList") {
-            dependsOn(tasks.named("licenseeAndroid$capitalizedName"))
-            from(reporting.file("licensee/android$capitalizedName/artifacts.json"))
-            into(layout.buildDirectory.dir("generated/dependencyAssets/"))
+    androidComponents.onVariants { variant ->
+        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
+            dependsOn(licenseeTask)
+            from(licenseeTask.map { it.outputDir.file("artifacts.json") })
+            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
         }
-        listOf(
-            AndroidLintAnalysisTask::class,
-            LintModelWriterTask::class,
-            MergeSourceSetFolders::class,
-        ).forEach {
-            tasks.withType(it).configureEach {
-                dependsOn(copyArtifactList)
-            }
+        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
+            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
         }
+    }
 
+    applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
@@ -134,7 +128,7 @@ dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.activity:activity-compose:1.8.1")
+    implementation("androidx.activity:activity-compose:1.8.2")
     implementation(platform("androidx.compose:compose-bom:2023.10.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
@@ -144,7 +138,7 @@ dependencies {
     implementation("androidx.compose.material:material")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation("androidx.navigation:navigation-compose:2.7.6")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
@@ -157,4 +151,5 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.6")
 }

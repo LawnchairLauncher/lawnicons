@@ -39,9 +39,9 @@ import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 @Composable
 fun Acknowledgement(
     name: String?,
-    acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
+    acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
 ) {
     requireNotNull(name)
 

@@ -38,7 +38,7 @@ jobs:
       - name: Build debug APK
         run: ./gradlew app:assembleDebug
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Debug APK
           path: app/build/outputs/apk/app/debug/*.apk
@@ -76,7 +76,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install gitpython requests
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: Debug APK
           path: artifacts/debug-apk
