@@ -29,7 +29,7 @@ allprojects {
             target("src/**/*.kt")
             ktlint().customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.3.7",
+                    "io.nlopez.compose.rules:ktlint:0.3.8",
                 ),
             ).editorConfigOverride(
                 mapOf(
