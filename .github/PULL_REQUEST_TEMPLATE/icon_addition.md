@@ -8,13 +8,13 @@ App Name (`com.package.app`)
 App Name (`com.package.app`)
 App Name (`com.package.app`)
 
-### Updated
-App Name (`com.package.app`)
-App Name (`com.package.app`)
-
 ### Linked
 App Name (`com.package.app` → `drawable.svg`)
 App Name (`com.package.app` → `drawable.svg`)
+
+### Updated
+App Name (`com.package.app`)
+App Name (`com.package.app`)
 
 ## Contributor's checklist
 <!-- Replace [ ] with [x] to check -->
