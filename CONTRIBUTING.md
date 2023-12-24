@@ -106,16 +106,14 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 
 ### Using 3rd-party apps
 #### IconRequest app
+[Video guide](https://kappa.lol/FL_Oh) • 11.6 MB, 25s
+
 1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
 2. Launch the app and click one of the options:
 - UPDATE EXISTING — to copy packages with activities.
 - REQUEST NEW — to save icon images and packages with activities.
 3. Select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.
-  
-https://github.com/x9136/lawnicons/assets/60105060/f27bf8cf-f9e0-4fb2-970e-8344fe2cee3e
-
-
 
 #### Icon Pusher app
 1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
