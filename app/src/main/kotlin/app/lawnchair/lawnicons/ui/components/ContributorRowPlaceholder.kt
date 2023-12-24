@@ -9,15 +9,15 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.ListRow
+import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
+import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
+import app.lawnchair.lawnicons.ui.components.core.placeholder.material.placeholder
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
-import com.google.accompanist.placeholder.PlaceholderHighlight
-import com.google.accompanist.placeholder.material.fade
-import com.google.accompanist.placeholder.material.placeholder
 
 @Composable
 fun ContributorRowPlaceholder(
@@ -63,9 +63,9 @@ fun ContributorRowPlaceholder(
     }
 }
 
-@Preview(showBackground = true)
+@PreviewLawnicons
 @Composable
-fun ContributorRowPlaceholderPreview() {
+private fun ContributorRowPlaceholderPreview() {
     LawniconsTheme {
         ContributorRowPlaceholder()
     }

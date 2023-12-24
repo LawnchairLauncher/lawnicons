@@ -7,18 +7,19 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.ContentAlpha
-import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -26,19 +27,21 @@ import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.util.appIcon
 
 private val externalLinks = listOf(
     ExternalLink(
-        name = "GitHub",
+        name = R.string.github,
         url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
-        name = "Icon Request Form",
-        url = "https://forms.gle/Fx8vZAiWdW1Tyjo57",
+        name = R.string.request_form,
+        url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),
 )
 
@@ -47,7 +50,7 @@ private val coreContributors = listOf(
         name = "paphonb",
         username = "paphonb",
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
-        socialUrl = "https://twitter.com/paphonb",
+        socialUrl = "https://x.com/paphonb",
     ),
 )
 
@@ -55,7 +58,7 @@ private val specialThanks = listOf(
     Contributor(
         name = "Eatos",
         photoUrl = "https://avatars.githubusercontent.com/u/52837599",
-        socialUrl = "https://twitter.com/eatosapps",
+        socialUrl = "https://x.com/eatosapps",
         descriptionRes = R.string.special_thanks_icon,
     ),
     Contributor(
@@ -67,14 +70,13 @@ private val specialThanks = listOf(
 )
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class, androidx.compose.material.ExperimentalMaterialApi::class)
-fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
+fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Boolean) {
     val context = LocalContext.current
 
     LawniconsScaffold(
         title = stringResource(id = R.string.about),
-        navController = navController,
-        windowSizeClass = windowSizeClass,
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
     ) { paddingValues ->
         LazyColumn(modifier = Modifier.padding(paddingValues)) {
             item {
@@ -87,11 +89,15 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
                             bottom = 32.dp,
                         ),
                 ) {
-                    Image(
-                        bitmap = context.appIcon().asImageBitmap(),
-                        contentDescription = stringResource(id = R.string.app_name),
-                        modifier = Modifier.size(72.dp),
-                    )
+                    if (LocalInspectionMode.current) {
+                        Icon(Icons.Rounded.Star, contentDescription = null, modifier = Modifier.size(72.dp))
+                    } else {
+                        Image(
+                            bitmap = context.appIcon().asImageBitmap(),
+                            contentDescription = stringResource(id = R.string.app_name),
+                            modifier = Modifier.size(72.dp),
+                        )
+                    }
                     Text(
                         text = stringResource(id = R.string.app_name),
                         style = MaterialTheme.typography.titleLarge,
@@ -108,10 +114,10 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
                 }
             }
             item {
-                Card(label = "External Links") {
+                Card(label = stringResource(id = R.string.external_links)) {
                     externalLinks.mapIndexed { index, it ->
                         ExternalLinkRow(
-                            name = it.name,
+                            name = stringResource(id = it.name),
                             url = it.url,
                             divider = index != externalLinks.lastIndex,
                         )
@@ -124,7 +130,7 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
                         ContributorRow(
                             name = it.name,
                             photoUrl = it.photoUrl,
-                            profileUrl = "https://github.com/${it.username}",
+                            profileUrl = it.socialUrl,
                             divider = index != coreContributors.lastIndex,
                         )
                     }
@@ -133,7 +139,7 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
             item {
                 Card(modifier = Modifier.padding(top = 16.dp)) {
                     SimpleListRow(
-                        onClick = { navController.navigate(Destinations.CONTRIBUTORS) },
+                        onClick = { onNavigate(Destinations.CONTRIBUTORS) },
                         label = stringResource(id = R.string.see_all_contributors),
                         divider = false,
                     )
@@ -157,5 +163,29 @@ fun About(navController: NavController, windowSizeClass: WindowSizeClass) {
                 }
             }
         }
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun AboutPreview() {
+    LawniconsTheme {
+        About(
+            {},
+            {},
+            false,
+        )
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun AboutPreviewExpanded() {
+    LawniconsTheme {
+        About(
+            {},
+            {},
+            true,
+        )
     }
 }

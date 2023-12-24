@@ -1,0 +1,57 @@
+<resources>
+    <!-- General -->
+
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">Version %s</string>
+
+    <!-- Search bar -->
+
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Rechercher parmi %d icônes</string>
+
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">Aucune icône trouvée.</string>
+
+    <!-- Popup menu in search bar -->
+    <!-- Popup menu item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Mentions légales</string>
+    <!-- Popup menu item that links to the About page -->
+    <string name="about">À propos</string>
+    <!-- External Links label -->
+    <string name="external_links">Liens externes</string>
+
+    <!-- External Links labels -->
+    <!-- Icon Request form link -->
+    <string name="request_form">Formulaire de demande d\'icône</string>
+
+    <!-- About page -->
+
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Contributeurs</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Contributeurs principaux</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Voir tous les contributeurs</string>
+
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Voir sur GitHub</string>
+
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Remerciements spéciaux</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Pour avoir inspiré l\'icône de l\'application.</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">Pour avoir donné le nom à l\'application.</string>
+
+    <!-- Icon Information Popup window -->
+
+    <!-- Drawable prefix -->
+    <string name="drawable_prefix">Élément graphique:</string>
+    <!-- Package prefix -->
+    <string name="package_prefix">Application:</string>
+
+
+</resources>

@@ -4,14 +4,18 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Star
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
@@ -48,23 +52,27 @@ fun ContributorRow(
         description = description,
         onClick = onClick,
         icon = {
-            AsyncImage(
-                contentDescription = name,
-                model = ImageRequest.Builder(context = LocalContext.current)
-                    .data(data = photoUrl)
-                    .crossfade(enable = true)
-                    .build(),
-                modifier = Modifier
-                    .size(32.dp)
-                    .clip(CircleShape),
-            )
+            if (LocalInspectionMode.current) {
+                Icon(Icons.Rounded.Star, contentDescription = null)
+            } else {
+                AsyncImage(
+                    contentDescription = name,
+                    model = ImageRequest.Builder(context = LocalContext.current)
+                        .data(data = photoUrl)
+                        .crossfade(enable = true)
+                        .build(),
+                    modifier = Modifier
+                        .size(32.dp)
+                        .clip(CircleShape),
+                )
+            }
         },
     )
 }
 
-@Preview(showBackground = true)
+@PreviewLawnicons
 @Composable
-fun ContributorRowPreview() {
+private fun ContributorRowPreview() {
     LawniconsTheme {
         ContributorRow(
             name = "User",
