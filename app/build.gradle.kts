@@ -118,6 +118,11 @@ android {
     }
 }
 
+// Process SVGs before every build.
+tasks.preBuild {
+    dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
+}
+
 licensee {
     allow("Apache-2.0")
 }
