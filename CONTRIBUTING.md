@@ -37,9 +37,13 @@ In contrary, it's also important to avoid too few details, as they may not be ea
 
 In the Headspace example above, the circles usually have a face representing mood. By adding one of those faces to the circle, you can make the icon more recognizable.
 
+### Challenging or text based icons
+![](docs/images/creating-icons-4-text-icons.png)
+In cases where creating an icon is challenging, consider using either the app's favicon from its website or an icon that is consistent with the app's brand guidelines.
+
 ### Maintaining Consistency
 
-![](docs/images/creating-icons-4-outline.png)
+![](docs/images/creating-icons-5-outline.png)
 
 All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline.
 
@@ -47,7 +51,7 @@ The key is to ensure that any filled elements do not overwhelm the overall icon 
 
 ### Maintaining Visual Balance
 
-![](docs/images/creating-icons-5-balance.png)
+![](docs/images/creating-icons-6-balance.png)
 
 Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a `12px` stroke and suddenly decreasing it to `8px` creates an unbalanced visual effect in the final icon.
 
