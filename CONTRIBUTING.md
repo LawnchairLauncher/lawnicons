@@ -68,7 +68,7 @@ Wrong • Google Play name: "Zoom - One Platform to Connect"
 Correct • Edited name: "Zoom"
 <item component="..." drawable="zoom" name="Zoom" />
 ```
-If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English).
+Names are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
 ```
 Wrong
 <item component="..." drawable="hulu" name="Hulu" />
@@ -77,7 +77,7 @@ Wrong
 Correct
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If the app name doesn't have an English localization, then you need to properly transliterate the name into English and add it after the original name via `~~`.
+If the app name doesn't have an English localization, then you need to properly transliterate the name into English.
 ```
 Wrong
 <item component="..." drawable="niconico" name="ニコニコ" />
