@@ -39,6 +39,7 @@ In the Headspace example above, the circles usually have a face representing moo
 
 ### Challenging or text based icons
 ![](docs/images/creating-icons-4-text-icons.png)
+
 In cases where creating an icon is challenging, consider using either the app's favicon from its website or an icon that is consistent with the app's brand guidelines.
 
 ### Maintaining Consistency
