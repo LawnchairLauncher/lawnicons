@@ -124,13 +124,7 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 ## Contributing code
 While adding icons is the main focus for most contributors, code-related contributions are welcome.
 
-Before building the app, ensure that you create the icon drawables by running:
-
-```console
-./gradlew svg-processor:run
-```
-
-Afterwards, you can build the app by selecting the `appDebug` build variant.
+To build Lawnicons, select the `appDebug` build variant.
 
 Here are a few contribution tips:
 - [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons' core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
