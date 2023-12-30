@@ -56,6 +56,47 @@ To avoid sharp contrast, you can follow either of these two methods:
 1. **Uniform Stroke:** Instead of jumping between stroke thicknesses, use the next immediate increment in width. For example, transition from *12px* to *10px*.
 2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
 
+## Naming
+To make it easier to find icons, you should keep the original names and supplement them with an English variant or transliteration. If you are adding a link to an existing icon, keep (or complement) the existing drawable and app names.
+### App name
+Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
+```
+Wrong • Google Play name: "Zoom - One Platform to Connect"
+<item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
+```
+```
+Correct • Edited name: "Zoom"
+<item component="..." drawable="zoom" name="Zoom" />
+```
+If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English).
+```
+Wrong
+<item component="..." drawable="hulu" name="Hulu" />
+```
+```
+Correct
+<item component="..." drawable="hulu" name="Hulu ~~ フールー" />
+```
+If the app name doesn't have an English localization, then you need to properly transliterate the name into English and add it after the original name via `~~`.
+```
+Wrong
+<item component="..." drawable="niconico" name="ニコニコ" />
+```
+```
+Correct
+<item component="..." drawable="niconico" name="ニコニコ ~~ Niconico" />
+```
+### Drawable
+Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
+```
+Wrong
+<item component="..." drawable="meinvodafone" name="My Vodafone ~~ MeinVodafone" />
+```
+```
+Correct
+<item component="..." drawable="my_vodafone" name="My Vodafone ~~ MeinVodafone" />
+```
+
 ## Adding an icon to Lawnicons
 Here's how to add an icon to Lawnicons:
 
