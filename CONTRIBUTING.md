@@ -71,7 +71,7 @@ Correct • Edited name: "Zoom"
 Names are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
 ```
 Wrong
-<item component="..." drawable="hulu" name="Hulu" />
+<item component="..." drawable="hulu" name="フールー ~~ Hulu" />
 ```
 ```
 Correct
