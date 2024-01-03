@@ -83,7 +83,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.6"
+        kotlinCompilerExtensionVersion = "1.5.7"
     }
 
     packaging {
@@ -118,13 +118,18 @@ android {
     }
 }
 
+// Process SVGs before every build.
+tasks.preBuild {
+    dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
+}
+
 licensee {
     allow("Apache-2.0")
 }
 
 dependencies {
     val lifecycleVersion = "2.6.2"
-    val hiltVersion = "2.49"
+    val hiltVersion = "2.50"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.12.0")
@@ -151,5 +156,5 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.6")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
 }
