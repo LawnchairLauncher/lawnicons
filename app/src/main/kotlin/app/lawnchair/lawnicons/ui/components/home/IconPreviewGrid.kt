@@ -13,14 +13,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
+import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
-    iconInfo: List<IconInfo>,
+    iconInfo: ImmutableList<IconInfo>,
     isExpandedScreen: Boolean,
 ) {
     LazyVerticalGrid(
@@ -52,9 +53,9 @@ fun IconPreviewGrid(
 }
 
 @OptIn(ExperimentalFoundationApi::class)
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun IconGridPreview() {
+private fun IconGridPreview() {
     LawniconsTheme {
         IconPreviewGrid(
             SampleData.iconInfoList,

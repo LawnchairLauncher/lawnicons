@@ -26,18 +26,20 @@ import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
 import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
+import kotlinx.collections.immutable.ImmutableList
+import kotlinx.collections.immutable.persistentListOf
 
 const val CONTRIBUTOR_URL = "https://github.com/LawnchairLauncher/lawnicons/graphs/contributors"
 
 @Composable
 fun Contributors(
-    contributorsViewModel: ContributorsViewModel = hiltViewModel(),
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
+    contributorsViewModel: ContributorsViewModel = hiltViewModel(),
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
     Contributors(
@@ -73,7 +75,7 @@ fun Contributors(
 }
 
 @Composable
-fun ContributorList(contributors: List<GitHubContributor>) {
+fun ContributorList(contributors: ImmutableList<GitHubContributor>) {
     LazyColumn(
         contentPadding = WindowInsets.navigationBars.toPaddingValues(
             additionalTop = 8.dp,
@@ -141,10 +143,10 @@ fun ContributorListError(
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ContributorsScreenPreview() {
-    val contributors = listOf(
+private fun ContributorsScreenPreview() {
+    val contributors = persistentListOf(
         GitHubContributor(
             id = 1,
             login = "Example",
@@ -163,9 +165,9 @@ fun ContributorsScreenPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ContributorsScreenLoadingPreview() {
+private fun ContributorsScreenLoadingPreview() {
     LawniconsTheme {
         Contributors(
             ContributorsUiState.Loading,
@@ -175,10 +177,10 @@ fun ContributorsScreenLoadingPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ContributorListPreview() {
-    val contributors = listOf(
+private fun ContributorListPreview() {
+    val contributors = persistentListOf(
         GitHubContributor(
             id = 1,
             login = "Example",
@@ -193,9 +195,9 @@ fun ContributorListPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ContributorListPlaceholderPreview() {
+private fun ContributorListPlaceholderPreview() {
     LawniconsTheme {
         ContributorListPlaceholder()
     }

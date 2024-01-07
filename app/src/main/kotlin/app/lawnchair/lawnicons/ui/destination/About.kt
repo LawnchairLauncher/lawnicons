@@ -31,7 +31,7 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.util.appIcon
 
 private val externalLinks = listOf(
@@ -166,9 +166,9 @@ fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Bo
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun AboutPreview() {
+private fun AboutPreview() {
     LawniconsTheme {
         About(
             {},
@@ -178,9 +178,9 @@ fun AboutPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun AboutPreviewExpanded() {
+private fun AboutPreviewExpanded() {
     LawniconsTheme {
         About(
             {},

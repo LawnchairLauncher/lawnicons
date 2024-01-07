@@ -17,7 +17,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -68,9 +68,9 @@ fun LawniconsScaffold(
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun LawniconsScaffoldPreview() {
+private fun LawniconsScaffoldPreview() {
     LawniconsTheme {
         LawniconsScaffold(
             title = "Example small bar",
@@ -87,9 +87,9 @@ fun LawniconsScaffoldPreview() {
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun LawniconsScaffoldExpandedPreview() {
+private fun LawniconsScaffoldExpandedPreview() {
     LawniconsTheme {
         LawniconsScaffold(
             title = "Example small bar",

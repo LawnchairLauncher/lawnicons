@@ -17,14 +17,14 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.LawniconsPreview
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun ClickableIcon(
-    modifier: Modifier = Modifier,
-    size: Dp = 48.dp,
     onClick: () -> Unit,
     imageVector: ImageVector,
+    modifier: Modifier = Modifier,
+    size: Dp = 48.dp,
     tint: Color = MaterialTheme.colorScheme.onSurface,
 ) {
     Box(
@@ -42,9 +42,9 @@ fun ClickableIcon(
     }
 }
 
-@LawniconsPreview
+@PreviewLawnicons
 @Composable
-fun ClickableIconPreview() {
+private fun ClickableIconPreview() {
     LawniconsTheme {
         ClickableIcon(
             imageVector = Icons.Rounded.Clear,
