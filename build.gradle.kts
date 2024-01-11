@@ -3,9 +3,9 @@ import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep
 
 plugins {
     id("com.android.application") version "8.2.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.21" apply false
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.21" apply false
-    id("com.google.devtools.ksp") version "1.9.21-1.0.16" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22" apply false
+    id("com.google.devtools.ksp") version "1.9.22-1.0.16" apply false
     id("com.google.dagger.hilt.android") version "2.50" apply false
     id("app.cash.licensee") version "1.8.0" apply false
     id("com.diffplug.spotless") version "6.23.3" apply false
@@ -29,7 +29,7 @@ allprojects {
             target("src/**/*.kt")
             ktlint().customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.3.8",
+                    "io.nlopez.compose.rules:ktlint:0.3.9",
                 ),
             ).editorConfigOverride(
                 mapOf(
