@@ -77,14 +77,14 @@ Wrong
 Correct
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If the app name doesn't have an English localization, then you need to properly transliterate the name into English.
+If the app name has letters that aren't in English and it doesn't have an English localization, then you need to properly transliterate the name into English.
 ```
 Wrong
-<item component="..." drawable="niconico" name="ニコニコ" />
+<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card" />
 ```
 ```
 Correct
-<item component="..." drawable="niconico" name="ニコニコ ~~ Niconico" />
+<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card ~~ OTP SZEP Card" />
 ```
 ### Drawable
 Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
