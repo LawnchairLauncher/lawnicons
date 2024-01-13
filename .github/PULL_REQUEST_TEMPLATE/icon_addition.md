@@ -1,21 +1,20 @@
 # Description
-<!-- Please provide a short summary of what icons you added, changed, or linked
--->
+<!-- Please provide a short summary of what icons you added, changed, or linked -->
 
 ## Icons addition information
-<!-- Please specify if you added an icon that was requested in the icon request form, as seen below -->
-### Icons added
-* App Name (`package.name`) - added from icon request form
-* App Name (`package.name`)
-* App Name (`package.name`)
 
-### Icons updated
-* App Name (`package.name`)
-* App Name (`package.name`)
+### Added
+App Name (`com.package.app`)
+App Name (`com.package.app`)
+App Name (`com.package.app`)
 
-### Icons linked
-* App Name (linked `package.name` to `@drawable/package`)
-* App Name (linked `package.name` to `@drawable/package`)
+### Linked
+App Name (`com.package.app` → `drawable.svg`)
+App Name (`com.package.app` → `drawable.svg`)
+
+### Updated
+App Name (`com.package.app`)
+App Name (`com.package.app`)
 
 ## Contributor's checklist
 <!-- Replace [ ] with [x] to check -->

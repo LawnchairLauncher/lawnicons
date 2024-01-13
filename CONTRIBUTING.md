@@ -56,6 +56,47 @@ To avoid sharp contrast, you can follow either of these two methods:
 1. **Uniform Stroke:** Instead of jumping between stroke thicknesses, use the next immediate increment in width. For example, transition from *12px* to *10px*.
 2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
 
+## Naming
+To make it easier to find icons, you should keep the original names and supplement them with an English variant or transliteration. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
+### App name
+Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
+```
+Wrong • Google Play name: "Zoom - One Platform to Connect"
+<item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
+```
+```
+Correct • Edited name: "Zoom"
+<item component="..." drawable="zoom" name="Zoom" />
+```
+Names are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
+```
+Wrong
+<item component="..." drawable="hulu" name="フールー ~~ Hulu" />
+```
+```
+Correct
+<item component="..." drawable="hulu" name="Hulu ~~ フールー" />
+```
+If the app name has letters that aren't in English and it doesn't have an English localization, then you need to properly transliterate the name into English.
+```
+Wrong
+<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card" />
+```
+```
+Correct
+<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card ~~ OTP SZEP Card" />
+```
+### Drawable
+Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
+```
+Wrong
+<item component="..." drawable="meinvodafone" name="My Vodafone ~~ MeinVodafone" />
+```
+```
+Correct
+<item component="..." drawable="my_vodafone" name="My Vodafone ~~ MeinVodafone" />
+```
+
 ## Adding an icon to Lawnicons
 Here's how to add an icon to Lawnicons:
 
@@ -106,16 +147,14 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 
 ### Using 3rd-party apps
 #### IconRequest app
+[Video guide](https://kappa.lol/FL_Oh) • 11.6 MB, 25s
+
 1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
 2. Launch the app and click one of the options:
 - UPDATE EXISTING — to copy packages with activities.
 - REQUEST NEW — to save icon images and packages with activities.
 3. Select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.
-  
-https://github.com/x9136/lawnicons/assets/60105060/f27bf8cf-f9e0-4fb2-970e-8344fe2cee3e
-
-
 
 #### Icon Pusher app
 1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
@@ -126,13 +165,7 @@ https://github.com/x9136/lawnicons/assets/60105060/f27bf8cf-f9e0-4fb2-970e-8344f
 ## Contributing code
 While adding icons is the main focus for most contributors, code-related contributions are welcome.
 
-Before building the app, ensure that you create the icon drawables by running:
-
-```console
-./gradlew svg-processor:run
-```
-
-Afterwards, you can build the app by selecting the `appDebug` build variant.
+To build Lawnicons, select the `appDebug` build variant.
 
 Here are a few contribution tips:
 - [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons' core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
