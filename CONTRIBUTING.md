@@ -8,11 +8,18 @@ To contribute icons, you only need an icon editor, a file explorer, a text edito
 
 For additional information on designing icons and samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
 
-### Artboard & Grid
+### Canvas & Sizes
 
 ![](docs/images/creating-icons-1-artboard.png)
 
-Each icon must fit the `160x160px` or `144x144px` (depending on the shape) content area size. It must not be smaller nor bigger than the specified sizes.
+#### Canvas • 192×192px
+There should be a safe zone around the icons so they look neat on a screen.
+#### Content area for all but square icons • 160×160px
+Be careful with abstract icons: the main thing is that the long side should be 160px, but the other side can be smaller.
+#### Content area for squares • 158×158px
+Square icons are icons with most of their edges running along the yellow guide. This guide will be the center of a 12px thick stroke, so be sure to adjust the size correctly if you use a different thickness.
+
+To figure out which icons are considered square, see the samples in [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1) or [GitHub](docs/images/creating-icons-6-sample-icons.png).
 
 ### Foundation
 
