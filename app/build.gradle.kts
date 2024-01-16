@@ -1,5 +1,6 @@
 import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
+import com.android.build.gradle.tasks.MergeResources
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -119,7 +120,7 @@ android {
 }
 
 // Process SVGs before every build.
-tasks.preBuild {
+tasks.withType<MergeResources>().configureEach {
     dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
 }
 
