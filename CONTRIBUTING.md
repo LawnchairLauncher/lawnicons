@@ -14,12 +14,12 @@ Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
 
 ![](docs/images/creating-icons-1-artboard.png)
 
-#### 192×192px • Canvas
-There should be a safe zone around the icons so they look neat on a screen.
-#### 160×160px • Content area for all but square icons
-Be careful with abstract icons: the main thing is that the long side should be `160px`, but the other side can be smaller.
-#### 158×158px • Content area for squares
-Square icons are icons with most of their edges running along `the yellow guide`. This guide will be the center of a `12px` thick stroke, so be sure to adjust the size correctly if you use a different thickness. To see which icons are considered square and how this changes the size, see the samples in [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
+#### Canvas
+The canvas size should be `192×192px` so that there is a safe zone around the icons to control consistency.
+#### Content area for all but square
+All but square icons must fit the `160×160px` content area size. Be careful with abstract icons: the long side should be `160px`, but the other side can be smaller. Don't forget to adjust the size as you change the stroke thickness.
+#### Content area for squares
+Square icons must fit the `154×154px` content area size. Squares should be smaller than other icons to maintain visual balance. Note that icons that mostly fit in a square are considered square. See the samples in [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
 
 ### Foundation
 
@@ -28,7 +28,7 @@ Square icons are icons with most of their edges running along `the yellow guide`
 #### Stroke widths
 The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/x9136/lawnicons/blob/addate/CONTRIBUTING.md#maintaining-visual-balance) down below.
 #### Color and end caps
-All shapes must have non-transparent black color `#000000` and rounded start and end caps. Also, remember to use rounded joins.
+All shapes must have non-transparent black color `#000000`, rounded caps and joins.
 #### Corner radius
 Use `6px` for 90° angles. It is allowed to leave `0px` radius in cases when `6px` clearly spoils the shape: for example, when a right angle is formed of very short lines.
 
