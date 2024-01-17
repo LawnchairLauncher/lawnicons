@@ -56,7 +56,7 @@ The key is to ensure that any filled elements do not overwhelm the overall icon 
 
 ### Maintaining Visual Balance
 
-![](docs/images/creating-icons-5-balance.png)
+![](docs/images/creating-icons-4-maintaining-visual-balance.png)
 
 Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a `12px` stroke and suddenly decreasing it to `8px` creates an unbalanced visual effect in the final icon.
 
