@@ -5,7 +5,7 @@ plugins {
     id("com.android.application") version "8.2.1" apply false
     id("org.jetbrains.kotlin.android") version "1.9.22" apply false
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22" apply false
-    id("com.google.devtools.ksp") version "1.9.22-1.0.16" apply false
+    id("com.google.devtools.ksp") version "1.9.22-1.0.17" apply false
     id("com.google.dagger.hilt.android") version "2.50" apply false
     id("app.cash.licensee") version "1.8.0" apply false
     id("com.diffplug.spotless") version "6.24.0" apply false
