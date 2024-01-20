@@ -30,7 +30,7 @@ The stroke should be kept at `12px` in most cases. If an icon is too minimal or�
 #### Color and end caps
 All shapes must have non-transparent black color `#000000`, rounded caps and joins.
 #### Corner radius
-Use at least `6px` for 90° angles. It is allowed to leave `0px` radius in cases when `6px` clearly spoils the shape: for example, when a right angle is formed of very short lines.
+Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when `6px` clearly spoils the shape: for example, when a right angle is formed of very short lines.
 
 ### Details
 
