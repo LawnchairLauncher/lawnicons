@@ -15,7 +15,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import app.lawnchair.lawnicons.ui.components.core.SystemUi
 import app.lawnchair.lawnicons.ui.destination.About
 import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
@@ -36,7 +35,6 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
     val isExpandedScreen = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
     LawniconsTheme {
-        SystemUi()
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background,
