@@ -16,8 +16,6 @@ App Name (`com.package.app` → `drawable.svg`)
 App Name (`com.package.app`)
 App Name (`com.package.app`)
 
-## Contributor's checklist
+## Contributor's check
 <!-- Replace [ ] with [x] to check -->
-- [ ] I have followed the [Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md)
-- [ ] I have ensured that Lawnicons builds correctly
-- [ ] I am willing to make changes to my icons if someone suggests changes
+- [ ] I made the icons following [the Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) (updated January 2024) and will make changes if someone suggests. I will also make sure that Lawnicons builds correctly.
