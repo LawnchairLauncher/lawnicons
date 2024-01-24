@@ -18,4 +18,4 @@ App Name (`com.package.app`)
 
 ## Contributor's check
 <!-- Replace [ ] with [x] to check -->
-- [ ] I made the icons following [the Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) (updated January 2024) and will make changes if someone suggests. I will also make sure that Lawnicons builds correctly.
+- [ ] I made the icons following [the Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) (upd. Jan 2024) and will make changes if someone suggests. I will also make sure that Lawnicons builds correctly.
