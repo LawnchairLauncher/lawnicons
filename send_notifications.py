@@ -42,7 +42,7 @@ try:
 	commits = list(repository.iter_commits(commits_range))
 except git.exc.GitCommandError as error:
 	print(f"Error fetching commits: {error}")
-    exit(1)
+	exit(1)
 
 overview_link = f'https://github.com/{github_repository}/compare/{commits_range}'
 overview_link_tag = f'''<a href="{overview_link}">{len(commits)} new commit{'s' if len(commits) > 1 else ''}</a>'''
