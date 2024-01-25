@@ -38,7 +38,11 @@ def send_document_to_ci_channel(document):
 
 repository = git.Repo('.')
 commits_range = f'{github_event_before}...{github_sha}'
-commits = list(repository.iter_commits(commits_range))
+try:
+	commits = list(repository.iter_commits(commits_range))
+except git.exc.GitCommandError as error:
+	print(f"Error fetching commits: {error}")
+    exit(1)
 
 overview_link = f'https://github.com/{github_repository}/compare/{commits_range}'
 overview_link_tag = f'''<a href="{overview_link}">{len(commits)} new commit{'s' if len(commits) > 1 else ''}</a>'''
