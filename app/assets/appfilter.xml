@@ -426,6 +426,7 @@
   <item component="ComponentInfo{moe.low.arc/low.moe.AppActivity}" drawable="arcaea" name="Arcaea" />
   <item component="ComponentInfo{com.kanedias.archforums/com.kanedias.archforums.MainActivity}" drawable="archlinux_forums" name="Archlinux Forums" />
   <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_dark" name="Arcticons Dark" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_you" name="Arcticons You" />
   <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_you" name="Arcticons You" />
   <item component="ComponentInfo{de.swr.avp.ard/de.ard.ardmediathek.ui.main.MainActivity}" drawable="ard_mediathek" name="ARD Mediathek" />
   <item component="ComponentInfo{de.swr.avp.ard/de.swr.avp.ard.MainActivity}" drawable="ard_mediathek" name="ARD Mediathek" />
@@ -728,6 +729,7 @@
   <item component="ComponentInfo{com.biopassport.rkzu/com.biopassport.rkzu.MainActivity}" drawable="biopassport" name="Biopassport" />
   <item component="ComponentInfo{com.minar.birday/com.minar.birday.activities.MainActivity}" drawable="birday" name="Birday" />
   <item component="ComponentInfo{com.minar.birday/com.minar.birday.activities.SplashActivity}" drawable="birday" name="Birday" />
+  <item component="ComponentInfo{com.bitdefender.centralmgmt/com.bitdefender.centralmgmt.main.MainActivity}" drawable="bitdefender_central" name="Bitdefender Central" />
   <item component="ComponentInfo{com.bitdefender.security/com.bitdefender.security.material.DashboardActivity}" drawable="bitdefender_security" name="Bitdefender Security" />
   <item component="ComponentInfo{com.bitdefender.security/com.bitdefender.security.BDMain}" drawable="bitdefender_security" name="Bitdefender Security" />
   <item component="ComponentInfo{com.bitdefender.security/com.bitdefender.security.material.MainActivity}" drawable="bitdefender_security" name="Bitdefender Security" />
@@ -1267,7 +1269,6 @@
   <item component="ComponentInfo{com.piriform.ccleaner/com.piriform.ccleaner.ui.activity.MainActivity}" drawable="ccleaner" name="CCleaner" />
   <item component="ComponentInfo{com.piriform.ccleaner/com.avast.android.cleaner.activity.StartActivity}" drawable="ccleaner" name="CCleaner" />
   <item component="ComponentInfo{cellmapper.net.cellmapper/cellmapper.net.cellmapper.MainActivity}" drawable="cellmapper" name="Cellmapper" />
-  <item component="ComponentInfo{com.bitdefender.centralmgmt/com.bitdefender.centralmgmt.main.MainActivity}" drawable="bitdefender_central" name="Bitdefender Central" />
   <item component="ComponentInfo{com.apcpdcl.customerapp/com.apcpdcl.customerapp.Splashscreen}" drawable="central_power" name="Central Power" />
   <item component="ComponentInfo{com.cepat/com.cepat.MainActivity}" drawable="cepat" name="CEPat" />
   <item component="ComponentInfo{com.teb/com.teb.feature.noncustomer.splash.SplashActivity}" drawable="cepteteb" name="CEPTETEB" />
@@ -4753,8 +4754,6 @@
   <item component="ComponentInfo{com.awedea.nyx/com.awedea.nyx.activities.SplashScreenActivity}" drawable="nyx" name="Nyx" />
   <item component="ComponentInfo{com.kevinforeman.nzb360/com.kevinforeman.nzb360.StartupLauncher}" drawable="nzb360" name="NZB360" />
   <item component="ComponentInfo{com.coloros.relax/com.coloros.relax.ui.MainActivity}" drawable="o_relax" name="O Relax" />
-  <item component="ComponentInfo{com.oup.elt.oald10_gp/com.paragon_software.splash_screen_manager.LauncherActivity}" drawable="oald" name="Oxford Advanced Learner's Dict" />
-  <item component="ComponentInfo{com.oup.elt.oald10_gp/com.paragon_software.splash_screen_manager.BaseLauncherActivity}" drawable="oald" name="Oxford Advanced Learner's Dict" />
   <item component="ComponentInfo{com.obedience/com.obedience.settings.DefaultAlias}" drawable="obedience" name="Obedience" />
   <item component="ComponentInfo{com.obedience/com.obedience.DefaultAlias}" drawable="obedience" name="Obedience" />
   <item component="ComponentInfo{com.obilet.androidside/com.obilet.androidside.presentation.screen.splash.activity.SplashScreen}" drawable="obilet" name="obilet" />
@@ -4997,6 +4996,8 @@
   <item component="ComponentInfo{it.owlgram.android/org.telegram.ui.LaunchActivity}" drawable="owlgram" name="OwlGram" />
   <item component="ComponentInfo{com.owncloud.android/com.owncloud.android.ui.activity.SplashActivity}" drawable="owncloud" name="ownCloud" />
   <item component="ComponentInfo{org.owntracks.android/org.owntracks.android.ui.map.MapActivity}" drawable="owntracks" name="OwnTracks" />
+  <item component="ComponentInfo{com.oup.elt.oald10_gp/com.paragon_software.splash_screen_manager.LauncherActivity}" drawable="oald" name="Oxford Advanced Learner's Dict" />
+  <item component="ComponentInfo{com.oup.elt.oald10_gp/com.paragon_software.splash_screen_manager.BaseLauncherActivity}" drawable="oald" name="Oxford Advanced Learner's Dict" />
   <item component="ComponentInfo{com.cris87.oxygen/com.candybar.dev.activities.SplashActivity}" drawable="oxigen_hd" name="Oxigen HD" />
   <item component="ComponentInfo{com.arjanvlek.oxygenupdater/com.oxygenupdater.activities.MainActivity}" drawable="oxygen_updater" name="Oxygen Updater" />
   <item component="ComponentInfo{com.arjanvlek.oxygenupdater/com.arjanvlek.oxygenupdater.activities.SplashActivity}" drawable="oxygen_updater" name="Oxygen Updater" />
@@ -6042,6 +6043,7 @@
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderMainLauncher}" drawable="samsung_finder" name="Samsung Finder" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderActivity}" drawable="samsung_finder" name="Samsung Finder" />
   <item component="ComponentInfo{com.samsung.android.galaxycontinuity/com.samsung.android.galaxycontinuity.SplashActivity}" drawable="samsung_flow" name="Samsung Flow" />
+  <item component="ComponentInfo{com.foodient.whisk/com.foodient.whisk.entry.AppActivity}" drawable="samsung_food" name="Samsung Food" />
   <item component="ComponentInfo{com.samsung.android.app.spage/com.samsung.android.app.spage.main.LauncherActivity}" drawable="free" name="Samsung Free" />
   <item component="ComponentInfo{com.samsung.android.game.gamelab/com.samsung.android.game.gamelab.ui.StartActivity}" drawable="samsung_game_plugins" name="Samsung Game Plugins" />
   <item component="ComponentInfo{com.samsung.sree/com.samsung.sree.ui.MainActivity}" drawable="samsung_global_goals" name="Samsung Global Goals" />
@@ -8140,7 +8142,6 @@
   <item component="ComponentInfo{io.kuenzler.whatsappwebtogo/io.kuenzler.whatsappwebtogo.WebviewActivity}" drawable="whatsapp_web_to_go" name="WhatsApp Web To Go" />
   <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.HomeActivity}" drawable="whatsauto" name="WhatsAuto" />
   <item component="ComponentInfo{com.whereismytrain.android/com.whereismytrain.view.activities.MainPagerActivity}" drawable="where_is_my_train" name="Where is my Train" />
-  <item component="ComponentInfo{com.foodient.whisk/com.foodient.whisk.entry.AppActivity}" drawable="samsung_food" name="Samsung Food" />
   <item component="ComponentInfo{com.vector123.whiteborder/com.vector123.blank.activity.HomeActivity}" drawable="white_border" name="White Border" />
   <item component="ComponentInfo{com.wtmp.svdsoftware/com.wtmp.svdsoftware.HomeActivity}" drawable="wtmp" name="Who touched my phone?" />
   <item component="ComponentInfo{com.wtmp.svdsoftware/com.wtmp.svdsoftware.ui.AppActivity}" drawable="wtmp" name="Who touched my phone?" />
