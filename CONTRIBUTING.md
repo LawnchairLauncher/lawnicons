@@ -11,7 +11,7 @@ For additional information on designing icons and samples, see [the Lawnicons Fi
 Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
 
 ### TL;DR
-The canvas is `192×192px`. The content area for most icons are `160×160px`, but `154×154px` for the squares. No fill, the stroke width is `12px`. The shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Maintain visual balance. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
+The canvas is `192×192px`. The content area for most icons are `160×160px`, but `154×154px` for the squares. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Maintain visual balance. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
 
 It's better to make few high-quality icons than many crappy ones and waste the reviewer's time on comments and your own on fixes.
 
