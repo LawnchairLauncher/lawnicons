@@ -154,27 +154,47 @@ const enterElement = (element) => {
             const end = cursor;
             const diff1 = args[0] - argsO[0];
             const diff2 = args[1] - argsO[1];
-            if (diff1 == 0 && diff2 == 0 || (args[0] > 1 && args[1] > 1 && diff1 > -.1 && diff1 < .1 && diff2 > -.1 && diff2 < .1)) {
-                const oldACenter = getArcCenter(start, midway, argsO.slice(0, 5));
+            if (
+                (diff1 == 0 && diff2 == 0) ||
+                (args[0] > 1 &&
+                    args[1] > 1 &&
+                    diff1 > -0.1 &&
+                    diff1 < 0.1 &&
+                    diff2 > -0.1 &&
+                    diff2 < 0.1)
+            ) {
+                const oldACenter = getArcCenter(
+                    start,
+                    midway,
+                    argsO.slice(0, 5)
+                );
                 const oldBCenter = getArcCenter(midway, end, args.slice(0, 5));
                 const newCenter = getArcCenter(start, end, args.slice(0, 5));
                 const diffA = Math.sqrt(
                     Math.pow(newCenter[0] - oldACenter[0], 2) +
-                    Math.pow(newCenter[1] - oldACenter[1], 2)
-                )
+                        Math.pow(newCenter[1] - oldACenter[1], 2)
+                );
                 const diffB = Math.sqrt(
                     Math.pow(newCenter[0] - oldBCenter[0], 2) +
-                    Math.pow(newCenter[1] - oldBCenter[1], 2)
-                )
+                        Math.pow(newCenter[1] - oldBCenter[1], 2)
+                );
                 if (diffA + diffB < 0.2) {
-                    path.splice(i, 1)
+                    path.splice(i, 1);
                     i -= 1;
                     path[i] = {
                         ...path[i],
                         base: start,
                         command: "A",
-                        args: [args[0], args[1], args[2], args[3], args[4], cursor[0], cursor[1]],
-                    }
+                        args: [
+                            args[0],
+                            args[1],
+                            args[2],
+                            args[3],
+                            args[4],
+                            cursor[0],
+                            cursor[1],
+                        ],
+                    };
                 }
             }
         }
