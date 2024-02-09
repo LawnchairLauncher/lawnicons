@@ -103,4 +103,6 @@ if len(commits) != 0:
 
     with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
         send_document_to_ci_channel(document=apk)
-        send_document_to_builds_channel(document=apk)
+    
+    with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
+         send_document_to_builds_channel(document=apk)
