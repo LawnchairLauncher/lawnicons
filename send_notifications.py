@@ -61,7 +61,20 @@ def send_message_to_builds_channel(message):
     requests.post(
         discord_ci_bot_token,
         {
-            "content": message
+            "content": message,
+            "embeds": [
+                {
+                    # Placeholder
+                    "type": "rich",
+                    "title": `Honey! New Lawnchair build just dropped!`,           # | TODO: uhhhh something professional? |
+                    "description": `* Support for Honey Roasted Ham receipt.`,     # | I mean like... professional?        |
+                    "color": 0x00FFFF,                                             # TODO: Colour hierachy for Lawnchair Launcher/Lawnicons
+                    "timestamp": `2304-01-01T00:00:00.000Z`,                       # TODO: ISO8601 dynamic Timedate
+                    "footer": {
+                        "text": `Lawnchair GitHub CI`
+                    }
+                }
+            ]
         }
     )
 
