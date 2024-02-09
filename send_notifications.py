@@ -13,7 +13,6 @@ artifact_directory = os.getenv('ARTIFACT_DIRECTORY')
 discord_ci_bot_token = os.getenv('DISCORD_CI_BOT_TOKEN')
 
 github_repository = "lawnchairlauncher/lawnicons"
-github_ref = "test"
 
 def github_link():
     return f'https://github.com/{github_repository}/'
@@ -59,7 +58,7 @@ def telegram_commit_message(commits, commits_range):
 
 # Discord
 def send_message_to_builds_channel(message):
-    test = requests.post(
+    requests.post(
         discord_ci_bot_token,
         {
             "content": message
