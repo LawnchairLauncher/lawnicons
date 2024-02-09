@@ -80,7 +80,7 @@ def discord_commit_message(commits, commits_range):
 
     for commit in reversed(commits):
         commit_message = commit.message.split('\n')[0]
-        commit_link = f'{github_link()}commit/{commits_hexsha}>'
+        commit_link = f'{github_link()}commit/{commit.hexsha}>'
         commit_link_tag = f'[{repository.git.rev_parse(commit.hexsha, short=7)}]({commit_link})'
         encoded_message = html.escape(commit_message)
         message += f'\n* {commit_link_tag}: {encoded_message}'
@@ -88,7 +88,6 @@ def discord_commit_message(commits, commits_range):
 
 repository = git.Repo('.')
 commits_range = f'{github_event_before}...{github_sha}'
-
 
 try:
 	commits = list(repository.iter_commits(commits_range))
