@@ -2,6 +2,7 @@ import git
 import html
 import os
 import requests
+import datetime
 
 github_event_before = os.getenv('GITHUB_EVENT_BEFORE')
 github_sha = os.getenv('GITHUB_SHA')
@@ -12,7 +13,9 @@ telegram_ci_channel_id = os.getenv('TELEGRAM_CI_CHANNEL_ID')
 artifact_directory = os.getenv('ARTIFACT_DIRECTORY')
 discord_ci_bot_token = os.getenv('DISCORD_CI_BOT_TOKEN')
 
-github_repository = "lawnchairlauncher/lawnicons"
+github_organisation = "lawnchairlauncher"
+github_repository_name = "lawnicons"
+github_repository = f"{github_organisation}/{github_repository_name}"
 
 def github_link():
     return f'https://github.com/{github_repository}/'
@@ -58,6 +61,13 @@ def telegram_commit_message(commits, commits_range):
 
 # Discord
 def send_message_to_builds_channel(message):
+    utc_iso8601 = datetime.datetime.utcnow().isoformat()
+    friendly_repository_name = github_repository_name[0].upper() + github_repository_name[1:]
+    accent = [
+        "0x38c131", # Lawnchair
+        "0xc131ab"  # Lawnicons
+    ]
+    
     requests.post(
         discord_ci_bot_token,
         {
@@ -66,12 +76,12 @@ def send_message_to_builds_channel(message):
                 {
                     # Placeholder
                     "type": "rich",
-                    "title": `Honey! New Lawnchair build just dropped!`,           # | TODO: uhhhh something professional? |
-                    "description": `* Support for Honey Roasted Ham receipt.`,     # | I mean like... professional?        |
-                    "color": 0x00FFFF,                                             # TODO: Colour hierachy for Lawnchair Launcher/Lawnicons
-                    "timestamp": `2304-01-01T00:00:00.000Z`,                       # TODO: ISO8601 dynamic Timedate
+                    "title": "Honey! New Lawnchair build just dropped!",           # | TODO: uhhhh something professional? |
+                    "description": "* Support for Honey Roasted Ham receipt.",     # | I mean like... professional?        |
+                    "color": accent[1],
+                    "timestamp": utc_iso8601,
                     "footer": {
-                        "text": `Lawnchair GitHub CI`
+                        "text": f"{friendly_repository_name[0].upper() + friendly_repository_name[1:]} GitHub CI"
                     }
                 }
             ]
