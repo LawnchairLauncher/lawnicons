@@ -447,8 +447,9 @@
   <item component="ComponentInfo{moe.low.arc/low.moe.AppActivity}" drawable="arcaea" name="Arcaea" />
   <item component="ComponentInfo{com.kanedias.archforums/com.kanedias.archforums.MainActivity}" drawable="archlinux_forums" name="Archlinux Forums" />
   <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_dark" name="Arcticons Dark" />
-  <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_you" name="Arcticons You" />
-  <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_you" name="Arcticons You" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you" name="Arcticons Material You" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you" name="Arcticons Material You" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you" name="Arcticons Material You" />
   <item component="ComponentInfo{de.swr.avp.ard/de.ard.ardmediathek.ui.main.MainActivity}" drawable="ard_mediathek" name="ARD Mediathek" />
   <item component="ComponentInfo{de.swr.avp.ard/de.swr.avp.ard.MainActivity}" drawable="ard_mediathek" name="ARD Mediathek" />
   <item component="ComponentInfo{com.arenakuota.mobile/com.w38s.StartupActivity}" drawable="arena_kuota" name="Arena Kuota" />
@@ -941,6 +942,8 @@
   <item component="ComponentInfo{com.xaviertobin.noted/com.xaviertobin.noted.activities.ActivitySignIn}" drawable="bundled_notes" name="Bundled Notes" />
   <item component="ComponentInfo{com.xaviertobin.noted/com.xaviertobin.noted.activities.ActivityBundles}" drawable="bundled_notes" name="Bundled Notes" />
   <item component="ComponentInfo{com.bunq.android/com.bunq.android.ui.activity.SplashScreenActivity}" drawable="bunq" name="bunq" />
+  <item component="ComponentInfo{de.burgerking.kingfinder/de.xroot.burgerking.ui.activity.SplashScreenActivity}" drawable="burger_king" name="Burger King" />
+  <item component="ComponentInfo{de.burgerking.kingfinder/de.burgerking.kingfinder.ui.main.MainActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{com.bk.pt/es.burgerking.android.presentation.walkthrough.WalkthroughIntroActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{com.expremio.burgerking/com.expremio.mobileapp.MainActivity}" drawable="burger_king" name="Burger King" />
   <item component="ComponentInfo{burgerking.com.br.appandroid/edeploy.com.br.delivery.splash.SplashActivity_}" drawable="burger_king" name="Burger King" />
@@ -4574,7 +4577,8 @@
   <item component="ComponentInfo{net.mullvad.mullvadvpn/net.mullvad.mullvadvpn.ui.MainActivity}" drawable="mullvad_vpn" name="Mullvad VPN" />
   <item component="ComponentInfo{com.mmrda.mumbaione/com.trufaremobi.mmrda.view.activities.SplashActivity}" drawable="mumbai_one" name="Mumbai 1" />
   <item component="ComponentInfo{com.galp.mundogalp.release/com.galp.mundogalp.release.MainActivity}" drawable="mundo_galp" name="Mundo Galp" />
-  <item component="ComponentInfo{com.artifex.mupdf.viewer.app/com.artifex.mupdf.viewer.app.LibraryActivity}" drawable="mupdf_viewer" name="MuPDF viewer" />
+  <item component="ComponentInfo{com.artifex.mupdf.mini.app/com.artifex.mupdf.mini.app.LibraryActivity}" drawable="mupdf" name="MuPDF" />
+  <item component="ComponentInfo{com.artifex.mupdf.viewer.app/com.artifex.mupdf.viewer.app.LibraryActivity}" drawable="mupdf" name="MuPDF" />
   <item component="ComponentInfo{com.musescore.playerlite/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="musescore" name="MuseScore" />
   <item component="ComponentInfo{com.oppo.music/com.oppo.music.MusicThemeStartActivity}" drawable="yandex_music" name="Music" />
   <item component="ComponentInfo{com.oppo.music/com.oppo.music.MediaPlaybackActivity}" drawable="yandex_music" name="Music" />
@@ -5723,6 +5727,7 @@
   <item component="ComponentInfo{com.pixelfed/com.pixelfed.MainActivity}" drawable="pixelfed" name="Pixelfed" />
   <item component="ComponentInfo{balti.xposed.pixelifygooglephotos/balti.xposed.pixelifygooglephotos.ActivityMain}" drawable="pixelify_gphotos" name="Pixelify GPhotos" />
   <item component="ComponentInfo{com.imaginstudio.imagetools.pixellab/com.imaginstudio.imagetools.pixellab.MainActivity}" drawable="pixellab" name="Pixellab" />
+  <item component="ComponentInfo{com.perol.pixez/com.perol.pixez.MainActivity}" drawable="pixez" name="PixEz" />
   <item component="ComponentInfo{com.perol.play.pixez/com.perol.pixez.MainActivity}" drawable="pixez" name="PixEz" />
   <item component="ComponentInfo{jp.pxv.android/jp.pxv.android.RootActivity}" drawable="pixiv" name="Pixiv ~~ ピクシブ" />
   <item component="ComponentInfo{jp.pxv.android/jp.pxv.android.activity.RoutingActivity}" drawable="pixiv" name="Pixiv ~~ ピクシブ" />
