@@ -14,6 +14,8 @@ discord_ci_bot_token = os.getenv('DISCORD_CI_BOT_TOKEN')
 
 github_repository = "lawnchairlauncher/lawnicons"
 
+print(len(discord_ci_bot_token))
+
 def github_link():
     return f'https://github.com/{github_repository}/'
 
@@ -26,9 +28,11 @@ def send_message_to_ci_channel(message):
         'disable_web_page_preview': 'true'
     }
     requests.post(
-        url = f'https://api.telegram.org/bot{telegram_ci_bot_token}/sendMessage',
-        data = data
+         url = f'https://api.telegram.org/bot{telegram_ci_bot_token}/sendMessage',
+         data = data
     )
+    
+        
 
 def send_document_to_ci_channel(document):
     data = {
@@ -58,19 +62,27 @@ def telegram_commit_message(commits, commits_range):
 
 # Discord
 def send_message_to_builds_channel(message):
-    requests.post(
-        discord_ci_bot_token,
-        {
-            "content": message
-        }
-    )
+    try:
+        test = requests.post(
+            discord_ci_bot_token,
+             {
+                 "content": message
+             }
+        )
+        print(test)
+    except:
+        print(repr(sys.execption()))
 
 def send_document_to_builds_channel(document):
     files = {
         'payload_json': (None, '{"content": ""}'),
         'media': document
     }
-    requests.post(discord_ci_bot_token, files=files)
+    try: 
+        test = requests.post(discord_ci_bot_token, files=files)
+        print(test)
+    except:
+        print(repr(sys.execption()))
 
 def discord_commit_message(commits, commits_range):
     overview_link = f'{github_link()}compare/{commits_range}>'
