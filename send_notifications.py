@@ -58,25 +58,19 @@ def telegram_commit_message(commits, commits_range):
 
 # Discord
 def send_message_to_builds_channel(message):
-    try:
-        requests.post(
-            discord_ci_bot_token,
-            {
-                "content": message
-            }
-        )
-    except:
-        print(sys.execption())
+    requests.post(
+        discord_ci_bot_token,
+        {
+            "content": message
+        }
+    )
 
 def send_document_to_builds_channel(document):
-    try:
-        files = {
-            'payload_json': (None, '{"content": ""}'),
-            'media': document
-        }
-        requests.post(discord_ci_bot_token, files=files)
-    except:
-        print(sys.execption())
+    files = {
+        'payload_json': (None, '{"content": ""}'),
+        'media': document
+    }
+    requests.post(discord_ci_bot_token, files=files)
 
 def discord_commit_message(commits, commits_range):
     overview_link = f'{github_link()}compare/{commits_range}>'
