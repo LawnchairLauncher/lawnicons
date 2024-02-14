@@ -1109,10 +1109,10 @@
   <item component="ComponentInfo{com.darkempire78.opencalculator/com.darkempire78.opencalculator.MainActivity}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.inator.calculator/com.inator.calculator.activities.MainActivity}" drawable="calculator" name="Calculator" />
-  <item component="ComponentInfo{com.miui.calculator/.cal.CalculatorActivity}" drawable="calculator" name="Calculator" />
-  <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.CalculatorActivity}" drawable="calculator" name="Calculator" />
-  <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.NormalCalculatorActivity}" drawable="calculator" name="Calculator" />
-  <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.MainActivity}" drawable="calculator" name="Calculator" />
+  <item component="ComponentInfo{com.miui.calculator/.cal.CalculatorActivity}" drawable="miui_calculator" name="MIUI Calculator" />
+  <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.CalculatorActivity}" drawable="miui_calculator" name="MIUI Calculator" />
+  <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.NormalCalculatorActivity}" drawable="miui_calculator" name="MIUI Calculator" />
+  <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.MainActivity}" drawable="miui_calculator" name="MIUI Calculator" />
   <item component="ComponentInfo{com.oneplus.calculator/.Calculator}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.oneplus.calculator/com.oneplus.calculator.Calculator}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.sec.android.app.popupcalculator/.Calculator}" drawable="calculator" name="Calculator" />
@@ -1626,10 +1626,10 @@
   <item component="ComponentInfo{com.coloros.compass/com.coloros.compass.flat.FlatCompass}" drawable="compass" name="Compass" />
   <item component="ComponentInfo{com.motorola.cn.compass/com.motorola.cn.compass.CompassActivity}" drawable="compass" name="compass" />
   <item component="ComponentInfo{com.coloros.compass2/com.coloros.compass.flat.FlatCompass}" drawable="compass" name="Compass" />
-  <item component="ComponentInfo{com.bobek.compass/com.bobek.compass.MainActivity}" drawable="compass" name="Compass" />
+  <item component="ComponentInfo{com.bobek.compass/com.bobek.compass.MainActivity}" drawable="compass_by_bobek" name="Compass" />
   <item component="ComponentInfo{com.miui.compass/com.miui.compass.CompassActivity}" drawable="compass" name="Compass" />
   <item component="ComponentInfo{com.miui.compass/com.miui.compass.MainActivity}" drawable="compass" name="Compass" />
-  <item component="ComponentInfo{dev.synapsetech.compass/dev.synapsetech.compass.MainActivity}" drawable="compass" name="Compass" />
+  <item component="ComponentInfo{dev.synapsetech.compass/dev.synapsetech.compass.MainActivity}" drawable="compass_synapsetech" name="Compass" />
   <item component="ComponentInfo{com.transsion.compass/com.transsion.compass.CompassActivity}" drawable="compass" name="Compass" />
   <item component="ComponentInfo{apps.r.compass/apps.r.compass.StartActivity}" drawable="compass_rapps" name="Compass by R.Apps" />
   <item component="ComponentInfo{apps.r.compass/apps.r.compass.StartTheme.Charcoal}" drawable="compass_rapps" name="Compass by R.Apps" />
@@ -7669,9 +7669,9 @@
   <item component="ComponentInfo{com.scroll.scrolltop.backtotop/com.example.statusbar.activity.WelComeActivity}" drawable="tap_scroll" name="Tap Scroll" />
   <item component="ComponentInfo{com.kieronquinn.app.taptap/com.kieronquinn.app.taptap.ui.activities.SettingsActivity}" drawable="tap_tap" name="Tap, Tap" />
   <item component="ComponentInfo{com.kieronquinn.app.taptap/com.kieronquinn.app.taptap.ui.activities.MainActivity}" drawable="tap_tap" name="Tap, Tap" />
-  <item component="ComponentInfo{com.quoord.tapatalkpro.activity/com.quoord.tapatalkpro.activity.directory.EntryActivity}" drawable="tapatalk_pro" name="Tapatalk Pro" />
+  <item component="ComponentInfo{com.quoord.tapatalkpro.activity/com.quoord.tapatalkpro.activity.directory.EntryActivity}" drawable="tapatalk" name="Tapatalk" />
   <item component="ComponentInfo{com.quoord.tapatalkHD/com.quoord.tapatalkpro.activity.directory.ics.IcsEntryActivity}" drawable="tapatalk_pro" name="Tapatalk Pro" />
-  <item component="ComponentInfo{com.quoord.tapatalkpro.activity/com.quoord.tapatalkpro.activity.directory.ics.IcsEntryActivity}" drawable="tapatalk_pro" name="Tapatalk Pro" />
+  <item component="ComponentInfo{com.quoord.tapatalkpro.activity/com.quoord.tapatalkpro.activity.directory.ics.IcsEntryActivity}" drawable="tapatalk" name="Tapatalk" />
   <item component="ComponentInfo{com.sharpregion.tapet/com.sharpregion.tapet.MainActivity}" drawable="tapet" name="Tapet" />
   <item component="ComponentInfo{com.sharpregion.tapet/com.sharpregion.tapet.main.home.HomeActivity}" drawable="tapet" name="Tapet" />
   <item component="ComponentInfo{com.sharpregion.tapet/com.sharpregion.tapet.root.RootActivity}" drawable="tapet" name="Tapet" />
@@ -8353,7 +8353,6 @@
   <item component="ComponentInfo{com.ubnt.easyunifi/com.ubnt.unifi.network.splashscreen.SplashScreenActivity}" drawable="unifi" name="UniFi" />
   <item component="ComponentInfo{com.ubnt.unifi.protect/com.ubnt.sections.splash.AuthenticationActivity}" drawable="unifi_protect" name="UniFi Protect" />
   <item component="ComponentInfo{de.unifilm.app/de.unifilm.app.MainActivity}" drawable="unifilm_de" name="unifilm.de" />
-  <item component="ComponentInfo{com.unionbankph.online/com.unionbankph.online.app.splash}" drawable="unionbank" name="UnionBank" />
   <item component="ComponentInfo{com.unionbankph.online/com.unionbankph.online.app.splash.SplashActivity}" drawable="unionbank" name="UnionBank" />
   <item component="ComponentInfo{com.unionpay/com.unionpay.activity.UPActivityMain}" drawable="unionpay" name="UnionPay" />
   <item component="ComponentInfo{com.uniqlo.my.catalogue/com.uniqlo.ja.catalogue.view.mobile.home.HomeActivity}" drawable="uniqlo" name="UNIQLO" />
@@ -8926,7 +8925,7 @@
   <item component="ComponentInfo{com.xingin.xhs/com.xingin.xhs.index.v2.IndexActivityV2}" drawable="xhs" name="xiaohongshu" />
   <item component="ComponentInfo{com.mi.earphone/com.xiaomi.fitness.login.SplashActivity}" drawable="xiaomi_earbuds" name="Xiaomi Earbuds" />
   <item component="ComponentInfo{com.xiaomi.glgm/com.xiaomi.glgm.home.ui.SplashActivity}" drawable="xiaomi_games" name="Xiaomi Games" />
-  <item component="ComponentInfo{com.xiaomi.shop/com.xiaomi.shop.activity.MainTabActivity}" drawable="mishop" name="xiaomishop" />
+  <item component="ComponentInfo{com.xiaomi.shop/com.xiaomi.shop.activity.MainTabActivity}" drawable="mi_store" name="MI Store" />
   <item component="ComponentInfo{com.xt.retouch/com.xt.retouch.uilauncher.LaunchActivity}" drawable="xingtu" name="xingtu" />
   <item component="ComponentInfo{me.gkd.xs.ps/me.gkd.xs.ps.ui.activity.WelcomeActivity}" drawable="xinshang" name="xinshang" />
   <item component="ComponentInfo{com.kingosoft.activity_kb_common/com.kingosoft.activity_kb_common.LogoImageActivity}" drawable="xiqueer" name="XIQUEER" />
