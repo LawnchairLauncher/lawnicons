@@ -323,6 +323,7 @@
   <item component="ComponentInfo{com.google.android.projection.gearhead/com.google.android.gearhead.vanagon.VnLaunchPadActivity}" drawable="android_auto" name="Android Auto" />
   <item component="ComponentInfo{com.google.android.projection.gearhead/com.google.android.projection.gearhead.companion.SplashScreenActivity}" drawable="android_auto" name="Android Auto" />
   <item component="ComponentInfo{com.google.android.apps.betterbug/com.google.android.apps.betterbug.bugslist.BugsListActivity}" drawable="feedback" name="Android Beta Feedback" />
+  <item component="ComponentInfo{com.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="keyboard" name="Android Keyboard (AOSP)" />
   <item component="ComponentInfo{com.android.inputmethod.latin/com.android.inputmethod.latin.setup.SetupActivity}" drawable="keyboard" name="Android Keyboard (AOSP)" />
   <item component="ComponentInfo{studio.com.techriz.andronix/studio.com.techriz.andronix.ui.Splash}" drawable="andronix" name="Andronix" />
   <item component="ComponentInfo{com.dokeraj.androtainer/com.dokeraj.androtainer.MainActiviy}" drawable="androtainer" name="AndroTainer" />
@@ -1157,6 +1158,11 @@
   <item component="ComponentInfo{digifit.virtuagym.foodtracker/digifit.virtuagym.foodtracker.presentation.screen.main.MainActivity}" drawable="calorie_carb_and_fat_counter" name="Calorie, Carb &amp; Fat Counter" />
   <item component="ComponentInfo{org.calyxinstitute.vpn/se.leap.bitmaskclient.StartActivity}" drawable="calyxvpn" name="CalyxVPN" />
   <item component="ComponentInfo{org.calyxinstitute.vpn/se.leap.bitmaskclient.base.StartActivity}" drawable="calyxvpn" name="CalyxVPN" />
+  <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.VideoCamera}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.LaunchCamera}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraIndex}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.Camera}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.mediatek.camera/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.android.MGC_8_9_097/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Yellow}" drawable="camera" name="Camera" />
@@ -2567,6 +2573,7 @@
   <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.LicenseActivity}" drawable="find_my_device" name="Find My Device" />
   <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.activities.MainActivity}" drawable="find_my_device" name="Find My Device" />
   <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.MainActivity}" drawable="find_my_device" name="Find My Device" />
+  <item component="ComponentInfo{de.nulide.findmydevice/de.nulide.findmydevice.MainActivity}" drawable="findmydevice" name="FindMyDevice" />
   <item component="ComponentInfo{de.nulide.findmydevice/de.nulide.findmydevice.ui.MainActivity}" drawable="findmydevice" name="FindMyDevice" />
   <item component="ComponentInfo{dev.jdtech.jellyfin/dev.jdtech.jellyfin.MainActivity}" drawable="findroid" name="Findroid" />
   <item component="ComponentInfo{yuh.yuh.finelock/yuh.yuh.finelock.T}" drawable="fine_lock" name="Fine Lock" />
@@ -6932,6 +6939,7 @@
   <item component="ComponentInfo{com.shopee.th/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee" />
   <item component="ComponentInfo{com.shopee.tw/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee" />
   <item component="ComponentInfo{com.shopee.vn/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee" />
+  <item component="ComponentInfo{com.beeasy.toppay/com.airpay.login.splash.SplashActivity}" drawable="shopeepay" name="ShopeePay" />
   <item component="ComponentInfo{com.shopify.arrive/com.shopify.arrive.MainActivity}" drawable="shopify_shop" name="Shopify Shop" />
   <item component="ComponentInfo{com.flipkart.shopsy/com.flipkart.shopsy.SplashActivity}" drawable="shopsy" name="Shopsy" />
   <item component="ComponentInfo{com.x7890.shortcutcreator/com.x7890.shortcutcreator.AppListActivity}" drawable="shortcut_creator" name="Shortcut Creator" />
@@ -8649,7 +8657,6 @@
   <item component="ComponentInfo{com.infrasoft.uboi/com.infrasoft.uboi.UBIMADPJULVyom}" drawable="vyom" name="Vyom" />
   <item component="ComponentInfo{com.infrasoft.uboi/com.infrasoft.uboi.UBIMADP}" drawable="vyom" name="Vyom" />
   <item component="ComponentInfo{com.infrasoft.uboi/com.infrasoft.uboi.UBIMADPCUGVyom}" drawable="vyom" name="Vyom" />
-  <item component="ComponentInfo{com.beeasy.toppay/com.airpay.login.splash.SplashActivity}" drawable="shopeepay" name="ShopeePay" />
   <item component="ComponentInfo{com.wacken/com.appmiral.splash.SplashActivity}" drawable="wacken" name="Wacken" />
   <item component="ComponentInfo{com.wacken/com.greencopper.android.goevent.root.mobile.MainMobileActivity}" drawable="wacken" name="Wacken" />
   <item component="ComponentInfo{com.wahed.mobile/com.wahed.mobile.MainActivity}" drawable="wahed" name="Wahed" />
