@@ -1157,6 +1157,8 @@
   <item component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Teal}" drawable="simple_calendar" name="Calendar" />
   <item component="ComponentInfo{com.gustavoas.calendarqst/com.gustavoas.calendarqst.SettingsActivity}" drawable="calentile" name="CalenTile" />
   <item component="ComponentInfo{callfilter.app/callfilter.app.MainActivity}" drawable="call_filter" name="Call Filter" />
+  <item component="ComponentInfo{com.garena.game.codm/com.tencent.tmgp.cod.PermissionGrantActivity}" drawable="cod_mobile" name="Call Of Duty Mobile" />
+  <item component="ComponentInfo{com.garena.game.codm/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="cod_mobile" name="Call Of Duty Mobile" />
   <item component="ComponentInfo{com.garena.game.codm/com.tencent.tmgp.cod.CODMainActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.PermissionGrantActivity}" drawable="cod_mobile" name="Call of Duty Mobile" />
@@ -2288,7 +2290,6 @@
   <item component="ComponentInfo{net.easypark.android/net.easypark.android.mvp.splash.SplashActivity}" drawable="easypark" name="EasyPark" />
   <item component="ComponentInfo{com.done.faasos/com.done.faasos.activity.SplashActivity}" drawable="eatsure" name="EatSure" />
   <item component="ComponentInfo{com.easydiner/com.appstreet.eazydiner.activity.SplashActivity}" drawable="eazydiner" name="EazyDiner" />
-  <item component="ComponentInfo{com.ebase.banking/com.ebase.app.banking.ebase_banking_app.MainActivity}" drawable="ebasebanking" name="ebaseBanking" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.home.impl.main.MainActivity}" drawable="ebay" name="eBay" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.eBay$}" drawable="ebay" name="eBay" />
   <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.eBay}" drawable="ebay" name="eBay" />
@@ -2707,6 +2708,7 @@
   <item component="ComponentInfo{za.co.fnb.connect.itt/za.co.fnb.connect.itt.gui.ZoneWelcomeActivity}" drawable="fnb" name="FNB" />
   <item component="ComponentInfo{com.fb.fluid/com.fb.fluid.ActivityMain}" drawable="fluid_navigation_gestures" name="FNG" />
   <item component="ComponentInfo{com.fb.fluid/com.fb.fluid.ui.ActivitySettings}" drawable="fluid_navigation_gestures" name="FNG" />
+  <item component="ComponentInfo{com.ebase.banking/com.ebase.app.banking.ebase_banking_app.MainActivity}" drawable="fnz_bank" name="FNZ Bank" />
   <item component="ComponentInfo{com.pomodoro.foca/com.example.focaNew.MainActivity}" drawable="foca" name="Foca" />
   <item component="ComponentInfo{com.pomodoro.foca/com.ryanheise.audioservice.AudioServiceActivity}" drawable="foca" name="Foca" />
   <item component="ComponentInfo{com.franco.focus.lite/com.franco.focus.lite.activities.Main}" drawable="focus_go" name="Focus Go" />
@@ -3623,7 +3625,6 @@
   <item component="ComponentInfo{com.harman.ble.jbllink/com.harman.jblconnectplus.ui.activities.WelcomeActivity}" drawable="jbl_portable" name="JBL Portable" />
   <item component="ComponentInfo{com.harman.ble.jbllink/com.harman.jbl.portable.WelcomeActivity}" drawable="jbl_portable" name="JBL Portable" />
   <item component="ComponentInfo{me.jbusdriver/me.jbusdriver.ui.activity.SplashActivity}" drawable="jbusdriver" name="jbusdriver" />
-  <item component="ComponentInfo{com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity}" drawable="jd" name="JD" />
   <item component="ComponentInfo{com.evenma.jbl/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="je_bois_local" name="Je Bois Local" />
   <item component="ComponentInfo{org.droidtr.jelly/org.droidtr.jelly.MainActivity}" drawable="jelly_browser" name="Jelly Browser" />
   <item component="ComponentInfo{org.jellyfin.mobile/org.jellyfin.mobile.MainActivity}" drawable="jellyfin" name="Jellyfin" />
@@ -5085,7 +5086,6 @@
   <item component="ComponentInfo{com.javulticat.newpipe/org.schabi.newpipe.MainActivity}" drawable="newpipe" name="NewPipe SponsorBlock" />
   <item component="ComponentInfo{co.appreactor.news/common.AppActivity}" drawable="news" name="News ~~ Nachrichten" />
   <item component="ComponentInfo{co.appreactor.news/navigation.Activity}" drawable="news" name="News ~~ Nachrichten" />
-  <item component="ComponentInfo{com.asdoi.timetable/com.ulan.timetable.activities.MainActivity}" drawable="news" name="News ~~ Nachrichten" />
   <item component="ComponentInfo{com.pcinpact/com.pcinpact.ListeArticlesActivity}" drawable="next_actualites_informatiques" name="Next Actualités informatiques" />
   <item component="ComponentInfo{com.deutschebahn.app.android/db.vendo.android.vendigator.view.main.MainActivity}" drawable="db_navigator" name="Next DB Navigator" />
   <item component="ComponentInfo{dev.anilbeesetti.nextplayer/dev.anilbeesetti.nextplayer.MainActivity}" drawable="next_player" name="Next Player" />
@@ -8167,6 +8167,7 @@
   <item component="ComponentInfo{io.timelimit.android.aosp.direct/io.timelimit.android.ui.MainActivity}" drawable="timelimit" name="TimeLimit" />
   <item component="ComponentInfo{io.timelimit.android.google.store/io.timelimit.android.ui.MainActivity}" drawable="timelimit" name="TimeLimit" />
   <item component="ComponentInfo{ru.aleshin.timeplanner/ru.aleshin.timeplanner.presentation.ui.main.MainActivity}" drawable="timeplanner" name="TimePlanner" />
+  <item component="ComponentInfo{com.asdoi.timetable/com.ulan.timetable.activities.MainActivity}" drawable="time_table" name="TimeTable" />
   <item component="ComponentInfo{com.gabrielittner.timetable/com.gabrielittner.timetable.ui.MainActivity}" drawable="timetable" name="Timetable" />
   <item component="ComponentInfo{works.jubilee.timetree/works.jubilee.timetree.ui.SplashActivity}" drawable="timetree" name="TimeTree" />
   <item component="ComponentInfo{com.tinder/com.tinder.activities.ActivityLogin}" drawable="tinder" name="Tinder" />
@@ -9079,6 +9080,7 @@
   <item component="ComponentInfo{com.inovel.app.yemeksepeti/com.inovel.app.yemeksepeti.ui.splash.SplashActivity}" drawable="yemeksepeti" name="Yemeksepeti" />
   <item component="ComponentInfo{com.inovel.app.yemeksepeti/de.foodora.android.ui.launcher.LauncherActivity}" drawable="yemeksepeti" name="Yemeksepeti" />
   <item component="ComponentInfo{dummydomain.yetanothercallblocker/dummydomain.yetanothercallblocker.MainActivity}" drawable="yet_another_call_blocker" name="Yet Another Call Blocker" />
+  <item component="ComponentInfo{io.github.duzhaokun123.yamf/io.github.duzhaokun123.yamf.manager.ui.main.MainActivity}" drawable="mi_freeform" name="Yet Another Mi-FreeForm" />
   <item component="ComponentInfo{io.github.duzhaokun123.yamf/io.github.duzhaokun123.yamf.ui.main.MainActivity}" drawable="mi_freeform" name="Yet Another Mi-FreeForm" />
   <item component="ComponentInfo{yetzio.yetcalc/yetzio.yetcalc.MainActivity}" drawable="yetcalc" name="yetCalc" />
   <item component="ComponentInfo{rs.telenor.mymenu/rs.telenor.mymenu.MainActivity}" drawable="yettel" name="Yettel" />
@@ -9116,8 +9118,8 @@
   <item component="ComponentInfo{com.google.android.apps.youtube.producer/com.google.android.apps.youtube.producer.application.MainActivity}" drawable="youtube_create" name="YouTube Create" />
   <item component="ComponentInfo{com.google.android.apps.youtube.mango/com.google.android.apps.youtube.lite.frontend.activities.SplashActivity}" drawable="youtube_go" name="YouTube Go" />
   <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music" />
-  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music Revanced" />
-  <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music ReVanced Extended" />
+  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced Extended" />
+  <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced Extended" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
@@ -9319,6 +9321,7 @@
   <item component="ComponentInfo{jp.co.dwango.nicocas/jp.co.dwango.nicocas.ui.RootActivity}" drawable="niconico" name="ニコニコ ~~ Niconico" />
   <item component="ComponentInfo{jp.nicovideo.android/jp.nicovideo.android.StartupActivity}" drawable="niconico_video" name="ニコニコ動画 ~~ Niconico Video" />
   <item component="ComponentInfo{com.nintendo.znej/jp.co.nintendo.entry.ui.bootsequence.BootActivity}" drawable="my_nintendo" name="マイニンテンドー ~~ My Nintendo" />
+  <item component="ComponentInfo{com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity}" drawable="jd" name="京东 ~~ JD" />
   <item component="ComponentInfo{com.pxmart.android/.di.mvvm.view.start.SplashActivity}" drawable="pxpay" name="全聯福利中心 ~~ PXPay" />
   <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
   <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.presenter.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
