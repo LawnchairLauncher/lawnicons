@@ -18,7 +18,7 @@ See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releas
 ## Contributing
 Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code. It will help you avoid mistakes and save time.
 
-Before you make the icons, you can check out the examples [in Figma](https://www.figma.com/community/file/1227718471680779613). In addition, you can see which icons users want in the [popular requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=1923954573). If you make icons regularly or dozens at once, you can speed up contributing with [icontool.py](/docs/icontool_guide.md).
+Before you make the icons, you can check out the examples [in Figma](https://www.figma.com/community/file/1227718471680779613). In addition, you can see which icons users want in the [popular requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103). If you make icons regularly or dozens at once, you can speed up contributing with [icontool.py](/docs/icontool_guide.md).
 
 If you are a developer, you may find the [contributing code section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-code) useful.
 
