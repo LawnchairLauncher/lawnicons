@@ -1195,6 +1195,7 @@
   <item component="ComponentInfo{digifit.virtuagym.foodtracker/digifit.virtuagym.foodtracker.presentation.screen.main.MainActivity}" drawable="calorie_carb_and_fat_counter" name="Calorie, Carb &amp; Fat Counter" />
   <item component="ComponentInfo{org.calyxinstitute.vpn/se.leap.bitmaskclient.StartActivity}" drawable="calyxvpn" name="CalyxVPN" />
   <item component="ComponentInfo{org.calyxinstitute.vpn/se.leap.bitmaskclient.base.StartActivity}" drawable="calyxvpn" name="CalyxVPN" />
+  <item component="ComponentInfo{com.mediatek.hz.camera/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.samsung.agc.gcam84/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.hihonor.camera/com.hihonor.camera}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.google.android.apps.cameraslite/com.google.android.apps.cameralite.capture.CaptureActivity}" drawable="camera" name="Camera" />
@@ -1424,6 +1425,7 @@
   <item component="ComponentInfo{com.itemstudio.castro/com.itemstudio.castro.base.BaseActivity}" drawable="castro" name="Castro" />
   <item component="ComponentInfo{com.catalyst/io.kodular.thedudelikesapples.Catalyst.Screen1}" drawable="catalyst" name="Catalyst" />
   <item component="ComponentInfo{com.catawiki2/com.catawiki2.activity.SplashActivity}" drawable="catawiki" name="Catawiki" />
+  <item component="ComponentInfo{moe.cb4a/io.nekohasekai.sagernet.ui.MainActivity}" drawable="nekobox" name="CatBox" />
   <item component="ComponentInfo{me.hackerchick.catima/protect.card_locker.MainActivity}" drawable="catima" name="Catima" />
   <item component="ComponentInfo{org.nift4.catox/org.telegram.messenger.CG_Icon_Old}" drawable="catogram" name="Catogram" />
   <item component="ComponentInfo{org.nift4.catox/org.telegram.messenger.CX_Black_Reg}" drawable="catogram" name="Catogram" />
@@ -3030,6 +3032,7 @@
   <item component="ComponentInfo{com.miHoYo.GenshinImpact/com.miHoYo.GenshinImpact.MainActivity}" drawable="genshin_impact" name="Genshin Impact" />
   <item component="ComponentInfo{com.miHoYo.GenshinImpact/com.miHoYo.GetMobileInfo.MainActivity}" drawable="genshin_impact" name="Genshin Impact" />
   <item component="ComponentInfo{com.miHoYo.Yuanshen/com.miHoYo.GetMobileInfo.MainActivity}" drawable="genshin_impact" name="Genshin Impact" />
+  <item component="ComponentInfo{com.miHoYo.cloudgames.ys/com.mihoyo.cloudgame.ui.SplashActivity}" drawable="genshin_impact_cloud" name="Genshin Impact · Cloud" />
   <item component="ComponentInfo{com.hoyoverse.cloudgames.GenshinImpact/com.mihoyo.cloudgame.ui.SplashActivity}" drawable="genshin_impact_cloud" name="Genshin Impact · Cloud" />
   <item component="ComponentInfo{com.voc.genshin_spirit_gp/com.voc.genshin_helper.ui.SplashActivity}" drawable="genshin_spirit" name="Genshin Spirit" />
   <item component="ComponentInfo{com.groundspeak.geocaching.intro/com.groundspeak.geocaching.intro.ActivityPrime}" drawable="geocaching" name="Geocaching" />
@@ -4491,6 +4494,7 @@
   <item component="ComponentInfo{mx.com.megacable/mx.com.megacable.MainActivity}" drawable="megacable" name="MEGACABLE" />
   <item component="ComponentInfo{org.joinmastodon.android.sk/org.joinmastodon.android.MainActivity}" drawable="megalodon" name="Megalodon" />
   <item component="ComponentInfo{com.ttxapps.megasync/com.ttxapps.sync.app.MainActivity}" drawable="megasync" name="MegaSync" />
+  <item component="ComponentInfo{at.tmobile.android.myt/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="tmobile" name="Mein Magenta" />
   <item component="ComponentInfo{canvasm.myo2/canvasm.myo2.SplashActivity}" drawable="my_o2" name="Mein O2" />
   <item component="ComponentInfo{de.telekom.android.customercenter/de.telekom.android.customercenter.ui.activities.MainActivity}" drawable="tmobile" name="MeinMagenta" />
   <item component="ComponentInfo{de.telekom.android.customercenter/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="tmobile" name="MeinMagenta" />
@@ -5790,6 +5794,8 @@
   <item component="ComponentInfo{swati4star.createpdf/swati4star.createpdf.activity.MainActivity}" drawable="pdf_converter" name="PDF Converter" />
   <item component="ComponentInfo{swati4star.createpdf/swati4star.createpdf.activity.SplashActivity}" drawable="pdf_converter" name="PDF Converter" />
   <item component="ComponentInfo{com.littletrickster.scanner/com.littletrickster.scanner.ScanActivity}" drawable="pdf_doc_scan" name="PDF Doc Scan" />
+  <item component="ComponentInfo{org.grapheneos.pdfviewer/org.grapheneos.pdfviewer.PdfViewer}" drawable="grapheneos_pdf" name="PDF Viewer" />
+  <item component="ComponentInfo{org.grapheneos.pdfviewer/app.grapheneos.pdfviewer.PdfViewer}" drawable="grapheneos_pdf" name="PDF Viewer" />
   <item component="ComponentInfo{app.grapheneos.pdfviewer/app.grapheneos.pdfviewer.PdfViewer}" drawable="grapheneos_pdf" name="PDF Viewer" />
   <item component="ComponentInfo{app.grapheneos.pdfviewer.play/app.grapheneos.pdfviewer.PdfViewer}" drawable="grapheneos_pdf" name="PDF Viewer" />
   <item component="ComponentInfo{com.peacocktv.peacockandroid/com.nowtv.startup.StartupActivity}" drawable="peacock" name="Peacock" />
@@ -7163,6 +7169,7 @@
   <item component="ComponentInfo{com.shopee.th/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee" />
   <item component="ComponentInfo{com.shopee.tw/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee" />
   <item component="ComponentInfo{com.shopee.vn/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee" />
+  <item component="ComponentInfo{com.shopee.lite.id/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="Shopee Lite" />
   <item component="ComponentInfo{com.beeasy.airpay/com.airpay.login.splash.SplashActivity}" drawable="shopeepay" name="ShopeePay" />
   <item component="ComponentInfo{com.beeasy.toppay/com.airpay.login.splash.SplashActivity}" drawable="shopeepay" name="ShopeePay" />
   <item component="ComponentInfo{com.shopify.arrive/com.shopify.arrive.MainActivity}" drawable="shopify_shop" name="Shopify Shop" />
@@ -8058,6 +8065,7 @@
   <item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.MainActivity}" drawable="telegram_monet" name="Telegram Monet" />
   <item component="ComponentInfo{org.thunderdog.challegram/org.thunderdog.challegram.MainActivity}" drawable="telegram" name="Telegram X" />
   <item component="ComponentInfo{org.thunderdog.challegramtwo/org.thunderdog.challegram.MainActivity}" drawable="telegram" name="Telegram X" />
+  <item component="ComponentInfo{hu.telekom.telekomapp/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="tmobile" name="Telekom" />
   <item component="ComponentInfo{be.telenet.telenetapp/com.brilliantbasics.telenet.telenet.ui.activities.SplashActivity}" drawable="telenet" name="Telenet" />
   <item component="ComponentInfo{uk.co.novaware.telepass.android/it.telepass.appunica.SplashScreenActivity}" drawable="telepass" name="Telepass" />
   <item component="ComponentInfo{net.telewebion/net.telewebion.StartPage}" drawable="telewebion" name="Telewebion" />
