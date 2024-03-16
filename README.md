@@ -13,14 +13,12 @@ Lawnicons is best used on [Lawnchair 12.1](https://github.com/LawnchairLauncher/
 This project is mostly supported by our community. If you wish to contribute, check out the Contributing section below.
 
 ## Download
-See the [Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) for the latest stable build. For development builds with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
+See [the Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) for the latest stable build. For development builds with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
 ## Contributing
-Please see the [contributing guide](CONTRIBUTING.md) for information on adding icons or contributing code. It will help you avoid mistakes and save time.
+Please see [the contributing guide](CONTRIBUTING.md) for info on adding icons or contributing code. It will help you avoid mistakes and save time. Detailed examples are available [in Figma](https://www.figma.com/community/file/1227718471680779613). If you still have questions, join [Lawnchair on Discord](https://discord.gg/3x8qNWxgGZ).
 
-Before you make the icons, you can check out the examples [in Figma](https://www.figma.com/community/file/1227718471680779613). In addition, you can see which icons users want in the [popular requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103). If you make icons regularly or dozens at once, you can speed up contributing with [icontool.py](/docs/icontool_guide.md).
-
-If you are a developer, you may find the [contributing code section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-code) useful.
+We keep [a list of popular requests for icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103). If you are interested in making icons, then we invite you to contribute.
 
 ## Requesting icons
 Please use the [icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If a previously added icon has a design change, create an [issue](https://github.com/LawnchairLauncher/lawnicons/issues).
