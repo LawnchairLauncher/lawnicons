@@ -4390,15 +4390,17 @@
   <item component="ComponentInfo{com.topjohnwu.magisk/QLa.I}" drawable="magisk" name="Magisk" />
   <item component="ComponentInfo{com.topjohnwu.magisk/V.T}" drawable="magisk" name="Magisk" />
   <item component="ComponentInfo{io.github.huskydg.magisk/com.topjohnwu.magisk.ui.MainActivity}" drawable="magisk" name="Magisk" />
-  <item component="ComponentInfo{com.android.email/com.android.email.activity.ContainerActivity}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.vivo.email.activity.Welcome}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.Welcome}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.setup.GuideActivity}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.android.email.MainActivity}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.amazon.email.activity.EmailActivity}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}" drawable="samsung_email" name="Mail" />
-  <item component="ComponentInfo{com.android.email/com.android.email.login.activity.WelcomeActivity}" drawable="samsung_email" name="Mail" />
+  <item component="ComponentInfo{foundation.e.mail/com.fsck.k9.activity.MessageList}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{foundation.e.mail/foundation.e.mail.activity.Accounts}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.android.email.activity.ContainerActivity}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.vivo.email.activity.Welcome}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.Welcome}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.setup.GuideActivity}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.android.email.MainActivity}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.amazon.email.activity.EmailActivity}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{com.android.email/com.android.email.login.activity.WelcomeActivity}" drawable="email" name="Mail" />
   <item component="ComponentInfo{com.orange.mail.fr/com.orange.mail.fr.mail.app.MailListActivity}" drawable="mail_orange" name="Mail Orange" />
   <item component="ComponentInfo{com.turkcell.yaaniemail/com.turkcell.yaaniemail.ui.start.activities.StartActivity}" drawable="mailim" name="Mailim" />
   <item component="ComponentInfo{com.makemytrip/com.mmt.travel.app.home.ui.SplashActivity}" drawable="makemytrip" name="MakeMyTrip" />
@@ -4562,6 +4564,7 @@
   <item component="ComponentInfo{com.merriamwebster/com.merriamwebster.dictionary.activity.dictionary.DictionaryActivity}" drawable="merriam_webster_dictionary" name="Merriam-Webster Dictionary" />
   <item component="ComponentInfo{com.merriamwebster.premium/com.merriamwebster.dictionary.activity.dictionary.DictionaryActivity}" drawable="merriam_webster_dictionary" name="Merriam-Webster Dictionary Premium" />
   <item component="ComponentInfo{com.mezo/com.mezo.TestTabs.ActivityBlockVer99}" drawable="message_plus" name="Message Plus" />
+  <item component="ComponentInfo{foundation.e.message/com.moez.QKSMS.feature.main.MainActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{org.fossify.messages/org.fossify.messages.activities.SplashActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.messaging/com.android.mms.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/com.android.mms.tab.MmsMainActivity}" drawable="messages" name="Messages" />
@@ -5368,6 +5371,8 @@
   <item component="ComponentInfo{com.notenapp/com.notenapp.MainActivity}" drawable="notenapp" name="Notenapp" />
   <item component="ComponentInfo{com.transsion.notebook/com.transsion.notebook.NotesList}" drawable="notes" name="Notepad" />
   <item component="ComponentInfo{uk.co.tdsstudios.noterly/uk.co.tdsstudios.noterly.MainActivity}" drawable="noterly" name="Noterly" />
+  <item component="ComponentInfo{foundation.e.notes/it.niedermann.owncloud.notes.main.MainActivity}" drawable="notes" name="Notes" />
+  <item component="ComponentInfo{foundation.e.notes/foundation.e.notes.android.activity.SplashscreenActivity}" drawable="notes" name="Notes" />
   <item component="ComponentInfo{com.coloros.note/com.nearme.note.view.AllNoteActivity}" drawable="notes" name="Notes" />
   <item component="ComponentInfo{com.coloros.note/com.nearme.note.main.MainActivity}" drawable="notes" name="Notes" />
   <item component="ComponentInfo{com.miui.notes/com.miui.notes.ui.NotesListActivity}" drawable="notes" name="Notes" />
@@ -6934,7 +6939,7 @@
   <item component="ComponentInfo{com.samsung.android.app.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="samsung_contacts" name="Samsung Contacts" />
   <item component="ComponentInfo{com.samsung.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="samsung_contacts" name="Samsung Contacts" />
   <item component="ComponentInfo{com.samsung.android.app.edgetouch/com.samsung.android.app.edgetouch.ui.activity.MainActivity}" drawable="samsung_edgetouch" name="Samsung EdgeTouch" />
-  <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="samsung_email" name="Samsung Email" />
+  <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="email" name="Samsung Email" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderLauncher}" drawable="samsung_finder" name="Samsung Finder" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderMainLauncher}" drawable="samsung_finder" name="Samsung Finder" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderActivity}" drawable="samsung_finder" name="Samsung Finder" />
