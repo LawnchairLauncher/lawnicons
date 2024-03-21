@@ -113,7 +113,7 @@ Correct
 Here's how to add an icon to Lawnicons:
 
 ### Prerequesties
-* Your icon in the SVG format, adhering to the [above guidelines](#icon-guidelines). The filename must use snake case (e.g. `files_by_google.svg`).
+* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `files_by_google.svg`).
 * The package and activity name of the app.
 
 ### Via `icontool.py`
