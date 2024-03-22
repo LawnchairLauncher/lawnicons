@@ -3,9 +3,9 @@ import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep
 
 plugins {
     id("com.android.application") version "8.3.1" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
-    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.22" apply false
-    id("com.google.devtools.ksp") version "1.9.22-1.0.18" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.23" apply false
+    id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23" apply false
+    id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
     id("com.google.dagger.hilt.android") version "2.51" apply false
     id("app.cash.licensee") version "1.9.1" apply false
     id("com.diffplug.spotless") version "6.25.0" apply false
