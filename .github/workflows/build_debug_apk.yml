@@ -5,23 +5,7 @@ on:
   push:
     branches:
       - develop
-    paths-ignore:
-      - '.idea/**'
-      - '.gitattributes'
-      - '.github/**.json'
-      - '.gitignore'
-      - '**.md'
-      - 'LICENSE'
-      - 'NOTICE'
   pull_request:
-    paths-ignore:
-    - '.idea/**'
-    - '.gitattributes'
-    - '.github/**.json'
-    - '.gitignore'
-    - '**.md'
-    - 'LICENSE'
-    - 'NOTICE'
 
 jobs:
   build-debug-apk:
@@ -29,14 +13,17 @@ jobs:
     continue-on-error: true
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
-      - uses: actions/setup-java@v3
+      - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: 17
-      - uses: gradle/gradle-build-action@v2
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v3
+        with:
+          cache-encryption-key: Da25KUVSE5jbGds2zXmfXw==
+          gradle-home-cache-cleanup: true
       - name: Write sign info
         if: github.repository_owner == 'LawnchairLauncher'
         run: |
@@ -50,22 +37,37 @@ jobs:
       - name: Build debug APK
         run: ./gradlew app:assembleDebug
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Debug APK
-          path: app/build/outputs/apk/debug/*.apk
+          path: app/build/outputs/apk/app/debug/*.apk
+
+  check-style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-home-cache-cleanup: true
+      - run: ./gradlew spotlessCheck
 
   send-notifications:
     runs-on: ubuntu-latest
-    needs: build-debug-apk
+    needs: [ build-debug-apk, check-style ]
     steps:
       - name: Check out repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
       - name: Install Python packages
@@ -73,7 +75,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install gitpython requests
       - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: Debug APK
           path: artifacts/debug-apk
@@ -83,6 +85,6 @@ jobs:
           GITHUB_EVENT_BEFORE: ${{ github.event.before }}
           TELEGRAM_CI_BOT_TOKEN: ${{ secrets.TELEGRAM_CI_BOT_TOKEN }}
           TELEGRAM_CI_CHANNEL_ID: ${{ secrets.TELEGRAM_CI_CHANNEL_ID }}
-          TELEGRAM_TEAM_GROUP_ID: ${{ secrets.TELEGRAM_TEAM_GROUP_ID }}
           ARTIFACT_DIRECTORY: artifacts/debug-apk
           GITHUB_REF: ${{ github.ref }}
+          DISCORD_CI_BOT_TOKEN: ${{ secrets.DISCORD_CI_BOT_TOKEN}}

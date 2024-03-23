@@ -4,18 +4,123 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/apps_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lawnicons"
+        android:theme="@style/Theme.Lawnicons.SplashScreen"
         android:name=".LawniconsApplication">
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Lawnicons">
+            android:theme="@style/Theme.Lawnicons.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- New Lawnchair Launcher -->
+            <intent-filter>
+                <action android:name="app.lawnchair.icons.THEMED_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Legacy Lawnchair Launcher -->
+            <intent-filter>
+                <action android:name="ch.deletescape.lawnchair.ICONPACK" />
+                <category android:name="ch.deletescape.lawnchair.PICK_ICON" />
+            </intent-filter>
+            <!-- Nova Launcher Custom Icon Picker -->
+            <intent-filter>
+                <action android:name="com.novalauncher.THEME" />
+                <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />
+            </intent-filter>
+            <!-- ADW Launcher -->
+            <intent-filter>
+                <action android:name="org.adw.launcher.THEMES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- ADW Launcher Custom Icon Picker -->
+            <intent-filter>
+                <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Apex Launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.anddoes.launcher.THEME" />
+            </intent-filter>
+            <!-- GO Launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.gau.go.launcherex.theme" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Atom Launcher -->
+            <intent-filter>
+                <action android:name="com.dlto.atom.launcher.THEME" />
+            </intent-filter>
+            <!-- Moto Launcher -->
+            <intent-filter>
+                <action android:name="com.motorola.launcher.ACTION_ICON_PACK" />
+                <action android:name="com.motorola.launcher3.ICON_PACK_CHANGED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Turbo Launcher Custom Icon Picker -->
+            <intent-filter>
+                <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Nine Launcher -->
+            <intent-filter>
+                <action android:name="com.gridappsinc.launcher.theme.apk_action" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Solo Launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="home.solo.launcher.free.THEMES" />
+                <action android:name="home.solo.launcher.free.ACTION_ICON" />
+            </intent-filter>
+            <!-- LG Home -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.lge.launcher2.THEME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- OnePlus Launcher -->
+            <intent-filter>
+                <action android:name="net.oneplus.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- TSF Shell -->
+            <intent-filter>
+                <action android:name="com.tsf.shell.themes" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Smart Launcher -->
+            <intent-filter>
+                <action android:name="ginlemon.smartlauncher.THEMES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- Sony Launcher -->
+            <intent-filter>
+                <action android:name="com.sonymobile.home.ICON_PACK" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- GO Launcher & Zero Launcher-->
+            <intent-filter>
+                <action android:name="com.gau.go.launcherex.theme" />
+                <action android:name="com.zeroteam.zerolauncher.theme" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+            <!-- +HOME Icon Picker -->
+            <intent-filter>
+                <action android:name="jp.co.a_tm.android.launcher.icons.ACTION_PICK_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- V Launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.vivid.launcher.theme" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

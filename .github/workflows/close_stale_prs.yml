@@ -1,13 +1,15 @@
 name: Close stale PRs
+
 on:
   schedule:
     - cron: 0 0 1-31 * *
   workflow_dispatch:
+  
 jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v6.0.0
+      - uses: actions/stale@v9.0.0
         with:
           stale-pr-message: Thanks for your interest in contributing! Unfortunately, we have marked this PR as stale because it has been open for 1 month with no activity. Please apply the suggested changes if there are any, and comment something related to your PR. If you don't take any action for 2 weeks, the PR will be closed.
           close-pr-message: As stated in my previous comment, this PR was closed because it has been stale for another 2 weeks with no activity. Thanks for your interest in contributing though!

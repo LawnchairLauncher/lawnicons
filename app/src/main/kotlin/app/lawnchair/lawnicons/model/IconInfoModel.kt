@@ -1,6 +1,8 @@
 package app.lawnchair.lawnicons.model
 
+import kotlinx.collections.immutable.ImmutableList
+
 data class IconInfoModel(
-    val iconInfo: List<IconInfo>,
+    val iconInfo: ImmutableList<IconInfo>,
     val iconCount: Int,
 )

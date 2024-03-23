@@ -2,36 +2,24 @@
 
 [![Build debug APK](https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_debug_apk.yml/badge.svg)](https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_debug_apk.yml)
 [![Build release APK](https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml/badge.svg)](https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml)
+[![Discord](https://img.shields.io/discord/803299970169700402?label=server&logo=discord)](https://discord.gg/lawnchair-803299970169700402)
+[![License is Apache 2](https://img.shields.io/github/license/LawnchairLauncher/lawnicons)](LICENSE)
 
-Lawnicons is an add-on for adding themed icons to [Lawnchair 12 Alpha 5](https://github.com/LawnchairLauncher/lawnchair) and above.
-This addon is now the source of all themed icons, for simplicity.
+**Lawnicons** is an icon pack developed by the Lawnchair team.
+Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons, it can now be used on many launchers. Some launchers may also support Lawnicons for themed icons.
+
+Lawnicons is best used on [Lawnchair 12.1](https://github.com/LawnchairLauncher/lawnchair). You can enable themed icons on Lawnchair by going to `Home Settings > General > Icon Style > Themed Icons`, choosing "Home Screen" or "Home Screen and App Drawer".
+
+This project is mostly supported by our community. If you wish to contribute, check out the Contributing section below.
 
 ## Download
+See [the Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) for the latest stable build. For development builds with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
-See the [Releases](https://github.com/LawnchairLauncher/lawnicons/releases) section to download the latest stable build of Lawnicons.
+## Contributing
+Please see [the contributing guide](CONTRIBUTING.md) for info on adding icons or contributing code. It will help you avoid mistakes and save time. Detailed examples are available [in Figma](https://www.figma.com/community/file/1227718471680779613). If you still have questions, join [Lawnchair on Discord](https://discord.gg/3x8qNWxgGZ).
 
-For the development versions with new icons, go to the [Actions](https://github.com/LawnchairLauncher/lawnicons/actions) tab,
-click the first workflow run, and scroll and find the `Debug Apk`.
-
-Note that you'll need to have a GitHub account to download the debug apk.
-
-## Adding icons
-
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for info on adding icons.
+We keep [a list of popular requests for icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103). If you are interested in making icons or want some icons to appear quickly in Lawnicons, then we invite you to contribute.
 
 ## Requesting icons
-
-To request new icons, please use [the icon request form](https://forms.gle/Fx8vZAiWdW1Tyjo57).
-
-If you want to see the requested icons (for contributing purposes), you can view the form responses in our 
-[publicly available Google Sheets](https://docs.google.com/spreadsheets/d/1h3eiJnG2nEdR1DbvemaF1lYthHkzYbXvVFPP0TEEt5k/edit?usp=sharing) file.
-Note that we currently don't show whether an icon request has been completed or not.
-
-## License
-
-Lawnicons is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0). See [LICENSE](LICENSE) for additional information.
-
-## Quick links
-
-- [Lawnchair GitHub page](https://github.com/LawnchairLauncher/lawnchair)
+Please use the [icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If a previously added icon has a design change, create an [issue](https://github.com/LawnchairLauncher/lawnicons/issues).
 

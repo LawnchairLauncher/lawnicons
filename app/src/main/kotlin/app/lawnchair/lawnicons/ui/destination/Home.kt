@@ -2,48 +2,87 @@ package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavController
-import app.lawnchair.lawnicons.ui.component.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.component.SearchBar
-import app.lawnchair.lawnicons.ui.component.SearchBarBase
+import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
+import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
+import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
+import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 
-@Composable
 @OptIn(ExperimentalFoundationApi::class)
+@Composable
 fun Home(
+    onNavigate: (String) -> Unit,
+    isExpandedScreen: Boolean,
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
-    navController: NavController,
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
-    var searchTerm by remember { mutableStateOf(value = "") }
+    val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsState()
+    var searchTerm by rememberSaveable { mutableStateOf(value = "") }
+
     Crossfade(
         targetState = iconInfoModel != null,
-        modifier = Modifier.statusBarsPadding(),
+        label = "",
     ) { targetState ->
         if (targetState) {
-            iconInfoModel?.let {
-                SearchBar(
-                    value = searchTerm,
-                    iconCount = it.iconCount,
-                    navController = navController,
-                    onValueChange = { newValue ->
+            searchedIconInfoModel?.let {
+                LawniconsSearchBar(
+                    query = searchTerm,
+                    isQueryEmpty = searchTerm == "",
+                    onClearAndBackClick = {
+                        searchTerm = ""
+                        lawniconsViewModel.searchIcons("")
+                    },
+                    onQueryChange = { newValue ->
                         searchTerm = newValue
                         lawniconsViewModel.searchIcons(newValue)
                     },
+                    iconInfoModel = it,
+                    onNavigate = onNavigate,
+                    isExpandedScreen = isExpandedScreen,
                 )
-                IconPreviewGrid(iconInfo = it.iconInfo)
+            }
+            iconInfoModel?.let {
+                IconPreviewGrid(iconInfo = it.iconInfo, isExpandedScreen = isExpandedScreen)
             }
         } else {
-            SearchBarBase()
+            PlaceholderSearchBar()
         }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@PreviewLawnicons
+@Composable
+private fun HomePreview() {
+    var searchTerm by remember { mutableStateOf(value = "") }
+    val iconInfo = SampleData.iconInfoList
+
+    LawniconsTheme {
+        LawniconsSearchBar(
+            query = searchTerm,
+            isQueryEmpty = searchTerm == "",
+            onClearAndBackClick = {
+                searchTerm = ""
+            },
+            onQueryChange = { newValue ->
+                searchTerm = newValue
+                // No actual searching, this is just a preview
+            },
+            iconCount = 3,
+            iconInfo = iconInfo,
+            onNavigate = {},
+            isExpandedScreen = true,
+        )
+        IconPreviewGrid(iconInfo = iconInfo, isExpandedScreen = false)
     }
 }

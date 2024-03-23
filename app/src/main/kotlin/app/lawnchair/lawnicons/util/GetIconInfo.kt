@@ -26,8 +26,9 @@ fun Context.getIconInfo(): List<IconInfo> {
                     val pkg = parser.getAttributeValue(null, "package")
                     val iconName = parser.getAttributeValue(null, "name")
                     val iconId = parser.getAttributeResourceValue(null, "drawable", 0)
+                    val iconDrawable = resources.getResourceEntryName(iconId)
                     if (iconId != 0 && pkg.isNotEmpty()) {
-                        iconInfo += IconInfo(iconName, iconId)
+                        iconInfo += IconInfo(iconName, iconDrawable, pkg, iconId)
                     }
                 }
             }

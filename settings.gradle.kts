@@ -1,21 +1,18 @@
 pluginManagement {
     repositories {
-        google()
-        gradlePluginPortal()
-    }
-    resolutionStrategy {
-        eachPlugin {
-            // https://github.com/google/play-services-plugins/issues/223
-            if (requested.id.id == "com.google.android.gms.oss-licenses-plugin") {
-                useModule("com.google.android.gms:oss-licenses-plugin:${requested.version}")
+        google {
+            content {
+                includeGroupByRegex(".*google.*")
+                includeGroupByRegex(".*android.*")
             }
         }
+        gradlePluginPortal()
     }
 }
 
 // https://docs.gradle.com/enterprise/gradle-plugin/
 plugins {
-    id("com.gradle.enterprise") version "3.11.4"
+    id("com.gradle.enterprise") version "3.16.2"
 }
 
 gradleEnterprise {
@@ -27,9 +24,14 @@ gradleEnterprise {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
     repositories {
-        google()
+        google {
+            content {
+                includeGroupByRegex(".*google.*")
+                includeGroupByRegex(".*android.*")
+            }
+        }
         mavenCentral()
         maven("https://jitpack.io")
     }
@@ -37,4 +39,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Lawnicons"
 
-include(":app")
+enableFeaturePreview("STABLE_CONFIGURATION_CACHE")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+include(
+    ":app",
+    ":svg-processor",
+)

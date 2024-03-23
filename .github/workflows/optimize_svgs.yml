@@ -1,0 +1,25 @@
+name: Optimize SVGs
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimize-svgs:
+    runs-on: ubuntu-latest
+    if: github.repository == 'LawnchairLauncher/lawnicons'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Optimize SVGs
+        uses: ericcornelissen/svgo-action@v4
+        id: svgo
+      - name: Commit optimizations
+        uses: stefanzweifel/git-auto-commit-action@v5
+        if: ${{steps.svgo.outputs.DID_OPTIMIZE}}
+        with:
+          commit_message: Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s)

@@ -1,0 +1,53 @@
+<resources>
+    <!-- General -->
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">संस्करण %s</string>
+
+    <!-- Search bar -->
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">%d चिन्ह मे से खोजें</string>
+
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">कोई चिन्ह नहीं मिला.</string>
+
+    <!-- Popup menu in search bar -->
+    <!-- Popup menu item that links to the Acknowledgements page -->
+    <string name="acknowledgements">स्वीकृतियाँ</string>
+    <!-- Popup menu item that links to the About page -->
+    <string name="about">ऐप के बारे में</string>
+
+    <!-- About page -->
+    <!-- External Links label -->
+    <string name="external_links">बाहरी संबंध</string>
+    <!-- Icon Request form link -->
+    <string name="request_form">चिन्ह अनुरोध प्रपत्र</string>
+
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">योगदानकर्ता</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">मुख्य योगदानकर्ता</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">सभी योगदानकर्ता देखें</string>
+
+    <!-- View on GitHub link -->
+    <string name="view_on_github">गिटहब पर देखें</string>
+
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">विशेष धन्यवाद</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">ऐप के चिन्ह को प्रेरित करने के लिए।</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">ऐप का नामकरण करने के लिए।</string>
+
+    <!-- Icon Information Popup window -->
+    <!-- Drawable prefix -->
+    <string name="drawable_prefix">ड्रॉएबल:</string>
+    <!-- Package prefix -->
+    <string name="package_prefix">पैकेज:</string>
+    <!-- OK button -->
+    <string name="ok_button">ठीक है</string>
+        
+</resources>
