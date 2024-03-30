@@ -98,25 +98,18 @@ android {
         includeInBundle = false
     }
 
-    androidComponents.onVariants { variant ->
-        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
-        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
-            dependsOn(licenseeTask)
-            from(licenseeTask.map { it.outputDir.file("artifacts.json") })
-            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
-        }
-        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
-            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
-        }
-    }
-
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
     }
+}
+
+androidComponents.onVariants { variant ->
+    val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+    val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask, LicenseeTask::outputDir)
 }
 
 // Process SVGs before every build.
