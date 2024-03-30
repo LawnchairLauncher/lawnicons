@@ -7,7 +7,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23" apply false
     id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
-    id("app.cash.licensee") version "1.10.0" apply false
+    id("app.cash.licensee") version "1.11.0" apply false
     id("com.diffplug.spotless") version "6.25.0" apply false
     id("org.gradle.android.cache-fix") version "3.0.1" apply false
 }

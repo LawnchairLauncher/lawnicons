@@ -98,24 +98,26 @@ android {
         includeInBundle = false
     }
 
-    androidComponents.onVariants { variant ->
-        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
-        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
-            dependsOn(licenseeTask)
-            from(licenseeTask.map { it.outputDir.file("artifacts.json") })
-            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
-        }
-        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
-            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
-        }
-    }
-
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
+    }
+}
+
+androidComponents.onVariants { variant ->
+    val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+    val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+    val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
+        dependsOn(licenseeTask)
+        from(licenseeTask.map { it.jsonOutput })
+        // Copy artifacts.json to a new directory.
+        into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
+    }
+    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
+        // Avoid using LicenseeTask::outputDir as it contains extra files that we don't need.
+        objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
     }
 }
 
