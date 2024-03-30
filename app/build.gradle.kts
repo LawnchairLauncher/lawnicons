@@ -109,7 +109,16 @@ android {
 androidComponents.onVariants { variant ->
     val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
     val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
-    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask, LicenseeTask::outputDir)
+    val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
+        dependsOn(licenseeTask)
+        from(licenseeTask.map { it.jsonOutput })
+        // Copy artifacts.json to a new directory.
+        into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
+    }
+    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
+        // Avoid using LicenseeTask::outputDir as it contains extra files that we don't need.
+        objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
+    }
 }
 
 // Process SVGs before every build.
