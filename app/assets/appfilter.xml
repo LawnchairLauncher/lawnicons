@@ -65,6 +65,7 @@
   <item component="ComponentInfo{com.twofasapp/com.twofasapp.ui.main.StartActivity}" drawable="twofas_auth" name="2FAS Auth" />
   <item component="ComponentInfo{ru.dublgis.dgismobile/ru.dublgis.dgismobile.GrymMobileActivity}" drawable="doublegis" name="2ГИС ~~ 2GIS" />
   <item component="ComponentInfo{ca.qc.quebec.ville.espacecitoyen311/ca.qc.quebec.ville.espacecitoyen311.MainActivity}" drawable="three_one_one" name="311 Ville de Québec" />
+  <item component="ComponentInfo{com.futuremark.dmandroid.application/com.futuremark.dmandroid.application.activity.MainActivity}" drawable="threedmark" name="3DMark" />
   <item component="ComponentInfo{com.futuremark.dmandroid.application/com.futuremark.flamenco.ui.splash.SplashPageActivity}" drawable="threedmark" name="3DMark" />
   <item component="ComponentInfo{com.football433/com.football433.MainActivity}" drawable="fourthreethree" name="433" />
   <item component="ComponentInfo{com.football433/crc64643f232a85b8a245.MainActivity}" drawable="fourthreethree" name="433" />
@@ -4619,7 +4620,6 @@
   <item component="ComponentInfo{org.joinmastodon.android.sk/org.joinmastodon.android.MainActivity}" drawable="megalodon" name="Megalodon" />
   <item component="ComponentInfo{com.ttxapps.megasync/com.ttxapps.sync.app.MainActivity}" drawable="megasync" name="MegaSync" />
   <item component="ComponentInfo{at.tmobile.android.myt/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="tmobile" name="Mein Magenta" />
-  <item component="ComponentInfo{canvasm.myo2/canvasm.myo2.SplashActivity}" drawable="my_o2" name="Mein O2" />
   <item component="ComponentInfo{de.telekom.android.customercenter/de.telekom.android.customercenter.ui.activities.MainActivity}" drawable="tmobile" name="MeinMagenta" />
   <item component="ComponentInfo{de.telekom.android.customercenter/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="tmobile" name="MeinMagenta" />
   <item component="ComponentInfo{com.vodafone.selfservis/com.vodafone.selfservis.feature.growth.activities.SplashActivity}" drawable="my_vodafone" name="MeinVodafone / " />
@@ -5171,6 +5171,8 @@
   <item component="ComponentInfo{com.crossknowledge.learnguided/com.crossknowledge.learnguided.MainActivity}" drawable="my_learning" name="My Learning" />
   <item component="ComponentInfo{com.mirfatif.mylocation/com.mirfatif.mylocation.MainActivity}" drawable="my_location" name="My Location" />
   <item component="ComponentInfo{com.mitsubishimotors.mymitsubishiconnect/com.mitsubishimotors.mymitsubishiconnect.MainActivity2}" drawable="my_mitsubishi_connect" name="My Mitsubishi Connect" />
+  <item component="ComponentInfo{uk.co.o2.android.myo2/com.tuenti.messenger.ui.activity.MainActivity}" drawable="my_o2" name="My O2 ~~ Mein O2" />
+  <item component="ComponentInfo{canvasm.myo2/canvasm.myo2.SplashActivity}" drawable="my_o2" name="My O2 ~~ Mein O2" />
   <item component="ComponentInfo{com.heytap.vip/com.platform.usercenter.vip.UCVIPMainActivity}" drawable="my_oneplus" name="My OnePlus" />
   <item component="ComponentInfo{com.oplus.vip/com.platform.usercenter.vip.UCVIPMainActivity}" drawable="my_oppo" name="My OPPO" />
   <item component="ComponentInfo{com.dafturn.mypertamina/com.dafturn.mypertamina.presentation.onboarding.splash.SplashActivity}" drawable="mypertamina" name="My Pertamina" />
@@ -6886,6 +6888,7 @@
   <item component="ComponentInfo{com.reddit.frontpage/launcher.retro}" drawable="reddit" name="Reddit" />
   <item component="ComponentInfo{com.reddit.frontpage/launcher.wallstreet}" drawable="reddit" name="Reddit" />
   <item component="ComponentInfo{com.redmerah.notes/com.redmerah.notes.MainActivity}" drawable="redmerah_notes" name="Redmerah Notes" />
+  <item component="ComponentInfo{com.learnpainless.disable_system_apps/com.learnpainless.disable_system_apps.MainActivity}" drawable="guerrilla_mail" name="Redmi System manager" />
   <item component="ComponentInfo{org.quantumbadger.redreader/org.quantumbadger.redreader.activities.MainActivity}" drawable="redreader" name="RedReader" />
   <item component="ComponentInfo{com.reevchroma.grabsterstudios/com.reevchroma.grabsterstudios.MainActivity}" drawable="reev_chroma" name="Reev Chroma" />
   <item component="ComponentInfo{com.reevdark.grabsterstudios/com.reevdark.grabsterstudios.MainActivity}" drawable="reev_dark" name="Reev Dark" />
@@ -8120,6 +8123,9 @@
   <item component="ComponentInfo{de.simolation.subscriptionmanager/de.simolation.subscriptionmanager.ui.main.MainActivity}" drawable="subscriptions" name="Subscriptions" />
   <item component="ComponentInfo{com.substack.app/com.substack.app.ui.AppActivity}" drawable="substack" name="Substack" />
   <item component="ComponentInfo{projekt.substratum.lite/projekt.substratum.lite.activity.SplashScreenActivity}" drawable="substratum_lite" name="substratum Lite" />
+  <item component="ComponentInfo{com.subway.mobile.subwayapp03/com.paydiant.common.HomeActivity}" drawable="subway" name="Subway" />
+  <item component="ComponentInfo{com.subway.mobile.subwayapp03/com.subway.mobile.subwayapp03.ui.SplashActivity}" drawable="subway" name="Subway" />
+  <item component="ComponentInfo{com.wahalla.subwaybr/com.wahalla.subwaybr.MainActivity}" drawable="subway" name="Subway" />
   <item component="ComponentInfo{com.subway.subway/com.subway.subway.SplashActivity}" drawable="subway" name="Subway" />
   <item component="ComponentInfo{com.kiloo.subwaysurf/com.ms.sdk.plugin.explain.ExplainActivity}" drawable="subway_surf" name="Subway Surf" />
   <item component="ComponentInfo{com.kiloo.subwaysurf/com.kiloo.subwaysurf.RRAndroidPluginActivity}" drawable="subway_surf" name="Subway Surf" />
@@ -9528,6 +9534,7 @@
   <item component="ComponentInfo{com.contextlogic.wish/com.contextlogic.wish.ui.activity.login.LoginActivity}" drawable="wish" name="Wish" />
   <item component="ComponentInfo{com.contextlogic.wish/com.contextlogic.wish.activity.browse.BrowseActivity}" drawable="wish" name="Wish" />
   <item component="ComponentInfo{com.wishexplorer/com.wishexplorer.MainActivity}" drawable="wish_explorer" name="Wish Explorer" />
+  <item component="ComponentInfo{com.tao.wiz/com.tao.wiz.front.activities.splashscreen.SplashScreenActivity}" drawable="wiz" name="WiZ" />
   <item component="ComponentInfo{com.wizconnected.wiz2/com.wizconnected.wiz2.MainActivity}" drawable="wiz" name="WiZ Connected" />
   <item component="ComponentInfo{app.wizink.es/com.newco.android.popular.operations.splash.activities.SplashActivity}" drawable="wizink_bank" name="WiZink Bank" />
   <item component="ComponentInfo{com.wo.voice2/com.wo.voice.MainActivity}" drawable="wo_mic" name="WO Mic" />
