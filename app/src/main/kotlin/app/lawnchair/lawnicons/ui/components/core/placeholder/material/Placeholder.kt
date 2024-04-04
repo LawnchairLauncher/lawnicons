@@ -106,6 +106,8 @@ fun PlaceholderDefaults.shimmerHighlightColor(
  * @param contentFadeTransitionSpec The transition spec to use when fading the content
  * on/off screen. The boolean parameter defined for the transition is [visible].
  */
+// TODO: need to migrate to Modifier.Node, see https://mrmans0n.github.io/compose-rules/rules/#avoid-modifier-extension-factory-functions
+@Suppress("ktlint:compose:modifier-composable-check", "ktlint:compose:modifier-composed-check")
 fun Modifier.placeholder(
     visible: Boolean,
     color: Color = Color.Unspecified,

@@ -98,24 +98,26 @@ android {
         includeInBundle = false
     }
 
-    androidComponents.onVariants { variant ->
-        val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-        val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
-        val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
-            dependsOn(licenseeTask)
-            from(licenseeTask.map { it.outputDir.file("artifacts.json") })
-            into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
-        }
-        variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
-            objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
-        }
-    }
-
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
+    }
+}
+
+androidComponents.onVariants { variant ->
+    val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
+    val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
+    val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
+        dependsOn(licenseeTask)
+        from(licenseeTask.map { it.jsonOutput })
+        // Copy artifacts.json to a new directory.
+        into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
+    }
+    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
+        // Avoid using LicenseeTask::outputDir as it contains extra files that we don't need.
+        objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
     }
 }
 
@@ -130,12 +132,12 @@ licensee {
 
 dependencies {
     val lifecycleVersion = "2.7.0"
-    val hiltVersion = "2.51"
+    val hiltVersion = "2.51.1"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.activity:activity-compose:1.8.2")
-    implementation(platform("androidx.compose:compose-bom:2024.03.00"))
+    implementation(platform("androidx.compose:compose-bom:2024.04.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.ui:ui-util")
@@ -153,7 +155,7 @@ dependencies {
     ksp("com.google.dagger:hilt-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
     implementation("io.coil-kt:coil-compose:2.6.0")
-    val retrofitVersion = "2.10.0"
+    val retrofitVersion = "2.11.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-kotlinx-serialization:$retrofitVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
