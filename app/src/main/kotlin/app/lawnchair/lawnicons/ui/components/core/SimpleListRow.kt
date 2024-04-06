@@ -1,6 +1,5 @@
 package app.lawnchair.lawnicons.ui.components.core
 
-import androidx.compose.material.ContentAlpha
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -43,7 +42,7 @@ fun SimpleListRow(
                 Text(
                     text = description,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = ContentAlpha.medium),
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
                 )
