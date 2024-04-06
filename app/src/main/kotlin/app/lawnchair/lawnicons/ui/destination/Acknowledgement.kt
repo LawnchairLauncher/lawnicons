@@ -41,6 +41,7 @@ fun Acknowledgement(
     name: String?,
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
     acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
 ) {
     requireNotNull(name)
@@ -54,6 +55,7 @@ fun Acknowledgement(
     ).collectAsState()
 
     LawniconsScaffold(
+        modifier = modifier,
         title = name,
         onBack = onBack,
         isExpandedScreen = isExpandedScreen,

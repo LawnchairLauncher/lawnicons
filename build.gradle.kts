@@ -33,7 +33,6 @@ allprojects {
                 ),
             ).editorConfigOverride(
                 mapOf(
-                    "ktlint_compose_modifier-missing-check" to "disabled",
                     "ktlint_compose_compositionlocal-allowlist" to "disabled",
                 ),
             )

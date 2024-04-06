@@ -19,11 +19,13 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
-fun PlaceholderSearchBar() {
+fun PlaceholderSearchBar(
+    modifier: Modifier = Modifier,
+) {
     Row(
         content = {},
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
+        modifier = modifier
             .zIndex(1f)
             .statusBarsPadding()
             .padding(top = 8.dp)

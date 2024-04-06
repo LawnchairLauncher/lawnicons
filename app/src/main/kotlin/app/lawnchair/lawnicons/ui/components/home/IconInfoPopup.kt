@@ -33,9 +33,11 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 @Composable
 fun IconInfoPopup(
     iconInfo: IconInfo,
+    modifier: Modifier = Modifier,
     isPopupShown: (Boolean) -> Unit,
 ) {
     AlertDialog(
+        modifier = modifier,
         onDismissRequest = { isPopupShown(false) },
         title = { Text(text = iconInfo.name) },
         icon = {

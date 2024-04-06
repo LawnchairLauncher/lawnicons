@@ -34,11 +34,12 @@ import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
+    modifier: Modifier = Modifier,
     iconBackground: Color? = null,
 ) {
     val isIconInfoShown = remember { mutableStateOf(false) }
 
-    val modifier = Modifier
+    val boxModifier = modifier
         .padding(all = 8.dp)
         .aspectRatio(ratio = 1F)
         .clip(shape = CircleShape)
@@ -55,7 +56,7 @@ fun IconPreview(
 
     Box(
         contentAlignment = Alignment.Center,
-        modifier = modifier,
+        modifier = boxModifier,
     ) {
         if (LocalInspectionMode.current) {
             val icon = when (iconInfo.id) {

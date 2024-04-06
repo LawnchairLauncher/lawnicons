@@ -22,10 +22,12 @@ fun TopAppBar(
     navigationIcon: @Composable () -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
     title: String,
+    modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
 ) {
     if (!isExpandedScreen) {
         LargeTopAppBar(
+            modifier = modifier,
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
@@ -34,6 +36,7 @@ fun TopAppBar(
         )
     } else {
         TopAppBar(
+            modifier = modifier,
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {

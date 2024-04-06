@@ -21,11 +21,14 @@ import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
 fun ContributorRowPlaceholder(
+    modifier: Modifier = Modifier,
     first: Boolean = false,
     last: Boolean = false,
     divider: Boolean = true,
 ) {
-    Row {
+    Row(
+        modifier = modifier,
+    ) {
         ListRow(
             divider = divider,
             background = true,
