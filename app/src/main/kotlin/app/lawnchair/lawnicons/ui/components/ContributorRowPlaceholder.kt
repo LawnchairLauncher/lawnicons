@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
-import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
-import app.lawnchair.lawnicons.ui.components.core.placeholder.material.placeholder
+import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
+import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
