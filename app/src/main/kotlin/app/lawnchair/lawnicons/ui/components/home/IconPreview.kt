@@ -39,24 +39,22 @@ fun IconPreview(
 ) {
     val isIconInfoShown = remember { mutableStateOf(false) }
 
-    val boxModifier = modifier
-        .padding(all = 8.dp)
-        .aspectRatio(ratio = 1F)
-        .clip(shape = CircleShape)
-        .clickable(onClick = { isIconInfoShown.value = true })
-        .background(
-            color = iconBackground ?: if (isIconInfoShown.value) {
-                MaterialTheme.colorScheme.surfaceVariant
-            } else {
-                MaterialTheme.colorScheme.surfaceColorAtElevation(
-                    Elevation.Level1,
-                )
-            },
-        )
-
     Box(
         contentAlignment = Alignment.Center,
-        modifier = boxModifier,
+        modifier = modifier
+            .padding(all = 8.dp)
+            .aspectRatio(ratio = 1F)
+            .clip(shape = CircleShape)
+            .clickable(onClick = { isIconInfoShown.value = true })
+            .background(
+                color = iconBackground ?: if (isIconInfoShown.value) {
+                    MaterialTheme.colorScheme.surfaceVariant
+                } else {
+                    MaterialTheme.colorScheme.surfaceColorAtElevation(
+                        Elevation.Level1,
+                    )
+                },
+            ),
     ) {
         if (LocalInspectionMode.current) {
             val icon = when (iconInfo.id) {
