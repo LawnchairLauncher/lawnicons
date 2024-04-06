@@ -160,10 +160,10 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
 ### Using 3rd-party apps
-#### IconRequest app
+#### Icon Request app
 
-1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
-2. Launch the app and click one of the options:
+1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
+2. Launch IconRequest and tap one of the options:
 - UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/FL_Oh), 25s video.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
 3. Select the apps for which youʼd like to request or make icons.
