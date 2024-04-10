@@ -26,10 +26,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
 fun IconPreview(
@@ -47,9 +45,7 @@ fun IconPreview(
             color = iconBackground ?: if (isIconInfoShown.value) {
                 MaterialTheme.colorScheme.surfaceVariant
             } else {
-                MaterialTheme.colorScheme.surfaceColorAtElevation(
-                    Elevation.Level1,
-                )
+                MaterialTheme.colorScheme.surfaceContainerLow
             },
         )
 

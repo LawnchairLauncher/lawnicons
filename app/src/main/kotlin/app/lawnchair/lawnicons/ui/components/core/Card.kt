@@ -11,7 +11,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
@@ -30,8 +29,7 @@ fun Card(
             )
         }
         Surface(
-            color = MaterialTheme.colorScheme.surface,
-            tonalElevation = Elevation.Level1,
+            color = MaterialTheme.colorScheme.surfaceContainer,
             shape = RoundedCornerShape(size = 16.dp),
             modifier = Modifier
                 .padding(horizontal = 16.dp)
@@ -53,7 +51,6 @@ private fun CardPreview() {
         ) {
             SimpleListRow(
                 label = "Example text in card",
-                background = true,
                 first = true,
                 last = true,
                 divider = false,
