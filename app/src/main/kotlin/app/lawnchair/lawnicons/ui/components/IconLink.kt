@@ -83,13 +83,13 @@ fun IconLink(
 
 @PreviewLawnicons
 @Composable
-fun FancyButtonLinkPreview() {
+private fun FancyButtonLinkPreview() {
     LawniconsTheme {
         Surface {
             IconLink(
                 iconResId = 0,
                 label = "Example",
-                url = "https://example.com"
+                url = "https://example.com",
             )
         }
     }

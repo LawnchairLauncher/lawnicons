@@ -44,7 +44,7 @@ fun IconInfoPopup(
     isPopupShown: (Boolean) -> Unit,
 ) {
     val sheetState = rememberModalBottomSheetState(
-        skipPartiallyExpanded = true
+        skipPartiallyExpanded = true,
     )
 
     ModalBottomSheet(
@@ -54,16 +54,16 @@ fun IconInfoPopup(
         sheetState = sheetState,
         windowInsets = WindowInsets(0.dp),
         modifier = Modifier
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     ) {
-        Column (
+        Column(
             modifier = Modifier
                 .padding(horizontal = 16.dp)
-                .fillMaxWidth()
+                .fillMaxWidth(),
         ) {
-            Row (
+            Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
+                horizontalArrangement = Arrangement.Center,
             ) {
                 if (LocalInspectionMode.current) {
                     val icon = when (iconInfo.id) {
@@ -89,35 +89,38 @@ fun IconInfoPopup(
             }
 
             val githubName = iconInfo.drawableName.replace(
-                oldValue = "_foreground", newValue = "",
+                oldValue = "_foreground",
+                newValue = "",
             )
-            Row (
+            Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center
+                horizontalArrangement = Arrangement.Center,
             ) {
                 IconLink(
                     iconResId = R.drawable.github_foreground,
                     label = stringResource(id = R.string.view_on_github),
-                    url = "https://github.com/LawnchairLauncher/lawnicons/blob/develop/svgs/${githubName}.svg",
+                    url = "https://github.com/LawnchairLauncher/lawnicons/blob/develop/svgs/$githubName.svg",
                 )
             }
 
-            Card (
-                label = stringResource(id = R.string.drawable)
+            Card(
+                label = stringResource(id = R.string.drawable),
             ) {
                 SimpleListRow(
                     label = iconInfo.drawableName,
                     description = "If the icon is outdated due to rebranding, create an issue on GitHub.",
+                    divider = false,
                 )
             }
             Spacer(Modifier.height(16.dp))
 
-            Card (
-                label = stringResource(id = R.string.package_prefix)
+            Card(
+                label = stringResource(id = R.string.package_prefix),
             ) {
                 SimpleListRow(
                     label = iconInfo.name,
-                    description = iconInfo.packageName
+                    description = iconInfo.packageName,
+                    divider = false,
                 )
             }
 
@@ -125,8 +128,6 @@ fun IconInfoPopup(
         }
     }
 }
-
-
 
 @PreviewLawnicons
 @Composable
