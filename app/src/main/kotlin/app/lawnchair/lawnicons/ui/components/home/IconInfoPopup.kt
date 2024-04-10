@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Call
@@ -58,7 +57,6 @@ fun IconInfoPopup(
     ) {
         Column(
             modifier = Modifier
-                .padding(horizontal = 16.dp)
                 .fillMaxWidth(),
         ) {
             Row(
@@ -107,7 +105,7 @@ fun IconInfoPopup(
                 label = stringResource(id = R.string.drawable),
             ) {
                 SimpleListRow(
-                    label = iconInfo.drawableName,
+                    label = githubName,
                     description = "If the icon is outdated due to rebranding, create an issue on GitHub.",
                     divider = false,
                 )
