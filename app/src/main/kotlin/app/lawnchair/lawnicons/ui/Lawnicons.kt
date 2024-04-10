@@ -1,4 +1,4 @@
-package app.lawnchair.lawnicons.ui.components
+package app.lawnchair.lawnicons.ui
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
