@@ -3749,8 +3749,9 @@
   <item component="ComponentInfo{net.i2p.android.router/net.i2p.android.I2PActivity}" drawable="i2p" name="I2P" />
   <item component="ComponentInfo{org.purplei2p.i2pd/org.purplei2p.i2pd.I2PDPermsAskerActivity}" drawable="i2pd" name="i2pd" />
   <item component="ComponentInfo{com.clover.ibetter/com.clover.ibetter.ui.activity.MainActivity}" drawable="ibetter" name="iBetter" />
-  <item component="ComponentInfo{jp.ne.ibis.ibispaintx.app/jp.ne.ibis.ibispaintx.app.market.MarketAuthenticationActivity}" drawable="ibispaint_x" name="ibisPaint X" />
-  <item component="ComponentInfo{jp.ne.ibis.ibispaintx.app/jp.ne.ibis.ibispaintx.app.title.TitleActivity}" drawable="ibispaint_x" name="ibisPaint X" />
+  <item component="ComponentInfo{jp.ne.ibis.ibispaint.app/jp.ne.ibis.ibispaintx.app.market.MarketAuthenticationActivity}" drawable="ibis_paint" name="ibis Paint" />
+  <item component="ComponentInfo{jp.ne.ibis.ibispaintx.app/jp.ne.ibis.ibispaintx.app.market.MarketAuthenticationActivity}" drawable="ibis_paint" name="ibis Paint X" />
+  <item component="ComponentInfo{jp.ne.ibis.ibispaintx.app/jp.ne.ibis.ibispaintx.app.title.TitleActivity}" drawable="ibis_paint" name="ibis Paint X" />
   <item component="ComponentInfo{atws.app/tws.activity.launcher.LauncherActivity}" drawable="ibkr" name="IBKR" />
   <item component="ComponentInfo{atws.app/atws.activity.launcher.LauncherActivity}" drawable="ibkr" name="IBKR" />
   <item component="ComponentInfo{se.ica.handla/se.ica.handla.launcher.LauncherActivity}" drawable="ica" name="ICA" />
@@ -3811,6 +3812,7 @@
   <item component="ComponentInfo{pl.pkobp.iko/pl.pkobp.iko.startup.activity.StartupActivity}" drawable="iko" name="IKO" />
   <item component="ComponentInfo{com.jwtian.smartbt/com.jwtian.smartbt.ActivityWelcome}" drawable="ilink" name="iLink" />
   <item component="ComponentInfo{com.imageresizer.imagecompressor/com.imageresizer.imagecompressor.activity.SplashActivity}" drawable="image_compressor_and_resizer" name="Image Compressor and Resizer" />
+  <item component="ComponentInfo{pdf.converter.imagetopdf.jpgtopdf.createpdf/pdf.converter.imagetopdf.jpgtopdf.createpdf.pdfviewer.onemb.imagetopdf.ui.splash.SplashActivity}" drawable="pdf_viewer" name="Image to PDF Converter" />
   <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.AppActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
   <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.MainActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
   <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.main_screen.MainActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
@@ -6624,6 +6626,7 @@
   <item component="ComponentInfo{ch.fidelisfactory.pluspoints/ch.fidelisfactory.pluspoints.MainActivity}" drawable="pluspoints" name="PlusPoints" />
   <item component="ComponentInfo{tv.pluto.android/tv.pluto.android.EntryPoint}" drawable="pluto_tv" name="Pluto TV" />
   <item component="ComponentInfo{com.spicychair.weather/com.spicychair.flutter_weather.MainActivity}" drawable="pluvia" name="Pluvia" />
+  <item component="ComponentInfo{com.sodexo.brsuk.spree/crc648faee5076442e488.SplashActivity}" drawable="pluxee" name="Pluxee" />
   <item component="ComponentInfo{in.zeta.android/in.apollo.android.ui.activity.SplashScreenActivity}" drawable="pluxee" name="Pluxee" />
   <item component="ComponentInfo{com.guerdons.passresto/com.sodexo.passresto.loading.presentation.activites.LoadingActivity}" drawable="pluxee" name="Pluxee" />
   <item component="ComponentInfo{com.primety.sodexomobile/com.primety.sodexomobile.InitialActivity}" drawable="pluxee" name="Pluxee" />
@@ -8925,7 +8928,7 @@
   <item component="ComponentInfo{app.tice.TICE.production/tice.ui.activitys.MainActivity}" drawable="tice" name="TICE" />
   <item component="ComponentInfo{in.tickertape/in.tickertape.onboarding.SplashScreenActivity}" drawable="tickertape" name="Tickertape" />
   <item component="ComponentInfo{in.tickertape/com.example.tt_mob_tickertape_flutter.MainActivity}" drawable="tickertape" name="Tickertape" />
-  <item component="ComponentInfo{com.edenred.mobiletr/com.edenred.mobiletr.activity.MainActivity}" drawable="ticket_restaurant" name="Ticket Restaurant ~~ Edenred" />
+  <item component="ComponentInfo{com.edenred.mobiletr/com.edenred.mobiletr.activity.MainActivity}" drawable="ticket_restaurant" name="Ticket Restaurant" />
   <item component="ComponentInfo{com.ticketmaster.mobile.android.na/com.ticketmaster.mobile.android.library.activity.MainActivity}" drawable="ticketmaster" name="Ticketmaster" />
   <item component="ComponentInfo{com.ticketmaster.tickets.international/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="ticketmaster" name="Ticketmaster" />
   <item component="ComponentInfo{com.ticketswap.ticketswap/com.ticketswap.android.approot.AppRootActivity}" drawable="ticketswap" name="TicketSwap" />
@@ -9476,6 +9479,7 @@
   <item component="ComponentInfo{vivino.web.app/com.sphinx_solution.Launcher}" drawable="vivino" name="Vivino" />
   <item component="ComponentInfo{br.com.vivo/br.com.vivo.MainActivity}" drawable="vivo" name="Vivo" />
   <item component="ComponentInfo{com.vivo.browser/com.vivo.browser.BrowserActivity}" drawable="vivo_browser" name="Vivo Browser" />
+  <item component="ComponentInfo{br.com.vivo.vivoeasy/br.com.zup.vivoeasy3.presentation.MainActivity}" drawable="vivo" name="Vivo Easy" />
   <item component="ComponentInfo{com.vivo.weather/com.vivo.weather.WeatherMain}" drawable="vivo_weather" name="Vivo Weather" />
   <item component="ComponentInfo{com.vk.clips/com.vk.clips.settings.icons.ClipsIconAlias.DefaultIcon}" drawable="vk_clips" name="VK Клипы ~~ VK Clips" />
   <item component="ComponentInfo{com.vk.im/com.vk.im.ui.MainActivity}" drawable="vk_messenger" name="VK Мессенджер ~~ VK Messenger" />
@@ -9586,6 +9590,7 @@
   <item component="ComponentInfo{de.j4velin.wallpaperChanger/de.j4velin.wallpaperChanger.settings.Settings}" drawable="wallpaper_changer" name="Wallpaper Changer" />
   <item component="ComponentInfo{io.wallpaperengine.weclient/io.wallpaperengine.weclient.BrowseActivity}" drawable="wallpaper_engine" name="Wallpaper Engine" />
   <item component="ComponentInfo{com.wallwow.wallpapers/com.wallwow.wallpapers.layout.StartupActivity}" drawable="wallwow" name="WallWOW" />
+  <item component="ComponentInfo{com.walmart.mg/com.walmart.glass.integration.splash.SplashActivity}" drawable="walmart" name="Walmart" />
   <item component="ComponentInfo{com.walmart.android/com.walmart.android.app.HomeActivity}" drawable="walmart" name="Walmart" />
   <item component="ComponentInfo{com.walmart.android/com.walmart.android.app.main.MainActivity}" drawable="walmart" name="Walmart" />
   <item component="ComponentInfo{com.walmart.android/com.walmart.android.app.main.LaunchActivity}" drawable="walmart" name="Walmart" />
