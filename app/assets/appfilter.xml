@@ -214,6 +214,7 @@
   <item component="ComponentInfo{com.aimp.player/com.aimp.player.views.MainActivity.MainActivity}" drawable="aimp" name="AIMP" />
   <item component="ComponentInfo{com.aimp.player/com.aimp.player.views.Main.MainActivity}" drawable="aimp" name="AIMP" />
   <item component="ComponentInfo{com.aimp.player/com.aimp.player.ui.activities.main.MainActivity}" drawable="aimp" name="AIMP" />
+  <item component="ComponentInfo{com.airfrance.android.dinamoprd/com.airfrance.android.totoro.ui.activity.main.MainActivity}" drawable="air_france" name="Air France" />
   <item component="ComponentInfo{com.airfrance.android.dinamoprd/com.airfrance.android.totoro.homepage.activity.MainActivity}" drawable="air_france" name="Air France" />
   <item component="ComponentInfo{com.transat.airtransat/com.transat.airtransat.main.MainActivity}" drawable="air_transat" name="Air Transat" />
   <item component="ComponentInfo{com.airbnb.android/com.airbnb.android.activities.HomeActivityAlias}" drawable="airbnb" name="Airbnb" />
@@ -237,7 +238,6 @@
   <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activities.LauncherActivity}" drawable="myairtel" name="Airtel" />
   <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.HomeActivity}" drawable="myairtel" name="Airtel" />
   <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.OnboardingActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.OnboardingActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="myairtel" name="Airtel" />
   <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.SplashScreenActivity}" drawable="myairtel" name="Airtel" />
   <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.AirtelActivity}" drawable="myairtel" name="Airtel" />
   <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.home.views.activities.NewHomeActivity}" drawable="myairtel" name="Airtel" />
@@ -1193,6 +1193,7 @@
   <item component="ComponentInfo{com.c6bank.app/com.c6bank.android.ui.feature.intro.IntroActivity}" drawable="c6_bank" name="C6 Bank" />
   <item component="ComponentInfo{cgeo.geocaching/cgeo.geocaching.MainActivity}" drawable="cgeo" name="c:geo" />
   <item component="ComponentInfo{cgeo.geocaching/cgeo.geocaching.SplashActivity}" drawable="cgeo" name="c:geo" />
+  <item component="ComponentInfo{com.github.bmx666.appcachecleaner/com.github.bmx666.appcachecleaner.ui.activity.LauncherActivity}" drawable="cache_cleaner" name="Cache Cleaner" />
   <item component="ComponentInfo{studio14.application.caelus/com.candybar.dev.activities.SplashActivity}" drawable="caelus" name="Caelus" />
   <item component="ComponentInfo{moe.zhs.caffeine/moe.zhs.caffeine.MainActivity}" drawable="caffeine" name="Caffeine" />
   <item component="ComponentInfo{moe.zhs.caffeine/moe.zhs.caffeine.SettingsActivity}" drawable="caffeine" name="Caffeine" />
@@ -1248,8 +1249,6 @@
   <item component="ComponentInfo{com.oneplus.calculator/com.oneplus.calculator.Calculator}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.sec.android.app.popupcalculator/.Calculator}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator}" drawable="calculator" name="Calculator" />
-  <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="calculator" name="Calculator" />
-  <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="calculator" name="Calculator" />
   <item component="ComponentInfo{com.transsion.calculator/com.transsion.calculator.Calculator" drawable="calculator_plus" name="Calculator" />
   <item component="ComponentInfo{com.asus.calculator/com.asus.calculator.Calculator}" drawable="calculator" name="Calculator - unit converter" />
   <item component="ComponentInfo{com.gigaworks.tech.calculator/com.gigaworks.tech.calculator.ui.main.MainActivity}" drawable="calculator_plus" name="Calculator Plus" />
@@ -1437,8 +1436,6 @@
   <item component="ComponentInfo{com.oppo.camera/com.oppo.camera.OppoCamera}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.sec.android.app.camera/.Camera}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.sec.android.app.camera/com.sec.android.app.camera.Camera}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.sec.android.app.camera/com.sec.android.app.camera.Camera launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.sec.android.app.camera/com.sec.android.app.camera.Camera VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.shamim.cam/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.MainActivity}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity}" drawable="camera" name="Camera" />
@@ -1705,10 +1702,7 @@
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.AlarmActivity}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.alarm.Alarm}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.common.activity.ClockPackage}" drawable="clock" name="Clock" />
-  <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.common.activity.ClockPackage VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.TabletClockPackage}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.TabletClockPackageWC}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Amber}" drawable="clock" name="Clock" />
@@ -1868,7 +1862,6 @@
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PCUDialtactsActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivityEx}" drawable="google_contacts" name="Contacts" />
-  <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PhoneFrontDoor}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDiale}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="google_contacts" name="Contacts" />
@@ -1926,7 +1919,6 @@
   <item component="ComponentInfo{com.android.contacts/com.android.dialer.activities.DialtactsActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.dialer.app.DialtactsActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.dialer.DialtactsActivity}" drawable="google_contacts" name="Contacts" />
-  <item component="ComponentInfo{com.android.contacts/com.android.dialer.DialtactsActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.internal.app.ResolverActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.mms.ui.ConversationList}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.mms.ui.SearchActivity}" drawable="google_contacts" name="Contacts" />
@@ -1984,6 +1976,7 @@
   <item component="ComponentInfo{nl.rijksoverheid.ctr.holder/nl.rijksoverheid.ctr.holder.HolderMainActivity}" drawable="coronacheck" name="CoronaCheck" />
   <item component="ComponentInfo{br.com.correios.preatendimento/br.com.correios.preatendimento.MainActivity}" drawable="correios" name="Correios" />
   <item component="ComponentInfo{com.corridordigital.watchcorridor/com.corridordigital.watchcorridor.ui.MainActivity}" drawable="corridor" name="Corridor" />
+  <item component="ComponentInfo{com.costco.app.android/com.costco.app.android.ui.main.LaunchActivity}" drawable="costco_wholesale" name="Costco Wholesale" />
   <item component="ComponentInfo{com.costco.app.android/com.costco.app.android.ui.main.MainActivity}" drawable="costco_wholesale" name="Costco Wholesale" />
   <item component="ComponentInfo{com.jupli.countdowntoanything/com.jupli.countdowntoanything.MainActivity}" drawable="countdown_to_anything" name="Countdown To Anything" />
   <item component="ComponentInfo{org.coursera.android/org.coursera.android.MainActivity}" drawable="coursera" name="Coursera" />
@@ -2824,11 +2817,9 @@
   <item component="ComponentInfo{com.oneplus.filemanager/.HomePageActivity}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/.common.MainActivity}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.common.MainActivity}" drawable="files" name="Files" />
-  <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.common.MainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.external.ui.LaunchActivity}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.external.ui.MainActivity}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.MainActivity}" drawable="files" name="Files" />
-  <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.MainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/com.sec.android.app.myfiles.Myfiles}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.sec.android.app.myfiles/.external.ui.MainActivity}" drawable="files" name="Files" />
   <item component="ComponentInfo{me.zhanghai.android.files/me.zhanghai.android.files.filelist.FileListActivity}" drawable="files" name="Files" />
@@ -3044,10 +3035,12 @@
   <item component="ComponentInfo{org.freedownloadmanager.fdm/org.freedownloadmanager.fdm.MyActivity}" drawable="free_download_manager" name="Free Download Manager" />
   <item component="ComponentInfo{com.dts.freefireth/com.dts.freefireth.FFMainActivity}" drawable="free_fire" name="Free Fire" />
   <item component="ComponentInfo{fr.free.ligue1/fr.free.ligue1.ui.components.common.SplashActivity}" drawable="free_ligue_1" name="Free Ligue 1" />
+  <item component="ComponentInfo{fr.freebox.network/networkapp.presentation.main.ui.MainActivity}" drawable="freebox_connect" name="Freebox Connect" />
   <item component="ComponentInfo{com.freecharge.android/com.freecharge.activities.main.MainActivity}" drawable="freecharge" name="Freecharge" />
   <item component="ComponentInfo{com.freecharge.android/com.freecharge.activities.splash.SplashActivity}" drawable="freecharge" name="Freecharge" />
   <item component="ComponentInfo{com.freecharge.android/com.freecharge.ui.MainSplashActivity}" drawable="freecharge" name="Freecharge" />
   <item component="ComponentInfo{com.freecharge.android/com.freecharge.ui.SplashActivity}" drawable="freecharge" name="Freecharge" />
+  <item component="ComponentInfo{io.github.yamin8000.owl/io.github.yamin8000.owl.content.MainActivity}" drawable="freedictionaryapp" name="freeDictionaryApp" />
   <item component="ComponentInfo{com.freelancer.android.messenger/com.freelancer.main.MainActivity}" drawable="freelancer" name="Freelancer" />
   <item component="ComponentInfo{org.freenetproject.mobile/org.freenetproject.mobile.ui.main.activity.MainActivity}" drawable="freenet" name="Freenet" />
   <item component="ComponentInfo{de.md.meinmd/de.freenet.android.base.login.LoginActivity}" drawable="freenet_mobilfunk" name="freenet Mobilfunk" />
@@ -3100,9 +3093,6 @@
   <item component="ComponentInfo{com.samsung.android.imageenhancer/com.samsung.android.imageenhancer.MainActivity}" drawable="galaxy_enhance_x" name="Galaxy Enhance-X" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.Main}" drawable="galaxy_store" name="Galaxy Store" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity}" drawable="galaxy_store" name="Galaxy Store" />
-  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 }}" drawable="galaxy_store" name="Galaxy Store" />
-  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="galaxy_store" name="Galaxy Store" />
-  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="galaxy_store" name="Galaxy Store" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SKSamsungMainActivity}" drawable="galaxy_store" name="Galaxy Store" />
   <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.WTLauncher}" drawable="galaxy_themes" name="Galaxy Themes" />
   <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.Launcher}" drawable="galaxy_themes" name="Galaxy Themes" />
@@ -3162,9 +3152,6 @@
   <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 }}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{org.lineageos.glimpse/org.lineageos.glimpse.MainActivity}" drawable="gallery" name="Gallery" />
   <item component="ComponentInfo{org.fossify.gallery/org.fossify.gallery.activities.SplashActivity.Amber}" drawable="simple_gallery" name="Gallery" />
@@ -3193,7 +3180,6 @@
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.app.MainActivity}" drawable="game_launcher" name="Game Launcher" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivityCN}" drawable="game_launcher" name="Game Launcher" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivity}" drawable="game_launcher" name="Game Launcher" />
-  <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="game_launcher" name="Game Launcher" />
   <item component="ComponentInfo{com.coloros.gamespaceui/com.coloros.gamespaceui.activity.GameBoxCoverActivity}" drawable="game_space" name="Game Space" />
   <item component="ComponentInfo{com.coloros.gamespaceui/com.coloros.gamespaceui.activity.StartActivity}" drawable="game_space" name="Game Space" />
   <item component="ComponentInfo{io.chaldeaprjkt.gamespace/.settings.SettingsActivity}" drawable="gamespace" name="Game Space" />
@@ -3310,7 +3296,6 @@
   <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.AutoSendActivity}" drawable="gmail" name="Gmail" />
   <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ComposeActivityGmail}" drawable="gmail" name="Gmail" />
   <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail}" drawable="gmail" name="Gmail" />
-  <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 }}" drawable="gmail" name="Gmail" />
   <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGoogleMail}" drawable="gmail" name="Gmail" />
   <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.GmailActivity}" drawable="gmail" name="Gmail" />
   <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.MailboxSelectionActivity}" drawable="gmail" name="Gmail" />
@@ -3355,7 +3340,6 @@
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.GoogleSearch}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.MainInfoGatewayInternal}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="google" name="Google" />
-  <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 }}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchPreferences}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.handsfree.HandsFreeLauncherActivity}" drawable="google" name="Google" />
@@ -3394,7 +3378,6 @@
   <item component="ComponentInfo{com.google.android.apps.cloudconsole/com.google.android.apps.cloudconsole.common.MainContainerActivity}" drawable="google_cloud" name="Google Cloud" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.DocumentOpenerActivityProxy}" drawable="google_docs" name="Google Docs" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_docs" name="Google Docs" />
-  <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.NewMainProxyActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mBaseDisplayId=0 mFlags=0 }}" drawable="google_docs" name="Google Docs" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.editors.kix.KixDocumentCreatorActivity}" drawable="google_docs" name="Google Docs" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.editors.kix.KixEditorActivity}" drawable="google_docs" name="Google Docs" />
   <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.HomeScreenActivity}" drawable="google_drive" name="Google Drive" />
@@ -3897,6 +3880,7 @@
   <item component="ComponentInfo{pl.inpost.inmobile/pl.inpost.inmobile.presentation.splashscreen.SplashScreenActivity}" drawable="inpost" name="InPost" />
   <item component="ComponentInfo{pl.inpost.inmobile/pl.inpost.inmobile.splashScreen.presentation.SplashScreenActivity}" drawable="inpost" name="InPost" />
   <item component="ComponentInfo{pl.inpost.mobile/md5b11543c22ddb1a4d81d612765617cfa5.SplashActivity}" drawable="inpost" name="InPost" />
+  <item component="ComponentInfo{de.nasa.deticket/de.nasa.deticket.MainActivity}" drawable="insa_d_ticket" name="INSA D-Ticket" />
   <item component="ComponentInfo{com.nis.app/com.nis.app.ui.activities.HomeActivity}" drawable="inshorts" name="inshorts" />
   <item component="ComponentInfo{com.camerasideas.instashot/com.camerasideas.instashot.DummyActivity}" drawable="inshot" name="InShot" />
   <item component="ComponentInfo{com.camerasideas.instashot/com.camerasideas.instashot.MainActivity}" drawable="inshot" name="InShot" />
@@ -4837,7 +4821,6 @@
   <item component="ComponentInfo{com.android.mms/com.android.mms.ui.CmasListActivityShortCut}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ComposeMessageActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ConversationComposer}" drawable="messages" name="Messages" />
-  <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ConversationComposer VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/com.android.mms.ui.EntryActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/com.android.mms.ui.FunctionSwitchActivity}" drawable="messages" name="Messages" />
@@ -4868,8 +4851,6 @@
   <item component="ComponentInfo{com.oneplus.mms/com.android.mms.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.oneplus.mms/com.oneplus.mss.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer}" drawable="messages" name="Messages" />
-  <item component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="messages" name="Messages" />
-  <item component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Amber}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Blue}" drawable="messages" name="Messages" />
@@ -5003,7 +4984,6 @@
   <item component="ComponentInfo{com.microsoft.emmx.dev/com.google.android.apps.chrome.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
   <item component="ComponentInfo{com.microsoft.emmx.dev/com.microsoft.ruby.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.apphost.LaunchActivity}" drawable="microsoft_excel" name="Microsoft Excel" />
-  <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.apphost.LaunchActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="microsoft_excel" name="Microsoft Excel" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.excel.excelMainActivity}" drawable="microsoft_excel" name="Microsoft Excel" />
   <item component="ComponentInfo{com.microsoft.launcher/com.microsoft.launcher.EntryActivity}" drawable="microsoft_launcher" name="Microsoft Launcher" />
   <item component="ComponentInfo{com.microsoft.launcher/com.microsoft.launcher.Launcher}" drawable="microsoft_launcher" name="Microsoft Launcher" />
@@ -5037,7 +5017,6 @@
   <item component="ComponentInfo{com.microsoft.todos/com.microsoft.todos.ui.LaunchActivity}" drawable="microsoft_todo" name="Microsoft To Do" />
   <item component="ComponentInfo{com.microsoft.translator/com.microsoft.translator.activity.SplashActivity}" drawable="microsoft_translator" name="Microsoft Translator" />
   <item component="ComponentInfo{com.microsoft.office.word/com.microsoft.office.apphost.LaunchActivity}" drawable="microsoft_word" name="Microsoft Word" />
-  <item component="ComponentInfo{com.microsoft.office.word/com.microsoft.office.apphost.LaunchActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="microsoft_word" name="Microsoft Word" />
   <item component="ComponentInfo{com.microsoft.office.word/com.microsoft.office.word.WordActivity}" drawable="microsoft_word" name="Microsoft Word" />
   <item component="ComponentInfo{net.volcanomobile.midiplayer/net.volcanomobile.midiplayer.ui.SplashActivity}" drawable="midi_player" name="MIDI Player" />
   <item component="ComponentInfo{de.syss.MifareClassicTool/de.syss.MifareClassicTool.Activities.MainMenu}" drawable="mifare_classic_tool" name="MIFARE Classic Tool" />
@@ -5680,6 +5659,7 @@
   <item component="ComponentInfo{com.nordpass.android.app.password.manager/com.nordpass.android.ui.splash.SplashActivity}" drawable="nord_android" name="NordPass" />
   <item component="ComponentInfo{com.nordvpn.android/com.nordvpn.android.mobile.MainActivity}" drawable="nord_android" name="NordVPN" />
   <item component="ComponentInfo{com.nordvpn.android/com.nordvpn.android.MainActivity}" drawable="nord_android" name="NordVPN" />
+  <item component="ComponentInfo{com.norwegian.travelassistant/com.norwegian.travelassistant.MainActivity}" drawable="norwegian_travel_assistant" name="Norwegian Travel Assistant" />
   <item component="ComponentInfo{com.omgodse.notally/com.omgodse.notally.activities.MainActivity}" drawable="notally" name="Notally" />
   <item component="ComponentInfo{de.tiendonam.notan/de.tiendonam.notan.MainActivity}" drawable="notan_grade_calculator" name="Notan: Grade Calculator" />
   <item component="ComponentInfo{com.notebloc.app/com.notebloc.app.activity.MigrateStorageActivity}" drawable="notebloc" name="Notebloc" />
@@ -6469,6 +6449,7 @@
   <item component="ComponentInfo{com.iudesk.android.photo.editor/app.activity.MainActivity}" drawable="photo_editor" name="Photo Editor" />
   <item component="ComponentInfo{photo.editor.photoeditor.photoeditorpro/com.camerasideas.collagemaker.activity.DummyActivity}" drawable="photo_editor_pro_polish" name="Photo Editor Pro — Polish" />
   <item component="ComponentInfo{com.nbow.photowidget/com.nbow.photowidget.MainActivity}" drawable="photo_widget_easy" name="Photo Widget Easy" />
+  <item component="ComponentInfo{dev.leonlatsch.photok/dev.leonlatsch.photok.MainLauncher}" drawable="photok" name="Photok" />
   <item component="ComponentInfo{com.microblink.photomath/com.microblink.photomath.main.MainActivity}" drawable="photomath" name="Photomath" />
   <item component="ComponentInfo{com.microblink.photomath/com.microblink.photomath.main.LauncherActivity}" drawable="photomath" name="Photomath" />
   <item component="ComponentInfo{com.microblink.photomath/com.microblink.photomath.main.activity.LauncherActivity}" drawable="photomath" name="Photomath" />
@@ -6978,7 +6959,6 @@
   <item component="ComponentInfo{com.airnav.radarbox/com.airnav.radarbox.SplashActivity}" drawable="radarbox" name="Radarbox" />
   <item component="ComponentInfo{com.airnav.radarbox/com.airnav.radarbox.MainActivity}" drawable="radarbox" name="RadarBox" />
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity}" drawable="fm_radio" name="Radio" />
-  <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="fm_radio" name="Radio" />
   <item component="ComponentInfo{de.radiobob.radio/com.computerrock.radiolikemee.ui.intro.IntroActivity}" drawable="bob" name="Radio BOB" />
   <item component="ComponentInfo{com.radio.fmradio/com.radio.fmradio.activities.SplashActivity}" drawable="fm_radio" name="Radio FM - Podcast App" />
   <item component="ComponentInfo{com.radio.fmradio/com.radio.fmradio.InitFM}" drawable="fm_radio" name="Radio FM - Podcast App" />
@@ -7081,8 +7061,6 @@
   <item component="ComponentInfo{com.oneplus.soundrecorder/com.oneplus.soundrecorder.SoundRecorder}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.oneplus.soundrecorder/.SoundRecorder}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Amber}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Blue}" drawable="recorder" name="Recorder" />
   <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Blue_grey}" drawable="recorder" name="Recorder" />
@@ -7201,7 +7179,6 @@
   <item component="ComponentInfo{com.venticake.retrica/retrica.scenes.MainActivity}" drawable="retrica" name="Retrica" />
   <item component="ComponentInfo{code.name.monkey.retromusic/code.name.monkey.retromusic.activities.MainActivity}" drawable="retro_music" name="Retro Music" />
   <item component="ComponentInfo{code.name.monkey.retromusic/code.name.monkey.retromusic.ui.activities.MainActivity}" drawable="retro_music" name="Retro Music" />
-  <item component="ComponentInfo{code.name.monkey.retromusic/code.name.monkey.retromusic.ui.activities.MainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="retro_music" name="Retro Music" />
   <item component="ComponentInfo{code.name.monkey.retromusic/code.name.monkey.retromusic.ui.activities.main.MainActivity}" drawable="retro_music" name="Retro Music" />
   <item component="ComponentInfo{com.retroarch/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch" />
   <item component="ComponentInfo{com.retroarch.aarch64/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch Plus" />
@@ -7301,6 +7278,7 @@
   <item component="ComponentInfo{org.dianqk.ruslin/org.dianqk.ruslin.MainActivity}" drawable="ruslin_notes" name="Ruslin Notes" />
   <item component="ComponentInfo{com.carriez.flutter_hbb/com.carriez.flutter_hbb.MainActivity}" drawable="rustdesk" name="RustDesk" />
   <item component="ComponentInfo{ru.vk.store/ru.vk.store.app.MainActivity}" drawable="rustore" name="RuStore" />
+  <item component="ComponentInfo{no.ruter.reise/no.ruter.app.feature.startup.StartupActivity}" drawable="ruter" name="Ruter" />
   <item component="ComponentInfo{shubh.ruthless/amirz.shade.ShadeSettings}" drawable="ruthless_launcher" name="Ruthless Launcher" />
   <item component="ComponentInfo{shubh.ruthless/amirz.shade.ShadeLauncher}" drawable="ruthless_launcher" name="Ruthless Launcher" />
   <item component="ComponentInfo{ru.rutube.app/ru.rutube.app.ui.activity.splash.SplashActivity}" drawable="rutube" name="RUTUBE" />
@@ -7351,7 +7329,6 @@
   <item component="ComponentInfo{com.android.samsung.utilityapp/com.android.samsung.utilityapp.app.presentation.welcomepage.WelcomeActivity}" drawable="samsung_good_guardians" name="Samsung Good Guardians" />
   <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeDashboardActivity}" drawable="samsung_health" name="Samsung Health" />
   <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}" drawable="samsung_health" name="Samsung Health" />
-  <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="samsung_health" name="Samsung Health" />
   <item component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.RootActivity}" drawable="samsung_health" name="Samsung Health" />
   <item component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.SplashScreenActivity}" drawable="samsung_health" name="Samsung Health" />
   <item component="ComponentInfo{com.samsung.android.shealthmonitors/com.samsung.android.shealthmonitor.ui.activity.MainActivity}" drawable="samsung_health_monitor" name="Samsung Health Monitor" />
@@ -7359,9 +7336,7 @@
   <item component="ComponentInfo{com.samsung.android.service.health/com.samsung.android.service.health.settings.HomeSettingsActivity}" drawable="samsung_health_platform" name="Samsung Health Platform" />
   <item component="ComponentInfo{com.samsung.android.app.homestar/com.samsung.android.app.homestar.ActivityDummy}" drawable="samsung_home_up" name="Samsung Home Up" />
   <item component="ComponentInfo{com.sec.android.app.sbrowser/com.sec.android.app.sbrowser.SBrowserMainActivity}" drawable="samsung_internet_browser" name="Samsung Internet Browser" />
-  <item component="ComponentInfo{com.sec.android.app.sbrowser/com.sec.android.app.sbrowser.SBrowserMainActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="samsung_internet_browser" name="Samsung Internet Browser" />
   <item component="ComponentInfo{com.sec.android.app.sbrowser/com.sec.android.app.sbrowser.SBrowserMainActivityManager}" drawable="samsung_internet_browser" name="Samsung Internet Browser" />
-  <item component="ComponentInfo{com.sec.android.app.sbrowser/com.sec.android.app.sbrowser.SBrowserMainActivity VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="samsung_internet_browser" name="Samsung Internet Browser" />
   <item component="ComponentInfo{com.sec.android.app.sbrowser/.SBrowserMainActivity}" drawable="samsung_internet_browser" name="Samsung Internet Browser" />
   <item component="ComponentInfo{com.sec.android.app.sbrowser.beta/com.sec.android.app.sbrowser.SBrowserMainActivity}" drawable="samsung_internet_browser_beta" name="Samsung Internet Browser Beta" />
   <item component="ComponentInfo{com.odete.samsung/br.com.odete.android.welcome.WelcomeActivity}" drawable="samsung_itau" name="Samsung Itaú" />
@@ -7377,6 +7352,7 @@
   <item component="ComponentInfo{com.sec.android.app.music/com.samsung.musicplus.MusicMainActivity}" drawable="samsung_music" name="Samsung Music" />
   <item component="ComponentInfo{com.sec.android.app.music/com.samsung.android.app.music.common.activity.MusicMainActivity}" drawable="samsung_music" name="Samsung Music" />
   <item component="ComponentInfo{com.sec.android.app.music/com.sec.android.app.music.common.activity.MusicMainActivity}" drawable="samsung_music" name="Samsung Music" />
+  <item component="ComponentInfo{com.samsung.android.app.goodcatch/com.samsung.android.app.goodcatch.main.activity.MainActivity}" drawable="samsung_nice_catch" name="Samsung Nice Catch" />
   <item component="ComponentInfo{com.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivitycom.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivity}" drawable="samsung_notes" name="Samsung Notes" />
   <item component="ComponentInfo{com.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivity}" drawable="samsung_notes" name="Samsung Notes" />
   <item component="ComponentInfo{com.samsung.android.app.notes/.memolist.MemoListActivity}" drawable="samsung_notes" name="Samsung Notes" />
@@ -7597,14 +7573,12 @@
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsActivity}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.Settings}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsEMUI}" drawable="settings" name="Settings" />
-  <item component="ComponentInfo{com.android.settings/com.android.settings.Settings launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsMain}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsMatricStyle}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.Settings_Root}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsTabActivity}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsTab}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SettingsTabStyle}" drawable="settings" name="Settings" />
-  <item component="ComponentInfo{com.android.settings/com.android.settings.Settings VirtualScreenParam=Params{mDisplayId=-1, null, mFlags=0x00000000)}}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SimCardManagement}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.sudamod.LocationLookup}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/com.android.settings.SystemActivity}" drawable="settings" name="Settings" />
@@ -7729,7 +7703,6 @@
   <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityForCU}" drawable="sim_toolkit" name="SIM Toolkit" />
   <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityI}" drawable="sim_toolkit" name="SIM Toolkit" />
   <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityII}" drawable="sim_toolkit" name="SIM Toolkit" />
-  <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity launchParam=MultiScreenLaunchParams { mDisplayId=0 mFlags=0 }}" drawable="sim_toolkit" name="SIM Toolkit" />
   <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityOther1}" drawable="sim_toolkit" name="SIM Toolkit" />
   <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityOther2}" drawable="sim_toolkit" name="SIM Toolkit" />
   <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivitySingleCard}" drawable="sim_toolkit" name="SIM Toolkit" />
@@ -9577,6 +9550,7 @@
   <item component="ComponentInfo{com.vtosters.lite/com.vtosters.lite.id11}" drawable="vtlite" name="VTLite" />
   <item component="ComponentInfo{com.vtosters.lite/com.vtosters.lite.VTIconVK}" drawable="vtlite" name="VTLite" />
   <item component="ComponentInfo{com.vtosters.lite/com.vtosters.lite.VTIconDefault}" drawable="vtlite" name="VTLite" />
+  <item component="ComponentInfo{com.denchi.vtubestudio/com.unity3d.player.UnityPlayerActivity}" drawable="vtube_studio" name="VTube Studio" />
   <item component="ComponentInfo{com.Frontesque.vuetube/com.Frontesque.vuetube.MainActivity}" drawable="vuetube" name="VueTube" />
   <item component="ComponentInfo{com.Frontesque.youtube/com.Frontesque.vuetube.MainActivity}" drawable="vuetube" name="VueTube" />
   <item component="ComponentInfo{in.android.vyapar/in.android.vyapar.MainActivity}" drawable="vyapar" name="Vyapar" />
@@ -10120,6 +10094,7 @@
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.MainActivity}" drawable="zdfmediathek" name="ZDFmediathek" />
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.PlatformSwitch}" drawable="zdfmediathek" name="ZDFmediathek" />
   <item component="ComponentInfo{com.zdf.android.mediathek/com.zdf.android.mediathek.ui.splash.SplashActivity}" drawable="zdfmediathek" name="ZDFmediathek" />
+  <item component="ComponentInfo{pl.healthyfood/org.zdrowezakupy.screens.main.MainActivity}" drawable="zdrowe_zakupy" name="Zdrowe Zakupy" />
   <item component="ComponentInfo{net.zedge.android/net.zedge.android.MainEaster}" drawable="zedge" name="Zedge" />
   <item component="ComponentInfo{net.zedge.android/net.zedge.android.MainXmas}" drawable="zedge" name="Zedge" />
   <item component="ComponentInfo{net.zedge.android/net.zedge.android.MainWorldcup}" drawable="zedge" name="Zedge" />
