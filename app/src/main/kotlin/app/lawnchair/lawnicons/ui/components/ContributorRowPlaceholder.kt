@@ -12,12 +12,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
-import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
-import app.lawnchair.lawnicons.ui.components.core.placeholder.material.placeholder
+import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
+import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
 fun ContributorRowPlaceholder(
@@ -38,9 +36,7 @@ fun ContributorRowPlaceholder(
                         .placeholder(
                             visible = true,
                             shape = CircleShape,
-                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(
-                                Elevation.Level4,
-                            ),
+                            color = MaterialTheme.colorScheme.surfaceContainerHighest,
                             highlight = PlaceholderHighlight.fade(),
                         ),
                 )
@@ -52,9 +48,7 @@ fun ContributorRowPlaceholder(
                         .height(18.dp)
                         .placeholder(
                             visible = true,
-                            color = MaterialTheme.colorScheme.surfaceColorAtElevation(
-                                Elevation.Level4,
-                            ),
+                            color = MaterialTheme.colorScheme.surfaceContainerHighest,
                             highlight = PlaceholderHighlight.fade(),
                         ),
                 )

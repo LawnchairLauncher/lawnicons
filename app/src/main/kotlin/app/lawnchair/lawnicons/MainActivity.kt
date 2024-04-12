@@ -9,7 +9,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import app.lawnchair.lawnicons.ui.components.Lawnicons
+import app.lawnchair.lawnicons.ui.Lawnicons
 import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalFoundationApi
