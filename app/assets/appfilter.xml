@@ -444,6 +444,7 @@
   <item component="ComponentInfo{com.apkupdater/com.apkupdater.activity.MainActivity_}" drawable="apkupdater" name="APKUpdater" />
   <item component="ComponentInfo{com.apkupdater/com.apkupdater.activity.MainActivity}" drawable="apkupdater" name="APKUpdater" />
   <item component="ComponentInfo{com.apkupdater/com.apkupdater.ui.activity.MainActivity}" drawable="apkupdater" name="APKUpdater" />
+  <item component="ComponentInfo{com.apkupdater.ci/com.apkupdater.ui.activity.MainActivity}" drawable="apkupdater" name="APKUpdater" />
   <item component="ComponentInfo{remix.myplayer/remix.myplayer.ui.activity.MainActivity}" drawable="aplayer" name="APlayer" />
   <item component="ComponentInfo{com.apollo.patientapp/com.apollopatient.MainActivity}" drawable="apollo_247" name="Apollo 247" />
   <item component="ComponentInfo{com.ytheekshana.apkextractor/com.ytheekshana.apkextractor.MainActivity}" drawable="app_apk_extractor" name="App APK Extractor" />
@@ -3814,11 +3815,12 @@
   <item component="ComponentInfo{com.jwtian.smartbt/com.jwtian.smartbt.ActivityWelcome}" drawable="ilink" name="iLink" />
   <item component="ComponentInfo{com.imageresizer.imagecompressor/com.imageresizer.imagecompressor.activity.SplashActivity}" drawable="image_compressor_and_resizer" name="Image Compressor and Resizer" />
   <item component="ComponentInfo{pdf.converter.imagetopdf.jpgtopdf.createpdf/pdf.converter.imagetopdf.jpgtopdf.createpdf.pdfviewer.onemb.imagetopdf.ui.splash.SplashActivity}" drawable="pdf_viewer" name="Image to PDF Converter" />
-  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.AppActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
-  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.MainActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
-  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.main_screen.MainActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
-  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.MainActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
-  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.main_screen.MainActivity}" drawable="image_toolbox" name="Image Toolbox (Resizer)" />
+  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.app.presentation.AppActivity}" drawable="image_toolbox" name="Image Toolbox" />
+  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.AppActivity}" drawable="image_toolbox" name="Image Toolbox" />
+  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.MainActivity}" drawable="image_toolbox" name="Image Toolbox" />
+  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.presentation.main_screen.MainActivity}" drawable="image_toolbox" name="Image Toolbox" />
+  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.MainActivity}" drawable="image_toolbox" name="Image Toolbox" />
+  <item component="ComponentInfo{ru.tech.imageresizershrinker/ru.tech.imageresizershrinker.main_screen.MainActivity}" drawable="image_toolbox" name="Image Toolbox" />
   <item component="ComponentInfo{de.kaffeemitkoffein.imagepipe/de.kaffeemitkoffein.imagepipe.ImageReceiver}" drawable="imagepipe" name="Imagepipe" />
   <item component="ComponentInfo{com.imaginbank.app/com.imaginbank.appima.blueimagin}" drawable="imagin" name="imagin" />
   <item component="ComponentInfo{com.imaginbank.app/com.imaginbank.appima.darkimagin}" drawable="imagin" name="imagin" />
@@ -5490,6 +5492,7 @@
   <item component="ComponentInfo{com.mihoyo.desktopportal/com.mihoyo.desktopportal.ui.splash.SplashActivity}" drawable="n0va_desktop" name="N0va Desktop" />
   <item component="ComponentInfo{com.dmall.mfandroid/com.dmall.mfandroid.activity.base.NewSplash}" drawable="n11" name="n11" />
   <item component="ComponentInfo{com.dmall.mfandroid/com.dmall.mfandroid.activity.base.NHomeActivity}" drawable="n11" name="n11" />
+  <item component="ComponentInfo{com.dmall.mfandroid/com.dmall.mfandroid.activity.base.SplashActivity}" drawable="n11" name="n11" />
   <item component="ComponentInfo{de.number26.android/de.number26.machete.android.ui.landing.LandingActivity}" drawable="n26" name="N26" />
   <item component="ComponentInfo{de.number26.android/de.number26.machete.android.refactor.presentation.settings.customize_icon.launch_aliases.WheatActivityLauncher}" drawable="n26" name="N26" />
   <item component="ComponentInfo{com.n26brasil.app/io.flutter.embedding.android.FlutterFragmentActivity}" drawable="n26" name="N26" />
@@ -8362,6 +8365,7 @@
   <item component="ComponentInfo{de.stocard.stocard/de.stocard.ui.main.InitActivity}" drawable="stocard" name="Stocard" />
   <item component="ComponentInfo{com.github.premnirmal.tickerwidget/com.github.premnirmal.ticker.home.MainActivity}" drawable="stock_ticker" name="Stock Widget" />
   <item component="ComponentInfo{com.github.premnirmal.tickerwidget/com.github.premnirmal.ticker.home.SplashActivity}" drawable="stock_ticker" name="Stock Widget" />
+  <item component="ComponentInfo{com.stock.widget/com.stock.widget.activity.home.HomeActivity}" drawable="stock_ticker" name="Stock Widget" />
   <item component="ComponentInfo{com.harry.stokie/com.harry.stokie.ui.activity.MainActivity}" drawable="stokie" name="STOKiE" />
   <item component="ComponentInfo{co.stone.banking.mobile.flagship/banking.features.login.verification.UserVerificationActivity}" drawable="stone" name="Stone" />
   <item component="ComponentInfo{com.mobile_infographics_tools.mydrive/com.mobile_infographics_tools.mydrive.activities.IntroActivity}" drawable="storage_analyzer" name="Storage Analyzer" />
