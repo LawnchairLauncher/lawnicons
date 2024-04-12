@@ -1084,6 +1084,7 @@
   <item component="ComponentInfo{org.godotengine.brotato/com.godot.game.GodotApp}" drawable="brotato" name="Brotato" />
   <item component="ComponentInfo{com.browsec.vpn/com.browsec.vpn.MainActivity}" drawable="browsec" name="BROWSEC" />
   <item component="ComponentInfo{com.browsec.vpn.proxy/com.browsec.vpn.MainActivity}" drawable="browsec" name="BROWSEC" />
+  <item component="ComponentInfo{com.android.browser/com.android.browser.launch.SplashActivity}" drawable="browser" name="Browser" />
   <item component="ComponentInfo{de.baumann.browser/de.baumann.browser.activity.BrowserActivity}" drawable="browser" name="Browser" />
   <item component="ComponentInfo{de.baumann.browser/de.baumann.browser.Activity.BrowserActivity}" drawable="browser" name="Browser" />
   <item component="ComponentInfo{de.baumann.browser/de.baumann.browser.Browser_left}" drawable="browser" name="Browser" />
@@ -1603,7 +1604,7 @@
   <item component="ComponentInfo{org.bromite.bromite.dev/com.google.android.apps.chrome.Main}" drawable="google_chrome" name="Chromium" />
   <item component="ComponentInfo{org.chromium.chrome/com.google.android.apps.chrome.Main}" drawable="google_chrome" name="Chromium" />
   <item component="ComponentInfo{org.chromium.chrome/org.google.android.apps.chrome.Main}" drawable="google_chrome" name="Chromium" />
-  <item component="ComponentInfo{quebec.artm.chrono/quebec.artm.chrono.ui.main.MainActivity}" drawable="chrono" name="Chrono" />
+  <item component="ComponentInfo{quebec.artm.chrono/quebec.artm.chrono.ui.main.MainActivity}" drawable="chrono_artm" name="Chrono ARTM" />
   <item component="ComponentInfo{com.fbiego.chronos/com.fbiego.chronos.LaunchActivity}" drawable="chronos" name="Chronos" />
   <item component="ComponentInfo{cn.com.chsi.chsiapp/cn.com.chsi.chsiapp.GuideActivity}" drawable="chsiapp" name="chsiapp" />
   <item component="ComponentInfo{com.china3s.android/com.china3s.android.home.view.Main}" drawable="china3s" name="chunqiuhangkong" />
@@ -2427,7 +2428,6 @@
   <item component="ComponentInfo{org.fossify.draw/org.fossify.draw.activities.SplashActivity.Red}" drawable="pencil" name="Draw" />
   <item component="ComponentInfo{org.fossify.draw/org.fossify.draw.activities.SplashActivity.Teal}" drawable="pencil" name="Draw" />
   <item component="ComponentInfo{org.fossify.draw/org.fossify.draw.activities.SplashActivity.Yellow}" drawable="pencil" name="Draw" />
-  <item component="ComponentInfo{com.womboai.wombodream/com.womboai.wombodream.MainActivity}" drawable="dream" name="Dream" />
   <item component="ComponentInfo{com.firsttouchgames.dls7/com.firsttouchgames.dls7.MainActivity}" drawable="dream_league_soccer" name="Dream League Soccer" />
   <item component="ComponentInfo{com.app.dream11Pro/com.app.dream11.dream11.SplashActivity}" drawable="dream11" name="Dream11" />
   <item component="ComponentInfo{au.com.vodafone.dreamlabapp/au.com.vodafone.dreamlabapp.presentation.launcher.LauncherScreenActivity}" drawable="dreamlab" name="DreamLab" />
@@ -2998,7 +2998,8 @@
   <item component="ComponentInfo{dk.tacit.android.foldersync.lite/dk.tacit.android.foldersync.activity.MainActivity}" drawable="foldersync_pro" name="FolderSync Pro" />
   <item component="ComponentInfo{com.insta.follower/com.insta.follower.view.activity.SplashActivity}" drawable="followers_unfollowers" name="Followers &amp; Unfollowers" />
   <item component="ComponentInfo{fontweight.adjustment/fontweight.adjustment.MainActivity}" drawable="fontweight" name="fontweight" />
-  <item component="ComponentInfo{com.cav.foobar2000controllerpro/com.cav.foobar2000controllerpro.MainActivity}" drawable="foobar2000_controller" name="foobar2000 controller" />
+  <item component="ComponentInfo{com.foobar2000.foobar2000/com.foobar2000.foobar2000.MainActivity}" drawable="foobar2000" name="foobar2000" />
+  <item component="ComponentInfo{com.cav.foobar2000controllerpro/com.cav.foobar2000controllerpro.MainActivity}" drawable="foobar2000" name="foobar2000 controller" />
   <item component="ComponentInfo{app.suhasdissa.foode/app.suhasdissa.foode.MainActivity}" drawable="food_e" name="Food-E" />
   <item component="ComponentInfo{com.linecorp.foodcam.android/com.linecorp.foodcam.android.camera.CameraActivity}" drawable="foodie" name="foodie" />
   <item component="ComponentInfo{com.global.foodpanda.android/com.global.foodpanda.android.activities.SplashScreenActivity}" drawable="foodpanda" name="foodpanda" />
@@ -3271,6 +3272,7 @@
   <item component="ComponentInfo{io.geph.android/io.geph.android.MainActivity}" drawable="geph" name="Geph" />
   <item component="ComponentInfo{com.lexsuperior.app/com.lexsuperior.app.MainActivity}" drawable="gisetze_io" name="gesetze.io" />
   <item component="ComponentInfo{dk.appdictive.getcurrentwallpaper/dk.appdictive.getcurrentwallpaper.MainActivity}" drawable="get_current_wallpaper" name="Get Current Wallpaper" />
+  <item component="ComponentInfo{com.xiaomi.market/com.xiaomi.market.ui.MarketTabActivity}" drawable="getapps" name="GetApps" />
   <item component="ComponentInfo{com.xiaomi.mipicks/com.xiaomi.mipicks.MiPicksAlias}" drawable="getapps" name="GetApps" />
   <item component="ComponentInfo{com.xiaomi.mipicks/com.xiaomi.mipicks.AppMallAlias}" drawable="getapps" name="GetApps" />
   <item component="ComponentInfo{com.xiaomi.mipicks/com.xiaomi.market.ui.MarketTabActivity}" drawable="getapps" name="GetApps" />
@@ -3507,6 +3509,7 @@
   <item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.GPSStatus}" drawable="gps_status_and_toolbox" name="GPS Status &amp; Toolbox" />
   <item component="ComponentInfo{com.chartcross.gpstest/com.chartcross.gpstest.MainActivity}" drawable="gps_test" name="GPS Test" />
   <item component="ComponentInfo{com.mendhak.gpslogger/com.mendhak.gpslogger.GpsMainActivity}" drawable="gpslogger" name="GPSLogger" />
+  <item component="ComponentInfo{com.android.gpstest.osmdroid/com.android.gpstest.ui.MainActivity}" drawable="gpstest" name="GPSTest" />
   <item component="ComponentInfo{com.android.gpstest/com.android.gpstest.ui.MainActivity}" drawable="gpstest" name="GPSTest" />
   <item component="ComponentInfo{com.android.gpstest/com.android.gpstest.GpsTestActivity}" drawable="gpstest" name="GPSTest" />
   <item component="ComponentInfo{org.woheller69.gptassist/org.woheller69.gptassist.MainActivity}" drawable="gptassist" name="gptAssist" />
@@ -3740,6 +3743,7 @@
   <item component="ComponentInfo{com.huawei.health/com.huawei.health.ui.SplashActivity}" drawable="huawei_health" name="Huawei Health" />
   <item component="ComponentInfo{com.huawei.health/com.huawei.health.MainActivity}" drawable="huawei_health" name="Huawei Health" />
   <item component="ComponentInfo{com.huawei.mw/com.huawei.mw.plugin.guide.activity.IntroduceActivity}" drawable="huawei_hilink" name="Huawei HiLink" />
+  <item component="ComponentInfo{com.android.hwmirror/com.android.hwmirror.Mirror}" drawable="huawei_mirror" name="Huawei Mirror" />
   <item component="ComponentInfo{com.android.mediacenter/com.android.mediacenter.PageActivity}" drawable="huawei_music" name="Huawei Music" />
   <item component="ComponentInfo{com.hudaapp.android/com.hudaapp.android.screens.MainActivity}" drawable="huda" name="Huda" />
   <item component="ComponentInfo{com.philips.lighting.hue2/com.philips.lighting.hue2.ContentActivity}" drawable="hue" name="Hue" />
@@ -4443,6 +4447,7 @@
   <item component="ComponentInfo{com.serwylo.lexica/com.serwylo.lexica.MainMenuActivity}" drawable="lexica" name="Lexica" />
   <item component="ComponentInfo{com.pamsys.lexisaudioeditor/crc6474e5e1fb856f6af6.MainActivity}" drawable="lexis_audio_editor" name="Lexis Audio Editor" />
   <item component="ComponentInfo{com.lexus.oneapp/com.toyota.oneapp.ui.splash.SplashActivity}" drawable="lexus" name="Lexus" />
+  <item component="ComponentInfo{com.lge.hifirecorder/com.lge.hifirecorder.LaunchHifiRecorder}" drawable="recorder" name="LG Audio Recorder" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.TCLAlarmClockActivity}" drawable="clock" name="LG Clock" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.DefaultAlarmClockActivity}" drawable="clock" name="LG Clock" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.AlarmClockActivity}" drawable="clock" name="LG Clock" />
@@ -4555,6 +4560,7 @@
   <item component="ComponentInfo{com.wallpaper.liveloop/com.wallpaper.liveloop.splashScreen}" drawable="liveloop" name="LiveLoop" />
   <item component="ComponentInfo{com.editis.lizzie/com.editis.lizzie.LandingActivity}" drawable="lizzie" name="Lizzie" />
   <item component="ComponentInfo{com.grppl.android.shell.CMBlloydsTSB73/com.halifax.halifax.GrappleActivity}" drawable="lloyds_bank" name="Lloyds Bank" />
+  <item component="ComponentInfo{com.google.android.GoogleCameraLMCR12/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
   <item component="ComponentInfo{com.google.android.GoogleCameraEngR18F1/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
   <item component="ComponentInfo{com.google.android.GoogleCameraLMCR17/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
   <item component="ComponentInfo{com.google.android.GoogleCameraEngR15/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
@@ -4594,7 +4600,8 @@
   <item component="ComponentInfo{com.dsquares.lucky/com.dsquares.lucky.screens.mainscreens.single.SingleLuckyActivity}" drawable="lucky_financial" name="Lucky Financial" />
   <item component="ComponentInfo{com.ludo.king/com.unity3d.player.UnityPlayerActivity}" drawable="ludo_king" name="Ludo King" />
   <item component="ComponentInfo{com.ludo.king/com.google.firebase.MessagingUnityPlayerActivity}" drawable="ludo_king" name="Ludo King" />
-  <item component="ComponentInfo{com.anticor.lumosdark_r/com.anticor.lumosdark_r.activities.SplashActivity}" drawable="lumos_dark_rounded_ui_icons" name="Lumos Dark Rounded UI Icons" />
+  <item component="ComponentInfo{com.anticor.lumosdark/com.anticor.lumosdark.activities.SplashActivity}" drawable="lumos_icons" name="Lumos Dark Icons" />
+  <item component="ComponentInfo{com.anticor.lumosdark_r/com.anticor.lumosdark_r.activities.SplashActivity}" drawable="lumos_icons" name="Lumos Dark Rounded UI Icons" />
   <item component="ComponentInfo{com.jggdevelopment.bookbuddy/com.jggdevelopment.bookbuddy.ui.main.MainActivity}" drawable="generic_moon" name="Luna" />
   <item component="ComponentInfo{rasel.lunar.launcher/rasel.lunar.launcher.LauncherActivity}" drawable="lunar_launcher" name="Lunar Launcher" />
   <item component="ComponentInfo{rasel.lunar.launcher/rasel.lunar.launcher.settings.SettingsActivity}" drawable="lunar_launcher" name="Lunar Launcher" />
@@ -5114,7 +5121,6 @@
   <item component="ComponentInfo{ru.nspk.mirpay/ru.nspk.mirpay.olcDxABqhyieE}" drawable="mir_pay" name="Mir Pay" />
   <item component="ComponentInfo{com.ojhdtapp.miraipluginforparabox/com.ojhdtapp.miraipluginforparabox.MainActivity}" drawable="mirai_plugin_for_parabox" name="Mirai Plugin for Parabox" />
   <item component="ComponentInfo{com.realtimeboard/com.realtimeboard.MainActivity}" drawable="miro" name="Miro" />
-  <item component="ComponentInfo{com.android.hwmirror/com.android.hwmirror.Mirror}" drawable="mirror" name="Mirror" />
   <item component="ComponentInfo{com.ilixa.mirror/com.ilixa.mirror.MirrorActivity}" drawable="mirror_lab" name="Mirror Lab" />
   <item component="ComponentInfo{com.telenor.self_service/com.telenor.self_service.ui.login.auth.LoginAuthTelenorActivity}" drawable="telenor" name="Mit Telenor" />
   <item component="ComponentInfo{com.telenor.self_service/com.telenor.self_service.ui.main.MainActivity}" drawable="telenor" name="Mit Telenor" />
@@ -5213,6 +5219,7 @@
   <item component="ComponentInfo{com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain}" drawable="moon_reader_pro" name="Moon+ Reader Pro" />
   <item component="ComponentInfo{au.com.solus.MooneeValleyLibraries/solus.Libraries.MainActivity}" drawable="moonee_valley_libraries" name="Moonee Valley Libraries" />
   <item component="ComponentInfo{com.limelight/com.limelight.PcView}" drawable="moonlight" name="Moonlight" />
+  <item component="ComponentInfo{com.limelight.root/com.limelight.PcView}" drawable="moonlight" name="Moonlight (Root)" />
   <item component="ComponentInfo{com.tranzmate/com.moovit.home.HomeActivity}" drawable="moovit" name="Moovit" />
   <item component="ComponentInfo{com.tranzmate/com.moovit.app.home.HomeActivity}" drawable="moovit" name="Moovit" />
   <item component="ComponentInfo{in.moreretail.grocery/in.moreretail.grocery.SplashActivity}" drawable="more_grocery_delivery" name="More: Grocery Delivery" />
@@ -9911,6 +9918,7 @@
   <item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alpha.activity.SplashScreenActivity}" drawable="wolframalpha_classic" name="WolframAlpha Classic" />
   <item component="ComponentInfo{com.wolt.android/com.wolt.android.activities.MainActivity}" drawable="wolt" name="Wolt" />
   <item component="ComponentInfo{com.wolt.android/com.wolt.android.activities.LauncherActivity}" drawable="wolt" name="Wolt" />
+  <item component="ComponentInfo{com.womboai.wombodream/com.womboai.wombodream.MainActivity}" drawable="wombo_dream" name="WOMBO Dream" />
   <item component="ComponentInfo{pt.nostech.fera/pt.nostech.fera.MainActivity}" drawable="woo" name="WOO" />
   <item component="ComponentInfo{com.woocer.woocommerceapp/com.woocer.woocommerceapp.ui.intro.SplashActivity}" drawable="woocer" name="Woocer" />
   <item component="ComponentInfo{com.woocommerce.android/com.woocommerce.android.ui.main.MainActivity}" drawable="woocommerce" name="WooCommerce" />
