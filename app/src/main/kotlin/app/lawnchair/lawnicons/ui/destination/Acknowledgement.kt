@@ -30,10 +30,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
-import app.lawnchair.lawnicons.ui.components.core.placeholder.material.fade
-import app.lawnchair.lawnicons.ui.components.core.placeholder.material.placeholder
-import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
+import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
+import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 
 @Composable
@@ -107,9 +105,7 @@ fun Acknowledgement(
                                     .placeholder(
                                         visible = true,
                                         highlight = PlaceholderHighlight.fade(),
-                                        color = MaterialTheme.colorScheme.surfaceColorAtElevation(
-                                            Elevation.Level2,
-                                        ),
+                                        color = MaterialTheme.colorScheme.surfaceContainer,
                                     ),
                             )
                         }

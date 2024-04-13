@@ -91,14 +91,14 @@ Wrong
 Correct
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If there are letters at the beginning of the app name that aren't in English, then it's worth adding the name transliterated into English.
+If there are letters in the first `3` characters of the app name that aren't in English, then it's worth adding the name transliterated into English.
 ```
 Wrong
-<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card" />
+<item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
 ```
 ```
 Correct
-<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card ~~ OTP SZEP Card" />
+<item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
 ```
 ### Drawable
 Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
@@ -162,8 +162,8 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 ### Using 3rd-party apps
 #### IconRequest app
 
-1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
-2. Launch the app and click one of the options:
+1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
+2. Launch IconRequest and tap one of the options:
 - UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/FL_Oh), 25s video.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
 3. Select the apps for which youʼd like to request or make icons.

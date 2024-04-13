@@ -1,12 +1,13 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.ContentAlpha
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material3.Icon
@@ -23,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
-import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
+import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -36,10 +37,12 @@ import app.lawnchair.lawnicons.util.appIcon
 
 private val externalLinks = listOf(
     ExternalLink(
+        iconResId = R.drawable.github_foreground,
         name = R.string.github,
         url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
+        iconResId = R.drawable.oxygen_updater_foreground,
         name = R.string.request_form,
         url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),
@@ -113,19 +116,22 @@ fun About(
                     Text(
                         text = stringResource(id = R.string.version_x, BuildConfig.VERSION_NAME),
                         style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onBackground.copy(
-                            alpha = ContentAlpha.medium,
-                        ),
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
             }
             item {
-                Card(label = stringResource(id = R.string.external_links)) {
-                    externalLinks.mapIndexed { index, it ->
-                        ExternalLinkRow(
-                            name = stringResource(id = it.name),
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly,
+                ) {
+                    externalLinks.forEach {
+                        IconLink(
+                            iconResId = it.iconResId,
+                            label = stringResource(id = it.name),
                             url = it.url,
-                            divider = index != externalLinks.lastIndex,
                         )
                     }
                 }

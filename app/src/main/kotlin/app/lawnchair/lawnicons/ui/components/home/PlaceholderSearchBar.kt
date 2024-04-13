@@ -14,9 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Elevation
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 @Composable
 fun PlaceholderSearchBar(
@@ -33,7 +31,7 @@ fun PlaceholderSearchBar(
             .fillMaxWidth()
             .height(56.dp)
             .background(
-                color = MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level3),
+                color = MaterialTheme.colorScheme.surfaceContainerHigh,
                 shape = RoundedCornerShape(100),
             ),
     )
