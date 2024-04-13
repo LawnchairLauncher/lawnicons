@@ -28,7 +28,10 @@ import soup.compose.material.motion.animation.rememberSlideDistance
 
 @Composable
 @ExperimentalFoundationApi
-fun Lawnicons(windowSizeClass: WindowSizeClass) {
+fun Lawnicons(
+    windowSizeClass: WindowSizeClass,
+    modifier: Modifier = Modifier,
+) {
     val navController = rememberNavController()
     val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
     val slideDistance = rememberSlideDistance()
@@ -36,7 +39,7 @@ fun Lawnicons(windowSizeClass: WindowSizeClass) {
 
     LawniconsTheme {
         Surface(
-            modifier = Modifier.fillMaxSize(),
+            modifier = modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background,
         ) {
             NavHost(

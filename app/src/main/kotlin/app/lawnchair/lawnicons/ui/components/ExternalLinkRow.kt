@@ -3,6 +3,7 @@ package app.lawnchair.lawnicons.ui.components
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
@@ -12,6 +13,7 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 fun ExternalLinkRow(
     name: String,
     url: String,
+    modifier: Modifier = Modifier,
     divider: Boolean = true,
     background: Boolean = false,
     first: Boolean = false,
@@ -26,6 +28,7 @@ fun ExternalLinkRow(
         }
 
     SimpleListRow(
+        modifier = modifier,
         background = background,
         first = first,
         last = last,

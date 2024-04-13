@@ -23,9 +23,10 @@ import kotlinx.collections.immutable.ImmutableList
 fun IconPreviewGrid(
     iconInfo: ImmutableList<IconInfo>,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
 ) {
     LazyVerticalGrid(
-        modifier = Modifier
+        modifier = modifier
             .statusBarsPadding()
             .padding(top = 26.dp),
         columns = GridCells.Adaptive(minSize = 80.dp),

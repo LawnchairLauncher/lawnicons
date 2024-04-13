@@ -25,11 +25,13 @@ fun Acknowledgements(
     onBack: () -> Unit,
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
     acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
 
     LawniconsScaffold(
+        modifier = modifier,
         title = stringResource(id = R.string.acknowledgements),
         onBack = onBack,
         isExpandedScreen = isExpandedScreen,

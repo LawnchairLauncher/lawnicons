@@ -39,6 +39,7 @@ const val CONTRIBUTOR_URL = "https://github.com/LawnchairLauncher/lawnicons/grap
 fun Contributors(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
     contributorsViewModel: ContributorsViewModel = hiltViewModel(),
 ) {
     val uiState by contributorsViewModel.uiState.collectAsState()
@@ -46,6 +47,7 @@ fun Contributors(
         uiState = uiState,
         onBack = onBack,
         isExpandedScreen = isExpandedScreen,
+        modifier = modifier,
     )
 }
 
@@ -54,8 +56,10 @@ fun Contributors(
     uiState: ContributorsUiState,
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
 ) {
     LawniconsScaffold(
+        modifier = modifier,
         title = stringResource(id = R.string.contributors),
         onBack = onBack,
         isExpandedScreen = isExpandedScreen,
@@ -75,8 +79,12 @@ fun Contributors(
 }
 
 @Composable
-fun ContributorList(contributors: ImmutableList<GitHubContributor>) {
+private fun ContributorList(
+    contributors: ImmutableList<GitHubContributor>,
+    modifier: Modifier = Modifier,
+) {
     LazyColumn(
+        modifier = modifier,
         contentPadding = WindowInsets.navigationBars.toPaddingValues(
             additionalTop = 8.dp,
             additionalBottom = 8.dp,
@@ -110,9 +118,12 @@ fun ContributorList(contributors: ImmutableList<GitHubContributor>) {
 }
 
 @Composable
-fun ContributorListPlaceholder() {
+private fun ContributorListPlaceholder(
+    modifier: Modifier = Modifier,
+) {
     val itemCount = 20
     LazyColumn(
+        modifier = modifier,
         contentPadding = WindowInsets.navigationBars.toPaddingValues(
             additionalTop = 8.dp,
             additionalBottom = 8.dp,
@@ -129,7 +140,7 @@ fun ContributorListPlaceholder() {
 }
 
 @Composable
-fun ContributorListError(
+private fun ContributorListError(
     onBack: () -> Unit,
 ) {
     val context = LocalContext.current

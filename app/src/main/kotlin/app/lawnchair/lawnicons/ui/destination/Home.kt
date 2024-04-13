@@ -9,6 +9,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
@@ -23,6 +24,7 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 fun Home(
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
@@ -30,6 +32,7 @@ fun Home(
     var searchTerm by rememberSaveable { mutableStateOf(value = "") }
 
     Crossfade(
+        modifier = modifier,
         targetState = iconInfoModel != null,
         label = "",
     ) { targetState ->

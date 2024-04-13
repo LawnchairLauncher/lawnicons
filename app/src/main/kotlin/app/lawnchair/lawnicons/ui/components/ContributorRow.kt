@@ -23,6 +23,7 @@ import coil.request.ImageRequest
 fun ContributorRow(
     name: String,
     photoUrl: String,
+    modifier: Modifier = Modifier,
     profileUrl: String? = null,
     socialUrl: String? = null,
     description: String? = null,
@@ -44,6 +45,7 @@ fun ContributorRow(
     }
 
     SimpleListRow(
+        modifier = modifier,
         background = background,
         first = first,
         last = last,

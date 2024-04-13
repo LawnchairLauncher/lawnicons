@@ -40,6 +40,7 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 @Composable
 fun IconInfoPopup(
     iconInfo: IconInfo,
+    modifier: Modifier = Modifier,
     isPopupShown: (Boolean) -> Unit,
 ) {
     val sheetState = rememberModalBottomSheetState(

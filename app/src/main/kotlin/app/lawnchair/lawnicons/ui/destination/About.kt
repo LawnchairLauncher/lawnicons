@@ -73,10 +73,16 @@ private val specialThanks = listOf(
 )
 
 @Composable
-fun About(onBack: () -> Unit, onNavigate: (String) -> Unit, isExpandedScreen: Boolean) {
+fun About(
+    onBack: () -> Unit,
+    onNavigate: (String) -> Unit,
+    isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
+) {
     val context = LocalContext.current
 
     LawniconsScaffold(
+        modifier = modifier,
         title = stringResource(id = R.string.about),
         onBack = onBack,
         isExpandedScreen = isExpandedScreen,
