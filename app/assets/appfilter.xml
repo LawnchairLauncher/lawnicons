@@ -1715,6 +1715,8 @@
   <item component="ComponentInfo{com.github.lamarios.clipious/com.github.lamarios.clipious.MainActivity}" drawable="clipious" name="Clipious" />
   <item component="ComponentInfo{studio.onelab.clipboard/studio.onelab.clipboard.ui.main.MainActivity}" drawable="clipt" name="Clipt" />
   <item component="ComponentInfo{com.wb.clipboard.pro/clipto.AppContainer}" drawable="clipto" name="Clipto" />
+  <item component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.HandleSetAlarm}" drawable="clock" name="Clock" />
+  <item component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.hihonor.deskclock/com.android.deskclock.AlarmsMainActivity}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.android.BBKClock/com.android.BBKClock.Timer}" drawable="clock" name="Clock" />
   <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmMainActivity}" drawable="clock" name="Clock" />
@@ -1890,6 +1892,7 @@
   <item component="ComponentInfo{com.kobil.consors/com.kobil.consors.MainActivity}" drawable="consorsbank_secureplus" name="Consorsbank SecurePlus" />
   <item component="ComponentInfo{br.com.consumidor/br.com.consumidor.MainActivity}" drawable="consumidor_gov_br" name="Consumidor.gov.br" />
   <item component="ComponentInfo{br.com.movilepay.banking.application/br.com.movilepay.banking.application.ui.splash.SplashActivity}" drawable="conta_digital_ifood" name="Conta Digital iFood" />
+  <item component="ComponentInfo{com.sonymobile.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.freeme.contacts.FreemePeopleActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.gionee.contacts.activities.BaseActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.asus.contacts/com.android.contacts.activities.DialtactsActivity}" drawable="contacts" name="Contacts" />
@@ -2231,6 +2234,8 @@
   <item component="ComponentInfo{com.psafe.vpn/com.psafe.vpn.appenter.activities.AppEnterActivity}" drawable="dfndr_vpn" name="dfndr vpn" />
   <item component="ComponentInfo{com.donanimhaber.dhandroid/com.donanimhaber.dhandroid.dh_app_mvvm.ui.navigator.NavigatorActivity}" drawable="dh" name="DH" />
   <item component="ComponentInfo{com.alifewithallah.app/com.ryanheise.audioservice.AudioServiceActivity}" drawable="dhikr_and_dua" name="Dhikr &amp; Dua" />
+  <item component="ComponentInfo{com.motorola.dialer/com.motorola.dialer.CallLogShortcut}" drawable="dialer" name="Dialer" />
+  <item component="ComponentInfo{com.motorola.dialer/com.motorola.dialer.DialtactsContactsEntryActivity}" drawable="dialer" name="Dialer" />
   <item component="ComponentInfo{partl.Diarium/crc64379322c6af5bbbbe.MainActivity}" drawable="diarium" name="Diarium" />
   <item component="ComponentInfo{com.pixelcrater.Diaro/com.pixelcrater.Diaro.MainActivity}" drawable="diaro" name="Diaro" />
   <item component="ComponentInfo{com.pixelcrater.Diaro/com.pixelcrater.Diaro.main.SplashActivity}" drawable="diaro" name="Diaro" />
@@ -4614,6 +4619,8 @@
   <item component="ComponentInfo{com.playdead.limbo.full/com.playdead.limbo.LimboActivity}" drawable="limbo" name="LIMBO" />
   <item component="ComponentInfo{jp.naver.line.android/jp.naver.line.android.activity.SplashActivity}" drawable="line" name="LINE" />
   <item component="ComponentInfo{com.linecorp.linemanth/net.appsynth.lineman.view.splash.SplashActivity}" drawable="line_man" name="LINE MAN" />
+  <item component="ComponentInfo{jp.linecorp.linemusic.android/com.linecorp.linemusic.android.contents.BridgeActivity}" drawable="line_music" name="LINE MUSIC" />
+  <item component="ComponentInfo{jp.linecorp.linemusic.android/com.naver.vibe.SplashActivity}" drawable="line_music" name="LINE MUSIC" />
   <item component="ComponentInfo{jp.linecorp.linemusic.android/com.naver.vibe.MainHolderActivity}" drawable="line_music" name="LINE MUSIC" />
   <item component="ComponentInfo{com.linecorp.lineoa/com.linecorp.lineoa.MainActivity}" drawable="line_official_account" name="LINE Official Account" />
   <item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="lineageos_music" name="LineageOS Music" />
@@ -4663,6 +4670,7 @@
   <item component="ComponentInfo{com.wallpaper.liveloop/com.wallpaper.liveloop.splashScreen}" drawable="liveloop" name="LiveLoop" />
   <item component="ComponentInfo{com.editis.lizzie/com.editis.lizzie.LandingActivity}" drawable="lizzie" name="Lizzie" />
   <item component="ComponentInfo{com.grppl.android.shell.CMBlloydsTSB73/com.halifax.halifax.GrappleActivity}" drawable="lloyds_bank" name="Lloyds Bank" />
+  <item component="ComponentInfo{com.google.android.GoogleCameraEngR14/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
   <item component="ComponentInfo{com.google.android.GoogleCameraLMCR12/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
   <item component="ComponentInfo{com.google.android.GoogleCameraEngR18F1/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
   <item component="ComponentInfo{com.google.android.GoogleCameraLMCR17/com.android.camera.CameraLauncher}" drawable="lmc_84" name="LMC 8.4" />
@@ -4775,6 +4783,7 @@
   <item component="ComponentInfo{com.clusterdev.malayalamkeyboard/com.example.android.softkeyboard.easyconfig.EasyConfig}" drawable="malayalam_keyboard" name="Malayalam Keyboard" />
   <item component="ComponentInfo{com.clusterdev.malayalamkeyboard/com.example.android.softkeyboard.Activities.EasyConfig}" drawable="malayalam_keyboard" name="Malayalam Keyboard" />
   <item component="ComponentInfo{net.miririt.maldivesplayer/net.miririt.maldives.LoadingActivity}" drawable="maldives" name="MaldiVes" />
+  <item component="ComponentInfo{me.mugzone.emiria/com.unity3d.player.UnityPlayerActivity}" drawable="malody_v" name="Malody V" />
   <item component="ComponentInfo{me.mugzone.emiria/me.mugzone.emiria.TapActivity}" drawable="malody_v" name="Malody V" />
   <item component="ComponentInfo{org.malwarebytes.antimalware/org.malwarebytes.antimalware.ui.RoutingActivity}" drawable="malwarebytes" name="Malwarebytes" />
   <item component="ComponentInfo{org.malwarebytes.antimalware/org.malwarebytes.antimalware.common.activity.SplashActivity}" drawable="malwarebytes" name="Malwarebytes" />
@@ -5770,6 +5779,7 @@
   <item component="ComponentInfo{com.secodek.nfcemulator/com.secodek.nfcemulator.MainActivity}" drawable="nfc_emulator" name="NFC Emulator" />
   <item component="ComponentInfo{com.wakdev.wdnfc/com.wakdev.nfctools.free.MainActivityFree}" drawable="nfc_tools" name="NFC Tools" />
   <item component="ComponentInfo{com.wakdev.wdnfc/com.wakdev.nfctools.free.views.MainActivityFree}" drawable="nfc_tools" name="NFC Tools" />
+  <item component="ComponentInfo{com.wakdev.nfctools.pro/com.wakdev.nfctools.pro.views.MainActivityPro}" drawable="nfc_tools" name="NFC Tools Pro" />
   <item component="ComponentInfo{im.nfc.nfsee/im.nfc.nfsee.MainActivity}" drawable="nfsee" name="NFSee" />
   <item component="ComponentInfo{gov.pianzong.androidnga/gov.pianzong.androidnga.activity.LoadingActivity}" drawable="nga" name="NGA" />
   <item component="ComponentInfo{gov.pianzong.androidnga/com.qihoo.util.StartActivity}" drawable="nga" name="NGA" />
@@ -6382,6 +6392,7 @@
   <item component="ComponentInfo{dev.lknninex.phantom/dev.lknninex.phantom.MainActivity}" drawable="phantom_dark" name="PHANTOM DARK" />
   <item component="ComponentInfo{dev.lknninex.phantom.white/dev.lknninex.phantom.white.MainActivity}" drawable="phantom_white" name="PHANTOM WHITE" />
   <item component="ComponentInfo{com.phonegap.rxpal/com.pharmeasy.ui.activities.SplashActivity}" drawable="pharmeasy" name="PharmEasy" />
+  <item component="ComponentInfo{com.PigeonGames.PhigrosGlobal/com.unity3d.player.UnityPlayerActivity}" drawable="phigros" name="Phigros" />
   <item component="ComponentInfo{com.PigeonGames.Phigros/com.unity3d.player.UnityPlayerActivity}" drawable="phigros" name="Phigros" />
   <item component="ComponentInfo{com.transsion.phoenix/com.proj.sun.activity.LaunchActivity}" drawable="phoenix" name="Phoenix" />
   <item component="ComponentInfo{org.fossify.phone/org.fossify.phone.activities.SplashActivity}" drawable="dialer" name="Phone" />
@@ -6983,6 +6994,7 @@
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.activities.SplashActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.MailboxActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.ui.MailboxActivity}" drawable="proton_mail" name="Proton Mail" />
+  <item component="ComponentInfo{proton.android.pass.fdroid/proton.android.pass.ui.MainActivity}" drawable="proton_pass" name="Proton Pass" />
   <item component="ComponentInfo{proton.android.pass/proton.android.pass.ui.MainActivity}" drawable="proton_pass" name="Proton Pass" />
   <item component="ComponentInfo{ch.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="proton_vpn" name="Proton VPN" />
   <item component="ComponentInfo{com.propel.ebenefits/com.propel.ebenefits.MainActivity}" drawable="providers" name="Providers" />
@@ -8600,6 +8612,7 @@
   <item component="ComponentInfo{com.successfactors.successfactors/com.successfactors.android.multiprofile.gui.AppLauncherActivity}" drawable="successfactors" name="SuccessFactors" />
   <item component="ComponentInfo{ee.dustland.android.dustlandsudoku/ee.dustland.android.dustlandsudoku.NativeActivity}" drawable="sudoku" name="Sudoku" />
   <item component="ComponentInfo{ee.dustland.android.dustlandsudoku/ee.dustland.android.dustlandsudoku.SudokuHostActivity}" drawable="sudoku" name="Sudoku" />
+  <item component="ComponentInfo{org.secuso.privacyfriendlysudoku/org.secuso.privacyfriendlysudoku.ui.SplashActivity}" drawable="sudoku" name="Sudoku (PFA)" />
   <item component="ComponentInfo{com.gamovation.sudoku/com.unity3d.player.UnityPlayerActivity}" drawable="sudoku" name="Sudoku Game" />
   <item component="ComponentInfo{com.easybrain.sudoku.android/com.easybrain.template.SplashActivity}" drawable="sudoku" name="Sudoku.com" />
   <item component="ComponentInfo{com.easybrain.sudoku.android/com.easybrain.sudoku.gui.splash.SplashActivity}" drawable="sudoku" name="Sudoku.com" />
@@ -10557,6 +10570,7 @@
   <item component="ComponentInfo{com.huanchengfly.tieba.post/com.huanchengfly.tieba.post.MainActivity}" drawable="tieba_lite" name="贴吧 Lite ~~ Tieba Lite" />
   <item component="ComponentInfo{com.huanchengfly.tieba.post/com.huanchengfly.tieba.post.activities.MainActivity}" drawable="tieba_lite" name="贴吧 Lite ~~ Tieba Lite" />
   <item component="ComponentInfo{com.taobao.idlefish/com.taobao.fleamarket.home.activity.InitActivity}" drawable="idle_fish" name="闲鱼 ~~ Idle Fish" />
+  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.welcome.Welcome}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
   <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.v5.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
   <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.launch.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
   <item component="ComponentInfo{com.lifeplatform.better/com.lifeplatform.better.MainActivity}" drawable="better" name="베터 ~~ Better" />
