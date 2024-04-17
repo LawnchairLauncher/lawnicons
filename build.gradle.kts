@@ -5,7 +5,7 @@ plugins {
     id("com.android.application") version "8.3.2" apply false
     id("org.jetbrains.kotlin.android") version "1.9.23" apply false
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23" apply false
-    id("com.google.devtools.ksp") version "1.9.23-1.0.19" apply false
+    id("com.google.devtools.ksp") version "1.9.23-1.0.20" apply false
     id("com.google.dagger.hilt.android") version "2.51.1" apply false
     id("app.cash.licensee") version "1.11.0" apply false
     id("com.diffplug.spotless") version "6.25.0" apply false
@@ -29,11 +29,10 @@ allprojects {
             target("src/**/*.kt")
             ktlint().customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.3.13",
+                    "io.nlopez.compose.rules:ktlint:0.3.15",
                 ),
             ).editorConfigOverride(
                 mapOf(
-                    "ktlint_compose_modifier-missing-check" to "disabled",
                     "ktlint_compose_compositionlocal-allowlist" to "disabled",
                 ),
             )

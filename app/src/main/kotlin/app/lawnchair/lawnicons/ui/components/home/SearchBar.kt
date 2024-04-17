@@ -64,17 +64,19 @@ fun LawniconsSearchBar(
     onQueryChange: (String) -> Unit,
     iconInfoModel: IconInfoModel,
     onNavigate: (String) -> Unit,
+    modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
 ) {
     LawniconsSearchBar(
-        query,
-        isQueryEmpty,
-        onClearAndBackClick,
-        onQueryChange,
-        iconInfoModel.iconCount,
-        iconInfoModel.iconInfo,
-        onNavigate,
-        isExpandedScreen,
+        query = query,
+        isQueryEmpty = isQueryEmpty,
+        onClearAndBackClick = onClearAndBackClick,
+        onQueryChange = onQueryChange,
+        iconCount = iconInfoModel.iconCount,
+        iconInfo = iconInfoModel.iconInfo,
+        onNavigate = onNavigate,
+        isExpandedScreen = isExpandedScreen,
+        modifier = modifier,
     )
 }
 
@@ -87,12 +89,13 @@ fun LawniconsSearchBar(
     iconCount: Int,
     iconInfo: ImmutableList<IconInfo>,
     onNavigate: (String) -> Unit,
+    modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
 ) {
     var active by rememberSaveable { mutableStateOf(false) }
 
     Box(
-        modifier = Modifier
+        modifier = modifier
             .then(
                 if (!active || isExpandedScreen) {
                     Modifier
