@@ -2721,7 +2721,7 @@
   <item component="ComponentInfo{com.eurosport/com.eurosport.presentation.splash.SplashScreenActivity}" drawable="eurosport" name="Eurosport" />
   <item component="ComponentInfo{com.eventbrite.attendee/com.eventbrite.attendee.activities.MainActivity}" drawable="eventbrite" name="Eventbrite" />
   <item component="ComponentInfo{com.eventbrite.attendee/com.eventbrite.attendee.activities.MainTabActivity}" drawable="eventbrite" name="Eventbrite" />
-  <item component="ComponentInfo{com.eventbrite.attendee/com.eventbrite.attendee.legacy.activities.InnerMainActivity}" drawable="eventbrite" name="Eventbrite" />
+  <item component="ComponentInfo{com.eventbrite.attendee/com.eventbrite.attendee.legacy.activities.InnerMainActivity$MainActivity}" drawable="eventbrite" name="Eventbrite" />
   <item component="ComponentInfo{de.eventim.mobile.app.Android/mobile.app.Android.activity.StartupActivity}" drawable="eventim" name="EVENTIM" />
   <item component="ComponentInfo{com.scribd.app.reader0/com.scribd.app.ui.SplashScreen}" drawable="everand" name="Everand" />
   <item component="ComponentInfo{com.scribd.app.reader0/com.scribd.app.ui.SplashActivity}" drawable="everand" name="Everand" />
@@ -5425,6 +5425,7 @@
   <item component="ComponentInfo{net.countrymania.morse/net.countrymania.morse.MainActivity}" drawable="morsemania" name="MorseMania" />
   <item component="ComponentInfo{org.joinmastodon.android.moshinda/org.joinmastodon.android.MainActivity}" drawable="moshidon" name="Moshidon" />
   <item component="ComponentInfo{com.tiefensuche.motionmate/com.tiefensuche.motionmate.ui.MainActivity}" drawable="motionmate" name="MotionMate" />
+  <item component="ComponentInfo{com.hrd.motivation/com.hrd.view.splash.SplashScreenActivity}" drawable="motivation" name="Motivation" />
   <item component="ComponentInfo{com.hrd.motivation/com.hrd.view.onboarding.OnboardingSplashActivity}" drawable="motivation" name="Motivation" />
   <item component="ComponentInfo{com.motorola.moto/com.motorola.assist.LauncherActivity}" drawable="moto" name="Moto" />
   <item component="ComponentInfo{com.motorola.moto/com.motorola.assist.ui.screens.MainActivity}" drawable="moto" name="Moto" />
@@ -5578,6 +5579,7 @@
   <item component="ComponentInfo{com.scaleforce.mobile.myexcitel/com.scaleforce.mobile.myexcitel.MainActivity}" drawable="my_excitel" name="my Excitel" />
   <item component="ComponentInfo{org.totschnig.myexpenses/org.totschnig.myexpenses.activity.SplashActivity}" drawable="my_expenses" name="My Expenses" />
   <item component="ComponentInfo{com.hihonor.phoneservice/com.hihonor.phoneservice.LaunchActivity}" drawable="my_honor" name="My HONOR" />
+  <item component="ComponentInfo{com.telkom.indihome.external/com.telkom.indihome.external.onboarding.SplashActivity}" drawable="my_indihome" name="My IndiHome" />
   <item component="ComponentInfo{com.telkom.indihome.external/com.telkom.indihome.external.presentation.onboarding.SplashActivity}" drawable="my_indihome" name="My IndiHome" />
   <item component="ComponentInfo{com.crossknowledge.learnguided/com.crossknowledge.learnguided.MainActivity}" drawable="my_learning" name="My Learning" />
   <item component="ComponentInfo{com.mirfatif.mylocation/com.mirfatif.mylocation.MainActivity}" drawable="my_location" name="My Location" />
@@ -6014,6 +6016,7 @@
   <item component="ComponentInfo{com.nowtv.it/com.nowtv.startup.StartupActivity}" drawable="now_tv" name="Now TV" />
   <item component="ComponentInfo{com.js.nowakelock/com.js.nowakelock.ui.mainActivity.MainActivity}" drawable="nowakelock" name="NoWakeLock" />
   <item component="ComponentInfo{com.wn.app.np/player.normal.np.activity.GuideActivity}" drawable="np_manager" name="NP Manager" />
+  <item component="ComponentInfo{no.nordicsemi.android.mcp/no.nordicsemi.android.mcp.DeviceListActivity}" drawable="nrf_connect" name="nRF Connect" />
   <item component="ComponentInfo{no.nordicsemi.android.mcp/no.nordicsemi.android.mcp.MainActivity}" drawable="nrf_connect" name="nRF Connect" />
   <item component="ComponentInfo{nl.ns.android.activity/nl.ns.android.activity.homepagina.HomePaginaActivity}" drawable="ns" name="NS" />
   <item component="ComponentInfo{nl.ns.android.activity/nl.ns.android.activity.reisplanner.ReisplannerActivity}" drawable="ns" name="NS" />
@@ -9740,6 +9743,7 @@
   <item component="ComponentInfo{com.venmo/com.venmo.TabCentralActivity}" drawable="venmo" name="Venmo" />
   <item component="ComponentInfo{com.venmo/com.venmo.tabcentral.TabCentralActivity}" drawable="venmo" name="Venmo" />
   <item component="ComponentInfo{com.venmo/com.venmo.AppExperienceLauncherActivity}" drawable="venmo" name="Venmo" />
+  <item component="ComponentInfo{com.whatever.verifit/com.example.verifit.MainActivity}" drawable="verifit" name="Verifit" />
   <item component="ComponentInfo{com.whatever.verifit/com.example.verifit.ui.MainActivity}" drawable="verifit" name="Verifit" />
   <item component="ComponentInfo{org.fsociety.vernet/org.fsociety.vernet.MainActivity}" drawable="vernet" name="Vernet" />
   <item component="ComponentInfo{com.watch.life/com.ido.life.module.splash.SplashDefaultActivity}" drawable="veryfit" name="VeryFit" />
@@ -10318,6 +10322,7 @@
   <item component="ComponentInfo{m365.xiaodash.scooter/m365.xiaodash.scooter.ui.activity.MainActivity}" drawable="xiaodash" name="Xiaodash" />
   <item component="ComponentInfo{com.max.xiaoheihe/com.max.xiaoheihe.SplashActivity}" drawable="xiaoheihe" name="xiaoheihe" />
   <item component="ComponentInfo{com.xingin.xhs/com.xingin.xhs.index.v2.IndexActivityV2}" drawable="xhs" name="xiaohongshu" />
+  <item component="ComponentInfo{com.xiaomi.vipaccount/com.xiaomi.mi.launch.LaunchActivity}" drawable="xiaomi_community" name="Xiaomi Community" />
   <item component="ComponentInfo{com.xiaomi.vipaccount/com.xiaomi.vipaccount.ui.VipAccountActivity}" drawable="xiaomi_community" name="Xiaomi Community" />
   <item component="ComponentInfo{com.mi.earphone/com.xiaomi.fitness.login.SplashActivity}" drawable="xiaomi_earbuds" name="Xiaomi Earbuds" />
   <item component="ComponentInfo{com.xiaomi.glgm/com.xiaomi.glgm.home.ui.SplashActivity}" drawable="xiaomi_games" name="Xiaomi Games" />
@@ -10390,7 +10395,7 @@
   <item component="ComponentInfo{com.sbi.SBIFreedomPlus/com.sbi.SBIFreedomPlus.SBIYonoLite}" drawable="yono_lite_sbi" name="Yono Lite SBI" />
   <item component="ComponentInfo{com.sbi.lotusintouch/com.sbi.lotusintouch.MainActivity}" drawable="yono_sbi" name="YONO SBI" />
   <item component="ComponentInfo{com.celcom.yoodo/com.celcom.yoodo.MainActivityyoodo}" drawable="yoodo" name="Yoodo" />
-  <item component="ComponentInfo{com.celcom.yoodo/com.celcom.yoodo.MainActivityyoodo}" drawable="yoodo" name="Yoodo" />
+  <item component="ComponentInfo{com.celcom.yoodo/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="yoodo" name="Yoodo" />
   <item component="ComponentInfo{ru.yota.android/ru.yota.android.presentation.view.splash.SplashActivity}" drawable="yota" name="Yota" />
   <item component="ComponentInfo{ru.yota.android/ru.yota.android.activity.auth.SplashActivity}" drawable="yota" name="Yota" />
   <item component="ComponentInfo{ru.yota.android/ru.yota.android.splashModule.presentation.view.SplashActivity}" drawable="yota" name="Yota" />
