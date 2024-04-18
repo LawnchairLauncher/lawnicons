@@ -116,12 +116,14 @@ def find_logic(mode):
             print_error("you must specify a mode {duplicates,unused}")
 
 def sort_logic():
-    print("sorting icons...")
-    xml_file = open(APPFILTER_PATH, "r", encoding="utf-8").read()
-    sorted_data  = sort_components(xml_file)
+    # print("sorting icons...")
+    print("due to several issues, sorting icons manually is temporalily disabled. an alternative is to add an icon first to automatically sort appfilter.xml")
+    exit()
+    # xml_file = open(APPFILTER_PATH, "r", encoding="utf-8").read()
+    # sorted_data  = sort_components(xml_file)
 
-    with open(APPFILTER_PATH, "w", encoding="utf-8") as f:
-        f.write(sorted_data)
+    # with open(APPFILTER_PATH, "w", encoding="utf-8") as f:
+    #    f.write(sorted_data)
 
 def parse_component(link_mode, svg, component, name, show_message):
     #
