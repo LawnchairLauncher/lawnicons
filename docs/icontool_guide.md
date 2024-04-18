@@ -62,6 +62,8 @@ Note that the SVG file's name is based on the `drawable` attribute of the first 
 Some common utilities are described below.
 
 ### Sorting appfilter.xml
+> [!WARNING]  
+> At the moment, the sorting works with errors: duplicates and extra spaces are added. It is recommended not to use it.
 ```console
 python3 ./icontool.py sort
 ```
