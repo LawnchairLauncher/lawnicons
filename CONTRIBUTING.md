@@ -11,9 +11,9 @@ For additional information on designing icons and samples, see [the Lawnicons Fi
 Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
 
 ### TL;DR on icon design
-The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid blackness, close distances between shapes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
+The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid blackness, close distances between strokes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
 
-To avoid rework, save time and understand the limitations of the guidelines, it is worth reading reviews of [the latest merged pull requests](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Aclosed+label%3Aicons) (e.g., [+8 icons, +1 link, +4 updates](https://github.com/LawnchairLauncher/lawnicons/pull/1865)) and creating no more than 5 icons in the first attempt.
+To avoid rework, save time and understand the limitations of the guidelines, it is worth reading reviews (e.g., [+8 icons, +1 link, +4 updates](https://github.com/LawnchairLauncher/lawnicons/pull/1865)) and creating 5-10 icons in the first contribution.
 
 ### Canvas & Sizes
 
