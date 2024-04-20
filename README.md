@@ -16,12 +16,12 @@ See [the Releases section](https://github.com/LawnchairLauncher/lawnicons/releas
 ## Contributing
 Please see [the Lawnicons guidelines](CONTRIBUTING.md) for info on contributing icons or code, it will save you time. Android devs can find tasks [in our issues](https://github.com/LawnchairLauncher/lawnicons/issues).
 
-If you are interested in creating icons or want some icons to appear rapidly in Lawnicons, then we invite you to fulfill [popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103).
+If you are interested in creating icons, then we invite you to fulfill [popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103).
 
 Need help? [Join us on Discord](https://discord.gg/3x8qNWxgGZ).
 
 ## Requesting icons
-Please use the [icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If a previously added icon has a design change, create an [issue](https://github.com/LawnchairLauncher/lawnicons/issues).
+Please use the [icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If you take into account our guidelines and make the icons you need yourself, you will have to wait much less for them in Lawnicons. If a previously added icon has a design change, create an [issue](https://github.com/LawnchairLauncher/lawnicons/issues). 
 
 
 
