@@ -56,13 +56,13 @@ android {
     }
 
     androidResources {
-        generateLocaleConfig true
+        generateLocaleConfig = true
     }
 
     buildTypes {
         all {
-            signingConfig releaseSigning
-            pseudoLocalesEnabled true
+            signingConfig = releaseSigning
+            pseudoLocalesEnabled = true
         }
         release {
             isMinifyEnabled = true
