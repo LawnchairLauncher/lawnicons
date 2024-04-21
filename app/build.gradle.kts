@@ -68,7 +68,6 @@ android {
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
-        debug {}
     }
 
     flavorDimensions += "product"
