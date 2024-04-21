@@ -62,7 +62,7 @@ android {
     buildTypes {
         all {
             signingConfig = releaseSigning
-            pseudoLocalesEnabled = true
+            isPseudoLocalesEnabled = true
         }
         release {
             isMinifyEnabled = true
