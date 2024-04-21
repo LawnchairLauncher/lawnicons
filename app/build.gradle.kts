@@ -55,15 +55,20 @@ android {
         signingConfigs["debug"]
     }
 
+    androidResources {
+        generateLocaleConfig true
+    }
+
     buildTypes {
+        all {
+            signingConfig releaseSigning
+            pseudoLocalesEnabled true
+        }
         release {
             isMinifyEnabled = true
-            signingConfig = releaseSigning
             proguardFiles("proguard-rules.pro")
         }
-        debug {
-            signingConfig = releaseSigning
-        }
+        debug {}
     }
 
     flavorDimensions += "product"
