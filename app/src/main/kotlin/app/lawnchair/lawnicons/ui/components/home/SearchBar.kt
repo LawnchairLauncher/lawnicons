@@ -121,6 +121,7 @@ fun LawniconsSearchBar(
             }
             .zIndex(1f)
             .fillMaxSize(),
+        contentAlignment = Alignment.TopCenter,
     ) {
         ResponsiveSearchBar(
             query = query,
@@ -182,6 +183,7 @@ private fun ResponsiveSearchBar(
     if (isExpandedScreen) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
         ) {
             DockedSearchBar(
                 query = query,

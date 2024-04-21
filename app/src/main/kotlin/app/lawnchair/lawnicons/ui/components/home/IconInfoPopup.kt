@@ -53,7 +53,7 @@ fun IconInfoPopup(
         },
         sheetState = sheetState,
         windowInsets = WindowInsets(0.dp),
-        modifier = Modifier
+        modifier = modifier
             .navigationBarsPadding(),
     ) {
         Column(
