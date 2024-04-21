@@ -24,6 +24,8 @@ fun IconPreviewGrid(
     iconInfo: ImmutableList<IconInfo>,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
+    onSendResult: (IconInfo) -> Unit,
+    isIconPicker: Boolean = false,
 ) {
     LazyVerticalGrid(
         modifier = modifier
@@ -48,6 +50,8 @@ fun IconPreviewGrid(
         items(items = iconInfo) { iconInfo ->
             IconPreview(
                 iconInfo = iconInfo,
+                isIconPicker = isIconPicker,
+                onSendResult = onSendResult,
             )
         }
     }
@@ -61,6 +65,9 @@ private fun IconGridPreview() {
         IconPreviewGrid(
             SampleData.iconInfoList,
             true,
+            Modifier,
+            { },
+            false
         )
     }
 }

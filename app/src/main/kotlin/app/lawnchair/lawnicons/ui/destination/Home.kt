@@ -11,6 +11,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
@@ -23,8 +24,10 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
+    isIconPicker: Boolean = false,
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
@@ -52,10 +55,17 @@ fun Home(
                     iconInfoModel = it,
                     onNavigate = onNavigate,
                     isExpandedScreen = isExpandedScreen,
+                    isIconPicker = isIconPicker,
+                    onSendResult = onSendResult,
                 )
             }
             iconInfoModel?.let {
-                IconPreviewGrid(iconInfo = it.iconInfo, isExpandedScreen = isExpandedScreen)
+                IconPreviewGrid(
+                    iconInfo = it.iconInfo,
+                    isExpandedScreen = isExpandedScreen,
+                    isIconPicker = isIconPicker,
+                    onSendResult = onSendResult,
+                )
             }
         } else {
             PlaceholderSearchBar()
@@ -86,6 +96,12 @@ private fun HomePreview() {
             onNavigate = {},
             isExpandedScreen = true,
         )
-        IconPreviewGrid(iconInfo = iconInfo, isExpandedScreen = false)
+        IconPreviewGrid(
+            iconInfo = iconInfo,
+            isExpandedScreen = false,
+            Modifier,
+            {},
+            false
+        )
     }
 }
