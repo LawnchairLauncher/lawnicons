@@ -47,12 +47,10 @@ fun IconLink(
             .height(64.dp)
             .clip(MaterialTheme.shapes.medium)
             .clickable {
-                if (!inPreviewMode) {
-                    val webpage = Uri.parse(url)
-                    val intent = Intent(Intent.ACTION_VIEW, webpage)
-                    if (intent.resolveActivity(context.packageManager) != null) {
-                        context.startActivity(intent)
-                    }
+                val webpage = Uri.parse(url)
+                val intent = Intent(Intent.ACTION_VIEW, webpage)
+                if (intent.resolveActivity(context.packageManager) != null) {
+                    context.startActivity(intent)
                 }
             },
     ) {
