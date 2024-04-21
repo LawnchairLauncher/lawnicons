@@ -4,7 +4,6 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
@@ -30,18 +29,18 @@ import kotlinx.collections.immutable.ImmutableList
 fun IconPreviewGrid(
     iconInfo: ImmutableList<IconInfo>,
     isExpandedScreen: Boolean,
-    modifier: Modifier = Modifier,
     onSendResult: (IconInfo) -> Unit,
+    modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
     contentPadding: PaddingValues? = null,
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth(),
     ) {
         LazyVerticalGrid(
-            modifier = modifier
+            modifier = Modifier
                 .then(
                     if (isExpandedScreen) Modifier.width(640.dp) else Modifier,
                 )
@@ -62,7 +61,7 @@ fun IconPreviewGrid(
                 )
             },
 
-            ) {
+        ) {
             items(items = iconInfo) { iconInfo ->
                 IconPreview(
                     iconInfo = iconInfo,
@@ -82,9 +81,9 @@ private fun IconGridPreview() {
         IconPreviewGrid(
             SampleData.iconInfoList,
             true,
+            {},
             Modifier,
-            { },
-            false
+            false,
         )
     }
 }

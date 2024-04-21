@@ -53,7 +53,7 @@ fun Lawnicons(
                 exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
                 popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
-                sizeTransform = { SizeTransform() }
+                sizeTransform = { SizeTransform() },
             ) {
                 composable(route = Destinations.HOME) {
                     Home(
