@@ -1144,6 +1144,7 @@
   <item component="ComponentInfo{com.danilkinkin.buckwheat/com.danilkinkin.buckwheat.MainActivity}" drawable="buckwheat" name="Buckwheat" />
   <item component="ComponentInfo{hu.webvalto.bkkfutar/hu.bkk.futar.ui.MainActivity}" drawable="budapestgo" name="BudapestGO" />
   <item component="ComponentInfo{eu.sisik.hackendebug/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger" name="Bugjaeger" />
+  <item component="ComponentInfo{eu.sisik.hackendebug.full/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger" name="Bugjaeger Premium" />
   <item component="ComponentInfo{eu.sisik.hackendebug.full/eu.sisik.hackendebu}" drawable="bugjaeger" name="Bugjaeger Premium" />
   <item component="ComponentInfo{org.yoki.android.buienalarm/org.yoki.android.buienalarm.activity.LaunchActivity}" drawable="buienalarm" name="Buienalarm" />
   <item component="ComponentInfo{org.yoki.android.drops/org.yoki.android.buienalarm.activity.LaunchActivity}" drawable="buienalarm" name="Buienalarm" />
@@ -1938,8 +1939,6 @@
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivityEx}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PhoneFrontDoor}" drawable="google_contacts" name="Contacts" />
-  <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDiale}" drawable="google_contacts" name="Contacts" />
-  <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.WtDialerActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.att.ATTContactsActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.BaiJiaXingActivity}" drawable="google_contacts" name="Contacts" />
@@ -2260,6 +2259,7 @@
   <item component="ComponentInfo{com.psafe.vpn/com.psafe.vpn.appenter.activities.AppEnterActivity}" drawable="dfndr_vpn" name="dfndr vpn" />
   <item component="ComponentInfo{com.donanimhaber.dhandroid/com.donanimhaber.dhandroid.dh_app_mvvm.ui.navigator.NavigatorActivity}" drawable="dh" name="DH" />
   <item component="ComponentInfo{com.alifewithallah.app/com.ryanheise.audioservice.AudioServiceActivity}" drawable="dhikr_and_dua" name="Dhikr &amp; Dua" />
+  <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="dialer" name="Dialer" />
   <item component="ComponentInfo{com.motorola.dialer/com.motorola.dialer.CallLogShortcut}" drawable="dialer" name="Dialer" />
   <item component="ComponentInfo{com.motorola.dialer/com.motorola.dialer.DialtactsContactsEntryActivity}" drawable="dialer" name="Dialer" />
   <item component="ComponentInfo{partl.Diarium/crc64379322c6af5bbbbe.MainActivity}" drawable="diarium" name="Diarium" />
@@ -3995,6 +3995,7 @@
   <item component="ComponentInfo{com.imdb.mobile/com.imdb.mobile.HomeActivity}" drawable="imdb" name="IMDb" />
   <item component="ComponentInfo{com.imdb.mobile/com.imdb.mobile.Home}" drawable="imdb" name="IMDb" />
   <item component="ComponentInfo{com.imdb.mobile/com.imdb.mobile.IMDb}" drawable="imdb" name="IMDb" />
+  <item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityKeyIcon}" drawable="ime" name="iMe" />
   <item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityBlueIcon}" drawable="ime" name="iMe" />
   <item component="ComponentInfo{com.imgur.mobile/com.imgur.mobile.imgur}" drawable="imgur" name="Imgur" />
   <item component="ComponentInfo{com.imgur.mobile/com.imgur.mobile.Launcher}" drawable="imgur" name="Imgur" />
@@ -10454,6 +10455,7 @@
   <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" name="YouTube Music" />
   <item component="ComponentInfo{app.revanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced Extended" />
   <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced Extended" />
+  <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
