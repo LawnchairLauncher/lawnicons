@@ -187,6 +187,18 @@ fun About(
                     }
                 }
             }
+            item {
+                Card(
+                    label = stringResource(id = R.string.others),
+                    modifier = Modifier.padding(top = 16.dp),
+                ) {
+                    SimpleListRow(
+                        onClick = { onNavigate(Destinations.ACKNOWLEDGEMENTS) },
+                        label = stringResource(id = R.string.acknowledgements),
+                        divider = false,
+                    )
+                }
+            }
         }
     }
 }

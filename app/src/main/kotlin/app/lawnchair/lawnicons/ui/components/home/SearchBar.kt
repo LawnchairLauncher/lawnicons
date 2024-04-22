@@ -242,15 +242,6 @@ private fun SearchMenu(
                 DropdownMenuItem(
                     onClick = {
                         hideMenu()
-                        onNavigate(Destinations.ACKNOWLEDGEMENTS)
-                    },
-                    text = {
-                        Text(text = stringResource(id = R.string.acknowledgements))
-                    },
-                )
-                DropdownMenuItem(
-                    onClick = {
-                        hideMenu()
                         onNavigate(Destinations.ABOUT)
                     },
                     text = {
