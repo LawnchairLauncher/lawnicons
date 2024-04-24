@@ -19,7 +19,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.DockedSearchBar
@@ -64,17 +64,23 @@ fun LawniconsSearchBar(
     onQueryChange: (String) -> Unit,
     iconInfoModel: IconInfoModel,
     onNavigate: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    onSendResult: (IconInfo) -> Unit = {},
     isExpandedScreen: Boolean = false,
+    isIconPicker: Boolean = false,
 ) {
     LawniconsSearchBar(
-        query,
-        isQueryEmpty,
-        onClearAndBackClick,
-        onQueryChange,
-        iconInfoModel.iconCount,
-        iconInfoModel.iconInfo,
-        onNavigate,
-        isExpandedScreen,
+        query = query,
+        isQueryEmpty = isQueryEmpty,
+        onClearAndBackClick = onClearAndBackClick,
+        onQueryChange = onQueryChange,
+        iconCount = iconInfoModel.iconCount,
+        iconInfo = iconInfoModel.iconInfo,
+        onNavigate = onNavigate,
+        modifier = modifier,
+        onSendResult = onSendResult,
+        isExpandedScreen = isExpandedScreen,
+        isIconPicker = isIconPicker,
     )
 }
 
@@ -87,12 +93,15 @@ fun LawniconsSearchBar(
     iconCount: Int,
     iconInfo: ImmutableList<IconInfo>,
     onNavigate: (String) -> Unit,
+    modifier: Modifier = Modifier,
+    onSendResult: (IconInfo) -> Unit = {},
     isExpandedScreen: Boolean = false,
+    isIconPicker: Boolean = false,
 ) {
     var active by rememberSaveable { mutableStateOf(false) }
 
     Box(
-        modifier = Modifier
+        modifier = modifier
             .then(
                 if (!active || isExpandedScreen) {
                     Modifier
@@ -112,6 +121,7 @@ fun LawniconsSearchBar(
             }
             .zIndex(1f)
             .fillMaxSize(),
+        contentAlignment = Alignment.TopCenter,
     ) {
         ResponsiveSearchBar(
             query = query,
@@ -122,7 +132,11 @@ fun LawniconsSearchBar(
             placeholder = {
                 Text(
                     stringResource(
-                        id = R.string.search_bar_hint,
+                        id = if (isIconPicker) {
+                            R.string.search_bar_choose_icon
+                        } else {
+                            R.string.search_bar_hint
+                        },
                         iconCount,
                     ),
                 )
@@ -137,15 +151,17 @@ fun LawniconsSearchBar(
                 )
             },
             trailingIcon = {
-                SearchMenu(
-                    isQueryEmpty = isQueryEmpty,
-                    onNavigate = onNavigate,
-                    onClearAndBackClick = onClearAndBackClick,
-                )
+                if (!isIconPicker) {
+                    SearchMenu(
+                        isQueryEmpty = isQueryEmpty,
+                        onNavigate = onNavigate,
+                        onClearAndBackClick = onClearAndBackClick,
+                    )
+                }
             },
             isExpandedScreen = isExpandedScreen,
         ) {
-            SearchContents(iconInfo)
+            SearchContents(iconInfo, onSendResult)
         }
     }
 }
@@ -167,6 +183,7 @@ private fun ResponsiveSearchBar(
     if (isExpandedScreen) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
         ) {
             DockedSearchBar(
                 query = query,
@@ -205,7 +222,7 @@ private fun SearchIcon(
 ) {
     if (active) {
         ClickableIcon(
-            imageVector = Icons.Rounded.ArrowBack,
+            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
             onClick = onButtonClick,
         )
     } else {
@@ -253,6 +270,7 @@ private fun SearchMenu(
 @Composable
 private fun SearchContents(
     iconInfo: ImmutableList<IconInfo>,
+    onSendResult: (IconInfo) -> Unit = {},
 ) {
     when (iconInfo.size) {
         1 -> {
@@ -317,6 +335,7 @@ private fun SearchContents(
                     IconPreview(
                         iconInfo = it,
                         iconBackground = Color.Transparent,
+                        onSendResult = onSendResult,
                     )
                 }
             }

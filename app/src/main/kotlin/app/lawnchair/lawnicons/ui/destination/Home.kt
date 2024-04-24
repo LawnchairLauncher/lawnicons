@@ -2,6 +2,10 @@ package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -9,7 +13,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
@@ -22,7 +29,10 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
+    isIconPicker: Boolean = false,
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
@@ -30,29 +40,49 @@ fun Home(
     var searchTerm by rememberSaveable { mutableStateOf(value = "") }
 
     Crossfade(
+        modifier = modifier,
         targetState = iconInfoModel != null,
         label = "",
     ) { targetState ->
         if (targetState) {
-            searchedIconInfoModel?.let {
-                LawniconsSearchBar(
-                    query = searchTerm,
-                    isQueryEmpty = searchTerm == "",
-                    onClearAndBackClick = {
-                        searchTerm = ""
-                        lawniconsViewModel.searchIcons("")
-                    },
-                    onQueryChange = { newValue ->
-                        searchTerm = newValue
-                        lawniconsViewModel.searchIcons(newValue)
-                    },
-                    iconInfoModel = it,
-                    onNavigate = onNavigate,
-                    isExpandedScreen = isExpandedScreen,
-                )
-            }
-            iconInfoModel?.let {
-                IconPreviewGrid(iconInfo = it.iconInfo, isExpandedScreen = isExpandedScreen)
+            Scaffold(
+                topBar = {
+                    searchedIconInfoModel?.let {
+                        Column(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                        ) {
+                            LawniconsSearchBar(
+                                query = searchTerm,
+                                isQueryEmpty = searchTerm == "",
+                                onClearAndBackClick = {
+                                    searchTerm = ""
+                                    lawniconsViewModel.searchIcons("")
+                                },
+                                onQueryChange = { newValue ->
+                                    searchTerm = newValue
+                                    lawniconsViewModel.searchIcons(newValue)
+                                },
+                                iconInfoModel = it,
+                                onNavigate = onNavigate,
+                                isExpandedScreen = isExpandedScreen,
+                                isIconPicker = isIconPicker,
+                                onSendResult = onSendResult,
+                            )
+                        }
+                    }
+                },
+            ) { contentPadding ->
+                iconInfoModel?.let {
+                    val padding = contentPadding
+                    IconPreviewGrid(
+                        iconInfo = it.iconInfo,
+                        isExpandedScreen = isExpandedScreen,
+                        isIconPicker = isIconPicker,
+                        onSendResult = onSendResult,
+                    )
+                }
             }
         } else {
             PlaceholderSearchBar()
@@ -83,6 +113,12 @@ private fun HomePreview() {
             onNavigate = {},
             isExpandedScreen = true,
         )
-        IconPreviewGrid(iconInfo = iconInfo, isExpandedScreen = false)
+        IconPreviewGrid(
+            iconInfo = iconInfo,
+            isExpandedScreen = false,
+            {},
+            Modifier,
+            false,
+        )
     }
 }

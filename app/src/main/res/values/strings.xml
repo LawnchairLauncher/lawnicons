@@ -10,54 +10,50 @@
 
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d Icons</string>
+    <string name="search_bar_hint">Search through %d icons</string>
+
+    <string name="search_bar_choose_icon">Pick an icon</string>
 
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">No icons found.</string>
+    <string name="no_items_found">No icons found</string>
 
     <!-- Popup menu in search bar -->
     <!-- Popup menu item that links to the Acknowledgements page -->
     <string name="acknowledgements">Acknowledgements</string>
     <!-- Popup menu item that links to the About page -->
-    <string name="about">About</string>
-    <!-- External Links label -->
-    <string name="external_links">External Links</string>
 
-    <!-- External Links labels -->
+    <!-- About page -->
+
+    <!-- External Links -->
     <!-- GitHub repository link-->
     <string name="github" translatable="false">GitHub</string>
     <!-- Icon Request form link -->
-    <string name="request_form">Icon Request Form</string>
-
-    <!-- About page -->
+    <string name="request_form">Icon request form</string>
 
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Contributors</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core Contributors</string>
+    <string name="core_contributors">Core contributors</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See All Contributors</string>
+    <string name="see_all_contributors">See all contributors</string>
 
     <!-- View on GitHub link -->
     <string name="view_on_github">View on GitHub</string>
 
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
-    <string name="special_thanks">Special Thanks</string>
+    <string name="special_thanks">Special thanks</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon.</string>
+    <string name="special_thanks_icon">For inspiring the app icon</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app.</string>
+    <string name="special_thanks_name">For naming the app</string>
 
     <!-- Icon Information Popup window -->
 
     <!-- Drawable prefix -->
-    <string name="drawable_prefix">Drawable:</string>
+    <string name="drawable">Drawable</string>
     <!-- Package prefix -->
-    <string name="package_prefix">Package:</string>
-    <!-- OK button -->
-    <string name="ok_button" translatable="false">OK</string>
-
-
+    <string name="package_prefix">Package</string>
+    <string name="about">About</string>
 </resources>

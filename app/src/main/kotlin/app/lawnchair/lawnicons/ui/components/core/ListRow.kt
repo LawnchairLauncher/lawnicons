@@ -21,8 +21,6 @@ import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.util.Elevation
-import app.lawnchair.lawnicons.ui.util.surfaceColorAtElevation
 
 private val basePadding = 16.dp
 
@@ -42,7 +40,7 @@ fun ListRow(
     val height = if (tall) 72.dp else 56.dp
     val dividerHeight = 1.dp
     val dividerHeightPx = with(LocalDensity.current) { dividerHeight.toPx() }
-    val dividerColor = MaterialTheme.colorScheme.surfaceColorAtElevation(32.dp)
+    val dividerColor = MaterialTheme.colorScheme.outlineVariant
     val topCornerRadius = if (first) 16.dp else 0.dp
     val bottomCornerRadius = if (last) 16.dp else 0.dp
     val basePaddingPx = with(LocalDensity.current) { basePadding.toPx() }
@@ -64,7 +62,7 @@ fun ListRow(
                             ),
                         )
                         .background(
-                            MaterialTheme.colorScheme.surfaceColorAtElevation(Elevation.Level1),
+                            MaterialTheme.colorScheme.surfaceContainerLow,
                         )
                 } else {
                     Modifier
