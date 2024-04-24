@@ -18,8 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
-import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
+import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
+import app.lawnchair.lawnicons.ui.components.home.search.PlaceholderSearchBar
+import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -68,7 +69,9 @@ fun Home(
                                 onNavigate = onNavigate,
                                 isExpandedScreen = isExpandedScreen,
                                 isIconPicker = isIconPicker,
-                                onSendResult = onSendResult,
+                                content = {
+                                    SearchContents(it.iconInfo, onSendResult)
+                                }
                             )
                         }
                     }
@@ -85,7 +88,9 @@ fun Home(
                 }
             }
         } else {
-            PlaceholderSearchBar()
+            PlaceholderSearchBar(
+                isExpandedScreen = isExpandedScreen
+            )
         }
     }
 }
@@ -109,9 +114,11 @@ private fun HomePreview() {
                 // No actual searching, this is just a preview
             },
             iconCount = 3,
-            iconInfo = iconInfo,
             onNavigate = {},
             isExpandedScreen = true,
+            content = {
+                SearchContents(iconInfo = iconInfo)
+            },
         )
         IconPreviewGrid(
             iconInfo = iconInfo,
