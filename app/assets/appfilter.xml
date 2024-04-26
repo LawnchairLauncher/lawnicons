@@ -249,14 +249,18 @@
   <item component="ComponentInfo{com.airselangor.cris.mobile/com.airselangor.cris.mobile.ui.intro.IntroActivity}" drawable="airselangor" name="AirSelangor" />
   <item component="ComponentInfo{com.formagrid.airtable/com.formagrid.airtable.activity.HomescreenActivity}" drawable="airtable" name="Airtable" />
   <item component="ComponentInfo{com.formagrid.airtable/com.formagrid.airtable.activity.session.SessionLoaderActivity}" drawable="airtable" name="Airtable" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activities.LauncherActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.HomeActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.OnboardingActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.SplashScreenActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.AirtelActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.home.views.activities.NewHomeActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.home.views.activities.SplashScreenActivity}" drawable="myairtel" name="Airtel" />
-  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.SplashActivity}" drawable="myairtel" name="Airtel" />
+  <item component="ComponentInfo{com.airtel.africa.selfcare/com.airtel.africa.selfcare.feature.login.activity.LoginActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activities.LauncherActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.HomeActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.OnboardingActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.activity.SplashScreenActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.AirtelActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.home.views.activities.NewHomeActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.home.views.activities.SplashScreenActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{com.myairtelapp/com.myairtelapp.SplashActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.activity.splash.SplashScreen}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.ui.splash.SplashActivity}" drawable="airtel" name="Airtel" />
+  <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.activities.HomeActivity}" drawable="airtel" name="Airtel" />
   <item component="ComponentInfo{com.ril.ajio/com.ril.ajio.view.splashscreen.SplashScreenActivity}" drawable="ajio" name="Ajio" />
   <item component="ComponentInfo{com.ril.ajio/com.ril.ajio.splashscreen.SplashScreenActivity}" drawable="ajio" name="Ajio" />
   <item component="ComponentInfo{com.ril.ajio/com.ril.ajio.launch.activity.SplashScreenActivity}" drawable="ajio" name="Ajio" />
@@ -1150,6 +1154,7 @@
   <item component="ComponentInfo{org.lineageos.jelly/org.lineageos.jelly.MainActivity}" drawable="browser" name="Browser" />
   <item component="ComponentInfo{com.tskn.toothreminder/com.tskn.toothreminder.WelcomeActivity}" drawable="brush_teeth_reminder" name="Brush Teeth Reminder" />
   <item component="ComponentInfo{com.rrapplabs.bsnldatausage/com.rrapplabs.bsnldatausage.MainActivity}" drawable="bsnl_ftth_usage" name="BSNL FTTH Usage" />
+  <item component="ComponentInfo{com.digital.bsnl.selfcare/com.digital.bsnl.selfcare.MainActivity}" drawable="bsnl_selfcare" name="BSNL Selfcare" />
   <item component="ComponentInfo{com.digital.bsnl.selfcare/com.selfcare.mybsnl.activities.SplashActivity}" drawable="bsnl_selfcare" name="BSNL Selfcare" />
   <item component="ComponentInfo{net.froemling.bsremote/net.froemling.bsremote.ScanActivity}" drawable="bombsquad_remote" name="BSRemote" />
   <item component="ComponentInfo{org.woheller69.level/org.woheller69.level.Level}" drawable="bubble" name="Bubble" />
@@ -1929,6 +1934,7 @@
   <item component="ComponentInfo{com.kobil.consors/com.kobil.consors.MainActivity}" drawable="consorsbank_secureplus" name="Consorsbank SecurePlus" />
   <item component="ComponentInfo{br.com.consumidor/br.com.consumidor.MainActivity}" drawable="consumidor_gov_br" name="Consumidor.gov.br" />
   <item component="ComponentInfo{br.com.movilepay.banking.application/br.com.movilepay.banking.application.ui.splash.SplashActivity}" drawable="conta_digital_ifood" name="Conta Digital iFood" />
+  <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" name="Contacts" />
   <item component="ComponentInfo{com.sonymobile.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.freeme.contacts.FreemePeopleActivity}" drawable="google_contacts" name="Contacts" />
   <item component="ComponentInfo{com.android.contacts/com.gionee.contacts.activities.BaseActivity}" drawable="google_contacts" name="Contacts" />
@@ -2089,7 +2095,8 @@
   <item component="ComponentInfo{com.sega.CrazyTaxiplayhaven/com.sega.f2fdownloader.f2fDownloaderActivity}" drawable="crazy_taxi_classic" name="Crazy Taxi Classic" />
   <item component="ComponentInfo{com.kubix.creative/com.kubix.creative.activity.IntroActivity}" drawable="creativeapp" name="CreativeApp" />
   <item component="ComponentInfo{com.dreamplug.androidapp/com.dreamplug.androidapp.SplashActivity}" drawable="cred" name="Cred" />
-  <item component="ComponentInfo{it.caitalia.apphub/com.creditagricole.MainActivity}" drawable="credit_agricole_italia" name="Credit Agricole Italia" />
+  <item component="ComponentInfo{fr.creditagricole.androidapp/fr.ca.cats.nmb.start.StartActivity}" drawable="credit_agricole" name="Credit Agricole" />
+  <item component="ComponentInfo{it.caitalia.apphub/com.creditagricole.MainActivity}" drawable="credit_agricole" name="Credit Agricole" />
   <item component="ComponentInfo{com.creditkarma.mobile/com.creditkarma.mobile.ui.WelcomeActivity}" drawable="credit_karma" name="Credit Karma" />
   <item component="ComponentInfo{com.creditkarma.mobile/com.creditkarma.mobile.welcome.ui.WelcomeActivity}" drawable="credit_karma" name="Credit Karma" />
   <item component="ComponentInfo{com.csg.creditsuisse.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="credit_suisse_twint" name="Credit Suisse TWINT" />
@@ -2528,6 +2535,7 @@
   <item component="ComponentInfo{org.fossify.draw/org.fossify.draw.activities.SplashActivity.Yellow}" drawable="pencil" name="Draw" />
   <item component="ComponentInfo{com.dragonnest.drawnote/com.dragonnest.app.EmptyLauncherActivity}" drawable="drawnote" name="DrawNote" />
   <item component="ComponentInfo{com.firsttouchgames.dls7/com.firsttouchgames.dls7.MainActivity}" drawable="dream_league_soccer" name="Dream League Soccer" />
+  <item component="ComponentInfo{com.dream11.fantasy.cricket.football.kabaddi/com.app.dream11.dream11.ReactHomeActivity}" drawable="dream11" name="Dream11" />
   <item component="ComponentInfo{com.app.dream11Pro/com.app.dream11.dream11.SplashActivity}" drawable="dream11" name="Dream11" />
   <item component="ComponentInfo{net.reichholf.dreamdroid/net.reichholf.dreamdroid.activities.TabbedNavigationActivity}" drawable="dreamdroid" name="dreamDroid" />
   <item component="ComponentInfo{au.com.vodafone.dreamlabapp/au.com.vodafone.dreamlabapp.presentation.launcher.LauncherScreenActivity}" drawable="dreamlab" name="DreamLab" />
@@ -5612,9 +5620,6 @@
   <item component="ComponentInfo{com.mxtech.videoplayer.pro/com.mxtech.videoplayer.ad.ActivityMediaList}" drawable="generic_player" name="MX Player" />
   <item component="ComponentInfo{com.mxtech.videoplayer.pro/com.mxtech.videoplayer.pro.ActivityMediaList}" drawable="generic_player" name="MX Player" />
   <item component="ComponentInfo{com.mxtech.videoplayer.pro/com.mxtech.videoplayer.pro.ActivityWelcomeMX}" drawable="generic_player" name="MX Player" />
-  <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.activity.splash.SplashScreen}" drawable="myairtel" name="My Airtel" />
-  <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.ui.splash.SplashActivity}" drawable="myairtel" name="My Airtel" />
-  <item component="ComponentInfo{net.omobio.airtelsc/net.omobio.airtelsc.activities.HomeActivity}" drawable="myairtel" name="My Airtel" />
   <item component="ComponentInfo{de.bmw.connected.mobile20.row/com.mobileconnected.MainActivity}" drawable="my_bmw" name="My BMW" />
   <item component="ComponentInfo{com.fastemulator.gba/com.fastemulator.gba.MainActivity}" drawable="my_boy" name="My Boy!" />
   <item component="ComponentInfo{com.fastemulator.gba/com.fastemulator.gba.RomListActivity}" drawable="my_boy" name="My Boy!" />
@@ -8452,6 +8457,7 @@
   <item component="ComponentInfo{com.riteshsahu.SMSBackupRestore/com.riteshsahu.SMSBackupRestore.FreeMain}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore" />
   <item component="ComponentInfo{com.riteshsahu.SMSBackupRestore/com.riteshsahu.SMSBackupRestore.activities.MainActivity}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore" />
   <item component="ComponentInfo{com.riteshsahu.SMSBackupRestore/com.riteshsahu.SMSBackupRestore.activities.IntroActivity}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore" />
+  <item component="ComponentInfo{com.riteshsahu.SMSBackupRestorePro/com.riteshsahu.SMSBackupRestore.activities.IntroActivity}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore Pro" />
   <item component="ComponentInfo{com.github.tmo1.sms_ie/com.github.tmo1.sms_ie.MainActivity}" drawable="sms_import_export" name="SMS Import / Export" />
   <item component="ComponentInfo{com.microsoft.android.smsorganizer/com.microsoft.android.smsorganizer.StartupActivity}" drawable="sms_organizer" name="SMS Organizer" />
   <item component="ComponentInfo{com.github.tianma8023.xposed.smscode/com.github.tianma8023.xposed.smscode.HomeActivityAlias}" drawable="sms_organizer" name="smscode" />
