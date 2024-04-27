@@ -9,5 +9,5 @@ data class SearchInfo(
 enum class SearchMode {
     NAME,
     PACKAGE_NAME,
-    DRAWABLE
+    DRAWABLE,
 }

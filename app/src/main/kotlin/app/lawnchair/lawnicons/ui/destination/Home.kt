@@ -81,9 +81,9 @@ fun Home(
                                             lawniconsViewModel.searchIcons(searchTerm)
                                         },
                                         iconInfo = it.iconInfo,
-                                        onSendResult = onSendResult
+                                        onSendResult = onSendResult,
                                     )
-                                }
+                                },
                             )
                         }
                     }
@@ -101,7 +101,7 @@ fun Home(
             }
         } else {
             PlaceholderSearchBar(
-                isExpandedScreen = isExpandedScreen
+                isExpandedScreen = isExpandedScreen,
             )
         }
     }

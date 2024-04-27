@@ -39,7 +39,7 @@ fun PlaceholderSearchBar(
                 contentAlignment = Alignment.TopCenter,
                 modifier = Modifier
                     .then(
-                        if (isExpandedScreen) Modifier.width(360.dp) else Modifier
+                        if (isExpandedScreen) Modifier.width(360.dp) else Modifier,
                     )
                     .zIndex(1f)
                     .statusBarsPadding()

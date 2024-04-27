@@ -1,6 +1,5 @@
 package app.lawnchair.lawnicons.ui
 
-import androidx.compose.animation.SizeTransform
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme

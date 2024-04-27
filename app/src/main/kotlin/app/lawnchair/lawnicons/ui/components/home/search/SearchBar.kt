@@ -222,8 +222,6 @@ private fun ResponsiveSearchBar(
     }
 }
 
-
-
 @Composable
 internal fun SearchIcon(
     active: Boolean,
@@ -248,14 +246,14 @@ internal fun SearchActionButton(
     Crossfade(isQueryEmpty, label = "") {
         if (it) {
             IconButton(
-                onClick = { onNavigate(Destinations.ABOUT) }
+                onClick = { onNavigate(Destinations.ABOUT) },
             ) {
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.lawnicons_foreground),
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier
-                        .size(24.dp)
+                        .size(24.dp),
                 )
             }
         } else {
@@ -289,7 +287,7 @@ private fun SearchBarPreview() {
                     "",
                     SearchMode.NAME,
                     {},
-                    iconInfo
+                    iconInfo,
                 )
             },
         )

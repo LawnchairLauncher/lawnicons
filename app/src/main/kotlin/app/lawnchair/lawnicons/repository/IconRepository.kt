@@ -41,7 +41,7 @@ class IconRepository @Inject constructor(application: Application) {
 
     suspend fun search(
         mode: SearchMode,
-        query: String
+        query: String,
     ) = withContext(Dispatchers.Default) {
         searchedIconInfoModel.value = iconInfo?.let {
             val filtered = it.mapNotNull { candidate ->

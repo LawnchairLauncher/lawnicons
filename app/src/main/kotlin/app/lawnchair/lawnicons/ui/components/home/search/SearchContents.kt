@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons.ui.components.home.search
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -19,7 +20,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Check
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -42,77 +42,79 @@ import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
 import kotlinx.collections.immutable.ImmutableList
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
     iconInfo: ImmutableList<IconInfo>,
+    modifier: Modifier = Modifier,
     onSendResult: (IconInfo) -> Unit = {},
 ) {
-    Row (
-        horizontalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier.padding(start = 16.dp)
+    Column(
+        modifier = modifier,
     ) {
-        FilterChip(
-            leadingIcon = {
-                AnimatedVisibility(searchMode == SearchMode.NAME) {
-                    Icon(
-                        imageVector = Icons.Rounded.Check,
-                        contentDescription = null,
-                    )
-                }
-            },
-            selected = searchMode == SearchMode.NAME,
-            onClick = {
-                onModeChange(SearchMode.NAME)
-            },
-            label = {
-                Text(text = stringResource(R.string.name))
-            },
-        )
-        FilterChip(
-            leadingIcon = {
-                AnimatedVisibility(searchMode == SearchMode.PACKAGE_NAME) {
-                    Icon(
-                        imageVector = Icons.Rounded.Check,
-                        contentDescription = null,
-                    )
-                }
-            },
-            selected = searchMode == SearchMode.PACKAGE_NAME,
-            onClick = {
-                onModeChange(SearchMode.PACKAGE_NAME)
-            },
-            label = {
-                Text(text = stringResource(id = R.string.package_prefix))
-            },
-        )
-        FilterChip(
-            leadingIcon = {
-                AnimatedVisibility(searchMode == SearchMode.DRAWABLE) {
-                    Icon(
-                        imageVector = Icons.Rounded.Check,
-                        contentDescription = null,
-                    )
-                }
-            },
-            selected = searchMode == SearchMode.DRAWABLE,
-            onClick = {
-                onModeChange(SearchMode.DRAWABLE)
-            },
-            label = {
-                Text(text = stringResource(id = R.string.drawable))
-            },
-        )
-    }
-    Crossfade(
-        targetState = searchTerm,
-        label = "on item searched"
-    ) { term ->
-        if (term != "") {
-            when (iconInfo.size) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            modifier = Modifier.padding(start = 16.dp),
+        ) {
+            FilterChip(
+                leadingIcon = {
+                    AnimatedVisibility(searchMode == SearchMode.NAME) {
+                        Icon(
+                            imageVector = Icons.Rounded.Check,
+                            contentDescription = null,
+                        )
+                    }
+                },
+                selected = searchMode == SearchMode.NAME,
+                onClick = {
+                    onModeChange(SearchMode.NAME)
+                },
+                label = {
+                    Text(text = stringResource(R.string.name))
+                },
+            )
+            FilterChip(
+                leadingIcon = {
+                    AnimatedVisibility(searchMode == SearchMode.PACKAGE_NAME) {
+                        Icon(
+                            imageVector = Icons.Rounded.Check,
+                            contentDescription = null,
+                        )
+                    }
+                },
+                selected = searchMode == SearchMode.PACKAGE_NAME,
+                onClick = {
+                    onModeChange(SearchMode.PACKAGE_NAME)
+                },
+                label = {
+                    Text(text = stringResource(id = R.string.package_prefix))
+                },
+            )
+            FilterChip(
+                leadingIcon = {
+                    AnimatedVisibility(searchMode == SearchMode.DRAWABLE) {
+                        Icon(
+                            imageVector = Icons.Rounded.Check,
+                            contentDescription = null,
+                        )
+                    }
+                },
+                selected = searchMode == SearchMode.DRAWABLE,
+                onClick = {
+                    onModeChange(SearchMode.DRAWABLE)
+                },
+                label = {
+                    Text(text = stringResource(id = R.string.drawable))
+                },
+            )
+        }
+        Crossfade(
+            targetState = iconInfo.size,
+            label = "On item count modified",
+        ) { count ->
+            when (count) {
                 1 -> {
                     Column(
                         modifier = Modifier
@@ -154,6 +156,7 @@ fun SearchContents(
                         }
                     }
                 }
+
                 0 -> {
                     Box(
                         modifier = Modifier
@@ -163,39 +166,32 @@ fun SearchContents(
                     ) {
                         Text(
                             textAlign = TextAlign.Center,
-                            text = stringResource(R.string.no_items_found),
+                            text = stringResource(R.string.no_items_found, searchTerm),
                         )
                     }
                 }
+
                 else -> {
-                    LazyVerticalGrid(
-                        columns = GridCells.Adaptive(minSize = 80.dp),
-                        contentPadding = PaddingValues(16.dp),
-                    ) {
-                        items(items = iconInfo) {
-                            IconPreview(
-                                iconInfo = it,
-                                iconBackground = Color.Transparent,
-                                onSendResult = onSendResult,
-                            )
+                    Crossfade(
+                        targetState = iconInfo,
+                        label = "Item changed",
+                        animationSpec = tween(50),
+                    ) { iconInfo ->
+                        LazyVerticalGrid(
+                            columns = GridCells.Adaptive(minSize = 80.dp),
+                            contentPadding = PaddingValues(16.dp),
+                        ) {
+                            items(items = iconInfo) {
+                                IconPreview(
+                                    iconInfo = it,
+                                    iconBackground = Color.Transparent,
+                                    onSendResult = onSendResult,
+                                )
+                            }
                         }
                     }
                 }
             }
-        } else {
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(PaddingValues(16.dp)),
-                contentAlignment = Alignment.Center,
-            ) {
-                Text(
-                    textAlign = TextAlign.Center,
-                    text = "",
-                )
-            }
         }
     }
-
-
 }
