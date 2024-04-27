@@ -17,9 +17,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.components.home.LawniconsSearchBar
-import app.lawnchair.lawnicons.ui.components.home.PlaceholderSearchBar
+import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
+import app.lawnchair.lawnicons.ui.components.home.search.PlaceholderSearchBar
+import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -37,6 +39,7 @@ fun Home(
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
     val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsState()
+    val searchMode = lawniconsViewModel.searchMode
     var searchTerm by rememberSaveable { mutableStateOf(value = "") }
 
     Crossfade(
@@ -68,7 +71,19 @@ fun Home(
                                 onNavigate = onNavigate,
                                 isExpandedScreen = isExpandedScreen,
                                 isIconPicker = isIconPicker,
-                                onSendResult = onSendResult,
+                                content = {
+                                    SearchContents(
+                                        searchTerm = searchTerm,
+                                        searchMode = searchMode,
+                                        onModeChange = {
+                                            lawniconsViewModel.changeMode(it)
+                                            // Refresh search results
+                                            lawniconsViewModel.searchIcons(searchTerm)
+                                        },
+                                        iconInfo = it.iconInfo,
+                                        onSendResult = onSendResult,
+                                    )
+                                },
                             )
                         }
                     }
@@ -85,7 +100,9 @@ fun Home(
                 }
             }
         } else {
-            PlaceholderSearchBar()
+            PlaceholderSearchBar(
+                isExpandedScreen = isExpandedScreen,
+            )
         }
     }
 }
@@ -109,9 +126,16 @@ private fun HomePreview() {
                 // No actual searching, this is just a preview
             },
             iconCount = 3,
-            iconInfo = iconInfo,
             onNavigate = {},
             isExpandedScreen = true,
+            content = {
+                SearchContents(
+                    "",
+                    SearchMode.NAME,
+                    {},
+                    iconInfo = iconInfo,
+                )
+            },
         )
         IconPreviewGrid(
             iconInfo = iconInfo,

@@ -15,7 +15,7 @@
     <string name="search_bar_choose_icon">Pick an icon</string>
 
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">No icons found</string>
+    <string name="no_items_found">%s not found</string>
 
     <!-- Popup menu in search bar -->
     <!-- Popup menu item that links to the Acknowledgements page -->
@@ -51,9 +51,13 @@
 
     <!-- Icon Information Popup window -->
 
+    <!-- Name -->
+    <string name="name">Name</string>
     <!-- Drawable prefix -->
     <string name="drawable">Drawable</string>
     <!-- Package prefix -->
-    <string name="package_prefix">Package</string>
+    <string name="package_prefix">Package name</string>
+
     <string name="about">About</string>
+    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
 </resources>

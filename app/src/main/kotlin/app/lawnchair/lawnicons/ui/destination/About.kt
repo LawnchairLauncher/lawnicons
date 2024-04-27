@@ -46,7 +46,7 @@ private val externalLinks = listOf(
         url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
-        iconResId = R.drawable.oxygen_updater_foreground,
+        iconResId = R.drawable.request_icons_icon,
         name = R.string.request_form,
         url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),
@@ -185,6 +185,15 @@ fun About(
                             socialUrl = it.socialUrl,
                         )
                     }
+                }
+            }
+            item {
+                Card(modifier = Modifier.padding(top = 16.dp)) {
+                    SimpleListRow(
+                        onClick = { onNavigate(Destinations.ACKNOWLEDGEMENTS) },
+                        label = stringResource(id = R.string.acknowledgements),
+                        divider = false,
+                    )
                 }
             }
         }

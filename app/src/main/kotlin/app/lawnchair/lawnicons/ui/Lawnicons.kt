@@ -1,6 +1,5 @@
 package app.lawnchair.lawnicons.ui
 
-import androidx.compose.animation.SizeTransform
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
@@ -53,7 +52,6 @@ fun Lawnicons(
                 exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
                 popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
-                sizeTransform = { SizeTransform() },
             ) {
                 composable(route = Destinations.HOME) {
                     Home(
