@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.search.PlaceholderSearchBar
@@ -38,6 +39,7 @@ fun Home(
 ) {
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsState()
     val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsState()
+    val searchMode = lawniconsViewModel.searchMode
     var searchTerm by rememberSaveable { mutableStateOf(value = "") }
 
     Crossfade(
@@ -70,7 +72,17 @@ fun Home(
                                 isExpandedScreen = isExpandedScreen,
                                 isIconPicker = isIconPicker,
                                 content = {
-                                    SearchContents(it.iconInfo, onSendResult)
+                                    SearchContents(
+                                        searchTerm = searchTerm,
+                                        searchMode = searchMode,
+                                        onModeChange = {
+                                            lawniconsViewModel.changeMode(it)
+                                            // Refresh search results
+                                            lawniconsViewModel.searchIcons(searchTerm)
+                                        },
+                                        iconInfo = it.iconInfo,
+                                        onSendResult = onSendResult
+                                    )
                                 }
                             )
                         }
@@ -117,7 +129,12 @@ private fun HomePreview() {
             onNavigate = {},
             isExpandedScreen = true,
             content = {
-                SearchContents(iconInfo = iconInfo)
+                SearchContents(
+                    "",
+                    SearchMode.NAME,
+                    {},
+                    iconInfo = iconInfo,
+                )
             },
         )
         IconPreviewGrid(

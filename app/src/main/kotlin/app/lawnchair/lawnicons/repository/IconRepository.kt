@@ -4,6 +4,7 @@ import android.app.Application
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchInfo
+import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.util.getIconInfo
 import javax.inject.Inject
 import kotlinx.collections.immutable.toPersistentList
@@ -38,14 +39,23 @@ class IconRepository @Inject constructor(application: Application) {
         }
     }
 
-    suspend fun search(query: String) = withContext(Dispatchers.Default) {
+    suspend fun search(
+        mode: SearchMode,
+        query: String
+    ) = withContext(Dispatchers.Default) {
         searchedIconInfoModel.value = iconInfo?.let {
             val filtered = it.mapNotNull { candidate ->
+                val searchIn =
+                    when (mode) {
+                        SearchMode.NAME -> candidate.name
+                        SearchMode.PACKAGE_NAME -> candidate.packageName
+                        SearchMode.DRAWABLE -> candidate.drawableName
+                    }
                 val indexOfMatch =
-                    candidate.name.indexOf(string = query, ignoreCase = true).also { index ->
+                    searchIn.indexOf(string = query, ignoreCase = true).also { index ->
                         if (index == -1) return@mapNotNull null
                     }
-                val matchAtWordStart = indexOfMatch == 0 || candidate.name[indexOfMatch - 1] == ' '
+                val matchAtWordStart = indexOfMatch == 0 || searchIn[indexOfMatch - 1] == ' '
                 SearchInfo(
                     iconInfo = candidate,
                     indexOfMatch = indexOfMatch,

@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfoModel
+import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Destinations
@@ -284,7 +285,12 @@ private fun SearchBarPreview() {
             onNavigate = {},
             isExpandedScreen = true,
             content = {
-                SearchContents(iconInfo)
+                SearchContents(
+                    "",
+                    SearchMode.NAME,
+                    {},
+                    iconInfo
+                )
             },
         )
     }

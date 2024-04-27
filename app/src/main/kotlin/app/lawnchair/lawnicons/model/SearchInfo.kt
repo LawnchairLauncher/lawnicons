@@ -5,3 +5,9 @@ data class SearchInfo(
     val indexOfMatch: Int,
     val matchAtWordStart: Boolean,
 )
+
+enum class SearchMode {
+    NAME,
+    PACKAGE_NAME,
+    DRAWABLE
+}
