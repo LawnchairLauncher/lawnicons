@@ -2,7 +2,7 @@ package app.lawnchair.lawnicons.ui.components.core
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LargeTopAppBar
 import androidx.compose.material3.Text
@@ -22,10 +22,12 @@ fun TopAppBar(
     navigationIcon: @Composable () -> Unit,
     scrollBehavior: TopAppBarScrollBehavior,
     title: String,
+    modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
 ) {
     if (!isExpandedScreen) {
         LargeTopAppBar(
+            modifier = modifier,
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
@@ -34,6 +36,7 @@ fun TopAppBar(
         )
     } else {
         TopAppBar(
+            modifier = modifier,
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
@@ -52,7 +55,7 @@ private fun SmallTopAppBarPreview() {
             navigationIcon = {
                 ClickableIcon(
                     onClick = {},
-                    imageVector = Icons.Rounded.ArrowBack,
+                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                     size = 40.dp,
                     modifier = Modifier.padding(horizontal = 4.dp),
                 )
@@ -73,7 +76,7 @@ private fun LargeTopAppBarPreview() {
             navigationIcon = {
                 ClickableIcon(
                     onClick = {},
-                    imageVector = Icons.Rounded.ArrowBack,
+                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                     size = 40.dp,
                     modifier = Modifier.padding(horizontal = 4.dp),
                 )

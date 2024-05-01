@@ -11,15 +11,13 @@
     <string name="search_bar_hint">Rechercher parmi %d icônes</string>
 
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">Aucune icône trouvée.</string>
+    <string name="no_items_found">Aucune icône trouvée</string>
 
     <!-- Popup menu in search bar -->
     <!-- Popup menu item that links to the Acknowledgements page -->
     <string name="acknowledgements">Mentions légales</string>
     <!-- Popup menu item that links to the About page -->
     <string name="about">À propos</string>
-    <!-- External Links label -->
-    <string name="external_links">Liens externes</string>
 
     <!-- External Links labels -->
     <!-- Icon Request form link -->
@@ -49,9 +47,7 @@
     <!-- Icon Information Popup window -->
 
     <!-- Drawable prefix -->
-    <string name="drawable_prefix">Élément graphique:</string>
     <!-- Package prefix -->
-    <string name="package_prefix">Application:</string>
-
-
+    <string name="drawable">Élément graphique</string>
+    <string name="package_prefix">Application</string>
 </resources>

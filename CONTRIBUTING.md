@@ -4,14 +4,16 @@ Welcome to the Lawnicons contributing guide! This file will tell you what you ne
 Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. Afterwards, you can either contribute icons or code.
 
 ## Contributing icons
-To contribute icons, you only need an icon editor, a file explorer, a text editor, and a terminal window.
+To contribute icons, you need an icon editor (e.g., Figma, Inkscape, etc), a file explorer, a text editor, and a terminal window.
 
 For additional information on designing icons and samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
 
 Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
 
-### TL;DR
-The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Maintain visual balance. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
+### TL;DR on icon design
+The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid blackness, close distances between strokes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
+
+To avoid rework, save time and understand the limitations of the guidelines, it is worth reading reviews (e.g., [+8 icons, +1 link, +4 updates](https://github.com/LawnchairLauncher/lawnicons/pull/1865)) and creating 5-10 icons in the first contribution.
 
 ### Canvas & Sizes
 
@@ -89,14 +91,14 @@ Wrong
 Correct
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If the app name has letters that aren't in English and it doesn't have an English localization, then you need to properly transliterate the name into English.
+If there are letters in the first `3` characters of the app name that aren't in English, then it's worth adding the name transliterated into English.
 ```
 Wrong
-<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card" />
+<item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
 ```
 ```
 Correct
-<item component="..." drawable="otp_szep_card" name="OTP SZÉP Card ~~ OTP SZEP Card" />
+<item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
 ```
 ### Drawable
 Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
@@ -113,7 +115,7 @@ Correct
 Here's how to add an icon to Lawnicons:
 
 ### Prerequesties
-* Your icon in the SVG format, adhering to the [above guidelines](#icon-guidelines). The filename must use snake case (e.g. `files_by_google.svg`).
+* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `files_by_google.svg`).
 * The package and activity name of the app.
 
 ### Via `icontool.py`
@@ -160,9 +162,9 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 ### Using 3rd-party apps
 #### IconRequest app
 
-1. Download the [IconRequest app](https://github.com/Kaiserdragon2/IconRequest/releases).
-2. Launch the app and click one of the options:
-- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/FL_Oh), 25s video.
+1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
+2. Launch IconRequest and tap one of the options:
+- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/u_MBz), 22s video.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
 3. Select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.
