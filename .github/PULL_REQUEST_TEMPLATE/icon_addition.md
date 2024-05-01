@@ -20,5 +20,5 @@ App Name (`com.package.app`)
 App Name (`com.package.app`)
 
 ## Contributor's checklist
-<!-- If you think that everything is correct, then after creating the pull request, click on the checkbox or replace [ ] with [x]. -->
+<!-- If you think that everything is correct, then replace [ ] with [x] or click on the checkbox after creating the pull request. -->
 - [ ] I followed [the Lawnicons Guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) and will make changes if someone suggests. I will also make sure that Lawnicons builds correctly.
