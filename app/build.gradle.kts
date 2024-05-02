@@ -147,7 +147,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core-android:1.6.6")
     implementation("androidx.compose.material3:material3:1.3.0-alpha05")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.8.0-alpha07")
+    implementation("androidx.navigation:navigation-compose:2.8.0-alpha08")
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
