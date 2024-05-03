@@ -2,8 +2,7 @@
 <!-- Please provide a short summary of your pull request. -->
 
 ## Icons addition information
-<!-- Please specify the apps and packages you have worked on. Unnecessary sections can be deleted. -->
-
+<!-- Please specify in the sections below which applications and packages you have worked on. Unnecessary sections can be deleted. -->
 ### Added
 <!--  Apps for which you add icons. -->
 App Name (`com.package.app`)
