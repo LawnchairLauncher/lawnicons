@@ -58,10 +58,10 @@ fun LawniconsSearchBar(
     onQueryChange: (String) -> Unit,
     iconInfoModel: IconInfoModel,
     onNavigate: (String) -> Unit,
-    content: @Composable (() -> Unit),
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
+    content: @Composable (() -> Unit),
 ) {
     LawniconsSearchBar(
         query = query,
@@ -85,10 +85,10 @@ fun LawniconsSearchBar(
     onQueryChange: (String) -> Unit,
     iconCount: Int,
     onNavigate: (String) -> Unit,
-    content: @Composable (() -> Unit),
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
+    content: @Composable (() -> Unit),
 ) {
     var active by rememberSaveable { mutableStateOf(false) }
 
