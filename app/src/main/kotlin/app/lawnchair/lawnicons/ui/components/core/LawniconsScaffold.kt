@@ -65,7 +65,9 @@ fun LawniconsScaffold(
                     Modifier
                 },
             ),
-        ) { content(it) }
+        ) {
+            content(it)
+        }
     }
 }
 

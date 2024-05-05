@@ -21,7 +21,7 @@ If you are interested in creating icons, then we invite you to fulfill [popular 
 Need help? [Join us on Discord](https://discord.gg/3x8qNWxgGZ).
 
 ## Requesting icons
-Please use the [icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). To wait for icons much less, you can take into account our guidelines and make the icons you need yourself. If a previously added icon has a design change, create an [issue](https://github.com/LawnchairLauncher/lawnicons/issues). 
+Please use [the icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). To wait for icons much less, you can take into account our guidelines and make the icons you need yourself. If a previously added icon has a design change, create [an issue](https://github.com/LawnchairLauncher/lawnicons/issues). 
 
 
 

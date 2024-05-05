@@ -30,10 +30,12 @@ Square icons must fit the `154×154px` content area size. Icons that mostly fit 
 
 ![](docs/images/creating-icons-2-foundation.png)
 
+#### Color
+All shapes must have non-transparent black color `#000000`.
 #### Stroke widths
 The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/x9136/lawnicons/blob/addate/CONTRIBUTING.md#maintaining-visual-balance) down below.
-#### Color and end caps
-All shapes must have non-transparent black color `#000000`, rounded caps and joins.
+#### End caps
+All shapes must have rounded caps and joins.
 #### Corner radius
 Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when the others spoil the shape: for example, when a right angle is formed of short lines.
 
@@ -164,7 +166,7 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 
 1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
 2. Launch IconRequest and tap one of the options:
-- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/FL_Oh), 25s video.
+- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/u_MBz), 22s video.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
 3. Select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.

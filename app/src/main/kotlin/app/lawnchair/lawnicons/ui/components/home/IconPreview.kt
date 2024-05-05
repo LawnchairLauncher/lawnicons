@@ -23,6 +23,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -41,9 +42,12 @@ private fun ColorScheme.iconColor(): Color {
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
+    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
+    isIconPicker: Boolean = false,
 ) {
+    val context = LocalContext.current
     val isIconInfoShown = remember { mutableStateOf(false) }
 
     Box(
@@ -52,7 +56,15 @@ fun IconPreview(
             .padding(all = 8.dp)
             .aspectRatio(ratio = 1F)
             .clip(shape = CircleShape)
-            .clickable(onClick = { isIconInfoShown.value = true })
+            .clickable(
+                onClick = {
+                    if (isIconPicker) {
+                        onSendResult(iconInfo)
+                    } else {
+                        isIconInfoShown.value = true
+                    }
+                },
+            )
             .background(
                 color = iconBackground ?: if (isIconInfoShown.value) {
                     MaterialTheme.colorScheme.surfaceVariant
@@ -106,6 +118,7 @@ private fun IconPreviewComposablePreview() {
     LawniconsTheme {
         IconPreview(
             iconInfo = SampleData.iconInfoSample,
+            {},
         )
     }
 }
