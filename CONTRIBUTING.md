@@ -112,6 +112,15 @@ Wrong
 Correct
 <item component="..." drawable="my_vodafone" name="My Vodafone ~~ MeinVodafone" />
 ```
+If the app name starts with a digit, then the drawable should start with `_`.
+```
+Wrong
+<item component="..." drawable="ninegag" name="9GAG" />
+```
+```
+Correct
+<item component="..." drawable="_9gag" name="9GAG" />
+```
 
 ## Adding an icon to Lawnicons
 Here's how to add an icon to Lawnicons:
