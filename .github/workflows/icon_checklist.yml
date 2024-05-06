@@ -6,7 +6,6 @@ on:
       types: [opened]
       paths:
         - svgs/*
-        - app/assets/appfilter.xml
 
 jobs:
   comment:
