@@ -1,0 +1,28 @@
+name: Comment icon checklist
+
+on:
+    pull_request:
+      branches: [develop]
+      types: [opened]
+      paths:
+        - svgs/*
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Comment on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const ICON_CHECKLIST = fs.readFileSync('.github/icon_checklist.md', 'utf8');
+            const issue = { owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number };
+            await github.rest.issues.createComment({
+              ...issue,
+              body: ICON_CHECKLIST
+            });
+ 
