@@ -1,4 +1,6 @@
-Hey! Thanks for the contribution. While there is no reviewer, you can do a self-review. This will help to fix the reasons why the icons may not be suitable for Lawnicons. 
+Thanks for your contribution!
+
+While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons.
 
 ### Canvas and sizes [→](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#canvas--sizes)
 1. Canvas: `192×192px`.
@@ -11,14 +13,14 @@ Hey! Thanks for the contribution. While there is no reviewer, you can do a self-
 3. Rounded ends and joins. 90° corners are rounded by `6-32px`.
 
 ### Naming [→](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#naming)
-1. Names should match the official ones and contain no additional text.
+1. Names should match the official app name and contain no additional text.
 2. If the original name is not in English, then add a localized (or transliterated) one to it using `~~`.
 Example: `フールー ~~ Hulu`.
 3. The names of the drawables should repeat the names of the apps if nothing prevents it.
 
 ### Quality [→](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#details)
-1. Icons should be easily recognizable.
+1. Ensure that icons are easily recognizable.
 2. Align icons to [the visual center](https://www.google.com/search?sca_esv=1fcec3f5e0b15e20&q=what+is+visual+center+of+an+icon&tbm=isch&source=lnms).
-3. No blackness. Reduce the stroke width or simplify the icons so that there are no noticeable black spots.
+3. Avoid blackness or noticable black spots by reducing the stroke width or simplifying the icons.
 4. Avoid close distances between strokes. The icons on the phone screen will be smaller, so the small distances between the strokes will stick together.
 5. Avoid drastic changes in stroke widths. When the strokes next to each other differ in width by 4px or more, the icon will look sloppy.
