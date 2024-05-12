@@ -24,5 +24,3 @@ Example: `フールー ~~ Hulu`.
 3. Avoid blackness or noticable black spots by reducing the stroke width or simplifying the icons.
 4. Avoid close distances between strokes. The icons on the phone screen will be smaller, so the small distances between the strokes will stick together.
 5. Avoid drastic changes in stroke widths. When the strokes next to each other differ in width by 4px or more, the icon will look sloppy.
-
-[The Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md)
