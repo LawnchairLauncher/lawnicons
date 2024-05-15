@@ -7,13 +7,13 @@ import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -28,7 +28,7 @@ fun Acknowledgements(
     modifier: Modifier = Modifier,
     acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
 ) {
-    val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsState()
+    val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsStateWithLifecycle()
 
     LawniconsScaffold(
         modifier = modifier,
