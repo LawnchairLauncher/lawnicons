@@ -1,11 +1,11 @@
 package app.lawnchair.lawnicons.repository
 
 import android.app.Application
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchInfo
 import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.util.getIconInfo
+import app.lawnchair.lawnicons.util.getIconInfoAppfilter
 import javax.inject.Inject
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.CoroutineScope
@@ -16,14 +16,14 @@ import kotlinx.coroutines.withContext
 
 class IconRepository @Inject constructor(application: Application) {
 
-    private var iconInfo: List<IconInfo>? = null
+    private var iconInfo: List<IconInfoAppfilter>? = null
     val iconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     val searchedIconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     init {
         coroutineScope.launch {
-            iconInfo = application.getIconInfo()
+            iconInfo = application.getIconInfoAppfilter()
                 .associateBy { it.name }.values
                 .sortedBy { it.name.lowercase() }
                 .also {
@@ -48,7 +48,7 @@ class IconRepository @Inject constructor(application: Application) {
                 val searchIn =
                     when (mode) {
                         SearchMode.NAME -> candidate.name
-                        SearchMode.PACKAGE_NAME -> candidate.packageName
+                        SearchMode.PACKAGE_NAME -> candidate.componentName
                         SearchMode.DRAWABLE -> candidate.drawableName
                     }
                 val indexOfMatch =

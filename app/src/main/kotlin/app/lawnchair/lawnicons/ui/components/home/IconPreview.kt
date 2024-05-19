@@ -23,11 +23,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.compositeOver
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -41,13 +40,12 @@ private fun ColorScheme.iconColor(): Color {
 
 @Composable
 fun IconPreview(
-    iconInfo: IconInfo,
-    onSendResult: (IconInfo) -> Unit,
+    iconInfo: IconInfoAppfilter,
+    onSendResult: (IconInfoAppfilter) -> Unit,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
     isIconPicker: Boolean = false,
 ) {
-    val context = LocalContext.current
     val isIconInfoShown = remember { mutableStateOf(false) }
 
     Box(

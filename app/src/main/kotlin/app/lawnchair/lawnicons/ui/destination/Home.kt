@@ -16,7 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
@@ -31,7 +31,7 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
-    onSendResult: (IconInfo) -> Unit,
+    onSendResult: (IconInfoAppfilter) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
@@ -46,8 +46,8 @@ fun Home(
         modifier = modifier,
         targetState = iconInfoModel != null,
         label = "",
-    ) { targetState ->
-        if (targetState) {
+    ) { visible ->
+        if (visible) {
             Scaffold(
                 topBar = {
                     searchedIconInfoModel?.let {
@@ -77,6 +77,8 @@ fun Home(
                                         searchMode = searchMode,
                                         onModeChange = {
                                             lawniconsViewModel.changeMode(it)
+                                            // Clear search results
+                                            lawniconsViewModel.searchIcons("")
                                             // Refresh search results
                                             lawniconsViewModel.searchIcons(searchTerm)
                                         },
@@ -90,7 +92,7 @@ fun Home(
                 },
             ) { contentPadding ->
                 iconInfoModel?.let {
-                    val padding = contentPadding
+                    val padding = contentPadding // Ignore padding value
                     IconPreviewGrid(
                         iconInfo = it.iconInfo,
                         isExpandedScreen = isExpandedScreen,

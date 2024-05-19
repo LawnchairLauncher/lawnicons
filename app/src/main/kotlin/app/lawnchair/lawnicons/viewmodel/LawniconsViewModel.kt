@@ -14,8 +14,9 @@ import kotlinx.coroutines.launch
 @HiltViewModel
 class LawniconsViewModel @Inject constructor(private val iconRepository: IconRepository) :
     ViewModel() {
-
+    @JvmField
     val iconInfoModel = iconRepository.iconInfoModel
+    @JvmField
     val searchedIconInfoModel = iconRepository.searchedIconInfoModel
     var searchMode by mutableStateOf(SearchMode.NAME)
         private set

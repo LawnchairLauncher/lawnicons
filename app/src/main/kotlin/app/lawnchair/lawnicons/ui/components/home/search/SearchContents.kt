@@ -36,7 +36,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
@@ -47,9 +47,9 @@ fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
-    iconInfo: ImmutableList<IconInfo>,
+    iconInfo: ImmutableList<IconInfoAppfilter>,
     modifier: Modifier = Modifier,
-    onSendResult: (IconInfo) -> Unit = {},
+    onSendResult: (IconInfoAppfilter) -> Unit = {},
 ) {
     Column(
         modifier = modifier,
@@ -123,11 +123,11 @@ fun SearchContents(
                         verticalArrangement = Arrangement.spacedBy(4.dp),
                     ) {
                         val it = iconInfo[0]
-                        val isIconInfoShown = remember { mutableStateOf(false) }
+                        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
 
                         ListItem(
                             headlineContent = { Text(it.name) },
-                            supportingContent = { Text(it.packageName) },
+                            supportingContent = { Text(it.componentName) },
                             leadingContent = {
                                 Box(
                                     contentAlignment = Alignment.Center,
@@ -145,13 +145,13 @@ fun SearchContents(
                             },
                             modifier = Modifier
                                 .clip(RoundedCornerShape(16.dp))
-                                .clickable(onClick = { isIconInfoShown.value = true }),
+                                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
                         )
-                        if (isIconInfoShown.value) {
+                        if (isIconInfoAppfilterShown.value) {
                             IconInfoPopup(
                                 iconInfo = it,
                             ) {
-                                isIconInfoShown.value = it
+                                isIconInfoAppfilterShown.value = it
                             }
                         }
                     }
