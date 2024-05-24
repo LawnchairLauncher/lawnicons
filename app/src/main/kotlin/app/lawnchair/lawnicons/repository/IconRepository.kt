@@ -117,5 +117,3 @@ class IconRepository @Inject constructor(application: Application) {
         }
     }
 }
-
-
