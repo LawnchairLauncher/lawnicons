@@ -18,6 +18,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
+import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.search.PlaceholderSearchBar
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
@@ -36,68 +37,74 @@ fun Home(
     isIconPicker: Boolean = false,
     lawniconsViewModel: LawniconsViewModel = hiltViewModel(),
 ) {
-    val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsStateWithLifecycle()
-    val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsStateWithLifecycle()
-    val searchMode = lawniconsViewModel.searchMode
-    val searchTerm = lawniconsViewModel.searchTerm
+    with(lawniconsViewModel) {
+        val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()
+        val searchedIconInfoModel by searchedIconInfoModel.collectAsStateWithLifecycle()
+        val iconRequestModel by iconRequestList.collectAsStateWithLifecycle()
+        val searchMode = searchMode
+        val searchTerm = searchTerm
 
-    Crossfade(
-        modifier = modifier,
-        targetState = iconInfoModel != null,
-        label = "",
-    ) { visible ->
-        if (visible) {
-            Scaffold(
-                topBar = {
-                    searchedIconInfoModel?.let {
-                        Column(
-                            modifier = Modifier.fillMaxWidth(),
-                            verticalArrangement = Arrangement.Center,
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                        ) {
-                            LawniconsSearchBar(
-                                query = searchTerm,
-                                isQueryEmpty = searchTerm == "",
-                                onClearAndBackClick = {
-                                    lawniconsViewModel.clearSearch()
-                                },
-                                onQueryChange = { newValue ->
-                                    lawniconsViewModel.searchIcons(newValue)
-                                },
-                                iconInfoModel = it,
-                                onNavigate = onNavigate,
-                                isExpandedScreen = isExpandedScreen,
-                                isIconPicker = isIconPicker,
-                                content = {
-                                    SearchContents(
-                                        searchTerm = searchTerm,
-                                        searchMode = searchMode,
-                                        onModeChange = { mode ->
-                                            lawniconsViewModel.changeMode(mode)
-                                        },
-                                        iconInfo = it.iconInfo,
-                                        onSendResult = onSendResult,
-                                    )
-                                },
-                            )
+        Crossfade(
+            modifier = modifier,
+            targetState = iconInfoModel != null,
+            label = "",
+        ) { visible ->
+            if (visible) {
+                Scaffold(
+                    topBar = {
+                        searchedIconInfoModel?.let {
+                            Column(
+                                modifier = Modifier.fillMaxWidth(),
+                                verticalArrangement = Arrangement.Center,
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                            ) {
+                                LawniconsSearchBar(
+                                    query = searchTerm,
+                                    isQueryEmpty = searchTerm == "",
+                                    onClearAndBackClick = {
+                                        lawniconsViewModel.clearSearch()
+                                    },
+                                    onQueryChange = { newValue ->
+                                        lawniconsViewModel.searchIcons(newValue)
+                                    },
+                                    iconInfoModel = it,
+                                    onNavigate = onNavigate,
+                                    isExpandedScreen = isExpandedScreen,
+                                    isIconPicker = isIconPicker,
+                                    content = {
+                                        SearchContents(
+                                            searchTerm = searchTerm,
+                                            searchMode = searchMode,
+                                            onModeChange = { mode ->
+                                                lawniconsViewModel.changeMode(mode)
+                                            },
+                                            iconInfo = it.iconInfo,
+                                            onSendResult = onSendResult,
+                                        )
+                                    },
+                                )
+                            }
                         }
+                    },
+                    floatingActionButton = {
+                        IconRequestFAB(iconRequestModel)
+                    },
+                ) { contentPadding ->
+                    iconInfoModel?.let {
+                        val padding = contentPadding // Ignore padding value
+                        IconPreviewGrid(
+                            iconInfo = it.iconInfo,
+                            isExpandedScreen = isExpandedScreen,
+                            isIconPicker = isIconPicker,
+                            onSendResult = onSendResult,
+                        )
                     }
-                },
-            ) { contentPadding ->
-                iconInfoModel?.let {
-                    val padding = contentPadding // Ignore padding value
-                    IconPreviewGrid(
-                        iconInfo = it.iconInfo,
-                        isExpandedScreen = isExpandedScreen,
-                        isIconPicker = isIconPicker,
-                        onSendResult = onSendResult,
-                    )
                 }
+            } else {
+                PlaceholderSearchBar(
+                    isExpandedScreen = isExpandedScreen,
+                )
             }
-        } else {
-            PlaceholderSearchBar(
-                isExpandedScreen = isExpandedScreen,
-            )
         }
     }
 }
