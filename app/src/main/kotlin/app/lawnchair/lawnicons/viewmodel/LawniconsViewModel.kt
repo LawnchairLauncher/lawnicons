@@ -16,6 +16,7 @@ class LawniconsViewModel @Inject constructor(private val iconRepository: IconRep
     ViewModel() {
     @JvmField
     val iconInfoModel = iconRepository.iconInfoModel
+
     @JvmField
     val searchedIconInfoModel = iconRepository.searchedIconInfoModel
 

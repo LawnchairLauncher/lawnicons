@@ -58,7 +58,7 @@ class AcknowledgementViewModel @Inject constructor(
                     start = start,
                     end = end,
                 )
-        }
+            }
         }
     }
 }

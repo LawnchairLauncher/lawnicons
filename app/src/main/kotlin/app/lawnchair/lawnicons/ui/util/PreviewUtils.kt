@@ -3,7 +3,6 @@ package app.lawnchair.lawnicons.ui.util
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
-import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import kotlinx.collections.immutable.persistentListOf
 

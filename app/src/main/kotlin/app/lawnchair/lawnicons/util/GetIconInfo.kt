@@ -9,7 +9,7 @@ import org.xmlpull.v1.XmlPullParser
 
 @Deprecated(
     message = "Use appfilter implementation instead.",
-    replaceWith = ReplaceWith("getIconInfoAppfilter", "app.lawnchair.lawnicons.util.getIconInfoAppfilter")
+    replaceWith = ReplaceWith("getIconInfoAppfilter", "app.lawnchair.lawnicons.util.getIconInfoAppfilter"),
 )
 fun Context.getIconInfo(): List<IconInfo> {
     val iconInfo = mutableListOf<IconInfo>()
@@ -69,10 +69,9 @@ fun Context.getIconInfoAppfilter(): List<IconInfoAppfilter> {
                 if ("item" == parser.name) {
                     if (
                         parser.getAttributeBooleanValue(null, "drawableIgnore", false)
-                        ) {
+                    ) {
                         continue
                     }
-
 
                     val component = parser.getAttributeValue(null, "component")
                     val iconName = parser.getAttributeValue(null, "name")

@@ -76,6 +76,7 @@ fun LawniconsSearchBar(
         isIconPicker = isIconPicker,
     )
 }
+
 /**
  * Composable function to create a search bar for the Lawnicons app.
  *
