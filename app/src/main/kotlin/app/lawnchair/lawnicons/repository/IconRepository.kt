@@ -75,4 +75,8 @@ class IconRepository @Inject constructor(application: Application) {
             )
         }
     }
+
+    fun clear() {
+        searchedIconInfoModel.value = iconInfoModel.value
+    }
 }

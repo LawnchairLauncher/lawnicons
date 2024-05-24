@@ -18,16 +18,34 @@ class LawniconsViewModel @Inject constructor(private val iconRepository: IconRep
     val iconInfoModel = iconRepository.iconInfoModel
     @JvmField
     val searchedIconInfoModel = iconRepository.searchedIconInfoModel
-    var searchMode by mutableStateOf(SearchMode.NAME)
-        private set
+
+    private var _searchMode by mutableStateOf(SearchMode.NAME)
+    private var _searchTerm by mutableStateOf("")
+
+    val searchMode: SearchMode
+        get() = _searchMode
+
+    val searchTerm: String
+        get() = _searchTerm
 
     fun searchIcons(query: String) {
+        _searchTerm = query
         viewModelScope.launch {
-            iconRepository.search(searchMode, query)
+            iconRepository.search(searchMode, searchTerm)
         }
     }
 
     fun changeMode(mode: SearchMode) {
-        this.searchMode = mode
+        _searchMode = mode
+        viewModelScope.launch {
+            iconRepository.search(searchMode, searchTerm)
+        }
+    }
+
+    fun clearSearch() {
+        _searchTerm = ""
+        viewModelScope.launch {
+            iconRepository.clear()
+        }
     }
 }

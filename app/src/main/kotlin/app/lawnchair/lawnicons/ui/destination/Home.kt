@@ -40,7 +40,7 @@ fun Home(
     val iconInfoModel by lawniconsViewModel.iconInfoModel.collectAsStateWithLifecycle()
     val searchedIconInfoModel by lawniconsViewModel.searchedIconInfoModel.collectAsStateWithLifecycle()
     val searchMode = lawniconsViewModel.searchMode
-    var searchTerm by rememberSaveable { mutableStateOf(value = "") }
+    val searchTerm = lawniconsViewModel.searchTerm
 
     Crossfade(
         modifier = modifier,
@@ -60,11 +60,9 @@ fun Home(
                                 query = searchTerm,
                                 isQueryEmpty = searchTerm == "",
                                 onClearAndBackClick = {
-                                    searchTerm = ""
-                                    lawniconsViewModel.searchIcons("")
+                                    lawniconsViewModel.clearSearch()
                                 },
                                 onQueryChange = { newValue ->
-                                    searchTerm = newValue
                                     lawniconsViewModel.searchIcons(newValue)
                                 },
                                 iconInfoModel = it,
@@ -75,12 +73,8 @@ fun Home(
                                     SearchContents(
                                         searchTerm = searchTerm,
                                         searchMode = searchMode,
-                                        onModeChange = {
-                                            lawniconsViewModel.changeMode(it)
-                                            // Clear search results
-                                            lawniconsViewModel.searchIcons("")
-                                            // Refresh search results
-                                            lawniconsViewModel.searchIcons(searchTerm)
+                                        onModeChange = { mode ->
+                                            lawniconsViewModel.changeMode(mode)
                                         },
                                         iconInfo = it.iconInfo,
                                         onSendResult = onSendResult,
