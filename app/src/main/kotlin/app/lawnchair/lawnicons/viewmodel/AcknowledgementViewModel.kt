@@ -23,6 +23,8 @@ class AcknowledgementViewModel @Inject constructor(
 ) :
     ViewModel() {
 
+    val ossLibraries = ossLibraryRepository.ossLibraries
+
     fun getNoticeForOssLibrary(
         ossLibraryName: String,
         linkStyle: SpanStyle,
@@ -56,7 +58,7 @@ class AcknowledgementViewModel @Inject constructor(
                     start = start,
                     end = end,
                 )
-            }
+        }
         }
     }
 }

@@ -18,7 +18,7 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.util.Destinations
-import app.lawnchair.lawnicons.viewmodel.AcknowledgementsViewModel
+import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 
 @Composable
 fun Acknowledgements(
@@ -26,7 +26,7 @@ fun Acknowledgements(
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
-    acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
+    acknowledgementsViewModel: AcknowledgementViewModel = hiltViewModel(),
 ) {
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsStateWithLifecycle()
 
