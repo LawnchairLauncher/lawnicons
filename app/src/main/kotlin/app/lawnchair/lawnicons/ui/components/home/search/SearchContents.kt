@@ -4,6 +4,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,6 +17,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -36,7 +38,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
@@ -47,16 +49,18 @@ fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
-    iconInfo: ImmutableList<IconInfo>,
+    iconInfo: ImmutableList<IconInfoAppfilter>,
     modifier: Modifier = Modifier,
-    onSendResult: (IconInfo) -> Unit = {},
+    onSendResult: (IconInfoAppfilter) -> Unit = {},
 ) {
     Column(
         modifier = modifier,
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.padding(start = 16.dp),
+            modifier = Modifier
+                .horizontalScroll(rememberScrollState())
+                .padding(start = 16.dp, end = 16.dp, top = 8.dp),
         ) {
             FilterChip(
                 leadingIcon = {
@@ -123,11 +127,11 @@ fun SearchContents(
                         verticalArrangement = Arrangement.spacedBy(4.dp),
                     ) {
                         val it = iconInfo[0]
-                        val isIconInfoShown = remember { mutableStateOf(false) }
+                        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
 
                         ListItem(
                             headlineContent = { Text(it.name) },
-                            supportingContent = { Text(it.packageName) },
+                            supportingContent = { Text(it.componentName) },
                             leadingContent = {
                                 Box(
                                     contentAlignment = Alignment.Center,
@@ -145,13 +149,13 @@ fun SearchContents(
                             },
                             modifier = Modifier
                                 .clip(RoundedCornerShape(16.dp))
-                                .clickable(onClick = { isIconInfoShown.value = true }),
+                                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
                         )
-                        if (isIconInfoShown.value) {
+                        if (isIconInfoAppfilterShown.value) {
                             IconInfoPopup(
                                 iconInfo = it,
                             ) {
-                                isIconInfoShown.value = it
+                                isIconInfoAppfilterShown.value = it
                             }
                         }
                     }

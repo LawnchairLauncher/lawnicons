@@ -46,7 +46,7 @@ private val externalLinks = listOf(
         url = "https://github.com/LawnchairLauncher/lawnicons",
     ),
     ExternalLink(
-        iconResId = R.drawable.request_icons_icon,
+        iconResId = R.drawable.icon_request_app,
         name = R.string.request_form,
         url = "https://forms.gle/xt7sJhgWEasuo9TR9",
     ),

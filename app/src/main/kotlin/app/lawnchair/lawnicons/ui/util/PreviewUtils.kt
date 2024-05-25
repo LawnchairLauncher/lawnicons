@@ -3,7 +3,7 @@ package app.lawnchair.lawnicons.ui.util
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import kotlinx.collections.immutable.persistentListOf
 
 @Preview(
@@ -31,29 +31,29 @@ import kotlinx.collections.immutable.persistentListOf
 annotation class PreviewLawnicons
 
 object SampleData {
-    val iconInfoSample = IconInfo(
+    val iconInfoSample = IconInfoAppfilter(
         name = "Email",
         drawableName = "@drawable/email",
-        packageName = "com.android.email",
+        componentName = "com.android.email",
         id = 1,
     )
     val iconInfoList = persistentListOf(
-        IconInfo(
+        IconInfoAppfilter(
             name = "Email",
             drawableName = "@drawable/email",
-            packageName = "com.android.email",
+            componentName = "com.android.email",
             id = 1,
         ),
-        IconInfo(
+        IconInfoAppfilter(
             name = "Search",
             drawableName = "@drawable/search",
-            packageName = "com.android.search",
+            componentName = "com.android.search",
             id = 2,
         ),
-        IconInfo(
+        IconInfoAppfilter(
             name = "Phone",
             drawableName = "@drawable/phone",
-            packageName = "com.android.phone",
+            componentName = "com.android.phone",
             id = 3,
         ),
     )

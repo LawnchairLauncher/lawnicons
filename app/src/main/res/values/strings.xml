@@ -5,6 +5,8 @@
     <string name="app_name" translatable="false">Lawnicons</string>
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Version %s</string>
+    <!-- Icon request info -->
+    <string name="unthemed_icons_info">Request %1$s unthemed icons</string>
 
     <!-- Search bar -->
 
@@ -17,12 +19,8 @@
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">%s not found</string>
 
-    <!-- Popup menu in search bar -->
-    <!-- Popup menu item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Acknowledgements</string>
-    <!-- Popup menu item that links to the About page -->
-
     <!-- About page -->
+    <string name="about">About</string>
 
     <!-- External Links -->
     <!-- GitHub repository link-->
@@ -49,6 +47,9 @@
     <!-- Subtitle displayed below the user who named the app -->
     <string name="special_thanks_name">For naming the app</string>
 
+    <!-- List item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Acknowledgements</string>
+
     <!-- Icon Information Popup window -->
 
     <!-- Name -->
@@ -56,8 +57,7 @@
     <!-- Drawable prefix -->
     <string name="drawable">Drawable</string>
     <!-- Package prefix -->
-    <string name="package_prefix">Package name</string>
-
-    <string name="about">About</string>
+    <string name="package_prefix">Component name</string>
+    <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
 </resources>

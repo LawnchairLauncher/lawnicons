@@ -77,6 +77,20 @@ fun LawniconsSearchBar(
     )
 }
 
+/**
+ * Composable function to create a search bar for the Lawnicons app.
+ *
+ * @param query The current search query entered by the user.
+ * @param isQueryEmpty A boolean value indicating whether the search query is empty.
+ * @param onClearAndBackClick A callback function that handles clearing the search query and navigating back.
+ * @param onQueryChange A callback function that handles changes in the search query.
+ * @param iconCount The number of icons available for selection.
+ * @param onNavigate A callback function that handles navigation to different screens based on the search query.
+ * @param modifier A modifier to customize the appearance or behavior of the search bar.
+ * @param isExpandedScreen A boolean value indicating whether the search bar is displayed on an expanded screen.
+ * @param isIconPicker A boolean value indicating whether the search bar is used for selecting icons.
+ * @param content A composable function that represents the content to be displayed within the search bar.
+ */
 @Composable
 fun LawniconsSearchBar(
     query: String,
