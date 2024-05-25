@@ -413,6 +413,7 @@
   <item component="ComponentInfo{com.gombosdev.ampere/com.gombosdev.ampere.MainActivity}" drawable="ampere" name="Ampere" />
   <item component="ComponentInfo{io.amuse.android/io.amuse.android.activities.MainActivity}" drawable="amuse" name="Amuse" />
   <item component="ComponentInfo{br.com.anatel.consumidor/br.com.anatel.consumidor.MainActivity}" drawable="anatel_consumidor" name="Anatel Consumidor" />
+  <item component="ComponentInfo{com.anb.mobile.prod/com.anb.mobile.prod.launcher_a6ddb73340946d2268639aee7b9f1f69ec008acffe6ed6baebde055bdc1844fd}" drawable="anb" name="البنك العربي الوطني ~~ Arab National Bank (ANB)" />
   <item component="ComponentInfo{telemoneyapp.anb.keystore/telemoneyapp.anb.keystore.launcher_2cfa478945145ffc9dff49d2d860c62dfd80892e28877b2ed1434c45f77637c8}" drawable="anb_telemoney" name="ANB Telemoney" />
   <item component="ComponentInfo{telemoneyapp.anb.keystore/telemoneyapp.anb.keystore.MainActivity}" drawable="anb_telemoney" name="ANB Telemoney" />
   <item component="ComponentInfo{net.bible.android.activity/net.bible.android.activity.StartupActivity}" drawable="bible_study" name="AndBible" />
@@ -7867,6 +7868,7 @@
   <item component="ComponentInfo{com.starfinanz.mobile.android.pushtan/com.starfinanz.mobile.android.pushtan.SPushTan}" drawable="s_pushtan" name="S-pushTAN" />
   <item component="ComponentInfo{com.starfinanz.mobile.android.pushtan/com.starfinanz.mobile.android.spushtan.SPushTan}" drawable="s_pushtan" name="S-pushTAN" />
   <item component="ComponentInfo{com.fsecure.ms.ssafe/com.fsecure.ui.main.MainNavigationActivity}" drawable="s_safe" name="S-SAFE" />
+  <item component="ComponentInfo{com.sabb.mobilebanking/com.sabb.mobilebanking.MainActivity}" drawable="hsbc" name="بنك ساب ~~ SAB Mobile" />
   <item component="ComponentInfo{com.adilhanney.saber/com.adilhanney.saber.MainActivity}" drawable="saber" name="Saber" />
   <item component="ComponentInfo{com.sadapay.app/com.sadapay.app.ui.main.MainActivity}" drawable="sadapay" name="SadaPay" />
   <item component="ComponentInfo{com.safeboda.passenger/com.safeboda.presentation.ui.splash.StartActivity}" drawable="safeboda" name="SafeBoda" />
@@ -7878,6 +7880,7 @@
   <item component="ComponentInfo{com.aefyr.sai.fdroid/com.aefyr.sai.ui.activities.MainActivity}" drawable="sai" name="SAI" />
   <item component="ComponentInfo{ani.saikou/ani.saikou.MainActivity}" drawable="saikou" name="Saikou" />
   <item component="ComponentInfo{ani.saikou.beta/ani.saikou.MainActivity}" drawable="saikou" name="Saikou Beta" />
+  <item component="ComponentInfo{com.masarat.salati/com.masarat.salati.ui.activities.MainActivity}" drawable="salatuk" name="صلاتك ~~ Salatuk" />
   <item component="ComponentInfo{com.salesforce.chatter/com.salesforce.chatter.Chatter}" drawable="salesforce" name="Salesforce" />
   <item component="ComponentInfo{com.salt.music/com.salt.music.ui.MainActivity}" drawable="salt_player" name="Salt Player" />
   <item component="ComponentInfo{com.rfi.sams.android/com.rfi.sams.android.main.SplashActivity}" drawable="sams_club" name="Sam's Club" />
@@ -11335,13 +11338,10 @@
   <item component="ComponentInfo{sa.gov.moi/com.elm.android.individual.RoutingActivity}" drawable="absher" name="أبشر ~~ Absher" />
   <item component="ComponentInfo{com.snb.alahlimobile/com.snb.alahlimobile.MainActivity}" drawable="snb_mobile" name="الأهلي موبايل ~~ SNB Mobile" />
   <item component="ComponentInfo{com.alinma.retail.mobile.v4/com.alinma.retail.mobile.v4.MainActivity}" drawable="alinma" name="الإنماء ~~ Alinma" />
-  <item component="ComponentInfo{com.anb.mobile.prod/com.anb.mobile.prod.launcher_a6ddb73340946d2268639aee7b9f1f69ec008acffe6ed6baebde055bdc1844fd}" drawable="anb" name="البنك العربي الوطني ~~ Arab National Bank (ANB)" />
-  <item component="ComponentInfo{com.anb.mobile.prod/com.anb.mobile.prod.launcher_a6ddb73340946d2268639aee7b9f1f69ec008acffe6ed6baebde055bdc1844fd}" drawable="anb" name="البنك العربي الوطني ~~ Arab National Bank (ANB)" />
   <item component="ComponentInfo{sa.com.se.alkahraba/sa.com.se.alkahraba.MainActivity}" drawable="alkahraba" name="الكهرباء ~~ Alkahraba" />
   <item component="ComponentInfo{com.edgineers.smc/crc6475b17315fd000a00.SplashActivity}" drawable="smc" name="المركز التخصصي الطبي ~~ Specialized Medical Center (SMC)" />
   <item component="ComponentInfo{com.nahdi.main/com.nahdi.main.presentation.ui.activity.splash.SplashActivity}" drawable="nahdi" name="النهدي ~~ Nahdi" />
   <item component="ComponentInfo{com.todoorstep.store/com.todoorstep.store.ui.activities.splash.SplashActivity}" drawable="panda" name="بنده ~~ Panda" />
-  <item component="ComponentInfo{com.sabb.mobilebanking/com.sabb.mobilebanking.MainActivity}" drawable="hsbc" name="بنك ساب ~~ SAB Mobile" />
   <item component="ComponentInfo{com.buparabia.mobileapp.outsystems/com.buparabia.mobileapp.outsystems.launcher_33280ee5d736409d9fd47355c647f40aa093d5cb24bc10fd64372e844792462e}" drawable="bupa_arabia" name="بوبا العربية ~~ Bupa Arabia" />
   <item component="ComponentInfo{com.emcrey.riyadbank/com.emcrey.bouki.MainActivity}" drawable="bouki" name="بوكي ~~ Bouki" />
   <item component="ComponentInfo{tameeni.com/tameeni.com.MainActivity}" drawable="tameeni" name="تأميني ~~ Tameeni" />
@@ -11358,7 +11358,6 @@
   <item component="ComponentInfo{com.digikala/com.digikala.activities.SplashActivity}" drawable="digikala" name="دیجی‌کالا ~~ Digikala" />
   <item component="ComponentInfo{com.jmeyte.app/com.example.circlys_v2.MainActivity}" drawable="circlys" name="سيركليز ~~ Circlys" />
   <item component="ComponentInfo{com.lean.sehhaty/com.lean.sehhaty.ui.splash.SplashActivity}" drawable="sehhaty" name="صحتي ~~ Sehhaty" />
-  <item component="ComponentInfo{com.masarat.salati/com.masarat.salati.ui.activities.MainActivity}" drawable="salatuk" name="صلاتك ~~ Salatuk" />
   <item component="ComponentInfo{com.cobone.coboneapp/com.cobone.coboneapp.MainActivity}" drawable="cobone" name="كوبون ~~ Cobone" />
   <item component="ComponentInfo{com.dmfh.dmfh/com.dmfh.dmfh.ui.SplashScreen}" drawable="dr_mohammad_alfagih_hospital" name="مستشفى محمد الفقيه ~~ Dr. Mohammad Alfagih Hospital" />
   <item component="ComponentInfo{com.alrajhiretailapp/com.alrajhiretailapp.MainActivity}" drawable="alrajhi_bank" name="مصرف الراجحي ~~ Alrajhi Bank" />
