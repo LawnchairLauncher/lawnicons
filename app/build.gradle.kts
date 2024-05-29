@@ -145,7 +145,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material-icons-core-android:1.6.7")
-    implementation("androidx.compose.material3:material3:1.3.0-beta01")
+    implementation("androidx.compose.material3:material3:1.3.0-beta02")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.navigation:navigation-compose:2.8.0-beta01")
     implementation("androidx.core:core-splashscreen:1.0.1")
