@@ -132,7 +132,7 @@ licensee {
 }
 
 dependencies {
-    val lifecycleVersion = "2.8.0"
+    val lifecycleVersion = "2.8.1"
     val hiltVersion = "2.51.1"
 
     implementation("androidx.appcompat:appcompat:1.7.0")
