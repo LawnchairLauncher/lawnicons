@@ -129,6 +129,7 @@ tasks.withType<MergeResources>().configureEach {
 
 licensee {
     allow("Apache-2.0")
+    allow("MIT")
 }
 
 dependencies {
@@ -161,4 +162,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-kotlinx-serialization:$retrofitVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
+
+    implementation("com.github.nanihadesuka:LazyColumnScrollbar:2.1.0")
 }
