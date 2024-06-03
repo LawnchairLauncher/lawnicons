@@ -7,46 +7,30 @@ import android.content.pm.ResolveInfo
 import app.lawnchair.lawnicons.model.IconInfoAppfilter
 
 fun Context.getPackagesList(): List<ResolveInfo> {
-    val packagesList = try {
+    return try {
         packageManager.queryIntentActivities(
             Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER),
-            PackageManager.GET_RESOLVED_FILTER,
-        ) + packageManager.queryIntentActivities(
-            Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_DEFAULT),
-            PackageManager.GET_RESOLVED_FILTER,
-        ) + packageManager.queryIntentActivities(
-            Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),
             PackageManager.GET_RESOLVED_FILTER,
         )
     } catch (e: Exception) {
         listOf()
     }
-    return packagesList
 }
 
 fun Context.getSystemIconInfoAppfilter(): List<IconInfoAppfilter> {
-    val resolveInfo = getPackagesList()
-    val list: MutableList<IconInfoAppfilter> = mutableListOf()
+    return getPackagesList().map { ri ->
+        with(ri) {
+            val riPkg = activityInfo.packageName
+            val component = "$riPkg/${activityInfo.name}"
 
-    for (ri in resolveInfo) {
-        val riPkg = ri.activityInfo.packageName
-        val component = riPkg + "/" + ri.activityInfo.name
+            val name = loadLabel(packageManager) ?: riPkg
 
-        val name: CharSequence? = try {
-            ri.loadLabel(packageManager)
-        } catch (e: Exception) {
-            riPkg
+            IconInfoAppfilter(
+                name = name.toString(),
+                componentName = component,
+                id = 0,
+                drawableName = "",
+            )
         }
-
-        val iconInfo = IconInfoAppfilter(
-            name = name.toString(),
-            componentName = component,
-            id = 0,
-            drawableName = "",
-        )
-
-        list.add(iconInfo)
     }
-
-    return list
 }

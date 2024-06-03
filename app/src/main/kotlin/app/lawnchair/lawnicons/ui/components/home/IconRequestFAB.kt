@@ -22,11 +22,13 @@ fun IconRequestFAB(
 ) {
     Log.d("IconRequestFAB", "iconRequestModel: $iconRequestModel")
     if (iconRequestModel != null) {
-        IconRequestFAB(
-            iconRequestList = iconRequestModel.list,
-            iconRequestCount = iconRequestModel.iconCount,
-            modifier = modifier,
-        )
+        if (iconRequestModel.iconCount > 0) {
+            IconRequestFAB(
+                iconRequestList = iconRequestModel.list,
+                iconRequestCount = iconRequestModel.iconCount,
+                modifier = modifier,
+            )
+        }
     }
 }
 
