@@ -67,12 +67,6 @@ fun Context.getIconInfoAppfilter(): List<IconInfoAppfilter> {
             ) {
                 if (type != XmlPullParser.START_TAG) continue
                 if ("item" == parser.name) {
-                    if (
-                        parser.getAttributeBooleanValue(null, "drawableIgnore", false)
-                    ) {
-                        continue
-                    }
-
                     val component = parser.getAttributeValue(null, "component")
                     val iconName = parser.getAttributeValue(null, "name")
 
