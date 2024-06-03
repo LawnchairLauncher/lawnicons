@@ -1,7 +1,6 @@
 package app.lawnchair.lawnicons.repository
 
 import android.app.Application
-import android.util.Log
 import app.lawnchair.lawnicons.model.IconInfoAppfilter
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.IconRequest

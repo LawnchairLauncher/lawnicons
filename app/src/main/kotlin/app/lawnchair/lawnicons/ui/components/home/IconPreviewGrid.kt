@@ -58,7 +58,7 @@ fun IconPreviewGrid(
                 thumbUnselectedColor = MaterialTheme.colorScheme.primaryContainer,
                 thumbSelectedColor = MaterialTheme.colorScheme.primary,
                 selectionMode = ScrollbarSelectionMode.Thumb,
-            )
+            ),
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
@@ -76,7 +76,7 @@ fun IconPreviewGrid(
                     )
                 },
 
-                ) {
+            ) {
                 items(items = iconInfo) { iconInfo ->
                     IconPreview(
                         iconInfo = iconInfo,
