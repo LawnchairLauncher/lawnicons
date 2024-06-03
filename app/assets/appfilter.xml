@@ -1043,7 +1043,8 @@
   <item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.DEFAULT}" drawable="blinkit" name="Blinkit" />
   <item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.VALENTINES}" drawable="blinkit" name="Blinkit" />
   <item component="ComponentInfo{de.blitzer/de.blitzer.activity.SplashScreen}" drawable="camsam" name="Blitzer.de" />
-  <item component="ComponentInfo{piuk.blockchain.android/piuk.blockchain.android.ui.launcher.LauncherActivity}" drawable="blockchain" name="Blockchain" />
+  <item component="ComponentInfo{piuk.blockchain.android/piuk.blockchain.android.ui.launcher.LauncherActivity}" drawable="blockchain" name="Blockchain Crypto Wallet" />
+  <item component="ComponentInfo{com.blockchain.exchange/com.blockchain.exchange.MainActivity}" drawable="blockchain" name="Blockchain Exchange" />
   <item component="ComponentInfo{com.merxury.blocker/com.merxury.blocker.MainActivity}" drawable="blocker" name="Blocker" />
   <item component="ComponentInfo{com.merxury.blocker/com.merxury.blocker.ui.home.HomeActivity}" drawable="blocker" name="Blocker" />
   <item component="ComponentInfo{io.funswitch.blocker/io.funswitch.blocker.features.splashScreenPage.SplashScreenActivity}" drawable="blockerx" name="BlockerX" />
@@ -1223,6 +1224,7 @@
   <item component="ComponentInfo{com.bukalapak.android/com.bukalapak.android.HomeActivity_}" drawable="bukalapak" name="Bukalapak" />
   <item component="ComponentInfo{com.direstudio.utils.fileorganizerfree/com.direstudio.utils.fileorganizerfree.SplashActivity}" drawable="bulk_rename_and_group" name="Bulk Rename &amp; Group" />
   <item component="ComponentInfo{com.bumble.app/com.bumble.app.ui.launcher.BumbleLauncherActivity}" drawable="bumble" name="Bumble" />
+  <item component="ComponentInfo{com.dwarfplanet.bundle/com.dwarfplanet.bundle.v5.app.MainActivity}" drawable="bundle" name="Bundle" />
   <item component="ComponentInfo{com.dwarfplanet.bundle/com.dwarfplanet.bundle.SplashActivity}" drawable="bundle" name="Bundle" />
   <item component="ComponentInfo{com.dwarfplanet.bundle/com.dwarfplanet.bundle.ui.landing.SplashActivity}" drawable="bundle" name="Bundle" />
   <item component="ComponentInfo{com.dwarfplanet.bundle/com.dwarfplanet.bundle.v2.ui.landing.views.SplashActivity}" drawable="bundle" name="Bundle" />
@@ -1969,6 +1971,7 @@
   <item component="ComponentInfo{com.commbank.netbank/com.commbank.netbank.application.MainActivity}" drawable="commbank" name="CommBank" />
   <item component="ComponentInfo{com.superpaninbros.glng/com.superpaninbros.glng.ui.MainActivity}" drawable="companion_for_gltools" name="Companion for GLTools" />
   <item component="ComponentInfo{devsimon.recipe.newworld/devsimon.recipe.newworld.Menu}" drawable="companion_for_new_world" name="Companion For New World" />
+  <item component="ComponentInfo{com.keuwl.compass/com.keuwl.compass.MainActivity}" drawable="compass" name="Compass" />
   <item component="ComponentInfo{com.coloros.compass/com.coloros.compass.flat.FlatCompass}" drawable="compass" name="Compass" />
   <item component="ComponentInfo{com.motorola.cn.compass/com.motorola.cn.compass.CompassActivity}" drawable="compass" name="compass" />
   <item component="ComponentInfo{com.coloros.compass2/com.coloros.compass.flat.FlatCompass}" drawable="compass" name="Compass" />
@@ -2868,7 +2871,6 @@
   <item component="ComponentInfo{flar2.exkernelmanager/flar2.exkernelmanager.StartActivity}" drawable="ex_kernel_manager" name="EX Kernel Manager" />
   <item component="ComponentInfo{flar2.exkernelmanager/a.b}" drawable="ex_kernel_manager" name="EX Kernel Manager" />
   <item component="ComponentInfo{flar2.exkernelmanager/a.a}" drawable="ex_kernel_manager" name="EX Kernel Manager" />
-  <item component="ComponentInfo{com.blockchain.exchange/com.blockchain.exchange.MainActivity}" drawable="blockchain" name="Exchange" />
   <item component="ComponentInfo{com.none.tom.exiferaser/com.none.tom.exiferaser.ExifEraserActivity}" drawable="exif_eraser" name="Exif Eraser" />
   <item component="ComponentInfo{exodusmovement.exodus/exodusmovement.exodus.MainActivity}" drawable="exodus" name="Exodus" />
   <item component="ComponentInfo{org.eu.exodus_privacy.exodusprivacy/org.eu.exodus_privacy.exodusprivacy.MainActivity}" drawable="exodus_privacy" name="Exodus Privacy" />
@@ -5569,6 +5571,7 @@
   <item component="ComponentInfo{com.mixplorer/com.mixplorer.activities.TextEditorActivity}" drawable="mixplorer" name="MiXplorer" />
   <item component="ComponentInfo{com.mixplorer.beta/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" name="MiXplorer Beta" />
   <item component="ComponentInfo{com.mixplorer.silver/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" name="MiXplorer Silver" />
+  <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity}" drawable="mj_pdf" name="MJ PDF" />
   <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.LauncherAlias}" drawable="mj_pdf" name="MJ PDF" />
   <item component="ComponentInfo{com.javiersantos.mlmanager/com.javiersantos.mlmanager.activities.MainActivity}" drawable="ml_manager" name="ML Manager" />
   <item component="ComponentInfo{com.javiersantos.mlmanagerpro/com.javiersantos.mlmanager.activities.MainActivity}" drawable="ml_manager_pro" name="ML Manager Pro" />
@@ -6367,7 +6370,8 @@
   <item component="ComponentInfo{de.schildbach.oeffi/de.schildbach.oeffi.plans.PlansPickerActivity}" drawable="offi_plans" name="Offi Plans" />
   <item component="ComponentInfo{de.schildbach.oeffi/de.schildbach.oeffi.stations.StationsActivity}" drawable="offi_stations" name="Offi Stations" />
   <item component="ComponentInfo{net.sjava.officereader/net.sjava.officereader.ui.activities.MainActivity}" drawable="office_reader" name="Office Reader" />
-  <item component="ComponentInfo{com.mobisystems.office/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="office_suite" name="OfficeSuite" />
+  <item component="ComponentInfo{com.mobisystems.office/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite" name="OfficeSuite" />
+  <item component="ComponentInfo{com.mobisystems.editor.office_registered/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite" name="OfficeSuite Pro" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.twrpapp.activities.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.activities.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
@@ -7065,6 +7069,7 @@
   <item component="ComponentInfo{prod.com.pingidentity.pingid/com.pingidentity.v2.ui.screens.splash.PingIdSplashActivity}" drawable="pingid" name="PingID" />
   <item component="ComponentInfo{prod.com.pingidentity.pingid/com.accells.access.AppMgr}" drawable="pingid" name="PingID" />
   <item component="ComponentInfo{ua.com.streamsoft.pingtools/ua.com.streamsoft.pingtools.MainActivity_AA}" drawable="pingtools_network_utilities" name="PingTools Network Utilities" />
+  <item component="ComponentInfo{ua.com.streamsoft.pingtoolspro/ua.com.streamsoft.pingtools.MainActivity_AA}" drawable="pingtools_network_utilities" name="PingTools Pro" />
   <item component="ComponentInfo{rk.android.app.pinnedshortcuts/rk.android.app.pinnedshortcuts.activities.launch.LaunchActivity}" drawable="pinned_shortcuts" name="Pinned Shortcuts" />
   <item component="ComponentInfo{dev.sasikanth.pinnit/dev.sasikanth.pinnit.SplashActivity}" drawable="pinnit" name="Pinnit" />
   <item component="ComponentInfo{com.pinterest/.activity.PinterestActivity}" drawable="pinterest" name="Pinterest" />
@@ -7739,6 +7744,7 @@
   <item component="ComponentInfo{dev.kdrag0n.dyntheme/dev.kdrag0n.dyntheme.ui.main.MainActivity}" drawable="repainter" name="Repainter" />
   <item component="ComponentInfo{dev.kdrag0n.dyntheme/.ui.main.MainActivity#0}" drawable="repainter" name="Repainter" />
   <item component="ComponentInfo{dev.kdrag0n.dyntheme/.ui.main.MainActivity}" drawable="repainter" name="Repainter" />
+  <item component="ComponentInfo{com.hv.replaio/com.hv.replaio.activities.StartActivity}" drawable="fm_radio" name="Replaio Radio" />
   <item component="ComponentInfo{com.replit.app/com.replit.app.MainActivity}" drawable="replit" name="Replit" />
   <item component="ComponentInfo{app.republik/app.republik.MainActivity}" drawable="republik" name="Republik" />
   <item component="ComponentInfo{com.b_lam.resplash/com.b_lam.resplash.activities.SplashActivity}" drawable="resplash" name="Resplash" />
@@ -9777,6 +9783,7 @@
   <item component="ComponentInfo{com.tmvno.thepay/com.tmvno.thepay.MainActivity}" drawable="thepay" name="thePAY" />
   <item component="ComponentInfo{de.sleak.thingcounter/de.sleak.thingcounter.activity.CounterListActivity}" drawable="thing_counter" name="Thing Counter" />
   <item component="ComponentInfo{com.chris.tholotis/com.chris.tholotis.MainActivity}" drawable="tholotis" name="Tholotis" />
+  <item component="ComponentInfo{org.chromium.thorium/com.google.android.apps.chrome.Main}" drawable="google_chrome" name="Thorium" />
   <item component="ComponentInfo{com.instagram.barcelona/com.instagram.barcelona.mainactivity.BarcelonaActivity}" drawable="threads" name="Threads" />
   <item component="ComponentInfo{ch.threema.app/ch.threema.app.activities.MainActivity}" drawable="threema" name="Threema" />
   <item component="ComponentInfo{ch.threema.app.fdroid/ch.threema.app.activities.MainActivity}" drawable="threema" name="Threema" />
@@ -10791,8 +10798,8 @@
   <item component="ComponentInfo{com.mywickr.wickr2/com.wickr.enterprise.dashboard.DashboardActivity}" drawable="wickr_me" name="Wickr Me" />
   <item component="ComponentInfo{com.mywickr.wickr2/com.mywickr.gui.WickrInboxFragmentActivity}" drawable="wickr_me" name="Wickr Me" />
   <item component="ComponentInfo{art.widgeet.android/com.leaves.MainActivity}" drawable="widgeet" name="Widgeet" />
-  <item component="ComponentInfo{com.vrem.wifianalyzer/com.vrem.wifianalyzer.SplashActivity}" drawable="wifi_analyzer" name="WiFi Analyzer" />
-  <item component="ComponentInfo{com.vrem.wifianalyzer/com.vrem.wifianalyzer.MainActivity}" drawable="wifi_analyzer" name="WiFi Analyzer" />
+  <item component="ComponentInfo{com.vrem.wifianalyzer/com.vrem.wifianalyzer.SplashActivity}" drawable="wifi_analyzer_open_source" name="WiFi Analyzer (open-source)" />
+  <item component="ComponentInfo{com.vrem.wifianalyzer/com.vrem.wifianalyzer.MainActivity}" drawable="wifi_analyzer_open_source" name="WiFi Analyzer (open-source)" />
   <item component="ComponentInfo{io.wifimap.wifimap/io.wifimap.wifimap.drvflkibawjck}" drawable="wifi_map" name="WiFi Map" />
   <item component="ComponentInfo{io.wifimap.wifimap/io.wifimap.wifimap.ui.activities.StartActivity}" drawable="wifi_map" name="WiFi Map" />
   <item component="ComponentInfo{io.wifimap.wifimap/io.wifimap.wifimap.main.view.SplashActivity}" drawable="wifi_map" name="WiFi Map" />
@@ -11471,6 +11478,7 @@
   <item component="ComponentInfo{com.copymanga.app/com.copymanga.app.MainActivity}" drawable="_k" name="拷貝漫畫 ~~ Copy Manga" />
   <item component="ComponentInfo{com.xunmeng.pinduoduo/com.xunmeng.pinduoduo.ui.activity.MainFrameActivity}" drawable="pinduoduo" name="拼多多 ~~ Pinduoduo" />
   <item component="ComponentInfo{ctrip.android.view/ctrip.business.splash.CtripSplashActivity}" drawable="ctrip" name="携程旅行 ~~ Ctrip" />
+  <item component="ComponentInfo{com.xayah.databackup.foss/com.xayah.databackup.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup.premium/com.xayah.databackup.ui.activity.splash.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup.premium/com.xayah.databackup.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup/com.xayah.databackup.MainActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
