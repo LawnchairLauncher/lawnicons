@@ -15,7 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
@@ -31,7 +31,7 @@ import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
-    onSendResult: (IconInfoAppfilter) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,

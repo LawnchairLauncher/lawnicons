@@ -15,7 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.destination.About
 import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
@@ -31,7 +31,7 @@ import soup.compose.material.motion.animation.rememberSlideDistance
 @ExperimentalFoundationApi
 fun Lawnicons(
     windowSizeClass: WindowSizeClass,
-    onSendResult: (IconInfoAppfilter) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
 ) {

@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -39,7 +39,7 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IconInfoPopup(
-    iconInfo: IconInfoAppfilter,
+    iconInfo: IconInfo,
     modifier: Modifier = Modifier,
     isPopupShown: (Boolean) -> Unit,
 ) {

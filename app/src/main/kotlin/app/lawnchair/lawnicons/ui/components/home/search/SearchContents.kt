@@ -38,7 +38,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
@@ -49,9 +49,9 @@ fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
-    iconInfo: ImmutableList<IconInfoAppfilter>,
+    iconInfo: ImmutableList<IconInfo>,
     modifier: Modifier = Modifier,
-    onSendResult: (IconInfoAppfilter) -> Unit = {},
+    onSendResult: (IconInfo) -> Unit = {},
 ) {
     Column(
         modifier = modifier,

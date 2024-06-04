@@ -19,7 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -32,9 +32,9 @@ import my.nanihadesuka.compose.ScrollbarSettings
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
-    iconInfo: ImmutableList<IconInfoAppfilter>,
+    iconInfo: ImmutableList<IconInfo>,
     isExpandedScreen: Boolean,
-    onSendResult: (IconInfoAppfilter) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
     contentPadding: PaddingValues? = null,

@@ -1,13 +1,13 @@
 package app.lawnchair.lawnicons.repository
 
 import android.app.Application
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.IconRequest
 import app.lawnchair.lawnicons.model.IconRequestModel
 import app.lawnchair.lawnicons.model.SearchInfo
 import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.util.getIconInfoAppfilter
+import app.lawnchair.lawnicons.util.getIconInfo
 import app.lawnchair.lawnicons.util.getSystemIconInfoAppfilter
 import javax.inject.Inject
 import kotlinx.collections.immutable.toImmutableList
@@ -22,18 +22,18 @@ class IconRepository @Inject constructor(application: Application) {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
-    private var iconInfo: List<IconInfoAppfilter>? = null
+    private var iconInfo: List<IconInfo>? = null
     val iconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     val searchedIconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
 
-    private var lawniconsData: List<IconInfoAppfilter>? = null
+    private var lawniconsData: List<IconInfo>? = null
 
-    private var systemPackageList: List<IconInfoAppfilter>? = null
+    private var systemPackageList: List<IconInfo>? = null
     var iconRequestList = MutableStateFlow<IconRequestModel?>(value = null)
 
     init {
         coroutineScope.launch {
-            iconInfo = application.getIconInfoAppfilter()
+            iconInfo = application.getIconInfo()
                 .also { list ->
                     lawniconsData = list.sortedBy { it.name.lowercase() }
                 }
