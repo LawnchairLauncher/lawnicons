@@ -33,3 +33,27 @@ data class IconInfoAppfilter(
     val componentName: String,
     val id: Int,
 )
+
+data class IconInfoAppfilterPkgs(
+    val name: List<String>,
+    val drawableName: String,
+    val componentName: List<String>,
+    val id: Int
+) {
+    companion object {
+        fun convert(iconInfoList: List<IconInfoAppfilter>): List<IconInfoAppfilterPkgs> {
+            // Group by drawableName
+            val grouped = iconInfoList.groupBy { it.drawableName }
+
+            // Convert each group to IconInfoAppfilterPkgs
+            return grouped.map { (drawableName, icons) ->
+                IconInfoAppfilterPkgs(
+                    name = icons.map { it.name },
+                    drawableName = drawableName,
+                    componentName = icons.map { it.componentName },
+                    id = icons[0].id // Assuming IDs in the group are the same
+                )
+            }
+        }
+    }
+}
