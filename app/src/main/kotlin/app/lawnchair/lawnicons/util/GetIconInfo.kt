@@ -67,17 +67,11 @@ fun Context.getIconInfoAppfilter(): List<IconInfoAppfilter> {
             ) {
                 if (type != XmlPullParser.START_TAG) continue
                 if ("item" == parser.name) {
-                    if (
-                        parser.getAttributeBooleanValue(null, "drawableIgnore", false)
-                    ) {
-                        continue
-                    }
-
                     val component = parser.getAttributeValue(null, "component")
                     val iconName = parser.getAttributeValue(null, "name")
+
                     val initialIconId = parser.getAttributeValue(null, "drawable")
                     val iconId = "${initialIconId}_foreground"
-
                     val iconDrawable = resources.getIdentifier(iconId, "drawable", packageName)
 
                     var actualComponent = ""
@@ -85,7 +79,7 @@ fun Context.getIconInfoAppfilter(): List<IconInfoAppfilter> {
                     val parsedComponent =
                         component.substring(componentInfoPrefixLength, component.length - 1)
 
-                    if (parsedComponent != "" && !parsedComponent.startsWith("/") &&
+                    if (parsedComponent.isNotEmpty() && !parsedComponent.startsWith("/") &&
                         !parsedComponent.endsWith("/")
                     ) {
                         actualComponent = parsedComponent

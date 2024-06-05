@@ -26,12 +26,17 @@ class IconRepository @Inject constructor(application: Application) {
     val iconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     val searchedIconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
 
+    private var lawniconsData: List<IconInfoAppfilter>? = null
+
     private var systemPackageList: List<IconInfoAppfilter>? = null
     var iconRequestList = MutableStateFlow<IconRequestModel?>(value = null)
 
     init {
         coroutineScope.launch {
             iconInfo = application.getIconInfoAppfilter()
+                .also { list ->
+                    lawniconsData = list.sortedBy { it.name.lowercase() }
+                }
                 .associateBy { it.name }.values
                 .sortedBy { it.name.lowercase() }
                 .also {
@@ -44,6 +49,7 @@ class IconRepository @Inject constructor(application: Application) {
                         iconCount = it.size,
                     )
                 }
+
             systemPackageList = application.getSystemIconInfoAppfilter()
                 .associateBy { it.name }.values
                 .sortedBy { it.name.lowercase() }
@@ -94,12 +100,7 @@ class IconRepository @Inject constructor(application: Application) {
 
     private suspend fun getIconRequestList() = withContext(Dispatchers.Default) {
         iconRequestList.value = systemPackageList?.let { packageList ->
-            val lawniconsData = iconInfoModel.value?.iconInfo?.map {
-                IconRequest(
-                    it.name,
-                    it.componentName,
-                )
-            } ?: listOf()
+            val lawniconsData = lawniconsData ?: emptyList()
 
             val systemData = packageList.map {
                 IconRequest(
@@ -108,11 +109,16 @@ class IconRepository @Inject constructor(application: Application) {
                 )
             }
 
-            val iconsRequested = lawniconsData intersect systemData.toSet()
+            val lawniconsComponents = lawniconsData
+                .map { it.componentName }
+                .sortedBy { it.lowercase() }
+                .toSet()
+
+            val commonItems = systemData.filter { it.componentName !in lawniconsComponents }
 
             IconRequestModel(
-                list = iconsRequested.toImmutableList(),
-                iconCount = iconsRequested.size,
+                list = commonItems.toImmutableList(),
+                iconCount = commonItems.size,
             )
         }
     }
