@@ -106,7 +106,7 @@ fun Home(
                             isExpandedScreen = isExpandedScreen,
                             isIconPicker = isIconPicker,
                             onSendResult = onSendResult,
-                            listState = lazyGridState
+                            listState = lazyGridState,
                         )
                     }
                 }

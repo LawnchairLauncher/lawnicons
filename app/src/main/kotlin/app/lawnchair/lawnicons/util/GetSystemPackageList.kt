@@ -29,9 +29,9 @@ fun Context.getSystemIconInfoAppfilter(): List<IconInfo> {
             IconInfo(
                 drawableName = "",
                 componentNames = listOf(
-                    LabelAndComponent(name.toString(), component)
+                    LabelAndComponent(name.toString(), component),
                 ),
-                id = 0
+                id = 0,
             )
         }
     }

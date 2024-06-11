@@ -76,7 +76,7 @@ fun IconPreviewGrid(
                         additionalEnd = 32.dp,
                     )
                 },
-                state = listState
+                state = listState,
             ) {
                 items(items = iconInfo) { iconInfo ->
                     IconPreview(

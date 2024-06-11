@@ -38,7 +38,6 @@ private fun ColorScheme.iconColor(): Color {
     return primary.copy(alpha = alpha).compositeOver(surface)
 }
 
-
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,

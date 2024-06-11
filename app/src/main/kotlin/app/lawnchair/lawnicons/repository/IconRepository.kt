@@ -67,36 +67,36 @@ class IconRepository @Inject constructor(application: Application) {
         searchedIconInfoModel.value = IconInfoManager
             .splitByComponentName(iconInfo)
             .let {
-            val filtered = it.mapNotNull { candidate ->
-                val searchIn =
-                    when (mode) {
-                        SearchMode.LABEL -> candidate.getFirstLabelAndComponent().label
-                        SearchMode.COMPONENT -> candidate.getFirstLabelAndComponent().componentName
-                        SearchMode.DRAWABLE -> candidate.drawableName
-                    }
-                val indexOfMatch =
-                    searchIn.indexOf(string = query, ignoreCase = true).also { index ->
-                        if (index == -1) return@mapNotNull null
-                    }
-                val matchAtWordStart = indexOfMatch == 0 || searchIn[indexOfMatch - 1] == ' '
-                SearchInfo(
-                    iconInfo = candidate,
-                    indexOfMatch = indexOfMatch,
-                    matchAtWordStart = matchAtWordStart,
+                val filtered = it.mapNotNull { candidate ->
+                    val searchIn =
+                        when (mode) {
+                            SearchMode.LABEL -> candidate.getFirstLabelAndComponent().label
+                            SearchMode.COMPONENT -> candidate.getFirstLabelAndComponent().componentName
+                            SearchMode.DRAWABLE -> candidate.drawableName
+                        }
+                    val indexOfMatch =
+                        searchIn.indexOf(string = query, ignoreCase = true).also { index ->
+                            if (index == -1) return@mapNotNull null
+                        }
+                    val matchAtWordStart = indexOfMatch == 0 || searchIn[indexOfMatch - 1] == ' '
+                    SearchInfo(
+                        iconInfo = candidate,
+                        indexOfMatch = indexOfMatch,
+                        matchAtWordStart = matchAtWordStart,
+                    )
+                }.sortedWith(
+                    compareBy(
+                        { searchInfo -> !searchInfo.matchAtWordStart },
+                        { searchInfo -> searchInfo.indexOfMatch },
+                    ),
+                ).map { searchInfo ->
+                    searchInfo.iconInfo
+                }.toPersistentList()
+                IconInfoModel(
+                    iconCount = it.size,
+                    iconInfo = filtered,
                 )
-            }.sortedWith(
-                compareBy(
-                    { searchInfo -> !searchInfo.matchAtWordStart },
-                    { searchInfo -> searchInfo.indexOfMatch },
-                ),
-            ).map { searchInfo ->
-                searchInfo.iconInfo
-            }.toPersistentList()
-            IconInfoModel(
-                iconCount = it.size,
-                iconInfo = filtered,
-            )
-        }
+            }
     }
 
     fun clear() {

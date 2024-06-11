@@ -1,6 +1,8 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,6 +29,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -39,9 +42,6 @@ import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
-import android.content.ClipboardManager
-import android.content.Context
-import androidx.compose.ui.platform.LocalContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -137,7 +137,7 @@ fun IconInfoPopup(
                         endIcon = {
                             val context = LocalContext.current
                             IconButton(onClick = {
-                                copyTextToClipboard(context, "${name}%0A${componentName}")
+                                copyTextToClipboard(context, "$name%0A$componentName")
                             }) {
                                 Icon(
                                     painter = painterResource(id = R.drawable.copy_to_clipboard),
@@ -169,7 +169,7 @@ private fun IconInfoPopupPreview() {
     val showPopup = remember { mutableStateOf(true) }
     LawniconsTheme {
         IconInfoPopup(
-            iconInfo = SampleData.iconInfoSample
+            iconInfo = SampleData.iconInfoSample,
         ) {
             showPopup.value = it
         }

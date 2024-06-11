@@ -51,8 +51,8 @@ fun Context.getIconInfo(): List<IconInfo> {
                         IconInfo(
                             iconId,
                             listOf(LabelAndComponent(iconName, actualComponent)),
-                            iconDrawable
-                        )
+                            iconDrawable,
+                        ),
                     )
                 }
             }

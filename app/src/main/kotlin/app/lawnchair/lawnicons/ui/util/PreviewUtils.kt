@@ -35,31 +35,31 @@ object SampleData {
     val iconInfoSample = IconInfo(
         drawableName = "@drawable/email",
         componentNames = listOf(
-            LabelAndComponent("Email", "com.android.email")
+            LabelAndComponent("Email", "com.android.email"),
         ),
-        id = 1
+        id = 1,
     )
     val iconInfoList = persistentListOf(
         IconInfo(
             drawableName = "@drawable/email",
             componentNames = listOf(
-                LabelAndComponent("Email", "com.android.email")
+                LabelAndComponent("Email", "com.android.email"),
             ),
-            id = 1
+            id = 1,
         ),
         IconInfo(
             drawableName = "@drawable/search",
             componentNames = listOf(
-                LabelAndComponent("Search", "com.android.search")
+                LabelAndComponent("Search", "com.android.search"),
             ),
-            id = 2
+            id = 2,
         ),
         IconInfo(
             drawableName = "@drawable/phone",
             componentNames = listOf(
-                LabelAndComponent("Phone", "com.android.phone")
+                LabelAndComponent("Phone", "com.android.phone"),
             ),
-            id = 3
+            id = 3,
         ),
     )
 }

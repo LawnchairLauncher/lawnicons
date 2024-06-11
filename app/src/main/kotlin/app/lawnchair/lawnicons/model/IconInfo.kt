@@ -11,7 +11,7 @@ package app.lawnchair.lawnicons.model
 data class IconInfo(
     val drawableName: String,
     val componentNames: List<LabelAndComponent>,
-    val id: Int
+    val id: Int,
 ) {
     /**
      * The user-facing label associated with the icon, derived from the first available
@@ -40,7 +40,7 @@ object IconInfoManager {
                 IconInfo(
                     componentNames = mergedComponentNames,
                     drawableName = drawableName,
-                    id = icons.first().id, // Consider a more robust ID selection strategy
+                    id = icons.first().id,
                 )
             }
     }
@@ -60,8 +60,8 @@ object IconInfoManager {
                     IconInfo(
                         componentNames = listOf(nameAndComponent),
                         drawableName = iconInfo.drawableName,
-                        id = iconInfo.id // You might need a better strategy for assigning IDs
-                    )
+                        id = iconInfo.id,
+                    ),
                 )
             }
         }
@@ -83,5 +83,5 @@ fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
  */
 data class LabelAndComponent(
     val label: String,
-    val componentName: String
+    val componentName: String,
 )
