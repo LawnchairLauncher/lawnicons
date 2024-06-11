@@ -25,6 +25,7 @@ import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -121,47 +122,8 @@ fun SearchContents(
         ) { count ->
             when (count) {
                 1 -> {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(PaddingValues(16.dp)),
-                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                    ) {
-                        val it = iconInfo[0]
-                        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
-
-                        ListItem(
-                            headlineContent = { Text(it.name) },
-                            supportingContent = { Text(it.componentName) },
-                            leadingContent = {
-                                Box(
-                                    contentAlignment = Alignment.Center,
-                                    modifier = Modifier
-                                        .padding(all = 8.dp)
-                                        .clip(shape = CircleShape)
-                                        .size(48.dp),
-                                ) {
-                                    Icon(
-                                        painter = painterResource(id = it.id),
-                                        contentDescription = null,
-                                        modifier = Modifier.fillMaxSize(0.6f),
-                                    )
-                                }
-                            },
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(16.dp))
-                                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
-                        )
-                        if (isIconInfoAppfilterShown.value) {
-                            IconInfoPopup(
-                                iconInfo = IconInfoGrouped.convert(listOf(it))[0],
-                            ) {
-                                isIconInfoAppfilterShown.value = it
-                            }
-                        }
-                    }
+                    IconInfoListItem(iconInfo)
                 }
-
                 0 -> {
                     Box(
                         modifier = Modifier
@@ -190,12 +152,55 @@ fun SearchContents(
                                 IconPreview(
                                     iconInfo = it,
                                     onSendResult = onSendResult,
-                                    iconBackground = Color.Transparent,
+                                    iconBackground = MaterialTheme.colorScheme.primaryContainer,
                                 )
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@Composable
+private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(PaddingValues(16.dp)),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+    ) {
+        val it = iconInfo[0]
+        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
+
+        ListItem(
+            headlineContent = { Text(it.name) },
+            supportingContent = { Text(it.componentName) },
+            leadingContent = {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .padding(all = 8.dp)
+                        .clip(shape = CircleShape)
+                        .size(48.dp),
+                ) {
+                    Icon(
+                        painter = painterResource(id = it.id),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxSize(0.6f),
+                    )
+                }
+            },
+            modifier = Modifier
+                .clip(RoundedCornerShape(16.dp))
+                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
+        )
+        if (isIconInfoAppfilterShown.value) {
+            IconInfoPopup(
+                iconInfo = IconInfoGrouped.convert(listOf(it))[0],
+            ) {
+                isIconInfoAppfilterShown.value = it
             }
         }
     }

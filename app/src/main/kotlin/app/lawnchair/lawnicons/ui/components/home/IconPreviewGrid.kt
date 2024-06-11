@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
@@ -39,8 +40,8 @@ fun IconPreviewGrid(
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
     contentPadding: PaddingValues? = null,
+    listState: LazyGridState = rememberLazyGridState(),
 ) {
-    val listState = rememberLazyGridState()
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -76,7 +77,7 @@ fun IconPreviewGrid(
                         additionalEnd = 32.dp,
                     )
                 },
-
+                state = listState
             ) {
                 items(items = iconInfo) { iconInfo ->
                     IconPreview(

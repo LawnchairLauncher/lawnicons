@@ -1,12 +1,15 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.animateValueAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -26,8 +29,10 @@ import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
+import app.lawnchair.lawnicons.ui.util.isScrollingUp
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 import kotlinx.collections.immutable.toImmutableList
+import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -45,6 +50,8 @@ fun Home(
         val iconRequestModel by iconRequestList.collectAsStateWithLifecycle()
         val searchMode = searchMode
         val searchTerm = searchTerm
+
+        val lazyGridState = rememberLazyGridState()
 
         Crossfade(
             modifier = modifier,
@@ -91,7 +98,10 @@ fun Home(
                         }
                     },
                     floatingActionButton = {
-                        IconRequestFAB(iconRequestModel)
+                        IconRequestFAB(
+                            iconRequestModel = iconRequestModel,
+                            lazyGridState = lazyGridState,
+                        )
                     },
                 ) { contentPadding ->
                     iconInfoModel?.let {
@@ -101,6 +111,7 @@ fun Home(
                             isExpandedScreen = isExpandedScreen,
                             isIconPicker = isIconPicker,
                             onSendResult = onSendResult,
+                            listState = lazyGridState
                         )
                     }
                 }
