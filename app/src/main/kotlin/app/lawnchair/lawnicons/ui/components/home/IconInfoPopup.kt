@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoGrouped
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -39,7 +39,7 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IconInfoPopup(
-    iconInfo: IconInfo,
+    iconInfo: IconInfoGrouped,
     modifier: Modifier = Modifier,
     isPopupShown: (Boolean) -> Unit,
 ) {
@@ -118,11 +118,13 @@ fun IconInfoPopup(
             Card(
                 label = stringResource(id = R.string.package_prefix),
             ) {
-                SimpleListRow(
-                    label = iconInfo.name,
-                    description = iconInfo.componentName,
-                    divider = false,
-                )
+                val data = iconInfo.names zip iconInfo.componentNames
+                data.forEach { (name, componentName) ->
+                    SimpleListRow(
+                        label = name,
+                        description = componentName,
+                    )
+                }
             }
 
             Spacer(Modifier.height(16.dp))
@@ -136,7 +138,9 @@ private fun IconInfoPopupPreview() {
     val showPopup = remember { mutableStateOf(true) }
     LawniconsTheme {
         IconInfoPopup(
-            iconInfo = SampleData.iconInfoSample,
+            iconInfo = IconInfoGrouped.convert(
+                listOf(SampleData.iconInfoSample)
+            )[0],
         ) {
             showPopup.value = it
         }

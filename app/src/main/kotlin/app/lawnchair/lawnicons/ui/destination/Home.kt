@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoGrouped
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
@@ -26,12 +27,13 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
+import kotlinx.collections.immutable.toImmutableList
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
-    onSendResult: (IconInfo) -> Unit,
+    onSendResult: (IconInfoGrouped) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
@@ -79,7 +81,9 @@ fun Home(
                                                 lawniconsViewModel.changeMode(mode)
                                             },
                                             iconInfo = it.iconInfo,
-                                            onSendResult = onSendResult,
+                                            onSendResult = {
+                                                onSendResult(IconInfoGrouped.convert(listOf(it))[0])
+                                            },
                                         )
                                     },
                                 )
@@ -114,7 +118,7 @@ fun Home(
 @Composable
 private fun HomePreview() {
     var searchTerm by remember { mutableStateOf(value = "") }
-    val iconInfo = SampleData.iconInfoList
+    val iconInfo = IconInfoGrouped.convert(SampleData.iconInfoList)
 
     LawniconsTheme {
         LawniconsSearchBar(
@@ -135,12 +139,12 @@ private fun HomePreview() {
                     "",
                     SearchMode.NAME,
                     {},
-                    iconInfo = iconInfo,
+                    iconInfo = IconInfo.convert(iconInfo).toImmutableList(),
                 )
             },
         )
         IconPreviewGrid(
-            iconInfo = iconInfo,
+            iconInfo = iconInfo.toImmutableList(),
             isExpandedScreen = false,
             {},
             Modifier,

@@ -39,6 +39,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoGrouped
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
@@ -153,7 +154,7 @@ fun SearchContents(
                         )
                         if (isIconInfoAppfilterShown.value) {
                             IconInfoPopup(
-                                iconInfo = it,
+                                iconInfo = IconInfoGrouped.convert(listOf(it))[0],
                             ) {
                                 isIconInfoAppfilterShown.value = it
                             }
@@ -188,8 +189,8 @@ fun SearchContents(
                             items(items = iconInfo) {
                                 IconPreview(
                                     iconInfo = it,
-                                    iconBackground = Color.Transparent,
                                     onSendResult = onSendResult,
+                                    iconBackground = Color.Transparent,
                                 )
                             }
                         }

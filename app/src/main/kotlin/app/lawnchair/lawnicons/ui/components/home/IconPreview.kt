@@ -27,6 +27,7 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoGrouped
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -42,6 +43,25 @@ private fun ColorScheme.iconColor(): Color {
 fun IconPreview(
     iconInfo: IconInfo,
     onSendResult: (IconInfo) -> Unit,
+    modifier: Modifier = Modifier,
+    iconBackground: Color? = null,
+    isIconPicker: Boolean = false,
+) {
+    IconPreview(
+        iconInfo = IconInfoGrouped.convert(listOf(iconInfo))[0],
+        onSendResult = {
+             onSendResult(IconInfo.convert(listOf(it))[0])
+        },
+        modifier = modifier,
+        iconBackground = iconBackground,
+        isIconPicker = isIconPicker,
+    )
+}
+
+@Composable
+fun IconPreview(
+    iconInfo: IconInfoGrouped,
+    onSendResult: (IconInfoGrouped) -> Unit,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
     isIconPicker: Boolean = false,
@@ -115,7 +135,9 @@ fun IconPreview(
 private fun IconPreviewComposablePreview() {
     LawniconsTheme {
         IconPreview(
-            iconInfo = SampleData.iconInfoSample,
+            iconInfo = IconInfoGrouped.convert(
+                listOf(SampleData.iconInfoSample)
+            )[0],
             {},
         )
     }

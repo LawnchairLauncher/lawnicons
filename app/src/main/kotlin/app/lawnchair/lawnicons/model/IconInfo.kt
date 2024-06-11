@@ -13,7 +13,26 @@ data class IconInfo(
     val drawableName: String,
     val componentName: String,
     val id: Int,
-)
+) {
+    companion object {
+        fun convert(groupedList: List<IconInfoGrouped>): List<IconInfo> {
+            val result = mutableListOf<IconInfo>()
+            for (grouped in groupedList) {
+                for (i in grouped.names.indices) {
+                    result.add(
+                        IconInfo(
+                            name = grouped.names[i],
+                            drawableName = grouped.drawableName,
+                            componentName = grouped.componentNames[i],
+                            id = grouped.id
+                        )
+                    )
+                }
+            }
+            return result
+        }
+    }
+}
 
 data class IconInfoGrouped(
     val names: List<String>,
@@ -22,7 +41,7 @@ data class IconInfoGrouped(
     val id: Int
 ) {
     companion object {
-        fun fromIconInfoList(iconInfoList: List<IconInfo>): List<IconInfoGrouped> {
+        fun convert(iconInfoList: List<IconInfo>): List<IconInfoGrouped> {
             // Group by drawableName
             return iconInfoList
                 .groupBy { it.drawableName }
