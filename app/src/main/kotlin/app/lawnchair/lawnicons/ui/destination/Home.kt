@@ -1,7 +1,6 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.core.animateValueAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,7 +17,6 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoGrouped
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
@@ -29,16 +26,14 @@ import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
-import app.lawnchair.lawnicons.ui.util.isScrollingUp
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
 import kotlinx.collections.immutable.toImmutableList
-import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
-    onSendResult: (IconInfoGrouped) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
@@ -89,7 +84,7 @@ fun Home(
                                             },
                                             iconInfo = it.iconInfo,
                                             onSendResult = {
-                                                onSendResult(IconInfoGrouped.convert(listOf(it))[0])
+                                                onSendResult(it)
                                             },
                                         )
                                     },
@@ -129,7 +124,7 @@ fun Home(
 @Composable
 private fun HomePreview() {
     var searchTerm by remember { mutableStateOf(value = "") }
-    val iconInfo = IconInfoGrouped.convert(SampleData.iconInfoList)
+    val iconInfo = SampleData.iconInfoList
 
     LawniconsTheme {
         LawniconsSearchBar(
@@ -148,9 +143,9 @@ private fun HomePreview() {
             content = {
                 SearchContents(
                     "",
-                    SearchMode.NAME,
+                    SearchMode.LABEL,
                     {},
-                    iconInfo = IconInfo.convert(iconInfo).toImmutableList(),
+                    iconInfo = iconInfo,
                 )
             },
         )

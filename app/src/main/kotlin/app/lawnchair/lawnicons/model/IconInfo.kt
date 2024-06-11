@@ -3,58 +3,85 @@ package app.lawnchair.lawnicons.model
 /**
  * Data class to hold information about an icon.
  *
- * @property name The name of the icon.
  * @property drawableName The name of the drawable resource for the icon.
- * @property componentName The component name of the app that owns the icon.
+ * @property componentNames A list of [LabelAndComponent] objects representing the component names and
+ * labels of the apps that have the icon.
  * @property id A unique identifier for the icon.
  */
 data class IconInfo(
-    val name: String,
     val drawableName: String,
-    val componentName: String,
-    val id: Int,
-) {
-    companion object {
-        fun convert(groupedList: List<IconInfoGrouped>): List<IconInfo> {
-            val result = mutableListOf<IconInfo>()
-            for (grouped in groupedList) {
-                for (i in grouped.names.indices) {
-                    result.add(
-                        IconInfo(
-                            name = grouped.names[i],
-                            drawableName = grouped.drawableName,
-                            componentName = grouped.componentNames[i],
-                            id = grouped.id
-                        )
-                    )
-                }
-            }
-            return result
-        }
-    }
-}
-
-data class IconInfoGrouped(
-    val names: List<String>,
-    val drawableName: String,
-    val componentNames: List<String>,
+    val componentNames: List<LabelAndComponent>,
     val id: Int
 ) {
-    companion object {
-        fun convert(iconInfoList: List<IconInfo>): List<IconInfoGrouped> {
-            // Group by drawableName
-            return iconInfoList
-                .groupBy { it.drawableName }
-                .map { (drawableName, icons) ->
-                    require(icons.all { it.id == icons[0].id }) { "Icon IDs in a group must be the same" }
+    /**
+     * The user-facing label associated with the icon, derived from the first available
+     * [LabelAndComponent] object.
+     */
+    val label = componentNames.firstOrNull()?.label ?: ""
+}
 
-                    IconInfoGrouped(
-                        names = icons.map { it.name },
-                        drawableName = drawableName,
-                        componentNames = icons.map { it.componentName },
-                        id = icons[0].id // Assuming IDs in the group are the same
+/**
+ * A helper object for processing and manipulating collections of [IconInfo] objects,
+ * including merging and splitting based on drawable names and component names.
+ */
+object IconInfoManager {
+    /**
+     * Merges a list of [IconInfo] objects, grouping them by their `drawableName` and
+     * combining the `componentNames` of icons with the same drawable name.
+     *
+     * @param iconInfoList The list of [IconInfo] objects to merge.
+     * @return A new list of [IconInfo] objects with merged component names for icons
+     *         sharing the same drawable name.
+     */
+    fun mergeByDrawableName(iconInfoList: List<IconInfo>): List<IconInfo> {
+        return iconInfoList.groupBy { it.drawableName }
+            .map { (drawableName, icons) ->
+                val mergedComponentNames = icons.flatMap { it.componentNames }
+                IconInfo(
+                    componentNames = mergedComponentNames,
+                    drawableName = drawableName,
+                    id = icons.first().id, // Consider a more robust ID selection strategy
+                )
+            }
+    }
+
+    /**
+     * Splits [IconInfo] objects with multiple component names into a list where each
+     * [IconInfo] object has a single component name.
+     *
+     * @param iconInfoList The list of [IconInfo] objects to split.
+     * @return A new list of [IconInfo] objects, each with a single component name.
+     */
+    fun splitByComponentName(iconInfoList: List<IconInfo>): List<IconInfo> {
+        val splitList = mutableListOf<IconInfo>()
+        for (iconInfo in iconInfoList) {
+            for (nameAndComponent in iconInfo.componentNames) {
+                splitList.add(
+                    IconInfo(
+                        componentNames = listOf(nameAndComponent),
+                        drawableName = iconInfo.drawableName,
+                        id = iconInfo.id // You might need a better strategy for assigning IDs
                     )
+                )
             }
         }
+        return splitList
     }
 }
+
+fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
+    val firstLabel = componentNames.firstOrNull()?.label ?: ""
+    val firstComponent = componentNames.firstOrNull()?.componentName ?: ""
+    return LabelAndComponent(firstLabel, firstComponent)
+}
+
+/**
+ * Data class representing a label and component name pair.
+ *
+ * @property label The user-facing label associated with the component.
+ * @property componentName The name of the component, typically a fully qualified class name.
+ */
+data class LabelAndComponent(
+    val label: String,
+    val componentName: String
+)

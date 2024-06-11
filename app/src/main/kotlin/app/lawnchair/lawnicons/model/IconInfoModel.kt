@@ -12,8 +12,3 @@ data class IconInfoModel(
     val iconInfo: ImmutableList<IconInfo>,
     val iconCount: Int,
 )
-
-data class IconInfoGroupedModel(
-    val iconInfo: ImmutableList<IconInfoGrouped>,
-    val iconCount: Int,
-)

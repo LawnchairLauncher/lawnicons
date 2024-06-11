@@ -299,7 +299,7 @@ private fun SearchBarPreview() {
             content = {
                 SearchContents(
                     "",
-                    SearchMode.NAME,
+                    SearchMode.LABEL,
                     {},
                     iconInfo,
                 )

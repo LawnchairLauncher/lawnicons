@@ -2,13 +2,13 @@ package app.lawnchair.lawnicons.repository
 
 import android.app.Application
 import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoGrouped
-import app.lawnchair.lawnicons.model.IconInfoGroupedModel
+import app.lawnchair.lawnicons.model.IconInfoManager
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.IconRequest
 import app.lawnchair.lawnicons.model.IconRequestModel
 import app.lawnchair.lawnicons.model.SearchInfo
 import app.lawnchair.lawnicons.model.SearchMode
+import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.util.getIconInfo
 import app.lawnchair.lawnicons.util.getSystemIconInfoAppfilter
 import javax.inject.Inject
@@ -25,7 +25,7 @@ class IconRepository @Inject constructor(application: Application) {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     private var iconInfo: List<IconInfo> = emptyList()
-    val iconInfoModel = MutableStateFlow<IconInfoGroupedModel?>(value = null)
+    val iconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     val searchedIconInfoModel = MutableStateFlow<IconInfoModel?>(value = null)
     private var systemPackageList: List<IconInfo>? = null
     var iconRequestList = MutableStateFlow<IconRequestModel?>(value = null)
@@ -36,25 +36,25 @@ class IconRepository @Inject constructor(application: Application) {
         coroutineScope.launch {
             application.getIconInfo()
                 .also { list ->
-                    iconInfo = list.sortedBy { it.name.lowercase() }
+                    iconInfo = list.sortedBy { it.label.lowercase() }
                 }
-                .associateBy { it.name }.values
+                .associateBy { it.label }.values
                 .also {
                     iconCount = it.size
                 }
 
-            iconInfoModel.value = IconInfoGroupedModel(
-                iconInfo = IconInfoGrouped.convert(iconInfo).toPersistentList(),
+            iconInfoModel.value = IconInfoModel(
+                iconInfo = iconInfo.toPersistentList(),
                 iconCount = iconCount,
             )
             searchedIconInfoModel.value = IconInfoModel(
-                iconInfo = iconInfo.toPersistentList(),
+                iconInfo = IconInfoManager.splitByComponentName(iconInfo).toPersistentList(),
                 iconCount = iconCount,
             )
 
             systemPackageList = application.getSystemIconInfoAppfilter()
-                .associateBy { it.name }.values
-                .sortedBy { it.name.lowercase() }
+                .associateBy { it.label }.values
+                .sortedBy { it.label.lowercase() }
 
             getIconRequestList()
         }
@@ -64,12 +64,14 @@ class IconRepository @Inject constructor(application: Application) {
         mode: SearchMode,
         query: String,
     ) = withContext(Dispatchers.Default) {
-        searchedIconInfoModel.value = iconInfo.let {
+        searchedIconInfoModel.value = IconInfoManager
+            .splitByComponentName(iconInfo)
+            .let {
             val filtered = it.mapNotNull { candidate ->
                 val searchIn =
                     when (mode) {
-                        SearchMode.NAME -> candidate.name
-                        SearchMode.PACKAGE_NAME -> candidate.componentName
+                        SearchMode.LABEL -> candidate.getFirstLabelAndComponent().label
+                        SearchMode.COMPONENT -> candidate.getFirstLabelAndComponent().componentName
                         SearchMode.DRAWABLE -> candidate.drawableName
                     }
                 val indexOfMatch =
@@ -101,7 +103,7 @@ class IconRepository @Inject constructor(application: Application) {
         searchedIconInfoModel.value = iconInfoModel.value?.let {
             IconInfoModel(
                 iconCount = it.iconCount,
-                iconInfo = IconInfo.convert(it.iconInfo).toImmutableList(),
+                iconInfo = IconInfoManager.splitByComponentName(iconInfo).toPersistentList(),
             )
         }
     }
@@ -110,19 +112,26 @@ class IconRepository @Inject constructor(application: Application) {
         iconRequestList.value = systemPackageList?.let { packageList ->
             val lawniconsData = iconInfo
 
-            val systemData = packageList.map {
-                IconRequest(
-                    it.name,
-                    it.componentName,
-                )
+            val systemData = packageList.map { info ->
+                info.getFirstLabelAndComponent().also {
+                    IconRequest(
+                        it.label,
+                        it.componentName,
+                    )
+                }
             }
 
-            val lawniconsComponents = lawniconsData
-                .map { it.componentName }
+            val lawniconsComponents = IconInfoManager.splitByComponentName(lawniconsData)
+                .map { it.getFirstLabelAndComponent().componentName }
                 .sortedBy { it.lowercase() }
                 .toSet()
 
-            val commonItems = systemData.filter { it.componentName !in lawniconsComponents }
+            val commonItems = systemData.filter { it.componentName !in lawniconsComponents }.map {
+                IconRequest(
+                    it.label,
+                    it.componentName,
+                )
+            }
 
             IconRequestModel(
                 list = commonItems.toImmutableList(),

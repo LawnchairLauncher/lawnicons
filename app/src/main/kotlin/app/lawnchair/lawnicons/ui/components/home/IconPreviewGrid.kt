@@ -20,13 +20,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.model.IconInfoGrouped
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toImmutableList
 import my.nanihadesuka.compose.LazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
@@ -34,9 +33,9 @@ import my.nanihadesuka.compose.ScrollbarSettings
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
-    iconInfo: ImmutableList<IconInfoGrouped>,
+    iconInfo: ImmutableList<IconInfo>,
     isExpandedScreen: Boolean,
-    onSendResult: (IconInfoGrouped) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
     contentPadding: PaddingValues? = null,
@@ -97,7 +96,7 @@ fun IconPreviewGrid(
 private fun IconGridPreview() {
     LawniconsTheme {
         IconPreviewGrid(
-            IconInfoGrouped.convert(SampleData.iconInfoList).toImmutableList(),
+            SampleData.iconInfoList,
             true,
             {},
             Modifier,

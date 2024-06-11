@@ -33,15 +33,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoGrouped
 import app.lawnchair.lawnicons.model.SearchMode
+import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
 import kotlinx.collections.immutable.ImmutableList
@@ -66,16 +65,16 @@ fun SearchContents(
         ) {
             FilterChip(
                 leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.NAME) {
+                    AnimatedVisibility(searchMode == SearchMode.LABEL) {
                         Icon(
                             imageVector = Icons.Rounded.Check,
                             contentDescription = null,
                         )
                     }
                 },
-                selected = searchMode == SearchMode.NAME,
+                selected = searchMode == SearchMode.LABEL,
                 onClick = {
-                    onModeChange(SearchMode.NAME)
+                    onModeChange(SearchMode.LABEL)
                 },
                 label = {
                     Text(text = stringResource(R.string.name))
@@ -83,16 +82,16 @@ fun SearchContents(
             )
             FilterChip(
                 leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.PACKAGE_NAME) {
+                    AnimatedVisibility(searchMode == SearchMode.COMPONENT) {
                         Icon(
                             imageVector = Icons.Rounded.Check,
                             contentDescription = null,
                         )
                     }
                 },
-                selected = searchMode == SearchMode.PACKAGE_NAME,
+                selected = searchMode == SearchMode.COMPONENT,
                 onClick = {
-                    onModeChange(SearchMode.PACKAGE_NAME)
+                    onModeChange(SearchMode.COMPONENT)
                 },
                 label = {
                     Text(text = stringResource(id = R.string.package_prefix))
@@ -175,8 +174,8 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
         val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
 
         ListItem(
-            headlineContent = { Text(it.name) },
-            supportingContent = { Text(it.componentName) },
+            headlineContent = { Text(it.getFirstLabelAndComponent().label) },
+            supportingContent = { Text(it.getFirstLabelAndComponent().componentName) },
             leadingContent = {
                 Box(
                     contentAlignment = Alignment.Center,
@@ -198,7 +197,7 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
         )
         if (isIconInfoAppfilterShown.value) {
             IconInfoPopup(
-                iconInfo = IconInfoGrouped.convert(listOf(it))[0],
+                iconInfo = it,
             ) {
                 isIconInfoAppfilterShown.value = it
             }

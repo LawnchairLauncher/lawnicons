@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.LabelAndComponent
 
 fun Context.getPackagesList(): List<ResolveInfo> {
     return try {
@@ -26,10 +27,11 @@ fun Context.getSystemIconInfoAppfilter(): List<IconInfo> {
             val name = loadLabel(packageManager) ?: riPkg
 
             IconInfo(
-                name = name.toString(),
-                componentName = component,
-                id = 0,
                 drawableName = "",
+                componentNames = listOf(
+                    LabelAndComponent(name.toString(), component)
+                ),
+                id = 0
             )
         }
     }

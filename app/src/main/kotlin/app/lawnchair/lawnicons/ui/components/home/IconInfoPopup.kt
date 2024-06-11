@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.rounded.Email
@@ -28,7 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfoGrouped
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -39,7 +41,7 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IconInfoPopup(
-    iconInfo: IconInfoGrouped,
+    iconInfo: IconInfo,
     modifier: Modifier = Modifier,
     isPopupShown: (Boolean) -> Unit,
 ) {
@@ -60,6 +62,7 @@ fun IconInfoPopup(
     ) {
         Column(
             modifier = Modifier
+                .verticalScroll(rememberScrollState())
                 .fillMaxWidth(),
         ) {
             Row(
@@ -118,7 +121,7 @@ fun IconInfoPopup(
             Card(
                 label = stringResource(id = R.string.package_prefix),
             ) {
-                val data = iconInfo.names zip iconInfo.componentNames
+                val data = iconInfo.componentNames
                 data.forEach { (name, componentName) ->
                     SimpleListRow(
                         label = name,
@@ -138,9 +141,7 @@ private fun IconInfoPopupPreview() {
     val showPopup = remember { mutableStateOf(true) }
     LawniconsTheme {
         IconInfoPopup(
-            iconInfo = IconInfoGrouped.convert(
-                listOf(SampleData.iconInfoSample)
-            )[0],
+            iconInfo = SampleData.iconInfoSample
         ) {
             showPopup.value = it
         }

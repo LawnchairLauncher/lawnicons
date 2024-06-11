@@ -7,7 +7,7 @@ data class SearchInfo(
 )
 
 enum class SearchMode {
-    NAME,
-    PACKAGE_NAME,
+    LABEL,
+    COMPONENT,
     DRAWABLE,
 }

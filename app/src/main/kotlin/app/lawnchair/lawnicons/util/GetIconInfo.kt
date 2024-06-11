@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.model.IconInfoManager
+import app.lawnchair.lawnicons.model.LabelAndComponent
 import org.xmlpull.v1.XmlPullParser
 
 @SuppressLint("DiscouragedApi")
 fun Context.getIconInfo(): List<IconInfo> {
-    val iconInfo = mutableListOf<IconInfo>()
+    var iconInfo = mutableListOf<IconInfo>()
 
     val componentInfoPrefixLength = "ComponentInfo{".length
 
@@ -45,7 +47,13 @@ fun Context.getIconInfo(): List<IconInfo> {
                         actualComponent = parsedComponent
                     }
 
-                    iconInfo.add(IconInfo(iconName, iconId, actualComponent, iconDrawable))
+                    iconInfo.add(
+                        IconInfo(
+                            iconId,
+                            listOf(LabelAndComponent(iconName, actualComponent)),
+                            iconDrawable
+                        )
+                    )
                 }
             }
         }
@@ -53,5 +61,5 @@ fun Context.getIconInfo(): List<IconInfo> {
         e.printStackTrace()
     }
 
-    return iconInfo
+    return IconInfoManager.mergeByDrawableName(iconInfo)
 }
