@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 private val basePadding = 16.dp
@@ -28,6 +29,7 @@ private val basePadding = 16.dp
 fun ListRow(
     label: @Composable () -> Unit,
     modifier: Modifier = Modifier,
+    contentModifier: Modifier = Modifier,
     description: (@Composable () -> Unit)? = null,
     startIcon: (@Composable () -> Unit)? = null,
     endIcon: (@Composable () -> Unit)? = null,
@@ -37,8 +39,8 @@ fun ListRow(
     first: Boolean = false,
     last: Boolean = false,
     onClick: (() -> Unit)? = null,
+    height: Dp? = null,
 ) {
-    val height = if (tall) 72.dp else 56.dp
     val dividerHeight = 1.dp
     val dividerHeightPx = with(LocalDensity.current) { dividerHeight.toPx() }
     val dividerColor = MaterialTheme.colorScheme.outlineVariant
@@ -49,7 +51,7 @@ fun ListRow(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(height)
+            .height(height ?: if (tall) 72.dp else 56.dp)
             .then(
                 if (background) {
                     Modifier
@@ -96,6 +98,7 @@ fun ListRow(
             icon = startIcon,
             endIcon = endIcon,
             onClick = onClick,
+            modifier = contentModifier,
         )
     }
 }
@@ -107,10 +110,11 @@ private fun Content(
     icon: (@Composable () -> Unit)?,
     endIcon: (@Composable () -> Unit)?,
     onClick: (() -> Unit)?,
+    modifier: Modifier = Modifier,
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .then(
                 if (onClick != null) {

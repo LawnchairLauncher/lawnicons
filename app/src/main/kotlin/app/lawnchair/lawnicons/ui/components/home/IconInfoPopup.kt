@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -24,6 +25,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -33,11 +35,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.Card
+import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -128,16 +132,30 @@ fun IconInfoPopup(
                 label = stringResource(id = R.string.mapped_components),
             ) {
                 val data = iconInfo.componentNames
-                data.forEachIndexed { index, (name, componentName) ->
-                    SimpleListRow(
-                        label = name,
-                        description = componentName,
+                data.forEachIndexed { index, (label, componentName) ->
+                    ListRow(
+                        label = {
+                            Text(
+                                text = label,
+                                maxLines = 2,
+                                overflow = TextOverflow.Ellipsis,
+                            )
+                        },
+                        contentModifier = Modifier.padding(vertical = 8.dp),
+                        description = {
+                            Text(
+                                text = componentName.replace("/", "/\n"),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
+                        },
+                        divider = index < data.lastIndex,
                         first = index == 0,
-                        last = index == data.lastIndex,
+                        last = index == data.lastIndex && data.size > 1,
                         endIcon = {
                             val context = LocalContext.current
                             IconButton(onClick = {
-                                copyTextToClipboard(context, "$name%0A$componentName")
+                                copyTextToClipboard(context, "$label%0A$componentName")
                             }) {
                                 Icon(
                                     painter = painterResource(id = R.drawable.copy_to_clipboard),
@@ -148,6 +166,8 @@ fun IconInfoPopup(
                                 )
                             }
                         },
+                        tall = true,
+                        height = 90.dp,
                     )
                 }
             }
