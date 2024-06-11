@@ -94,7 +94,7 @@ fun SearchContents(
                     onModeChange(SearchMode.COMPONENT)
                 },
                 label = {
-                    Text(text = stringResource(id = R.string.package_prefix))
+                    Text(text = stringResource(id = R.string.mapped_components))
                 },
             )
             FilterChip(

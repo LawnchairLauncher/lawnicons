@@ -32,7 +32,7 @@ fun ContributorRowPlaceholder(
             background = true,
             first = first,
             last = last,
-            icon = {
+            startIcon = {
                 Box(
                     modifier = Modifier
                         .size(32.dp)

@@ -1,5 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
+import android.content.ClipData
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.rememberModalBottomSheetState
@@ -37,6 +39,9 @@ import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
+import android.content.ClipboardManager
+import android.content.Context
+import androidx.compose.ui.platform.LocalContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -96,6 +101,7 @@ fun IconInfoPopup(
                 oldValue = "_foreground",
                 newValue = "",
             )
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center,
@@ -119,13 +125,29 @@ fun IconInfoPopup(
             Spacer(Modifier.height(16.dp))
 
             Card(
-                label = stringResource(id = R.string.package_prefix),
+                label = stringResource(id = R.string.mapped_components),
             ) {
                 val data = iconInfo.componentNames
-                data.forEach { (name, componentName) ->
+                data.forEachIndexed { index, (name, componentName) ->
                     SimpleListRow(
                         label = name,
                         description = componentName,
+                        first = index == 0,
+                        last = index == data.lastIndex,
+                        endIcon = {
+                            val context = LocalContext.current
+                            IconButton(onClick = {
+                                copyTextToClipboard(context, "${name}%0A${componentName}")
+                            }) {
+                                Icon(
+                                    painter = painterResource(id = R.drawable.copy_to_clipboard),
+                                    contentDescription = stringResource(
+                                        R.string.copy_to_clipboard,
+                                    ),
+                                    tint = MaterialTheme.colorScheme.onBackground,
+                                )
+                            }
+                        },
                     )
                 }
             }
@@ -133,6 +155,12 @@ fun IconInfoPopup(
             Spacer(Modifier.height(16.dp))
         }
     }
+}
+
+private fun copyTextToClipboard(context: Context, text: String) {
+    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText(context.getString(R.string.copied_text), text)
+    clipboard.setPrimaryClip(clip)
 }
 
 @PreviewLawnicons

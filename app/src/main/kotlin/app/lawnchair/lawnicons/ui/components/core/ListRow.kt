@@ -29,7 +29,8 @@ fun ListRow(
     label: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     description: (@Composable () -> Unit)? = null,
-    icon: (@Composable () -> Unit)? = null,
+    startIcon: (@Composable () -> Unit)? = null,
+    endIcon: (@Composable () -> Unit)? = null,
     tall: Boolean = description != null,
     divider: Boolean = true,
     background: Boolean = false,
@@ -92,7 +93,8 @@ fun ListRow(
         Content(
             label = label,
             description = description,
-            icon = icon,
+            icon = startIcon,
+            endIcon = endIcon,
             onClick = onClick,
         )
     }
@@ -103,6 +105,7 @@ private fun Content(
     label: @Composable () -> Unit,
     description: (@Composable () -> Unit)?,
     icon: (@Composable () -> Unit)?,
+    endIcon: (@Composable () -> Unit)?,
     onClick: (() -> Unit)?,
 ) {
     Row(
@@ -127,6 +130,10 @@ private fun Content(
             if (description != null) {
                 description()
             }
+        }
+        if (endIcon != null) {
+            Spacer(modifier = Modifier.weight(1f))
+            endIcon()
         }
     }
 }

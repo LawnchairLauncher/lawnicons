@@ -25,7 +25,7 @@ fun Card(
                 text = label,
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.padding(start = 32.dp, bottom = 12.dp),
+                modifier = Modifier.padding(start = 32.dp, bottom = 6.dp),
             )
         }
         Surface(
