@@ -14,7 +14,7 @@ While waiting for a review from our team, you can do a self-review to ensure tha
 
 ### Naming
 1. Names should match the official app name and contain no additional text.
-2. If the first `3` characters of the app name contain letters not from the English alphabet, then add a localized (or transliterated) name to it using `~~`.
+2. If the first `3` characters of the app name contain letters not from the English alphabet, then add a localized (or transliterated) name via `~~`.
 Example: `フールー ~~ Hulu`.
 3. The names of the drawables should repeat the names of the apps if nothing prevents it.
 
