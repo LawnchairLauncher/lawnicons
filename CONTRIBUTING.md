@@ -73,7 +73,7 @@ To avoid sharp contrast, you can follow either of these two methods:
 2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
 
 ## Naming
-To make it easier to find icons, you should keep the original names and supplement them with an English variant or transliteration. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
+To make it easier to find icons, you should keep the original names and supplement them with a variant made up of letters of the English alphabet. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
 ### App name
 Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
 ```
@@ -84,7 +84,7 @@ Wrong • Google Play name: "Zoom - One Platform to Connect"
 Correct • Edited name: "Zoom"
 <item component="..." drawable="zoom" name="Zoom" />
 ```
-Names are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
+Names in different languages are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
 ```
 Wrong
 <item component="..." drawable="hulu" name="フールー ~~ Hulu" />
@@ -93,7 +93,7 @@ Wrong
 Correct
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If there are letters in the first `3` characters of the app name that aren't in English, then it's worth adding the name transliterated into English.
+If the first `3` characters of the app name contain letters not from the English alphabet, then it's worth adding the transliterated name.
 ```
 Wrong
 <item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
@@ -103,14 +103,14 @@ Correct
 <item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
 ```
 ### Drawable
-Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
+It should contain letters from the English alphabet and repeat the app name if possible.
 ```
 Wrong
-<item component="..." drawable="meinvodafone" name="My Vodafone ~~ MeinVodafone" />
+<item component="..." drawable="itaú" name="Itaú" />
 ```
 ```
 Correct
-<item component="..." drawable="my_vodafone" name="My Vodafone ~~ MeinVodafone" />
+<item component=..." drawable="itau" name="Itaú" />
 ```
 If the app name starts with a digit, then the drawable should start with `_`.
 ```
