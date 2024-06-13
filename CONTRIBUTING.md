@@ -73,7 +73,7 @@ To avoid sharp contrast, you can follow either of these two methods:
 2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
 
 ## Naming
-To make it easier to find icons, you should keep the original names and supplement them with a variant made up of letters of the English alphabet. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
+To make it easier to find icons, you should keep the original names. Arabic, Chinese or Japanese names need to be supplemented with an English version. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
 ### App name
 Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
 ```
