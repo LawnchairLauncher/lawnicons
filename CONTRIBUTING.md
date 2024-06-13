@@ -103,7 +103,7 @@ Correct
 <item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
 ```
 ### Drawable
-It should contain letters from the English alphabet and repeat the app name if possible.
+Should contain letters from the English alphabet and repeat the app name if possible.
 ```
 Wrong
 <item component="..." drawable="itaú" name="Itaú" />
