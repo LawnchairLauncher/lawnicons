@@ -7963,6 +7963,7 @@
   <item component="ComponentInfo{com.lilithgame.roc.gp/com.harry.engine.MainActivity}" drawable="rise_of_kingdoms_lost_crusade" name="Rise of Kingdoms: Lost Crusade" />
   <item component="ComponentInfo{se.leap.riseupvpn/se.leap.bitmaskclient.base.StartActivity}" drawable="riseupvpn" name="RiseupVPN" />
   <item component="ComponentInfo{se.leap.riseupvpn/se.leap.bitmaskclient.StartActivity}" drawable="riseupvpn" name="RiseupVPN" />
+  <item component="ComponentInfo{com.PigeonGames.Rizline/com.unity3d.player.UnityPlayerActivity}" drawable="rizline" name="Rizline" />
   <item component="ComponentInfo{com.cubic.rmvgo/com.cubic.rmv30.MainActivity}" drawable="rmvgo" name="RMVgo" />
   <item component="ComponentInfo{de.taf.rnv/com.example.p83.MainActivity}" drawable="rnv_start_info" name="rnv Start.Info" />
   <item component="ComponentInfo{com.roblox.client/com.roblox.client.ActivitySplash}" drawable="roblox" name="Roblox" />
@@ -10563,8 +10564,8 @@
   <item component="ComponentInfo{downloader.vitmate.downloaderapp/downloader.vitmate.downloaderapp.activity.MainActivity}" drawable="video_downloader" name="Video Downloader" />
   <item component="ComponentInfo{downloader.video.download.free/free.files.downloader.save.video.manager.MainActivity}" drawable="generic_downloader" name="Video Downloader &amp; Video Saver" />
   <item component="ComponentInfo{instasaver.instagram.video.downloader.photo/instasaver.instagram.video.downloader.photo.ui.startup.StartupActivity}" drawable="video_downloader_for_ig" name="Video downloader for IG" />
-  <item component="ComponentInfo{instagram.video.downloader.story.saver/instasaver.instagram.video.downloader.photo.ui.startup.StartupActivity}" drawable="video_downloader_story_saver" name="Video downloader — Story Saver" />
-  <item component="ComponentInfo{instasaver.videodownloader.photodownloader.repost/instasaver.videodownloader.photodownloader.repost.view.activity.SplashMainActivity}" drawable="video_downloader_story_saver" name="Video downloader — Story Saver" />
+  <item component="ComponentInfo{instagram.video.downloader.story.saver/instasaver.instagram.video.downloader.photo.ui.startup.StartupActivity}" drawable="video_downloader_story_saver" name="Video downloader" />
+  <item component="ComponentInfo{instasaver.videodownloader.photodownloader.repost/instasaver.videodownloader.photodownloader.repost.view.activity.SplashMainActivity}" drawable="video_downloader_story_saver" name="Video downloader" />
   <item component="ComponentInfo{com.movisoftnew.videoeditor/com.freevideomaker.videoeditor.slideshow.activity.SplashActivity}" drawable="video_editor_video_maker" name="Video Editor" />
   <item component="ComponentInfo{com.xvideostudio.videoeditor/com.xvideostudio.videoeditor.activity.SplashSubActivity}" drawable="video_editor_and_maker" name="Video Editor &amp; Maker" />
   <item component="ComponentInfo{com.fundevs.app.mediaconverter/com.fundevs.app.mediaconverter.SplashActivity}" drawable="video_mp3_converter" name="Video MP3 Converter" />
@@ -11426,13 +11427,19 @@
   <item component="ComponentInfo{com.blackiconpack.zwart/com.blackiconpack.zwart.MainActivity}" drawable="zwart_icons" name="Zwart Icons" />
   <item component="ComponentInfo{com.jhc.detach/com.jhc.detach.MainActivity}" drawable="zygisk_detach" name="zygisk-detach" />
   <item component="ComponentInfo{org.daimhim.zzzfun/org.daimhim.zzzfun.ui.SplashActivity}" drawable="zzzfun" name="ZzzFun" />
+  <!-- Spanish -->
   <item component="ComponentInfo{im.outa.AmbitoDolar/im.outa.AmbitoDolar.MainActivity}" drawable="ambito_dollar" name="Ámbito Dólar ~~ Ambito Dollar" />
+  <!-- Turkish -->
   <item component="ComponentInfo{com.ciceksepeti.ciceksepeti/com.ciceksepeti.ciceksepeti.home.HomeActivity}" drawable="ciceksepeti" name="Çiçeksepeti ~~ Ciceksepeti" />
+  <!-- Hungarian  -->
   <item component="ComponentInfo{hu.mentok.eletmento/com.medicalit.zachranka.Launcher}" drawable="eletmento" name="ÉletMentő ~~ EletMento" />
   <item component="ComponentInfo{at.oebb.ts/at.oebb.ts.features.splash.SplashActivity}" drawable="oebb" name="ÖBB Tickets ~~ OEBB" />
   <item component="ComponentInfo{at.oebb.ts/at.oebb.ts.SplashActivity}" drawable="oebb" name="ÖBB Tickets ~~ OEBB" />
+  <!-- Polish -->
   <item component="ComponentInfo{pl.zabka.apb2c/pl.zabka.b2c.presentation.welcome.WelcomeActivity}" drawable="zappka" name="żappka ~~ zappka" />
+  <!-- Lithuanian -->
   <item component="ComponentInfo{com.kvt.ziogas/com.ziogas.MainActivity}" drawable="ziogas" name="Žiogas ~~ Ziogas" />
+  <!-- Russian -->
   <item component="ComponentInfo{ru.aviasales/ru.aviasales.ui.activity.MainActivity}" drawable="aviasales" name="Авиасейлс ~~ Aviasales" />
   <item component="ComponentInfo{com.avito.android/com.avito.android.Launcher}" drawable="avito" name="Авито ~~ Avito" />
   <item component="ComponentInfo{com.avito.android/com.avito.android.ui.activity.SplashScreenActivity}" drawable="avito" name="Авито ~~ Avito" />
@@ -11564,8 +11571,10 @@
   <item component="ComponentInfo{ru.yandex.mail/ru.yandex.mail.ui.MailListActivity}" drawable="yandex_mail" name="Яндекс Почта ~~ Yandex Mail" />
   <item component="ComponentInfo{com.yandex.bank/com.yandex.bank.screens.MainActivity}" drawable="yandex_pay" name="Яндекс Пэй ~~ Yandex Pay" />
   <item component="ComponentInfo{ru.yandex.searchplugin/ru.yandex.searchplugin.MainActivity}" drawable="yandex_start" name="Яндекс Старт ~~ Yandex Start" />
+  <!-- Hebrew -->
   <item component="ComponentInfo{il.co.dominos.android/il.co.dominos.android.MainActivity}" drawable="dominos" name="דומינוס פיצה ~~ Domino's Pizza" />
   <item component="ComponentInfo{com.devsence.pizzahut/com.devsence.pizzahut.MainActivity}" drawable="pizza_hut" name="פיצה האט ~~ Pizza Hut" />
+  <!-- Arabic -->
   <item component="ComponentInfo{sa.gov.moi/com.elm.android.individual.RoutingActivity}" drawable="absher" name="أبشر ~~ Absher" />
   <item component="ComponentInfo{com.snb.alahlimobile/com.snb.alahlimobile.MainActivity}" drawable="snb_mobile" name="الأهلي موبايل ~~ SNB Mobile" />
   <item component="ComponentInfo{com.alinma.retail.mobile.v4/com.alinma.retail.mobile.v4.MainActivity}" drawable="alinma" name="الإنماء ~~ Alinma" />
@@ -11603,6 +11612,7 @@
   <item component="ComponentInfo{com.noon.buyerapp/com.noon.buyerapp.MainActivity}" drawable="noon" name="نون ~~ noon" />
   <item component="ComponentInfo{com.app.wafeer/com.app.wafeer.MainActivity}" drawable="wafeer" name="وفير ~~ Wafeer" />
   <item component="ComponentInfo{com.urpay.consumer/com.urpay.consumer.MainActivity}" drawable="urpay" name="يور باي ~~ urpay" />
+  <!-- Japanese -->
   <item component="ComponentInfo{com.felicanetworks.mfm.main/com.felicanetworks.mfm.main.ServiceListActivity}" drawable="osaifu_keitai" name="おサイフケータイ ~~ Osaifu-Keitai" />
   <item component="ComponentInfo{com.bandainamcoent.imas_millionlive_theaterdays/com.bandainamcoent.imas_millionlive_theaterdays.player.OverrideActivity}" drawable="the_idolmaster_million_live_theater_days" name="アイドルマスター ミリオンライブ！ シアターデイズ ~~ THE IDOLM@STER MILLION LIVE! THEATER DAYS" />
   <item component="ComponentInfo{jp.co.takaratomy_arts.idolland/com.google.firebase.MessagingUnityPlayerActivity}" drawable="pripara" name="アイドルランドプリパラ ~~ PriPara" />
@@ -11631,80 +11641,89 @@
   <item component="ComponentInfo{com.kouzoh.mercari/com.mercari.base.MainActivity}" drawable="mercari" name="メルカリ ~~ Mercari" />
   <item component="ComponentInfo{com.yodobashi.coupon/com.yodobashi.coupon.activity.YdCouponStartUpActivity}" drawable="yodobashi" name="ヨドバシゴ ~~ Yodobashi" />
   <item component="ComponentInfo{com.leber/com.leber.MainActivity}" drawable="leber" name="リーバー ~~ LEBER" />
-  <item component="ComponentInfo{com.One.WoodenLetter/com.One.WoodenLetter.LetterActivity}" drawable="wooden_letter" name="一个木函 ~~ Wooden Letter" />
-  <item component="ComponentInfo{cn.com.langeasy.LangEasyLexis/cn.com.langeasy.LangEasyLexis.activity.SplashActivity}" drawable="langeasy" name="不背单词 ~~ LangEasy" />
-  <item component="ComponentInfo{cn.gov.tax.its/cn.gov.tax.its.MainActivity}" drawable="income_tax" name="个人所得税 ~~ Income Tax" />
-  <item component="ComponentInfo{com.chinamworld.main/com.ccb.start.MainActivity}" drawable="china_construction_bank" name="中国建设银行 ~~ China Construction Bank" />
-  <item component="ComponentInfo{com.ct.client/com.ct.client.activity.SplashActivity}" drawable="china_telecom" name="中国电信 ~~ China Telecom" />
-  <item component="ComponentInfo{com.xwtec.sd.mobileclient/com.xwtec.sd.mobileclient.ui.activity.MainTabActivity}" drawable="china_mobile" name="中国移动 ~~ China Mobile" />
-  <item component="ComponentInfo{com.greenpoint.android.mc10086.activity/com.mc10086.cmcc.base.StartPageActivity}" drawable="china_mobile" name="中国移动 ~~ China Mobile" />
-  <item component="ComponentInfo{com.sinovatech.unicom.ui/com.sinovatech.unicom.basic.ui.activity.WelcomeClient}" drawable="china_unicom" name="中国联通 ~~ China Unicom" />
-  <item component="ComponentInfo{com.chinamworld.bocmbci/com.boc.bocsoft.mobile.bocmobile.buss.system.splash.SplashActivity}" drawable="bank_of_china" name="中国银行 ~~ Bank of China" />
-  <item component="ComponentInfo{com.miHoYo.cloudgames.hkrpg/com.mihoyo.cloudgame.ui.SplashActivity}" drawable="honkai_star_rail_cloud" name="云·星穹铁道 ~~ Honkai: Star Rail · Cloud" />
-  <item component="ComponentInfo{com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity}" drawable="jd" name="京东 ~~ JD" />
-  <item component="ComponentInfo{com.smzdm.client.android/com.smzdm.client.android.app.WelComeActivity}" drawable="what_to_buy" name="什么值得买 ~~ What to buy" />
-  <item component="ComponentInfo{com.youku.international.phone/com.youku.phone.ActivityWelcome}" drawable="youku" name="优酷 ~~ Youku" />
-  <item component="ComponentInfo{com.youku.phone/com.youku.phone.ActivityWelcome}" drawable="youku" name="优酷 ~~ Youku" />
-  <item component="ComponentInfo{com.baidu.homework/com.baidu.homework.activity.init.InitActivity}" drawable="zuoyebang" name="作业帮 ~~ Zuoyebang" />
-  <item component="ComponentInfo{com.baseus.intelligent/com.baseus.intelligent.view.SplashActivity}" drawable="baseus" name="倍思 ~~ Baseus" />
-  <item component="ComponentInfo{com.kuss.rewind/com.kuss.rewind.MainActivity}" drawable="rewind" name="倒带 ~~ Rewind" />
-  <item component="ComponentInfo{com.heytap.health/com.heytap.health.oobe.LaunchActivity}" drawable="ohealth" name="健康 ~~ OHealth" />
-  <item component="ComponentInfo{com.pxmart.android/.di.mvvm.view.start.SplashActivity}" drawable="pxpay" name="全聯福利中心 ~~ PXPay" />
-  <item component="ComponentInfo{com.maidu.gkld/com.maidu.gkld.ui.splash.SplashActivity}" drawable="gongkao_leida" name="公考雷达 ~~ Gongkao Leida" />
-  <item component="ComponentInfo{com.x7890.shortcutcreator/com.x7890.shortcutcreator.AppListActivity}" drawable="shortcut_creator" name="创建快捷方式 ~~ Shortcut Creator" />
-  <item component="ComponentInfo{com.jingcai.apps.qualitydev/com.jingcai.apps.qualitydev.qualitync.SplashActivity}" drawable="dream" name="到梦空间 ~~ Dream" />
-  <item component="ComponentInfo{tw.com.gamer.android.animad/tw.com.gamer.android.animad.AnimadActivity}" drawable="animation_crazy" name="動畫瘋 ~~ Animation Crazy" />
+  <item component="ComponentInfo{digital.cardreader/digital.cardreader.MainActivity}" drawable="japan_train_card_balance_check" name="電子マネーICカード残高確認 ~~ Japan train card balance check" />
   <item component="ComponentInfo{jp.a4am.layermap_android/jp.a4am.layermap_android.MainActivity}" drawable="old_maps_walk" name="古地図散歩 時代を重ねるマップ ~~ Old Maps Walk" />
-  <item component="ComponentInfo{com.app.tideswing/com.app.tideswing.ui.SplashActivity}" drawable="nothing_to_say" name="可话 ~~ Nothing to say" />
-  <item component="ComponentInfo{com.farplace.closer/com.farplace.closer.MainActivity}" drawable="closer" name="咫 ~~ Closer" />
-  <item component="ComponentInfo{com.jingyao.easybike/com.hellobike.atlas.business.portal.PortalActivity}" drawable="hello" name="哈啰 ~~ Hello" />
-  <item component="ComponentInfo{me.iacn.biliroaming/me.iacn.biliroaming.MainActivityAlias}" drawable="bilibili_helper" name="哔哩漫游 ~~ BiliRoaming" />
-  <item component="ComponentInfo{com.kingosoft.activity_kb_common/com.kingosoft.activity_kb_common.LogoImageActivity}" drawable="xiqueer" name="喜鹊儿 ~~ Xiqueer" />
-  <item component="ComponentInfo{com.didapinche.booking/com.didapinche.booking.home.activity.StartActivity}" drawable="dida_taxi" name="嘀嗒出行 ~~ Dida Taxi" />
-  <item component="ComponentInfo{com.guotai.dazhihui/com.gtja.home.InitScreen}" drawable="guotai_junan" name="国泰君安君弘 ~~ Guotai Junan" />
-  <item component="ComponentInfo{com.duokan.reader/com.duokan.reader.DkReaderActivity}" drawable="duokan" name="多看阅读 ~~ Duokan" />
-  <item component="ComponentInfo{com.dianping.v1/com.dianping.v1.NovaMainActivity}" drawable="dianping" name="大众点评 ~~ Dianping" />
-  <item component="ComponentInfo{com.zmzx.college.search/com.zmzx.college.search.activity.init.InitActivity}" drawable="college_search" name="大学搜题酱 ~~ College Search" />
-  <item component="ComponentInfo{com.cn21.ecloud/com.cn21.ecloud.vip}" drawable="ecloud" name="天翼云 ~~ ecloud" />
-  <item component="ComponentInfo{com.cn21.ecloud/com.cn21.ecloud.activity.login.StartActivity}" drawable="ecloud" name="天翼云 ~~ ecloud" />
-  <item component="ComponentInfo{com.cn21.ecloud/com.cn21.ecloud.default}" drawable="ecloud" name="天翼云 ~~ ecloud" />
-  <item component="ComponentInfo{com.magicalstory.AppStore/com.magicalstory.AppStore.main.MainActivity}" drawable="wonderful" name="奇妙 ~~ Wonderful" />
-  <item component="ComponentInfo{com.yunxiao.haofenshu/com.yunxiao.haofenshu.start.launcher.StudentSplashActivity}" drawable="haofenshu" name="好分数 ~~ Haofenshu" />
-  <item component="ComponentInfo{fontweight.adjustment/fontweight.adjustment.MainActivity}" drawable="fontweight_adjustment" name="字体粗细调节 ~~ Fontweight Adjustment" />
-  <item component="ComponentInfo{cn.xuexi.android/com.alibaba.android.rimet.biz.SplashActivity}" drawable="xuexi_qiangguo" name="学习强国 ~~ Xuexi Qiangguo" />
-  <item component="ComponentInfo{com.chaoxing.mobile/com.chaoxing.mobile.activity.SplashActivity}" drawable="chaoxing" name="学习通 ~~ Chaoxing" />
-  <item component="ComponentInfo{cn.com.chsi.chsiapp/cn.com.chsi.chsiapp.GuideActivity}" drawable="chsi" name="学信网 ~~ CHSI" />
-  <item component="ComponentInfo{com.xuexiaoyi.xxy/com.xuexiaoyi.entrance.splash.SplashActivity}" drawable="xuexiaoyi" name="学小易 ~~ Xuexiaoyi" />
+  <!-- Chinese -->
+  <item component="ComponentInfo{com.goyal.fip888/com.goyal.fip888.MainActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
+  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.welcome.Welcome}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
+  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.v5.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
+  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.launch.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
+  <item component="ComponentInfo{com.alicloud.databox/com.alicloud.databox.launcher.splash.SplashActivity}" drawable="aliyundrive" name="阿里云盘 ~~ AliyunDrive" />
+  <item component="ComponentInfo{com.fvcorp.android.aijiasuclient/com.fvcorp.android.fvclient.activity.SplashActivity}" drawable="aijiasu" name="爱加速 ~~ Aijiasu" />
+  <item component="ComponentInfo{com.byyoung.setting/com.byyoung.setting.Welcome}" drawable="byyoung" name="爱玩机工具箱 ~~ Byyoung" />
   <item component="ComponentInfo{com.wondertek.ahPalm10000/com.wondertek.ahPalm10000.activitys.WelcomeActivity}" drawable="anhui_palm_10000" name="安徽掌上10000 ~~ Anhui Palm 10000" />
-  <item component="ComponentInfo{app.podcast.cosmos/io.iftech.android.podcast.app.home.main.view.MainActivity}" drawable="small_cosmos" name="小宇宙 ~~ Small cosmos" />
-  <item component="ComponentInfo{com.xiaomi.mico/com.xiaomi.mico.splash.SplashActivity}" drawable="xiaomi_speaker" name="小爱音箱 ~~ Xiaomi Speaker" />
-  <item component="ComponentInfo{com.fenbi.android.solar/com.fenbi.android.solar.activity.RouterActivity}" drawable="small_monkey_search" name="小猿搜题 ~~ Small Monkey Search" />
-  <item component="ComponentInfo{com.xiaomi.mitime/com.xiaomi.mitime.activity.MakeCallActivity}" drawable="mi_time" name="小米通话 ~~ Mi Time" />
-  <item component="ComponentInfo{com.xingin.xhs/com.xingin.xhs.index.v2.IndexActivityV2}" drawable="xiaohongshu" name="小红书 ~~ Xiaohongshu" />
-  <item component="ComponentInfo{web1n.stopapp/web1n.stopapp.activity.MainActivity}" drawable="black_house" name="小黑屋 ~~ Black House" />
-  <item component="ComponentInfo{com.max.xiaoheihe/com.max.xiaoheihe.SplashActivity}" drawable="xiaoheihe" name="小黑盒 ~~ Xiaoheihe" />
-  <item component="ComponentInfo{com.sspai.sspaiandroid/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="minority" name="少数派 ~~ Minority" />
-  <item component="ComponentInfo{com.lingnanpass/com.lingnanpass.GuideActivity}" drawable="lingnan_pass" name="岭南通 ~~ Lingnan Pass" />
-  <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
-  <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.presenter.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
-  <item component="ComponentInfo{com.tencent.wetype/com.tencent.wetype.plugin.hld.reactnative.activity.ImeMainSettingActivity}" drawable="wetype" name="微信输入法 ~~ WeType" />
-  <item component="ComponentInfo{com.sina.weibo/com.sina.weibo.SplashActivity}" drawable="weibo" name="微博 ~~ Weibo" />
-  <item component="ComponentInfo{com.weico.international/com.weico.international.activity.LogoActivity}" drawable="weibo" name="微博 ~~ Weibo" />
-  <item component="ComponentInfo{com.sina.weibocare/com.weico.international.activity.LogoActivity}" drawable="weibo" name="微博 ~~ Weibo" />
-  <item component="ComponentInfo{com.weico.international/com.weico.international.appicon_white}" drawable="weibo" name="微博 ~~ Weibo" />
-  <item component="ComponentInfo{com.sina.weibolite/com.sina.weibolite.appicon_white}" drawable="weibo" name="微博极速版 ~~ Weibo Lite" />
-  <item component="ComponentInfo{me.gkd.xs.ps/me.gkd.xs.ps.ui.activity.WelcomeActivity}" drawable="xinshang" name="心赏 ~~ Xinshang" />
-  <item component="ComponentInfo{com.kuaiduizuoye.scan/com.kuaiduizuoye.scan.activity.init.InitActivity}" drawable="get_it_right" name="快对 ~~ Get it right" />
-  <item component="ComponentInfo{com.easycard.wallet/.nonfc.activity.WelcomePageActivity}" drawable="easy_wallet" name="悠遊付 ~~ Easy Wallet" />
-  <item component="ComponentInfo{com.easycard.wallet/com.easycard.wallet.nonfc.activity.WelcomePageActivity}" drawable="easy_wallet" name="悠遊付 ~~ Easy Wallet" />
-  <item component="ComponentInfo{com.netease.edu.ucmooc/com.netease.edu.ucmooc.activity.ActivityWelcome}" drawable="mooc" name="慕课 ~~ MOOC" />
-  <item component="ComponentInfo{cmb.pb/cmb.pb.ui.PBInitActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
-  <item component="ComponentInfo{cmb.pb/cmb.pb.app.mainframe.container.PBMainActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
-  <item component="ComponentInfo{cmb.pb/cmb.pb.app.mainframe.PBEntryActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
-  <item component="ComponentInfo{cmb.pb/cmb.pb.mainframe.PBEntryActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
+  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.StartActivity6}" drawable="bmap" name="白马地图 ~~ Bmap" />
+  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.StartActivity3}" drawable="bmap" name="白马地图 ~~ Bmap" />
+  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.activity.StartActivity}" drawable="bmap" name="白马地图 ~~ Bmap" />
+  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.activity.MainActivity}" drawable="bmap" name="白马地图 ~~ Bmap" />
+  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.StartActivity}" drawable="bmap" name="白马地图 ~~ Bmap" />
+  <item component="ComponentInfo{com.uzero.baimiao/com.uzero.baimiao.Hello}" drawable="baimiao" name="白描 ~~ Baimiao" />
+  <item component="ComponentInfo{com.uzero.cn.zhengjianzhao/com.uzero.cn.zhengjianzhao.Hello}" drawable="photo_id" name="白描证件照 ~~ Photo ID" />
+  <item component="ComponentInfo{com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen.Alias0}" drawable="baidu_maps" name="百度地图 ~~ Baidu Maps" />
+  <item component="ComponentInfo{com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen}" drawable="baidu_maps" name="百度地图 ~~ Baidu Maps" />
+  <item component="ComponentInfo{com.baidu.input/com.baidu.input.ImeLauncherActivity}" drawable="baidu_ime" name="百度输入法 ~~ Baidu IME" />
+  <item component="ComponentInfo{com.baidu.tieba/com.baidu.tieba.tblauncher.MainTabActivity}" drawable="baidu_tieba" name="百度贴吧 ~~ Baidu Tieba" />
+  <item component="ComponentInfo{com.baidu.netdisk/com.baidu.netdisk.ui.SvipLauncherActivity}" drawable="baidu_netdisk" name="百度网盘 ~~ Baidu Netdisk" />
+  <item component="ComponentInfo{com.baidu.netdisk/com.baidu.netdisk.ui.DefaultMainActivity}" drawable="baidu_netdisk" name="百度网盘 ~~ Baidu Netdisk" />
+  <item component="ComponentInfo{com.baseus.intelligent/com.baseus.intelligent.view.SplashActivity}" drawable="baseus" name="倍思 ~~ Baseus" />
+  <item component="ComponentInfo{me.iacn.biliroaming/me.iacn.biliroaming.MainActivityAlias}" drawable="bilibili_helper" name="哔哩漫游 ~~ BiliRoaming" />
+  <item component="ComponentInfo{cn.com.langeasy.LangEasyLexis/cn.com.langeasy.LangEasyLexis.activity.SplashActivity}" drawable="langeasy" name="不背单词 ~~ LangEasy" />
+  <item component="ComponentInfo{com.cainiao.wireless/com.cainiao.wireless.homepage.view.activity.WelcomeActivity}" drawable="cainiao" name="菜鸟 ~~ Cainiao" />
+  <item component="ComponentInfo{com.x7890.shortcutcreator/com.x7890.shortcutcreator.AppListActivity}" drawable="shortcut_creator" name="创建快捷方式 ~~ Shortcut Creator" />
+  <item component="ComponentInfo{com.china3s.android/com.china3s.android.home.view.Main}" drawable="spring_airlines" name="春秋航空 ~~ Spring Airlines" />
+  <item component="ComponentInfo{com.mystyle.purelive/com.mystyle.purelive.MainActivity}" drawable="purelive" name="纯粹直播 ~~ PureLive" />
+  <item component="ComponentInfo{com.zmzx.college.search/com.zmzx.college.search.activity.init.InitActivity}" drawable="college_search" name="大学搜题酱 ~~ College Search" />
+  <item component="ComponentInfo{com.dianping.v1/com.dianping.v1.NovaMainActivity}" drawable="dianping" name="大众点评 ~~ Dianping" />
+  <item component="ComponentInfo{com.kuss.rewind/com.kuss.rewind.MainActivity}" drawable="rewind" name="倒带 ~~ Rewind" />
+  <item component="ComponentInfo{com.jingcai.apps.qualitydev/com.jingcai.apps.qualitydev.qualitync.SplashActivity}" drawable="dream" name="到梦空间 ~~ Dream" />
+  <item component="ComponentInfo{com.didapinche.booking/com.didapinche.booking.home.activity.StartActivity}" drawable="dida_taxi" name="嘀嗒出行 ~~ Dida Taxi" />
+  <item component="ComponentInfo{tw.com.gamer.android.animad/tw.com.gamer.android.animad.AnimadActivity}" drawable="animation_crazy" name="動畫瘋 ~~ Animation Crazy" />
+  <item component="ComponentInfo{com.douban.frodo/com.douban.frodo.activity.SplashActivity}" drawable="douban" name="豆瓣 ~~ Douban" />
+  <item component="ComponentInfo{info.ebstudio.bookviewer.free/info.ebstudio.bookviewer.free.BookViewerActivity}" drawable="readfriend_lite" name="読書尚友 Lite ~~ Readfriend Lite" />
+  <item component="ComponentInfo{com.duokan.reader/com.duokan.reader.DkReaderActivity}" drawable="duokan" name="多看阅读 ~~ Duokan" />
+  <item component="ComponentInfo{com.dragon.read/com.dragon.read.pages.splash.SplashActivity}" drawable="dragon_read" name="番茄免费小说 ~~ Dragon Read" />
+  <item component="ComponentInfo{vz.com/com.feeyo.vz.DefaultAlias}" drawable="feichangzhun" name="飞常准 ~~ Feichangzhun" />
+  <item component="ComponentInfo{com.taobao.trip/com.alipay.mobile.quinox.LauncherActivity}" drawable="fliggy" name="飞猪 ~~ Fliggy" />
+  <item component="ComponentInfo{com.fenbi.android.servant/com.fenbi.android.module.welcome.WelcomeActivity}" drawable="fenbi" name="粉笔 ~~ Fenbi" />
+  <item component="ComponentInfo{com.autonavi.minimap/com.autonavi.map.activity.SplashActivity}" drawable="amap" name="高德地圖 ~~ Amap" />
+  <item component="ComponentInfo{cn.gov.tax.its/cn.gov.tax.its.MainActivity}" drawable="income_tax" name="个人所得税 ~~ Income Tax" />
+  <item component="ComponentInfo{com.maidu.gkld/com.maidu.gkld.ui.splash.SplashActivity}" drawable="gongkao_leida" name="公考雷达 ~~ Gongkao Leida" />
+  <item component="ComponentInfo{com.guotai.dazhihui/com.gtja.home.InitScreen}" drawable="guotai_junan" name="国泰君安君弘 ~~ Guotai Junan" />
+  <item component="ComponentInfo{com.jingyao.easybike/com.hellobike.atlas.business.portal.PortalActivity}" drawable="hello" name="哈啰 ~~ Hello" />
+  <item component="ComponentInfo{com.umetrip.android.msky.app/com.umetrip.android.msky.app.module.startup.SplashActivity}" drawable="umetrip" name="航旅纵横 ~~ Umetrip" />
+  <item component="ComponentInfo{com.yunxiao.haofenshu/com.yunxiao.haofenshu.start.launcher.StudentSplashActivity}" drawable="haofenshu" name="好分数 ~~ Haofenshu" />
+  <item component="ComponentInfo{com.sprd.sprdnote/com.sprd.sprdnote.NoteActivity}" drawable="notes" name="记事本 ~~ Notepad" />
+  <item component="ComponentInfo{com.heytap.health/com.heytap.health.oobe.LaunchActivity}" drawable="ohealth" name="健康 ~~ OHealth" />
+  <item component="ComponentInfo{com.jingdong.app.mall/com.jingdong.app.mall.main.MainActivity}" drawable="jd" name="京东 ~~ JD" />
   <item component="ComponentInfo{com.copymanga.app/com.copymanga.app.MainActivity}" drawable="_k" name="拷貝漫畫 ~~ Copy Manga" />
+  <item component="ComponentInfo{com.app.tideswing/com.app.tideswing.ui.SplashActivity}" drawable="nothing_to_say" name="可话 ~~ Nothing to say" />
+  <item component="ComponentInfo{com.telexpress.kfctaiwanapps/com.telexpress.kfctaiwanapps.MainActivity}" drawable="kfc" name="肯德基 ~~ KFC" />
+  <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.activity.MainActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
+  <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.SplashActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
+  <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.view.main.MainActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
+  <item component="ComponentInfo{com.kuaiduizuoye.scan/com.kuaiduizuoye.scan.activity.init.InitActivity}" drawable="get_it_right" name="快对 ~~ Get it right" />
+  <item component="ComponentInfo{hello.litiaotiao.app/hello.litiaotiao.app.LauncherActivity}" drawable="li_tiaotiao" name="李跳跳 ~~  Li Tiaotiao" />
+  <item component="ComponentInfo{com.lingnanpass/com.lingnanpass.GuideActivity}" drawable="lingnan_pass" name="岭南通 ~~ Lingnan Pass" />
+  <item component="ComponentInfo{com.leiting.ldgj/com.leiting.sdk.activity.PrivacyActivity}" drawable="rizline_cn" name="律动轨迹 ~~ Rizline" />
+  <item component="ComponentInfo{com.sankuai.meituan/com.meituan.android.pt.homepage.activity.MainActivity}" drawable="meituan" name="美团 ~~ Meituan" />
+  <item component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.Welcome}" drawable="meituan" name="美团 ~~ Meituan" />
+  <item component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.PreloadedWelcome}" drawable="meituan" name="美团 ~~ Meituan" />
+  <item component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.FlashWelcome}" drawable="meituan" name="美团 ~~ Meituan" />
+  <item component="ComponentInfo{com.sankuai.meituan/com.meituan.android.pt.homepage.activity.Welcome}" drawable="meituan" name="美团 ~~ Meituan" />
+  <item component="ComponentInfo{com.sankuai.meituan.takeoutnew/com.sankuai.meituan.takeoutnew.ui.page.boot.WelcomeActivity}" drawable="meituan_takeaway" name="美团外卖 ~~ Meituan Takeaway" />
+  <item component="ComponentInfo{com.mihoyo.hyperion/com.mihoyo.hyperion.ui.SplashActivity}" drawable="mihoyo_community" name="米游社 ~~ miHoYo Community" />
+  <item component="ComponentInfo{com.mihoyo.hyperion/com.mihoyo.hyperion.splash.SplashActivity}" drawable="mihoyo_community" name="米游社 ~~ miHoYo Community" />
+  <item component="ComponentInfo{com.mxbc.mxsa/com.mxbc.mxsa.modules.splash.SplashActivity}" drawable="mixue_ice_city" name="蜜雪冰城 ~~ Mixue Ice City" />
+  <item component="ComponentInfo{com.netease.edu.ucmooc/com.netease.edu.ucmooc.activity.ActivityWelcome}" drawable="mooc" name="慕课 ~~ MOOC" />
   <item component="ComponentInfo{com.xunmeng.pinduoduo/com.xunmeng.pinduoduo.ui.activity.MainFrameActivity}" drawable="pinduoduo" name="拼多多 ~~ Pinduoduo" />
-  <item component="ComponentInfo{ctrip.android.view/ctrip.business.splash.CtripSplashActivity}" drawable="ctrip" name="携程旅行 ~~ Ctrip" />
+  <item component="ComponentInfo{com.magicalstory.AppStore/com.magicalstory.AppStore.main.MainActivity}" drawable="wonderful" name="奇妙 ~~ Wonderful" />
+  <item component="ComponentInfo{com.wpengapp.lightstart/com.wpengapp.support.activity.LauncherActivity}" drawable="light_start" name="轻启动 ~~ Light Start" />
+  <item component="ComponentInfo{com.farplace.qingzhuo/com.farplace.qingzhuo.views.SplashActivity}" drawable="qingzhuo" name="清浊 ~~ Qingzhuo" />
+  <item component="ComponentInfo{com.pxmart.android/.di.mvvm.view.start.SplashActivity}" drawable="pxpay" name="全聯福利中心 ~~ PXPay" />
+  <item component="ComponentInfo{com.lucky.luckyclient/com.luckin.client.main.splash.SplashActivity}" drawable="luckin_coffe" name="瑞幸咖啡 ~~ Luckin Coffee" />
+  <item component="ComponentInfo{com.sspai.sspaiandroid/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="minority" name="少数派 ~~ Minority" />
+  <item component="ComponentInfo{com.smzdm.client.android/com.smzdm.client.android.app.WelComeActivity}" drawable="what_to_buy" name="什么值得买 ~~ What to buy" />
+  <item component="ComponentInfo{com.magicmagnet/com.magicmagnet.common.activity.SplashActivity}" drawable="magic_magnet" name="神奇磁力 ~~ Magic Magnet" />
   <item component="ComponentInfo{com.xayah.databackup.foss/com.xayah.databackup.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup.premium/com.xayah.databackup.ui.activity.splash.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup.premium/com.xayah.databackup.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
@@ -11712,47 +11731,10 @@
   <item component="ComponentInfo{com.xayah.databackup/com.xayah.databackup.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup/com.xayah.databackup.activity.guide.GuideActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xayah.databackup/com.xayah.databackup.ui.activity.screen.ScreenActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
-  <item component="ComponentInfo{com.china3s.android/com.china3s.android.home.view.Main}" drawable="spring_airlines" name="春秋航空 ~~ Spring Airlines" />
-  <item component="ComponentInfo{com.xiaolian.prometheus/com.xiaolian.launch.ui.SplashActivity}" drawable="zhihui_xiaolian" name="智慧笑联 ~~ Zhihui Xiaolian" />
-  <item component="ComponentInfo{hello.litiaotiao.app/hello.litiaotiao.app.LauncherActivity}" drawable="li_tiaotiao" name="李跳跳是 ~~  Li Tiaotiao" />
   <item component="ComponentInfo{com.taobao.taobao/com.taobao.tao.Welcome}" drawable="taobao" name="淘宝 ~~ Taobao" />
   <item component="ComponentInfo{com.taobao.taobao/com.androlua.Welcome}" drawable="taobao" name="淘宝 ~~ Taobao" />
   <item component="ComponentInfo{com.taobao.taobao/com.taobao.tao.welcome.Welcome}" drawable="taobao" name="淘宝 ~~ Taobao" />
   <item component="ComponentInfo{com.taobao.movie.android/com.taobao.movie.android.app.home.activity.MainActivity}" drawable="taopiaopiao" name="淘票票 ~~ Taopiaopiao" />
-  <item component="ComponentInfo{com.farplace.qingzhuo/com.farplace.qingzhuo.views.SplashActivity}" drawable="qingzhuo" name="清浊 ~~ Qingzhuo" />
-  <item component="ComponentInfo{com.fvcorp.android.aijiasuclient/com.fvcorp.android.fvclient.activity.SplashActivity}" drawable="aijiasu" name="爱加速 ~~ Aijiasu" />
-  <item component="ComponentInfo{com.byyoung.setting/com.byyoung.setting.Welcome}" drawable="byyoung" name="爱玩机工具箱 ~~ Byyoung" />
-  <item component="ComponentInfo{com.tencent.tmgp.sgame/com.putaolab.ptsdk.activity.PTMainActivity}" drawable="honor_of_kings" name="王者荣耀 ~~ Honor of Kings" />
-  <item component="ComponentInfo{com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity}" drawable="honor_of_kings" name="王者荣耀 ~~ Honor of Kings" />
-  <item component="ComponentInfo{com.lucky.luckyclient/com.luckin.client.main.splash.SplashActivity}" drawable="luckin_coffe" name="瑞幸咖啡 ~~ Luckin Coffee" />
-  <item component="ComponentInfo{com.dragon.read/com.dragon.read.pages.splash.SplashActivity}" drawable="dragon_read" name="番茄免费小说 ~~ Dragon Read" />
-  <item component="ComponentInfo{com.uzero.baimiao/com.uzero.baimiao.Hello}" drawable="baimiao" name="白描 ~~ Baimiao" />
-  <item component="ComponentInfo{com.uzero.cn.zhengjianzhao/com.uzero.cn.zhengjianzhao.Hello}" drawable="photo_id" name="白描证件照 ~~ Photo ID" />
-  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.StartActivity6}" drawable="bmap" name="白马地图 ~~ Bmap" />
-  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.StartActivity3}" drawable="bmap" name="白马地图 ~~ Bmap" />
-  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.activity.StartActivity}" drawable="bmap" name="白马地图 ~~ Bmap" />
-  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.activity.MainActivity}" drawable="bmap" name="白马地图 ~~ Bmap" />
-  <item component="ComponentInfo{me.gfuil.bmap/me.gfuil.bmap.StartActivity}" drawable="bmap" name="白马地图 ~~ Bmap" />
-  <item component="ComponentInfo{com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen.Alias0}" drawable="baidu_maps" name="百度地图 ~~ Baidu Maps" />
-  <item component="ComponentInfo{com.baidu.BaiduMap/com.baidu.baidumaps.WelcomeScreen}" drawable="baidu_maps" name="百度地图 ~~ Baidu Maps" />
-  <item component="ComponentInfo{com.baidu.netdisk/com.baidu.netdisk.ui.SvipLauncherActivity}" drawable="baidu_netdisk" name="百度网盘 ~~ Baidu Netdisk" />
-  <item component="ComponentInfo{com.baidu.netdisk/com.baidu.netdisk.ui.DefaultMainActivity}" drawable="baidu_netdisk" name="百度网盘 ~~ Baidu Netdisk" />
-  <item component="ComponentInfo{com.baidu.tieba/com.baidu.tieba.tblauncher.MainTabActivity}" drawable="baidu_tieba" name="百度贴吧 ~~ Baidu Tieba" />
-  <item component="ComponentInfo{com.baidu.input/com.baidu.input.ImeLauncherActivity}" drawable="baidu_ime" name="百度输入法 ~~ Baidu IME" />
-  <item component="ComponentInfo{com.zhihu.android/com.zhihu.android.app.ui.activity.LauncherActivity}" drawable="zhihu" name="知乎 ~~ Zhihu" />
-  <item component="ComponentInfo{com.magicmagnet/com.magicmagnet.common.activity.SplashActivity}" drawable="magic_magnet" name="神奇磁力 ~~ Magic Magnet" />
-  <item component="ComponentInfo{com.mihoyo.hyperion/com.mihoyo.hyperion.ui.SplashActivity}" drawable="mihoyo_community" name="米游社 ~~ miHoYo Community" />
-  <item component="ComponentInfo{com.mihoyo.hyperion/com.mihoyo.hyperion.splash.SplashActivity}" drawable="mihoyo_community" name="米游社 ~~ miHoYo Community" />
-  <item component="ComponentInfo{com.fenbi.android.servant/com.fenbi.android.module.welcome.WelcomeActivity}" drawable="fenbi" name="粉笔 ~~ Fenbi" />
-  <item component="ComponentInfo{com.mystyle.purelive/com.mystyle.purelive.MainActivity}" drawable="purelive" name="纯粹直播 ~~ PureLive" />
-  <item component="ComponentInfo{com.mybank.android.phone/com.mybank.android.phone.MainActivity}" drawable="mybank" name="网商银行 ~~ MYBank" />
-  <item component="ComponentInfo{com.sankuai.meituan/com.meituan.android.pt.homepage.activity.MainActivity}" drawable="meituan" name="美团 ~~ Meituan" />
-  <item component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.Welcome}" drawable="meituan" name="美团 ~~ Meituan" />
-  <item component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.PreloadedWelcome}" drawable="meituan" name="美团 ~~ Meituan" />
-  <item component="ComponentInfo{com.sankuai.meituan/com.sankuai.meituan.activity.FlashWelcome}" drawable="meituan" name="美团 ~~ Meituan" />
-  <item component="ComponentInfo{com.sankuai.meituan/com.meituan.android.pt.homepage.activity.Welcome}" drawable="meituan" name="美团 ~~ Meituan" />
-  <item component="ComponentInfo{com.sankuai.meituan.takeoutnew/com.sankuai.meituan.takeoutnew.ui.page.boot.WelcomeActivity}" drawable="meituan_takeaway" name="美团外卖 ~~ Meituan Takeaway" />
-  <item component="ComponentInfo{com.telexpress.kfctaiwanapps/com.telexpress.kfctaiwanapps.MainActivity}" drawable="kfc" name="肯德基 ~~ KFC" />
   <item component="ComponentInfo{com.tencent.wemeet.app/com.tencent.wemeet.app.StartupActivity}" drawable="tencent_meeting" name="腾讯会议 ~~ Tencent Meeting" />
   <item component="ComponentInfo{com.tencent.qqlive/com.tencent.qqlive.ona.activity.SplashHomeActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
   <item component="ComponentInfo{com.tencent.qqlivehd/com.tencent.qqlivehd.activity.WelcomeActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
@@ -11761,38 +11743,69 @@
   <item component="ComponentInfo{com.tencent.qqlive/com.tencent.qqlive.activity.WelcomeActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
   <item component="ComponentInfo{com.tencent.qqlivei18n.us/com.tencent.qqliveinternational.base.MainActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
   <item component="ComponentInfo{com.tencent.qqlivei18n/com.tencent.qqliveinternational.base.MainActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
-  <item component="ComponentInfo{com.umetrip.android.msky.app/com.umetrip.android.msky.app.module.startup.SplashActivity}" drawable="umetrip" name="航旅纵横 ~~ Umetrip" />
-  <item component="ComponentInfo{com.cainiao.wireless/com.cainiao.wireless.homepage.view.activity.WelcomeActivity}" drawable="cainiao" name="菜鸟 ~~ Cainiao" />
-  <item component="ComponentInfo{com.mxbc.mxsa/com.mxbc.mxsa.modules.splash.SplashActivity}" drawable="mixue_ice_city" name="蜜雪冰城 ~~ Mixue Ice City" />
-  <item component="ComponentInfo{com.shopee.tw/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="蝦皮購物 ~~ Shopee" />
-  <item component="ComponentInfo{info.ebstudio.bookviewer.free/info.ebstudio.bookviewer.free.BookViewerActivity}" drawable="readfriend_lite" name="読書尚友 Lite ~~ Readfriend Lite" />
-  <item component="ComponentInfo{com.sprd.sprdnote/com.sprd.sprdnote.NoteActivity}" drawable="notes" name="记事本 ~~ Notepad" />
-  <item component="ComponentInfo{com.douban.frodo/com.douban.frodo.activity.SplashActivity}" drawable="douban" name="豆瓣 ~~ Douban" />
+  <item component="ComponentInfo{com.cn21.ecloud/com.cn21.ecloud.vip}" drawable="ecloud" name="天翼云 ~~ ecloud" />
+  <item component="ComponentInfo{com.cn21.ecloud/com.cn21.ecloud.activity.login.StartActivity}" drawable="ecloud" name="天翼云 ~~ ecloud" />
+  <item component="ComponentInfo{com.cn21.ecloud/com.cn21.ecloud.default}" drawable="ecloud" name="天翼云 ~~ ecloud" />
   <item component="ComponentInfo{com.huanchengfly.tieba.post/com.huanchengfly.tieba.post.MainActivityV2}" drawable="tieba_lite" name="贴吧 Lite ~~ Tieba Lite" />
   <item component="ComponentInfo{com.huanchengfly.tieba.post/com.huanchengfly.tieba.post.MainActivity}" drawable="tieba_lite" name="贴吧 Lite ~~ Tieba Lite" />
   <item component="ComponentInfo{com.huanchengfly.tieba.post/com.huanchengfly.tieba.post.activities.MainActivity}" drawable="tieba_lite" name="贴吧 Lite ~~ Tieba Lite" />
-  <item component="ComponentInfo{com.wpengapp.lightstart/com.wpengapp.support.activity.LauncherActivity}" drawable="light_start" name="轻启动 ~~ Light Start" />
-  <item component="ComponentInfo{com.xunlei.downloadprovider/com.xunlei.downloadprovider.launch.LaunchActivity}" drawable="lixian_xunlei" name="迅雷 ~~ Lixian Xunlei" />
-  <item component="ComponentInfo{com.kookong.app/com.kookong.app.MainActivity}" drawable="kookong_smart_remote_control" name="遥控专家酷控 ~~ Kookong Smart Remote Control" />
-  <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.activity.MainActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
-  <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.SplashActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
-  <item component="ComponentInfo{com.coolapk.market/com.coolapk.market.view.main.MainActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
-  <item component="ComponentInfo{com.xt.retouch/com.xt.retouch.uilauncher.LaunchActivity}" drawable="xingtu" name="醒图 ~~ Xingtu" />
   <item component="ComponentInfo{com.MobileTicket/com.alipay.mobile.quinox.LauncherActivity}" drawable="railway_12306" name="铁路12306 ~~ Railway 12306" />
   <item component="ComponentInfo{com.MobileTicket/com.MobileTicket.ui.activity.WelcomeGuideActivity}" drawable="railway_12306" name="铁路12306 ~~ Railway 12306" />
+  <item component="ComponentInfo{com.tencent.tmgp.sgame/com.putaolab.ptsdk.activity.PTMainActivity}" drawable="honor_of_kings" name="王者荣耀 ~~ Honor of Kings" />
+  <item component="ComponentInfo{com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity}" drawable="honor_of_kings" name="王者荣耀 ~~ Honor of Kings" />
+  <item component="ComponentInfo{com.mybank.android.phone/com.mybank.android.phone.MainActivity}" drawable="mybank" name="网商银行 ~~ MYBank" />
+  <item component="ComponentInfo{com.sina.weibo/com.sina.weibo.SplashActivity}" drawable="weibo" name="微博 ~~ Weibo" />
+  <item component="ComponentInfo{com.weico.international/com.weico.international.activity.LogoActivity}" drawable="weibo" name="微博 ~~ Weibo" />
+  <item component="ComponentInfo{com.sina.weibocare/com.weico.international.activity.LogoActivity}" drawable="weibo" name="微博 ~~ Weibo" />
+  <item component="ComponentInfo{com.weico.international/com.weico.international.appicon_white}" drawable="weibo" name="微博 ~~ Weibo" />
+  <item component="ComponentInfo{com.sina.weibolite/com.sina.weibolite.appicon_white}" drawable="weibo" name="微博极速版 ~~ Weibo Lite" />
+  <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
+  <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.presenter.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
+  <item component="ComponentInfo{com.tencent.wetype/com.tencent.wetype.plugin.hld.reactnative.activity.ImeMainSettingActivity}" drawable="wetype" name="微信输入法 ~~ WeType" />
+  <item component="ComponentInfo{com.kingosoft.activity_kb_common/com.kingosoft.activity_kb_common.LogoImageActivity}" drawable="xiqueer" name="喜鹊儿 ~~ Xiqueer" />
+  <item component="ComponentInfo{com.shopee.tw/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="蝦皮購物 ~~ Shopee" />
   <item component="ComponentInfo{com.taobao.idlefish/com.taobao.fleamarket.home.activity.InitActivity}" drawable="idle_fish" name="闲鱼 ~~ Idle Fish" />
+  <item component="ComponentInfo{com.xiaomi.mico/com.xiaomi.mico.splash.SplashActivity}" drawable="xiaomi_speaker" name="小爱音箱 ~~ Xiaomi Speaker" />
+  <item component="ComponentInfo{com.max.xiaoheihe/com.max.xiaoheihe.SplashActivity}" drawable="xiaoheihe" name="小黑盒 ~~ Xiaoheihe" />
+  <item component="ComponentInfo{web1n.stopapp/web1n.stopapp.activity.MainActivity}" drawable="black_house" name="小黑屋 ~~ Black House" />
+  <item component="ComponentInfo{com.xingin.xhs/com.xingin.xhs.index.v2.IndexActivityV2}" drawable="xiaohongshu" name="小红书 ~~ Xiaohongshu" />
+  <item component="ComponentInfo{com.xiaomi.mitime/com.xiaomi.mitime.activity.MakeCallActivity}" drawable="mi_time" name="小米通话 ~~ Mi Time" />
+  <item component="ComponentInfo{app.podcast.cosmos/io.iftech.android.podcast.app.home.main.view.MainActivity}" drawable="small_cosmos" name="小宇宙 ~~ Small cosmos" />
+  <item component="ComponentInfo{com.fenbi.android.solar/com.fenbi.android.solar.activity.RouterActivity}" drawable="small_monkey_search" name="小猿搜题 ~~ Small Monkey Search" />
+  <item component="ComponentInfo{ctrip.android.view/ctrip.business.splash.CtripSplashActivity}" drawable="ctrip" name="携程旅行 ~~ Ctrip" />
+  <item component="ComponentInfo{me.gkd.xs.ps/me.gkd.xs.ps.ui.activity.WelcomeActivity}" drawable="xinshang" name="心赏 ~~ Xinshang" />
+  <item component="ComponentInfo{com.xt.retouch/com.xt.retouch.uilauncher.LaunchActivity}" drawable="xingtu" name="醒图 ~~ Xingtu" />
+  <item component="ComponentInfo{cn.xuexi.android/com.alibaba.android.rimet.biz.SplashActivity}" drawable="xuexi_qiangguo" name="学习强国 ~~ Xuexi Qiangguo" />
+  <item component="ComponentInfo{com.chaoxing.mobile/com.chaoxing.mobile.activity.SplashActivity}" drawable="chaoxing" name="学习通 ~~ Chaoxing" />
+  <item component="ComponentInfo{com.xuexiaoyi.xxy/com.xuexiaoyi.entrance.splash.SplashActivity}" drawable="xuexiaoyi" name="学小易 ~~ Xuexiaoyi" />
+  <item component="ComponentInfo{cn.com.chsi.chsiapp/cn.com.chsi.chsiapp.GuideActivity}" drawable="chsi" name="学信网 ~~ CHSI" />
+  <item component="ComponentInfo{com.xunlei.downloadprovider/com.xunlei.downloadprovider.launch.LaunchActivity}" drawable="lixian_xunlei" name="迅雷 ~~ Lixian Xunlei" />
+  <item component="ComponentInfo{com.kookong.app/com.kookong.app.MainActivity}" drawable="kookong_smart_remote_control" name="遥控专家酷控 ~~ Kookong Smart Remote Control" />
+  <item component="ComponentInfo{com.One.WoodenLetter/com.One.WoodenLetter.LetterActivity}" drawable="wooden_letter" name="一个木函 ~~ Wooden Letter" />
+  <item component="ComponentInfo{com.x1y9.probe/com.x1y9.app.MainActivity}" drawable="secret_settings" name="隐秘参数 ~~ Secret Settings" />
+  <item component="ComponentInfo{com.youku.international.phone/com.youku.phone.ActivityWelcome}" drawable="youku" name="优酷 ~~ Youku" />
+  <item component="ComponentInfo{com.youku.phone/com.youku.phone.ActivityWelcome}" drawable="youku" name="优酷 ~~ Youku" />
+  <item component="ComponentInfo{com.easycard.wallet/.nonfc.activity.WelcomePageActivity}" drawable="easy_wallet" name="悠遊付 ~~ Easy Wallet" />
+  <item component="ComponentInfo{com.easycard.wallet/com.easycard.wallet.nonfc.activity.WelcomePageActivity}" drawable="easy_wallet" name="悠遊付 ~~ Easy Wallet" />
   <item component="ComponentInfo{io.legado.app.release/io.legado.app.ui.welcome.WelcomeActivity}" drawable="legado" name="阅读 ~~ Legado" />
   <item component="ComponentInfo{io.legado.play.release/io.legado.app.ui.welcome.WelcomeActivity}" drawable="legado" name="阅读 ~~ Legado" />
-  <item component="ComponentInfo{com.alicloud.databox/com.alicloud.databox.launcher.splash.SplashActivity}" drawable="aliyundrive" name="阿里云盘 ~~ AliyunDrive" />
-  <item component="ComponentInfo{com.goyal.fip888/com.goyal.fip888.MainActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
-  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.welcome.Welcome}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
-  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.v5.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
-  <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.launch.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
-  <item component="ComponentInfo{com.x1y9.probe/com.x1y9.app.MainActivity}" drawable="secret_settings" name="隐秘参数 ~~ Secret Settings" />
-  <item component="ComponentInfo{digital.cardreader/digital.cardreader.MainActivity}" drawable="japan_train_card_balance_check" name="電子マネーICカード残高確認 ~~ Japan train card balance check" />
-  <item component="ComponentInfo{vz.com/com.feeyo.vz.DefaultAlias}" drawable="feichangzhun" name="飞常准 ~~ Feichangzhun" />
-  <item component="ComponentInfo{com.taobao.trip/com.alipay.mobile.quinox.LauncherActivity}" drawable="fliggy" name="飞猪 ~~ Fliggy" />
-  <item component="ComponentInfo{com.autonavi.minimap/com.autonavi.map.activity.SplashActivity}" drawable="amap" name="高德地圖 ~~ Amap" />
+  <item component="ComponentInfo{com.miHoYo.cloudgames.hkrpg/com.mihoyo.cloudgame.ui.SplashActivity}" drawable="honkai_star_rail_cloud" name="云·星穹铁道 ~~ Honkai: Star Rail · Cloud" />
+  <item component="ComponentInfo{cmb.pb/cmb.pb.ui.PBInitActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
+  <item component="ComponentInfo{cmb.pb/cmb.pb.app.mainframe.container.PBMainActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
+  <item component="ComponentInfo{cmb.pb/cmb.pb.app.mainframe.PBEntryActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
+  <item component="ComponentInfo{cmb.pb/cmb.pb.mainframe.PBEntryActivity}" drawable="china_merchants_bank" name="招商银行 ~~ China Merchants Bank" />
+  <item component="ComponentInfo{com.zhihu.android/com.zhihu.android.app.ui.activity.LauncherActivity}" drawable="zhihu" name="知乎 ~~ Zhihu" />
+  <item component="ComponentInfo{com.farplace.closer/com.farplace.closer.MainActivity}" drawable="closer" name="咫 ~~ Closer" />
+  <item component="ComponentInfo{com.xiaolian.prometheus/com.xiaolian.launch.ui.SplashActivity}" drawable="zhihui_xiaolian" name="智慧笑联 ~~ Zhihui Xiaolian" />
+  <item component="ComponentInfo{com.ct.client/com.ct.client.activity.SplashActivity}" drawable="china_telecom" name="中国电信 ~~ China Telecom" />
+  <item component="ComponentInfo{com.chinamworld.main/com.ccb.start.MainActivity}" drawable="china_construction_bank" name="中国建设银行 ~~ China Construction Bank" />
+  <item component="ComponentInfo{com.sinovatech.unicom.ui/com.sinovatech.unicom.basic.ui.activity.WelcomeClient}" drawable="china_unicom" name="中国联通 ~~ China Unicom" />
+  <item component="ComponentInfo{com.xwtec.sd.mobileclient/com.xwtec.sd.mobileclient.ui.activity.MainTabActivity}" drawable="china_mobile" name="中国移动 ~~ China Mobile" />
+  <item component="ComponentInfo{com.greenpoint.android.mc10086.activity/com.mc10086.cmcc.base.StartPageActivity}" drawable="china_mobile" name="中国移动 ~~ China Mobile" />
+  <item component="ComponentInfo{com.chinamworld.bocmbci/com.boc.bocsoft.mobile.bocmobile.buss.system.splash.SplashActivity}" drawable="bank_of_china" name="中国银行 ~~ Bank of China" />
+  <item component="ComponentInfo{fontweight.adjustment/fontweight.adjustment.MainActivity}" drawable="fontweight_adjustment" name="字体粗细调节 ~~ Fontweight Adjustment" />
+  <item component="ComponentInfo{com.baidu.homework/com.baidu.homework.activity.init.InitActivity}" drawable="zuoyebang" name="作业帮 ~~ Zuoyebang" />
+  <!-- Korean -->
   <item component="ComponentInfo{com.nhn.android.search/com.nhn.android.search.ui.pages.SearchHomePage}" drawable="naver" name="네이버 ~~ NAVER" />
   <item component="ComponentInfo{com.lifeplatform.better/com.lifeplatform.better.MainActivity}" drawable="better" name="베터 ~~ Better" />
   <item component="ComponentInfo{zettamedia.bflix/zettamedia.bflix.activity.IntroActivity}" drawable="bflix" name="비플릭스 ~~ BFLIX" />
