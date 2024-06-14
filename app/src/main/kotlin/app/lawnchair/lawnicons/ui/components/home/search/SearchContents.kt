@@ -41,7 +41,7 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
-import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
+import app.lawnchair.lawnicons.ui.components.home.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
 import kotlinx.collections.immutable.ImmutableList
 
@@ -94,7 +94,7 @@ fun SearchContents(
                     onModeChange(SearchMode.COMPONENT)
                 },
                 label = {
-                    Text(text = stringResource(id = R.string.mapped_components))
+                    Text(text = stringResource(id = R.string.component))
                 },
             )
             FilterChip(
@@ -147,11 +147,14 @@ fun SearchContents(
                             columns = GridCells.Adaptive(minSize = 80.dp),
                             contentPadding = PaddingValues(16.dp),
                         ) {
-                            items(items = iconInfo) {
+                            items(
+                                items = iconInfo,
+                                contentType = { "icon_preview" },
+                            ) {
                                 IconPreview(
                                     iconInfo = it,
                                     onSendResult = onSendResult,
-                                    iconBackground = MaterialTheme.colorScheme.primaryContainer,
+                                    iconBackground = MaterialTheme.colorScheme.surfaceVariant,
                                 )
                             }
                         }
@@ -196,7 +199,7 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
                 .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
         )
         if (isIconInfoAppfilterShown.value) {
-            IconInfoPopup(
+            IconInfoSheet(
                 iconInfo = it,
             ) {
                 isIconInfoAppfilterShown.value = it
