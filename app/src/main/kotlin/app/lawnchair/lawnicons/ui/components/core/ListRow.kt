@@ -65,7 +65,7 @@ fun ListRow(
                             ),
                         )
                         .background(
-                            MaterialTheme.colorScheme.surfaceContainerLow,
+                            MaterialTheme.colorScheme.surfaceContainer,
                         )
                 } else {
                     Modifier

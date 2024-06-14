@@ -102,7 +102,7 @@ fun IconPreview(
         }
     }
     if (isIconInfoShown.value) {
-        IconInfoPopup(
+        IconInfoSheet(
             iconInfo = iconInfo,
         ) {
             isIconInfoShown.value = it

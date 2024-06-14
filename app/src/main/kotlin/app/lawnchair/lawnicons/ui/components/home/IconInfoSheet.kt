@@ -222,7 +222,7 @@ fun IconInfoSheet(
                                 modifier = Modifier
                                     .padding(horizontal = 16.dp)
                                     .then(
-                                        if (isLast)
+                                        if (isLast) {
                                             Modifier
                                                 .clip(
                                                     RoundedCornerShape(
@@ -232,7 +232,9 @@ fun IconInfoSheet(
                                                         bottomEnd = 16.dp,
                                                     ),
                                                 )
-                                        else Modifier,
+                                        } else {
+                                            Modifier
+                                        },
                                     ),
                                 color = MaterialTheme.colorScheme.surfaceContainer,
                             ) {
@@ -240,10 +242,12 @@ fun IconInfoSheet(
                                     Modifier
                                         .padding(start = 16.dp)
                                         .then(
-                                            if (isLast)
+                                            if (isLast) {
                                                 Modifier
                                                     .padding(bottom = 16.dp)
-                                            else Modifier
+                                            } else {
+                                                Modifier
+                                            },
                                         )
                                         .fillMaxWidth()
                                         .horizontalScroll(rememberScrollState()),
