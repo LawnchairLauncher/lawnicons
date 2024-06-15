@@ -183,7 +183,7 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 2. Launch IconRequest and tap one of the options:
 - UPDATE EXISTING — to copy packages with activities.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
-3. Select the apps for which youʼd like to request or make icons.
+3. Use the app toolbar to select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.
 
 #### Icon Pusher app
