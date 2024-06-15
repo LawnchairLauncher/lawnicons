@@ -14,14 +14,17 @@ Lawnicons is best used [on Lawnchair 12.1 or Lawnchair 14 Beta 2](https://github
 See [the Releases section](https://github.com/LawnchairLauncher/lawnicons/releases) for the latest stable build. For development builds with new icons, go to [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK).
 
 ## Contributing
-Please see [the Lawnicons guidelines](CONTRIBUTING.md) for info on contributing icons or code, it will save you time. Android devs can find tasks [in our issues](https://github.com/LawnchairLauncher/lawnicons/issues).
+Please see [the Lawnicons guidelines](CONTRIBUTING.md) for information on contributing icons or code, it will save you time.
 
-If you are interested in creating icons, then we invite you to fulfill [popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103).
+Android developers can find tasks [in our issues](https://github.com/LawnchairLauncher/lawnicons/issues).
+Anyone who is interested in making icons can fulfill [the popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103).
 
 Need help? [Join us on Discord](https://discord.gg/3x8qNWxgGZ).
 
 ## Requesting icons
-Please use [the icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). To wait for icons much less, you can take into account our guidelines and make the icons you need yourself. If a previously added icon has a design change, create [an issue](https://github.com/LawnchairLauncher/lawnicons/issues). 
+Please use **Lawnicons 2.10+**: `Open Lawnicons → Tap "Request icons" → Submit the response`.
+
+You can also use [the icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If a previously added icon has a design change, create [an issue](https://github.com/LawnchairLauncher/lawnicons/issues). 
 
 
 
