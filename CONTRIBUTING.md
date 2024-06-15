@@ -150,6 +150,12 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 1. Done! You're ready to open a pull request. Please set `develop` as the base branch.
 
 ## Finding the package and activity name of an app
+
+### Using Lawnicons
+1. Install and open [Lawnicons 2.10+](https://github.com/LawnchairLauncher/lawnicons/releases).
+2. Tap "Request icons". The button appears when you are missing at least one icon. After that, our request form will open with a response ready to be submit. 
+3. Submit the response. You can copy the submitted activities [from our table](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=1039095616#gid=1039095616) (sorted by date).
+
 ### Using `adb`
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
 1. Open a new Command Prompt or Terminal window and input `adb devices`.
@@ -171,13 +177,13 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
 ### Using 3rd-party apps
-#### IconRequest app
 
+#### IconRequest app
 1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
 2. Launch IconRequest and tap one of the options:
-- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/u_MBz), 22s video.
+- UPDATE EXISTING — to copy packages with activities.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
-3. Select the apps for which youʼd like to request or make icons.
+3. Use the app toolbar to select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.
 
 #### Icon Pusher app
