@@ -6,7 +6,7 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Version %s</string>
     <!-- Icon request info -->
-    <string name="unthemed_icons_info">Request icons</string>
+    <string name="request_icons">Request icons</string>
 
     <!-- Search bar -->
 
@@ -64,4 +64,10 @@
     <string name="copied_text">Copied text</string>
     <string name="component">Component name</string>
     <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="unthemed_icons_info_title">You have %d unthemed icons</string>
+    <string name="more_information">View details</string>
+    <string name="open_request_form">Open icon request form</string>
+    <string name="unthemed_icons_info_text">Too many unthemed icons for a direct link. Please copy the request below and submit it through the Icon Request form.</string>
+    <string name="icon_request_hold_tip">To directly visit the icon request page, tap and hold the \"Request icons\" FAB</string>
+    <string name="request_all_unthemed_icons">Request all unthemed icons</string>
 </resources>

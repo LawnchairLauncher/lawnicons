@@ -1,8 +1,5 @@
 package app.lawnchair.lawnicons.ui.components.home
 
-import android.content.ClipData
-import android.content.ClipboardManager
-import android.content.Context
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.horizontalScroll
@@ -56,6 +53,7 @@ import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 
@@ -125,7 +123,7 @@ fun IconInfoSheet(
                     IconLink(
                         iconResId = R.drawable.github_foreground,
                         label = stringResource(id = R.string.view_on_github),
-                        url = "https://github.com/LawnchairLauncher/lawnicons/blob/develop/svgs/$githubName.svg",
+                        url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
                     )
                 }
             }
@@ -273,12 +271,6 @@ fun IconInfoSheet(
             }
         }
     }
-}
-
-private fun copyTextToClipboard(context: Context, text: String) {
-    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    val clip = ClipData.newPlainText(context.getString(R.string.copied_text), text)
-    clipboard.setPrimaryClip(clip)
 }
 
 @PreviewLawnicons

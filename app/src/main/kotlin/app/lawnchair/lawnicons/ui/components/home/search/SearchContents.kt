@@ -198,7 +198,7 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
                 .clip(RoundedCornerShape(16.dp))
                 .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
         )
-        if (isIconInfoAppfilterShown.value) {
+        AnimatedVisibility(isIconInfoAppfilterShown.value) {
             IconInfoSheet(
                 iconInfo = it,
             ) {
