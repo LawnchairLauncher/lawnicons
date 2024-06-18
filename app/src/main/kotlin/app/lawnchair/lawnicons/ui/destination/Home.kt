@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -42,11 +44,12 @@ fun Home(
     with(lawniconsViewModel) {
         val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()
         val searchedIconInfoModel by searchedIconInfoModel.collectAsStateWithLifecycle()
-        val iconRequestModel by iconRequestList.collectAsStateWithLifecycle()
+        val iconRequestModel by iconRequestModel.collectAsStateWithLifecycle()
         val searchMode = searchMode
         val searchTerm = searchTerm
 
         val lazyGridState = rememberLazyGridState()
+        val snackbarHostState = remember { SnackbarHostState() }
 
         Crossfade(
             modifier = modifier,
@@ -95,9 +98,13 @@ fun Home(
                     floatingActionButton = {
                         IconRequestFAB(
                             iconRequestModel = iconRequestModel,
+                            snackbarHostState = snackbarHostState,
                             lazyGridState = lazyGridState,
                         )
                     },
+                    snackbarHost = {
+                        SnackbarHost(hostState = snackbarHostState)
+                    }
                 ) { contentPadding ->
                     iconInfoModel?.let {
                         val padding = contentPadding // Ignore padding value
