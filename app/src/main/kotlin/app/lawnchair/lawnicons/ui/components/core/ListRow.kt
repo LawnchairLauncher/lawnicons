@@ -129,14 +129,20 @@ private fun Content(
             icon()
             Spacer(modifier = Modifier.width(basePadding))
         }
-        Column {
+        Column(
+            if (endIcon != null) {
+                Modifier.weight(0.95f)
+            } else {
+                Modifier.fillMaxWidth()
+            }
+        ) {
             label()
             if (description != null) {
                 description()
             }
         }
         if (endIcon != null) {
-            Spacer(modifier = Modifier.weight(1f))
+            Spacer(modifier = Modifier.weight(0.05f))
             endIcon()
         }
     }

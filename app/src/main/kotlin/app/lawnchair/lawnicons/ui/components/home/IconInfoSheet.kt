@@ -1,6 +1,7 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -17,7 +18,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.ArrowDropDown
@@ -30,7 +30,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
@@ -39,8 +38,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -76,8 +76,7 @@ fun IconInfoSheet(
         contentWindowInsets = {
             WindowInsets(0.dp)
         },
-        modifier = modifier
-            .navigationBarsPadding(),
+        modifier = modifier,
     ) {
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
@@ -149,128 +148,118 @@ fun IconInfoSheet(
                     modifier = Modifier.padding(start = 32.dp, bottom = 6.dp),
                 )
             }
-            val result = iconInfo.componentNames
+
+            val groupedComponents = iconInfo.componentNames
                 .groupBy { it.label }
-                .map { (key, values) ->
-                    Pair(key, values.map { it.componentName })
+                .map { (label, components) ->
+                    label to components.map { it.componentName }
                 }
 
-            itemsIndexed(result) { index, (label, componentName) ->
-                val showExpandButton = componentName.size > 1
-                var expanded by remember { mutableStateOf(false) }
+            itemsIndexed(groupedComponents) { index, (label, componentName) ->
+                IconInfoListRow(label, componentName, index, groupedComponents.lastIndex)
+            }
+            item {
+                Spacer(Modifier.height(16.dp))
+            }
+            item {
+                Spacer(Modifier.navigationBarsPadding())
+            }
+        }
+    }
+}
 
-                val isLast = index == result.lastIndex
+@Composable
+private fun IconInfoListRow(
+    label: String,
+    componentNames: List<String>,
+    currentIndex: Int,
+    lastIndex: Int,
+) {
+    val showExpandButton = componentNames.size > 1
+    var expanded by remember { mutableStateOf(false) }
 
-                ListRow(
-                    label = {
-                        SelectionContainer {
-                            Text(
-                                text = label,
-                                maxLines = 2,
-                                overflow = TextOverflow.Ellipsis,
-                            )
+    var fullHeight by remember { mutableStateOf(0.dp) }
+    val animatedHeight by animateDpAsState(
+        targetValue = fullHeight,
+        label = "On component name expansion or contraction",
+    )
+
+    val density = LocalDensity.current
+
+    ListRow(
+        label = {
+            SelectionContainer {
+                Text(
+                    text = label,
+                    maxLines = 2,
+                    overflow = TextOverflow.Ellipsis,
+                )
+            }
+        },
+        description = {
+            SelectionContainer {
+                Column(
+                    modifier = Modifier
+                        .onGloballyPositioned { coordinates ->
+                            fullHeight = with(density) {
+                                coordinates.size.height.toDp()
+                            }
                         }
-                    },
-                    contentModifier = Modifier.padding(vertical = 8.dp),
-                    description = {
-                        componentName.firstOrNull()?.let {
-                            SelectionContainer {
+                        .horizontalScroll(rememberScrollState()),
+                ) {
+                    componentNames.firstOrNull()?.let {
+                        Text(
+                            text = it,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(end = 48.dp),
+                        )
+                    }
+                    AnimatedVisibility(visible = showExpandButton && expanded) {
+                        Column {
+                            componentNames.forEach {
                                 Text(
-                                    text = it.replace("/", "/\n"),
+                                    text = it,
                                     maxLines = 2,
-                                    overflow = TextOverflow.Ellipsis,
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                                 )
                             }
                         }
-                    },
-                    divider = (if (showExpandButton) !expanded else true) && index < result.lastIndex,
-                    first = index == 0,
-                    last = isLast && !expanded,
-                    endIcon = {
-                        if (showExpandButton) {
-                            IconButton(
-                                modifier = Modifier.requiredSize(48.dp),
-                                onClick = {
-                                    expanded = !expanded
-                                },
-                            ) {
-                                val angle by animateFloatAsState(
-                                    targetValue = (if (expanded) 180 else 0).toFloat(),
-                                    label = "Expand/collapse chevron rotation",
-                                )
-
-                                Icon(
-                                    imageVector = Icons.Rounded.ArrowDropDown,
-                                    contentDescription = stringResource(R.string.toggle_visibility_of_contents),
-                                    tint = MaterialTheme.colorScheme.onBackground,
-                                    modifier = Modifier.rotate(angle),
-                                )
-                            }
-                        }
-                    },
-                    height = 90.dp,
-                    background = true,
-                )
-                if (showExpandButton) {
-                    AnimatedVisibility(visible = expanded) {
-                        SelectionContainer {
-                            Surface(
-                                modifier = Modifier
-                                    .padding(horizontal = 16.dp)
-                                    .then(
-                                        if (isLast) {
-                                            Modifier
-                                                .clip(
-                                                    RoundedCornerShape(
-                                                        topStart = 0.dp,
-                                                        topEnd = 0.dp,
-                                                        bottomStart = 16.dp,
-                                                        bottomEnd = 16.dp,
-                                                    ),
-                                                )
-                                        } else {
-                                            Modifier
-                                        },
-                                    ),
-                                color = MaterialTheme.colorScheme.surfaceContainer,
-                            ) {
-                                Column(
-                                    Modifier
-                                        .padding(start = 16.dp)
-                                        .then(
-                                            if (isLast) {
-                                                Modifier
-                                                    .padding(bottom = 16.dp)
-                                            } else {
-                                                Modifier
-                                            },
-                                        )
-                                        .fillMaxWidth()
-                                        .horizontalScroll(rememberScrollState()),
-                                ) {
-                                    componentName
-                                        .drop(1)
-                                        .forEach {
-                                            Text(
-                                                text = it.replace("/", "/\n"),
-                                                maxLines = 2,
-                                                style = MaterialTheme.typography.bodyMedium,
-                                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                            )
-                                        }
-                                }
-                            }
-                        }
                     }
                 }
             }
-            item {
-                Spacer(Modifier.height(16.dp))
+        },
+        divider = currentIndex < lastIndex,
+        first = currentIndex == 0,
+        last = currentIndex == lastIndex,
+        endIcon = if (showExpandButton) {
+            @Composable {
+                IconButton(
+                    modifier = Modifier.requiredSize(48.dp),
+                    onClick = {
+                        expanded = !expanded
+                    },
+                ) {
+                    val angle by animateFloatAsState(
+                        targetValue = (if (expanded) 180 else 0).toFloat(),
+                        label = "Expand/collapse chevron rotation",
+                    )
+
+                    Icon(
+                        imageVector = Icons.Rounded.ArrowDropDown,
+                        contentDescription = stringResource(R.string.toggle_visibility_of_contents),
+                        tint = MaterialTheme.colorScheme.onBackground,
+                        modifier = Modifier.rotate(angle),
+                    )
+                }
             }
-        }
-    }
+        } else null,
+        height = if (expanded) 48.dp + animatedHeight else 72.dp,
+        background = true,
+    )
 }
 
 @PreviewLawnicons
