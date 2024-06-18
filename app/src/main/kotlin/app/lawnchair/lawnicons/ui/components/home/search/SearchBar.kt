@@ -140,7 +140,7 @@ fun LawniconsSearchBar(
                 Text(
                     stringResource(
                         id = if (isIconPicker) {
-                            R.string.search_bar_choose_icon
+                            R.string.search_bar_icon_picker
                         } else {
                             R.string.search_bar_hint
                         },
