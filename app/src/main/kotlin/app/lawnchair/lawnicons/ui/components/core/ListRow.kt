@@ -134,7 +134,7 @@ private fun Content(
                 Modifier.weight(0.95f)
             } else {
                 Modifier.fillMaxWidth()
-            }
+            },
         ) {
             label()
             if (description != null) {

@@ -104,7 +104,7 @@ fun Home(
                     },
                     snackbarHost = {
                         SnackbarHost(hostState = snackbarHostState)
-                    }
+                    },
                 ) { contentPadding ->
                     iconInfoModel?.let {
                         val padding = contentPadding // Ignore padding value

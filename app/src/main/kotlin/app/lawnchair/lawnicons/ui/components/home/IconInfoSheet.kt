@@ -256,7 +256,9 @@ private fun IconInfoListRow(
                     )
                 }
             }
-        } else null,
+        } else {
+            null
+        },
         height = if (expanded) 48.dp + animatedHeight else 72.dp,
         background = true,
     )
