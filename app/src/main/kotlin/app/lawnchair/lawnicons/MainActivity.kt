@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
                     if (bitmap.isRecycled) {
                         bitmap
                     } else {
-                        bitmap.copy(bitmap.config, false)
+                        bitmap.copy(requireNotNull(bitmap.config), false)
                     },
                 )
             } catch (e: Exception) {
