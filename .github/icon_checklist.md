@@ -2,6 +2,9 @@ Thanks for your contribution!
 
 While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons.
 
+<details>
+<summary><i>Click to expand self-review checklist</i></summary>
+
 ### Canvas and sizes
 1. Canvas: `192×192px`.
 2. Non-square icons: the long side of the icons should be `160px`.
@@ -24,3 +27,5 @@ Example: `京东 ~~ JD`.
 3. Avoid noticable black spots by reducing the stroke width or simplifying the icons.
 4. Avoid close distances between strokes. The icons on the phone screen will be smaller, so the small distances between the strokes will stick together.
 5. Avoid drastic changes in stroke widths. When the strokes next to each other differ in width by 4px or more, the icon will look sloppy.
+
+</details>
