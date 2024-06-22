@@ -1,5 +1,6 @@
 package app.lawnchair.lawnicons
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,10 +11,11 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.Lawnicons
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,36 +35,42 @@ class MainActivity : ComponentActivity() {
             val context = LocalContext.current
             val windowSizeClass = calculateWindowSizeClass(this)
             Lawnicons(
-                windowSizeClass,
-                @Suppress("DEPRECATION") {
-                        iconInfo ->
-                    val intent = Intent()
-
-                    val bitmap = context.resources.getDrawable(iconInfo.id).toBitmap()
-
-                    if (bitmap != null) {
-                        try {
-                            intent.putExtra(
-                                "icon",
-                                if (bitmap.isRecycled) {
-                                    bitmap
-                                } else {
-                                    bitmap.copy(bitmap.config, false)
-                                },
-                            )
-                        } catch (e: Exception) {
-                            Log.d("ERROR", e.toString())
-                        }
-                        intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconInfo.id)
-                        setResult(RESULT_OK, intent)
-                    } else {
-                        setResult(RESULT_CANCELED, intent)
-                    }
+                windowSizeClass = windowSizeClass,
+                onSendResult = { iconInfo ->
+                    setResult(context, iconInfo)
                     finish()
                 },
-                Modifier,
-                isIconPicker,
+                isIconPicker = isIconPicker,
             )
+        }
+    }
+
+    private fun setResult(
+        context: Context,
+        iconInfo: IconInfo,
+    ) {
+        val intent = Intent()
+
+        val bitmap = ResourcesCompat.getDrawable(context.resources, iconInfo.id, null)
+            ?.toBitmap()
+
+        if (bitmap != null) {
+            try {
+                intent.putExtra(
+                    "icon",
+                    if (bitmap.isRecycled) {
+                        bitmap
+                    } else {
+                        bitmap.copy(requireNotNull(bitmap.config), false)
+                    },
+                )
+            } catch (e: Exception) {
+                Log.d("ERROR", e.toString())
+            }
+            intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconInfo.id)
+            setResult(RESULT_OK, intent)
+        } else {
+            setResult(RESULT_CANCELED, intent)
         }
     }
 }

@@ -21,9 +21,9 @@ class LawniconsViewModel @Inject constructor(private val iconRepository: IconRep
     val searchedIconInfoModel = iconRepository.searchedIconInfoModel
 
     @JvmField
-    val iconRequestList = iconRepository.iconRequestList
+    val iconRequestModel = iconRepository.iconRequestList
 
-    private var _searchMode by mutableStateOf(SearchMode.NAME)
+    private var _searchMode by mutableStateOf(SearchMode.LABEL)
     private var _searchTerm by mutableStateOf("")
 
     val searchMode: SearchMode

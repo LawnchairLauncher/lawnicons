@@ -5,7 +5,10 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -15,7 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
@@ -26,12 +29,13 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
+import kotlinx.collections.immutable.toImmutableList
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Home(
     onNavigate: (String) -> Unit,
-    onSendResult: (IconInfoAppfilter) -> Unit,
+    onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
@@ -40,9 +44,12 @@ fun Home(
     with(lawniconsViewModel) {
         val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()
         val searchedIconInfoModel by searchedIconInfoModel.collectAsStateWithLifecycle()
-        val iconRequestModel by iconRequestList.collectAsStateWithLifecycle()
+        val iconRequestModel by iconRequestModel.collectAsStateWithLifecycle()
         val searchMode = searchMode
         val searchTerm = searchTerm
+
+        val lazyGridState = rememberLazyGridState()
+        val snackbarHostState = remember { SnackbarHostState() }
 
         Crossfade(
             modifier = modifier,
@@ -79,7 +86,9 @@ fun Home(
                                                 lawniconsViewModel.changeMode(mode)
                                             },
                                             iconInfo = it.iconInfo,
-                                            onSendResult = onSendResult,
+                                            onSendResult = {
+                                                onSendResult(it)
+                                            },
                                         )
                                     },
                                 )
@@ -87,7 +96,14 @@ fun Home(
                         }
                     },
                     floatingActionButton = {
-                        IconRequestFAB(iconRequestModel)
+                        IconRequestFAB(
+                            iconRequestModel = iconRequestModel,
+                            snackbarHostState = snackbarHostState,
+                            lazyGridState = lazyGridState,
+                        )
+                    },
+                    snackbarHost = {
+                        SnackbarHost(hostState = snackbarHostState)
                     },
                 ) { contentPadding ->
                     iconInfoModel?.let {
@@ -97,6 +113,7 @@ fun Home(
                             isExpandedScreen = isExpandedScreen,
                             isIconPicker = isIconPicker,
                             onSendResult = onSendResult,
+                            gridState = lazyGridState,
                         )
                     }
                 }
@@ -133,14 +150,14 @@ private fun HomePreview() {
             content = {
                 SearchContents(
                     "",
-                    SearchMode.NAME,
+                    SearchMode.LABEL,
                     {},
                     iconInfo = iconInfo,
                 )
             },
         )
         IconPreviewGrid(
-            iconInfo = iconInfo,
+            iconInfo = iconInfo.toImmutableList(),
             isExpandedScreen = false,
             {},
             Modifier,

@@ -11,7 +11,7 @@ For additional information on designing icons and samples, see [the Lawnicons Fi
 Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
 
 ### TL;DR on icon design
-The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid blackness, close distances between strokes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
+The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid noticable black spots, close distances between strokes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
 
 To avoid rework, save time and understand the limitations of the guidelines, it is worth reading reviews (e.g., [+8 icons, +1 link, +4 updates](https://github.com/LawnchairLauncher/lawnicons/pull/1865)) and creating 5-10 icons in the first contribution.
 
@@ -73,7 +73,7 @@ To avoid sharp contrast, you can follow either of these two methods:
 2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
 
 ## Naming
-To make it easier to find icons, you should keep the original names and supplement them with an English variant or transliteration. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
+To make it easier to find icons, you should keep the original names. Arabic, Chinese or Japanese names need to be supplemented with an English version. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
 ### App name
 Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
 ```
@@ -84,7 +84,7 @@ Wrong • Google Play name: "Zoom - One Platform to Connect"
 Correct • Edited name: "Zoom"
 <item component="..." drawable="zoom" name="Zoom" />
 ```
-Names are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
+Names in different languages are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
 ```
 Wrong
 <item component="..." drawable="hulu" name="フールー ~~ Hulu" />
@@ -93,7 +93,7 @@ Wrong
 Correct
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If there are letters in the first `3` characters of the app name that aren't in English, then it's worth adding the name transliterated into English.
+If the first `3` characters of the app name contain letters not from the English alphabet, then it's worth adding the transliterated name.
 ```
 Wrong
 <item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
@@ -103,14 +103,14 @@ Correct
 <item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
 ```
 ### Drawable
-Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
+Should contain letters from the English alphabet and repeat the app name if possible.
 ```
 Wrong
-<item component="..." drawable="meinvodafone" name="My Vodafone ~~ MeinVodafone" />
+<item component="..." drawable="itaú" name="Itaú" />
 ```
 ```
 Correct
-<item component="..." drawable="my_vodafone" name="My Vodafone ~~ MeinVodafone" />
+<item component=..." drawable="itau" name="Itaú" />
 ```
 If the app name starts with a digit, then the drawable should start with `_`.
 ```
@@ -150,6 +150,12 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 1. Done! You're ready to open a pull request. Please set `develop` as the base branch.
 
 ## Finding the package and activity name of an app
+
+### Using Lawnicons
+1. Install and open [Lawnicons 2.10+](https://github.com/LawnchairLauncher/lawnicons/releases).
+2. Tap "Request icons". The button appears when you are missing at least one icon. After that, our request form will open with a response ready to be submit. 
+3. Submit the response. You can copy the submitted activities [from our table](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=1039095616#gid=1039095616) (sorted by date).
+
 ### Using `adb`
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
 1. Open a new Command Prompt or Terminal window and input `adb devices`.
@@ -171,13 +177,13 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
 ### Using 3rd-party apps
-#### IconRequest app
 
+#### IconRequest app
 1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
 2. Launch IconRequest and tap one of the options:
-- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/u_MBz), 22s video.
+- UPDATE EXISTING — to copy packages with activities.
 - REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
-3. Select the apps for which youʼd like to request or make icons.
+3. Use the app toolbar to select the apps for which youʼd like to request or make icons.
 4. Copy, save or share.
 
 #### Icon Pusher app

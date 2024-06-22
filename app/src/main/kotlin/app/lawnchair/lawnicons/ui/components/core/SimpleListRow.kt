@@ -13,7 +13,8 @@ fun SimpleListRow(
     label: String,
     modifier: Modifier = Modifier,
     description: String? = null,
-    icon: (@Composable () -> Unit)? = null,
+    startIcon: (@Composable () -> Unit)? = null,
+    endIcon: (@Composable () -> Unit)? = null,
     tall: Boolean = description != null,
     divider: Boolean = true,
     background: Boolean = false,
@@ -23,7 +24,8 @@ fun SimpleListRow(
 ) {
     ListRow(
         modifier = modifier,
-        icon = icon,
+        startIcon = startIcon,
+        endIcon = endIcon,
         tall = tall,
         divider = divider,
         background = background,

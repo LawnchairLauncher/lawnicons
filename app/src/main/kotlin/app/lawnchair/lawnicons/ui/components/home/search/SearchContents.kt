@@ -25,6 +25,7 @@ import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -32,15 +33,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfoAppfilter
+import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.ui.components.home.IconInfoPopup
+import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
+import app.lawnchair.lawnicons.ui.components.home.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
 import kotlinx.collections.immutable.ImmutableList
 
@@ -49,9 +50,9 @@ fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
-    iconInfo: ImmutableList<IconInfoAppfilter>,
+    iconInfo: ImmutableList<IconInfo>,
     modifier: Modifier = Modifier,
-    onSendResult: (IconInfoAppfilter) -> Unit = {},
+    onSendResult: (IconInfo) -> Unit = {},
 ) {
     Column(
         modifier = modifier,
@@ -64,16 +65,16 @@ fun SearchContents(
         ) {
             FilterChip(
                 leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.NAME) {
+                    AnimatedVisibility(searchMode == SearchMode.LABEL) {
                         Icon(
                             imageVector = Icons.Rounded.Check,
                             contentDescription = null,
                         )
                     }
                 },
-                selected = searchMode == SearchMode.NAME,
+                selected = searchMode == SearchMode.LABEL,
                 onClick = {
-                    onModeChange(SearchMode.NAME)
+                    onModeChange(SearchMode.LABEL)
                 },
                 label = {
                     Text(text = stringResource(R.string.name))
@@ -81,19 +82,19 @@ fun SearchContents(
             )
             FilterChip(
                 leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.PACKAGE_NAME) {
+                    AnimatedVisibility(searchMode == SearchMode.COMPONENT) {
                         Icon(
                             imageVector = Icons.Rounded.Check,
                             contentDescription = null,
                         )
                     }
                 },
-                selected = searchMode == SearchMode.PACKAGE_NAME,
+                selected = searchMode == SearchMode.COMPONENT,
                 onClick = {
-                    onModeChange(SearchMode.PACKAGE_NAME)
+                    onModeChange(SearchMode.COMPONENT)
                 },
                 label = {
-                    Text(text = stringResource(id = R.string.package_prefix))
+                    Text(text = stringResource(id = R.string.component))
                 },
             )
             FilterChip(
@@ -120,47 +121,8 @@ fun SearchContents(
         ) { count ->
             when (count) {
                 1 -> {
-                    Column(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(PaddingValues(16.dp)),
-                        verticalArrangement = Arrangement.spacedBy(4.dp),
-                    ) {
-                        val it = iconInfo[0]
-                        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
-
-                        ListItem(
-                            headlineContent = { Text(it.name) },
-                            supportingContent = { Text(it.componentName) },
-                            leadingContent = {
-                                Box(
-                                    contentAlignment = Alignment.Center,
-                                    modifier = Modifier
-                                        .padding(all = 8.dp)
-                                        .clip(shape = CircleShape)
-                                        .size(48.dp),
-                                ) {
-                                    Icon(
-                                        painter = painterResource(id = it.id),
-                                        contentDescription = null,
-                                        modifier = Modifier.fillMaxSize(0.6f),
-                                    )
-                                }
-                            },
-                            modifier = Modifier
-                                .clip(RoundedCornerShape(16.dp))
-                                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
-                        )
-                        if (isIconInfoAppfilterShown.value) {
-                            IconInfoPopup(
-                                iconInfo = it,
-                            ) {
-                                isIconInfoAppfilterShown.value = it
-                            }
-                        }
-                    }
+                    IconInfoListItem(iconInfo)
                 }
-
                 0 -> {
                     Box(
                         modifier = Modifier
@@ -185,16 +147,62 @@ fun SearchContents(
                             columns = GridCells.Adaptive(minSize = 80.dp),
                             contentPadding = PaddingValues(16.dp),
                         ) {
-                            items(items = iconInfo) {
+                            items(
+                                items = iconInfo,
+                                contentType = { "icon_preview" },
+                            ) {
                                 IconPreview(
                                     iconInfo = it,
-                                    iconBackground = Color.Transparent,
                                     onSendResult = onSendResult,
+                                    iconBackground = MaterialTheme.colorScheme.surfaceVariant,
                                 )
                             }
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@Composable
+private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(PaddingValues(16.dp)),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+    ) {
+        val it = iconInfo[0]
+        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
+
+        ListItem(
+            headlineContent = { Text(it.getFirstLabelAndComponent().label) },
+            supportingContent = { Text(it.getFirstLabelAndComponent().componentName) },
+            leadingContent = {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .padding(all = 8.dp)
+                        .clip(shape = CircleShape)
+                        .size(48.dp),
+                ) {
+                    Icon(
+                        painter = painterResource(id = it.id),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxSize(0.6f),
+                    )
+                }
+            },
+            modifier = Modifier
+                .clip(RoundedCornerShape(16.dp))
+                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
+        )
+        AnimatedVisibility(isIconInfoAppfilterShown.value) {
+            IconInfoSheet(
+                iconInfo = it,
+            ) {
+                isIconInfoAppfilterShown.value = it
             }
         }
     }

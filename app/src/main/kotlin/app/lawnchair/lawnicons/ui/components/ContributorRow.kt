@@ -53,7 +53,7 @@ fun ContributorRow(
         label = name,
         description = description,
         onClick = onClick,
-        icon = {
+        startIcon = {
             if (LocalInspectionMode.current) {
                 Icon(Icons.Rounded.Star, contentDescription = null)
             } else {
