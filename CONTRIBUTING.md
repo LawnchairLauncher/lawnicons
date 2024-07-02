@@ -4,7 +4,7 @@ Welcome to the Lawnicons contributing guide! This file will tell you what you ne
 Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. Afterwards, you can either contribute icons or code.
 
 ## Contributing icons
-To contribute icons, you need an icon editor (e.g., Figma, Inkscape, etc), a file explorer, a text editor, and a terminal window.
+For beginners, it is faster to create icons [in Figma](https://www.figma.com/), although [Inkscape](https://inkscape.org/) and similar software will do. A file explorer, a text editor, and a terminal window will also be useful.
 
 For additional information on designing icons and samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
 
