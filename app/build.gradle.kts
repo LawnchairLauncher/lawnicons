@@ -84,7 +84,6 @@ android {
 
     buildFeatures {
         buildConfig = true
-        compose = true
         resValues = true
     }
 
