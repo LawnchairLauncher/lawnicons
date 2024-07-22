@@ -35,7 +35,6 @@ import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.Contributor
-import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.ExternalLink
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.util.appIcon
@@ -44,7 +43,7 @@ private val externalLinks = listOf(
     ExternalLink(
         iconResId = R.drawable.github_foreground,
         name = R.string.github,
-        url = "${Constants.GITHUB}",
+        url = Constants.GITHUB,
     ),
     ExternalLink(
         iconResId = R.drawable.icon_request_app,
@@ -80,7 +79,8 @@ private val specialThanks = listOf(
 @Composable
 fun About(
     onBack: () -> Unit,
-    onNavigate: (String) -> Unit,
+    onNavigateToContributors: () -> Unit,
+    onNavigateToAcknowledgements: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
 ) {
@@ -165,7 +165,7 @@ fun About(
             item {
                 Card(modifier = Modifier.padding(top = 16.dp)) {
                     SimpleListRow(
-                        onClick = { onNavigate(Destinations.CONTRIBUTORS) },
+                        onClick = onNavigateToContributors,
                         label = stringResource(id = R.string.see_all_contributors),
                         divider = false,
                     )
@@ -191,7 +191,7 @@ fun About(
             item {
                 Card(modifier = Modifier.padding(top = 16.dp)) {
                     SimpleListRow(
-                        onClick = { onNavigate(Destinations.ACKNOWLEDGEMENTS) },
+                        onClick = onNavigateToAcknowledgements,
                         label = stringResource(id = R.string.acknowledgements),
                         divider = false,
                     )
@@ -208,6 +208,7 @@ private fun AboutPreview() {
         About(
             {},
             {},
+            {},
             false,
         )
     }
@@ -218,6 +219,7 @@ private fun AboutPreview() {
 private fun AboutPreviewExpanded() {
     LawniconsTheme {
         About(
+            {},
             {},
             {},
             true,

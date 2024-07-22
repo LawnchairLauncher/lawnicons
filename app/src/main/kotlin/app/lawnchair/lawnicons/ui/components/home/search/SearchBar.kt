@@ -45,7 +45,6 @@ import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
@@ -57,7 +56,7 @@ fun LawniconsSearchBar(
     onClearAndBackClick: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconInfoModel: IconInfoModel,
-    onNavigate: (String) -> Unit,
+    onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
@@ -98,7 +97,7 @@ fun LawniconsSearchBar(
     onClearAndBackClick: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconCount: Int,
-    onNavigate: (String) -> Unit,
+    onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
@@ -254,13 +253,13 @@ internal fun SearchIcon(
 @Composable
 internal fun SearchActionButton(
     isQueryEmpty: Boolean,
-    onNavigate: (String) -> Unit,
+    onNavigate: () -> Unit,
     onClearAndBackClick: () -> Unit,
 ) {
     Crossfade(isQueryEmpty, label = "") {
         if (it) {
             IconButton(
-                onClick = { onNavigate(Destinations.ABOUT) },
+                onClick = onNavigate,
             ) {
                 Icon(
                     imageVector = ImageVector.vectorResource(id = R.drawable.lawnicons_foreground),

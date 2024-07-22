@@ -34,7 +34,7 @@ import kotlinx.collections.immutable.toImmutableList
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun Home(
-    onNavigate: (String) -> Unit,
+    onNavigate: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,

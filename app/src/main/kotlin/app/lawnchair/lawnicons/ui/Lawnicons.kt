@@ -10,11 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
+import androidx.navigation.toRoute
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.destination.About
 import app.lawnchair.lawnicons.ui.destination.Acknowledgement
@@ -22,7 +21,11 @@ import app.lawnchair.lawnicons.ui.destination.Acknowledgements
 import app.lawnchair.lawnicons.ui.destination.Contributors
 import app.lawnchair.lawnicons.ui.destination.Home
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Destinations
+import app.lawnchair.lawnicons.ui.util.About
+import app.lawnchair.lawnicons.ui.util.Acknowledgement
+import app.lawnchair.lawnicons.ui.util.Acknowledgements
+import app.lawnchair.lawnicons.ui.util.Contributors
+import app.lawnchair.lawnicons.ui.util.Home
 import soup.compose.material.motion.animation.materialSharedAxisXIn
 import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
@@ -47,42 +50,46 @@ fun Lawnicons(
         ) {
             NavHost(
                 navController = navController,
-                startDestination = Destinations.HOME,
+                startDestination = Home,
                 enterTransition = { materialSharedAxisXIn(!isRtl, slideDistance) },
                 exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
                 popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
                 popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
             ) {
-                composable(route = Destinations.HOME) {
+                composable<Home> {
                     Home(
-                        onNavigate = navController::navigate,
+                        onNavigate = { navController.navigate(About) },
                         isExpandedScreen = isExpandedScreen,
                         isIconPicker = isIconPicker,
                         onSendResult = onSendResult,
                     )
                 }
-                composable(route = Destinations.ACKNOWLEDGEMENTS) {
-                    Acknowledgements(onBack = navController::popBackStack, onNavigate = navController::navigate, isExpandedScreen = isExpandedScreen)
+                composable<Acknowledgements> {
+                    Acknowledgements(
+                        onBack = navController::popBackStack,
+                        onNavigate = {
+                            navController.navigate(Acknowledgement(it))
+                        },
+                        isExpandedScreen = isExpandedScreen,
+                    )
                 }
-                composable(
-                    route = "${Destinations.ACKNOWLEDGEMENT}/{id}",
-                    arguments = listOf(
-                        navArgument(
-                            name = "id",
-                            builder = { type = NavType.StringType },
-                        ),
-                    ),
-                ) { backStackEntry ->
+                composable<Acknowledgement> { backStackEntry ->
+                    val acknowledgement: Acknowledgement = backStackEntry.toRoute()
                     Acknowledgement(
-                        name = backStackEntry.arguments?.getString("id"),
+                        name = acknowledgement.id,
                         onBack = navController::popBackStack,
                         isExpandedScreen = isExpandedScreen,
                     )
                 }
-                composable(route = Destinations.ABOUT) {
-                    About(onBack = navController::popBackStack, onNavigate = navController::navigate, isExpandedScreen = isExpandedScreen)
+                composable<About> {
+                    About(
+                        onBack = navController::popBackStack,
+                        onNavigateToContributors = { navController.navigate(Contributors) },
+                        onNavigateToAcknowledgements = { navController.navigate(Acknowledgements) },
+                        isExpandedScreen = isExpandedScreen,
+                    )
                 }
-                composable(route = Destinations.CONTRIBUTORS) {
+                composable<Contributors> {
                     Contributors(onBack = navController::popBackStack, isExpandedScreen = isExpandedScreen)
                 }
             }
