@@ -1,7 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Intent
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,8 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.selection.SelectionContainer
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Call
@@ -41,9 +39,7 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
-import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.components.core.ListRow
-import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -146,32 +142,39 @@ fun IconInfoSheet(
                 }
             }
             item {
-                Card(
+                LinkHeader(
                     label = stringResource(id = R.string.drawable),
-                ) {
-                    SimpleListRow(
-                        label = githubName,
-                        description = stringResource(R.string.icon_info_outdated_warning),
-                        divider = false,
-                    )
-                }
-            }
-            item {
-                Spacer(Modifier.height(16.dp))
-            }
-            item {
-                Text(
-                    text = stringResource(id = R.string.mapped_components),
-                    style = MaterialTheme.typography.titleSmall,
-                    color = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(start = 32.dp, bottom = 6.dp),
                 )
             }
-            itemsIndexed(groupedComponents) { index, (label, componentName) ->
-                IconInfoListRow(label, componentName, index, groupedComponents.lastIndex)
+            item {
+                ListRow(
+                    label = {
+                        Text(githubName)
+                    },
+                    description = {
+                        Text(
+                            text = stringResource(R.string.icon_info_outdated_warning),
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    },
+                    divider = false,
+                    enforceHeight = false,
+                )
             }
             item {
                 Spacer(Modifier.height(16.dp))
+            }
+            item {
+                LinkHeader(
+                    label = stringResource(id = R.string.mapped_components),
+                )
+            }
+            items(groupedComponents) { (label, componentName) ->
+                IconInfoListRow(label, componentName)
+            }
+            item {
+                Spacer(Modifier.height(24.dp))
             }
             item {
                 Spacer(Modifier.navigationBarsPadding())
@@ -184,19 +187,31 @@ private fun getShareContents(
     githubName: String,
     groupedComponents: List<Pair<String, List<String>>>,
 ): String {
-    val formattedComponents = groupedComponents.joinToString(separator = "\n") { (group, components) ->
-        val componentList = components.joinToString(separator = "\n") { it }
-        "$group:\n$componentList"
-    }
+    val formattedComponents =
+        groupedComponents.joinToString(separator = "\n") { (group, components) ->
+            val componentList = components.joinToString(separator = "\n") { it }
+            "$group:\n$componentList"
+        }
     return "Drawable: $githubName\n\nMapped components: \n$formattedComponents"
+}
+
+@Composable
+private fun LinkHeader(
+    label: String,
+    modifier: Modifier = Modifier,
+) {
+    Text(
+        text = label,
+        style = MaterialTheme.typography.titleSmall,
+        color = MaterialTheme.colorScheme.primary,
+        modifier = modifier.padding(start = 16.dp, bottom = 6.dp),
+    )
 }
 
 @Composable
 private fun IconInfoListRow(
     label: String,
     componentNames: List<String>,
-    currentIndex: Int,
-    lastIndex: Int,
 ) {
     ListRow(
         label = {
@@ -209,40 +224,25 @@ private fun IconInfoListRow(
             }
         },
         description = {
+            Spacer(Modifier.height(4.dp))
             SelectionContainer {
-                Column(
-                    modifier = Modifier
-                        .horizontalScroll(rememberScrollState()),
-                ) {
-                    componentNames.firstOrNull()?.let {
+                Column {
+                    componentNames.forEach {
                         Text(
                             text = it,
                             maxLines = 2,
-                            overflow = TextOverflow.Ellipsis,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            modifier = Modifier.padding(end = 48.dp),
                         )
-                    }
-                    Column {
-                        componentNames.forEach {
-                            Text(
-                                text = it,
-                                maxLines = 2,
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                            )
-                        }
+                        Spacer(Modifier.height(6.dp))
                     }
                 }
             }
         },
-        divider = currentIndex < lastIndex,
-        first = currentIndex == 0,
-        last = currentIndex == lastIndex,
-        background = true,
+        divider = false,
         enforceHeight = false,
     )
+    Spacer(Modifier.height(16.dp))
 }
 
 @PreviewLawnicons
