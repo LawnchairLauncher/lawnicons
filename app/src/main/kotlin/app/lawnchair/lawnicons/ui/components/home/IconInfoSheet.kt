@@ -175,17 +175,6 @@ private fun IconInfoListRow(
     currentIndex: Int,
     lastIndex: Int,
 ) {
-    val showExpandButton = componentNames.size > 1
-    var expanded by remember { mutableStateOf(false) }
-
-    var fullHeight by remember { mutableStateOf(0.dp) }
-    val animatedHeight by animateDpAsState(
-        targetValue = fullHeight,
-        label = "On component name expansion or contraction",
-    )
-
-    val density = LocalDensity.current
-
     ListRow(
         label = {
             SelectionContainer {
@@ -200,11 +189,6 @@ private fun IconInfoListRow(
             SelectionContainer {
                 Column(
                     modifier = Modifier
-                        .onGloballyPositioned { coordinates ->
-                            fullHeight = with(density) {
-                                coordinates.size.height.toDp()
-                            }
-                        }
                         .horizontalScroll(rememberScrollState()),
                 ) {
                     componentNames.firstOrNull()?.let {
@@ -217,16 +201,14 @@ private fun IconInfoListRow(
                             modifier = Modifier.padding(end = 48.dp),
                         )
                     }
-                    AnimatedVisibility(visible = showExpandButton && expanded) {
-                        Column {
-                            componentNames.forEach {
-                                Text(
-                                    text = it,
-                                    maxLines = 2,
-                                    style = MaterialTheme.typography.bodyMedium,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                )
-                            }
+                    Column {
+                        componentNames.forEach {
+                            Text(
+                                text = it,
+                                maxLines = 2,
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            )
                         }
                     }
                 }
@@ -235,32 +217,8 @@ private fun IconInfoListRow(
         divider = currentIndex < lastIndex,
         first = currentIndex == 0,
         last = currentIndex == lastIndex,
-        endIcon = if (showExpandButton) {
-            @Composable {
-                IconButton(
-                    modifier = Modifier.requiredSize(48.dp),
-                    onClick = {
-                        expanded = !expanded
-                    },
-                ) {
-                    val angle by animateFloatAsState(
-                        targetValue = (if (expanded) 180 else 0).toFloat(),
-                        label = "Expand/collapse chevron rotation",
-                    )
-
-                    Icon(
-                        imageVector = Icons.Rounded.ArrowDropDown,
-                        contentDescription = stringResource(R.string.toggle_visibility_of_contents),
-                        tint = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.rotate(angle),
-                    )
-                }
-            }
-        } else {
-            null
-        },
-        height = if (expanded) 48.dp + animatedHeight else 72.dp,
         background = true,
+        enforceHeight = false,
     )
 }
 
