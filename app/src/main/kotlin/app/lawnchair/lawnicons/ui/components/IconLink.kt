@@ -40,6 +40,30 @@ fun IconLink(
 ) {
     val context = LocalContext.current
     val inPreviewMode = LocalInspectionMode.current
+    IconLink(
+        iconResId = iconResId,
+        label = label,
+        onClick = {
+            if (!inPreviewMode) {
+                val webpage = Uri.parse(url)
+                val intent = Intent(Intent.ACTION_VIEW, webpage)
+                if (intent.resolveActivity(context.packageManager) != null) {
+                    context.startActivity(intent)
+                }
+            }
+        },
+        modifier = modifier,
+    )
+}
+
+@Composable
+fun IconLink(
+    @DrawableRes iconResId: Int,
+    label: String,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val inPreviewMode = LocalInspectionMode.current
 
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -49,13 +73,7 @@ fun IconLink(
             .height(64.dp)
             .clip(MaterialTheme.shapes.medium)
             .clickable {
-                if (!inPreviewMode) {
-                    val webpage = Uri.parse(url)
-                    val intent = Intent(Intent.ACTION_VIEW, webpage)
-                    if (intent.resolveActivity(context.packageManager) != null) {
-                        context.startActivity(intent)
-                    }
-                }
+                onClick()
             },
     ) {
         if (!inPreviewMode) {
@@ -63,19 +81,22 @@ fun IconLink(
                 painterResource(id = iconResId),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(color = LocalContentColor.current),
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier
+                    .size(24.dp),
             )
         } else {
             Image(
                 Icons.Rounded.Star,
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(color = LocalContentColor.current),
-                modifier = Modifier.size(24.dp),
+                modifier = Modifier
+                    .size(24.dp),
             )
         }
         Spacer(modifier = Modifier.requiredHeight(4.dp))
         Text(
             text = label,
+            modifier = Modifier.padding(horizontal = 16.dp),
             style = MaterialTheme.typography.bodyMedium,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,

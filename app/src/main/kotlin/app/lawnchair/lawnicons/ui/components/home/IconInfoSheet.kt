@@ -1,5 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
+import android.content.Intent
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
@@ -30,6 +32,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -53,9 +56,26 @@ fun IconInfoSheet(
     modifier: Modifier = Modifier,
     isPopupShown: (Boolean) -> Unit,
 ) {
+    val context = LocalContext.current
+
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true,
     )
+
+    val groupedComponents = remember {
+        iconInfo.componentNames
+            .groupBy { it.label }
+            .map { (label, components) ->
+                label to components.map { it.componentName }
+            }
+    }
+
+    val githubName = iconInfo.drawableName.replace(
+        oldValue = "_foreground",
+        newValue = "",
+    )
+
+    val shareContents = remember { getShareContents(githubName, groupedComponents) }
 
     ModalBottomSheet(
         onDismissRequest = {
@@ -70,11 +90,6 @@ fun IconInfoSheet(
         LazyColumn(
             modifier = Modifier.fillMaxWidth(),
         ) {
-            val githubName = iconInfo.drawableName.replace(
-                oldValue = "_foreground",
-                newValue = "",
-            )
-
             item {
                 Row(
                     modifier = Modifier.fillMaxWidth(),
@@ -113,6 +128,21 @@ fun IconInfoSheet(
                         label = stringResource(id = R.string.view_on_github),
                         url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
                     )
+                    Spacer(Modifier.width(16.dp))
+                    IconLink(
+                        iconResId = R.drawable.share_icon,
+                        label = stringResource(id = R.string.share),
+                        onClick = {
+                            val intent = Intent().apply {
+                                action = Intent.ACTION_SEND
+                                putExtra(Intent.EXTRA_TEXT, shareContents)
+                                type = "text/plain"
+                            }
+
+                            val shareIntent = Intent.createChooser(intent, null)
+                            context.startActivity(shareIntent)
+                        },
+                    )
                 }
             }
             item {
@@ -137,13 +167,6 @@ fun IconInfoSheet(
                     modifier = Modifier.padding(start = 32.dp, bottom = 6.dp),
                 )
             }
-
-            val groupedComponents = iconInfo.componentNames
-                .groupBy { it.label }
-                .map { (label, components) ->
-                    label to components.map { it.componentName }
-                }
-
             itemsIndexed(groupedComponents) { index, (label, componentName) ->
                 IconInfoListRow(label, componentName, index, groupedComponents.lastIndex)
             }
@@ -155,6 +178,17 @@ fun IconInfoSheet(
             }
         }
     }
+}
+
+private fun getShareContents(
+    githubName: String,
+    groupedComponents: List<Pair<String, List<String>>>,
+): String {
+    val formattedComponents = groupedComponents.joinToString(separator = "\n") { (group, components) ->
+        val componentList = components.joinToString(separator = "\n") { it }
+        "$group:\n$componentList"
+    }
+    return "Drawable: $githubName\n\nMapped components: \n$formattedComponents"
 }
 
 @Composable
