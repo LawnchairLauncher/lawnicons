@@ -33,7 +33,7 @@ Square icons must fit the `154×154px` content area size. Icons that mostly fit 
 #### Color
 All shapes must have non-transparent black color `#000000`.
 #### Stroke widths
-The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/x9136/lawnicons/blob/addate/CONTRIBUTING.md#maintaining-visual-balance) down below.
+The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#maintaining-visual-balance) down below.
 #### End caps
 All shapes must have rounded caps and joins.
 #### Corner radius
