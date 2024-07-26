@@ -1,5 +1,6 @@
 import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
+import com.android.build.gradle.tasks.MergeResources
 import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
@@ -100,7 +101,7 @@ android {
     applicationVariants.all {
         outputs.all {
             (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons $versionName v$versionCode ${buildType.name}.apk".replace(" ", ".")
+                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
     }
 }
@@ -121,9 +122,9 @@ androidComponents.onVariants { variant ->
 }
 
 // Process SVGs before every build.
-// tasks.withType<MergeResources>().configureEach {
-//    dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
-// }
+tasks.withType<MergeResources>().configureEach {
+    dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
+}
 
 licensee {
     allow("Apache-2.0")
@@ -135,10 +136,10 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.activity:activity-compose:1.9.1")
     implementation(platform("androidx.compose:compose-bom:2024.06.00"))
-    implementation("androidx.compose.ui:ui:1.6.6")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.6.6")
-    implementation("androidx.compose.ui:ui-util:1.6.6")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.6.6")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.ui:ui-util")
+    debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material-icons-core-android:1.6.8")
     implementation("androidx.compose.material3:material3:1.3.0-beta05")
