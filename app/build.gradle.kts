@@ -138,7 +138,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:1.6.6")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.6")
     implementation("androidx.compose.ui:ui-util:1.6.6")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.6.6")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.6.8")
     implementation("androidx.compose.animation:animation")
     implementation("androidx.compose.material:material-icons-core-android:1.6.8")
     implementation("androidx.compose.material3:material3:1.3.0-beta05")
