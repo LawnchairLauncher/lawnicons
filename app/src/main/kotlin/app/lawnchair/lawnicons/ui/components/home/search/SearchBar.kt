@@ -58,6 +58,7 @@ fun LawniconsSearchBar(
     iconInfoModel: IconInfoModel,
     onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
+    inputFieldModifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
     content: @Composable (() -> Unit),
@@ -71,6 +72,7 @@ fun LawniconsSearchBar(
         onNavigate = onNavigate,
         content = content,
         modifier = modifier,
+        inputFieldModifier = inputFieldModifier,
         isExpandedScreen = isExpandedScreen,
         isIconPicker = isIconPicker,
     )
@@ -99,6 +101,7 @@ fun LawniconsSearchBar(
     iconCount: Int,
     onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
+    inputFieldModifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
     content: @Composable (() -> Unit),
@@ -134,7 +137,12 @@ fun LawniconsSearchBar(
             onQueryChange = onQueryChange,
             onSearch = { active = false },
             active = active,
-            onActiveChange = { active = it },
+            onActiveChange = {
+                active = it
+                if (!active) {
+                    onClearAndBackClick()
+                }
+            },
             placeholder = {
                 Text(
                     stringResource(
@@ -166,6 +174,7 @@ fun LawniconsSearchBar(
                 }
             },
             isExpandedScreen = isExpandedScreen,
+            inputFieldModifier = inputFieldModifier,
         ) {
             content()
         }
@@ -184,12 +193,15 @@ private fun ResponsiveSearchBar(
     leadingIcon: @Composable () -> Unit,
     trailingIcon: @Composable () -> Unit,
     isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
+    inputFieldModifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
     if (isExpandedScreen) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
+            modifier = modifier,
         ) {
             DockedSearchBar(
                 inputField = {
@@ -197,6 +209,7 @@ private fun ResponsiveSearchBar(
                         query = query,
                         onQueryChange = onQueryChange,
                         onSearch = onSearch,
+                        modifier = inputFieldModifier,
                         expanded = active,
                         onExpandedChange = onActiveChange,
                         placeholder = placeholder,
@@ -218,6 +231,7 @@ private fun ResponsiveSearchBar(
                     query = query,
                     onQueryChange = onQueryChange,
                     onSearch = onSearch,
+                    modifier = inputFieldModifier,
                     expanded = active,
                     onExpandedChange = onActiveChange,
                     placeholder = placeholder,

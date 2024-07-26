@@ -16,7 +16,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
@@ -56,9 +56,8 @@ fun IconPreviewGrid(
     ) {
         LazyVerticalGridScrollbar(
             modifier = Modifier
-                .then(
-                    if (isExpandedScreen) Modifier.width(640.dp) else Modifier,
-                )
+                .widthIn(max = 640.dp)
+                .fillMaxWidth()
                 .statusBarsPadding()
                 .padding(top = 26.dp),
             state = gridState,

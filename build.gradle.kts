@@ -16,7 +16,8 @@ plugins {
 allprojects {
     plugins.withType<JavaBasePlugin>().configureEach {
         extensions.configure<JavaPluginExtension> {
-            toolchain.languageVersion = JavaLanguageVersion.of(21)
+            // Downgrade temporarily to make Compose previews work
+            toolchain.languageVersion = JavaLanguageVersion.of(17)
         }
     }
 
