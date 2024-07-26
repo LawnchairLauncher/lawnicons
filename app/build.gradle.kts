@@ -135,7 +135,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation("androidx.activity:activity-compose:1.9.1")
     implementation(platform("androidx.compose:compose-bom:2024.06.00"))
-    implementation("androidx.compose.ui:ui:1.6.6")
+    implementation("androidx.compose.ui:ui:1.6.8")
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.6")
     implementation("androidx.compose.ui:ui-util:1.6.6")
     debugImplementation("androidx.compose.ui:ui-tooling:1.6.6")
