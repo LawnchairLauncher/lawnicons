@@ -112,7 +112,7 @@ fun RequestHandler(
     snackbarHostState: SnackbarHostState,
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
 ) {
-    if (iconRequestModel != null && iconRequestModel.iconCount > 0) {
+    if (iconRequestModel != null) {
         RequestHandler(
             iconRequestList = iconRequestModel.list,
             snackbarHostState = snackbarHostState,
@@ -162,7 +162,9 @@ fun RequestHandler(
 
                 is PressInteraction.Release -> {
                     if (!isLongClick) {
-                        if (directLinkEnabled) {
+                        if (iconRequestList.isEmpty()) {
+                            openLink(context, Constants.ICON_REQUEST_FORM)
+                        } else if (directLinkEnabled) {
                             openLink(context, encodedRequestList)
                         } else {
                             openSnackbarContent(context, requestList, coroutineScope, snackbarHostState)
