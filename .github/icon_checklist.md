@@ -20,7 +20,7 @@ Example: `京东 ~~ JD`.
 
 ### Quality
 1. Ensure that icons are easily recognizable.
-2. Align icons to [the visual center](https://www.google.com/search?sca_esv=1fcec3f5e0b15e20&q=what+is+visual+center+of+an+icon&tbm=isch&source=lnms) as much as possible within the guidelines.
+2. Align icons to [the visual center](https://crazybitsstudios.com/another-way-of-aligning-elements-when-creating-icons) as much as possible within the guidelines. The visual center is where your icon looks and feels centered.
 3. Avoid noticable black spots by reducing the stroke width or simplifying the icons.
 4. Avoid close distances between strokes. The icons on the phone screen will be smaller, so the small distances between the strokes will stick together.
 5. Avoid drastic changes in stroke widths. When the strokes next to each other differ in width by 4px or more, the icon will look sloppy.
