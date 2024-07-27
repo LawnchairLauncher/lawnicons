@@ -7,8 +7,10 @@ import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.BottomAppBar
+import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.PlainTooltip
@@ -76,7 +78,11 @@ fun HomeBottomBar(
             SimpleTooltipBox(
                 label = stringResource(id = R.string.search),
             ) {
-                FloatingActionButton(onClick = onExpandSearch) {
+                FloatingActionButton(
+                    onClick = onExpandSearch,
+                    containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
+                    elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
+                ) {
                     Icon(
                         imageVector = Icons.Rounded.Search,
                         contentDescription = stringResource(id = R.string.search),
