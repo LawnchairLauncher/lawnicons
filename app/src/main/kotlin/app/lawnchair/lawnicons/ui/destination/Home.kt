@@ -60,7 +60,7 @@ fun Home(
         val lazyGridState = rememberLazyGridState()
         val snackbarHostState = remember { SnackbarHostState() }
 
-        val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+        val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
         val focusRequester = remember { FocusRequester() }
 
         Crossfade(
