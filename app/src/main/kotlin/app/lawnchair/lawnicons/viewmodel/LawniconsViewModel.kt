@@ -49,7 +49,7 @@ class LawniconsViewModel @Inject constructor(private val iconRepository: IconRep
     fun clearSearch() {
         _searchTerm = ""
         viewModelScope.launch {
-            iconRepository.clear()
+            iconRepository.clearSearch()
         }
     }
 }

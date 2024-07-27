@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons.di
 
 import android.app.Application
 import app.lawnchair.lawnicons.repository.IconRepository
+import app.lawnchair.lawnicons.repository.IconRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,5 +15,5 @@ object IconRepositoryModule {
 
     @Provides
     @Singleton
-    fun provideIconRepository(application: Application) = IconRepository(application)
+    fun provideIconRepository(application: Application): IconRepository = IconRepositoryImpl(application)
 }

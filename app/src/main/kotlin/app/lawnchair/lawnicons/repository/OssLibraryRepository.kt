@@ -15,11 +15,20 @@ import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 
-class OssLibraryRepository @Inject constructor(private val application: Application) {
+interface OssLibraryRepository {
+    val ossLibraries: StateFlow<List<OssLibrary>>
+
+    fun getNoticeForOssLibrary(
+        ossLibraryName: String,
+        annotate: (String) -> AnnotatedString,
+    ): Flow<AnnotatedString?>
+}
+
+class OssLibraryRepositoryImpl @Inject constructor(private val application: Application) : OssLibraryRepository {
 
     private val coroutineScope = MainScope()
 
-    val ossLibraries: StateFlow<List<OssLibrary>> = flow {
+    override val ossLibraries: StateFlow<List<OssLibrary>> = flow {
         val jsonString = application.resources.assets.open("artifacts.json")
             .bufferedReader().use { it.readText() }
         val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
@@ -33,7 +42,7 @@ class OssLibraryRepository @Inject constructor(private val application: Applicat
         .flowOn(Dispatchers.IO)
         .stateIn(coroutineScope, SharingStarted.Lazily, emptyList())
 
-    fun getNoticeForOssLibrary(
+    override fun getNoticeForOssLibrary(
         ossLibraryName: String,
         annotate: (String) -> AnnotatedString,
     ): Flow<AnnotatedString?> = ossLibraries.map { it ->

@@ -229,7 +229,7 @@ private fun IconRequestSheet(list: String, context: Context) {
 }
 
 private fun formatIconRequestList(iconRequestList: List<IconRequest>) =
-    iconRequestList.joinToString("\n") { "${it.name}\n${it.componentName}" }
+    iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
 
 private fun copyTextToClipboard(context: Context, text: String) {
     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
