@@ -20,7 +20,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 private val basePadding = 16.dp
@@ -39,7 +38,7 @@ fun ListRow(
     first: Boolean = false,
     last: Boolean = false,
     onClick: (() -> Unit)? = null,
-    height: Dp? = null,
+    enforceHeight: Boolean = true,
 ) {
     val dividerHeight = 1.dp
     val dividerHeightPx = with(LocalDensity.current) { dividerHeight.toPx() }
@@ -51,7 +50,13 @@ fun ListRow(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(height ?: if (tall) 72.dp else 56.dp)
+            .then(
+                if (enforceHeight) {
+                    Modifier.height(if (tall) 72.dp else 56.dp)
+                } else {
+                    Modifier
+                },
+            )
             .then(
                 if (background) {
                     Modifier

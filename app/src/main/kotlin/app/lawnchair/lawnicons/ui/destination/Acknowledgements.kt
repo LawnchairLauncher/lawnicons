@@ -17,7 +17,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
-import app.lawnchair.lawnicons.ui.util.Destinations
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
 
 @Composable
@@ -58,7 +57,7 @@ fun Acknowledgements(
                         last = index == libraries.lastIndex,
                         divider = index != libraries.lastIndex,
                         onClick = {
-                            onNavigate("${Destinations.ACKNOWLEDGEMENT}/${it.name}")
+                            onNavigate(it.name)
                         },
                     )
                 }

@@ -1,23 +1,23 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandHorizontally
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkHorizontally
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -25,15 +25,10 @@ import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.derivedStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -54,25 +49,6 @@ fun IconPreviewGrid(
     contentPadding: PaddingValues? = null,
     gridState: LazyGridState = rememberLazyGridState(),
 ) {
-    val groupedIcons = iconInfo.groupBy {
-        val label = it.getFirstLabelAndComponent().label
-        if (label.isEmpty()) {
-            "1-9"
-        } else {
-            val firstChar = label.firstOrNull()?.uppercase() ?: ""
-            if (firstChar in "![](){}#0123456789") {
-                "1-9"
-            } else {
-                firstChar
-            }
-        }
-    }
-
-    val headerIndices = remember { mutableStateOf(mutableMapOf<String, Int>()) }
-    var currentIndex = 0
-
-    val currentHeader = remember { mutableStateOf<String?>(null) }
-
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -80,9 +56,8 @@ fun IconPreviewGrid(
     ) {
         LazyVerticalGridScrollbar(
             modifier = Modifier
-                .then(
-                    if (isExpandedScreen) Modifier.width(640.dp) else Modifier,
-                )
+                .widthIn(max = 640.dp)
+                .fillMaxWidth()
                 .statusBarsPadding()
                 .padding(top = 26.dp),
             state = gridState,
@@ -93,18 +68,22 @@ fun IconPreviewGrid(
                 selectionMode = ScrollbarSelectionMode.Thumb,
             ),
             indicatorContent = { _, isThumbSelected ->
-                AnimatedVisibility(visible = isThumbSelected) {
+                AnimatedVisibility(
+                    visible = isThumbSelected,
+                    enter = fadeIn() + expandHorizontally(),
+                    exit = fadeOut() + shrinkHorizontally(),
+                ) {
                     Box(
                         modifier = Modifier
                             .padding(end = 16.dp)
                             .background(
                                 color = MaterialTheme.colorScheme.primary,
-                                shape = MaterialTheme.shapes.medium,
+                                shape = MaterialTheme.shapes.large,
                             ),
                     ) {
                         Text(
                             modifier = Modifier.padding(16.dp),
-                            text = currentHeader.value ?: "#",
+                            text = "#",
                             style = MaterialTheme.typography.titleMedium,
                             color = MaterialTheme.colorScheme.onPrimary,
                         )
@@ -112,64 +91,28 @@ fun IconPreviewGrid(
                 }
             },
         ) {
+            val horizontalGridPadding = if (isExpandedScreen) 32.dp else 8.dp
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
-                contentPadding = contentPadding ?: if (!isExpandedScreen) {
-                    WindowInsets.navigationBars.toPaddingValues(
-                        additionalStart = 8.dp,
-                        additionalTop = 42.dp,
-                        additionalEnd = 8.dp,
-                    )
-                } else {
-                    WindowInsets.navigationBars.toPaddingValues(
-                        additionalStart = 32.dp,
-                        additionalTop = 42.dp,
-                        additionalEnd = 32.dp,
-                    )
-                },
+                contentPadding = contentPadding ?: WindowInsets.navigationBars.toPaddingValues(
+                    additionalStart = horizontalGridPadding,
+                    additionalTop = 42.dp,
+                    additionalEnd = horizontalGridPadding,
+                ),
                 state = gridState,
             ) {
-                groupedIcons.forEach { (header, icons) ->
-                    item(
-                        span = { GridItemSpan(maxLineSpan) },
-                        contentType = { "header" },
-                        key = header,
-                    ) {
-                        Row {
-                            Spacer(Modifier.height(16.dp))
-                            Text(
-                                text = header,
-                                style = MaterialTheme.typography.titleMedium,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer,
-                            )
-                        }
-                        headerIndices.value[header] = currentIndex
-                        // ... Content for header item
-                        currentIndex++
-                    }
-                    items(
-                        items = icons,
-                        contentType = { "icon_preview" },
-                    ) { iconInfo ->
-                        IconPreview(
-                            iconInfo = iconInfo,
-                            isIconPicker = isIconPicker,
-                            onSendResult = onSendResult,
-                        )
-                        currentIndex++
-                    }
+                items(
+                    items = iconInfo,
+                    contentType = { "icon_preview" },
+                ) { iconInfo ->
+                    IconPreview(
+                        iconInfo = iconInfo,
+                        isIconPicker = isIconPicker,
+                        onSendResult = onSendResult,
+                    )
                 }
             }
         }
-    }
-
-    val firstVisibleItemIndex = remember { derivedStateOf { gridState.firstVisibleItemIndex } }
-
-    LaunchedEffect(firstVisibleItemIndex.value) {
-        val lastVisibleHeader = headerIndices.value.entries.lastOrNull {
-            it.value < gridState.firstVisibleItemIndex
-        }?.key
-        currentHeader.value = lastVisibleHeader
     }
 }
 

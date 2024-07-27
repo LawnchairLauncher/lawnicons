@@ -48,7 +48,7 @@ class IconRepository @Inject constructor(application: Application) {
                 iconCount = iconCount,
             )
             searchedIconInfoModel.value = IconInfoModel(
-                iconInfo = IconInfoManager.splitByComponentName(iconInfo).toPersistentList(),
+                iconInfo = iconInfo.toPersistentList(),
                 iconCount = iconCount,
             )
 
@@ -64,21 +64,21 @@ class IconRepository @Inject constructor(application: Application) {
         mode: SearchMode,
         query: String,
     ) = withContext(Dispatchers.Default) {
-        searchedIconInfoModel.value = IconInfoManager
-            .splitByComponentName(iconInfo)
-            .let {
-                val filtered = it.mapNotNull { candidate ->
-                    val searchIn =
-                        when (mode) {
-                            SearchMode.LABEL -> candidate.getFirstLabelAndComponent().label
-                            SearchMode.COMPONENT -> candidate.getFirstLabelAndComponent().componentName
-                            SearchMode.DRAWABLE -> candidate.drawableName
-                        }
-                    val indexOfMatch =
-                        searchIn.indexOf(string = query, ignoreCase = true).also { index ->
-                            if (index == -1) return@mapNotNull null
-                        }
-                    val matchAtWordStart = indexOfMatch == 0 || searchIn[indexOfMatch - 1] == ' '
+        searchedIconInfoModel.value = iconInfo
+            .let { iconInfo ->
+                val filtered = iconInfo.mapNotNull { candidate ->
+                    val searchIn = when (mode) {
+                        SearchMode.LABEL -> candidate.componentNames.map { it.label }
+                        SearchMode.COMPONENT -> candidate.componentNames.map { it.componentName }
+                        SearchMode.DRAWABLE -> listOf(candidate.drawableName)
+                    }
+                    val indexOfMatch = searchIn.map {
+                        it.indexOf(string = query, ignoreCase = true)
+                    }.filter { it != -1 }.minOrNull() ?: return@mapNotNull null
+                    val matchAtWordStart = searchIn.any {
+                        it.indexOf(string = query, ignoreCase = true) == 0 ||
+                            it.getOrNull(it.indexOf(string = query, ignoreCase = true) - 1) == ' '
+                    }
                     SearchInfo(
                         iconInfo = candidate,
                         indexOfMatch = indexOfMatch,
@@ -93,7 +93,7 @@ class IconRepository @Inject constructor(application: Application) {
                     searchInfo.iconInfo
                 }.toPersistentList()
                 IconInfoModel(
-                    iconCount = it.size,
+                    iconCount = iconInfo.size,
                     iconInfo = filtered,
                 )
             }
