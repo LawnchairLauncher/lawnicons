@@ -25,6 +25,7 @@ import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
+import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
@@ -99,6 +100,10 @@ fun Home(
                                 snackbarHostState = snackbarHostState,
                                 onNavigate = onNavigate,
                                 onExpandSearch = { expandSearch.value = !expandSearch.value },
+                                isIconRequestClicked = isIconRequestButtonClicked,
+                                onIconRequestClick = {
+                                    onIconRequestButtonClicked()
+                                }
                             )
                         }
                     },

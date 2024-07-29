@@ -86,11 +86,13 @@ fun IconRequestFAB(
 fun IconRequestIconButton(
     iconRequestModel: IconRequestModel?,
     snackbarHostState: SnackbarHostState,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     RequestHandler(
         iconRequestModel = iconRequestModel,
         snackbarHostState = snackbarHostState,
+        onClick = onClick,
     ) { interactionSource ->
         IconButton(
             onClick = {},
@@ -110,12 +112,14 @@ fun IconRequestIconButton(
 fun RequestHandler(
     iconRequestModel: IconRequestModel?,
     snackbarHostState: SnackbarHostState,
+    onClick: () -> Unit = {},
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
 ) {
     if (iconRequestModel != null) {
         RequestHandler(
             iconRequestList = iconRequestModel.list,
             snackbarHostState = snackbarHostState,
+            onClick = onClick,
         ) {
             content(it)
         }
@@ -127,6 +131,7 @@ fun RequestHandler(
 fun RequestHandler(
     iconRequestList: List<IconRequest>,
     snackbarHostState: SnackbarHostState,
+    onClick: () -> Unit,
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
 ) {
     val context = LocalContext.current
@@ -151,6 +156,7 @@ fun RequestHandler(
         interactionSource.interactions.collectLatest { interaction ->
             when (interaction) {
                 is PressInteraction.Press -> {
+                    onClick()
                     isLongClick = false
                     delay(viewConfiguration.longPressTimeoutMillis)
                     isLongClick = true
