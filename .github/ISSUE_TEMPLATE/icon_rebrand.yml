@@ -1,6 +1,6 @@
 name: Update an existing icon
 description: Request changing an icon if it is outdated or applied incorrectly.
-labels: ["icon change"]
+labels: ["icon update"]
 body:
   - type: textarea
     id: outdated-icon-list
