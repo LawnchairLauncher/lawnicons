@@ -1,0 +1,31 @@
+name: Request icon design change
+description: Request changing the design of an existing icon in Lawnicons
+title: "[Icon Rebrand] "
+labels: ["icon rebrand"]
+body:
+  - type: textarea
+    id: outdated-icon-list
+    attributes:
+      label: List of outdated icons
+      description: |
+        Please follow the following format regarding the outdated icons:
+
+        ```
+        App Name
+        (image to new icon)
+        
+        App Name
+        (image to new icon)
+        ```
+
+        It is more preferable to link to the outdated icon in [the svgs/ folder](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs)
+      placeholder: 
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional information
+      description: Place additional context here.
+    validations:
+      required: true
