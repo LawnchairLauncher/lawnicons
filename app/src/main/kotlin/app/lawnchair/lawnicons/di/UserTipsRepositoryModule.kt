@@ -10,7 +10,6 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object UserTipsRepositoryModule {
@@ -18,6 +17,6 @@ object UserTipsRepositoryModule {
     @Provides
     @Singleton
     fun provideIconRepository(application: Application): UserTipsRepository = UserTipsRepositoryImpl(
-        application.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
+        application.getSharedPreferences("app_prefs", Context.MODE_PRIVATE),
     )
 }

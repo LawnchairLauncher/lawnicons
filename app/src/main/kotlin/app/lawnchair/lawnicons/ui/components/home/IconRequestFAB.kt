@@ -34,6 +34,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -137,6 +138,8 @@ fun RequestHandler(
     val context = LocalContext.current
     val viewConfiguration = LocalViewConfiguration.current
 
+    val onClickEffect = rememberUpdatedState(onClick)
+
     val requestList = formatIconRequestList(iconRequestList)
     val encodedRequestList = buildForm(requestList.replace("\n", "%20"))
 
@@ -156,7 +159,7 @@ fun RequestHandler(
         interactionSource.interactions.collectLatest { interaction ->
             when (interaction) {
                 is PressInteraction.Press -> {
-                    onClick()
+                    onClickEffect.value()
                     isLongClick = false
                     delay(viewConfiguration.longPressTimeoutMillis)
                     isLongClick = true

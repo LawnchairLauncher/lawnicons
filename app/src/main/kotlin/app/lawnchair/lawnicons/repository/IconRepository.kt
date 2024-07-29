@@ -44,7 +44,7 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
 
     override val iconRequestList = MutableStateFlow<IconRequestModel?>(value = null)
 
-    init{
+    init {
         coroutineScope.launch {
             val iconList = application.getIconInfo().sortedBy { it.label.lowercase() }
             val groupedIcons = iconList.associateBy { it.label }.values

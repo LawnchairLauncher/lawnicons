@@ -138,7 +138,9 @@ private fun IconRequestTooltip(
     val hideTooltip = remember { isButtonClicked }
 
     LaunchedEffect(hideTooltip) {
-        if (hideTooltip) { state.dismiss() }
+        if (hideTooltip) {
+            state.dismiss()
+        }
     }
 
     TooltipBox(
@@ -147,7 +149,7 @@ private fun IconRequestTooltip(
             PlainTooltip(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
                 contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                caretSize = DpSize(16.dp, 8.dp)
+                caretSize = DpSize(16.dp, 8.dp),
             ) {
                 Text("Request missing icons here")
             }

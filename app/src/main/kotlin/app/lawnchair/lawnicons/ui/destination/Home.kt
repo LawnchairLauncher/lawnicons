@@ -103,7 +103,7 @@ fun Home(
                                 isIconRequestClicked = isIconRequestButtonClicked,
                                 onIconRequestClick = {
                                     onIconRequestButtonClicked()
-                                }
+                                },
                             )
                         }
                     },

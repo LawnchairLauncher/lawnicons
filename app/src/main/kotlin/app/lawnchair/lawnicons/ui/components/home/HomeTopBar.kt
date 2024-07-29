@@ -14,7 +14,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -30,7 +29,7 @@ import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 
 data class HomeTopBarUiState(
-    val isSearchExpanded: Boolean ,
+    val isSearchExpanded: Boolean,
     val isExpandedScreen: Boolean,
     val searchTerm: String,
     val searchMode: SearchMode,

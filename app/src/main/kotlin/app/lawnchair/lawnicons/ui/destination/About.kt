@@ -79,15 +79,15 @@ private val coreContributors = listOf(
         username = "Grabstertv",
         photoUrl = "https://avatars.githubusercontent.com/u/49114212",
         socialUrl = "https://x.com/grabstertv",
-        descriptionRes = R.string.contribution_icons
+        descriptionRes = R.string.contribution_icons,
     ),
     Contributor(
         name = "Zongle Wang",
         username = "Goooler",
         photoUrl = "https://avatars.githubusercontent.com/u/10363352",
         socialUrl = "https://androiddev.social/@Goooler",
-        descriptionRes = R.string.contribution_deps
-    )
+        descriptionRes = R.string.contribution_deps,
+    ),
 )
 
 private val specialThanks = listOf(

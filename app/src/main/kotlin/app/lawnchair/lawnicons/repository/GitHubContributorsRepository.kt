@@ -4,13 +4,20 @@ import app.lawnchair.lawnicons.api.GitHubContributorsAPI
 import javax.inject.Inject
 
 val coreContributorIds = listOf(
-    29139614, // Remove Patryk from contributors list, as per https://t.me/lawnchairci/1557
-    56888459, // Remove renovate-bot from contributors list, since we don't count botss as contributors
-    8080853, // suphon-t
-    70206496, // SuperDragonXD
-    60105060, // x9136
-    10363352, // Goooler
-    49114212, // Grabstertv
+    // Remove Patryk from contributors list, as per https://t.me/lawnchairci/1557
+    29139614,
+    // Remove renovate-bot from contributors list, since we don't count bots as contributors
+    56888459,
+    // suphon-t
+    8080853,
+    // SuperDragonXD
+    70206496,
+    // x9136
+    60105060,
+    // Goooler
+    10363352,
+    // Grabstertv
+    49114212,
 )
 
 class GitHubContributorsRepository @Inject constructor(
