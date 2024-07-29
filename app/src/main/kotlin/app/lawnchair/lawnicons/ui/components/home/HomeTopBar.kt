@@ -14,6 +14,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -28,26 +29,32 @@ import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 
+data class HomeTopBarUiState(
+    val isSearchExpanded: Boolean ,
+    val isExpandedScreen: Boolean,
+    val searchTerm: String,
+    val searchMode: SearchMode,
+    val searchedIconInfoModel: IconInfoModel?,
+    val isIconPicker: Boolean,
+    val appIcon: ImageBitmap,
+)
+
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun HomeTopBar(
-    isSearchExpanded: Boolean,
+    uiState: HomeTopBarUiState,
     onFocusChange: () -> Unit,
-    isExpandedScreen: Boolean,
     onClearSearch: () -> Unit,
     onChangeMode: (SearchMode) -> Unit,
     onSearchIcons: (String) -> Unit,
-    searchedIconInfoModel: IconInfoModel?,
     onNavigate: () -> Unit,
-    isIconPicker: Boolean,
-    searchTerm: String,
-    searchMode: SearchMode,
     onSendResult: (IconInfo) -> Unit,
     focusRequester: FocusRequester,
     scrollBehavior: TopAppBarScrollBehavior,
-    appIcon: ImageBitmap,
     modifier: Modifier = Modifier,
 ) {
+    val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker, appIcon) = uiState
+
     AnimatedContent(targetState = isSearchExpanded || isExpandedScreen, label = "TopAppBar to SearchBar", modifier = modifier) { targetState ->
         if (targetState) {
             searchedIconInfoModel?.let {
@@ -55,7 +62,7 @@ fun HomeTopBar(
                     searchTerm = searchTerm,
                     onClearSearch = onClearSearch,
                     onChangeMode = onChangeMode,
-                    onSearchIcons = onSearchIcons,
+                    onSearch = onSearchIcons,
                     iconInfoModel = it,
                     onNavigate = onNavigate,
                     isExpandedScreen = isExpandedScreen,
@@ -91,16 +98,16 @@ fun HomeTopBar(
 
 @Composable
 private fun SearchBar(
+    searchMode: SearchMode,
+    searchTerm: String,
+    onSearch: (String) -> Unit,
     onClearSearch: () -> Unit,
     onChangeMode: (SearchMode) -> Unit,
-    onSearchIcons: (String) -> Unit,
-    searchTerm: String,
-    iconInfoModel: IconInfoModel,
     onNavigate: () -> Unit,
     isExpandedScreen: Boolean,
     isIconPicker: Boolean,
-    searchMode: SearchMode,
     onSendResult: (IconInfo) -> Unit,
+    iconInfoModel: IconInfoModel,
     onFocusChange: () -> Unit,
     modifier: Modifier = Modifier,
     inputFieldModifier: Modifier = Modifier,
@@ -118,7 +125,7 @@ private fun SearchBar(
                 onFocusChange()
             },
             onQueryChange = { newValue ->
-                onSearchIcons(newValue)
+                onSearch(newValue)
             },
             iconInfoModel = iconInfoModel,
             onNavigate = onNavigate,
