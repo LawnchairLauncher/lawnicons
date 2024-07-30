@@ -1,31 +1,28 @@
-name: Request icon design change
-description: Request changing the design of an existing icon in Lawnicons
-title: "[Icon Rebrand] "
-labels: ["icon rebrand"]
+name: Update an existing icon
+description: Request changing an icon if it is outdated or applied incorrectly.
+labels: ["icon update"]
 body:
   - type: textarea
     id: outdated-icon-list
     attributes:
-      label: List of outdated icons
+      label: Icons
       description: |
-        Please follow the following format regarding the outdated icons:
+        **Please specify for each icon**
+        - the current application name in Lawnicons (search in [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml));
+        - [the link to the icon](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs) in Lawnicons;
+        - the new application name, if changed;
+        - the image of the new icon.
 
-        ```
-        App Name
-        (image to new icon)
+        **Example**
+        Twitter, [twitter.svg](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/)
+        ↓
+        X, [the X logo](https://commons.wikimedia.org/wiki/File:X_logo_2023_original.svg)
         
-        App Name
-        (image to new icon)
-        ```
-
-        It is more preferable to link to the outdated icon in [the svgs/ folder](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs)
-      placeholder: 
+      placeholder: Tell us what should be changed and how
     validations:
       required: true
   - type: textarea
     id: additional-info
     attributes:
       label: Additional information
-      description: Place additional context here.
-    validations:
-      required: true
+      placeholder: Specify what else is worth considering. For example, the application has a new activity
