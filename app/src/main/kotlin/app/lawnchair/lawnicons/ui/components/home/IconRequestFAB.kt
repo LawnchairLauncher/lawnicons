@@ -34,6 +34,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -86,11 +87,13 @@ fun IconRequestFAB(
 fun IconRequestIconButton(
     iconRequestModel: IconRequestModel?,
     snackbarHostState: SnackbarHostState,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     RequestHandler(
         iconRequestModel = iconRequestModel,
         snackbarHostState = snackbarHostState,
+        onClick = onClick,
     ) { interactionSource ->
         IconButton(
             onClick = {},
@@ -110,12 +113,14 @@ fun IconRequestIconButton(
 fun RequestHandler(
     iconRequestModel: IconRequestModel?,
     snackbarHostState: SnackbarHostState,
+    onClick: () -> Unit = {},
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
 ) {
-    if (iconRequestModel != null && iconRequestModel.iconCount > 0) {
+    if (iconRequestModel != null) {
         RequestHandler(
             iconRequestList = iconRequestModel.list,
             snackbarHostState = snackbarHostState,
+            onClick = onClick,
         ) {
             content(it)
         }
@@ -127,10 +132,13 @@ fun RequestHandler(
 fun RequestHandler(
     iconRequestList: List<IconRequest>,
     snackbarHostState: SnackbarHostState,
+    onClick: () -> Unit,
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
 ) {
     val context = LocalContext.current
     val viewConfiguration = LocalViewConfiguration.current
+
+    val onClickEffect = rememberUpdatedState(onClick)
 
     val requestList = formatIconRequestList(iconRequestList)
     val encodedRequestList = buildForm(requestList.replace("\n", "%20"))
@@ -151,6 +159,7 @@ fun RequestHandler(
         interactionSource.interactions.collectLatest { interaction ->
             when (interaction) {
                 is PressInteraction.Press -> {
+                    onClickEffect.value()
                     isLongClick = false
                     delay(viewConfiguration.longPressTimeoutMillis)
                     isLongClick = true
@@ -162,7 +171,9 @@ fun RequestHandler(
 
                 is PressInteraction.Release -> {
                     if (!isLongClick) {
-                        if (directLinkEnabled) {
+                        if (iconRequestList.isEmpty()) {
+                            openLink(context, Constants.ICON_REQUEST_FORM)
+                        } else if (directLinkEnabled) {
                             openLink(context, encodedRequestList)
                         } else {
                             openSnackbarContent(context, requestList, coroutineScope, snackbarHostState)
@@ -227,7 +238,7 @@ private fun IconRequestSheet(list: String, context: Context) {
 }
 
 private fun formatIconRequestList(iconRequestList: List<IconRequest>) =
-    iconRequestList.joinToString("\n") { "${it.name}\n${it.componentName}" }
+    iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
 
 private fun copyTextToClipboard(context: Context, text: String) {
     val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager

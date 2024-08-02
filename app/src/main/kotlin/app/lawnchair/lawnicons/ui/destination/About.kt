@@ -54,10 +54,39 @@ private val externalLinks = listOf(
 
 private val coreContributors = listOf(
     Contributor(
-        name = "paphonb",
+        name = "Suphon T.",
         username = "paphonb",
         photoUrl = "https://avatars.githubusercontent.com/u/8080853",
         socialUrl = "https://x.com/paphonb",
+        descriptionRes = R.string.contribution_core,
+    ),
+    Contributor(
+        name = "SuperDragonXD",
+        username = "SuperDragonXD",
+        photoUrl = "https://avatars.githubusercontent.com/u/70206496",
+        socialUrl = "https://github.com/SuperDragonXD",
+        descriptionRes = R.string.contribution_core,
+    ),
+    Contributor(
+        name = "Gleb",
+        username = "x9136",
+        photoUrl = "https://avatars.githubusercontent.com/u/60105060",
+        socialUrl = "https://github.com/x9136",
+        descriptionRes = R.string.contribution_icons,
+    ),
+    Contributor(
+        name = "Grabster",
+        username = "Grabstertv",
+        photoUrl = "https://avatars.githubusercontent.com/u/49114212",
+        socialUrl = "https://x.com/grabstertv",
+        descriptionRes = R.string.contribution_icons,
+    ),
+    Contributor(
+        name = "Zongle Wang",
+        username = "Goooler",
+        photoUrl = "https://avatars.githubusercontent.com/u/10363352",
+        socialUrl = "https://androiddev.social/@Goooler",
+        descriptionRes = R.string.contribution_deps,
     ),
 )
 
@@ -158,6 +187,7 @@ fun About(
                             photoUrl = it.photoUrl,
                             profileUrl = it.socialUrl,
                             divider = index != coreContributors.lastIndex,
+                            description = it.descriptionRes?.let { stringResource(id = it) },
                         )
                     }
                 }

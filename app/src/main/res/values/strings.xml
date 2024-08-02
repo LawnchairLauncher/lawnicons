@@ -14,6 +14,9 @@
 
     <string name="search_bar_icon_picker">Pick an icon</string>
 
+    <!-- Search tooltip -->
+    <string name="search">Search</string>
+
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">%s not found</string>
 
@@ -39,6 +42,11 @@
     <!-- Share button on icon info popup -->
     <string name="share">Share details</string>
 
+    <!-- Contribution -->
+    <string name="contribution_core">Core app</string>
+    <string name="contribution_icons">Icons</string>
+    <string name="contribution_deps">Dependencies</string>
+
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Special thanks</string>
@@ -48,7 +56,7 @@
     <string name="special_thanks_name">For naming the app</string>
 
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Acknowledgements</string>
+    <string name="acknowledgements">Open-source licenses</string>
 
     <!-- Icon Information Popup window -->
 
@@ -73,7 +81,7 @@
     <string name="copy_to_clipboard">Copy to clipboard</string>
     <string name="copied_text">Copied text</string>
 
+    <!-- Snackbar content -->
     <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
     <string name="snackbar_use_fallback_link">Open form</string>
-    <string name="search">Search</string>
 </resources>

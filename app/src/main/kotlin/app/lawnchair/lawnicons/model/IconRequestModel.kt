@@ -3,7 +3,7 @@ package app.lawnchair.lawnicons.model
 import kotlinx.collections.immutable.ImmutableList
 
 data class IconRequest(
-    val name: String,
+    val label: String,
     val componentName: String,
 )
 

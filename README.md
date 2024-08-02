@@ -24,7 +24,7 @@ Need help? [Join us on Discord](https://discord.gg/3x8qNWxgGZ).
 ## Requesting icons
 Please use **Lawnicons 2.10+**: `Open Lawnicons → Tap "Request icons" → Submit the response`.
 
-You can also use [the icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If a previously added icon has a design change, create [an issue](https://github.com/LawnchairLauncher/lawnicons/issues). 
+You can also use [the icon request form](https://forms.gle/xt7sJhgWEasuo9TR9). If a previously added icon has a design change, create [an issue](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml). 
 
 
 

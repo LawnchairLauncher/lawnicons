@@ -20,6 +20,7 @@ import androidx.core.graphics.drawable.toBitmap
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.Lawnicons
+import app.lawnchair.lawnicons.ui.util.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalFoundationApi
@@ -32,7 +33,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        val isIconPicker = intent?.action == "com.novalauncher.THEME"
+        val isIconPicker = intent?.action == Constants.ICON_PICKER_INTENT_ACTION
 
         setContent {
             val context = LocalContext.current

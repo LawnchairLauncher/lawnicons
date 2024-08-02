@@ -25,6 +25,7 @@ import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
+import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
 import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
@@ -60,33 +61,35 @@ fun Home(
         val lazyGridState = rememberLazyGridState()
         val snackbarHostState = remember { SnackbarHostState() }
 
-        val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
+        val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
         val focusRequester = remember { FocusRequester() }
 
         Crossfade(
             modifier = modifier,
-            targetState = iconInfoModel != null,
+            targetState = iconInfoModel.iconCount > 0,
             label = "",
         ) { visible ->
             if (visible) {
                 Scaffold(
                     topBar = {
                         HomeTopBar(
-                            isSearchExpanded = expandSearch.value,
+                            uiState = HomeTopBarUiState(
+                                isSearchExpanded = expandSearch.value,
+                                isExpandedScreen = isExpandedScreen,
+                                searchedIconInfoModel = searchedIconInfoModel,
+                                searchTerm = searchTerm,
+                                searchMode = searchMode,
+                                isIconPicker = isIconPicker,
+                                appIcon = context.appIcon().asImageBitmap(),
+                            ),
                             onFocusChange = { expandSearch.value = !expandSearch.value },
-                            isExpandedScreen = isExpandedScreen,
                             onClearSearch = { clearSearch() },
                             onChangeMode = { changeMode(it) },
                             onSearchIcons = { searchIcons(it) },
-                            searchedIconInfoModel = searchedIconInfoModel,
                             onNavigate = onNavigate,
-                            searchTerm = searchTerm,
-                            searchMode = searchMode,
-                            isIconPicker = isIconPicker,
                             onSendResult = onSendResult,
                             focusRequester = focusRequester,
                             scrollBehavior = scrollBehavior,
-                            appIcon = context.appIcon().asImageBitmap(),
                         )
                     },
                     bottomBar = {
@@ -97,6 +100,10 @@ fun Home(
                                 snackbarHostState = snackbarHostState,
                                 onNavigate = onNavigate,
                                 onExpandSearch = { expandSearch.value = !expandSearch.value },
+                                isIconRequestClicked = isIconRequestButtonClicked,
+                                onIconRequestClick = {
+                                    onIconRequestButtonClicked()
+                                },
                             )
                         }
                     },
@@ -114,7 +121,7 @@ fun Home(
                     },
                     modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
                 ) { contentPadding ->
-                    iconInfoModel?.let {
+                    iconInfoModel.let {
                         val padding = contentPadding // Ignore padding value
                         IconPreviewGrid(
                             iconInfo = it.iconInfo,

@@ -1,0 +1,26 @@
+name: Update an existing icon
+description: Request changing an icon if it is outdated or applied incorrectly.
+labels: ["icon update"]
+body:
+  - type: textarea
+    id: outdated-icon-list
+    attributes:
+      label: Icons
+      description: |
+        **Please specify for each icon**
+        - the current application name in Lawnicons (search in [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml));
+        - [the link to the icon](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs) in Lawnicons;
+        - the new application name, if changed;
+        - the image of the new icon.
+
+        **Example**
+        Twitter, [twitter.svg](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/) → X, [the X logo](https://commons.wikimedia.org/wiki/File:X_logo_2023_original.svg)
+        
+      placeholder: Tell us what should be changed and how
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional information
+      placeholder: Specify what else is worth considering. For example, the application has a new activity
