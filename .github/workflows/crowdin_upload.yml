@@ -20,7 +20,7 @@ jobs:
     - name: Upload Strings
       uses: crowdin/github-action@v2
       with:
-        upload_translations: true
+        upload_translations: false
         upload_sources: true
         download_translations: false
         localization_branch_name: i18n
