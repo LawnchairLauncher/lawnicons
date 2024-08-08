@@ -22,13 +22,18 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
+import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TooltipBox
+import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberModalBottomSheetState
+import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
@@ -42,6 +47,7 @@ import androidx.compose.ui.platform.LocalViewConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconRequest
@@ -85,8 +91,9 @@ fun IconRequestFAB(
 
 @Composable
 fun IconRequestIconButton(
-    iconRequestModel: IconRequestModel?,
+    isIconRequestClicked: Boolean,
     snackbarHostState: SnackbarHostState,
+    iconRequestModel: IconRequestModel?,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -95,17 +102,54 @@ fun IconRequestIconButton(
         snackbarHostState = snackbarHostState,
         onClick = onClick,
     ) { interactionSource ->
-        IconButton(
-            onClick = {},
-            interactionSource = interactionSource,
-            modifier = modifier,
-        ) {
-            Icon(
-                painter = painterResource(id = R.drawable.icon_request_app),
-                contentDescription = stringResource(R.string.request_icons),
-                modifier = Modifier.requiredSize(24.dp),
-            )
+        IconRequestTooltip(isIconRequestClicked) {
+            IconButton(
+                onClick = {},
+                interactionSource = interactionSource,
+                modifier = modifier,
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.icon_request_app),
+                    contentDescription = stringResource(R.string.request_icons),
+                    modifier = Modifier.requiredSize(24.dp),
+                )
+            }
         }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun IconRequestTooltip(
+    isButtonClicked: Boolean,
+    content: @Composable (() -> Unit),
+) {
+    val state = rememberTooltipState(
+        initialIsVisible = true,
+        isPersistent = true,
+    )
+    val hideTooltip = remember { isButtonClicked }
+
+    LaunchedEffect(hideTooltip) {
+        if (hideTooltip) {
+            state.dismiss()
+        }
+    }
+
+    TooltipBox(
+        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
+        tooltip = {
+            PlainTooltip(
+                containerColor = MaterialTheme.colorScheme.primaryContainer,
+                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                caretSize = DpSize(16.dp, 8.dp),
+            ) {
+                Text("Request missing icons here")
+            }
+        },
+        state = state,
+    ) {
+        content()
     }
 }
 
