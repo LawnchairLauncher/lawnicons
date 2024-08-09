@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <!-- Application name -->
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">Версія %s</string>
+    <!-- Search bar -->
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Шукати за %d значками</string>
+    <string name="search_bar_icon_picker">Вибрати іконку</string>
+    <!-- Search tooltip -->
+    <string name="search">Пошук</string>
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">%s не знайдено</string>
+    <!-- About page -->
+    <string name="about">Про додаток</string>
+    <!-- External Links -->
+    <!-- GitHub repository link-->
+    <!-- Icon Request form link -->
+    <string name="request_form">Форма запиту іконок</string>
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Автори</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Учасники проекту</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Переглянути всіх учасників</string>
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Переглянути на GitHub</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Поділитися подробицями</string>
+    <!-- Contribution -->
+    <string name="contribution_core">Головний додаток</string>
+    <string name="contribution_icons">Значки</string>
+    <string name="contribution_deps">Залежності</string>
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Особлива подяка</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Що надихнули іконку застосунка</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">За назву застосунку</string>
+    <!-- List item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Ліцензії ПЗ з відкритим вихідним кодом</string>
+    <!-- Icon Information Popup window -->
+    <!-- Name -->
+    <string name="name">Ім\'я</string>
+    <!-- Drawable prefix -->
+    <string name="drawable">Малюнок</string>
+    <!-- Package prefix -->
+    <string name="component">Назва компонента</string>
+    <!-- Mapped components -->
+    <string name="mapped_components">Зіставлені компоненти</string>
+    <!-- Outdated icon info -->
+    <string name="icon_info_outdated_warning">Якщо іконка застаріла через ребрендінг, створіть проблему на GitHub.</string>
+    <!-- Chevron a11y description -->
+    <string name="toggle_visibility_of_contents">Перемкнути видимість вмісту</string>
+    <!-- Request icons button -->
+    <string name="request_icons">Запит іконок</string>
+    <string name="copy_to_clipboard">Скопіювати до буфера обміну</string>
+    <string name="copied_text">Скопійований текст</string>
+    <!-- Snackbar content -->
+    <string name="snackbar_request_too_large">Скопійовано подробиці до буфера обміну. Щоб зробити запит, додайте деталі у форму.</string>
+    <string name="snackbar_use_fallback_link">Відкрити форму</string>
+</resources>
