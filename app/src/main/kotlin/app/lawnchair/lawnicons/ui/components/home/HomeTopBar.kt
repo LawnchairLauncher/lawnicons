@@ -1,27 +1,17 @@
 package app.lawnchair.lawnicons.ui.components.home
 
-import androidx.compose.animation.AnimatedContent
-import androidx.compose.foundation.Image
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBarScrollBehavior
+import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchMode
@@ -35,11 +25,9 @@ data class HomeTopBarUiState(
     val searchMode: SearchMode,
     val searchedIconInfoModel: IconInfoModel?,
     val isIconPicker: Boolean,
-    val appIcon: ImageBitmap,
 )
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class)
 fun HomeTopBar(
     uiState: HomeTopBarUiState,
     onFocusChange: () -> Unit,
@@ -49,49 +37,39 @@ fun HomeTopBar(
     onNavigate: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
     focusRequester: FocusRequester,
-    scrollBehavior: TopAppBarScrollBehavior,
     modifier: Modifier = Modifier,
 ) {
-    val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker, appIcon) = uiState
+    val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker) = uiState
 
-    AnimatedContent(targetState = isSearchExpanded || isExpandedScreen, label = "TopAppBar to SearchBar", modifier = modifier) { targetState ->
-        if (targetState) {
-            searchedIconInfoModel?.let {
-                SearchBar(
-                    searchTerm = searchTerm,
-                    onClearSearch = onClearSearch,
-                    onChangeMode = onChangeMode,
-                    onSearch = onSearchIcons,
-                    iconInfoModel = it,
-                    onNavigate = onNavigate,
-                    isExpandedScreen = isExpandedScreen,
-                    isIconPicker = isIconPicker,
-                    searchMode = searchMode,
-                    onSendResult = onSendResult,
-                    onFocusChange = onFocusChange,
-                    inputFieldModifier = Modifier.focusRequester(focusRequester),
-                )
-            }
+    val condition = isSearchExpanded || isExpandedScreen
+
+    val offset = animateDpAsState(
+        targetValue = if (condition) {
+            0.dp
         } else {
-            CenterAlignedTopAppBar(
-                scrollBehavior = scrollBehavior,
-                title = {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically,
-                    ) {
-                        Image(
-                            bitmap = appIcon,
-                            contentDescription = stringResource(id = R.string.app_name),
-                            modifier = Modifier.size(36.dp),
-                        )
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text(
-                            stringResource(id = R.string.app_name),
-                        )
-                    }
+            (-100).dp
+        },
+        label = "move search bar",
+    )
+    searchedIconInfoModel?.let {
+        SearchBar(
+            modifier = modifier
+                .offset {
+                    IntOffset(0, offset.value.roundToPx())
                 },
-            )
-        }
+            searchTerm = searchTerm,
+            onClearSearch = onClearSearch,
+            onChangeMode = onChangeMode,
+            onSearch = onSearchIcons,
+            iconInfoModel = it,
+            onNavigate = onNavigate,
+            isExpandedScreen = isExpandedScreen,
+            isIconPicker = isIconPicker,
+            searchMode = searchMode,
+            onSendResult = onSendResult,
+            onFocusChange = onFocusChange,
+            inputFieldModifier = Modifier.focusRequester(focusRequester),
+        )
     }
 }
 
@@ -119,8 +97,10 @@ private fun SearchBar(
         LawniconsSearchBar(
             query = searchTerm,
             isQueryEmpty = searchTerm == "",
-            onClearAndBackClick = {
+            onClear = {
                 onClearSearch()
+            },
+            onBack = {
                 onFocusChange()
             },
             onQueryChange = { newValue ->

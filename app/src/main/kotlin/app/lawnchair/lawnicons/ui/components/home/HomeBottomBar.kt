@@ -72,7 +72,7 @@ fun HomeBottomBar(
             ) {
                 IconButton(onClick = onNavigate) {
                     Icon(
-                        painter = painterResource(id = R.drawable.contacts_foreground),
+                        painter = painterResource(id = R.drawable.about_icon),
                         contentDescription = stringResource(id = R.string.about),
                         modifier = Modifier.requiredSize(24.dp),
                     )

@@ -68,6 +68,13 @@ private val coreContributors = listOf(
         descriptionRes = R.string.contribution_core,
     ),
     Contributor(
+        name = "Patryk Radziszewski",
+        username = "Chefski",
+        photoUrl = "https://avatars.githubusercontent.com/u/100310118",
+        socialUrl = "https://github.com/Chefski",
+        descriptionRes = R.string.contribution_icons,
+    ),
+    Contributor(
         name = "Gleb",
         username = "x9136",
         photoUrl = "https://avatars.githubusercontent.com/u/60105060",

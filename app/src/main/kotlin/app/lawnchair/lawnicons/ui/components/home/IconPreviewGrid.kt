@@ -1,38 +1,49 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.expandHorizontally
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.shrinkHorizontally
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
+import app.lawnchair.lawnicons.util.appIcon
 import kotlinx.collections.immutable.ImmutableList
 import my.nanihadesuka.compose.LazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
@@ -59,7 +70,9 @@ fun IconPreviewGrid(
                 .widthIn(max = 640.dp)
                 .fillMaxWidth()
                 .statusBarsPadding()
-                .padding(top = 26.dp),
+                .then(
+                    if (isExpandedScreen) Modifier.padding(top = 26.dp) else Modifier,
+                ),
             state = gridState,
             settings = ScrollbarSettings(
                 alwaysShowScrollbar = true,
@@ -70,8 +83,8 @@ fun IconPreviewGrid(
             indicatorContent = { _, isThumbSelected ->
                 AnimatedVisibility(
                     visible = isThumbSelected,
-                    enter = fadeIn() + expandHorizontally(),
-                    exit = fadeOut() + shrinkHorizontally(),
+                    enter = fadeIn(),
+                    exit = fadeOut(),
                 ) {
                     Box(
                         modifier = Modifier
@@ -96,11 +109,20 @@ fun IconPreviewGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
                 contentPadding = contentPadding ?: WindowInsets.navigationBars.toPaddingValues(
                     additionalStart = horizontalGridPadding,
-                    additionalTop = 42.dp,
+                    additionalTop = if (isExpandedScreen) 42.dp else 0.dp,
                     additionalEnd = horizontalGridPadding,
                 ),
                 state = gridState,
             ) {
+                if (!isExpandedScreen) {
+                    item(
+                        span = {
+                            GridItemSpan(maxLineSpan)
+                        },
+                    ) {
+                        TopAppBar()
+                    }
+                }
                 items(
                     items = iconInfo,
                     contentType = { "icon_preview" },
@@ -114,6 +136,30 @@ fun IconPreviewGrid(
             }
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopAppBar(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    CenterAlignedTopAppBar(
+        modifier = modifier,
+        title = {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Image(
+                    bitmap = context.appIcon().asImageBitmap(),
+                    contentDescription = stringResource(id = R.string.app_name),
+                    modifier = Modifier.size(36.dp),
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    stringResource(id = R.string.app_name),
+                )
+            }
+        },
+    )
 }
 
 @OptIn(ExperimentalFoundationApi::class)
