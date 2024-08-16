@@ -26,7 +26,7 @@ val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEm
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.10.1"
+val version = "2.11.0"
 val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
 
 android {
@@ -37,7 +37,7 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = compileSdk
-        versionCode = 14
+        versionCode = 15
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
@@ -144,7 +144,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core-android:1.6.8")
     implementation("androidx.compose.material3:material3:1.3.0-beta05")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.8.0-beta06")
+    implementation("androidx.navigation:navigation-compose:2.8.0-beta07")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")

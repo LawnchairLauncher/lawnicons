@@ -12,6 +12,8 @@ val coreContributorIds = listOf(
     8080853,
     // SuperDragonXD
     70206496,
+    // Chefski
+    100310118,
     // x9136
     60105060,
     // Goooler
