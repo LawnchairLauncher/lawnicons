@@ -173,7 +173,12 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
             .padding(PaddingValues(16.dp)),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        val it = iconInfo[0]
+        val it = try {
+            iconInfo[0]
+        } catch (_: Exception) {
+            return@IconInfoListItem
+        }
+
         val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
 
         ListItem(
