@@ -49,10 +49,6 @@ fun Home(
         val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()
         val searchedIconInfoModel by searchedIconInfoModel.collectAsStateWithLifecycle()
         val iconRequestModel by iconRequestModel.collectAsStateWithLifecycle()
-        val searchMode = searchMode
-        val searchTerm = searchTerm
-
-        var expandSearch by remember { mutableStateOf(false) }
         val context = LocalContext.current
 
         val lazyGridState = rememberLazyGridState()

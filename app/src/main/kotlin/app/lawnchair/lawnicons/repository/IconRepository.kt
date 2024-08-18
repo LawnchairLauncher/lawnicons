@@ -95,7 +95,7 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
         }.toPersistentList()
 
         _searchedIconInfoModel.value = IconInfoModel(
-            iconCount = _iconInfoModel.value.iconCount,
+            iconCount = _searchedIconInfoModel.value.iconCount,
             iconInfo = filteredIcons,
         )
     }

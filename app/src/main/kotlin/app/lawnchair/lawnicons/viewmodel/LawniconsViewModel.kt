@@ -30,6 +30,8 @@ class LawniconsViewModel @Inject constructor(
     @JvmField
     val isIconRequestButtonClicked = userTipsRepository.hasClickedIconRequestButton()
 
+    var expandSearch by mutableStateOf(false)
+
     private var _searchMode by mutableStateOf(SearchMode.LABEL)
     private var _searchTerm by mutableStateOf("")
 
