@@ -85,3 +85,27 @@ jobs:
           ARTIFACT_DIRECTORY: artifacts/debug-apk
           GITHUB_REF: ${{ github.ref }}
           DISCORD_CI_BOT_TOKEN: ${{ secrets.DISCORD_CI_BOT_TOKEN}}
+
+  nightly-release:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'LawnchairLauncher' && github.event_name == 'push'
+    needs: build-debug-apk
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Debug APK
+          path: artifacts/debug-apk
+      - name: Export APK_NAME for later use
+        run: echo "APK_NAME=Lawnicons.Debug.${{ github.ref_name }}.Nightly-CI_${{ github.run_number }}-$(echo ${{ github.sha }} | cut -c1-7).apk" >> $GITHUB_ENV
+      - name: Rename .apk file
+        run: |
+          mv artifacts/debug-apk/*.apk $APK_NAME
+      - name: Delete release if exist then create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release view "nightly" && gh release delete "nightly" -y --cleanup-tag
+          gh release create "nightly" "$APK_NAME" -p -t "Lawnicons Nightly" --generate-notes
