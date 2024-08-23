@@ -274,7 +274,6 @@ private fun copyTextToClipboard(context: Context, text: String) {
     clipboard.setPrimaryClip(clip)
 }
 
-
 private fun handleRequestClick(
     iconRequestList: List<IconRequest>,
     context: Context,
