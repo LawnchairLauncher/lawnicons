@@ -126,6 +126,11 @@ tasks.withType<MergeResources>().configureEach {
     dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
 }
 
+composeCompiler {
+    stabilityConfigurationFile = layout.projectDirectory.file("compose_compiler_config.conf")
+    reportsDestination = layout.buildDirectory.dir("compose_build_reports")
+}
+
 licensee {
     allow("Apache-2.0")
     allow("MIT")
