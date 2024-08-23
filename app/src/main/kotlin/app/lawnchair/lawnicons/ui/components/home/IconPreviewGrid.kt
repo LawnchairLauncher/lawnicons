@@ -71,7 +71,7 @@ fun IconPreviewGrid(
                 .fillMaxWidth()
                 .statusBarsPadding()
                 .then(
-                    if (isExpandedScreen) Modifier.padding(top = 26.dp) else Modifier,
+                    if (isExpandedScreen) Modifier.padding(top = 26.dp) else Modifier.padding(bottom = 80.dp),
                 ),
             state = gridState,
             settings = ScrollbarSettings(
