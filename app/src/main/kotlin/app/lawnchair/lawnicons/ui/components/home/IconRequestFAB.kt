@@ -188,6 +188,7 @@ private fun HandleTouchInteractions(
     encodedRequestList: String,
     snackbarHostState: SnackbarHostState,
 ) {
+    val prefs = preferenceManager()
     val lastestOnExpandSheet by rememberUpdatedState(newValue = onExpandSheet)
     LaunchedEffect(interactionSource) {
         var isLongClick = false
@@ -206,18 +207,16 @@ private fun HandleTouchInteractions(
 
                 is PressInteraction.Release -> {
                     if (!isLongClick) {
-                        if (iconRequestList.isEmpty()) {
-                            openLink(context, Constants.ICON_REQUEST_FORM)
-                        } else if (directLinkEnabled) {
-                            openLink(context, encodedRequestList)
-                        } else {
-                            openSnackbarWarningContent(
-                                context,
-                                requestList,
-                                coroutineScope,
-                                snackbarHostState,
-                            )
-                        }
+                        prefs.showFirstLaunchSnackbar.set(false)
+                        handleRequestClick(
+                            iconRequestList,
+                            context,
+                            directLinkEnabled,
+                            encodedRequestList,
+                            requestList,
+                            coroutineScope,
+                            snackbarHostState,
+                        )
                     }
                 }
 
@@ -275,6 +274,30 @@ private fun copyTextToClipboard(context: Context, text: String) {
     clipboard.setPrimaryClip(clip)
 }
 
+
+private fun handleRequestClick(
+    iconRequestList: List<IconRequest>,
+    context: Context,
+    directLinkEnabled: Boolean,
+    encodedRequestList: String,
+    requestList: String,
+    coroutineScope: CoroutineScope,
+    snackbarHostState: SnackbarHostState,
+) {
+    if (iconRequestList.isEmpty()) {
+        openLink(context, Constants.ICON_REQUEST_FORM)
+    } else if (directLinkEnabled) {
+        openLink(context, encodedRequestList)
+    } else {
+        openSnackbarWarningContent(
+            context,
+            requestList,
+            coroutineScope,
+            snackbarHostState,
+        )
+    }
+}
+
 private fun openSnackbarFirstLaunchContent(
     context: Context,
     coroutineScope: CoroutineScope,
@@ -284,21 +307,12 @@ private fun openSnackbarFirstLaunchContent(
     coroutineScope.launch {
         val result = snackbarHostState
             .showSnackbar(
-                message = context.getString(R.string.you_have_missing_icons),
-                actionLabel = context.getString(R.string.request_icons),
-                withDismissAction = true,
-                duration = SnackbarDuration.Indefinite,
+                message = context.getString(R.string.snackbar_request_icons_hint),
+                duration = SnackbarDuration.Long,
             )
-        when (result) {
-            SnackbarResult.ActionPerformed -> {
-                onActionPerformed()
-                openLink(context, Constants.ICON_REQUEST_FORM)
-            }
-
-            SnackbarResult.Dismissed -> {
-                onActionPerformed()
-                snackbarHostState.currentSnackbarData?.dismiss()
-            }
+        if (result == SnackbarResult.Dismissed) {
+            onActionPerformed()
+            snackbarHostState.currentSnackbarData?.dismiss()
         }
     }
 }
