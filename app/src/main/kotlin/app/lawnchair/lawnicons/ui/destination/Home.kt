@@ -20,6 +20,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
+import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
@@ -90,8 +91,6 @@ fun Home(
                                 snackbarHostState = snackbarHostState,
                                 onNavigate = onNavigate,
                                 onExpandSearch = { expandSearch = true },
-                                isIconRequestClicked = isIconRequestButtonClicked,
-                                onIconRequestClick = ::onIconRequestButtonClicked,
                             )
                         }
                     },

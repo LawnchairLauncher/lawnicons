@@ -52,6 +52,7 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconRequest
 import app.lawnchair.lawnicons.model.IconRequestModel
+import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.isScrollingUp
@@ -91,18 +92,18 @@ fun IconRequestFAB(
 
 @Composable
 fun IconRequestIconButton(
-    isIconRequestClicked: Boolean,
     snackbarHostState: SnackbarHostState,
     iconRequestModel: IconRequestModel?,
-    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val prefs = preferenceManager()
+
     RequestHandler(
         iconRequestModel = iconRequestModel,
         snackbarHostState = snackbarHostState,
-        onClick = onClick,
+        onClick = { prefs.showRequestTooltip.set(false) },
     ) { interactionSource ->
-        IconRequestTooltip(isIconRequestClicked) {
+        IconRequestTooltip(prefs.showRequestTooltip.asState().value) {
             IconButton(
                 onClick = {},
                 interactionSource = interactionSource,
@@ -121,34 +122,37 @@ fun IconRequestIconButton(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun IconRequestTooltip(
-    isButtonClicked: Boolean,
+    showTooltip: Boolean,
     content: @Composable (() -> Unit),
 ) {
     val state = rememberTooltipState(
         initialIsVisible = true,
         isPersistent = true,
     )
-    val hideTooltip = remember { isButtonClicked }
 
-    LaunchedEffect(hideTooltip) {
-        if (hideTooltip) {
+    LaunchedEffect(showTooltip) {
+        if (!showTooltip) {
             state.dismiss()
         }
     }
 
-    TooltipBox(
-        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-        tooltip = {
-            PlainTooltip(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                caretSize = DpSize(16.dp, 8.dp),
-            ) {
-                Text("Request missing icons here")
-            }
-        },
-        state = state,
-    ) {
+    if (showTooltip) {
+        TooltipBox(
+            positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
+            tooltip = {
+                PlainTooltip(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer,
+                    contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+                    caretSize = DpSize(16.dp, 8.dp),
+                ) {
+                    Text("Request missing icons here")
+                }
+            },
+            state = state,
+        ) {
+            content()
+        }
+    } else {
         content()
     }
 }
