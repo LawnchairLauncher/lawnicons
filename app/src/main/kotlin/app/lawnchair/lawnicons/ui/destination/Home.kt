@@ -38,7 +38,6 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
-import kotlinx.collections.immutable.toImmutableList
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
@@ -174,7 +173,7 @@ private fun HomePreview() {
             },
         )
         IconPreviewGrid(
-            iconInfo = iconInfo.toImmutableList(),
+            iconInfo = iconInfo,
             isExpandedScreen = false,
             {},
             Modifier,

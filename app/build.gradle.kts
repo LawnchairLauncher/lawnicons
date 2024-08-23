@@ -148,7 +148,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
 
     val hiltVersion = "2.52"
     implementation("com.google.dagger:hilt-android:$hiltVersion")

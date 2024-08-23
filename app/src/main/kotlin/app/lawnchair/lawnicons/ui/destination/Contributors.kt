@@ -31,8 +31,6 @@ import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
 
 const val CONTRIBUTOR_URL = "${Constants.GITHUB}/graphs/contributors"
 
@@ -95,7 +93,7 @@ fun Contributors(
 
 @Composable
 private fun ContributorList(
-    contributors: ImmutableList<GitHubContributor>,
+    contributors: List<GitHubContributor>,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(),
 ) {
@@ -168,7 +166,7 @@ private fun ContributorListError(
 @PreviewLawnicons
 @Composable
 private fun ContributorsScreenPreview() {
-    val contributors = persistentListOf(
+    val contributors = listOf(
         GitHubContributor(
             id = 1,
             login = "Example",
@@ -202,7 +200,7 @@ private fun ContributorsScreenLoadingPreview() {
 @PreviewLawnicons
 @Composable
 private fun ContributorListPreview() {
-    val contributors = persistentListOf(
+    val contributors = listOf(
         GitHubContributor(
             id = 1,
             login = "Example",

@@ -43,14 +43,13 @@ import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.components.home.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
-import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
-    iconInfo: ImmutableList<IconInfo>,
+    iconInfo: List<IconInfo>,
     modifier: Modifier = Modifier,
     onSendResult: (IconInfo) -> Unit = {},
 ) {
@@ -167,7 +166,7 @@ fun SearchContents(
 }
 
 @Composable
-private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
+private fun IconInfoListItem(iconInfo: List<IconInfo>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
