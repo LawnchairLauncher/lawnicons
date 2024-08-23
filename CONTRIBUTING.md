@@ -124,16 +124,15 @@ Correct
 
 ## Adding an icon to Lawnicons
 ### Prerequisites
+* A fork of the Lawnicons repository;
 * Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
-* The package and activity name of the app.
+* The package and activity name of the app;
 
 ### Via `icontool.py`
-Please check the [icon tool guide](/docs/icontool_guide.md) for more information.
+Please check [the icon tool guide](/docs/icontool_guide.md) for more information.
 
 ### Via manual process
-You should already have a fork of the project.
-
-1. Add the ready SVG to the `svgs` directory. If you want to add a link to an existing icon, then find the ready SVG in the `svgs` directory and copy its name.
+1. Add the ready SVG to the `svgs` directory. If you want to add a link to an existing SVG, you will need its name.
 
 2. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity.
 
