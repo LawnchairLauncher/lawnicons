@@ -2,13 +2,13 @@ package app.lawnchair.lawnicons.repository
 
 import android.app.Application
 import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoManager
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.IconRequest
 import app.lawnchair.lawnicons.model.IconRequestModel
 import app.lawnchair.lawnicons.model.SearchInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
+import app.lawnchair.lawnicons.model.splitByComponentName
 import app.lawnchair.lawnicons.util.getIconInfo
 import app.lawnchair.lawnicons.util.getSystemIconInfoAppfilter
 import javax.inject.Inject
@@ -112,7 +112,8 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
                 info.getFirstLabelAndComponent()
             }
 
-            val lawniconsComponents = IconInfoManager.splitByComponentName(lawniconsData)
+            val lawniconsComponents = lawniconsData
+                .splitByComponentName()
                 .map { it.getFirstLabelAndComponent().componentName }
                 .sortedBy { it.lowercase() }
                 .toSet()

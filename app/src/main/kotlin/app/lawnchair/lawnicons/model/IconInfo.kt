@@ -21,52 +21,44 @@ data class IconInfo(
 }
 
 /**
- * A helper object for processing and manipulating collections of [IconInfo] objects,
- * including merging and splitting based on drawable names and component names.
+ * Merges a list of [IconInfo] objects, grouping them by their `drawableName` and
+ * combining the `componentNames` of icons with the same drawable name.
+ *
+ * @return A new list of [IconInfo] objects with merged component names for icons
+ *         sharing the same drawable name.
  */
-object IconInfoManager {
-    /**
-     * Merges a list of [IconInfo] objects, grouping them by their `drawableName` and
-     * combining the `componentNames` of icons with the same drawable name.
-     *
-     * @param iconInfoList The list of [IconInfo] objects to merge.
-     * @return A new list of [IconInfo] objects with merged component names for icons
-     *         sharing the same drawable name.
-     */
-    fun mergeByDrawableName(iconInfoList: List<IconInfo>): List<IconInfo> {
-        return iconInfoList.groupBy { it.drawableName }
-            .map { (drawableName, icons) ->
-                val mergedComponentNames = icons.flatMap { it.componentNames }
-                IconInfo(
-                    componentNames = mergedComponentNames,
-                    drawableName = drawableName,
-                    id = icons.first().id,
-                )
-            }
-    }
-
-    /**
-     * Splits [IconInfo] objects with multiple component names into a list where each
-     * [IconInfo] object has a single component name.
-     *
-     * @param iconInfoList The list of [IconInfo] objects to split.
-     * @return A new list of [IconInfo] objects, each with a single component name.
-     */
-    fun splitByComponentName(iconInfoList: List<IconInfo>): List<IconInfo> {
-        val splitList = mutableListOf<IconInfo>()
-        for (iconInfo in iconInfoList) {
-            for (nameAndComponent in iconInfo.componentNames) {
-                splitList.add(
-                    IconInfo(
-                        componentNames = listOf(nameAndComponent),
-                        drawableName = iconInfo.drawableName,
-                        id = iconInfo.id,
-                    ),
-                )
-            }
+fun List<IconInfo>.mergeByDrawableName(): List<IconInfo> {
+    return groupBy { it.drawableName }
+        .map { (drawableName, icons) ->
+            val mergedComponentNames = icons.flatMap { it.componentNames }
+            IconInfo(
+                componentNames = mergedComponentNames,
+                drawableName = drawableName,
+                id = icons.first().id,
+            )
         }
-        return splitList
+}
+
+/**
+ * Splits [IconInfo] objects with multiple component names into a list where each
+ * [IconInfo] object has a single component name.
+ *
+ * @return A new list of [IconInfo] objects, each with a single component name.
+ */
+fun List<IconInfo>.splitByComponentName(): List<IconInfo> {
+    val splitList = mutableListOf<IconInfo>()
+    for (iconInfo in this) {
+        for (nameAndComponent in iconInfo.componentNames) {
+            splitList.add(
+                IconInfo(
+                    componentNames = listOf(nameAndComponent),
+                    drawableName = iconInfo.drawableName,
+                    id = iconInfo.id,
+                ),
+            )
+        }
     }
+    return splitList
 }
 
 fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
