@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -31,6 +32,8 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
@@ -60,6 +63,9 @@ fun IconPreviewGrid(
     contentPadding: PaddingValues? = null,
     gridState: LazyGridState = rememberLazyGridState(),
 ) {
+    val indexOfFirstItem = remember { derivedStateOf { gridState.firstVisibleItemIndex } }
+    val letter = iconInfo[indexOfFirstItem.value].label[0].uppercase()
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -81,27 +87,7 @@ fun IconPreviewGrid(
                 selectionMode = ScrollbarSelectionMode.Thumb,
             ),
             indicatorContent = { _, isThumbSelected ->
-                AnimatedVisibility(
-                    visible = isThumbSelected,
-                    enter = fadeIn(),
-                    exit = fadeOut(),
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .padding(end = 16.dp)
-                            .background(
-                                color = MaterialTheme.colorScheme.primary,
-                                shape = MaterialTheme.shapes.large,
-                            ),
-                    ) {
-                        Text(
-                            modifier = Modifier.padding(16.dp),
-                            text = "#",
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onPrimary,
-                        )
-                    }
-                }
+                ScrollbarIndicator(letter, isThumbSelected)
             },
         ) {
             val horizontalGridPadding = if (isExpandedScreen) 32.dp else 8.dp
@@ -134,6 +120,34 @@ fun IconPreviewGrid(
                     )
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun ColumnScope.ScrollbarIndicator(
+    label: String,
+    isThumbSelected: Boolean,
+) {
+    AnimatedVisibility(
+        visible = isThumbSelected,
+        enter = fadeIn(),
+        exit = fadeOut(),
+    ) {
+        Box(
+            modifier = Modifier
+                .padding(end = 16.dp)
+                .background(
+                    color = MaterialTheme.colorScheme.primary,
+                    shape = MaterialTheme.shapes.large,
+                ),
+        ) {
+            Text(
+                modifier = Modifier.padding(16.dp),
+                text = label,
+                style = MaterialTheme.typography.titleMedium,
+                color = MaterialTheme.colorScheme.onPrimary,
+            )
         }
     }
 }
