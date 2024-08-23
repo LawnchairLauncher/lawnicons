@@ -28,6 +28,8 @@ abstract class BasePreferenceManager(
         fun get() = prefs.getBoolean(key, defaultValue)
         fun set(value: Boolean) = editor.putBoolean(key, value).apply()
 
+        fun onChange() = set(!get())
+
         @Composable
         fun asState(): State<Boolean> {
             return produceState(initialValue = get(), this) {
@@ -48,8 +50,7 @@ abstract class BasePreferenceManager(
 class PreferenceManager private constructor(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {
-
-    val showRequestTooltip = BoolPref("icon_request_button_clicked", true)
+    val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", true)
 
     companion object {
         @Volatile
