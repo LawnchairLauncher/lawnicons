@@ -123,31 +123,35 @@ Correct
 ```
 
 ## Adding an icon to Lawnicons
-Here's how to add an icon to Lawnicons:
-
-### Prerequesties
-* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `files_by_google.svg`).
-* The package and activity name of the app.
+### Prerequisites
+* A fork of the Lawnicons repository;
+* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
+* The package and activity name of the app;
 
 ### Via `icontool.py`
-Please check the [icon tool guide](/docs/icontool_guide.md) for more information.
+Please check [the icon tool guide](/docs/icontool_guide.md) for more information.
 
 ### Via manual process
-1. Add the ready SVG to the `svgs` directory.
+1. Add the ready SVG to the `svgs` directory. If you want to add a link to an existing SVG, you will need its name.
 
-1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity. For example:
+2. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity.
 
+    **Example**
+    - the app name: `Spck Editor`;
+    - the svg (drawable) name: `spck_editor`;
+    - the package and activity of the app: `io.spck/io.spck.EditorActivity`.
+  
+    **The new line**
     ```xml
-      <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google"/>
+    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor"/>
     ```
 
-    A general template is as follows:
-
+    **General template**
     ```xml
     <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/>
     ```
 
-1. Done! You're ready to open a pull request. Please set `develop` as the base branch.
+4. Done! You're ready to open a pull request. Please set `develop` as the base branch.
 
 ## Finding the package and activity name of an app
 
@@ -158,8 +162,8 @@ Please check the [icon tool guide](/docs/icontool_guide.md) for more information
 
 ### Using `adb`
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
-1. Open a new Command Prompt or Terminal window and input `adb devices`.
-1. Finally, type the below-given command to get the information about the currently open application.
+2. Open a new Command Prompt or Terminal window and input `adb devices`.
+3. Finally, type the below-given command to get the information about the currently open application.
 
   **For Mac or Linux**:
 

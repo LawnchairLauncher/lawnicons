@@ -123,6 +123,7 @@ fun SearchContents(
                 1 -> {
                     IconInfoListItem(iconInfo)
                 }
+
                 0 -> {
                     Box(
                         modifier = Modifier
@@ -145,7 +146,7 @@ fun SearchContents(
                     ) { iconInfo ->
                         LazyVerticalGrid(
                             columns = GridCells.Adaptive(minSize = 80.dp),
-                            contentPadding = PaddingValues(16.dp),
+                            contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
                         ) {
                             items(
                                 items = iconInfo,
@@ -154,7 +155,7 @@ fun SearchContents(
                                 IconPreview(
                                     iconInfo = it,
                                     onSendResult = onSendResult,
-                                    iconBackground = MaterialTheme.colorScheme.surfaceVariant,
+                                    iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
                                 )
                             }
                         }
@@ -173,7 +174,12 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
             .padding(PaddingValues(16.dp)),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        val it = iconInfo[0]
+        val it = try {
+            iconInfo[0]
+        } catch (_: Exception) {
+            return@IconInfoListItem
+        }
+
         val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
 
         ListItem(

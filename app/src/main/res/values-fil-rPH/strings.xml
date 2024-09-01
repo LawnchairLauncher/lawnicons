@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <!-- Application name -->
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">Bersyon %s</string>
+    <!-- Search bar -->
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Hanapin sa %d na icons</string>
+    <string name="search_bar_icon_picker">Pumili ng icon</string>
+    <!-- Search tooltip -->
+    <string name="search">Maghanap</string>
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">Walang nahanap na mga icon</string>
+    <!-- About page -->
+    <string name="about">Patungkol</string>
+    <!-- External Links -->
+    <!-- GitHub repository link-->
+    <!-- Icon Request form link -->
+    <string name="request_form">Form sa paghiling ng icons</string>
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Mga nag-aambag</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Mga pangunahing tagapag-ambag</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Tingnan ang lahat ng tagapag-ambag</string>
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Tingnan sa GitHub</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Ibahagi ang detalye</string>
+    <!-- Contribution -->
+    <string name="contribution_core">Core app</string>
+    <string name="contribution_icons">Mga Icon</string>
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Espesyal na pagsasalamat</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Sa pagbibigay-inspirasyon sa icon ng app</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">Sa pagbigay-pangalan sa app</string>
+    <!-- List item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Mga pagkilala</string>
+    <!-- Icon Information Popup window -->
+    <!-- Name -->
+    <string name="name">Pangalan</string>
+    <!-- Drawable prefix -->
+    <string name="drawable">Maaring iguhit</string>
+    <!-- Package prefix -->
+    <string name="component">Pangalan ng component</string>
+    <!-- Mapped components -->
+    <string name="mapped_components">Pakete</string>
+    <!-- Outdated icon info -->
+    <string name="icon_info_outdated_warning">Kung ang icon ay luma na dahil sa rebranding, gumawa ng isyu sa GitHub.</string>
+    <!-- Chevron a11y description -->
+    <string name="toggle_visibility_of_contents">I-toggle ang bisibilidad ng mga content</string>
+    <!-- Request icons button -->
+    <string name="request_icons">Maghiling ng icons</string>
+    <string name="copy_to_clipboard">Kopyahin sa clipboard</string>
+    <string name="copied_text">Kinopya ang teksto</string>
+    <!-- Snackbar content -->
+    <string name="snackbar_request_too_large">Nakopya na ang mga detalye tungkol sa ihihiling na icons sa clipboard. Upang hilingin ang mga ito, isumite ang mga detalye sa form.</string>
+    <string name="snackbar_use_fallback_link">Buksan ang form</string>
+</resources>

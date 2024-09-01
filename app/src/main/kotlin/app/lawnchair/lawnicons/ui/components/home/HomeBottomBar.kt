@@ -13,7 +13,6 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -21,12 +20,9 @@ import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconRequestModel
@@ -39,8 +35,6 @@ fun HomeBottomBar(
     snackbarHostState: SnackbarHostState,
     onNavigate: () -> Unit,
     onExpandSearch: () -> Unit,
-    isIconRequestClicked: Boolean,
-    onIconRequestClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     BottomAppBar(
@@ -64,20 +58,17 @@ fun HomeBottomBar(
                     )
                 }
             }
-            IconRequestTooltip(isIconRequestClicked) {
-                IconRequestIconButton(
-                    iconRequestModel = iconRequestModel,
-                    snackbarHostState = snackbarHostState,
-                    onClick = onIconRequestClick,
-                )
-            }
+            IconRequestIconButton(
+                iconRequestModel = iconRequestModel,
+                snackbarHostState = snackbarHostState,
+            )
 
             SimpleTooltipBox(
                 label = stringResource(id = R.string.about),
             ) {
                 IconButton(onClick = onNavigate) {
                     Icon(
-                        painter = painterResource(id = R.drawable.contacts_foreground),
+                        painter = painterResource(id = R.drawable.about_icon),
                         contentDescription = stringResource(id = R.string.about),
                         modifier = Modifier.requiredSize(24.dp),
                     )
@@ -120,41 +111,6 @@ private fun SimpleTooltipBox(
         },
         state = rememberTooltipState(),
         modifier = modifier,
-    ) {
-        content()
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun IconRequestTooltip(
-    isButtonClicked: Boolean,
-    content: @Composable (() -> Unit),
-) {
-    val state = rememberTooltipState(
-        initialIsVisible = true,
-        isPersistent = true,
-    )
-    val hideTooltip = remember { isButtonClicked }
-
-    LaunchedEffect(hideTooltip) {
-        if (hideTooltip) {
-            state.dismiss()
-        }
-    }
-
-    TooltipBox(
-        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-        tooltip = {
-            PlainTooltip(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                caretSize = DpSize(16.dp, 8.dp),
-            ) {
-                Text("Request missing icons here")
-            }
-        },
-        state = state,
     ) {
         content()
     }
