@@ -137,7 +137,7 @@ fun RequestHandler(
     )
 
     val scope = rememberCoroutineScope()
-    val interactionSource = rememberSaveable { MutableInteractionSource() }
+    val interactionSource = remember { MutableInteractionSource() }
 
     HandleTouchInteractions(
         interactionSource = interactionSource,

@@ -5,6 +5,7 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -214,8 +215,23 @@ private fun ResponsiveSearchBar(
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     inputFieldModifier: Modifier = Modifier,
-    content: @Composable () -> Unit,
+    content: @Composable ColumnScope.() -> Unit,
 ) {
+    val inputField =
+        @Composable {
+            SearchBarDefaults.InputField(
+                query = query,
+                onQueryChange = onQueryChange,
+                onSearch = onSearch,
+                modifier = inputFieldModifier,
+                expanded = active,
+                onExpandedChange = onActiveChange,
+                placeholder = placeholder,
+                leadingIcon = leadingIcon,
+                trailingIcon = trailingIcon,
+            )
+        }
+
     if (isExpandedScreen) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -223,47 +239,19 @@ private fun ResponsiveSearchBar(
             modifier = modifier,
         ) {
             DockedSearchBar(
-                inputField = {
-                    SearchBarDefaults.InputField(
-                        query = query,
-                        onQueryChange = onQueryChange,
-                        onSearch = onSearch,
-                        modifier = inputFieldModifier,
-                        expanded = active,
-                        onExpandedChange = onActiveChange,
-                        placeholder = placeholder,
-                        leadingIcon = leadingIcon,
-                        trailingIcon = trailingIcon,
-                    )
-                },
+                inputField = inputField,
                 expanded = active,
                 onExpandedChange = onActiveChange,
-                content = {
-                    content()
-                },
+                content = content,
             )
         }
     } else {
         SearchBar(
-            inputField = {
-                SearchBarDefaults.InputField(
-                    query = query,
-                    onQueryChange = onQueryChange,
-                    onSearch = onSearch,
-                    modifier = inputFieldModifier,
-                    expanded = active,
-                    onExpandedChange = onActiveChange,
-                    placeholder = placeholder,
-                    leadingIcon = leadingIcon,
-                    trailingIcon = trailingIcon,
-                )
-            },
+            inputField = inputField,
             expanded = active,
             onExpandedChange = onActiveChange,
             modifier = Modifier.fillMaxWidth(),
-            content = {
-                content()
-            },
+            content = content,
         )
     }
 }
@@ -273,13 +261,15 @@ internal fun SearchIcon(
     active: Boolean,
     onButtonClick: () -> Unit,
 ) {
-    if (active) {
-        ClickableIcon(
-            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-            onClick = onButtonClick,
-        )
-    } else {
-        Icon(Icons.Rounded.Search, contentDescription = null)
+    Crossfade(active, label = "") {
+        if (it) {
+            ClickableIcon(
+                imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+                onClick = onButtonClick,
+            )
+        } else {
+            Icon(Icons.Rounded.Search, contentDescription = null)
+        }
     }
 }
 
