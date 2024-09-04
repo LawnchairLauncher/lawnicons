@@ -30,6 +30,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -180,7 +181,7 @@ private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
             return@IconInfoListItem
         }
 
-        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
+        val isIconInfoAppfilterShown = rememberSaveable { mutableStateOf(false) }
 
         ListItem(
             headlineContent = { Text(it.getFirstLabelAndComponent().label) },

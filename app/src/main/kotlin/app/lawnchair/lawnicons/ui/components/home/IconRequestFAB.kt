@@ -37,6 +37,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -130,13 +131,13 @@ fun RequestHandler(
     val encodedRequestList = buildForm(requestList.replace("\n", "%20"))
     val directLinkEnabled = encodedRequestList.length < Constants.DIRECT_LINK_MAX_LENGTH
 
-    var sheetExpanded by remember { mutableStateOf(false) }
+    var sheetExpanded by rememberSaveable { mutableStateOf(false) }
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true,
     )
 
     val scope = rememberCoroutineScope()
-    val interactionSource = remember { MutableInteractionSource() }
+    val interactionSource = rememberSaveable { MutableInteractionSource() }
 
     HandleTouchInteractions(
         interactionSource = interactionSource,
@@ -307,7 +308,7 @@ private fun openSnackbarFirstLaunchContent(
         val result = snackbarHostState
             .showSnackbar(
                 message = context.getString(R.string.snackbar_request_icons_hint),
-                duration = SnackbarDuration.Long,
+                duration = SnackbarDuration.Short,
             )
         if (result == SnackbarResult.Dismissed) {
             onActionPerformed()
