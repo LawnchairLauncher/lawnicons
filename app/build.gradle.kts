@@ -69,6 +69,11 @@ android {
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
+        create("play") {
+            applicationIdSuffix = ".play"
+            isMinifyEnabled = true
+            proguardFiles("proguard-rules.pro")
+        }
     }
 
     flavorDimensions += "product"
