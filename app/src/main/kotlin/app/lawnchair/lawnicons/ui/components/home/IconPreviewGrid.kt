@@ -33,6 +33,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -46,6 +47,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
@@ -113,28 +115,28 @@ fun IconPreviewGrid(
                     ) {
                         AppBarListItem()
                     }
-                    items(
-                        items = iconInfo,
-                        contentType = { "icon_preview" },
-                    ) { iconInfo ->
-                        val scale by animateFloatAsState(
-                            if (thumbSelected && iconInfo.label.first()
-                                    .toString() == letter
-                            ) {
-                                1.1f
-                            } else {
-                                1f
-                            },
-                            label = "",
-                        )
-                        IconPreview(
-                            modifier = Modifier
-                                .scale(scale),
-                            iconInfo = iconInfo,
-                            isIconPicker = isIconPicker,
-                            onSendResult = onSendResult,
-                        )
-                    }
+                }
+                items(
+                    items = iconInfo,
+                    contentType = { "icon_preview" },
+                ) { iconInfo ->
+                    val scale by animateFloatAsState(
+                        if (thumbSelected && iconInfo.label.first()
+                                .toString() == letter
+                        ) {
+                            1.1f
+                        } else {
+                            1f
+                        },
+                        label = "",
+                    )
+                    IconPreview(
+                        modifier = Modifier
+                            .scale(scale),
+                        iconInfo = iconInfo,
+                        isIconPicker = isIconPicker,
+                        onSendResult = onSendResult,
+                    )
                 }
             }
             Box(
@@ -204,11 +206,13 @@ private fun AppBarListItem(modifier: Modifier = Modifier) {
             Row(
                 verticalAlignment = Alignment.CenterVertically,
             ) {
-                Image(
-                    bitmap = context.appIcon().asImageBitmap(),
-                    contentDescription = stringResource(id = R.string.app_name),
-                    modifier = Modifier.size(36.dp),
-                )
+                if (!LocalInspectionMode.current) {
+                    Image(
+                        bitmap = context.appIcon().asImageBitmap(),
+                        contentDescription = stringResource(id = R.string.app_name),
+                        modifier = Modifier.size(36.dp),
+                    )
+                }
                 Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     stringResource(id = R.string.app_name),
@@ -223,12 +227,31 @@ private fun AppBarListItem(modifier: Modifier = Modifier) {
 @Composable
 private fun IconGridPreview() {
     LawniconsTheme {
-        IconPreviewGrid(
-            SampleData.iconInfoList,
-            true,
-            {},
-            Modifier,
-            false,
-        )
+        Surface {
+            IconPreviewGrid(
+                iconInfo = SampleData.iconInfoList,
+                isExpandedScreen = false,
+                onSendResult = {},
+                modifier = Modifier,
+                isIconPicker = false,
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@PreviewLawnicons
+@Composable
+private fun IconGridExpandedPreview() {
+    LawniconsTheme {
+        Surface {
+            IconPreviewGrid(
+                iconInfo = SampleData.iconInfoList,
+                isExpandedScreen = true,
+                onSendResult = {},
+                modifier = Modifier,
+                isIconPicker = false,
+            )
+        }
     }
 }
