@@ -28,7 +28,7 @@ abstract class BasePreferenceManager(
         fun get() = prefs.getBoolean(key, defaultValue)
         fun set(value: Boolean) = editor.putBoolean(key, value).apply()
 
-        fun onChange() = set(!get())
+        fun toggle() = set(!get())
 
         @Composable
         fun asState(): State<Boolean> {
@@ -39,6 +39,9 @@ abstract class BasePreferenceManager(
                     }
                 }
                 prefs.registerOnSharedPreferenceChangeListener(listener)
+                awaitDispose {
+                    prefs.unregisterOnSharedPreferenceChangeListener(listener)
+                }
             }
         }
     }

@@ -159,7 +159,7 @@ fun RequestHandler(
         openSnackbarFirstLaunchContent(
             context,
             scope,
-            prefs.showFirstLaunchSnackbar::onChange,
+            prefs.showFirstLaunchSnackbar::toggle,
             snackbarHostState,
         )
     }
