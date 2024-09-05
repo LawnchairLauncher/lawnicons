@@ -779,6 +779,7 @@
   <item component="ComponentInfo{com.avast.android.vpn/com.avast.android.vpn.app.wizard.WizardActivity}" drawable="avast_secureline" name="Avast SecureLine" />
   <item component="ComponentInfo{com.daaw.avee/com.daaw.avee.MainActivity}" drawable="avee_music_player" name="Avee Music Player" />
   <item component="ComponentInfo{com.daaw.avee/com.daaw.avee.SplashActivity}" drawable="avee_music_player" name="Avee Music Player" />
+  <item component="ComponentInfo{com.daaw.avee.lite/com.daaw.avee.SplashActivity}" drawable="avee_music_player" name="Avee Player Lite" />
   <item component="ComponentInfo{deckers.thibault.aves/deckers.thibault.aves.MainActivity}" drawable="aves_gallery" name="Aves Gallery" />
   <item component="ComponentInfo{deckers.thibault.aves.libre/deckers.thibault.aves.MainActivity}" drawable="aves_gallery" name="Aves Libre" />
   <item component="ComponentInfo{deckers.thibault.aves.libre/deckers.thibault.aves.libre.MainActivity}" drawable="aves_gallery" name="Aves Libre" />
@@ -927,6 +928,7 @@
   <item component="ComponentInfo{bbc.mobile.weather/bbc.mobile.weather.feature.app.ui.MsiActivity}" drawable="bbc_weather" name="BBC Weather" />
   <item component="ComponentInfo{bbc.mobile.weather/bbc.mobile.weather.ui.MsiActivity}" drawable="bbc_weather" name="BBC Weather" />
   <item component="ComponentInfo{com.raincan.android.hybrid/com.raincan.app.v2.splash.activity.SplashActivity}" drawable="bbdaily" name="bbdaily" />
+  <item component="ComponentInfo{com.xx.blbl/com.xx.blbl.ui.MainActivity}" drawable="bbll" name="BBLL" />
   <item component="ComponentInfo{com.bancomer.mbanking/com.bbva.glomohybrid.splash.presentation.view.SplashActivity}" drawable="bbva" name="BBVA" />
   <item component="ComponentInfo{com.bbva.bbvacontigo/com.bbva.woody.app.modules.initial.splash.view.SplashActivity}" drawable="bbva" name="BBVA" />
   <item component="ComponentInfo{com.bbva.bbvacontigo/com.bbva.buzz.modules.startup.StartActivity}" drawable="bbva" name="BBVA" />
@@ -1028,6 +1030,7 @@
   <item component="ComponentInfo{com.bilibili.app.blue/tv.danmaku.bili.MainActivityV2}" drawable="bilibili" name="BiliBili" />
   <item component="ComponentInfo{com.bilibili.comic/com.bilibili.comic.splash.view.activity.SplashActivity}" drawable="bilibili" name="BiliBili" />
   <item component="ComponentInfo{com.weixiao.bz/com.weixiao.bz.MainActivity}" drawable="bilibili_helper" name="BiliBili vip 4-in-1" />
+  <item component="ComponentInfo{com.lucinhu.bili_you/com.lucinhu.bili_you.MainActivity}" drawable="biliyou" name="BiliYou" />
   <item component="ComponentInfo{in.usefulapp.timelybills/in.usefulapps.timelybills.activity.SplashActivity}" drawable="bill_payment_organizer" name="Bill Payment Organizer" />
   <item component="ComponentInfo{in.usefulapp.timelybills/in.usefulapps.timelybills.activity.AppStartupActivity}" drawable="bill_payment_organizer" name="Bill Payment Organizer" />
   <item component="ComponentInfo{com.biltrewards.bilt/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="bilt_rewards" name="Bilt Rewards" />
@@ -1322,6 +1325,8 @@
   <item component="ComponentInfo{com.bubblesoft.android.bubbleupnp/com.bubblesoft.android.bubbleupnp.MainActivity}" drawable="bubble_upnp" name="BubbleUPnP" />
   <item component="ComponentInfo{com.danilkinkin.buckwheat/com.danilkinkin.buckwheat.MainActivity}" drawable="buckwheat" name="Buckwheat" />
   <item component="ComponentInfo{hu.webvalto.bkkfutar/hu.bkk.futar.ui.MainActivity}" drawable="budapestgo" name="BudapestGO" />
+  <item component="ComponentInfo{com.netease.buff/com.netease.buff.entry.launcher.icon1330}" drawable="buff" name="BUFF" />
+  <item component="ComponentInfo{com.netease.buff163/com.netease.buff.entry.launcher.icon1330}" drawable="buff" name="BUFF" />
   <item component="ComponentInfo{eu.sisik.hackendebug/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger" name="Bugjaeger" />
   <item component="ComponentInfo{eu.sisik.hackendebug.full/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger" name="Bugjaeger Premium" />
   <item component="ComponentInfo{org.yoki.android.buienalarm/org.yoki.android.buienalarm.activity.LaunchActivity}" drawable="buienalarm" name="Buienalarm" />
@@ -5413,9 +5418,11 @@
   <item component="ComponentInfo{com.magicposernew/com.magicposernew.MainActivity}" drawable="magic_poser" name="Magic Poser" />
   <item component="ComponentInfo{com.wizards.mtga/com.wizards.mtga.MissingSplitDetectionActivity}" drawable="magic_the_gathering_arena" name="Magic: The Gathering Arena" />
   <item component="ComponentInfo{com.wizards.winter_orb/com.wizards.winter_orb.features.loading.LoadingActivity}" drawable="magic_the_gathering_companion" name="Magic: The Gathering Companion" />
+  <item component="ComponentInfo{com.magicalstory.search/com.magicalstory.search.main.MainActivity}" drawable="magical_search" name="Magical Search" />
   <item component="ComponentInfo{com.magicpin.local/com.local.magicpin.screensplash.SplashScreen.HOLI}" drawable="magicpin" name="magicpin" />
   <item component="ComponentInfo{com.magicpin.local/com.local.magicpin.screensplash.SplashScreen.CHRISTMAS}" drawable="magicpin" name="magicpin" />
   <item component="ComponentInfo{com.magicpin.local/com.local.magicpin.screensplash.SplashScreen.DEFAULT}" drawable="magicpin" name="magicpin" />
+  <item component="ComponentInfo{com.sensopia.magicplan/com.sensopia.magicplan.ui.splash.activities.SplashActivity}" drawable="magicplan" name="magicplan" />
   <item component="ComponentInfo{com.supra_elektronik.ipcviewer/com.supra_elektronik.ipcviewer.common.userinterface.MainActivity}" drawable="maginon_ipc_viewer" name="Maginon IPC Viewer" />
   <item component="ComponentInfo{com.topjohnwu.magisk/a.c}" drawable="magisk" name="Magisk" />
   <item component="ComponentInfo{com.topjohnwu.magisk/com.topjohnwu.magisk.core.SplashActivity#0}" drawable="magisk" name="Magisk" />
@@ -12266,6 +12273,7 @@
   <item component="ComponentInfo{jp.showa_shell_dmp.shellpass/jp.co.dropsystem.shell_android.MainActivity}" drawable="drive_on" name="ドライブオン ~~ Drive On" />
   <item component="ComponentInfo{jp.co.dwango.nicocas/jp.co.dwango.nicocas.ui.RootActivity}" drawable="niconico" name="ニコニコ ~~ Niconico" />
   <item component="ComponentInfo{jp.nicovideo.android/jp.nicovideo.android.StartupActivity}" drawable="niconico_video" name="ニコニコ動画 ~~ Niconico Video" />
+  <item component="ComponentInfo{digital.cardreader/digital.cardreader.MainActivity}" drawable="japan_train_card_balance_check" name="電子マネーICカード残高確認 ~~ Japan train card balance check" />
   <item component="ComponentInfo{mu.note/mu.note.activity.StartActivity}" drawable="note" name="ノート ~~ note" />
   <item component="ComponentInfo{mu.note/mu.note.presentation.start.StartActivity}" drawable="note" name="ノート ~~ note" />
   <item component="ComponentInfo{com.biccamera.android.mobile/com.biccamera.ui.LauncherActivity}" drawable="bic_camera" name="ビックカメラ ~~ Bic Camera" />
@@ -12465,12 +12473,13 @@
   <item component="ComponentInfo{com.alibaba.wireless/com.alibaba.wireless.launch.LauncherActivity}" drawable="alibaba_1688" name="阿里巴巴1688 ~~ Alibaba 1688" />
   <item component="ComponentInfo{com.x1y9.probe/com.x1y9.app.MainActivity}" drawable="secret_settings" name="隐秘参数 ~~ Secret Settings" />
   <item component="ComponentInfo{com.yadea.smartmoto/com.yadea.smartmoto.main.view.normal_icon}" drawable="yadea" name="雅迪 ~~ Yadea" />
-  <item component="ComponentInfo{digital.cardreader/digital.cardreader.MainActivity}" drawable="japan_train_card_balance_check" name="電子マネーICカード残高確認 ~~ Japan train card balance check" />
   <item component="ComponentInfo{com.ss.android.lark/com.ss.android.lark.main.app.MainActivity}" drawable="feishu" name="飞书 ~~ Feishu" />
   <item component="ComponentInfo{vz.com/com.feeyo.vz.DefaultAlias}" drawable="feichangzhun" name="飞常准 ~~ Feichangzhun" />
   <item component="ComponentInfo{com.taobao.trip/com.alipay.mobile.quinox.LauncherActivity}" drawable="fliggy" name="飞猪 ~~ Fliggy" />
   <item component="ComponentInfo{com.autonavi.minimap/com.autonavi.map.activity.SplashActivity}" drawable="amap" name="高德地圖 ~~ Amap" />
   <item component="ComponentInfo{com.csii.hkb/com.csii.hkb.MainActivity}" drawable="hankou_bank" name="汉口银行 ~~ Hankou Bank" />
+  <item component="ComponentInfo{com.bjetc.mobile/com.bjetc.mobile.ui.splash.SplashActivity}" drawable="bjetc" name="乐速通 ~~ BJETC" />
+  <item component="ComponentInfo{com.pwrd.steam.esports/com.pwrd.steam.esports.ui.activity.launcher.LauncherActivity}" drawable="perfect_world" name="完美世界电竞 ~~ Perfect World" />
   <item component="ComponentInfo{com.nhn.android.search/com.nhn.android.search.ui.pages.SearchHomePage}" drawable="naver" name="네이버 ~~ NAVER" />
   <item component="ComponentInfo{com.lifeplatform.better/com.lifeplatform.better.MainActivity}" drawable="better" name="베터 ~~ Better" />
   <item component="ComponentInfo{zettamedia.bflix/zettamedia.bflix.activity.IntroActivity}" drawable="bflix" name="비플릭스 ~~ BFLIX" />
