@@ -93,7 +93,7 @@ private val coreContributors = listOf(
         username = "Goooler",
         photoUrl = "https://avatars.githubusercontent.com/u/10363352",
         socialUrl = "https://androiddev.social/@Goooler",
-        descriptionRes = R.string.contribution_deps,
+        descriptionRes = R.string.contribution_infra,
     ),
 )
 
