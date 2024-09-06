@@ -9,20 +9,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.toRoute
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.destination.About
 import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
 import app.lawnchair.lawnicons.ui.destination.Contributors
 import app.lawnchair.lawnicons.ui.destination.Home
-import app.lawnchair.lawnicons.ui.util.About
-import app.lawnchair.lawnicons.ui.util.Acknowledgement
-import app.lawnchair.lawnicons.ui.util.Acknowledgements
-import app.lawnchair.lawnicons.ui.util.Contributors
-import app.lawnchair.lawnicons.ui.util.Home
+import app.lawnchair.lawnicons.ui.destination.aboutDestination
+import app.lawnchair.lawnicons.ui.destination.acknowledgementDestination
+import app.lawnchair.lawnicons.ui.destination.acknowledgementsDestination
+import app.lawnchair.lawnicons.ui.destination.contributorsDestination
+import app.lawnchair.lawnicons.ui.destination.homeDestination
 import soup.compose.material.motion.animation.materialSharedAxisXIn
 import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
@@ -50,42 +48,37 @@ fun Lawnicons(
             popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
             popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
         ) {
-            composable<Home> {
-                Home(
-                    onNavigate = { navController.navigate(About) },
-                    isExpandedScreen = isExpandedScreen,
-                    isIconPicker = isIconPicker,
-                    onSendResult = onSendResult,
-                )
-            }
-            composable<Acknowledgements> {
-                Acknowledgements(
-                    onBack = navController::popBackStack,
-                    onNavigate = {
-                        navController.navigate(Acknowledgement(it))
-                    },
-                    isExpandedScreen = isExpandedScreen,
-                )
-            }
-            composable<Acknowledgement> { backStackEntry ->
-                val acknowledgement: Acknowledgement = backStackEntry.toRoute()
-                Acknowledgement(
-                    name = acknowledgement.id,
-                    onBack = navController::popBackStack,
-                    isExpandedScreen = isExpandedScreen,
-                )
-            }
-            composable<About> {
-                About(
-                    onBack = navController::popBackStack,
-                    onNavigateToContributors = { navController.navigate(Contributors) },
-                    onNavigateToAcknowledgements = { navController.navigate(Acknowledgements) },
-                    isExpandedScreen = isExpandedScreen,
-                )
-            }
-            composable<Contributors> {
-                Contributors(onBack = navController::popBackStack, isExpandedScreen = isExpandedScreen)
-            }
+            homeDestination(
+                onNavigate = { navController.navigate(About) },
+                isExpandedScreen = isExpandedScreen,
+                isIconPicker = isIconPicker,
+                onSendResult = onSendResult,
+            )
+            acknowledgementsDestination(
+                onBack = navController::popBackStack,
+                onNavigate = {
+                    navController.navigate(Acknowledgement(it))
+                },
+                isExpandedScreen = isExpandedScreen,
+            )
+            acknowledgementDestination(
+                onBack = navController::popBackStack,
+                isExpandedScreen = isExpandedScreen,
+            )
+            aboutDestination(
+                onBack = navController::popBackStack,
+                onNavigateToContributors = {
+                    navController.navigate(Contributors)
+                },
+                onNavigateToAcknowledgements = {
+                    navController.navigate(Acknowledgements)
+                },
+                isExpandedScreen = isExpandedScreen,
+            )
+            contributorsDestination(
+                onBack = navController::popBackStack,
+                isExpandedScreen = isExpandedScreen,
+            )
         }
     }
 }

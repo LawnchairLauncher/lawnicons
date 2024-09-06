@@ -20,6 +20,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -31,11 +33,25 @@ import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
+import kotlinx.serialization.Serializable
 
-const val CONTRIBUTOR_URL = "${Constants.GITHUB}/graphs/contributors"
+@Serializable
+data object Contributors
+
+fun NavGraphBuilder.contributorsDestination(
+    onBack: () -> Unit,
+    isExpandedScreen: Boolean,
+) {
+    composable<Contributors> {
+        Contributors(
+            onBack = onBack,
+            isExpandedScreen = isExpandedScreen,
+        )
+    }
+}
 
 @Composable
-fun Contributors(
+private fun Contributors(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
@@ -156,12 +172,13 @@ private fun ContributorListError(
     SideEffect {
         onBack()
         // we might be rate-limited, open the web ui instead
-        val website =
-            Uri.parse(CONTRIBUTOR_URL)
+        val website = Uri.parse(CONTRIBUTOR_URL)
         val intent = Intent(Intent.ACTION_VIEW, website)
         context.startActivity(intent)
     }
 }
+
+private const val CONTRIBUTOR_URL = "${Constants.GITHUB}/graphs/contributors"
 
 @PreviewLawnicons
 @Composable

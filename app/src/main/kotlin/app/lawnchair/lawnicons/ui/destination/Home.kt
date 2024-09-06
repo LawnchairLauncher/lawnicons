@@ -24,6 +24,8 @@ import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
@@ -38,11 +40,31 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.viewmodel.LawniconsViewModel
+import kotlinx.serialization.Serializable
+
+@Serializable
+data object Home
+
+fun NavGraphBuilder.homeDestination(
+    isExpandedScreen: Boolean,
+    isIconPicker: Boolean,
+    onNavigate: () -> Unit,
+    onSendResult: (IconInfo) -> Unit,
+) {
+    composable<Home> {
+        Home(
+            onNavigate = onNavigate,
+            isExpandedScreen = isExpandedScreen,
+            isIconPicker = isIconPicker,
+            onSendResult = onSendResult,
+        )
+    }
+}
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
-fun Home(
+private fun Home(
     onNavigate: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
