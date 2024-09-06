@@ -131,6 +131,11 @@ tasks.withType<MergeResources>().configureEach {
     dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
 }
 
+composeCompiler {
+    stabilityConfigurationFile = layout.projectDirectory.file("compose_compiler_config.conf")
+    reportsDestination = layout.buildDirectory.dir("compose_build_reports")
+}
+
 licensee {
     allow("Apache-2.0")
     allow("MIT")
@@ -153,7 +158,6 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.8")
 
     val hiltVersion = "2.52"
     implementation("com.google.dagger:hilt-android:$hiltVersion")

@@ -57,7 +57,6 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import app.lawnchair.lawnicons.util.appIcon
-import kotlinx.collections.immutable.ImmutableList
 import my.nanihadesuka.compose.InternalLazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
@@ -65,7 +64,7 @@ import my.nanihadesuka.compose.ScrollbarSettings
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
-    iconInfo: ImmutableList<IconInfo>,
+    iconInfo: List<IconInfo>,
     isExpandedScreen: Boolean,
     onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,

@@ -12,9 +12,6 @@ import app.lawnchair.lawnicons.model.splitByComponentName
 import app.lawnchair.lawnicons.util.getIconInfo
 import app.lawnchair.lawnicons.util.getSystemIconInfoAppfilter
 import javax.inject.Inject
-import kotlinx.collections.immutable.persistentListOf
-import kotlinx.collections.immutable.toImmutableList
-import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -36,10 +33,10 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
-    private val _iconInfoModel = MutableStateFlow(IconInfoModel(persistentListOf(), 0))
+    private val _iconInfoModel = MutableStateFlow(IconInfoModel())
     override val iconInfoModel = _iconInfoModel.asStateFlow()
 
-    private val _searchedIconInfoModel = MutableStateFlow(IconInfoModel(persistentListOf(), 0))
+    private val _searchedIconInfoModel = MutableStateFlow(IconInfoModel())
     override val searchedIconInfoModel = _searchedIconInfoModel.asStateFlow()
 
     override val iconRequestList = MutableStateFlow<IconRequestModel?>(value = null)
@@ -51,7 +48,7 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
             val iconCount = groupedIcons.size
 
             _iconInfoModel.value = IconInfoModel(
-                iconInfo = iconList.toPersistentList(),
+                iconInfo = iconList,
                 iconCount = iconCount,
             )
             _searchedIconInfoModel.value = _iconInfoModel.value
@@ -92,7 +89,7 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
             ),
         ).map { searchInfo ->
             searchInfo.iconInfo
-        }.toPersistentList()
+        }
 
         _searchedIconInfoModel.value = IconInfoModel(
             iconCount = _searchedIconInfoModel.value.iconCount,
@@ -127,7 +124,7 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
                 }
 
             iconRequestList.value = IconRequestModel(
-                list = commonItems.toImmutableList(),
+                list = commonItems,
                 iconCount = commonItems.size,
             )
         }
