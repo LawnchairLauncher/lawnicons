@@ -28,22 +28,40 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
+import androidx.navigation.toRoute
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
 import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
 import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Acknowledgement(val id: String)
+
+fun NavGraphBuilder.acknowledgementDestination(
+    isExpandedScreen: Boolean,
+    onBack: () -> Unit,
+) {
+    composable<Acknowledgement> { backStackEntry ->
+        Acknowledgement(
+            name = backStackEntry.toRoute<Acknowledgement>().id,
+            onBack = onBack,
+            isExpandedScreen = isExpandedScreen,
+        )
+    }
+}
 
 @Composable
-fun Acknowledgement(
-    name: String?,
+private fun Acknowledgement(
+    name: String,
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     acknowledgementViewModel: AcknowledgementViewModel = hiltViewModel(),
 ) {
-    requireNotNull(name)
-
     val notice by acknowledgementViewModel.getNoticeForOssLibrary(
         ossLibraryName = name,
         linkStyle = SpanStyle(

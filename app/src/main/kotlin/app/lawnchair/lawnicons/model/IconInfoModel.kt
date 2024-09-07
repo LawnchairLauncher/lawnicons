@@ -1,7 +1,5 @@
 package app.lawnchair.lawnicons.model
 
-import kotlinx.collections.immutable.ImmutableList
-
 /**
  * Data class to hold information about icons.
  *
@@ -9,6 +7,6 @@ import kotlinx.collections.immutable.ImmutableList
  * @property iconCount The total number of icons.
  */
 data class IconInfoModel(
-    val iconInfo: ImmutableList<IconInfo>,
-    val iconCount: Int,
+    val iconInfo: List<IconInfo> = emptyList(),
+    val iconCount: Int = 0,
 )

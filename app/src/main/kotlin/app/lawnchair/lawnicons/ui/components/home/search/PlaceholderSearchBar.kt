@@ -22,7 +22,6 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun PlaceholderSearchBar(
-    isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -38,9 +37,7 @@ fun PlaceholderSearchBar(
                 content = {},
                 contentAlignment = Alignment.TopCenter,
                 modifier = Modifier
-                    .then(
-                        if (isExpandedScreen) Modifier.width(360.dp) else Modifier,
-                    )
+                    .width(360.dp)
                     .zIndex(1f)
                     .statusBarsPadding()
                     .padding(top = 8.dp)
@@ -60,6 +57,6 @@ fun PlaceholderSearchBar(
 @Composable
 private fun PlaceholderSearchBarPreview() {
     LawniconsTheme {
-        PlaceholderSearchBar(false)
+        PlaceholderSearchBar()
     }
 }

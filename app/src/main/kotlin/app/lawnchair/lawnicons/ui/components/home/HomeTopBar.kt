@@ -41,10 +41,8 @@ fun HomeTopBar(
 ) {
     val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker) = uiState
 
-    val condition = isSearchExpanded || isExpandedScreen
-
     val offset = animateDpAsState(
-        targetValue = if (condition) {
+        targetValue = if (isSearchExpanded || isExpandedScreen) {
             0.dp
         } else {
             (-100).dp
@@ -59,7 +57,7 @@ fun HomeTopBar(
                 },
             searchTerm = searchTerm,
             onClearSearch = onClearSearch,
-            onChangeMode = onChangeMode,
+            onModeChange = onChangeMode,
             onSearch = onSearchIcons,
             iconInfoModel = it,
             onNavigate = onNavigate,
@@ -79,7 +77,7 @@ private fun SearchBar(
     searchTerm: String,
     onSearch: (String) -> Unit,
     onClearSearch: () -> Unit,
-    onChangeMode: (SearchMode) -> Unit,
+    onModeChange: (SearchMode) -> Unit,
     onNavigate: () -> Unit,
     isExpandedScreen: Boolean,
     isIconPicker: Boolean,
@@ -97,15 +95,9 @@ private fun SearchBar(
         LawniconsSearchBar(
             query = searchTerm,
             isQueryEmpty = searchTerm == "",
-            onClear = {
-                onClearSearch()
-            },
-            onBack = {
-                onFocusChange()
-            },
-            onQueryChange = { newValue ->
-                onSearch(newValue)
-            },
+            onClear = onClearSearch,
+            onBack = onFocusChange,
+            onQueryChange = onSearch,
             iconInfoModel = iconInfoModel,
             onNavigate = onNavigate,
             isExpandedScreen = isExpandedScreen,
@@ -114,13 +106,9 @@ private fun SearchBar(
                 SearchContents(
                     searchTerm = searchTerm,
                     searchMode = searchMode,
-                    onModeChange = { mode ->
-                        onChangeMode(mode)
-                    },
+                    onModeChange = onModeChange,
                     iconInfo = iconInfoModel.iconInfo,
-                    onSendResult = {
-                        onSendResult(it)
-                    },
+                    onSendResult = onSendResult,
                 )
             },
             inputFieldModifier = inputFieldModifier,
