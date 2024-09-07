@@ -14,13 +14,33 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.viewmodel.AcknowledgementViewModel
+import kotlinx.serialization.Serializable
+
+@Serializable
+data object Acknowledgements
+
+fun NavGraphBuilder.acknowledgementsDestination(
+    isExpandedScreen: Boolean,
+    onBack: () -> Unit,
+    onNavigate: (String) -> Unit,
+) {
+    composable<Acknowledgements> {
+        Acknowledgements(
+            onBack = onBack,
+            onNavigate = onNavigate,
+            isExpandedScreen = isExpandedScreen,
+        )
+    }
+}
 
 @Composable
-fun Acknowledgements(
+private fun Acknowledgements(
     onBack: () -> Unit,
     onNavigate: (String) -> Unit,
     isExpandedScreen: Boolean,

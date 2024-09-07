@@ -69,6 +69,11 @@ android {
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
+        create("play") {
+            applicationIdSuffix = ".play"
+            isMinifyEnabled = true
+            proguardFiles("proguard-rules.pro")
+        }
     }
 
     flavorDimensions += "product"
@@ -126,6 +131,11 @@ tasks.withType<MergeResources>().configureEach {
     dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
 }
 
+composeCompiler {
+    stabilityConfigurationFile = layout.projectDirectory.file("compose_compiler_config.conf")
+    reportsDestination = layout.buildDirectory.dir("compose_build_reports")
+}
+
 licensee {
     allow("Apache-2.0")
     allow("MIT")
@@ -134,21 +144,20 @@ licensee {
 dependencies {
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.activity:activity-compose:1.9.1")
-    implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+    implementation("androidx.activity:activity-compose:1.9.2")
+    implementation(platform("androidx.compose:compose-bom:2024.09.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.ui:ui-util")
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
-    implementation("androidx.compose.material:material-icons-core-android:1.6.8")
-    implementation("androidx.compose.material3:material3:1.3.0-beta05")
+    implementation("androidx.compose.material:material-icons-core-android")
+    implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.8.0-beta07")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.4")
+    implementation("androidx.navigation:navigation-compose:2.8.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.2")
 
     val hiltVersion = "2.52"
     implementation("com.google.dagger:hilt-android:$hiltVersion")

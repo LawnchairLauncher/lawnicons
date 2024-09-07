@@ -45,7 +45,7 @@
     <!-- Contribution -->
     <string name="contribution_core">Core app</string>
     <string name="contribution_icons">Icons</string>
-    <string name="contribution_deps">Dependencies</string>
+    <string name="contribution_infra">Infrastructure</string>
 
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
@@ -82,6 +82,8 @@
     <string name="copied_text">Copied text</string>
 
     <!-- Snackbar content -->
+    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
+
     <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
     <string name="snackbar_use_fallback_link">Open form</string>
 </resources>

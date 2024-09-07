@@ -33,11 +33,12 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import kotlin.math.ln
 
-private fun ColorScheme.iconColor(): Color {
-    val elevation = 3.dp
-    val alpha = ((4.5f * ln(elevation.value + 1)) + 2f) / 100f
-    return primary.copy(alpha = alpha).compositeOver(surface)
-}
+val ColorScheme.iconColor: Color
+    get() {
+        val elevation = 3.dp
+        val alpha = ((4.5f * ln(elevation.value + 1)) + 2f) / 100f
+        return primary.copy(alpha = alpha).compositeOver(surface)
+    }
 
 @Composable
 fun IconPreview(
@@ -68,7 +69,7 @@ fun IconPreview(
                 color = iconBackground ?: if (isIconInfoShown.value) {
                     MaterialTheme.colorScheme.surfaceVariant
                 } else {
-                    MaterialTheme.colorScheme.iconColor()
+                    MaterialTheme.colorScheme.iconColor
                 },
             ),
     ) {

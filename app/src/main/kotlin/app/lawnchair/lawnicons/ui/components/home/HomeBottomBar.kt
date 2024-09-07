@@ -35,8 +35,6 @@ fun HomeBottomBar(
     snackbarHostState: SnackbarHostState,
     onNavigate: () -> Unit,
     onExpandSearch: () -> Unit,
-    isIconRequestClicked: Boolean,
-    onIconRequestClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     BottomAppBar(
@@ -63,8 +61,6 @@ fun HomeBottomBar(
             IconRequestIconButton(
                 iconRequestModel = iconRequestModel,
                 snackbarHostState = snackbarHostState,
-                isIconRequestClicked = isIconRequestClicked,
-                onClick = onIconRequestClick,
             )
 
             SimpleTooltipBox(

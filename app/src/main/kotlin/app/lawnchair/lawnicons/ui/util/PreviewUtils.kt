@@ -5,7 +5,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.LabelAndComponent
-import kotlinx.collections.immutable.persistentListOf
 
 @Preview(
     name = "Normal",
@@ -39,7 +38,7 @@ object SampleData {
         ),
         id = 1,
     )
-    val iconInfoList = persistentListOf(
+    val iconInfoList = listOf(
         IconInfo(
             drawableName = "@drawable/email",
             componentNames = listOf(

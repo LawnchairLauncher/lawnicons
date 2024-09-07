@@ -22,36 +22,36 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.PlainTooltip
+import androidx.compose.material3.SheetState
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.TooltipBox
-import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberModalBottomSheetState
-import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalViewConfiguration
+import androidx.compose.ui.platform.ViewConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconRequest
 import app.lawnchair.lawnicons.model.IconRequestModel
+import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.core.Card
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.isScrollingUp
@@ -67,8 +67,9 @@ fun IconRequestFAB(
     snackbarHostState: SnackbarHostState,
     modifier: Modifier = Modifier,
 ) {
+    val list = iconRequestModel?.list ?: emptyList()
     RequestHandler(
-        iconRequestModel = iconRequestModel,
+        iconRequestList = list,
         snackbarHostState = snackbarHostState,
     ) { interactionSource ->
         ExtendedFloatingActionButton(
@@ -91,82 +92,26 @@ fun IconRequestFAB(
 
 @Composable
 fun IconRequestIconButton(
-    isIconRequestClicked: Boolean,
     snackbarHostState: SnackbarHostState,
     iconRequestModel: IconRequestModel?,
-    onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val list = iconRequestModel?.list ?: emptyList()
+
     RequestHandler(
-        iconRequestModel = iconRequestModel,
+        iconRequestList = list,
         snackbarHostState = snackbarHostState,
-        onClick = onClick,
     ) { interactionSource ->
-        IconRequestTooltip(isIconRequestClicked) {
-            IconButton(
-                onClick = {},
-                interactionSource = interactionSource,
-                modifier = modifier,
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.icon_request_app),
-                    contentDescription = stringResource(R.string.request_icons),
-                    modifier = Modifier.requiredSize(24.dp),
-                )
-            }
-        }
-    }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-private fun IconRequestTooltip(
-    isButtonClicked: Boolean,
-    content: @Composable (() -> Unit),
-) {
-    val state = rememberTooltipState(
-        initialIsVisible = true,
-        isPersistent = true,
-    )
-    val hideTooltip = remember { isButtonClicked }
-
-    LaunchedEffect(hideTooltip) {
-        if (hideTooltip) {
-            state.dismiss()
-        }
-    }
-
-    TooltipBox(
-        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-        tooltip = {
-            PlainTooltip(
-                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
-                caretSize = DpSize(16.dp, 8.dp),
-            ) {
-                Text("Request missing icons here")
-            }
-        },
-        state = state,
-    ) {
-        content()
-    }
-}
-
-@Composable
-fun RequestHandler(
-    iconRequestModel: IconRequestModel?,
-    snackbarHostState: SnackbarHostState,
-    onClick: () -> Unit = {},
-    content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
-) {
-    if (iconRequestModel != null) {
-        RequestHandler(
-            iconRequestList = iconRequestModel.list,
-            snackbarHostState = snackbarHostState,
-            onClick = onClick,
+        IconButton(
+            onClick = {},
+            interactionSource = interactionSource,
+            modifier = modifier,
         ) {
-            content(it)
+            Icon(
+                painter = painterResource(id = R.drawable.icon_request_app),
+                contentDescription = stringResource(R.string.request_icons),
+                modifier = Modifier.requiredSize(24.dp),
+            )
         }
     }
 }
@@ -176,52 +121,103 @@ fun RequestHandler(
 fun RequestHandler(
     iconRequestList: List<IconRequest>,
     snackbarHostState: SnackbarHostState,
-    onClick: () -> Unit,
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
 ) {
+    val prefs = preferenceManager()
+    val showFirstLaunchSnackbar by prefs.showFirstLaunchSnackbar.asState()
     val context = LocalContext.current
-    val viewConfiguration = LocalViewConfiguration.current
-
-    val onClickEffect = rememberUpdatedState(onClick)
 
     val requestList = formatIconRequestList(iconRequestList)
     val encodedRequestList = buildForm(requestList.replace("\n", "%20"))
+    val directLinkEnabled = encodedRequestList.length < Constants.DIRECT_LINK_MAX_LENGTH
 
-    val sheetExpanded = remember { mutableStateOf(false) }
+    var sheetExpanded by rememberSaveable { mutableStateOf(false) }
     val sheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true,
     )
 
-    val coroutineScope = rememberCoroutineScope()
+    val scope = rememberCoroutineScope()
     val interactionSource = remember { MutableInteractionSource() }
 
-    val directLinkEnabled = encodedRequestList.length < Constants.DIRECT_LINK_MAX_LENGTH
+    HandleTouchInteractions(
+        interactionSource = interactionSource,
+        viewConfiguration = LocalViewConfiguration.current,
+        context = context,
+        coroutineScope = scope,
+        onExpandSheet = { sheetExpanded = it },
+        sheetState = sheetState,
+        iconRequestList = iconRequestList,
+        directLinkEnabled = directLinkEnabled,
+        encodedRequestList = encodedRequestList,
+        requestList = requestList,
+        snackbarHostState = snackbarHostState,
+    )
 
+    content(interactionSource)
+
+    if (showFirstLaunchSnackbar && iconRequestList.isNotEmpty()) {
+        openSnackbarFirstLaunchContent(
+            context,
+            scope,
+            prefs.showFirstLaunchSnackbar::toggle,
+            snackbarHostState,
+        )
+    }
+
+    AnimatedVisibility(visible = sheetExpanded) {
+        ModalBottomSheet(
+            onDismissRequest = { sheetExpanded = false },
+            sheetState = sheetState,
+        ) {
+            IconRequestSheet(requestList, context)
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun HandleTouchInteractions(
+    interactionSource: MutableInteractionSource,
+    viewConfiguration: ViewConfiguration,
+    context: Context,
+    coroutineScope: CoroutineScope,
+    onExpandSheet: (Boolean) -> Unit,
+    sheetState: SheetState,
+    iconRequestList: List<IconRequest>,
+    directLinkEnabled: Boolean,
+    requestList: String,
+    encodedRequestList: String,
+    snackbarHostState: SnackbarHostState,
+) {
+    val prefs = preferenceManager()
+    val lastestOnExpandSheet by rememberUpdatedState(newValue = onExpandSheet)
     LaunchedEffect(interactionSource) {
         var isLongClick = false
 
         interactionSource.interactions.collectLatest { interaction ->
             when (interaction) {
                 is PressInteraction.Press -> {
-                    onClickEffect.value()
                     isLongClick = false
                     delay(viewConfiguration.longPressTimeoutMillis)
                     isLongClick = true
                     coroutineScope.launch {
-                        sheetExpanded.value = true
+                        lastestOnExpandSheet(true)
                         sheetState.show()
                     }
                 }
 
                 is PressInteraction.Release -> {
                     if (!isLongClick) {
-                        if (iconRequestList.isEmpty()) {
-                            openLink(context, Constants.ICON_REQUEST_FORM)
-                        } else if (directLinkEnabled) {
-                            openLink(context, encodedRequestList)
-                        } else {
-                            openSnackbarContent(context, requestList, coroutineScope, snackbarHostState)
-                        }
+                        prefs.showFirstLaunchSnackbar.set(false)
+                        handleRequestClick(
+                            iconRequestList,
+                            context,
+                            directLinkEnabled,
+                            encodedRequestList,
+                            requestList,
+                            coroutineScope,
+                            snackbarHostState,
+                        )
                     }
                 }
 
@@ -229,17 +225,6 @@ fun RequestHandler(
                     isLongClick = false
                 }
             }
-        }
-    }
-
-    content(interactionSource)
-
-    AnimatedVisibility(visible = sheetExpanded.value) {
-        ModalBottomSheet(
-            onDismissRequest = { sheetExpanded.value = false },
-            sheetState = sheetState,
-        ) {
-            IconRequestSheet(requestList, context)
         }
     }
 }
@@ -290,7 +275,49 @@ private fun copyTextToClipboard(context: Context, text: String) {
     clipboard.setPrimaryClip(clip)
 }
 
-private fun openSnackbarContent(
+private fun handleRequestClick(
+    iconRequestList: List<IconRequest>,
+    context: Context,
+    directLinkEnabled: Boolean,
+    encodedRequestList: String,
+    requestList: String,
+    coroutineScope: CoroutineScope,
+    snackbarHostState: SnackbarHostState,
+) {
+    if (iconRequestList.isEmpty()) {
+        openLink(context, Constants.ICON_REQUEST_FORM)
+    } else if (directLinkEnabled) {
+        openLink(context, encodedRequestList)
+    } else {
+        openSnackbarWarningContent(
+            context,
+            requestList,
+            coroutineScope,
+            snackbarHostState,
+        )
+    }
+}
+
+private fun openSnackbarFirstLaunchContent(
+    context: Context,
+    coroutineScope: CoroutineScope,
+    onActionPerformed: () -> Unit,
+    snackbarHostState: SnackbarHostState,
+) {
+    coroutineScope.launch {
+        val result = snackbarHostState
+            .showSnackbar(
+                message = context.getString(R.string.snackbar_request_icons_hint),
+                duration = SnackbarDuration.Short,
+            )
+        if (result == SnackbarResult.Dismissed) {
+            onActionPerformed()
+            snackbarHostState.currentSnackbarData?.dismiss()
+        }
+    }
+}
+
+private fun openSnackbarWarningContent(
     context: Context,
     list: String,
     coroutineScope: CoroutineScope,
@@ -307,7 +334,6 @@ private fun openSnackbarContent(
             )
         when (result) {
             SnackbarResult.ActionPerformed -> {
-                /* Handle snackbar action performed */
                 openLink(context, Constants.ICON_REQUEST_FORM)
             }
 
