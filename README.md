@@ -23,7 +23,12 @@ Lawnicons is best used [on Lawnchair 12.1 or Lawnchair 14 Beta 2](https://github
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
     <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="76" />
   </a>
+  <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
+    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="76" />
+  </a>
 </p>
+
+**Note:** The Google Play version has a different app ID to the other sources
 
 ### Development Builds
 
