@@ -77,12 +77,6 @@ abstract class BasePreferenceManager(
     }
 }
 
-/**
- * Provides a class to handle Lawnicons preferences
- *
- * Use [PreferenceManager.getInstance] to get the instance for use thoughout the app.
- * @see preferenceManager
- */
 class PreferenceManager private constructor(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {
@@ -90,6 +84,12 @@ class PreferenceManager private constructor(
     val showNewIconsCard = BoolPref("show_new_icons_card", true)
     val currentLawniconsVersion = IntPref("current_lawnicons_version", BuildConfig.VERSION_CODE)
 
+    /**
+     * Provides a class to handle Lawnicons preferences.
+     *
+     * Use [PreferenceManager.getInstance] to get the instance for use thoughout the app.
+     * @see preferenceManager
+     */
     companion object {
         @Volatile
         private var instance: PreferenceManager? = null

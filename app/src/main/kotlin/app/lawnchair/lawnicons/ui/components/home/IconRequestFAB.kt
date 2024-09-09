@@ -20,8 +20,10 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.SheetState
 import androidx.compose.material3.SnackbarDuration
@@ -68,7 +70,10 @@ fun IconRequestFAB(
     modifier: Modifier = Modifier,
 ) {
     val list = iconRequestModel?.list ?: emptyList()
+    val enabled = iconRequestModel != null
+
     RequestHandler(
+        enabled = enabled,
         iconRequestList = list,
         snackbarHostState = snackbarHostState,
     ) { interactionSource ->
@@ -84,7 +89,8 @@ fun IconRequestFAB(
             },
             onClick = {},
             expanded = lazyGridState.isScrollingUp(),
-            interactionSource = interactionSource,
+            interactionSource = if (enabled) interactionSource else null,
+            containerColor = if (!enabled) MaterialTheme.colorScheme.surfaceVariant else FloatingActionButtonDefaults.containerColor,
             modifier = modifier,
         )
     }
@@ -97,14 +103,17 @@ fun IconRequestIconButton(
     modifier: Modifier = Modifier,
 ) {
     val list = iconRequestModel?.list ?: emptyList()
+    val enabled = iconRequestModel != null
 
     RequestHandler(
+        enabled = enabled,
         iconRequestList = list,
         snackbarHostState = snackbarHostState,
     ) { interactionSource ->
         IconButton(
             onClick = {},
-            interactionSource = interactionSource,
+            enabled = enabled,
+            interactionSource = if (enabled) interactionSource else null,
             modifier = modifier,
         ) {
             Icon(
@@ -119,6 +128,7 @@ fun IconRequestIconButton(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RequestHandler(
+    enabled: Boolean,
     iconRequestList: List<IconRequest>,
     snackbarHostState: SnackbarHostState,
     content: @Composable ((interactionSource: MutableInteractionSource) -> Unit),
@@ -140,6 +150,7 @@ fun RequestHandler(
     val interactionSource = remember { MutableInteractionSource() }
 
     HandleTouchInteractions(
+        enabled = enabled,
         interactionSource = interactionSource,
         viewConfiguration = LocalViewConfiguration.current,
         context = context,
@@ -155,13 +166,15 @@ fun RequestHandler(
 
     content(interactionSource)
 
-    if (showFirstLaunchSnackbar && iconRequestList.isNotEmpty()) {
-        openSnackbarFirstLaunchContent(
-            context,
-            scope,
-            prefs.showFirstLaunchSnackbar::toggle,
-            snackbarHostState,
-        )
+    LaunchedEffect(iconRequestList.isNotEmpty()) {
+        if (showFirstLaunchSnackbar) {
+            openSnackbarFirstLaunchContent(
+                context,
+                scope,
+                { prefs.showFirstLaunchSnackbar.set(false) },
+                snackbarHostState,
+            )
+        }
     }
 
     AnimatedVisibility(visible = sheetExpanded) {
@@ -177,6 +190,7 @@ fun RequestHandler(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun HandleTouchInteractions(
+    enabled: Boolean,
     interactionSource: MutableInteractionSource,
     viewConfiguration: ViewConfiguration,
     context: Context,
@@ -189,40 +203,41 @@ private fun HandleTouchInteractions(
     encodedRequestList: String,
     snackbarHostState: SnackbarHostState,
 ) {
-    val prefs = preferenceManager()
     val lastestOnExpandSheet by rememberUpdatedState(newValue = onExpandSheet)
-    LaunchedEffect(interactionSource) {
-        var isLongClick = false
 
-        interactionSource.interactions.collectLatest { interaction ->
-            when (interaction) {
-                is PressInteraction.Press -> {
-                    isLongClick = false
-                    delay(viewConfiguration.longPressTimeoutMillis)
-                    isLongClick = true
-                    coroutineScope.launch {
-                        lastestOnExpandSheet(true)
-                        sheetState.show()
+    if (enabled) {
+        LaunchedEffect(interactionSource) {
+            var isLongClick = false
+
+            interactionSource.interactions.collectLatest { interaction ->
+                when (interaction) {
+                    is PressInteraction.Press -> {
+                        isLongClick = false
+                        delay(viewConfiguration.longPressTimeoutMillis)
+                        isLongClick = true
+                        coroutineScope.launch {
+                            lastestOnExpandSheet(true)
+                            sheetState.show()
+                        }
                     }
-                }
 
-                is PressInteraction.Release -> {
-                    if (!isLongClick) {
-                        prefs.showFirstLaunchSnackbar.set(false)
-                        handleRequestClick(
-                            iconRequestList,
-                            context,
-                            directLinkEnabled,
-                            encodedRequestList,
-                            requestList,
-                            coroutineScope,
-                            snackbarHostState,
-                        )
+                    is PressInteraction.Release -> {
+                        if (!isLongClick) {
+                            handleRequestClick(
+                                iconRequestList,
+                                context,
+                                directLinkEnabled,
+                                encodedRequestList,
+                                requestList,
+                                coroutineScope,
+                                snackbarHostState,
+                            )
+                        }
                     }
-                }
 
-                is PressInteraction.Cancel -> {
-                    isLongClick = false
+                    is PressInteraction.Cancel -> {
+                        isLongClick = false
+                    }
                 }
             }
         }
