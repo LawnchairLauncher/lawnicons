@@ -25,7 +25,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.AppBarListItem
+import app.lawnchair.lawnicons.ui.components.home.DebugMenu
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
@@ -127,8 +129,8 @@ private fun Home(
                         if (isExpandedScreen) {
                             IconRequestFAB(
                                 iconRequestModel = iconRequestModel,
-                                snackbarHostState = snackbarHostState,
                                 lazyGridState = lazyGridState,
+                                snackbarHostState = snackbarHostState,
                             )
                         }
                     },
@@ -171,6 +173,14 @@ private fun Home(
             if (expandSearch) {
                 focusRequester.requestFocus()
             }
+        }
+        val prefs = preferenceManager(context)
+        if (prefs.showDebugMenu.asState().value) {
+            DebugMenu(
+                iconInfoModel,
+                iconRequestModel,
+                newIconsInfoModel,
+            )
         }
     }
 }

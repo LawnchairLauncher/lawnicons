@@ -7,6 +7,7 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -53,6 +54,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -222,10 +224,11 @@ private fun ScrollbarIndicator(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun AppBarListItem(modifier: Modifier = Modifier) {
     val context = LocalContext.current
+    val prefs = preferenceManager(context)
     CenterAlignedTopAppBar(
         modifier = modifier,
         title = {
@@ -236,7 +239,14 @@ fun AppBarListItem(modifier: Modifier = Modifier) {
                     Image(
                         bitmap = context.appIcon().asImageBitmap(),
                         contentDescription = stringResource(id = R.string.app_name),
-                        modifier = Modifier.size(36.dp),
+                        modifier = Modifier
+                            .size(36.dp)
+                            .combinedClickable(
+                                onClick = {},
+                                onLongClick = {
+                                    prefs.showDebugMenu.toggle()
+                                },
+                            ),
                     )
                 }
                 Spacer(modifier = Modifier.width(8.dp))

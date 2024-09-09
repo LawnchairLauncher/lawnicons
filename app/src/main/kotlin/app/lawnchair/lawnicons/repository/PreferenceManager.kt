@@ -82,6 +82,7 @@ class PreferenceManager private constructor(
 ) : BasePreferenceManager(prefs) {
     val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", true)
     val showNewIconsCard = BoolPref("show_new_icons_card", true)
+    val showDebugMenu = BoolPref("debug_menu", false)
     val currentLawniconsVersion = IntPref("current_lawnicons_version", BuildConfig.VERSION_CODE)
 
     /**

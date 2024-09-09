@@ -58,9 +58,10 @@ fun HomeBottomBar(
                     )
                 }
             }
+
             IconRequestIconButton(
-                iconRequestModel = iconRequestModel,
                 snackbarHostState = snackbarHostState,
+                iconRequestModel = iconRequestModel,
             )
 
             SimpleTooltipBox(
