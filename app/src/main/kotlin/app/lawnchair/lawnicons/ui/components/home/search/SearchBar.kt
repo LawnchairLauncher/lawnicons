@@ -261,15 +261,13 @@ internal fun SearchIcon(
     active: Boolean,
     onButtonClick: () -> Unit,
 ) {
-    Crossfade(active, label = "") {
-        if (it) {
-            ClickableIcon(
-                imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                onClick = onButtonClick,
-            )
-        } else {
-            Icon(Icons.Rounded.Search, contentDescription = null)
-        }
+    if (active) {
+        ClickableIcon(
+            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+            onClick = onButtonClick,
+        )
+    } else {
+        Icon(Icons.Rounded.Search, contentDescription = null)
     }
 }
 

@@ -16,11 +16,13 @@ import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
 import app.lawnchair.lawnicons.ui.destination.Contributors
 import app.lawnchair.lawnicons.ui.destination.Home
+import app.lawnchair.lawnicons.ui.destination.NewIcons
 import app.lawnchair.lawnicons.ui.destination.aboutDestination
 import app.lawnchair.lawnicons.ui.destination.acknowledgementDestination
 import app.lawnchair.lawnicons.ui.destination.acknowledgementsDestination
 import app.lawnchair.lawnicons.ui.destination.contributorsDestination
 import app.lawnchair.lawnicons.ui.destination.homeDestination
+import app.lawnchair.lawnicons.ui.destination.newIconsDestination
 import soup.compose.material.motion.animation.materialSharedAxisXIn
 import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
@@ -49,7 +51,8 @@ fun Lawnicons(
             popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
         ) {
             homeDestination(
-                onNavigate = { navController.navigate(About) },
+                onNavigateToAbout = { navController.navigate(About) },
+                onNavigateToNewIcons = { navController.navigate(NewIcons) },
                 isExpandedScreen = isExpandedScreen,
                 isIconPicker = isIconPicker,
                 onSendResult = onSendResult,
@@ -76,6 +79,10 @@ fun Lawnicons(
                 isExpandedScreen = isExpandedScreen,
             )
             contributorsDestination(
+                onBack = navController::popBackStack,
+                isExpandedScreen = isExpandedScreen,
+            )
+            newIconsDestination(
                 onBack = navController::popBackStack,
                 isExpandedScreen = isExpandedScreen,
             )

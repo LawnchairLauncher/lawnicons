@@ -18,12 +18,12 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- New Lawnchair Launcher -->
+            <!-- Lawnchair Launcher 14 -->
             <intent-filter>
                 <action android:name="app.lawnchair.icons.THEMED_ICON" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <!-- Legacy Lawnchair Launcher -->
+            <!-- Lawnchair Launcher Legacy -->
             <intent-filter>
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
                 <category android:name="ch.deletescape.lawnchair.PICK_ICON" />

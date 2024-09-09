@@ -10,7 +10,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -25,6 +24,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyGridItemScope
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -49,6 +49,7 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
@@ -61,16 +62,39 @@ import my.nanihadesuka.compose.InternalLazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
 
+data class IconPreviewGridPadding(
+    val topPadding: Dp,
+    val bottomPadding: Dp,
+    val horizontalPadding: Dp,
+) {
+
+    companion object {
+        val Defaults = IconPreviewGridPadding(
+            topPadding = 0.dp,
+            bottomPadding = 80.dp,
+            horizontalPadding = 8.dp,
+        )
+
+        val ExpandedSize = IconPreviewGridPadding(
+            topPadding = 72.dp,
+            bottomPadding = 0.dp,
+            horizontalPadding = 32.dp,
+        )
+    }
+}
+
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
     iconInfo: List<IconInfo>,
-    isExpandedScreen: Boolean,
     onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
+    containerModifier: Modifier = Modifier
+        .applyGridInsets(),
+    contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
     isIconPicker: Boolean = false,
-    contentPadding: PaddingValues? = null,
     gridState: LazyGridState = rememberLazyGridState(),
+    otherContent: @Composable (LazyGridItemScope.() -> Unit) = {},
 ) {
     val indexOfFirstItem by remember { derivedStateOf { gridState.firstVisibleItemIndex } }
     val letter = iconInfo[indexOfFirstItem].label[0].uppercase()
@@ -81,48 +105,30 @@ fun IconPreviewGrid(
         verticalArrangement = Arrangement.Center,
         modifier = modifier.fillMaxWidth(),
     ) {
-        val horizontalGridPadding = if (isExpandedScreen) 32.dp else 8.dp
         Box(
-            modifier = Modifier
-                .widthIn(max = 640.dp)
-                .fillMaxWidth()
-                .statusBarsPadding()
-                .then(
-                    if (isExpandedScreen) {
-                        Modifier.padding(top = 26.dp)
-                    } else {
-                        Modifier.padding(
-                            bottom = 80.dp,
-                        )
-                    },
-                ),
+            modifier = containerModifier
+                .padding(bottom = contentPadding.bottomPadding),
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
-                contentPadding = contentPadding ?: WindowInsets.navigationBars.toPaddingValues(
-                    additionalStart = horizontalGridPadding,
-                    additionalTop = if (isExpandedScreen) 42.dp else 0.dp,
-                    additionalEnd = horizontalGridPadding,
+                contentPadding = WindowInsets.navigationBars.toPaddingValues(
+                    additionalStart = contentPadding.horizontalPadding,
+                    additionalTop = contentPadding.topPadding,
+                    additionalEnd = contentPadding.horizontalPadding,
                 ),
                 state = gridState,
             ) {
-                if (!isExpandedScreen) {
-                    item(
-                        span = {
-                            GridItemSpan(maxLineSpan)
-                        },
-                    ) {
-                        AppBarListItem()
-                    }
+                item(
+                    span = { GridItemSpan(maxLineSpan) },
+                ) {
+                    otherContent()
                 }
                 items(
                     items = iconInfo,
                     contentType = { "icon_preview" },
                 ) { iconInfo ->
                     val scale by animateFloatAsState(
-                        if (thumbSelected && iconInfo.label.first()
-                                .toString() == letter
-                        ) {
+                        if (thumbSelected && iconInfo.label.first().toString() == letter) {
                             1.1f
                         } else {
                             1f
@@ -138,32 +144,53 @@ fun IconPreviewGrid(
                     )
                 }
             }
-            Box(
-                contentAlignment = Alignment.CenterEnd,
-            ) {
-                Spacer(
-                    Modifier
-                        .fillMaxHeight()
-                        .width(8.dp)
-                        .background(MaterialTheme.colorScheme.surfaceContainer)
-                        .clip(CircleShape),
-                )
-                InternalLazyVerticalGridScrollbar(
-                    modifier = Modifier.offset(7.dp),
-                    state = gridState,
-                    settings = ScrollbarSettings(
-                        alwaysShowScrollbar = true,
-                        thumbUnselectedColor = MaterialTheme.colorScheme.primary,
-                        thumbSelectedColor = MaterialTheme.colorScheme.primary,
-                        selectionMode = ScrollbarSelectionMode.Thumb,
-                    ),
-                    indicatorContent = { _, isThumbSelected ->
-                        thumbSelected = isThumbSelected
-                        ScrollbarIndicator(letter, isThumbSelected)
-                    },
-                )
-            }
+            ScrollbarLayout(
+                gridState,
+                { thumbSelected = it },
+                letter,
+                contentPadding.topPadding,
+            )
         }
+    }
+}
+
+private fun Modifier.applyGridInsets() = this
+    .widthIn(max = 640.dp)
+    .fillMaxWidth()
+    .statusBarsPadding()
+
+@Composable
+private fun ScrollbarLayout(
+    gridState: LazyGridState,
+    onSelectedChange: (Boolean) -> Unit,
+    currentLetter: String,
+    topPadding: Dp = 0.dp,
+) {
+    Box(
+        contentAlignment = Alignment.CenterEnd,
+        modifier = Modifier.padding(top = topPadding),
+    ) {
+        Spacer(
+            Modifier
+                .fillMaxHeight()
+                .width(8.dp)
+                .background(MaterialTheme.colorScheme.surfaceContainer)
+                .clip(CircleShape),
+        )
+        InternalLazyVerticalGridScrollbar(
+            modifier = Modifier.offset(7.dp),
+            state = gridState,
+            settings = ScrollbarSettings(
+                alwaysShowScrollbar = true,
+                thumbUnselectedColor = MaterialTheme.colorScheme.primary,
+                thumbSelectedColor = MaterialTheme.colorScheme.primary,
+                selectionMode = ScrollbarSelectionMode.Thumb,
+            ),
+            indicatorContent = { _, isThumbSelected ->
+                onSelectedChange(isThumbSelected)
+                ScrollbarIndicator(currentLetter, isThumbSelected)
+            },
+        )
     }
 }
 
@@ -197,7 +224,7 @@ private fun ScrollbarIndicator(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun AppBarListItem(modifier: Modifier = Modifier) {
+fun AppBarListItem(modifier: Modifier = Modifier) {
     val context = LocalContext.current
     CenterAlignedTopAppBar(
         modifier = modifier,
@@ -229,9 +256,9 @@ private fun IconGridPreview() {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
-                isExpandedScreen = false,
                 onSendResult = {},
                 modifier = Modifier,
+                contentPadding = IconPreviewGridPadding.Defaults,
                 isIconPicker = false,
             )
         }
@@ -246,9 +273,9 @@ private fun IconGridExpandedPreview() {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
-                isExpandedScreen = true,
                 onSendResult = {},
                 modifier = Modifier,
+                contentPadding = IconPreviewGridPadding.ExpandedSize,
                 isIconPicker = false,
             )
         }
