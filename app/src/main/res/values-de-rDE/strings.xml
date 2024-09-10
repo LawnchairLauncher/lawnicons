@@ -33,6 +33,7 @@
     <!-- Contribution -->
     <string name="contribution_core">Kern-App</string>
     <string name="contribution_icons">Symbole</string>
+    <string name="contribution_infra">Infrastructure</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Besonderer Dank</string>
@@ -60,6 +61,10 @@
     <string name="copy_to_clipboard">In Zwischenablage kopieren</string>
     <string name="copied_text">Text kopiert</string>
     <!-- Snackbar content -->
+    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
     <string name="snackbar_request_too_large">Details der Symbolanfrage in die Zwischenablage kopiert. Um sie anzufragen, übertrage die Details in das Formular.</string>
     <string name="snackbar_use_fallback_link">Formular öffnen</string>
+    <string name="clear">Leeren</string>
+    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons">New icons (%1$s)</string>
 </resources>
