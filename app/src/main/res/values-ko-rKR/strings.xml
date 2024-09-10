@@ -33,6 +33,7 @@
     <!-- Contribution -->
     <string name="contribution_core">코어 앱</string>
     <string name="contribution_icons">아이콘</string>
+    <string name="contribution_infra">Infrastructure</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Special thanks</string>
@@ -50,7 +51,7 @@
     <!-- Package prefix -->
     <string name="component">컴포넌트 이름</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">매핑된 컴포넌트</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">앱 리브랜딩으로 아이콘이 바뀌었다면 GitHub에 이슈를 등록해 주세요.</string>
     <!-- Chevron a11y description -->
@@ -60,6 +61,10 @@
     <string name="copy_to_clipboard">클립보드에 복사</string>
     <string name="copied_text">텍스트를 복사했습니다.</string>
     <!-- Snackbar content -->
+    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
     <string name="snackbar_request_too_large">아이콘 요청 정보를 클립보드에 복사했습니다. 아이콘을 요청하려면 세부 정보를 폼에 입력하세요.</string>
     <string name="snackbar_use_fallback_link">폼 열기</string>
+    <string name="clear">기록 삭제</string>
+    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons">New icons (%1$s)</string>
 </resources>

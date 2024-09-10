@@ -3,63 +3,68 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">Версия %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_hint">Поиск среди %d иконок</string>
+    <string name="search_bar_icon_picker">Выберите иконку</string>
     <!-- Search tooltip -->
     <string name="search">Поиск</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">Иконки %s не найдено</string>
     <!-- About page -->
     <string name="about">О программе</string>
     <!-- External Links -->
     <!-- GitHub repository link-->
     <!-- Icon Request form link -->
-    <string name="request_form">Icon request form</string>
+    <string name="request_form">Форма запроса иконки</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Участники</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Основные участники</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Посмотреть всех участников</string>
     <!-- View on GitHub link -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Посмотреть на GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">Поделиться</string>
     <!-- Contribution -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Основное приложение</string>
     <string name="contribution_icons">Иконки</string>
+    <string name="contribution_infra">Инфраструктура</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Особая благодарность</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">За вдохновение для создания иконки приложения</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">За название для приложения</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Лицензии проектов с открытым исходным кодом</string>
     <!-- Icon Information Popup window -->
     <!-- Name -->
-    <string name="name">Name</string>
+    <string name="name">Имя</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">Изображение</string>
     <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="component">Название компонента</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">Связанные компоненты</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Если иконка устарела из-за проведенного ребрендинга, создайте проблему на GitHub.</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">Переключить видимость контента</string>
     <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="copied_text">Copied text</string>
+    <string name="request_icons">Запросить иконки</string>
+    <string name="copy_to_clipboard">Скопировать в буфер обмена</string>
+    <string name="copied_text">Текст скопирован</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
+    <string name="snackbar_request_icons_hint">Запросите недостающие иконки в нижней панели</string>
+    <string name="snackbar_request_too_large">Подробности запроса иконки были скопированы в буфер обмена. Для отправки запроса, отправьте данные через форму.</string>
+    <string name="snackbar_use_fallback_link">Открыть форму</string>
+    <string name="clear">Очистить</string>
+    <string name="new_icons_in_version">Новые иконки в v%1$s</string>
+    <string name="new_icons">Новые иконки (%1$s)</string>
 </resources>
