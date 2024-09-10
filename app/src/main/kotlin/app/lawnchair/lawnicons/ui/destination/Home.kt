@@ -6,6 +6,7 @@ import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
@@ -145,11 +146,17 @@ private fun Home(
                         isIconPicker = isIconPicker,
                         gridState = lazyGridState,
                     ) {
-                        Column {
-                            if (!isExpandedScreen) {
+                        if (!isExpandedScreen) {
+                            item(
+                                span = { GridItemSpan(maxLineSpan) },
+                            ) {
                                 AppBarListItem()
                             }
-                            if (newIconsInfoModel.iconCount != 0) {
+                        }
+                        if (newIconsInfoModel.iconCount != 0) {
+                            item(
+                                span = { GridItemSpan(maxLineSpan) },
+                            ) {
                                 NewIconsCard(onNavigateToNewIcons)
                             }
                         }

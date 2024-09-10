@@ -24,8 +24,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.GridItemSpan
-import androidx.compose.foundation.lazy.grid.LazyGridItemScope
+import androidx.compose.foundation.lazy.grid.LazyGridScope
 import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -96,7 +95,7 @@ fun IconPreviewGrid(
     contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
     isIconPicker: Boolean = false,
     gridState: LazyGridState = rememberLazyGridState(),
-    otherContent: @Composable (LazyGridItemScope.() -> Unit) = {},
+    otherContent: (LazyGridScope.() -> Unit) = {},
 ) {
     val indexOfFirstItem by remember { derivedStateOf { gridState.firstVisibleItemIndex } }
     val letter = iconInfo[indexOfFirstItem].label[0].uppercase()
@@ -120,11 +119,7 @@ fun IconPreviewGrid(
                 ),
                 state = gridState,
             ) {
-                item(
-                    span = { GridItemSpan(maxLineSpan) },
-                ) {
-                    otherContent()
-                }
+                otherContent()
                 items(
                     items = iconInfo,
                     contentType = { "icon_preview" },
@@ -241,6 +236,7 @@ fun AppBarListItem(modifier: Modifier = Modifier) {
                         contentDescription = stringResource(id = R.string.app_name),
                         modifier = Modifier
                             .size(36.dp)
+                            .clip(CircleShape)
                             .combinedClickable(
                                 onClick = {},
                                 onLongClick = {
