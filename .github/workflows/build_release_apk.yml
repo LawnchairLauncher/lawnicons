@@ -1,10 +1,8 @@
+# TODO: Add signing key and build app bundle
 name: Build release APK
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   build-release-apk:
