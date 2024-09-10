@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true
-      - name: Fetch main branch
-        run: git fetch origin main:main
+      - name: Fetch all branches
+        run: git fetch origin
       - uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
