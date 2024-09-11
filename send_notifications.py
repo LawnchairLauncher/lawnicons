@@ -4,6 +4,8 @@ import os
 import sys
 import requests
 
+# TODO: Lessen repetition
+
 github_event_before = os.getenv('GITHUB_EVENT_BEFORE')
 github_sha = os.getenv('GITHUB_SHA')
 github_repository = os.getenv('GITHUB_REPOSITORY')
@@ -46,15 +48,18 @@ def send_document_to_ci_channel(document):
 
 def telegram_commit_message(commits, commits_range):
     overview_link = f'{github_link()}compare/{commits_range}'
-    overview_link_tag = f'''<a href="{overview_link}">{len(commits)} new commit{'s' if len(commits) > 1 else ''}</a>'''
+    overview_link_tag = f'''<a href="{overview_link}">{len(commits)} new commit{'s' if len(commits) > 1 else 'New changes'}</a>'''
     message = f'''<b>🔨 {overview_link_tag} to <code>lawnicons:{github_ref}</code>:</b>\n'''
 
-    for commit in reversed(commits):
-        commit_message = commit.message.split('\n')[0]
-        commit_link = f'{github_link()}commit/{commit.hexsha}'
-        commit_link_tag = f'<a href="{commit_link}">{repository.git.rev_parse(commit.hexsha, short=7)}</a>'
-        encoded_message = html.escape(commit_message)
-        message += f'\n• {commit_link_tag}: {encoded_message}'
+    try:
+        for commit in reversed(commits):
+            commit_message = commit.message.split('\n')[0]
+            commit_link = f'{github_link()}commit/{commit.hexsha}'
+            commit_link_tag = f'<a href="{commit_link}">{repository.git.rev_parse(commit.hexsha, short=7)}</a>'
+            encoded_message = html.escape(commit_message)
+            message += f'\n• {commit_link_tag}: {encoded_message}'
+    except:
+        message += '\n• <i>Failed to get commit information (likely due to force-push).</i>'
     return message
 
 # Discord
@@ -81,15 +86,18 @@ def send_document_to_builds_channel(document):
 
 def discord_commit_message(commits, commits_range):
     overview_link = f'{github_link()}compare/{commits_range}>'
-    overview_link_tag = f'''[{len(commits)} new commit{'s' if len(commits) > 1 else ''}]({overview_link})'''
+    overview_link_tag = f'''[{len(commits)} new commit{'s' if len(commits) > 1 else 'New changes'}]({overview_link})'''
     message = f'''**🔨 {overview_link_tag} to `lawnicons:{github_ref}`:**\n'''
 
-    for commit in reversed(commits):
-        commit_message = commit.message.split('\n')[0]
-        commit_link = f'{github_link()}commit/{commit.hexsha}>'
-        commit_link_tag = f'[{repository.git.rev_parse(commit.hexsha, short=7)}]({commit_link})'
-        encoded_message = html.escape(commit_message)
-        message += f'\n* {commit_link_tag}: {encoded_message}'
+    try:
+        for commit in reversed(commits):
+            commit_message = commit.message.split('\n')[0]
+            commit_link = f'{github_link()}commit/{commit.hexsha}>'
+            commit_link_tag = f'[{repository.git.rev_parse(commit.hexsha, short=7)}]({commit_link})'
+            encoded_message = html.escape(commit_message)
+            message += f'\n* {commit_link_tag}: {encoded_message}'
+    except:
+        message += '\n• _Failed to get commit information (likely due to force-push)._'
     return message
 
 repository = git.Repo('.')
