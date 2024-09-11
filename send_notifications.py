@@ -48,7 +48,7 @@ def send_document_to_ci_channel(document):
 
 def telegram_commit_message(commits, commits_range):
     overview_link = f'{github_link()}compare/{commits_range}'
-    overview_link_tag = f'''<a href="{overview_link}">{len(commits)} new commit{'s' if len(commits) > 1 else 'New changes'}</a>'''
+    overview_link_tag = f'''<a href="{overview_link}">{len(commits)} new commit{'s' if len(commits) > 1 else ''}</a>'''
     message = f'''<b>🔨 {overview_link_tag} to <code>lawnicons:{github_ref}</code>:</b>\n'''
 
     try:
@@ -86,7 +86,7 @@ def send_document_to_builds_channel(document):
 
 def discord_commit_message(commits, commits_range):
     overview_link = f'{github_link()}compare/{commits_range}>'
-    overview_link_tag = f'''[{len(commits)} new commit{'s' if len(commits) > 1 else 'New changes'}]({overview_link})'''
+    overview_link_tag = f'''[{len(commits)} new commit{'s' if len(commits) > 1 else ''}]({overview_link})'''
     message = f'''**🔨 {overview_link_tag} to `lawnicons:{github_ref}`:**\n'''
 
     try:
@@ -107,7 +107,7 @@ try:
 	commits = list(repository.iter_commits(commits_range))
 except git.exc.GitCommandError as error:
 	print(f"Error fetching commits: {error}")
-	exit(1)
+	exit()
 
 telegram_message = telegram_commit_message(commits, commits_range)
 discord_message = discord_commit_message(commits, commits_range)
