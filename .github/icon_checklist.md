@@ -1,6 +1,6 @@
 Thanks for your contribution!
 
-While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons.
+We try to do a review during the week. While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons.
 
 ### Canvas and sizes
 1. Canvas: `192×192px`.
