@@ -21,20 +21,42 @@ import java.io.File
 object AppfilterDiffCreator {
     private const val OUTPUT_FILE = "/xml/appfilter_diff.xml"
 
-    private fun getBranchContents(
-        branch: String,
+    private fun getPreviousReleaseLines(
         appFilterFile: String,
     ): List<String> {
-        val command = listOf("git", "show", "$branch:$appFilterFile")
-        val process = ProcessBuilder(command)
+        val fetchCommand = listOf("git", "fetch", "--tags")
+        val fetchProcess = ProcessBuilder(fetchCommand)
             .redirectErrorStream(true)
             .start()
+        val output = fetchProcess.inputStream.bufferedReader().readText()
+        if (fetchProcess.waitFor() != 0) {
+            throw RuntimeException("Failed to execute $fetchCommand: $output")
+        } else {
+            val describeCommand = listOf("git", "describe", "--tags", "--abbrev=0")
+            val describeProcess = ProcessBuilder(describeCommand)
+                .redirectErrorStream(true)
+                .start()
 
-        val result = process.inputStream.bufferedReader().readLines()
-        if (process.waitFor() != 0) {
-            throw RuntimeException("Failed to execute command: $command")
+            val latestTag = describeProcess.inputStream.bufferedReader().readLine()
+            if (describeProcess.waitFor() != 0) {
+                throw RuntimeException("Failed to get latest tag: $latestTag")
+            }
+
+            val showCommand = listOf("git", "show", "$latestTag:$appFilterFile")
+            val process = ProcessBuilder(showCommand)
+                .redirectErrorStream(true)
+                .start()
+
+            val result = process.inputStream.bufferedReader().readLines()
+            if (process.waitFor() != 0) {
+                throw RuntimeException("Failed to execute $showCommand: $result")
+            }
+            return result
         }
-        return result
+    }
+
+    private fun readFileContents(filePath: String): List<String> {
+        return File(filePath).readLines()
     }
 
     private fun getLineDiff(
@@ -72,8 +94,8 @@ object AppfilterDiffCreator {
         resDir: String,
         appFilterFile: String,
     ) {
-        val mainLines = getBranchContents("main", appFilterFile)
-        val developLines = getBranchContents("develop", appFilterFile)
+        val mainLines = getPreviousReleaseLines(appFilterFile)
+        val developLines = readFileContents(appFilterFile)
         val diff = getLineDiff(mainLines, developLines)
 
         writeDiffToFile(diff, resDir)
