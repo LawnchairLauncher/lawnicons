@@ -24,34 +24,39 @@ object AppfilterDiffCreator {
     private fun getPreviousReleaseLines(
         appFilterFile: String,
     ): List<String> {
-        val fetchCommand = listOf("git", "fetch", "--tags")
-        val fetchProcess = ProcessBuilder(fetchCommand)
-            .redirectErrorStream(true)
-            .start()
-        val output = fetchProcess.inputStream.bufferedReader().readText()
-        if (fetchProcess.waitFor() != 0) {
-            throw RuntimeException("Failed to execute $fetchCommand: $output")
-        } else {
-            val describeCommand = listOf("git", "describe", "--tags", "--abbrev=0")
-            val describeProcess = ProcessBuilder(describeCommand)
+        return try {
+            val fetchCommand = listOf("git", "fetch", "--tags")
+            val fetchProcess = ProcessBuilder(fetchCommand)
                 .redirectErrorStream(true)
                 .start()
+            val output = fetchProcess.inputStream.bufferedReader().readText()
+            if (fetchProcess.waitFor() != 0) {
+                throw RuntimeException("Failed to execute $fetchCommand: $output")
+            } else {
+                val describeCommand = listOf("git", "describe", "--tags", "--abbrev=0")
+                val describeProcess = ProcessBuilder(describeCommand)
+                    .redirectErrorStream(true)
+                    .start()
 
-            val latestTag = describeProcess.inputStream.bufferedReader().readLine()
-            if (describeProcess.waitFor() != 0) {
-                throw RuntimeException("Failed to get latest tag: $latestTag")
+                val latestTag = describeProcess.inputStream.bufferedReader().readLine()
+                if (describeProcess.waitFor() != 0) {
+                    throw RuntimeException("Failed to get latest tag: $latestTag")
+                }
+
+                val showCommand = listOf("git", "show", "$latestTag:$appFilterFile")
+                val process = ProcessBuilder(showCommand)
+                    .redirectErrorStream(true)
+                    .start()
+
+                val result = process.inputStream.bufferedReader().readLines()
+                if (process.waitFor() != 0) {
+                    throw RuntimeException("Failed to execute $showCommand: $result")
+                }
+                result
             }
-
-            val showCommand = listOf("git", "show", "$latestTag:$appFilterFile")
-            val process = ProcessBuilder(showCommand)
-                .redirectErrorStream(true)
-                .start()
-
-            val result = process.inputStream.bufferedReader().readLines()
-            if (process.waitFor() != 0) {
-                throw RuntimeException("Failed to execute $showCommand: $result")
-            }
-            return result
+        } catch (e: Exception) {
+            println(e)
+            listOf()
         }
     }
 
@@ -94,8 +99,8 @@ object AppfilterDiffCreator {
         resDir: String,
         appFilterFile: String,
     ) {
-        val mainLines = getPreviousReleaseLines(appFilterFile)
-        val developLines = readFileContents(appFilterFile)
+        val mainLines = readFileContents(appFilterFile)
+        val developLines = getPreviousReleaseLines(appFilterFile)
         val diff = getLineDiff(mainLines, developLines)
 
         writeDiffToFile(diff, resDir)
