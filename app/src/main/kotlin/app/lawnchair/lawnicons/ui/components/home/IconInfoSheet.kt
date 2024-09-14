@@ -29,6 +29,7 @@ import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
@@ -58,7 +59,7 @@ fun IconInfoSheet(
         skipPartiallyExpanded = true,
     )
 
-    val groupedComponents = remember {
+    val groupedComponents = rememberSaveable {
         iconInfo.componentNames
             .groupBy { it.label }
             .map { (label, components) ->
@@ -71,7 +72,7 @@ fun IconInfoSheet(
         newValue = "",
     )
 
-    val shareContents = remember { getShareContents(githubName, groupedComponents) }
+    val shareContents = rememberSaveable { getShareContents(githubName, groupedComponents) }
 
     ModalBottomSheet(
         onDismissRequest = {

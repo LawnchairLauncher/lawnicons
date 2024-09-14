@@ -2,20 +2,22 @@ package app.lawnchair.lawnicons.util
 
 import android.annotation.SuppressLint
 import android.content.Context
+import androidx.annotation.XmlRes
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoManager
 import app.lawnchair.lawnicons.model.LabelAndComponent
+import app.lawnchair.lawnicons.model.mergeByDrawableName
 import org.xmlpull.v1.XmlPullParser
 
 @SuppressLint("DiscouragedApi")
-fun Context.getIconInfo(): List<IconInfo> {
-    var iconInfo = mutableListOf<IconInfo>()
+fun Context.getIconInfo(
+    @XmlRes xmlId: Int = R.xml.appfilter,
+): List<IconInfo> {
+    val iconInfo = mutableListOf<IconInfo>()
 
     val componentInfoPrefixLength = "ComponentInfo{".length
 
     try {
-        val xmlId = R.xml.appfilter
         if (xmlId != 0) {
             val parser = resources.getXml(xmlId)
             val depth = parser.depth
@@ -61,5 +63,5 @@ fun Context.getIconInfo(): List<IconInfo> {
         e.printStackTrace()
     }
 
-    return IconInfoManager.mergeByDrawableName(iconInfo)
+    return iconInfo.mergeByDrawableName()
 }

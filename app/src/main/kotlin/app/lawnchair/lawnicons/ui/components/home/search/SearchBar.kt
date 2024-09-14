@@ -5,6 +5,7 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
@@ -53,11 +54,13 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 fun LawniconsSearchBar(
     query: String,
     isQueryEmpty: Boolean,
-    onClearAndBackClick: () -> Unit,
+    onClear: () -> Unit,
+    onBack: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconInfoModel: IconInfoModel,
     onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
+    inputFieldModifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
     content: @Composable (() -> Unit),
@@ -65,12 +68,14 @@ fun LawniconsSearchBar(
     LawniconsSearchBar(
         query = query,
         isQueryEmpty = isQueryEmpty,
-        onClearAndBackClick = onClearAndBackClick,
+        onClear = onClear,
+        onBack = onBack,
         onQueryChange = onQueryChange,
         iconCount = iconInfoModel.iconCount,
         onNavigate = onNavigate,
         content = content,
         modifier = modifier,
+        inputFieldModifier = inputFieldModifier,
         isExpandedScreen = isExpandedScreen,
         isIconPicker = isIconPicker,
     )
@@ -81,7 +86,8 @@ fun LawniconsSearchBar(
  *
  * @param query The current search query entered by the user.
  * @param isQueryEmpty A boolean value indicating whether the search query is empty.
- * @param onClearAndBackClick A callback function that handles clearing the search query and navigating back.
+ * @param onClear A callback function that handles clearing the search query.
+ * @param onBack A callback function that handles navigating back.
  * @param onQueryChange A callback function that handles changes in the search query.
  * @param iconCount The number of icons available for selection.
  * @param onNavigate A callback function that handles navigation to different screens based on the search query.
@@ -94,11 +100,13 @@ fun LawniconsSearchBar(
 fun LawniconsSearchBar(
     query: String,
     isQueryEmpty: Boolean,
-    onClearAndBackClick: () -> Unit,
+    onClear: () -> Unit,
+    onBack: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconCount: Int,
     onNavigate: () -> Unit,
     modifier: Modifier = Modifier,
+    inputFieldModifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
     isIconPicker: Boolean = false,
     content: @Composable (() -> Unit),
@@ -109,7 +117,7 @@ fun LawniconsSearchBar(
         modifier = modifier
             .animateContentSize()
             .then(
-                if (!active || isExpandedScreen) {
+                if (isExpandedScreen) {
                     Modifier
                         .padding(
                             WindowInsets.navigationBars.toPaddingValues(
@@ -134,7 +142,12 @@ fun LawniconsSearchBar(
             onQueryChange = onQueryChange,
             onSearch = { active = false },
             active = active,
-            onActiveChange = { active = it },
+            onActiveChange = {
+                active = it
+                if (!active) {
+                    onBack()
+                }
+            },
             placeholder = {
                 Text(
                     stringResource(
@@ -151,7 +164,7 @@ fun LawniconsSearchBar(
                 SearchIcon(
                     active = active,
                     onButtonClick = {
-                        onClearAndBackClick()
+                        onBack()
                         active = !active
                     },
                 )
@@ -160,12 +173,28 @@ fun LawniconsSearchBar(
                 if (!isIconPicker) {
                     SearchActionButton(
                         isQueryEmpty = isQueryEmpty,
+                        navigateContent = {
+                            if (isExpandedScreen) {
+                                IconButton(
+                                    onClick = it,
+                                ) {
+                                    Icon(
+                                        imageVector = ImageVector.vectorResource(id = R.drawable.lawnicons_foreground),
+                                        contentDescription = null,
+                                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        modifier = Modifier
+                                            .size(24.dp),
+                                    )
+                                }
+                            }
+                        },
                         onNavigate = onNavigate,
-                        onClearAndBackClick = onClearAndBackClick,
+                        onClear = onClear,
                     )
                 }
             },
             isExpandedScreen = isExpandedScreen,
+            inputFieldModifier = inputFieldModifier,
         ) {
             content()
         }
@@ -184,53 +213,45 @@ private fun ResponsiveSearchBar(
     leadingIcon: @Composable () -> Unit,
     trailingIcon: @Composable () -> Unit,
     isExpandedScreen: Boolean,
-    content: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
+    inputFieldModifier: Modifier = Modifier,
+    content: @Composable ColumnScope.() -> Unit,
 ) {
+    val inputField =
+        @Composable {
+            SearchBarDefaults.InputField(
+                query = query,
+                onQueryChange = onQueryChange,
+                onSearch = onSearch,
+                modifier = inputFieldModifier,
+                expanded = active,
+                onExpandedChange = onActiveChange,
+                placeholder = placeholder,
+                leadingIcon = leadingIcon,
+                trailingIcon = trailingIcon,
+            )
+        }
+
     if (isExpandedScreen) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center,
+            modifier = modifier,
         ) {
             DockedSearchBar(
-                inputField = {
-                    SearchBarDefaults.InputField(
-                        query = query,
-                        onQueryChange = onQueryChange,
-                        onSearch = onSearch,
-                        expanded = active,
-                        onExpandedChange = onActiveChange,
-                        placeholder = placeholder,
-                        leadingIcon = leadingIcon,
-                        trailingIcon = trailingIcon,
-                    )
-                },
+                inputField = inputField,
                 expanded = active,
                 onExpandedChange = onActiveChange,
-                content = {
-                    content()
-                },
+                content = content,
             )
         }
     } else {
         SearchBar(
-            inputField = {
-                SearchBarDefaults.InputField(
-                    query = query,
-                    onQueryChange = onQueryChange,
-                    onSearch = onSearch,
-                    expanded = active,
-                    onExpandedChange = onActiveChange,
-                    placeholder = placeholder,
-                    leadingIcon = leadingIcon,
-                    trailingIcon = trailingIcon,
-                )
-            },
+            inputField = inputField,
             expanded = active,
             onExpandedChange = onActiveChange,
             modifier = Modifier.fillMaxWidth(),
-            content = {
-                content()
-            },
+            content = content,
         )
     }
 }
@@ -253,25 +274,16 @@ internal fun SearchIcon(
 @Composable
 internal fun SearchActionButton(
     isQueryEmpty: Boolean,
+    navigateContent: @Composable (() -> Unit) -> Unit,
     onNavigate: () -> Unit,
-    onClearAndBackClick: () -> Unit,
+    onClear: () -> Unit,
 ) {
     Crossfade(isQueryEmpty, label = "") {
         if (it) {
-            IconButton(
-                onClick = onNavigate,
-            ) {
-                Icon(
-                    imageVector = ImageVector.vectorResource(id = R.drawable.lawnicons_foreground),
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier
-                        .size(24.dp),
-                )
-            }
+            navigateContent(onNavigate)
         } else {
             ClickableIcon(
-                onClick = onClearAndBackClick,
+                onClick = onClear,
                 imageVector = Icons.Rounded.Close,
             )
         }
@@ -288,7 +300,8 @@ private fun SearchBarPreview() {
         LawniconsSearchBar(
             query = searchTerm,
             isQueryEmpty = false,
-            onClearAndBackClick = {},
+            onClear = {},
+            onBack = {},
             onQueryChange = { newValue ->
                 searchTerm = newValue
             },
@@ -323,8 +336,8 @@ private fun SearchIconPreview() {
 private fun SearchActionButtonPreview() {
     LawniconsTheme {
         Column {
-            SearchActionButton(isQueryEmpty = false, {}, {})
-            SearchActionButton(isQueryEmpty = true, {}, {})
+            SearchActionButton(isQueryEmpty = false, {}, {}, {})
+            SearchActionButton(isQueryEmpty = true, {}, {}, {})
         }
     }
 }

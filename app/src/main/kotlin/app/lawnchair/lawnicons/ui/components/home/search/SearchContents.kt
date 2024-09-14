@@ -29,7 +29,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -43,14 +43,13 @@ import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.components.home.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.IconPreview
-import kotlinx.collections.immutable.ImmutableList
 
 @Composable
 fun SearchContents(
     searchTerm: String,
     searchMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
-    iconInfo: ImmutableList<IconInfo>,
+    iconInfo: List<IconInfo>,
     modifier: Modifier = Modifier,
     onSendResult: (IconInfo) -> Unit = {},
 ) {
@@ -123,6 +122,7 @@ fun SearchContents(
                 1 -> {
                     IconInfoListItem(iconInfo)
                 }
+
                 0 -> {
                     Box(
                         modifier = Modifier
@@ -145,7 +145,7 @@ fun SearchContents(
                     ) { iconInfo ->
                         LazyVerticalGrid(
                             columns = GridCells.Adaptive(minSize = 80.dp),
-                            contentPadding = PaddingValues(16.dp),
+                            contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
                         ) {
                             items(
                                 items = iconInfo,
@@ -154,7 +154,7 @@ fun SearchContents(
                                 IconPreview(
                                     iconInfo = it,
                                     onSendResult = onSendResult,
-                                    iconBackground = MaterialTheme.colorScheme.surfaceVariant,
+                                    iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
                                 )
                             }
                         }
@@ -166,15 +166,20 @@ fun SearchContents(
 }
 
 @Composable
-private fun IconInfoListItem(iconInfo: ImmutableList<IconInfo>) {
+private fun IconInfoListItem(iconInfo: List<IconInfo>) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(PaddingValues(16.dp)),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        val it = iconInfo[0]
-        val isIconInfoAppfilterShown = remember { mutableStateOf(false) }
+        val it = try {
+            iconInfo[0]
+        } catch (_: Exception) {
+            return@IconInfoListItem
+        }
+
+        val isIconInfoAppfilterShown = rememberSaveable { mutableStateOf(false) }
 
         ListItem(
             headlineContent = { Text(it.getFirstLabelAndComponent().label) },

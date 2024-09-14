@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <!-- Application name -->
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">%s-verzió</string>
+    <!-- Search bar -->
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Keresés %d ikon között</string>
+    <string name="search_bar_icon_picker">Bökjön egy ikonra</string>
+    <!-- Search tooltip -->
+    <string name="search">Keresés</string>
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">%s nem található</string>
+    <!-- About page -->
+    <string name="about">Névjegy</string>
+    <!-- External Links -->
+    <!-- GitHub repository link-->
+    <!-- Icon Request form link -->
+    <string name="request_form">Ikonigénylő lap</string>
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Közreműködők</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Alapvető közreműködők</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Az összes közreműködő megtekintése</string>
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Lesse meg a GitHub-on</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Részletek megosztása</string>
+    <!-- Contribution -->
+    <string name="contribution_core">A mag-alkalmazás</string>
+    <string name="contribution_icons">Ikonok</string>
+    <string name="contribution_infra">Infrastruktúra</string>
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Speciális köszönet</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Inspiráció az alkalmazásikonhoz</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">Az alkalmazás elnevezéséhez</string>
+    <!-- List item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Nyílt-forráskódú licencek</string>
+    <!-- Icon Information Popup window -->
+    <!-- Name -->
+    <string name="name">Név</string>
+    <!-- Drawable prefix -->
+    <string name="drawable">Rajzolható</string>
+    <!-- Package prefix -->
+    <string name="component">A részegység neve</string>
+    <!-- Mapped components -->
+    <string name="mapped_components">Feltérképezett részek</string>
+    <!-- Outdated icon info -->
+    <string name="icon_info_outdated_warning">Ha az ikon a márkaváltás miatt elavult, hozzon létre egy bejelentést a GitHubon.</string>
+    <!-- Chevron a11y description -->
+    <string name="toggle_visibility_of_contents">A tartalom láthatóságának kapcsolója</string>
+    <!-- Request icons button -->
+    <string name="request_icons">Ikonrendelés</string>
+    <string name="copy_to_clipboard">Másolás a vágólapra</string>
+    <string name="copied_text">Másolt szöveg</string>
+    <!-- Snackbar content -->
+    <string name="snackbar_request_icons_hint">A hiányzó ikonokat az alsó sávról kérje</string>
+    <string name="snackbar_request_too_large">Az ikonkérelem részletei a vágólapra másolva. Kéréséhez adja meg a részleteket az űrlapon.</string>
+    <string name="snackbar_use_fallback_link">Az űrlap megnyitása</string>
+    <string name="clear">Clear</string>
+    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons">New icons (%1$s)</string>
+</resources>

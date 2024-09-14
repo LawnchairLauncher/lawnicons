@@ -1,10 +1,8 @@
+# TODO: Add signing key and build app bundle
 name: Build release APK
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 jobs:
   build-release-apk:
@@ -19,10 +17,9 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 21
-      - uses: gradle/actions/setup-gradle@v3
+      - uses: gradle/actions/setup-gradle@v4
         with:
           cache-encryption-key: Da25KUVSE5jbGds2zXmfXw==
-          gradle-home-cache-cleanup: true
       - name: Write sign info
         if: github.repository_owner == 'LawnchairLauncher'
         run: |

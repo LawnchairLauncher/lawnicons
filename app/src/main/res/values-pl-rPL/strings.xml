@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- General -->
+    <!-- Application name -->
+    <!-- Version name, with %s as the version code -->
+    <string name="version_x">Wersja %s</string>
+    <!-- Search bar -->
+    <!-- The hint shown in the search bar, with %d as the number of icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <string name="search_bar_hint">Przeszukaj %d Ikon</string>
+    <string name="search_bar_icon_picker">Wybierz ikonkę</string>
+    <!-- Search tooltip -->
+    <string name="search">Szukaj</string>
+    <!-- Text shown when there are no search results-->
+    <string name="no_items_found">Nie znaleziono ikon</string>
+    <!-- About page -->
+    <string name="about">O aplikacji</string>
+    <!-- External Links -->
+    <!-- GitHub repository link-->
+    <!-- Icon Request form link -->
+    <string name="request_form">Formularz Zgłoszeniowy Ikony</string>
+    <!-- Contributors section of About page -->
+    <!-- Contributors label -->
+    <string name="contributors">Współautorzy</string>
+    <!-- Core Contributors label -->
+    <string name="core_contributors">Główni współautorzy</string>
+    <!-- Item that links to the Contributors page -->
+    <string name="see_all_contributors">Zobacz wszystkich Współtwórców</string>
+    <!-- View on GitHub link -->
+    <string name="view_on_github">Zobacz na GitHub</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Udostępnij szczegóły</string>
+    <!-- Contribution -->
+    <string name="contribution_core">Aplikacja bazowa</string>
+    <string name="contribution_icons">Ikony</string>
+    <string name="contribution_infra">Infrastructure</string>
+    <!-- Special Thanks section of About page -->
+    <!-- Special Thanks label -->
+    <string name="special_thanks">Specjalne podziękowania</string>
+    <!-- Subtitle displayed below the user who inspired the app icon -->
+    <string name="special_thanks_icon">Za zainspirowanie ikony aplikacji.</string>
+    <!-- Subtitle displayed below the user who named the app -->
+    <string name="special_thanks_name">Za nazwanie aplikacji.</string>
+    <!-- List item that links to the Acknowledgements page -->
+    <string name="acknowledgements">Podziękowanie</string>
+    <!-- Icon Information Popup window -->
+    <!-- Name -->
+    <string name="name">Nazwa</string>
+    <!-- Drawable prefix -->
+    <string name="drawable">Element graficzny</string>
+    <!-- Package prefix -->
+    <string name="component">Nazwa komponentu</string>
+    <!-- Mapped components -->
+    <string name="mapped_components">Pakiet</string>
+    <!-- Outdated icon info -->
+    <string name="icon_info_outdated_warning">Jeśli ikona jest przestarzała z powodu rebrandingu, utwórz problem na GitHub.</string>
+    <!-- Chevron a11y description -->
+    <string name="toggle_visibility_of_contents">Przełącz widoczność treści</string>
+    <!-- Request icons button -->
+    <string name="request_icons">Zażądaj ikon</string>
+    <string name="copy_to_clipboard">Skopiuj do schowka</string>
+    <string name="copied_text">Skopiowany tekst</string>
+    <!-- Snackbar content -->
+    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
+    <string name="snackbar_request_too_large">Skopiowano szczegóły żądania ikon do schowka. Aby je poprosić, prześlij szczegóły do formularza.</string>
+    <string name="snackbar_use_fallback_link">Otwórz formularz</string>
+    <string name="clear">Wyczyść</string>
+    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons">New icons (%1$s)</string>
+</resources>

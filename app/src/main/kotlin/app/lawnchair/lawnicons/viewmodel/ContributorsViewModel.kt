@@ -7,8 +7,6 @@ import app.lawnchair.lawnicons.model.GitHubContributor
 import app.lawnchair.lawnicons.repository.GitHubContributorsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -19,7 +17,7 @@ import kotlinx.coroutines.launch
 sealed interface ContributorsUiState {
 
     data class Success(
-        val contributors: ImmutableList<GitHubContributor>,
+        val contributors: List<GitHubContributor>,
     ) : ContributorsUiState
 
     data object Loading : ContributorsUiState
@@ -28,7 +26,7 @@ sealed interface ContributorsUiState {
 
 private data class ContributorsViewModelState(
     val isRefreshing: Boolean,
-    val contributors: ImmutableList<GitHubContributor>? = null,
+    val contributors: List<GitHubContributor>? = null,
     val hasError: Boolean = false,
 ) {
     fun toUiState(): ContributorsUiState = when {
@@ -63,7 +61,7 @@ class ContributorsViewModel @Inject constructor(
                 when {
                     result.isSuccess -> it.copy(
                         isRefreshing = false,
-                        contributors = result.getOrThrow().toPersistentList(),
+                        contributors = result.getOrThrow(),
                         hasError = false,
                     )
 

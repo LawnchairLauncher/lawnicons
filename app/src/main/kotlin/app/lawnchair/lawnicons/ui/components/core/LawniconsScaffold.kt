@@ -29,10 +29,8 @@ fun LawniconsScaffold(
     modifier: Modifier = Modifier,
     content: @Composable (PaddingValues) -> Unit,
 ) {
-    var scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
-    if (isExpandedScreen) {
-        scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior()
-    }
+    val scrollBehavior =
+        if (isExpandedScreen) TopAppBarDefaults.pinnedScrollBehavior() else TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
