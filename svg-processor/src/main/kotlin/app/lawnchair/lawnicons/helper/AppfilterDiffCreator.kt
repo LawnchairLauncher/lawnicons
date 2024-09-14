@@ -25,36 +25,43 @@ object AppfilterDiffCreator {
         appFilterFile: String,
     ): List<String> {
         return try {
-            val fetchCommand = listOf("git", "fetch", "--tags")
-            val fetchProcess = ProcessBuilder(fetchCommand)
+            runGitCommand(listOf("fetch", "--tags"))
+
+            val tagCommand =
+                listOf("/usr/bin/bash", "-c", "git tag --sort=-creatordate | head -n 1")
+            val tagProcess = ProcessBuilder(tagCommand)
                 .redirectErrorStream(true)
                 .start()
-            val output = fetchProcess.inputStream.bufferedReader().readText()
-            if (fetchProcess.waitFor() != 0) {
-                throw RuntimeException("Failed to execute $fetchCommand: $output")
-            } else {
-                val describeCommand =
-                    listOf("git", "describe", "--tags", "--abbrev=0", "--start=main")
-                val describeProcess = ProcessBuilder(describeCommand)
-                    .redirectErrorStream(true)
-                    .start()
 
-                val latestTag = describeProcess.inputStream.bufferedReader().readLine()
-                if (describeProcess.waitFor() != 0) {
-                    throw RuntimeException("Failed to get latest tag: $latestTag")
-                }
-
-                val showCommand = listOf("git", "show", "$latestTag:$appFilterFile")
-                val process = ProcessBuilder(showCommand)
-                    .redirectErrorStream(true)
-                    .start()
-
-                val result = process.inputStream.bufferedReader().readLines()
-                if (process.waitFor() != 0) {
-                    throw RuntimeException("Failed to execute $showCommand: $result")
-                }
-                result
+            val latestTag = tagProcess.inputStream.bufferedReader().readLine()
+            if (tagProcess.waitFor() != 0) {
+                throw RuntimeException("Failed to get latest tag")
             }
+
+            runGitCommand(listOf("show", "$latestTag:$appFilterFile"))
+        } catch (e: Exception) {
+            println(e)
+            listOf()
+        }
+    }
+
+    private fun runGitCommand(
+        args: List<String>,
+    ): List<String> {
+        return try {
+            val command = listOf("git") + args
+
+            val process = ProcessBuilder(command)
+                .redirectErrorStream(true)
+                .start()
+
+            val result = process.inputStream.bufferedReader().readLines()
+            if (process.waitFor() != 0) {
+                throw RuntimeException("Failed to execute $command: $result")
+            }
+            println("task git $args completed")
+
+            result
         } catch (e: Exception) {
             println(e)
             listOf()
