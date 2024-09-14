@@ -165,8 +165,8 @@ fun RequestHandler(
 
     content(interactionSource)
 
-    LaunchedEffect(iconRequestList.isNotEmpty()) {
-        if (showFirstLaunchSnackbar) {
+    LaunchedEffect(enabled) {
+        if (showFirstLaunchSnackbar && enabled) {
             openSnackbarFirstLaunchContent(
                 context,
                 scope,
