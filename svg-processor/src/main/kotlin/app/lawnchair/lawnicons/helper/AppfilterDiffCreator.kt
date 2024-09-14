@@ -33,7 +33,8 @@ object AppfilterDiffCreator {
             if (fetchProcess.waitFor() != 0) {
                 throw RuntimeException("Failed to execute $fetchCommand: $output")
             } else {
-                val describeCommand = listOf("git", "describe", "--tags", "--abbrev=0")
+                val describeCommand =
+                    listOf("git", "describe", "--tags", "--abbrev=0", "--start=main")
                 val describeProcess = ProcessBuilder(describeCommand)
                     .redirectErrorStream(true)
                     .start()
@@ -99,9 +100,10 @@ object AppfilterDiffCreator {
         resDir: String,
         appFilterFile: String,
     ) {
-        val mainLines = readFileContents(appFilterFile)
-        val developLines = getPreviousReleaseLines(appFilterFile)
-        val diff = getLineDiff(mainLines, developLines)
+        val diff = getLineDiff(
+            getPreviousReleaseLines(appFilterFile),
+            readFileContents(appFilterFile),
+        )
 
         writeDiffToFile(diff, resDir)
     }

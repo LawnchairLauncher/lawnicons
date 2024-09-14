@@ -153,7 +153,18 @@ private fun ContributorListPlaceholder(
     LazyColumn(
         modifier = modifier,
         contentPadding = contentPadding,
+        userScrollEnabled = false,
     ) {
+        item {
+            ContributorRowPlaceholder(
+                first = true,
+                last = true,
+                divider = false,
+            )
+        }
+        item {
+            Spacer(modifier = Modifier.height(16.dp))
+        }
         items(itemCount) {
             ContributorRowPlaceholder(
                 first = it == 0,
