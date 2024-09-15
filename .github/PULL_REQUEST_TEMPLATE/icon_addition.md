@@ -17,7 +17,3 @@ App Name (`com.package.app` → `drawable.svg`)
 <!--  When replacing old icons with new ones. -->
 App Name (`com.package.app`)
 App Name (`com.package.app`)
-
-## Contributor's checklist
-- [ ] I followed [the Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) and will make changes if someone suggests. I will also make sure that Lawnicons builds correctly.
-<!-- If you think that everything is correct, then replace [ ] with [x] or click on the checkbox after creating the pull request. -->
