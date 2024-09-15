@@ -87,7 +87,7 @@ object AppfilterDiffCreator {
         val schema = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 
         if (diff.isEmpty()) {
-            outputFile.writeText("$schema\n<resources></resources>")
+            outputFile.writeText("$schema\n<resources />")
             return
         }
 

@@ -41,8 +41,8 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
-import app.lawnchair.lawnicons.ui.components.home.IconInfoSheet
-import app.lawnchair.lawnicons.ui.components.home.IconPreview
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconInfoSheet
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
 
 @Composable
 fun SearchContents(

@@ -44,10 +44,11 @@ import androidx.compose.ui.zIndex
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
+import app.lawnchair.lawnicons.ui.util.thenIf
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @Composable
@@ -112,24 +113,17 @@ fun LawniconsSearchBar(
     content: @Composable (() -> Unit),
 ) {
     var active by rememberSaveable { mutableStateOf(false) }
+    val padding = WindowInsets.navigationBars.toPaddingValues(
+        additionalStart = 16.dp,
+        additionalEnd = 16.dp,
+    )
 
     Box(
         modifier = modifier
             .animateContentSize()
-            .then(
-                if (isExpandedScreen) {
-                    Modifier
-                        .padding(
-                            WindowInsets.navigationBars.toPaddingValues(
-                                additionalStart = 16.dp,
-                                additionalEnd = 16.dp,
-                            ),
-                        )
-                        .statusBarsPadding()
-                } else {
-                    Modifier
-                },
-            )
+            .thenIf(isExpandedScreen) {
+                padding(padding).statusBarsPadding()
+            }
             .semantics {
                 isTraversalGroup = true
             }
@@ -262,7 +256,7 @@ internal fun SearchIcon(
     onButtonClick: () -> Unit,
 ) {
     if (active) {
-        ClickableIcon(
+        NavigationIconButton(
             imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
             onClick = onButtonClick,
         )
@@ -282,7 +276,7 @@ internal fun SearchActionButton(
         if (it) {
             navigateContent(onNavigate)
         } else {
-            ClickableIcon(
+            NavigationIconButton(
                 onClick = onClear,
                 imageVector = Icons.Rounded.Close,
             )

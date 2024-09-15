@@ -28,8 +28,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
-import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.components.home.IconPreviewGridPadding
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPadding
 import app.lawnchair.lawnicons.viewmodel.NewIconsViewModel
 import kotlinx.serialization.Serializable
 

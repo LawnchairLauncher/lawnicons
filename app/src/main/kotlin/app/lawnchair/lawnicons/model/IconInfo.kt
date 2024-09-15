@@ -1,5 +1,7 @@
 package app.lawnchair.lawnicons.model
 
+import kotlinx.serialization.Serializable
+
 /**
  * Data class to hold information about an icon.
  *
@@ -73,6 +75,7 @@ fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
  * @property label The user-facing label associated with the component.
  * @property componentName The name of the component, typically a fully qualified class name.
  */
+@Serializable
 data class LabelAndComponent(
     val label: String,
     val componentName: String,
