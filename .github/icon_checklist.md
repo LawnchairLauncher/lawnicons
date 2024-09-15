@@ -1,6 +1,8 @@
 Thanks for your contribution!
 
-While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons. We try to do the review within 7 days.
+We hope that you followed [the Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) and make sure that Lawnicons builds correctly.
+
+While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons. Our team try to do the review within 7 days.
 
 ### Canvas and sizes
 1. Canvas: `192×192px`.
