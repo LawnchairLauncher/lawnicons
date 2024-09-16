@@ -1,7 +1,6 @@
 import app.cash.licensee.LicenseeTask
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import com.android.build.gradle.tasks.MergeResources
-import java.io.FileInputStream
 import java.util.Locale
 import java.util.Properties
 
@@ -42,22 +41,21 @@ android {
         vectorDrawables.useSupportLibrary = true
     }
 
-    val keystorePropertiesFile = rootProject.file("keystore.properties")
-    val releaseSigning = if (keystorePropertiesFile.exists()) {
+    androidResources {
+        generateLocaleConfig = true
+    }
+
+    val releaseSigning = try {
         val keystoreProperties = Properties()
-        keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+        keystoreProperties.load(rootProject.file("keystore.properties").inputStream())
         signingConfigs.create("release") {
             keyAlias = keystoreProperties["keyAlias"].toString()
             keyPassword = keystoreProperties["keyPassword"].toString()
             storeFile = rootProject.file(keystoreProperties["storeFile"].toString())
             storePassword = keystoreProperties["storePassword"].toString()
         }
-    } else {
+    } catch (ignored: Exception) {
         signingConfigs["debug"]
-    }
-
-    androidResources {
-        generateLocaleConfig = true
     }
 
     buildTypes {
