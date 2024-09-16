@@ -1,6 +1,6 @@
 Thanks for your contribution!
 
-We hope that you followed [the Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) and made sure that Lawnicons builds correctly.
+We hope that you followed [the Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) and made sure that Lawnicons is built correctly.
 
 While waiting for a review from our team, you can do a self-review to ensure that your icons are suitable for Lawnicons. We try to do the review within 7 days.
 
