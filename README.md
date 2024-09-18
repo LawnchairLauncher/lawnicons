@@ -11,18 +11,18 @@ Lawnicons is best used [on the latest version of Lawnchair](https://github.com/L
 
 ## Download
 
-<p align="center">
+<p align="left">
   <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-google-play.png" alt="Get it on Google Play" height="80" />
+    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-google-play.png?raw=true" alt="Get it on Google Play" height="80" />
   </a>
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="80" />
+    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-izzyondroid.png?raw=true" alt="Get it on IzzyOnDroid" height="80" />
   </a>
   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnicons/">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-obtainium.png" alt="Get it on Obtainium" height="80" />
+    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-obtainium.png?raw=true" alt="Get it on Obtainium" height="80" />
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/releases/latest">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-github.png" alt="Get it on GitHub" height="80" />
+    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-github.png?raw=true" alt="Get it on GitHub" height="80" />
   </a>
 </p>
 
@@ -33,8 +33,7 @@ Due to different package names, Lawnicons on the Play Store will install as a di
 ## Contributing
 Please see [the Lawnicons guidelines](CONTRIBUTING.md) for information on contributing icons or code, it will save you time.
 
-Designers who have studied our guidelines can fulfill [the popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103).
-Android developers can find tasks [in our issues](https://github.com/LawnchairLauncher/lawnicons/issues).
+**Contribute:** [Popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey#gid=651079103) • [Development tasks](https://github.com/LawnchairLauncher/lawnicons/issues)
 
 ## Requesting icons
 `Open Lawnicons 2.10+ → Tap "Request icons" → Submit the response`
