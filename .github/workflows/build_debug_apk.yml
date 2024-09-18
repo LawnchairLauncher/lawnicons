@@ -5,7 +5,21 @@ on:
   push:
     branches:
       - develop
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '.idea/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.gitignore'
+      - '.gitattributes'
   pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+      - '.idea/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.gitignore'
+      - '.gitattributes'
 
 jobs:
   build-debug-apk:
