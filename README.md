@@ -14,16 +14,16 @@ Lawnicons is best used [on the latest version of Lawnchair](https://github.com/L
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
-    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" height="76" />
+    <img src="https://github.com/x9136/lawnicons/blob/rq/docs/images/badge-google-play.png" alt="Get it on Google Play" height="80" />
   </a>
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
-    <img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" alt="Get it on IzzyOnDroid" height="76" />
+    <img src="https://github.com/x9136/lawnicons/blob/rq/docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="80" />
   </a>
   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnicons/">
-    <img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png" alt="Get it on Obtainium" height="54" />
+    <img src="https://github.com/x9136/lawnicons/blob/rq/docs/images/badge-obtainium.png" alt="Get it on Obtainium" height="80" />
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/releases/latest">
-    <img src="https://user-images.githubusercontent.com/69304392/148696068-0cfea65d-b18f-4685-82b5-329a330b1c0d.png" alt="Get it on GitHub" height="80" />
+    <img src="https://github.com/x9136/lawnicons/blob/rq/docs/images/badge-github.png" alt="Get it on GitHub" height="80" />
   </a>
 </p>
 
