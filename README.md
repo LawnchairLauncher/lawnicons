@@ -13,7 +13,7 @@ Lawnicons is best used [on the latest version of Lawnchair](https://github.com/L
 
 <p align="center">
   <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-google-play.png" alt="Get it on Google Play" height="80" />
+    <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-google-play.png" height="80" />
   </a>
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
     <img src="https://github.com/LawnchairLauncher/lawnicons/tree/develop/docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="80" />
