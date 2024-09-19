@@ -178,7 +178,7 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
   **For Windows**:
 
   ```console
-  adb shell dumpsys window | find "mCurrentFocus"
+  adb shell dumpsys window | findstr "mCurrentFocus"
   ```
   ![](docs/images/contributing-image-3.png)
 
