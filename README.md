@@ -7,7 +7,10 @@
   <a href="https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_debug_apk.yml">
     <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_debug_apk.yml?branch=develop&label=Build%20Debug%20APK&logo=github">
   </a>
-  <a href="https://discord.gg/3x8qNWxgGZ">
+  <a href="https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_release_apk.yml?label=Build%20Release%20APK&logo=github">
+  </a>
+  <a h ref="https://discord.gg/3x8qNWxgGZ">
     <img alt="Discord" src="https://img.shields.io/discord/803299970169700402?logo=discord&logoColor=white&label=Discord&color=5165f6">
   </a>    
 
