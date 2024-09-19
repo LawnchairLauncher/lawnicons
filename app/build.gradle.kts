@@ -152,7 +152,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-core-android")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.8.0")
+    implementation("androidx.navigation:navigation-compose:2.8.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.6")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.2")
