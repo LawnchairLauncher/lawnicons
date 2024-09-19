@@ -1,36 +1,14 @@
 # Lawnicons
 
-<div align="center">
-  <a href="https://github.com/LawnchairLauncher/lawnicons/stargazers">
-    <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/LawnchairLauncher/lawnicons?style=social">
-  </a>
-  <a href="https://github.com/LawnchairLauncher/lawnicons/forks">
-    <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/LawnchairLauncher/lawnicons?style=social">
-  </a>
-  <a href="https://github.com/LawnchairLauncher/lawnicons/watchers">
-    <img alt="GitHub Repo Watchers" src="https://img.shields.io/github/watchers/LawnchairLauncher/lawnicons?style=social">
-  </a>
-
-  <br/>
-  
-  <a href="https://github.com/LawnchairLauncher/lawnicons/releases/latest">
-    <img alt="GitHub Release" src="https://img.shields.io/github/v/release/LawnchairLauncher/lawnicons?display_name=tag&style=for-the-badge">
+<div align="center">    
+  <a href="https://github.com/LawnchairLauncher/lawnicons/blob/develop/LICENSE">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/LawnchairLauncher/Lawnicons?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0ndXRmLTgnPz48c3ZnIHdpZHRoPSc4MDBweCcgaGVpZ2h0PSc4MDBweCcgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00xOSAzSDlWM0M3LjExNDM4IDMgNi4xNzE1NyAzIDUuNTg1NzkgMy41ODU3OUM1IDQuMTcxNTcgNSA1LjExNDM4IDUgN1YxMC41VjE3JyBzdHJva2U9JyNGRkZGRkYnIHN0cm9rZS13aWR0aD0nMicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PHBhdGggZD0nTTE0IDE3VjE5QzE0IDIwLjEwNDYgMTQuODk1NCAyMSAxNiAyMVYyMUMxNy4xMDQ2IDIxIDE4IDIwLjEwNDYgMTggMTlWOVY0LjVDMTggMy42NzE1NyAxOC42NzE2IDMgMTkuNSAzVjNDMjAuMzI4NCAzIDIxIDMuNjcxNTcgMjEgNC41VjQuNUMyMSA1LjMyODQzIDIwLjMyODQgNiAxOS41IDZIMTguNScgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J00xNiAyMUg1QzMuODk1NDMgMjEgMyAyMC4xMDQ2IDMgMTlWMTlDMyAxNy44OTU0IDMuODk1NDMgMTcgNSAxN0gxNCcgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J005IDdIMTQnIHN0cm9rZT0nI0ZGRkZGRicgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz48cGF0aCBkPSdNOSAxMUgxNCcgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjwvc3ZnPg==">
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_debug_apk.yml">
-  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_debug_apk.yml?branch=develop&style=for-the-badge&label=Build%20Debug%20APK">
-  </a>
-
-  
-  <br/>
-  
-  <a href="https://github.com/LawnchairLauncher/lawnicons/blob/develop/LICENSE">
-    <img alt="GitHub License" src="https://img.shields.io/github/license/LawnchairLauncher/Lawnicons?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0ndXRmLTgnPz48c3ZnIHdpZHRoPSc4MDBweCcgaGVpZ2h0PSc4MDBweCcgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00xOSAzSDlWM0M3LjExNDM4IDMgNi4xNzE1NyAzIDUuNTg1NzkgMy41ODU3OUM1IDQuMTcxNTcgNSA1LjExNDM4IDUgN1YxMC41VjE3JyBzdHJva2U9JyNGRkZGRkYnIHN0cm9rZS13aWR0aD0nMicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PHBhdGggZD0nTTE0IDE3VjE5QzE0IDIwLjEwNDYgMTQuODk1NCAyMSAxNiAyMVYyMUMxNy4xMDQ2IDIxIDE4IDIwLjEwNDYgMTggMTlWOVY0LjVDMTggMy42NzE1NyAxOC42NzE2IDMgMTkuNSAzVjNDMjAuMzI4NCAzIDIxIDMuNjcxNTcgMjEgNC41VjQuNUMyMSA1LjMyODQzIDIwLjMyODQgNiAxOS41IDZIMTguNScgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J00xNiAyMUg1QzMuODk1NDMgMjEgMyAyMC4xMDQ2IDMgMTlWMTlDMyAxNy44OTU0IDMuODk1NDMgMTcgNSAxN0gxNCcgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J005IDdIMTQnIHN0cm9rZT0nI0ZGRkZGRicgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz48cGF0aCBkPSdNOSAxMUgxNCcgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjwvc3ZnPg==&style=for-the-badge">
-  </a>
-  <a href="https://github.com/LawnchairLauncher/lawnicons/graphs/contributors">
-    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/LawnchairLauncher/Lawnicons?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnIHN0YW5kYWxvbmU9J25vJz8+PHN2ZyB3aWR0aD0nMTkyJyBoZWlnaHQ9JzE5Micgdmlld0JveD0nMCAwIDE5MiAxOTInIGZpbGw9J25vbmUnIHZlcnNpb249JzEuMScgaWQ9J3N2ZzEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6c3ZnPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGRlZnMgaWQ9J2RlZnMxJyAvPjxwYXRoIGQ9J00zMCAxMzZ2MjJjMCA2LjYyNyA1LjM3MyAxMiAxMiAxMmgxMDhjNi42MjcgMCAxMi01LjM3MyAxMi0xMnYtMjJtLTEzMiAwdi0zLjE5MmMwLTMuMDg2IDEuMTgyLTYuMDQ5IDMuNjEtNy45NTRDNDEuMzU3IDExOC43NzMgNjEuNzEgMTA2IDk2IDEwNm02NiAzMHYtMy4xOTJjMC0zLjA4Ni0xLjE4Mi02LjA0OS0zLjYxLTcuOTU0QzE1MC42NDMgMTE4Ljc3MyAxMzAuMjg5IDEwNiA5NiAxMDYnIHN0cm9rZT0nIzAwMCcgc3Ryb2tlLXdpZHRoPScxMicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJyBpZD0ncGF0aDEnIHN0eWxlPSdzdHJva2U6I2ZmZmZmZjtzdHJva2Utb3BhY2l0eToxJyAvPjxjaXJjbGUgY3g9Jzk2JyBjeT0nNDknIHI9JzI3JyBzdHJva2U9JyMwMDAnIHN0cm9rZS13aWR0aD0nMTInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcgaWQ9J2NpcmNsZTEnIHN0eWxlPSdzdHJva2U6I2ZmZmZmZjtzdHJva2Utb3BhY2l0eToxJyAvPjwvc3ZnPgo=&style=for-the-badge">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_debug_apk.yml?branch=develop&label=Build%20Debug%20APK&logo=github">
   </a>
   <a href="https://discord.gg/3x8qNWxgGZ">
-    <img alt="Discord" src="https://img.shields.io/discord/803299970169700402?style=for-the-badge&logo=discord&logoColor=white&label=Discord&color=5165f6">
+    <img alt="Discord" src="https://img.shields.io/discord/803299970169700402?logo=discord&logoColor=white&label=Discord&color=5165f6">
   </a>    
 
 </div>
