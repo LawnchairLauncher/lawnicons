@@ -1,4 +1,8 @@
-# Lawnicons
+<p align="center">
+<img src="docs/images/repo_cover.png" alt="Lawnicons repository cover" />
+</p>
+
+<br/>
 
 <div align="left">    
   <a href="https://github.com/LawnchairLauncher/lawnicons/blob/develop/LICENSE">
@@ -26,16 +30,16 @@ Lawnicons is best used [on the latest version of Lawnchair](https://github.com/L
 
 <p align="left">
   <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-google-play.png?raw=true" alt="Get it on Google Play" height="60" />
+    <img src="docs/images/badge-google-play.png" alt="Get it on Google Play" height="60" />
   </a>
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-izzyondroid.png?raw=true" alt="Get it on IzzyOnDroid" height="60" />
+    <img src="docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="60" />
   </a>
   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnicons/">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-obtainium.png?raw=true" alt="Get it on Obtainium" height="60" />
+    <img src="docs/images/badge-obtainium.png" alt="Get it on Obtainium" height="60" />
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/releases/latest">
-    <img src="https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/badge-github.png?raw=true" alt="Get it on GitHub" height="60" />
+    <img src="docs/images/badge-github.png" alt="Get it on GitHub" height="60" />
   </a>
 </p>
 
