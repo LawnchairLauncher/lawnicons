@@ -36,6 +36,8 @@ allprojects {
             ).editorConfigOverride(
                 mapOf(
                     "ktlint_compose_compositionlocal-allowlist" to "disabled",
+                    "ktlint_compose_lambda-param-event-trailing" to "disabled",
+                    "ktlint_compose_content-slot-reused" to "disabled",
                 ),
             )
         }
