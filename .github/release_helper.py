@@ -164,7 +164,7 @@ def next_release_predictor(last_version: str, increment_type: str = "default") -
 
     major, minor, patch = map(int, match.groups())
 
-    if get_new_icon_since(last_version) < NEW_THRESHOLD:
+    if len(get_new_icon_since(last_version)) < NEW_THRESHOLD:
         increment_type = "patch"
     else:
         increment_type = "minor"
