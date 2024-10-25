@@ -16,12 +16,14 @@ on:
         required: true
       increment:
         type: choice
-        description: Which to component to increment 
+        description: Which to component to increment.
+        default: default
         options: 
+          - default
           - major
           - minor
           - patch
-
+        
 jobs:
   release-validation:
     runs-on: ubuntu-latest
