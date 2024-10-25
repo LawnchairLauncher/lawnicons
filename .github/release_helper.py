@@ -1,5 +1,6 @@
 from contextlib import contextmanager
 import os
+import re
 import git
 import datetime
 
@@ -8,7 +9,8 @@ NEW_THRESHOLD = 100
 DAY_THRESHOLD = 1
 
 
-REPOSITORY = "../"
+REPOSITORY = "."
+INCREMENT_TYPE = os.getenv("INCREMENT") or "minor"
 
 
 # Get the third most recent tag, which is the last release
@@ -32,21 +34,23 @@ def is_workflow_dispatch() -> bool:
   """
 
   if os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch" or os.getenv("CI_PIPELINE_SOURCE") == "web":
+    print("🔎 Manually triggered workflow detected!")
     return True
+  print("🔎 Workflow is triggered by other event likely on schedule or not in CI enviroment")
   return False
 
 
 @contextmanager
 def git_checkout(repo: git.Repo, ref: str):
   """
-  Temporarily check out a specific git reference
+  Temporarily check out a specific git reference.
 
   Allow to check out a specific git reference temporarily and return to the 
   original reference after the context manager exits.
   
   Args:
-    repo (git.Repo): The git repository
-    ref (str): The reference to check out
+    repo (git.Repo): The git repository.
+    ref (str): The reference to check out.
   """
   
   original_ref = repo.active_branch.name if repo.head.is_detached else repo.head.ref.name
@@ -59,16 +63,16 @@ def git_checkout(repo: git.Repo, ref: str):
 
 def get_new_icon_since(last_version: str) -> list:
   """
-  Get the new icons since the last release
+  Get the new icons since the last release.
   
   Args:
-    last_version (str): The last release version
+    last_version (str): The last release version.
 
   Returns:
-    list: List of new icons
+    list: List of new icons.
   """
   
-  icons_dir = '../svgs'
+  icons_dir = 'svgs'
   
   current_icons = set(os.listdir(icons_dir))
   
@@ -80,7 +84,7 @@ def get_new_icon_since(last_version: str) -> list:
 
 
 def is_greenlight(result: list, manually_triggered: bool, day_threshold = 1, new_threshold = 100) -> bool:
-  """Check if the new icons meet the threshold for release
+    """Check if the new icons meet the threshold for release
   
   Args:
     result (list): List of new icons
@@ -88,23 +92,62 @@ def is_greenlight(result: list, manually_triggered: bool, day_threshold = 1, new
     day_threshold (int, optional): Number of days to check. Defaults to 1.
     new_threshold (int, optional): Number of new icons to check. Defaults to 100.
   Returns:
-    bool: True if the new icons is eligible for release, False otherwise, will skip all checks if manually triggered"""
-  
-  if manually_triggered:
-    print("🟢 Manually triggered workflow, skipped all check, greenlighting!")
-    return True
-    
-  today_day = datetime.datetime.now().day
-  if today_day != day_threshold:
-    print(f"🔴 Today is {today_day}, which isn't the target release day {day_threshold}.")
-    return False
-  
-  if len(result) < new_threshold:
-    print(f"🔴 Only {len(result)} new icons found since the last release, below the threshold of {new_threshold}.")
-    return False
+    bool: True if the new icons is eligible for release, False otherwise, will skip all checks if manually triggered."""
 
-  print("🟢 Greenlight!")
-  return True
+    if manually_triggered:
+        print("🟢 Manually triggered workflow, skipped all check, greenlighting!")
+        return True
+
+    today_day = datetime.datetime.now().day
+    if today_day != day_threshold:
+        print(f"🔴 Today is {today_day}, which isn't the target release day {day_threshold}.")
+        return False
+
+    if len(result) < new_threshold:
+        print(f"🔴 Only {len(result)} new icons found since the last release, below the threshold of {new_threshold}.")
+        return False
+
+    print("🟢 Greenlight!")
+    return True
+
+
+def next_release_predictor(version: str, increment_type: str = "minor") -> str:
+    """Predict the next release version by incrementing the major, minor, or patch component.
+
+    Follow Semantic Versioning for release
+    
+    Args:
+      version (str): Current version of the current.
+      increment_type (str, optional): Component to increments. Defaults to "minor".
+    
+    Raises:
+      ValueError: If increment type is incorrect
+
+    Returns:
+      str: Next version
+    """
+    increment_type = increment_type.lower()
+    match = re.match(r"v(\d+)\.(\d+)\.(\d+)", version)
+    if not match:
+        raise ValueError(f"Invalid version format: {version}")
+
+    major, minor, patch = map(int, match.groups())
+
+    if increment_type == "major":
+        major += 1
+        minor = 0
+        patch = 0
+    elif increment_type == "minor":
+        minor += 1
+        patch = 0
+    elif increment_type == "patch":
+        patch += 1
+    else:
+        raise ValueError(
+            f"Invalid increment type: {increment_type}. Choose 'major', 'minor', or 'patch'."
+        )
+
+    return f"v{major}.{minor}.{patch}"
 
 
 result = get_new_icon_since(last_release)
@@ -112,5 +155,11 @@ print(f"🎉 There have been {len(result)} new icons since release!")
 
 greenlight = is_greenlight(result, is_workflow_dispatch(), DAY_THRESHOLD, NEW_THRESHOLD)
 print(f"🚦 {'Not eligible for release!' if not greenlight else 'Eligible for release! Greenlight away!'}")
+
+
+next_version = next_release_predictor(last_release, INCREMENT_TYPE)
+print(f"::set-output name=next_version::{next_version}")
+print(f"::set-output name=greenlight::{str(greenlight).lower()}")
+
 
 exit(1 if not greenlight else 0)
