@@ -14,10 +14,16 @@ on:
         description: Prerelease
         type: boolean
         required: true
+      draft:
+        description: Draft
+        type: boolean
+        default: false
+        required: true
       increment:
         type: choice
         description: Which to component to increment.
         default: default
+        required: true
         options: 
           - default
           - major
@@ -104,7 +110,7 @@ jobs:
         with:
           tag_name: v${{ needs.release-validation.outputs.next_version }}
           prerelease: ${{ github.event.inputs.prerelease }}
-          draft: true
+          draft: ${{ github.event.inputs.draft }}
           body_path: ${{ github.workspace }}/GITHUB_CHANGELOG.md
           files: artifacts/release-apk/${{ github.event.inputs.artifactName }}
           name: Lawnicons ${{ needs.release-validation.outputs.next_version }}
