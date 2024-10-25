@@ -6,10 +6,6 @@ on:
     - cron: 0 0 1 * *
   workflow_dispatch:
     inputs:
-      artifactName:
-        description: Artifact name
-        type: string
-        required: true
       prerelease:
         description: Prerelease
         type: boolean
@@ -52,7 +48,7 @@ jobs:
       - name: Release validation
         id: validate
         env:
-          INCREMENT: ${{ github.event.inputs.increment }}
+          INCREMENT: ${{ github.event.inputs.increment || 'default' }}
         run: |
           python .github/release_helper.py
         shell: bash
@@ -109,10 +105,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ needs.release-validation.outputs.next_version }}
-          prerelease: ${{ github.event.inputs.prerelease }}
+          prerelease: ${{ github.event.inputs.prerelease || 'false' }}
           draft: ${{ github.event.inputs.draft }}
           body_path: ${{ github.workspace }}/GITHUB_CHANGELOG.md
-          files: artifacts/release-apk/${{ github.event.inputs.artifactName }}
+          files: artifacts/release-apk/*.apk
           name: Lawnicons ${{ needs.release-validation.outputs.next_version }}
 
   send-notifications:
