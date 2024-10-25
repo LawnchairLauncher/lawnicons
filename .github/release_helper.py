@@ -1,4 +1,5 @@
 from contextlib import contextmanager
+from functools import lru_cache
 import os
 import re
 import git
@@ -24,6 +25,7 @@ last_release = sorted(
 )[-2].name
 
 
+@lru_cache()
 def is_workflow_dispatch() -> bool:
     """
     Check if the event is manually dispatched, support GitHub/GitLab/Forgejo
@@ -74,6 +76,7 @@ def git_checkout(repo: git.Repo, ref: str):
         repo.git.checkout(original_ref)
 
 
+@lru_cache(maxsize=5)
 def get_new_icon_since(last_version: str) -> list:
     """
     Get the new icons since the last release.
@@ -132,6 +135,7 @@ def is_greenlight(
     return True
 
 
+@lru_cache()
 def next_release_predictor(last_version: str, increment_type: str = "default") -> str:
     """
     Predict the next release version by incrementing the MAJOR, MINOR, or 
