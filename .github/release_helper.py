@@ -28,7 +28,7 @@ def is_workflow_dispatch() -> bool:
     """
     Check if the event is manually dispatched, support GitHub/GitLab/Forgejo
 
-    GITHUB_EVENT_NAME: GitHub Actions, Forgejo (GitHub compatibility)
+    GITHUB_EVENT_NAME: GitHub Actions, Forgejo
 
     CI_PIPELINE_SOURCE: GitLab CI
 
@@ -42,7 +42,6 @@ def is_workflow_dispatch() -> bool:
     ):
         print("🔎 Manually triggered workflow detected!")
         return True
-    print("🔎 Workflow is triggered by other event likely on schedule or not in CI enviroment")
     return False
 
 
