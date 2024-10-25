@@ -76,7 +76,7 @@ def git_checkout(repo: git.Repo, ref: str):
         repo.git.checkout(original_ref)
 
 
-@lru_cache(maxsize=5)
+@lru_cache(maxsize=5, typed=True)
 def get_new_icon_since(last_version: str) -> list:
     """
     Get the new icons since the last release.
@@ -135,7 +135,7 @@ def is_greenlight(
     return True
 
 
-@lru_cache()
+@lru_cache(typed=True)
 def next_release_predictor(last_version: str, increment_type: str = "default") -> str:
     """
     Predict the next release version by incrementing the MAJOR, MINOR, or 
