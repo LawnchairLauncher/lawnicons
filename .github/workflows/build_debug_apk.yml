@@ -5,27 +5,7 @@ on:
   push:
     branches:
       - develop
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
-      - '.idea/**'
-      - 'docs/**'
-      - '.github/ISSUE_TEMPLATE/**'
-      - '.gitignore'
-      - '.gitattributes'
-      - '.github/labeler.yml'
-      - '.github/release.yml'
   pull_request:
-    paths-ignore:
-      - '**.md'
-      - 'LICENSE'
-      - '.idea/**'
-      - 'docs/**'
-      - '.github/ISSUE_TEMPLATE/**'
-      - '.gitignore'
-      - '.gitattributes'
-      - '.github/labeler.yml'
-      - '.github/release.yml'
 
 jobs:
   build-debug-apk:
