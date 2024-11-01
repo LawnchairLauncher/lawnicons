@@ -19,8 +19,3 @@ body:
       placeholder: Tell us what should be changed and how
     validations:
       required: true
-  - type: textarea
-    id: additional-info
-    attributes:
-      label: Additional information
-      placeholder: Specify what else is worth considering. For example, the application has a new activity
