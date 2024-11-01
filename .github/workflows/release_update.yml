@@ -79,16 +79,19 @@ jobs:
             echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
           fi
       - name: Build release APK
-        run: ./gradlew app:assembleRelease
+        run: ./gradlew app:assembleRelease bundle:assembleRelease
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Release APK
-          path: app/build/outputs/apk/app/release/*.apk
+          path: |
+            app/build/outputs/apk/app/release/*.apk
+            app/build/outputs/bundle/release/*.aab
 
   publish-github-release:
     runs-on: ubuntu-latest
     needs: build-release-apk
+    if: needs.release-validation.outputs.greenlight == 'true'
     permissions:
       contents: write
     steps:
@@ -110,6 +113,31 @@ jobs:
           body_path: ${{ github.workspace }}/GITHUB_CHANGELOG.md
           files: artifacts/release-apk/*.apk
           name: Lawnicons ${{ needs.release-validation.outputs.next_version }}
+
+  publish-google-play-store-release:
+    runs-on: ubuntu-latest
+    needs: build-release-apk
+    if: needs.release-validation.outputs.greenlight == 'true'
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Release APK
+          path: artifacts/release-apk
+      - name: Publish Google Play Store release
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          packageName: app.lawnchair.lawnicons.play
+          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          releaseName: ${{ needs.release-validation.outputs.next_version }}
+          track: production
 
   send-notifications:
     runs-on: ubuntu-latest
