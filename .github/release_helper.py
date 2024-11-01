@@ -122,7 +122,7 @@ def is_greenlight(
 
 
 @lru_cache(typed=True)
-def next_release_predictor(result: tuple, last_version: str, increment_type: str = "default") -> str:
+def next_release_predictor(result: list, last_version: str, increment_type: str = "default") -> str:
     """
     Predict the next release version by incrementing the MAJOR, MINOR, or 
     PATCH component based on Semantic Versioning 2.0.0.
@@ -192,7 +192,7 @@ def release_parser(markdownfile: str) -> str:
     return NotImplementedError
 
 
-def new_icon_since(xml_file: str, last_version: str) -> tuple:
+def new_icon_since(xml_file: str, last_version: str) -> list:
     current_icons = []
     recent_icons = []
 
