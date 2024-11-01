@@ -11,29 +11,31 @@ jobs:
   check-paths:
     runs-on: ubuntu-latest
     outputs:
-      skip_steps: ${{ steps.check.outputs.skip_steps }}
+      skip_steps: ${{ steps.filter.outputs.workflows }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           submodules: true
       - name: Check for ignored paths
-        id: check
-        run: |
-          git fetch origin ${{ github.base_ref }}
-          modified_paths=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
-          echo "$modified_paths" | grep -q -v -E '(^\.github/|\.md$|LICENSE|\.idea/|docs/|\.gitignore|\.gitattributes|\.github/ISSUE_TEMPLATE/)'
-          if [ $? -eq 0 ]; then
-            echo "skip_steps=false" >> $GITHUB_ENV
-            echo "false" >> $GITHUB_ENV
-          else
-            echo "skip_steps=true" >> $GITHUB_ENV
-            echo "true" >> $GITHUB_ENV
-          fi
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            workflows:
+              - '**.md'
+              - 'LICENSE'
+              - '.idea/**'
+              - 'docs/**'
+              - '.github/ISSUE_TEMPLATE/**'
+              - '.gitignore'
+              - '.gitattributes'
+              - '.github/labeler.yml'
+              - '.github/release.yml'
   build-debug-apk:
     runs-on: ubuntu-latest
     needs: check-paths
-    if: needs.check-paths.outputs.skip_steps == 'false'
+    if: needs.check-paths.outputs.skip_steps != 'true'
     continue-on-error: true
     steps:
       - name: Check out repository
@@ -68,7 +70,7 @@ jobs:
   check-style:
     runs-on: ubuntu-latest
     needs: check-paths
-    if: needs.check-paths.outputs.skip_steps == 'false'
+    if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -83,7 +85,7 @@ jobs:
   send-notifications:
     runs-on: ubuntu-latest
     needs: [build-debug-apk, check-style, check-paths]
-    if: needs.check-paths.outputs.skip_steps == 'false'
+    if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -115,7 +117,7 @@ jobs:
 
   nightly-release:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'LawnchairLauncher' && github.event_name == 'push' && needs.check-paths.outputs.skip_steps == 'false'
+    if: github.repository_owner == 'LawnchairLauncher' && github.event_name == 'push' && needs.check-paths.outputs.skip_steps != 'true'
     needs: build-debug-apk
     permissions:
       contents: write
