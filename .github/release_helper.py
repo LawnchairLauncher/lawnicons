@@ -243,7 +243,7 @@ print(
 )
 
 
-next_version = next_release_predictor(result, last_release, INCREMENT_TYPE)
+next_version = next_release_predictor(set(result), last_release, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
 
