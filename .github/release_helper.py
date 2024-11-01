@@ -229,7 +229,7 @@ result = new_icon_since(APPFILTER_PATH, last_release)
 print(f"🎉 There have been {len(result[0])} new icons since release!")
 print(f"🔗 {len(result[1])} icons have been linked to a new component since release!")
 
-greenlight = is_greenlight(result, is_workflow_dispatch(), DAY_THRESHOLD, NEW_THRESHOLD)
+greenlight = is_greenlight(result[0], is_workflow_dispatch(), DAY_THRESHOLD, NEW_THRESHOLD)
 print(
     f"🚦 {'Not eligible for release!' if not greenlight else 'Eligible for release! Greenlight away!'}"
 )
