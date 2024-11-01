@@ -78,29 +78,6 @@ def git_checkout(repo: git.Repo, ref: str):
         repo.git.checkout(original_ref)
 
 
-@lru_cache(maxsize=5, typed=True)
-def get_new_icon_since(last_version: str) -> list:
-    """
-    Get the new icons since the last release.
-
-    Args:
-        last_version (str): The last release version.
-
-    Returns:
-        list: List of new icons.
-    """
-
-    icons_dir = "svgs"
-
-    current_icons = set(os.listdir(icons_dir))
-
-    print(f"Checking out version {last_version}")
-    with git_checkout(git.Repo(REPOSITORY), last_version):
-        previous_icons = set(os.listdir(icons_dir))
-
-    return list(current_icons - previous_icons)
-
-
 def is_greenlight(
     result: list, manually_triggered: bool, day_threshold=1, new_threshold=100
 ) -> bool:
@@ -170,7 +147,7 @@ def next_release_predictor(last_version: str, increment_type: str = "default") -
 
     major, minor, patch = map(int, match.groups())
 
-    if len(get_new_icon_since(last_version)) < NEW_THRESHOLD:
+    if len(new_icon_since(APPFILTER_PATH, last_version)) < NEW_THRESHOLD:
         increment_type = "patch"
     else:
         increment_type = "minor"
@@ -208,56 +185,49 @@ def release_parser(markdownfile: str) -> str:
 
 
 def new_icon_since(xml_file: str, last_version: str) -> tuple:
-    new_icons = []
-    linked_icons = []
     current_icons = []
-    recent_tag_icons = []
+    recent_icons = []
 
-    component_count = {}
-    link_count = {}
-
-    for event, elem in ET.iterparse(xml_file, events=("start",)):
-        if elem.tag == 'item':
-            component = elem.get('component')
-            drawable = elem.get('drawable')
-            name = elem.get('name')
-            # Collect icon information
-            icon = {'component': component, 'drawable': drawable, 'name': name}
+    for _, elem in ET.iterparse(xml_file, events=("start",)):
+        if elem.tag == "item":
+            icon = {
+                "component": elem.get("component"),
+                "drawable": elem.get("drawable"),
+                "name": elem.get("name"),
+            }
             current_icons.append(icon)
 
-            # Count components and links
-            component_count[component] = component_count.get(component, 0) + 1
-            link_count[drawable] = link_count.get(drawable, 0) + 1
-
-            # Clear the element to free memory
-            elem.clear()
-
     with git_checkout(git.Repo(REPOSITORY), last_version):
-        for event, elem in ET.iterparse(xml_file, events=("start",)):
-            if elem.tag == 'item':
-                component = elem.get('component')
-                drawable = elem.get('drawable')
-                name = elem.get('name')
-                # Collect icon information
-                recent_icon = {'component': component, 'drawable': drawable, 'name': name}
-                recent_tag_icons.append(recent_icon)
+        for _, elem in ET.iterparse(xml_file, events=("start",)):
+            if elem.tag == "item":
+                icon = {
+                    "component": elem.get("component"),
+                    "drawable": elem.get("drawable"),
+                    "name": elem.get("name"),
+                }
+                recent_icons.append(icon)
 
-                # Clear the element to free memory
-                elem.clear()
+    recent_components = set(icon["component"] for icon in recent_icons)
+    recent_drawables = set(icon["drawable"] for icon in recent_icons)
+
+    new_icons = []
+    linked_icons = []
 
     for icon in current_icons:
-        component = icon['component']
-        drawable = icon['drawable']
-        if component_count.get(component, 0) > 1 or link_count.get(drawable, 0) > 1:
-            linked_icons.append(icon)
-        else:
-            new_icons.append(icon)
+        component = icon["component"]
+        drawable = icon["drawable"]
+        if component not in recent_components:
+            if drawable in recent_drawables:
+                linked_icons.append(icon)
+            else:
+                new_icons.append(icon)
 
-    return list(set(new_icons) - set(recent_tag_icons)), linked_icons
+    return new_icons, linked_icons
 
 
 result = new_icon_since(APPFILTER_PATH, last_release)
-print(f"🎉 There have been {len(result[1])} new icons since release!")
+print(f"🎉 There have been {len(result[0])} new icons since release!")
+print(f"🔗 {len(result[1])} icons have been linked to a new component since release!")
 
 greenlight = is_greenlight(result, is_workflow_dispatch(), DAY_THRESHOLD, NEW_THRESHOLD)
 print(
