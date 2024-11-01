@@ -121,7 +121,6 @@ def is_greenlight(
     return True
 
 
-@lru_cache(typed=True)
 def next_release_predictor(result: list, last_version: str, increment_type: str = "default") -> str:
     """
     Predict the next release version by incrementing the MAJOR, MINOR, or 
@@ -243,7 +242,7 @@ print(
 )
 
 
-next_version = next_release_predictor(set(result), last_release, INCREMENT_TYPE)
+next_version = next_release_predictor(result, last_release, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
 
