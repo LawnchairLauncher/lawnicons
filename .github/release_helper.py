@@ -4,6 +4,7 @@ import os
 import re
 import git
 import datetime
+import xml.etree.ElementTree as ET
 
 
 NEW_THRESHOLD = 100
@@ -11,6 +12,7 @@ DAY_THRESHOLD = 1
 
 
 REPOSITORY = "."
+APPFILTER_PATH = os.path.join(REPOSITORY, "app", "assets", "appfilter.xml")
 INCREMENT_TYPE = os.getenv("INCREMENT") or "default"
 
 
@@ -190,8 +192,71 @@ def next_release_predictor(last_version: str, increment_type: str = "default") -
     return f"v{major}.{minor}.{patch}"
 
 
-result = get_new_icon_since(last_release)
-print(f"🎉 There have been {len(result)} new icons since release!")
+def release_parser(markdownfile: str) -> str:
+    """
+    Parse the release note and return the version number.
+
+    Args:
+        markdownfile (str): Path to the markdown file.
+
+    Returns:
+        str: Version number
+    """
+    with open(markdownfile, "r") as file:
+        file.readlines()
+
+
+def new_icon_since(xml_file: str, last_version: str) -> tuple:
+    new_icons = []
+    linked_icons = []
+    current_icons = []
+    recent_tag_icons = []
+
+    component_count = {}
+    link_count = {}
+
+    for event, elem in ET.iterparse(xml_file, events=("start",)):
+        if elem.tag == 'item':
+            component = elem.get('component')
+            drawable = elem.get('drawable')
+            name = elem.get('name')
+            # Collect icon information
+            icon = {'component': component, 'drawable': drawable, 'name': name}
+            current_icons.append(icon)
+
+            # Count components and links
+            component_count[component] = component_count.get(component, 0) + 1
+            link_count[drawable] = link_count.get(drawable, 0) + 1
+
+            # Clear the element to free memory
+            elem.clear()
+
+    with git_checkout(git.Repo(REPOSITORY), last_version):
+        for event, elem in ET.iterparse(xml_file, events=("start",)):
+            if elem.tag == 'item':
+                component = elem.get('component')
+                drawable = elem.get('drawable')
+                name = elem.get('name')
+                # Collect icon information
+                recent_icon = {'component': component, 'drawable': drawable, 'name': name}
+                recent_tag_icons.append(recent_icon)
+
+                # Clear the element to free memory
+                elem.clear()
+
+    for icon in current_icons:
+        component = icon['component']
+        drawable = icon['drawable']
+        if component_count.get(component, 0) > 1 or link_count.get(drawable, 0) > 1:
+            linked_icons.append(icon)
+        else:
+            new_icons.append(icon)
+
+    return list(set(new_icons) - set(recent_tag_icons)), linked_icons
+
+
+result = new_icon_since(APPFILTER_PATH, last_release)
+print(f"🎉 There have been {len(result[1])} new icons since release!")
 
 greenlight = is_greenlight(result, is_workflow_dispatch(), DAY_THRESHOLD, NEW_THRESHOLD)
 print(
@@ -200,8 +265,8 @@ print(
 
 
 next_version = next_release_predictor(last_release, INCREMENT_TYPE)
-print(f"::set-output name=next_version::{next_version}")
-print(f"::set-output name=greenlight::{str(greenlight).lower()}")
+print(f"{next_version}")
+print(f"{str(greenlight).lower()}")
 
 
 exit(1 if not greenlight else 0)
