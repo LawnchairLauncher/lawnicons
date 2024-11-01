@@ -7,12 +7,12 @@ import datetime
 import xml.etree.ElementTree as ET
 
 
-NEW_THRESHOLD = 100
-DAY_THRESHOLD = 1
+NEW_THRESHOLD = os.getenv("RELEASE_NEW_THRESHOLD") or 100
+DAY_THRESHOLD = os.getenv("RELEASE_DAY_THRESHOLD") or 1
 
 
-REPOSITORY = "."
-APPFILTER_PATH = os.path.join(REPOSITORY, "app", "assets", "appfilter.xml")
+REPOSITORY = os.getenv("REPOSITORY") or "."
+APPFILTER_PATH = os.getenv("PATH_TO_APPFILTER") or os.path.join(REPOSITORY, "app", "assets", "appfilter.xml")
 INCREMENT_TYPE = os.getenv("INCREMENT") or "default"
 
 
@@ -204,6 +204,7 @@ def release_parser(markdownfile: str) -> str:
     """
     with open(markdownfile, "r") as file:
         file.readlines()
+    return NotImplementedError
 
 
 def new_icon_since(xml_file: str, last_version: str) -> tuple:
