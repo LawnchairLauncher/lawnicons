@@ -7,6 +7,7 @@ import datetime
 import xml.etree.ElementTree as ET
 
 
+LINK_THRESHOLD = os.getenv("RELEASE_LINK_THRESHOLD") or 20
 NEW_THRESHOLD = os.getenv("RELEASE_NEW_THRESHOLD") or 100
 DAY_THRESHOLD = os.getenv("RELEASE_DAY_THRESHOLD") or 1
 
@@ -79,7 +80,7 @@ def git_checkout(repo: git.Repo, ref: str):
 
 
 def is_greenlight(
-    result: list, manually_triggered: bool, day_threshold=1, new_threshold=100
+    result: tuple, manually_triggered: bool, day_threshold=1, link_threshold=20, new_threshold=100
 ) -> bool:
     """Check if the new icons meet the threshold for release
 
@@ -87,6 +88,7 @@ def is_greenlight(
         result (list): List of new icons
         manually_triggered (bool): Check if the workflow is manually dispatched
         day_threshold (int, optional): Number of days to check. Defaults to 1.
+        link_threshold (int, optional): Number of linked icons to check. Defaults to 20.
         new_threshold (int, optional): Number of new icons to check. Defaults to 100.
 
     Returns:
@@ -104,9 +106,14 @@ def is_greenlight(
         )
         return False
 
-    if len(result) < new_threshold:
+    if len(result[0]) < new_threshold:
         print(
-            f"🔴 Only {len(result)} new icons found since the last release, below the threshold of {new_threshold}."
+            f"🔴 Only {len(result[0])} new icons found since the last release, below the threshold of {new_threshold}."
+        )
+        return False
+    if len(result[1]) < link_threshold:
+        print(
+            f"🔴 Only {len(result[1])} icons linked to a new component found since the last release, below the threshold of {link_threshold}."
         )
         return False
 
@@ -115,7 +122,7 @@ def is_greenlight(
 
 
 @lru_cache(typed=True)
-def next_release_predictor(last_version: str, increment_type: str = "default") -> str:
+def next_release_predictor(result: tuple, last_version: str, increment_type: str = "default") -> str:
     """
     Predict the next release version by incrementing the MAJOR, MINOR, or 
     PATCH component based on Semantic Versioning 2.0.0.
@@ -126,6 +133,7 @@ def next_release_predictor(last_version: str, increment_type: str = "default") -
     it will increment the MINOR component otherwise PATCH component.
 
     Args:
+        result (tuple): Tuple of new icons and linked icons
         last_version (str): Current version of the current.
         increment_type (str, optional): Component to increments.
 
@@ -147,7 +155,7 @@ def next_release_predictor(last_version: str, increment_type: str = "default") -
 
     major, minor, patch = map(int, match.groups())
 
-    if len(new_icon_since(APPFILTER_PATH, last_version)) < NEW_THRESHOLD:
+    if len(result[0]) < NEW_THRESHOLD or len(result[1]) < LINK_THRESHOLD:
         increment_type = "patch"
     else:
         increment_type = "minor"
@@ -229,13 +237,13 @@ result = new_icon_since(APPFILTER_PATH, last_release)
 print(f"🎉 There have been {len(result[0])} new icons since release!")
 print(f"🔗 {len(result[1])} icons have been linked to a new component since release!")
 
-greenlight = is_greenlight(result[0], is_workflow_dispatch(), DAY_THRESHOLD, NEW_THRESHOLD)
+greenlight = is_greenlight(result[0], is_workflow_dispatch(), DAY_THRESHOLD, LINK_THRESHOLD, NEW_THRESHOLD)
 print(
     f"🚦 {'Not eligible for release!' if not greenlight else 'Eligible for release! Greenlight away!'}"
 )
 
 
-next_version = next_release_predictor(last_release, INCREMENT_TYPE)
+next_version = next_release_predictor(result, last_release, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
 
