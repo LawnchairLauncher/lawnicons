@@ -24,9 +24,9 @@ jobs:
           modified_paths=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
           echo "$modified_paths" | grep -q -v -E '(^\.github/|\.md$|LICENSE|\.idea/|docs/|\.gitignore|\.gitattributes|\.github/ISSUE_TEMPLATE/)'
           if [ $? -eq 0 ]; then
-            echo skip_steps='false >> $GITHUB_ENV
+            echo "skip_steps=false" >> "$GITHUB_OUTPUT"
           else
-            echo skip_steps='true' >> $GITHUB_ENV
+            echo "skip_steps=true" >> "$GITHUB_OUTPUT"
           fi
   build-debug-apk:
     runs-on: ubuntu-latest
