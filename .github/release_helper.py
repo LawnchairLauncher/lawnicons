@@ -250,55 +250,56 @@ def new_icon_since_test(xml_file: str, last_version: str) -> tuple:
 
     for _, elem in ET.iterparse(xml_file, events=("start",)):
         if elem.tag == "item":
+            component = elem.get("component")
+            drawable = elem.get("drawable")
+            name = elem.get("name")
             icon = {
-                "component": elem.get("component"),
-                "drawable": elem.get("drawable"),
-                "name": elem.get("name"),
+                "component": component,
+                "drawable": drawable,
+                "name": name,
             }
             current_icons.append(icon)
 
     with git_checkout(git.Repo(REPOSITORY), last_version):
         for _, elem in ET.iterparse(xml_file, events=("start",)):
             if elem.tag == "item":
+                component = elem.get("component")
+                drawable = elem.get("drawable")
+                name = elem.get("name")
                 icon = {
-                    "component": elem.get("component"),
-                    "drawable": elem.get("drawable"),
-                    "name": elem.get("name"),
+                    "component": component,
+                    "drawable": drawable,
+                    "name": name,
                 }
                 recent_icons.append(icon)
 
-    recent_components = set(icon["component"] for icon in recent_icons)
-    recent_drawables = set(icon["drawable"] for icon in recent_icons)
+    current_icons_set = set(
+        (icon["component"], icon["drawable"]) for icon in current_icons
+    )
+    recent_icons_set = set(
+        (icon["component"], icon["drawable"]) for icon in recent_icons
+    )
 
-    new_icons = []
-    linked_icons = []
+    # This prone to TypeError: unhashable type: 'dict' for no reason
+    new_icons_set = current_icons_set - recent_icons_set
 
-    for icon in current_icons:
-        component = icon["component"]
-        drawable = icon["drawable"]
-        if component not in recent_components:
-            if drawable in recent_drawables:
-                linked_icons.append(icon)
-            else:
-                new_icons.append(icon)
+    recent_drawables_set = set(icon["drawable"] for icon in recent_icons)
 
-    new_icons = dict(current_icons) - dict(recent_icons)
-
-    linked_icons = set()
-    previous_drawables = set(drawable for _, drawable in recent_icons)
-    for component, drawable in new_icons:
-        if drawable in previous_drawables:
-            linked_icons.add((component, drawable))
-
-    true_new_icons = new_icons - linked_icons
+    linked_icons_set = set()
+    true_new_icons_set = set()
+    for component, drawable in new_icons_set:
+        if drawable in recent_drawables_set:
+            linked_icons_set.add((component, drawable))
+        else:
+            true_new_icons_set.add((component, drawable))
 
     true_new_icons_list = [
         {"component": component, "drawable": drawable}
-        for component, drawable in true_new_icons
+        for component, drawable in true_new_icons_set
     ]
     linked_icons_list = [
         {"component": component, "drawable": drawable}
-        for component, drawable in linked_icons
+        for component, drawable in linked_icons_set
     ]
 
     return true_new_icons_list, linked_icons_list
