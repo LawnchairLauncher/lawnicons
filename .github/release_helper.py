@@ -225,9 +225,9 @@ class new_icon_since:
         print(f"Checking out version {last_tag}")
         with git_checkout(git.Repo(REPOSITORY), last_tag):
             previous_icons = set(os.listdir(folder_path))
-            
+
         repo = git.Repo(REPOSITORY)
-        modified_files = repo.git.diff("--name-only", last_tag, "HEAD").split("\n")
+        modified_files = repo.git.diff("--name-only", last_tag, "develop").split("\n")
         modified_svgs = [
             f for f in modified_files if f.startswith(folder_path) and f.endswith(".svg")
         ]
