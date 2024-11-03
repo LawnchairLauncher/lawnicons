@@ -2,6 +2,7 @@ from contextlib import contextmanager
 from functools import lru_cache
 import os
 import re
+import sys
 import git
 import datetime
 import xml.etree.ElementTree as ET
@@ -318,6 +319,15 @@ print(
 next_version = next_release_predictor(result, last_tag, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
+
+
+github_output = os.environ.get("GITHUB_OUTPUT")
+if github_output:
+    with open(github_output, "a") as output_file:
+        print(f"next_version={next_version}", file=output_file)
+        print(f"greenlight={str(greenlight).lower()}", file=output_file)
+else:
+    print("GITHUB_OUTPUT environment variable is not set.", file=sys.stderr)
 
 
 exit(1 if not greenlight else 0)
