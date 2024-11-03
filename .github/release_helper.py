@@ -284,7 +284,7 @@ class new_icon_since:
         linked_icons_set = set()
         true_new_icons_set = set()
         for component, drawable in new_icons_set:
-            if drawable in recent_drawables_set:
+            if drawable in previous_drawables_set:
                 linked_icons_set.add((component, drawable))
             else:
                 true_new_icons_set.add((component, drawable))
