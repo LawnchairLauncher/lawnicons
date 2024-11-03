@@ -279,9 +279,6 @@ class new_icon_since:
             (icon["component"], icon["drawable"]) for icon in previous_icons
         )
 
-        print(f"📊 Total current icons: {len(current_icons_set)}")
-        print(f"📊 Total previous icons: {len(previous_icons_set)}")
-
         # This prone to `TypeError: unhashable type: 'dict'` for no reason
         new_icons_set = current_icons_set - previous_icons_set
 
