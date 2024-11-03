@@ -301,7 +301,7 @@ class new_icon_since:
         return true_new_icons_list, linked_icons_list
 
 
-if ICONS_CALCULATION_TYPE == "svg":
+if ICONS_CALCULATION_TYPE.lower() == "svgs":
     result = new_icon_since.from_svg(last_tag)
 else:
     result = new_icon_since.from_appfilter(APPFILTER_PATH, last_tag)
