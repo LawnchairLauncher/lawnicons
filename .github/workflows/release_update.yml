@@ -1,5 +1,4 @@
-# TODO: Add signing key and build app bundle
-name: Build release APK
+name: Release Update
 
 on:
   schedule:
@@ -135,7 +134,7 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           packageName: app.lawnchair.lawnicons.play
-          releaseFiles: app/build/outputs/bundle/release/app-release.aab
+          releaseFiles: artifacts/release-apk/*.aab
           releaseName: ${{ needs.release-validation.outputs.next_version }}
           track: production
 
