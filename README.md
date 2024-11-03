@@ -1,4 +1,4 @@
-<p align="center">
+     <p align="center">
 <img src="docs/images/repo_cover.png" alt="Lawnicons repository cover" width="640" />
 </p>
 
