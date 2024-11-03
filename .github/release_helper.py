@@ -192,6 +192,18 @@ def release_parser(markdownfile: str) -> str:
 
 
 def new_icon_since(xml_file: str, last_version: str) -> list:
+    """
+    Get since {last_version} based on the appfilter.xml file.
+
+    Checkout the {last_version} and compare it with the current appfilter.xml file
+
+    Args:
+        xml_file (str): Path to the appfilter.xml file.
+        last_version (str): Last version to compare.
+
+    Returns:
+        list: List of new icons and linked icons
+    """
     current_icons = []
     recent_icons = []
 
