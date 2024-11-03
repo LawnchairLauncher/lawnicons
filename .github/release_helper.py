@@ -13,8 +13,12 @@ DAY_THRESHOLD = os.getenv("RELEASE_DAY_THRESHOLD") or 1
 
 
 REPOSITORY = os.getenv("REPOSITORY") or "."
+SVG_PATH = os.getenv("PATH_TO_SVG") or os.path.join(REPOSITORY, "svgs")
 APPFILTER_PATH = os.getenv("PATH_TO_APPFILTER") or os.path.join(REPOSITORY, "app", "assets", "appfilter.xml")
+
+
 INCREMENT_TYPE = os.getenv("INCREMENT") or "default"
+ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "default"
 
 
 # Get the third most recent tag, which is the last release
@@ -176,7 +180,7 @@ def next_release_predictor(result: list, last_version: str, increment_type: str 
     return f"v{major}.{minor}.{patch}"
 
 
-def release_parser(markdownfile: str) -> str:
+def release_parser(markdownfile: str) -> NotImplementedError:
     """
     Parse the release note and return the version number.
 
@@ -191,76 +195,54 @@ def release_parser(markdownfile: str) -> str:
     return NotImplementedError
 
 
-def new_icon_since(xml_file: str, last_tag: str) -> list:
+class new_icon_since:
     """
-    Get since {last_tag} based on the appfilter.xml file.
+    Get the new icons since the last release.
 
-    Checkout the {last_tag} and compare it with the current appfilter.xml file
+    This class provides two methods to get the new icons since the last release:
+    - from_svg: Get the new icons based on amount of content in the folder.
+    - from_appfilter: Get the new icons based on the appfilter.xml file.
 
-    Args:
-        xml_file (str): Path to the appfilter.xml file.
-        last_tag (str): Last version to compare.
-
-    Returns:
-        list: List of new icons and linked icons
+    **NOTE**: from_svg doesn't returns the linked icons status.
     """
-    current_icons = []
-    recent_icons = []
+    def from_svg(folder_path: str, last_version: str) -> list:
+        """
+        Compare current icons to {last_tag} based on amount of content in the folder.
 
-    for _, elem in ET.iterparse(xml_file, events=("start",)):
-        if elem.tag == "item":
-            icon = {
-                "component": elem.get("component"),
-                "drawable": elem.get("drawable"),
-                "name": elem.get("name"),
-            }
-            current_icons.append(icon)
+        Checkout the {last_tag} and compare it with the current content in the folder.
 
-    with git_checkout(git.Repo(REPOSITORY), last_tag):
-        for _, elem in ET.iterparse(xml_file, events=("start",)):
-            if elem.tag == "item":
-                icon = {
-                    "component": elem.get("component"),
-                    "drawable": elem.get("drawable"),
-                    "name": elem.get("name"),
-                }
-                recent_icons.append(icon)
+        Args:
+            folder_path (str): Path to the folder containing the icons.
+            last_version (str): The last release version.
 
-    recent_components = set(icon["component"] for icon in recent_icons)
-    recent_drawables = set(icon["drawable"] for icon in recent_icons)
+        Returns:
+            list: List of new icons.
+        """
+        print("⚠️ This method doesn't support linked icons status.")
+        current_icons = set(os.listdir(folder_path))
 
-    new_icons = []
-    linked_icons = []
+        print(f"Checking out version {last_version}")
+        with git_checkout(git.Repo(REPOSITORY), last_version):
+            previous_icons = set(os.listdir(folder_path))
 
-    for icon in current_icons:
-        component = icon["component"]
-        drawable = icon["drawable"]
-        if component not in recent_components:
-            if drawable in recent_drawables:
-                linked_icons.append(icon)
-            else:
-                new_icons.append(icon)
+        return list(current_icons - previous_icons)
 
-    return new_icons, linked_icons
+    def from_appfilter(xml_file: str, last_tag: str) -> tuple:
+        """
+        Compare current icons to {last_tag} based on the appfilter.xml file.
 
+        Checkout the {last_tag} and compare it with the current appfilter.xml file.
 
-def new_icon_since_test(xml_file: str, last_version: str) -> tuple:
-    current_icons = []
-    recent_icons = []
+        Args:
+            xml_file (str): Path to the appfilter.xml file.
+            last_tag (str): Last tag to compare.
 
-    for _, elem in ET.iterparse(xml_file, events=("start",)):
-        if elem.tag == "item":
-            component = elem.get("component")
-            drawable = elem.get("drawable")
-            name = elem.get("name")
-            icon = {
-                "component": component,
-                "drawable": drawable,
-                "name": name,
-            }
-            current_icons.append(icon)
+        Returns:
+            tuple: List of new icons and linked icons
+        """
+        current_icons = []
+        recent_icons = []
 
-    with git_checkout(git.Repo(REPOSITORY), last_version):
         for _, elem in ET.iterparse(xml_file, events=("start",)):
             if elem.tag == "item":
                 component = elem.get("component")
@@ -271,45 +253,59 @@ def new_icon_since_test(xml_file: str, last_version: str) -> tuple:
                     "drawable": drawable,
                     "name": name,
                 }
-                recent_icons.append(icon)
+                current_icons.append(icon)
 
-    current_icons_set = set(
-        (icon["component"], icon["drawable"]) for icon in current_icons
-    )
-    recent_icons_set = set(
-        (icon["component"], icon["drawable"]) for icon in recent_icons
-    )
+        with git_checkout(git.Repo(REPOSITORY), last_tag):
+            for _, elem in ET.iterparse(xml_file, events=("start",)):
+                if elem.tag == "item":
+                    component = elem.get("component")
+                    drawable = elem.get("drawable")
+                    name = elem.get("name")
+                    icon = {
+                        "component": component,
+                        "drawable": drawable,
+                        "name": name,
+                    }
+                    recent_icons.append(icon)
 
-    # This prone to TypeError: unhashable type: 'dict' for no reason
-    new_icons_set = current_icons_set - recent_icons_set
+        current_icons_set = set(
+            (icon["component"], icon["drawable"]) for icon in current_icons
+        )
+        recent_icons_set = set(
+            (icon["component"], icon["drawable"]) for icon in recent_icons
+        )
 
-    recent_drawables_set = set(icon["drawable"] for icon in recent_icons)
+        # This prone to TypeError: unhashable type: 'dict' for no reason
+        new_icons_set = current_icons_set - recent_icons_set
 
-    linked_icons_set = set()
-    true_new_icons_set = set()
-    for component, drawable in new_icons_set:
-        if drawable in recent_drawables_set:
-            linked_icons_set.add((component, drawable))
-        else:
-            true_new_icons_set.add((component, drawable))
+        recent_drawables_set = set(icon["drawable"] for icon in recent_icons)
 
-    true_new_icons_list = [
-        {"component": component, "drawable": drawable}
-        for component, drawable in true_new_icons_set
-    ]
-    linked_icons_list = [
-        {"component": component, "drawable": drawable}
-        for component, drawable in linked_icons_set
-    ]
+        linked_icons_set = set()
+        true_new_icons_set = set()
+        for component, drawable in new_icons_set:
+            if drawable in recent_drawables_set:
+                linked_icons_set.add((component, drawable))
+            else:
+                true_new_icons_set.add((component, drawable))
 
-    return true_new_icons_list, linked_icons_list
+        true_new_icons_list = [
+            {"component": component, "drawable": drawable}
+            for component, drawable in true_new_icons_set
+        ]
+        linked_icons_list = [
+            {"component": component, "drawable": drawable}
+            for component, drawable in linked_icons_set
+        ]
+
+        return true_new_icons_list, linked_icons_list
 
 
-result = new_icon_since(APPFILTER_PATH, last_release)
-print(f"🎉 There have been {len(result[0])} new icons since release!")
-print(f"🔗 {len(result[1])} icons have been linked to a new component since release!")
+if ICONS_CALCULATION_TYPE == "svg":
+    result = new_icon_since.from_svg(last_release)
+else:
+    result = new_icon_since.from_appfilter(APPFILTER_PATH, last_release)
 
-result = new_icon_since_test(APPFILTER_PATH, last_release)
+
 print(f"🎉 [TEST] There have been {len(result[0])} new icons since release!")
 print(f"🔗 [TEST] {len(result[1])} icons have been linked to a new component since release!")
 
