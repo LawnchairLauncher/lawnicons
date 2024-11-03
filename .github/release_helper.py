@@ -19,7 +19,7 @@ APPFILTER_PATH = os.getenv("PATH_TO_APPFILTER") or os.path.join(REPOSITORY, "app
 
 
 INCREMENT_TYPE = os.getenv("INCREMENT") or "default"
-ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "svgs"
+ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "default"
 
 
 # Get the third most recent tag, which is the last release
@@ -226,17 +226,10 @@ class new_icon_since:
         with git_checkout(git.Repo(REPOSITORY), last_tag):
             previous_icons = set(os.listdir(folder_path))
 
-        repo = git.Repo(REPOSITORY)
-        modified_files = repo.git.diff("--name-only", last_tag, "develop").split("\n")
-        modified_svgs = [
-            f for f in modified_files if f.startswith(folder_path) and f.endswith(".svg")
-        ]
-
         print(f"📊 Total current icons: {len(current_icons)}")
         print(f"📊 Total previous icons: {len(previous_icons)}")
-        print(f"📊 Total modified SVGs: {len(modified_svgs)}")
 
-        return list(current_icons - previous_icons), modified_svgs
+        return list(current_icons - previous_icons)
 
     def from_appfilter(xml_file: str, last_tag: str) -> tuple:
         """
