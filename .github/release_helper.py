@@ -191,19 +191,60 @@ def release_parser(markdownfile: str) -> str:
     return NotImplementedError
 
 
-def new_icon_since(xml_file: str, last_version: str) -> list:
+def new_icon_since(xml_file: str, last_tag: str) -> list:
     """
-    Get since {last_version} based on the appfilter.xml file.
+    Get since {last_tag} based on the appfilter.xml file.
 
-    Checkout the {last_version} and compare it with the current appfilter.xml file
+    Checkout the {last_tag} and compare it with the current appfilter.xml file
 
     Args:
         xml_file (str): Path to the appfilter.xml file.
-        last_version (str): Last version to compare.
+        last_tag (str): Last version to compare.
 
     Returns:
         list: List of new icons and linked icons
     """
+    current_icons = []
+    recent_icons = []
+
+    for _, elem in ET.iterparse(xml_file, events=("start",)):
+        if elem.tag == "item":
+            icon = {
+                "component": elem.get("component"),
+                "drawable": elem.get("drawable"),
+                "name": elem.get("name"),
+            }
+            current_icons.append(icon)
+
+    with git_checkout(git.Repo(REPOSITORY), last_tag):
+        for _, elem in ET.iterparse(xml_file, events=("start",)):
+            if elem.tag == "item":
+                icon = {
+                    "component": elem.get("component"),
+                    "drawable": elem.get("drawable"),
+                    "name": elem.get("name"),
+                }
+                recent_icons.append(icon)
+
+    recent_components = set(icon["component"] for icon in recent_icons)
+    recent_drawables = set(icon["drawable"] for icon in recent_icons)
+
+    new_icons = []
+    linked_icons = []
+
+    for icon in current_icons:
+        component = icon["component"]
+        drawable = icon["drawable"]
+        if component not in recent_components:
+            if drawable in recent_drawables:
+                linked_icons.append(icon)
+            else:
+                new_icons.append(icon)
+
+    return new_icons, linked_icons
+
+
+def new_icon_since_test(xml_file: str, last_version: str) -> tuple:
     current_icons = []
     recent_icons = []
 
@@ -241,12 +282,35 @@ def new_icon_since(xml_file: str, last_version: str) -> list:
             else:
                 new_icons.append(icon)
 
-    return new_icons, linked_icons
+    new_icons = current_icons - recent_icons
+
+    linked_icons = set()
+    previous_drawables = set(drawable for _, drawable in recent_icons)
+    for component, drawable in new_icons:
+        if drawable in previous_drawables:
+            linked_icons.add((component, drawable))
+
+    true_new_icons = new_icons - linked_icons
+
+    true_new_icons_list = [
+        {"component": component, "drawable": drawable}
+        for component, drawable in true_new_icons
+    ]
+    linked_icons_list = [
+        {"component": component, "drawable": drawable}
+        for component, drawable in linked_icons
+    ]
+
+    return true_new_icons_list, linked_icons_list
 
 
 result = new_icon_since(APPFILTER_PATH, last_release)
 print(f"🎉 There have been {len(result[0])} new icons since release!")
 print(f"🔗 {len(result[1])} icons have been linked to a new component since release!")
+
+result = new_icon_since_test(APPFILTER_PATH, last_release)
+print(f"🎉 [TEST] There have been {len(result[0])} new icons since release!")
+print(f"🔗 [TEST] {len(result[1])} icons have been linked to a new component since release!")
 
 greenlight = is_greenlight(result, is_workflow_dispatch(), DAY_THRESHOLD, LINK_THRESHOLD, NEW_THRESHOLD)
 print(
