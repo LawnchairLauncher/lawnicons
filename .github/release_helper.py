@@ -226,6 +226,9 @@ class new_icon_since:
         with git_checkout(git.Repo(REPOSITORY), last_version):
             previous_icons = set(os.listdir(folder_path))
 
+        print(f"📊 Total current icons: {len(current_icons)}")
+        print(f"📊 Total previous icons: {len(previous_icons)}")
+
         return list(current_icons - previous_icons)
 
     def from_appfilter(xml_file: str, last_tag: str) -> tuple:
@@ -267,19 +270,22 @@ class new_icon_since:
                         "drawable": drawable,
                         "name": name,
                     }
-                    recent_icons.append(icon)
+                    previous_icons.append(icon)
 
         current_icons_set = set(
             (icon["component"], icon["drawable"]) for icon in current_icons
         )
-        recent_icons_set = set(
-            (icon["component"], icon["drawable"]) for icon in recent_icons
+        previous_icons_set = set(
+            (icon["component"], icon["drawable"]) for icon in previous_icons
         )
 
-        # This prone to TypeError: unhashable type: 'dict' for no reason
-        new_icons_set = current_icons_set - recent_icons_set
+        print(f"📊 Total current icons: {len(current_icons_set)}")
+        print(f"📊 Total previous icons: {len(previous_icons_set)}")
 
-        recent_drawables_set = set(icon["drawable"] for icon in recent_icons)
+        # This prone to `TypeError: unhashable type: 'dict'` for no reason
+        new_icons_set = current_icons_set - previous_icons_set
+
+        previous_drawables_set = set(icon["drawable"] for icon in previous_icons)
 
         linked_icons_set = set()
         true_new_icons_set = set()
