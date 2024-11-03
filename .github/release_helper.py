@@ -19,7 +19,7 @@ APPFILTER_PATH = os.getenv("PATH_TO_APPFILTER") or os.path.join(REPOSITORY, "app
 
 
 INCREMENT_TYPE = os.getenv("INCREMENT") or "default"
-ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "default"
+ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "svgs"
 
 
 # Get the third most recent tag, which is the last release
@@ -206,7 +206,7 @@ class new_icon_since:
 
     **NOTE**: from_svg doesn't returns the linked icons status.
     """
-    def from_svg(folder_path: str, last_version: str) -> tuple:
+    def from_svg(folder_path: str, last_tag: str) -> tuple:
         """
         Compare current icons to {last_tag} based on amount of content in the folder.
 
@@ -214,7 +214,7 @@ class new_icon_since:
 
         Args:
             folder_path (str): Path to the folder containing the icons.
-            last_version (str): The last release version.
+            last_tag (str): The last release version.
 
         Returns:
             tuple: List of new icons.
@@ -222,8 +222,8 @@ class new_icon_since:
         print("⚠️ This method doesn't support linked icons status.")
         current_icons = set(os.listdir(folder_path))
 
-        print(f"Checking out version {last_version}")
-        with git_checkout(git.Repo(REPOSITORY), last_version):
+        print(f"Checking out version {last_tag}")
+        with git_checkout(git.Repo(REPOSITORY), last_tag):
             previous_icons = set(os.listdir(folder_path))
             repo = git.Repo(REPOSITORY)
             modified_files = repo.git.diff("--name-only", last_tag, "HEAD").split("\n")
@@ -314,7 +314,7 @@ class new_icon_since:
 
 
 if ICONS_CALCULATION_TYPE.lower() == "svgs":
-    result = new_icon_since.from_svg(last_tag)
+    result = new_icon_since.from_svg(SVG_PATH, last_tag)
 else:
     result = new_icon_since.from_appfilter(APPFILTER_PATH, last_tag)
 
