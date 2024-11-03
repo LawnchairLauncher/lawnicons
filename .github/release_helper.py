@@ -242,7 +242,7 @@ class new_icon_since:
             tuple: List of new icons and linked icons
         """
         current_icons = []
-        recent_icons = []
+        previous_icons = []
 
         for _, elem in ET.iterparse(xml_file, events=("start",)):
             if elem.tag == "item":
