@@ -282,7 +282,7 @@ def new_icon_since_test(xml_file: str, last_version: str) -> tuple:
             else:
                 new_icons.append(icon)
 
-    new_icons = current_icons - recent_icons
+    new_icons = set(current_icons) - set(recent_icons)
 
     linked_icons = set()
     previous_drawables = set(drawable for _, drawable in recent_icons)
