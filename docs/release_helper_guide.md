@@ -5,7 +5,7 @@
 
 [`release_helper.py`](/.github/release_helper.py) is a Python tool specified designed to for Lawnicons' CI automated build and publishing services. Use in conjuncture with [`release_update.yml](/.github/workflows/release_update.yml)
 
-which can be used to examine the status, and publish an release simultaneously across different markets with or without requiring manual intervention.
+Which can be used to examine the status, and publish an release simultaneously across different markets with or without requiring manual intervention.
 
 ## Summary
 To use the `release_helper.py`, simply just run the command via Python to get it's output.
@@ -20,8 +20,11 @@ To add new app store or market to the `release_update.yml`,
 ```yml
 publish-(market name):
   runs-on: ubuntu-latest
+
+  # Add this to skip the job from running when greenlight isn't given
   needs: build-release-apk
   if: needs.release-validation.outputs.greenlight == 'true'
+
   steps:
     - name: Download artifact
       uses: actions/download-artifact@v4
@@ -31,7 +34,10 @@ publish-(market name):
     - name: Publish to Acme Market
       uses: wild-e-coyote/acme-market
       with:
+
+        # Next version from the predictor
         tag_version: ${{ needs.release-validation.outputs.next_version }}
+
         ...
 ```
 
@@ -47,13 +53,15 @@ Threshold to release are as follow:
 ### Version Predictor
 Predict the next version of Lawnicons, if the script detected that it's launched by manual CI trigger, it will forcibly trigger a release.
 
+To override, set `INCREMENT` in the enviroment as `PATCH`, `MINOR` or `MAJOR`.
+
 > [!IMPORTANT]
-> The script always assume the version is using Semantic Versioning 2.0.0
+> The script always assume the version is using [Semantic Versioning 2.0.0](https://semver.org/)
 
 #### Version Component Bump Threshold
 
 > [!WARNING]
-> To achieve the MAJOR bump, you must override it by setting `INCREMENT` to `major`
+> To achieve the MAJOR bump, you must override it by setting `INCREMENT` to `MAJOR`.
 
 PATCH:
 * Less than `NEW_THRESHOLD` and `LINK_THRESHOLD`
@@ -64,7 +72,7 @@ MINOR:
 ### Get icons
 
 > [!CAUTION]
-> The result between In-apps, Appfilter and SVGS method could be different
+> The result between In-apps, Appfilter and SVGS method could be different:
 > * Appfilter -> In-apps: ±7~
 > * SVGS -> Appfilter: ±50~
 
@@ -85,22 +93,23 @@ Support: `New Icons Check` | `Linked Icons Check`
 > ```
 > The script completely ignores the `<calendar>` element from the calculation so the main of focus is going to be all of `<item>` with `component` and `drawable`.
 
-The script get new and linked icons by intersecting the new and old set
+The script get new and linked icons by intersecting the new and old set.
 
 #### SVGS Method
-Support: `New Icons Check` | `Change Check`
+Support: `New Icons Check` | `Total Icons Check`
 
-The script intersect the new set in the current SVGS and old set in the tagged SVGS
+The script intersect the new set in the current SVGS and old set in the tagged SVGS.
 
 ### Configuration
-Set any of the variable as enviroment and you'll be good to go
-- `RELEASE_LINK_THRESHOLD` (default: 20) - Amount of link icons required to greenlight
-- `RELEASE_NEW_THRESHOLD` (default: 100) - Amount of new icons required to greenlight
-- `RELEASE_DAY_THRESHOLD` (default: 1) - Number of day required to greenlight
+Set any of the variable as enviroment and you'll be good to go:
 
-- `REPOSITORY` (default: `.`) - Git repository's directory
-- `SVG_PATH` (default: `REPOSITORY` + `svgs`) - svgs' folder directory
-- `APPFILTER_PATH` (default: `REPOSITORY` + `app` + `assets` + `appfilter.xml`) - Appfilter.xml's file
+- `RELEASE_LINK_THRESHOLD` (default: 20) - Amount of link icons required to greenlight.
+- `RELEASE_NEW_THRESHOLD` (default: 100) - Amount of new icons required to greenlight.
+- `RELEASE_DAY_THRESHOLD` (default: 1) - Number of day required to greenlight.
 
-- `INCREMENT` (default: `default` | `auto`) - Override version predictor's decision
-- `ICONS_CALCULATION` (default: `default` | `appfilter`) - Switch calculation from appfilter.xml and svgs
+- `REPOSITORY` (default: `.`) - Git repository's directory.
+- `SVG_PATH` (default: `REPOSITORY` + `svgs`) - svgs' folder directory.
+- `APPFILTER_PATH` (default: `REPOSITORY` + `app` + `assets` + `appfilter.xml`) - Appfilter.xml's file.
+
+- `INCREMENT` (default: `default` | `auto`) - Override version predictor's decision.
+- `ICONS_CALCULATION` (default: `default` | `appfilter`) - Switch calculation from appfilter.xml and svgs.
