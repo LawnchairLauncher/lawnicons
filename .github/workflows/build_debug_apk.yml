@@ -38,11 +38,15 @@ jobs:
         with:
           filters: |
             workflows:
-            - 'app/**'
-            - 'svgs/**'
-            - 'svg-processor/**'
-            - '**.gradle.kts'
-      
+              - '!**.md'
+              - '!LICENSE'
+              - '!.idea/**'
+              - '!docs/**'
+              - '!.github/ISSUE_TEMPLATE/**'
+              - '!.gitignore'
+              - '!.gitattributes'
+              - '!.github/labeler.yml'
+              - '!.github/release.yml'
   build-debug-apk:
     runs-on: ubuntu-latest
     needs: check-paths
