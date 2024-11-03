@@ -206,7 +206,7 @@ class new_icon_since:
 
     **NOTE**: from_svg doesn't returns the linked icons status.
     """
-    def from_svg(folder_path: str, last_version: str) -> list:
+    def from_svg(folder_path: str, last_version: str) -> tuple:
         """
         Compare current icons to {last_tag} based on amount of content in the folder.
 
@@ -217,7 +217,7 @@ class new_icon_since:
             last_version (str): The last release version.
 
         Returns:
-            list: List of new icons.
+            tuple: List of new icons.
         """
         print("⚠️ This method doesn't support linked icons status.")
         current_icons = set(os.listdir(folder_path))
@@ -225,11 +225,17 @@ class new_icon_since:
         print(f"Checking out version {last_version}")
         with git_checkout(git.Repo(REPOSITORY), last_version):
             previous_icons = set(os.listdir(folder_path))
+            repo = git.Repo(REPOSITORY)
+            modified_files = repo.git.diff("--name-only", last_tag, "HEAD").split("\n")
+            modified_svgs = [
+                f for f in modified_files if f.startswith(folder_path) and f.endswith(".svg")
+            ]
 
         print(f"📊 Total current icons: {len(current_icons)}")
         print(f"📊 Total previous icons: {len(previous_icons)}")
+        print(f"📊 Total modified SVGs: {len(modified_svgs)}")
 
-        return list(current_icons - previous_icons)
+        return list(current_icons - previous_icons), modified_svgs
 
     def from_appfilter(xml_file: str, last_tag: str) -> tuple:
         """
