@@ -26,7 +26,7 @@ ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "default"
 # [-1]: Nightly
 # [-2]: v2.12.0 - last release
 # [-3]: v2.11.0 - second last release
-last_release = sorted(
+last_tag = sorted(
     git.Repo(REPOSITORY).tags, 
     key=lambda t: t.commit.committed_datetime
 )[-2].name
@@ -301,9 +301,9 @@ class new_icon_since:
 
 
 if ICONS_CALCULATION_TYPE == "svg":
-    result = new_icon_since.from_svg(last_release)
+    result = new_icon_since.from_svg(last_tag)
 else:
-    result = new_icon_since.from_appfilter(APPFILTER_PATH, last_release)
+    result = new_icon_since.from_appfilter(APPFILTER_PATH, last_tag)
 
 
 print(f"🎉 [TEST] There have been {len(result[0])} new icons since release!")
@@ -315,7 +315,7 @@ print(
 )
 
 
-next_version = next_release_predictor(result, last_release, INCREMENT_TYPE)
+next_version = next_release_predictor(result, last_tag, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
 
