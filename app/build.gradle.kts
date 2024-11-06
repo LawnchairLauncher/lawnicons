@@ -31,6 +31,7 @@ val versionDisplayName = version + if (!isReleaseBuild) " $devReleaseName" else 
 android {
     compileSdk = 35
     namespace = "app.lawnchair.lawnicons"
+    buildToolsVersion = "35.0.0"
 
     defaultConfig {
         applicationId = "app.lawnchair.lawnicons"
@@ -64,6 +65,7 @@ android {
             isPseudoLocalesEnabled = true
         }
         release {
+            manifestPlaceholders += mapOf("NekoKey" to 0)
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
