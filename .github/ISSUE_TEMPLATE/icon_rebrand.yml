@@ -8,19 +8,17 @@ body:
       label: Icons
       description: |
         **Please specify for each icon**
-        - the current application name in Lawnicons (search in [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml));
-        - [the link to the icon](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs) in Lawnicons;
-        - the new application name, if changed;
-        - the image of the new icon.
+        – The current icon and application name in Lawnicons (search in [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml)).
+          For example, you found **...drawable="ladb" name="ADB Shell" />**. The icon is [ladb](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/ladb.svg). The application name is **ADB Shell**.    
+        
+        – The image of the new icon and the new application name, if changed.
 
         **Example**
-        Twitter, [twitter.svg](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/) → X, [the X logo](https://commons.wikimedia.org/wiki/File:X_logo_2023_original.svg)
+        Now
+        Twitter, [twitter.svg](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/)
+        New
+        X, [fresh icon](https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png)
         
       placeholder: Tell us what should be changed and how
     validations:
       required: true
-  - type: textarea
-    id: additional-info
-    attributes:
-      label: Additional information
-      placeholder: Specify what else is worth considering. For example, the application has a new activity
