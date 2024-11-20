@@ -146,12 +146,12 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
   
     **The new line**
     ```xml
-    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor"/>
+    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor" />
     ```
 
     **General template**
     ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/>
+    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]" />
     ```
 
 4. Done! You're ready to open a pull request. Please set `develop` as the base branch.
