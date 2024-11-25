@@ -127,9 +127,9 @@ Correct
 
 ## Adding an icon to Lawnicons
 ### Prerequisites
-* A fork of the Lawnicons repository;
-* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
-* The package and activity name of the app;
+* A fork of the Lawnicons repository.
+* Your icon in the SVG format, adhering to [the above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
+* The package and activity name of the app.
 
 ### Via `icontool.py`
 Please check [the icon tool guide](/docs/icontool_guide.md) for more information.
@@ -146,12 +146,12 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
   
     **The new line**
     ```xml
-    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor"/>
+    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor" />
     ```
 
     **General template**
     ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/>
+    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]" />
     ```
 
 4. Done! You're ready to open a pull request. Please set `develop` as the base branch.
@@ -160,7 +160,7 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
 
 ### Using Lawnicons
 1. Install and open [Lawnicons 2.10+](https://github.com/LawnchairLauncher/lawnicons/releases).
-2. Tap "Request icons". The button appears when you are missing at least one icon. After that, our request form will open with a response ready to be submit. 
+2. Tap "Request icons". After that, our request form will open with a response ready to be submit.
 3. Submit the response. You can copy the submitted activities [from our table](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=1039095616#gid=1039095616) (sorted by date).
 
 ### Using `adb`

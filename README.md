@@ -22,7 +22,7 @@
 
 Lawnicons is an icon pack developed by the Lawnchair team and supported by our community. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons, it can now be used on many launchers.
 
-Lawnicons is best used [on the latest version of Lawnchair](https://github.com/LawnchairLauncher/lawnchair/releases). You can enable themed icons on Lawnchair by going to `Home Settings → General → Icon Style` and choosing the desired option.
+Lawnicons is best used [on the latest version of Lawnchair](https://play.google.com/store/apps/details?id=app.lawnchair.play). You can enable themed icons on Lawnchair by going to `Home Settings → General → Icon Style` and choosing the desired option.
 
 ## Download
 
