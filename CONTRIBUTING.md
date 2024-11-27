@@ -6,14 +6,13 @@ Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/f
 ## Contributing icons
 For beginners, it is faster to create icons [in Figma](https://www.figma.com/), although [Inkscape](https://inkscape.org/) and similar software will do. A file explorer, a text editor, and a terminal window will also be useful.
 
-For additional information on designing icons and samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
-
 Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
 
 ### TL;DR on icon design
 
 > [!NOTE]
-> Upload no more than 10 icons at a time, because reviewers only have time for small pull requests.
+> Upload no more than 10 icons at a time.
+> For icon samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
 
 The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid noticable black spots, close distances between strokes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
 
@@ -128,9 +127,9 @@ Correct
 
 ## Adding an icon to Lawnicons
 ### Prerequisites
-* A fork of the Lawnicons repository;
-* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
-* The package and activity name of the app;
+* A fork of the Lawnicons repository.
+* Your icon in the SVG format, adhering to [the above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
+* The package and activity name of the app.
 
 ### Via `icontool.py`
 Please check [the icon tool guide](/docs/icontool_guide.md) for more information.
@@ -147,12 +146,12 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
   
     **The new line**
     ```xml
-    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor"/>
+    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor" />
     ```
 
     **General template**
     ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/>
+    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]" />
     ```
 
 4. Done! You're ready to open a pull request. Please set `develop` as the base branch.
@@ -161,7 +160,7 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
 
 ### Using Lawnicons
 1. Install and open [Lawnicons 2.10+](https://github.com/LawnchairLauncher/lawnicons/releases).
-2. Tap "Request icons". The button appears when you are missing at least one icon. After that, our request form will open with a response ready to be submit. 
+2. Tap "Request icons". After that, our request form will open with a response ready to be submit.
 3. Submit the response. You can copy the submitted activities [from our table](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=1039095616#gid=1039095616) (sorted by date).
 
 ### Using `adb`
