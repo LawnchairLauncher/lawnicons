@@ -1127,6 +1127,7 @@
   <item component="ComponentInfo{com.wirelessalien.android.bhagavadgita/com.wirelessalien.android.bhagavadgita.activity.SplashActivity}" drawable="bhagavad_gita" name="Bhagavad Gita" />
   <item component="ComponentInfo{com.wirelessalien.android.bhagavadgita/com.wirelessalien.android.bhagavadgita.MainActivity}" drawable="bhagavad_gita" name="Bhagavad Gita" />
   <item component="ComponentInfo{in.org.npci.upiapp/hqxlwjuqh.a}" drawable="bhim" name="BHIM" />
+  <item component="ComponentInfo{in.org.npci.upiapp/stuejoy.x}" drawable="bhim" name="BHIM" />
   <item component="ComponentInfo{in.org.npci.upiapp/ikua.D}" drawable="bhim" name="BHIM" />
   <item component="ComponentInfo{in.org.npci.upiapp/pqzfrpu.ae}" drawable="bhim" name="BHIM" />
   <item component="ComponentInfo{in.org.npci.upiapp/uuqkxbixh.J}" drawable="bhim" name="BHIM" />
@@ -2967,6 +2968,7 @@
   <item component="ComponentInfo{com.dolby/com.dolby.ds1appUI.MainActivity}" drawable="dolby" name="Dolby" />
   <item component="ComponentInfo{co.aospa.dolby.xiaomi/co.aospa.dolby.xiaomi.DolbyActivity}" drawable="dolby_atmos_moto" name="Dolby Atmos" />
   <item component="ComponentInfo{com.dolby.daxappui/com.dolby.daxappui.MainActivity}" drawable="dolby_atmos" name="Dolby Atmos" />
+  <item component="ComponentInfo{co.aospa.dolby/co.aospa.dolby.DolbyActivity}" drawable="dolby" name="Dolby Atmos" />
   <item component="ComponentInfo{com.motorola.dolby.dolbyui/com.motorola.dolby.dolbyui.ui.introduction.IntroductionActivity}" drawable="dolby_atmos_moto" name="Dolby Atmos Moto" />
   <item component="ComponentInfo{com.motorola.dolby.dolbyui/com.motorola.dolby.dolbyui.ui.sst.SSTActivity}" drawable="dolby_atmos_moto" name="Dolby Atmos Moto" />
   <item component="ComponentInfo{com.motorola.dolby.dolbyui/com.motorola.dolby.dolbyui.ui.LauncherActivity}" drawable="dolby_atmos_moto" name="Dolby Atmos Moto" />
@@ -4067,6 +4069,7 @@
   <item component="ComponentInfo{com.transsion.gamespace.app/com.transsion.gamespace.activity.GameSpaceActivity}" drawable="generic_games" name="Game Space" />
   <item component="ComponentInfo{io.chaldeaprjkt.gamespace/.settings.SettingsActivity}" drawable="game_space" name="Game Space" />
   <item component="ComponentInfo{io.chaldeaprjkt.gamespace/io.chaldeaprjkt.gamespace.settings.SettingsActivity}" drawable="game_space" name="Game Space" />
+  <item component="ComponentInfo{com.neoteric.gamespace/com.neoteric.gamespace.settings.SettingsActivity}" drawable="game_space" name="Game Space" />
   <item component="ComponentInfo{ru.elron.gamepadtester/ru.elron.gamepadtester.ui.main.MainActivity}" drawable="gamepad_tester" name="Gamepad tester" />
   <item component="ComponentInfo{com.oplus.games/com.oplus.assistant.activity.SpeedUpStartActivity}" drawable="generic_games" name="Games" />
   <item component="ComponentInfo{com.oplus.games/com.oplus.assistant.activity.StartActivity}" drawable="generic_games" name="Games" />
@@ -7382,6 +7385,7 @@
   <item component="ComponentInfo{com.nothing.weather/com.nothing.weather.main.ui.MainActivity}" drawable="nothing_weather" name="Nothing Weather" />
   <item component="ComponentInfo{com.nothing.smartcenter/com.nothing.smart.index.activity.WelcomeActivity}" drawable="nothing_x" name="Nothing X" />
   <item component="ComponentInfo{com.nothing.smartcenter/com.nothing.home.activity.WelcomeActivity}" drawable="nothing_x" name="Nothing X" />
+  <item component="ComponentInfo{com.nothing.gallery/com.nothing.gallery.activity.EntryActivity}" drawable="nothing_gallery" name="Nothing Gallery" />
   <item component="ComponentInfo{com.dev.nothingbutwalls.app/com.blogger.waller.activity.ActivitySplash}" drawable="nothingbutwallpapers" name="NothingbutWallpapers" />
   <item component="ComponentInfo{com.dev.nothingbutwalls.app/com.dev.nothingbutwalls.app.MainActivity}" drawable="nothingbutwallpapers" name="NothingbutWallpapers" />
   <item component="ComponentInfo{com.theveloper.nothink.app/com.theveloper.nothink.app.MainActivity}" drawable="nothink" name="NothinK" />
@@ -7870,6 +7874,7 @@
   <item component="ComponentInfo{ru.ozon.app.android/ru.ozon.app.android.ui.start.PreStartActivity}" drawable="ozon" name="OZON" />
   <item component="ComponentInfo{ru.ozon.app.android/ru.ozon.app.android.ui.start.StartActivity}" drawable="ozon" name="OZON" />
   <item component="ComponentInfo{tc.tc.scsm.phonegap/com.passportparking.mobile.ParkMontrealApp}" drawable="p_mobile_service" name="P Mobile Service" />
+  <item component="ComponentInfo{com.NextFloor.phdiver/com.NextFloor.leggiero.LeggieroActivity}" drawable="ph_diver" name="P:h Diver" />
   <item component="ComponentInfo{sarangal.packagemanager/sarangal.packagemanager.presentation.activities.MainActivity}" drawable="package_manager" name="Package Manager" />
   <item component="ComponentInfo{com.csdroid.pkg/com.csdroid.pkg.ui.home.MainActivity}" drawable="package_name_viewer" name="Package Names" />
   <item component="ComponentInfo{com.csdroid.pkg/com.csdroid.pkg.MainActivity}" drawable="package_name_viewer" name="Package Names" />
@@ -12650,6 +12655,8 @@
   <item component="ComponentInfo{org.wikipedia/org.wikipedia.PageActivity}" drawable="wikipedia" name="Wikipedia" />
   <item component="ComponentInfo{org.wikipedia/org.wikipedia.page.PageActivity}" drawable="wikipedia" name="Wikipedia" />
   <item component="ComponentInfo{org.wikipedia/org.wikipedia.WikipediaActivity}" drawable="wikipedia" name="Wikipedia" />
+  <item component="ComponentInfo{org.wikipedia/org.wikipedia.onboarding.InitialOnboardingActivity}" drawable="wikipedia" name="Wikipedia" />
+  <item component="ComponentInfo{org.wikipedia/org.wikipedia.DefaultIcon}" drawable="wikipedia" name="Wikipedia" />
   <item component="ComponentInfo{org.wikipedia.beta/org.wikipedia.main.MainActivity}" drawable="wikipedia_beta" name="Wikipedia Beta" />
   <item component="ComponentInfo{com.wildberries.ru/com.wildberries.ru.Splash.SplashActivity}" drawable="wildberries" name="Wildberries" />
   <item component="ComponentInfo{com.wildberries.ru/ru.wildberries.SplashActivity}" drawable="wildberries" name="Wildberries" />
