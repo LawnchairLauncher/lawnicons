@@ -33,7 +33,7 @@ Lawnicons is best used [on the latest version of Lawnchair](https://play.google.
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
     <img src="docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="60" />
   </a>
-  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnicons/">
+  <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnicons">
     <img src="docs/images/badge-obtainium.png" alt="Get it on Obtainium" height="60" />
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/releases/latest">
