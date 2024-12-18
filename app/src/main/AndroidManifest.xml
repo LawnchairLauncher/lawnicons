@@ -40,6 +40,7 @@
                 <!-- Support Material3 theming as found in M3 Icon Pack standard-->
                 <category android:name="org.icontheme.CHANGES_WITH_MATERIAL_YOU_COLORS" />
                 <category android:name="org.icontheme.CHANGES_WITH_DARK_MODE" />
+                <category android:name="org.icontheme.FALLBACK_TO_THEMED_ICON" />
             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
