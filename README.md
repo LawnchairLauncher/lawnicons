@@ -51,6 +51,9 @@ Please see our guidelines for information on contributing icons or code, it will
 [Lawnicons guidelines](CONTRIBUTING.md) • [Icon samples in Figma](https://www.figma.com/community/file/1227718471680779613) • [Popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=609680142#gid=609680142) • [Development issues](https://github.com/LawnchairLauncher/lawnicons/issues)
 
 ## Requesting icons
+> [!NOTE]
+> Request acceptance is currently closed.
+
 `Open Lawnicons 2.10+ → Tap "Request icons" → Submit the response`
 
-[Icon request form](https://forms.gle/xt7sJhgWEasuo9TR9) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml)
+[Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml)
