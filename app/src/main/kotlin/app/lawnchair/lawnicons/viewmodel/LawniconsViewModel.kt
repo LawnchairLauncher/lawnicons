@@ -1,5 +1,6 @@
 package app.lawnchair.lawnicons.viewmodel
 
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -9,6 +10,7 @@ import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.IconRequestModel
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.repository.IconRepository
+import app.lawnchair.lawnicons.repository.IconRequestSettingsRepository
 import app.lawnchair.lawnicons.repository.NewIconsRepository
 import app.lawnchair.lawnicons.ui.util.SampleData
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -24,6 +26,8 @@ interface LawniconsViewModel {
     val iconRequestModel: StateFlow<IconRequestModel?>
     val newIconsInfoModel: StateFlow<IconInfoModel>
 
+    var iconRequestsEnabled: Boolean
+
     var expandSearch: Boolean
 
     val searchMode: SearchMode
@@ -38,11 +42,14 @@ interface LawniconsViewModel {
 class LawniconsViewModelImpl @Inject constructor(
     private val iconRepository: IconRepository,
     private val newIconsRepository: NewIconsRepository,
+    private val iconRequestSettingsRepository: IconRequestSettingsRepository,
 ) : LawniconsViewModel, ViewModel() {
     override val iconInfoModel = iconRepository.iconInfoModel
     override val searchedIconInfoModel = iconRepository.searchedIconInfoModel
     override val iconRequestModel = iconRepository.iconRequestList
     override val newIconsInfoModel = newIconsRepository.newIconsInfoModel
+
+    override var iconRequestsEnabled = false
 
     override var expandSearch by mutableStateOf(false)
 
@@ -54,6 +61,30 @@ class LawniconsViewModelImpl @Inject constructor(
 
     override val searchTerm: String
         get() = _searchTerm
+
+    init {
+        viewModelScope.launch {
+            val result = runCatching {
+                iconRequestSettingsRepository.getEnabledState()
+            }
+
+            iconRequestsEnabled = when {
+                result.isSuccess -> {
+                    result.getOrThrow()
+                }
+
+                else -> {
+                    // Disable icon requests, as we can't access the internet
+                    Log.e(
+                        "LawniconsViewModel",
+                        "Failed to load icon request settings",
+                        result.exceptionOrNull(),
+                    )
+                    false
+                }
+            }
+        }
+    }
 
     override fun searchIcons(query: String) {
         _searchTerm = query
@@ -84,6 +115,8 @@ class DummyLawniconsViewModel : LawniconsViewModel {
     override val searchedIconInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
     override val iconRequestModel = MutableStateFlow(IconRequestModel(list = listOf(), iconCount = 0)).asStateFlow()
     override val newIconsInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
+
+    override var iconRequestsEnabled = true
 
     override var expandSearch by mutableStateOf(false)
 

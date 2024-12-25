@@ -11,6 +11,8 @@ import app.lawnchair.lawnicons.BuildConfig
 
 /**
  * A class that abstracts the functionality of SharedPreferences
+ * We use SharedPreferences to avoid the unneccesary complexity Preference DataStore has
+ *
  * @param prefs The SharedPreferences instance to use
  */
 abstract class BasePreferenceManager(
@@ -83,6 +85,7 @@ class PreferenceManager private constructor(
     val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", true)
     val showNewIconsCard = BoolPref("show_new_icons_card", true)
     val showDebugMenu = BoolPref("debug_menu", false)
+    val forceEnableIconRequest = BoolPref("force_icon_request", false)
     val currentLawniconsVersion = IntPref("current_lawnicons_version", BuildConfig.VERSION_CODE)
 
     /**

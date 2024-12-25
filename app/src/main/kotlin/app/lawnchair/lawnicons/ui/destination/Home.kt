@@ -117,6 +117,7 @@ private fun Home(
                         if (!isExpandedScreen) {
                             HomeBottomBar(
                                 context = context,
+                                iconRequestsEnabled = iconRequestsEnabled,
                                 iconRequestModel = iconRequestModel,
                                 snackbarHostState = snackbarHostState,
                                 onNavigate = onNavigateToAbout,
@@ -127,6 +128,7 @@ private fun Home(
                     floatingActionButton = {
                         if (isExpandedScreen) {
                             IconRequestFAB(
+                                iconRequestsEnabled = iconRequestsEnabled,
                                 iconRequestModel = iconRequestModel,
                                 lazyGridState = lazyGridState,
                                 snackbarHostState = snackbarHostState,

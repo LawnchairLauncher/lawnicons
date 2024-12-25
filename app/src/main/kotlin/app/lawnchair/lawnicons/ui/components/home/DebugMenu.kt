@@ -17,7 +17,9 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Context
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -33,6 +35,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -108,6 +111,7 @@ private fun SheetContent(
 
         SwitchPref(prefs.showDebugMenu)
         SwitchPref(prefs.showNewIconsCard)
+        SwitchPref(prefs.forceEnableIconRequest)
         SwitchPref(prefs.showFirstLaunchSnackbar)
 
         SimpleListRow(
@@ -159,14 +163,22 @@ private fun SwitchPref(
     pref: BasePreferenceManager.BoolPref,
     modifier: Modifier = Modifier,
 ) {
+    val interactionSource = remember { MutableInteractionSource() }
     SimpleListRow(
         pref.key,
         endIcon = {
             Switch(
                 checked = pref.asState().value,
                 onCheckedChange = { pref.set(it) },
+                interactionSource = interactionSource,
             )
         },
-        modifier = modifier,
+        modifier = modifier.clickable(
+            interactionSource = interactionSource,
+            indication = null,
+            enabled = true,
+            onClickLabel = null,
+            onClick = {},
+        ),
     )
 }
