@@ -57,7 +57,7 @@ fun IconRequestFAB(
     val prefs = preferenceManager()
     val list = iconRequestModel?.list ?: emptyList()
     val enabled = iconRequestModel != null
-    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.get()
+    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
 
     RequestHandler(
         enabled = enabled,
@@ -97,7 +97,7 @@ fun IconRequestIconButton(
 
     val list = iconRequestModel?.list ?: emptyList()
     val enabled = iconRequestModel != null
-    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.get()
+    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
 
     val tooltipState = rememberTooltipState()
     val scope = rememberCoroutineScope()

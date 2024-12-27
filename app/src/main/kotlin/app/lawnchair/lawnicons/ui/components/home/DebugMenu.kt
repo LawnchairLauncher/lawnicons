@@ -17,13 +17,14 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Context
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -70,6 +71,9 @@ fun DebugMenu(
     ModalBottomSheet(
         onDismissRequest = { prefs.showDebugMenu.set(false) },
         sheetState = sheetState,
+        dragHandle = {
+            Spacer(Modifier.height(22.dp))
+        },
     ) {
         SheetContent(
             iconInfoCount = iconInfoModel.iconInfo.size,
@@ -169,16 +173,11 @@ private fun SwitchPref(
         endIcon = {
             Switch(
                 checked = pref.asState().value,
-                onCheckedChange = { pref.set(it) },
+                onCheckedChange = pref::set,
                 interactionSource = interactionSource,
             )
         },
-        modifier = modifier.clickable(
-            interactionSource = interactionSource,
-            indication = null,
-            enabled = true,
-            onClickLabel = null,
-            onClick = {},
-        ),
+        onClick = pref::toggle,
+        modifier = modifier,
     )
 }

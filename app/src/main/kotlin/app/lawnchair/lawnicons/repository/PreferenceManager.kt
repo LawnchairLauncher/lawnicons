@@ -11,7 +11,7 @@ import app.lawnchair.lawnicons.BuildConfig
 
 /**
  * A class that abstracts the functionality of SharedPreferences
- * We use SharedPreferences to avoid the unneccesary complexity Preference DataStore has
+ * We use SharedPreferences to avoid the unnecessary complexity Preference DataStore has
  *
  * @param prefs The SharedPreferences instance to use
  */
