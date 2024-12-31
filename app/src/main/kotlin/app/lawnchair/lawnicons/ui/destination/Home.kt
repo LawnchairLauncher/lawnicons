@@ -1,7 +1,10 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import android.annotation.SuppressLint
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridItemSpan
@@ -23,16 +26,16 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.repository.preferenceManager
-import app.lawnchair.lawnicons.ui.components.home.AppBarListItem
 import app.lawnchair.lawnicons.ui.components.home.DebugMenu
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
-import app.lawnchair.lawnicons.ui.components.home.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.components.home.IconPreviewGridPadding
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderUI
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.AppBarListItem
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPadding
 import app.lawnchair.lawnicons.ui.components.home.search.PlaceholderSearchBar
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -85,6 +88,7 @@ private fun Home(
         val snackbarHostState = remember { SnackbarHostState() }
 
         val focusRequester = remember { FocusRequester() }
+        val prefs = preferenceManager(context)
 
         Crossfade(
             modifier = modifier,
@@ -114,18 +118,26 @@ private fun Home(
                     },
                     bottomBar = {
                         if (!isExpandedScreen) {
-                            HomeBottomBar(
-                                context = context,
-                                iconRequestModel = iconRequestModel,
-                                snackbarHostState = snackbarHostState,
-                                onNavigate = onNavigateToAbout,
-                                onExpandSearch = { expandSearch = true },
-                            )
+                            AnimatedVisibility(
+                                !expandSearch,
+                                enter = fadeIn(),
+                                exit = fadeOut(),
+                            ) {
+                                HomeBottomBar(
+                                    context = context,
+                                    iconRequestsEnabled = iconRequestsEnabled,
+                                    iconRequestModel = iconRequestModel,
+                                    snackbarHostState = snackbarHostState,
+                                    onNavigate = onNavigateToAbout,
+                                    onExpandSearch = { expandSearch = true },
+                                )
+                            }
                         }
                     },
                     floatingActionButton = {
                         if (isExpandedScreen) {
                             IconRequestFAB(
+                                iconRequestsEnabled = iconRequestsEnabled,
                                 iconRequestModel = iconRequestModel,
                                 lazyGridState = lazyGridState,
                                 snackbarHostState = snackbarHostState,
@@ -163,16 +175,17 @@ private fun Home(
                 if (isExpandedScreen) {
                     PlaceholderSearchBar()
                 } else {
-                    PlaceholderUI(newIconsInfoModel.iconCount != 0)
+                    PlaceholderUI(prefs.showNewIconsCard.asState().value)
                 }
             }
         }
+
         LaunchedEffect(expandSearch) {
             if (expandSearch) {
                 focusRequester.requestFocus()
             }
         }
-        val prefs = preferenceManager(context)
+
         if (prefs.showDebugMenu.asState().value) {
             DebugMenu(
                 iconInfoModel,

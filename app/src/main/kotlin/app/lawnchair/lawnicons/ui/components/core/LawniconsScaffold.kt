@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
@@ -39,7 +39,7 @@ fun LawniconsScaffold(
                 scrollBehavior = scrollBehavior,
                 title = title,
                 navigationIcon = {
-                    ClickableIcon(
+                    NavigationIconButton(
                         onClick = onBack,
                         imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                         size = 40.dp,

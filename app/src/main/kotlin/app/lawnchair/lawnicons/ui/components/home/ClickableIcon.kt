@@ -20,7 +20,7 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
-fun ClickableIcon(
+fun NavigationIconButton(
     onClick: () -> Unit,
     imageVector: ImageVector,
     modifier: Modifier = Modifier,
@@ -44,9 +44,9 @@ fun ClickableIcon(
 
 @PreviewLawnicons
 @Composable
-private fun ClickableIconPreview() {
+private fun NavigationIconButtonPreview() {
     LawniconsTheme {
-        ClickableIcon(
+        NavigationIconButton(
             imageVector = Icons.Rounded.Clear,
             size = 52.dp,
             onClick = {},

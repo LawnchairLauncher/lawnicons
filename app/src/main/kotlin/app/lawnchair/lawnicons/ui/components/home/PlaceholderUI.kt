@@ -47,6 +47,8 @@ import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlig
 import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
 import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.ui.components.core.placeholder.shimmer
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPadding
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.iconColor
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

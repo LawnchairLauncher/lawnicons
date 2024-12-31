@@ -5,24 +5,13 @@ For Mac/Linux users, you can simply type `./icontool` to run the program. Otherw
 
 ## Summary of usage
 ```console
-./icontool [-m] [-h]
+./icontool [-h]
            add    (a)    svg component name
            link   (l)    svg component name
            remove (r, d) component [-d]
            sort   (s)
            find   (f)    {duplicates, unused}
 ```
-
-## General syntax
-Adding the flag `-m` will generate a list item (depending on the subcommand) that looks like this:
-```
-* App Name (component info)
-```
-
-Note that you should add it *before* the other parameters:
-
-:x: `python3 icontool.py add ... -m`<br/>
-:white_check_mark: `python3 icontool.py -m add ...`
 
 ## Adding icons
 ```console
@@ -62,12 +51,6 @@ Note that the SVG file's name is based on the `drawable` attribute of the first 
 Some common utilities are described below.
 
 ### Sorting appfilter.xml
-> [!WARNING]  
-> At the moment, the sorting works with errors: duplicates and extra spaces are added. It is recommended not to use it.
-```console
-python3 ./icontool.py sort
-```
-
 This will sort the `appfilter.xml` file via the `name` attribute.
 
 ### Finding duplicate entries in appfilter.xml

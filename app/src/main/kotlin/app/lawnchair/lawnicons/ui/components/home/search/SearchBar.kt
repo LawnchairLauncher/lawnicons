@@ -42,44 +42,13 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfoModel
 import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
+import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
+import app.lawnchair.lawnicons.ui.util.thenIf
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
-
-@Composable
-fun LawniconsSearchBar(
-    query: String,
-    isQueryEmpty: Boolean,
-    onClear: () -> Unit,
-    onBack: () -> Unit,
-    onQueryChange: (String) -> Unit,
-    iconInfoModel: IconInfoModel,
-    onNavigate: () -> Unit,
-    modifier: Modifier = Modifier,
-    inputFieldModifier: Modifier = Modifier,
-    isExpandedScreen: Boolean = false,
-    isIconPicker: Boolean = false,
-    content: @Composable (() -> Unit),
-) {
-    LawniconsSearchBar(
-        query = query,
-        isQueryEmpty = isQueryEmpty,
-        onClear = onClear,
-        onBack = onBack,
-        onQueryChange = onQueryChange,
-        iconCount = iconInfoModel.iconCount,
-        onNavigate = onNavigate,
-        content = content,
-        modifier = modifier,
-        inputFieldModifier = inputFieldModifier,
-        isExpandedScreen = isExpandedScreen,
-        isIconPicker = isIconPicker,
-    )
-}
 
 /**
  * Composable function to create a search bar for the Lawnicons app.
@@ -88,6 +57,7 @@ fun LawniconsSearchBar(
  * @param isQueryEmpty A boolean value indicating whether the search query is empty.
  * @param onClear A callback function that handles clearing the search query.
  * @param onBack A callback function that handles navigating back.
+ * @param onSearch A callback function that handles searching based on the current search query.
  * @param onQueryChange A callback function that handles changes in the search query.
  * @param iconCount The number of icons available for selection.
  * @param onNavigate A callback function that handles navigation to different screens based on the search query.
@@ -102,6 +72,7 @@ fun LawniconsSearchBar(
     isQueryEmpty: Boolean,
     onClear: () -> Unit,
     onBack: () -> Unit,
+    onSearch: () -> Unit,
     onQueryChange: (String) -> Unit,
     iconCount: Int,
     onNavigate: () -> Unit,
@@ -112,24 +83,17 @@ fun LawniconsSearchBar(
     content: @Composable (() -> Unit),
 ) {
     var active by rememberSaveable { mutableStateOf(false) }
+    val padding = WindowInsets.navigationBars.toPaddingValues(
+        additionalStart = 16.dp,
+        additionalEnd = 16.dp,
+    )
 
     Box(
         modifier = modifier
             .animateContentSize()
-            .then(
-                if (isExpandedScreen) {
-                    Modifier
-                        .padding(
-                            WindowInsets.navigationBars.toPaddingValues(
-                                additionalStart = 16.dp,
-                                additionalEnd = 16.dp,
-                            ),
-                        )
-                        .statusBarsPadding()
-                } else {
-                    Modifier
-                },
-            )
+            .thenIf(isExpandedScreen) {
+                padding(padding).statusBarsPadding()
+            }
             .semantics {
                 isTraversalGroup = true
             }
@@ -140,7 +104,7 @@ fun LawniconsSearchBar(
         ResponsiveSearchBar(
             query = query,
             onQueryChange = onQueryChange,
-            onSearch = { active = false },
+            onSearch = { if (query != "") onSearch() },
             active = active,
             onActiveChange = {
                 active = it
@@ -262,7 +226,7 @@ internal fun SearchIcon(
     onButtonClick: () -> Unit,
 ) {
     if (active) {
-        ClickableIcon(
+        NavigationIconButton(
             imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
             onClick = onButtonClick,
         )
@@ -282,7 +246,7 @@ internal fun SearchActionButton(
         if (it) {
             navigateContent(onNavigate)
         } else {
-            ClickableIcon(
+            NavigationIconButton(
                 onClick = onClear,
                 imageVector = Icons.Rounded.Close,
             )
@@ -302,6 +266,7 @@ private fun SearchBarPreview() {
             isQueryEmpty = false,
             onClear = {},
             onBack = {},
+            onSearch = {},
             onQueryChange = { newValue ->
                 searchTerm = newValue
             },

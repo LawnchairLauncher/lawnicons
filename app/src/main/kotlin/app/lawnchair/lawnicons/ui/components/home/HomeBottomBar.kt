@@ -31,6 +31,7 @@ import app.lawnchair.lawnicons.ui.util.Constants
 @Composable
 fun HomeBottomBar(
     context: Context,
+    iconRequestsEnabled: Boolean,
     iconRequestModel: IconRequestModel?,
     snackbarHostState: SnackbarHostState,
     onNavigate: () -> Unit,
@@ -61,6 +62,7 @@ fun HomeBottomBar(
 
             IconRequestIconButton(
                 snackbarHostState = snackbarHostState,
+                iconRequestsEnabled = iconRequestsEnabled,
                 iconRequestModel = iconRequestModel,
             )
 

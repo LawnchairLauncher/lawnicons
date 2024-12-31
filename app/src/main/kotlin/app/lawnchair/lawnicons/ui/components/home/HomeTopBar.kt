@@ -1,11 +1,14 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
@@ -41,26 +44,16 @@ fun HomeTopBar(
 ) {
     val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker) = uiState
 
-    val offset = animateDpAsState(
-        targetValue = if (isSearchExpanded || isExpandedScreen) {
-            0.dp
-        } else {
-            (-100).dp
-        },
-        label = "move search bar",
-    )
-    searchedIconInfoModel?.let {
-        SearchBar(
-            modifier = modifier
-                .offset {
-                    IntOffset(0, offset.value.roundToPx())
-                },
+    searchedIconInfoModel?.let { iconInfoModel ->
+        AnimatedSearchBar(
+            modifier = modifier,
             searchTerm = searchTerm,
             onClearSearch = onClearSearch,
             onModeChange = onChangeMode,
             onSearch = onSearchIcons,
-            iconInfoModel = it,
+            iconInfoModel = iconInfoModel,
             onNavigate = onNavigate,
+            isSearchExpanded = isSearchExpanded,
             isExpandedScreen = isExpandedScreen,
             isIconPicker = isIconPicker,
             searchMode = searchMode,
@@ -72,13 +65,14 @@ fun HomeTopBar(
 }
 
 @Composable
-private fun SearchBar(
+private fun AnimatedSearchBar(
     searchMode: SearchMode,
     searchTerm: String,
     onSearch: (String) -> Unit,
     onClearSearch: () -> Unit,
     onModeChange: (SearchMode) -> Unit,
     onNavigate: () -> Unit,
+    isSearchExpanded: Boolean,
     isExpandedScreen: Boolean,
     isIconPicker: Boolean,
     onSendResult: (IconInfo) -> Unit,
@@ -87,18 +81,34 @@ private fun SearchBar(
     modifier: Modifier = Modifier,
     inputFieldModifier: Modifier = Modifier,
 ) {
+    val offset = animateDpAsState(
+        targetValue = (if (isSearchExpanded || isExpandedScreen) 0 else -1000).dp,
+        label = "move search bar",
+        animationSpec = tween(
+            durationMillis = 600,
+        ),
+    )
+
     Column(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .offset {
+                IntOffset(0, offset.value.roundToPx())
+            },
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
+        val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
         LawniconsSearchBar(
             query = searchTerm,
             isQueryEmpty = searchTerm == "",
             onClear = onClearSearch,
             onBack = onFocusChange,
+            onSearch = {
+                isIconInfoShown.value = true
+            },
             onQueryChange = onSearch,
-            iconInfoModel = iconInfoModel,
+            iconCount = iconInfoModel.iconCount,
             onNavigate = onNavigate,
             isExpandedScreen = isExpandedScreen,
             isIconPicker = isIconPicker,
@@ -109,6 +119,8 @@ private fun SearchBar(
                     onModeChange = onModeChange,
                     iconInfo = iconInfoModel.iconInfo,
                     onSendResult = onSendResult,
+                    showSheet = isIconInfoShown.value,
+                    onToggleSheet = { isIconInfoShown.value = it },
                 )
             },
             inputFieldModifier = inputFieldModifier,

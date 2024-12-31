@@ -16,7 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -28,8 +28,6 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,8 +39,8 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
-import app.lawnchair.lawnicons.ui.components.home.IconInfoSheet
-import app.lawnchair.lawnicons.ui.components.home.IconPreview
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconInfoSheet
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
 
 @Composable
 fun SearchContents(
@@ -52,6 +50,8 @@ fun SearchContents(
     iconInfo: List<IconInfo>,
     modifier: Modifier = Modifier,
     onSendResult: (IconInfo) -> Unit = {},
+    showSheet: Boolean = false,
+    onToggleSheet: (Boolean) -> Unit = {},
 ) {
     Column(
         modifier = modifier,
@@ -120,7 +120,11 @@ fun SearchContents(
         ) { count ->
             when (count) {
                 1 -> {
-                    IconInfoListItem(iconInfo)
+                    IconInfoListItem(
+                        iconInfo,
+                        showSheet,
+                        onToggleSheet,
+                    )
                 }
 
                 0 -> {
@@ -147,15 +151,25 @@ fun SearchContents(
                             columns = GridCells.Adaptive(minSize = 80.dp),
                             contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
                         ) {
-                            items(
+                            itemsIndexed(
                                 items = iconInfo,
-                                contentType = { "icon_preview" },
-                            ) {
-                                IconPreview(
-                                    iconInfo = it,
-                                    onSendResult = onSendResult,
-                                    iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
-                                )
+                                contentType = { _, _ -> "icon_preview" },
+                            ) { index, it ->
+                                if (index == 0 && searchTerm != "") {
+                                    IconPreview(
+                                        iconInfo = it,
+                                        onSendResult = onSendResult,
+                                        iconBackground = MaterialTheme.colorScheme.surface,
+                                        showSheet = showSheet,
+                                        onToggleSheet = onToggleSheet,
+                                    )
+                                } else {
+                                    IconPreview(
+                                        iconInfo = it,
+                                        onSendResult = onSendResult,
+                                        iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
+                                    )
+                                }
                             }
                         }
                     }
@@ -166,7 +180,11 @@ fun SearchContents(
 }
 
 @Composable
-private fun IconInfoListItem(iconInfo: List<IconInfo>) {
+private fun IconInfoListItem(
+    iconInfo: List<IconInfo>,
+    showSheet: Boolean,
+    onToggleSheet: (Boolean) -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -178,8 +196,6 @@ private fun IconInfoListItem(iconInfo: List<IconInfo>) {
         } catch (_: Exception) {
             return@IconInfoListItem
         }
-
-        val isIconInfoAppfilterShown = rememberSaveable { mutableStateOf(false) }
 
         ListItem(
             headlineContent = { Text(it.getFirstLabelAndComponent().label) },
@@ -201,13 +217,13 @@ private fun IconInfoListItem(iconInfo: List<IconInfo>) {
             },
             modifier = Modifier
                 .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = { isIconInfoAppfilterShown.value = true }),
+                .clickable(onClick = { onToggleSheet(true) }),
         )
-        AnimatedVisibility(isIconInfoAppfilterShown.value) {
+        AnimatedVisibility(showSheet) {
             IconInfoSheet(
                 iconInfo = it,
             ) {
-                isIconInfoAppfilterShown.value = it
+                onToggleSheet(it)
             }
         }
     }

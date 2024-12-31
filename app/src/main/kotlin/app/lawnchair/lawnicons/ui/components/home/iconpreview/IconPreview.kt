@@ -1,4 +1,20 @@
-package app.lawnchair.lawnicons.ui.components.home
+/*
+ * Copyright 2024 Lawnchair Launcher
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package app.lawnchair.lawnicons.ui.components.home.iconpreview
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -49,7 +65,27 @@ fun IconPreview(
     isIconPicker: Boolean = false,
 ) {
     val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+    IconPreview(
+        iconInfo = iconInfo,
+        onSendResult = onSendResult,
+        modifier = modifier,
+        iconBackground = iconBackground,
+        isIconPicker = isIconPicker,
+        showSheet = isIconInfoShown.value,
+        onToggleSheet = { isIconInfoShown.value = it },
+    )
+}
 
+@Composable
+fun IconPreview(
+    iconInfo: IconInfo,
+    onSendResult: (IconInfo) -> Unit,
+    modifier: Modifier = Modifier,
+    iconBackground: Color? = null,
+    isIconPicker: Boolean = false,
+    showSheet: Boolean = false,
+    onToggleSheet: (Boolean) -> Unit = {},
+) {
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
@@ -61,12 +97,12 @@ fun IconPreview(
                     if (isIconPicker) {
                         onSendResult(iconInfo)
                     } else {
-                        isIconInfoShown.value = true
+                        onToggleSheet(true)
                     }
                 },
             )
             .background(
-                color = iconBackground ?: if (isIconInfoShown.value) {
+                color = iconBackground ?: if (showSheet) {
                     MaterialTheme.colorScheme.surfaceVariant
                 } else {
                     MaterialTheme.colorScheme.iconColor
@@ -84,7 +120,7 @@ fun IconPreview(
                 icon,
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(0.6f),
-                tint = if (isIconInfoShown.value) {
+                tint = if (showSheet) {
                     MaterialTheme.colorScheme.onSurfaceVariant
                 } else {
                     MaterialTheme.colorScheme.onPrimaryContainer
@@ -95,7 +131,7 @@ fun IconPreview(
                 painter = painterResource(iconInfo.id),
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(0.6f),
-                tint = if (isIconInfoShown.value) {
+                tint = if (showSheet) {
                     MaterialTheme.colorScheme.onSurfaceVariant
                 } else {
                     MaterialTheme.colorScheme.onPrimaryContainer
@@ -103,11 +139,11 @@ fun IconPreview(
             )
         }
     }
-    AnimatedVisibility(isIconInfoShown.value) {
+    AnimatedVisibility(showSheet) {
         IconInfoSheet(
             iconInfo = iconInfo,
         ) {
-            isIconInfoShown.value = it
+            onToggleSheet(it)
         }
     }
 }

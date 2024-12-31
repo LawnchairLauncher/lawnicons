@@ -48,16 +48,20 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun IconRequestFAB(
+    iconRequestsEnabled: Boolean,
     iconRequestModel: IconRequestModel?,
     lazyGridState: LazyGridState,
     snackbarHostState: SnackbarHostState,
     modifier: Modifier = Modifier,
 ) {
+    val prefs = preferenceManager()
     val list = iconRequestModel?.list ?: emptyList()
     val enabled = iconRequestModel != null
+    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
 
     RequestHandler(
         enabled = enabled,
+        iconRequestsEnabled = requestsEnabled,
         iconRequestList = list,
         snackbarHostState = snackbarHostState,
         onLongClick = {},
@@ -85,17 +89,22 @@ fun IconRequestFAB(
 @Composable
 fun IconRequestIconButton(
     snackbarHostState: SnackbarHostState,
+    iconRequestsEnabled: Boolean,
     iconRequestModel: IconRequestModel?,
     modifier: Modifier = Modifier,
 ) {
+    val prefs = preferenceManager()
+
     val list = iconRequestModel?.list ?: emptyList()
     val enabled = iconRequestModel != null
+    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
 
     val tooltipState = rememberTooltipState()
     val scope = rememberCoroutineScope()
 
     RequestHandler(
         enabled = enabled,
+        iconRequestsEnabled = requestsEnabled,
         iconRequestList = list,
         snackbarHostState = snackbarHostState,
         onLongClick = {
@@ -133,6 +142,7 @@ fun IconRequestIconButton(
 @Composable
 fun RequestHandler(
     enabled: Boolean,
+    iconRequestsEnabled: Boolean,
     iconRequestList: List<IconRequest>,
     snackbarHostState: SnackbarHostState,
     onLongClick: () -> Unit,
@@ -151,6 +161,7 @@ fun RequestHandler(
 
     HandleTouchInteractions(
         enabled = enabled,
+        iconRequestsEnabled = iconRequestsEnabled,
         interactionSource = interactionSource,
         viewConfiguration = LocalViewConfiguration.current,
         context = context,
@@ -180,6 +191,7 @@ fun RequestHandler(
 @Composable
 private fun HandleTouchInteractions(
     enabled: Boolean,
+    iconRequestsEnabled: Boolean,
     interactionSource: MutableInteractionSource,
     viewConfiguration: ViewConfiguration,
     context: Context,
@@ -208,15 +220,23 @@ private fun HandleTouchInteractions(
 
                     is PressInteraction.Release -> {
                         if (!isLongClick) {
-                            handleRequestClick(
-                                iconRequestList,
-                                context,
-                                directLinkEnabled,
-                                encodedRequestList,
-                                requestList,
-                                coroutineScope,
-                                snackbarHostState,
-                            )
+                            if (iconRequestsEnabled) {
+                                handleRequestClick(
+                                    iconRequestList,
+                                    context,
+                                    directLinkEnabled,
+                                    encodedRequestList,
+                                    requestList,
+                                    coroutineScope,
+                                    snackbarHostState,
+                                )
+                            } else {
+                                openSnackbarRequestsDisabled(
+                                    context,
+                                    coroutineScope,
+                                    snackbarHostState,
+                                )
+                            }
                         }
                     }
 
@@ -274,6 +294,23 @@ private fun openSnackbarFirstLaunchContent(
     }
 }
 
+private fun openSnackbarRequestsDisabled(
+    context: Context,
+    coroutineScope: CoroutineScope,
+    snackbarHostState: SnackbarHostState,
+) {
+    coroutineScope.launch {
+        val result = snackbarHostState
+            .showSnackbar(
+                message = context.getString(R.string.icon_requests_suspended),
+                duration = SnackbarDuration.Short,
+            )
+        if (result == SnackbarResult.Dismissed) {
+            snackbarHostState.currentSnackbarData?.dismiss()
+        }
+    }
+}
+
 private fun openSnackbarWarningContent(
     context: Context,
     list: String,
@@ -308,5 +345,6 @@ private fun openLink(context: Context, link: String) {
 }
 
 private fun buildForm(string: String): String {
+    // TODO: override with new link once available
     return "https://docs.google.com/forms/d/e/1FAIpQLSe8ItNYse9f4z2aT1QgXkKeueVTucRdUYNhUpys5ShHPyRijg/viewform?entry.1759726669=$string"
 }

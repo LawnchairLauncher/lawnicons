@@ -20,7 +20,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.ui.util.thenIf
+import app.lawnchair.lawnicons.ui.util.thenIfNotNull
 
 private val basePadding = 16.dp
 
@@ -47,55 +50,47 @@ fun ListRow(
     val bottomCornerRadius = if (last) 16.dp else 0.dp
     val basePaddingPx = with(LocalDensity.current) { basePadding.toPx() }
 
+    val backgroundColor = MaterialTheme.colorScheme.surfaceContainer
+
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .then(
-                if (enforceHeight) {
-                    Modifier.height(if (tall) 72.dp else 56.dp)
-                } else {
-                    Modifier
-                },
-            )
-            .then(
-                if (background) {
-                    Modifier
-                        .padding(horizontal = basePadding)
-                        .clip(
-                            RoundedCornerShape(
-                                topStart = topCornerRadius,
-                                topEnd = topCornerRadius,
-                                bottomStart = bottomCornerRadius,
-                                bottomEnd = bottomCornerRadius,
-                            ),
-                        )
-                        .background(
-                            MaterialTheme.colorScheme.surfaceContainer,
-                        )
-                } else {
-                    Modifier
-                },
-            )
-            .then(
-                if (divider) {
-                    Modifier.drawBehind {
-                        drawLine(
-                            strokeWidth = dividerHeightPx,
-                            color = dividerColor,
-                            start = Offset(
-                                x = basePaddingPx,
-                                y = size.height - dividerHeightPx / 2,
-                            ),
-                            end = Offset(
-                                x = size.width - basePaddingPx,
-                                y = size.height - dividerHeightPx / 2,
-                            ),
-                        )
-                    }
-                } else {
-                    Modifier
-                },
-            ),
+            .semantics(
+                mergeDescendants = true,
+            ) {}
+            .thenIf(enforceHeight) {
+                Modifier.height(if (tall) 72.dp else 56.dp)
+            }
+            .thenIf(background) {
+                padding(horizontal = basePadding)
+                    .clip(
+                        RoundedCornerShape(
+                            topStart = topCornerRadius,
+                            topEnd = topCornerRadius,
+                            bottomStart = bottomCornerRadius,
+                            bottomEnd = bottomCornerRadius,
+                        ),
+                    )
+                    .background(
+                        backgroundColor,
+                    )
+            }
+            .thenIf(divider) {
+                drawBehind {
+                    drawLine(
+                        strokeWidth = dividerHeightPx,
+                        color = dividerColor,
+                        start = Offset(
+                            x = basePaddingPx,
+                            y = size.height - dividerHeightPx / 2,
+                        ),
+                        end = Offset(
+                            x = size.width - basePaddingPx,
+                            y = size.height - dividerHeightPx / 2,
+                        ),
+                    )
+                }
+            },
     ) {
         Content(
             label = label,
@@ -121,13 +116,7 @@ private fun Content(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier
             .fillMaxSize()
-            .then(
-                if (onClick != null) {
-                    Modifier.clickable(onClick = onClick)
-                } else {
-                    Modifier
-                },
-            )
+            .thenIfNotNull(onClick) { clickable(onClick = it) }
             .padding(horizontal = basePadding),
     ) {
         if (icon != null) {
