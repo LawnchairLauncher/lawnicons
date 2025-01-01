@@ -13,7 +13,7 @@ import retrofit2.create
 
 @Module
 @InstallIn(SingletonComponent::class)
-class ApiModule {
+class GithubApiModule {
 
     @Provides
     @Singleton
