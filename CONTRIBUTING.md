@@ -157,12 +157,12 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
 4. Done! You're ready to open a pull request. Please set `develop` as the base branch.
 
 ## Finding the package and activity name of an app
-
+<!--
 ### Using Lawnicons
 1. Install and open [Lawnicons 2.10+](https://github.com/LawnchairLauncher/lawnicons/releases).
 2. Tap "Request icons". After that, our request form will open with a response ready to be submit.
 3. Submit the response. You can copy the submitted activities [from our table](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=1039095616#gid=1039095616) (sorted by date).
-
+-->
 ### Using `adb`
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
 2. Open a new Command Prompt or Terminal window and input `adb devices`.
