@@ -29,17 +29,15 @@ data class IconInfo(
  * @return A new list of [IconInfo] objects with merged component names for icons
  *         sharing the same drawable name.
  */
-fun List<IconInfo>.mergeByDrawableName(): List<IconInfo> {
-    return groupBy { it.drawableName }
-        .map { (drawableName, icons) ->
-            val mergedComponentNames = icons.flatMap { it.componentNames }
-            IconInfo(
-                componentNames = mergedComponentNames,
-                drawableName = drawableName,
-                id = icons.first().id,
-            )
-        }
-}
+fun List<IconInfo>.mergeByDrawableName(): List<IconInfo> = groupBy { it.drawableName }
+    .map { (drawableName, icons) ->
+        val mergedComponentNames = icons.flatMap { it.componentNames }
+        IconInfo(
+            componentNames = mergedComponentNames,
+            drawableName = drawableName,
+            id = icons.first().id,
+        )
+    }
 
 /**
  * Splits [IconInfo] objects with multiple component names into a list where each

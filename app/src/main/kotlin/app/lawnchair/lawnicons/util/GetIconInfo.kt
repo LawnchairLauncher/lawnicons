@@ -25,7 +25,8 @@ fun Context.getIconInfo(
             while (
                 (
                     parser.next()
-                        .also { type = it } != XmlPullParser.END_TAG || parser.depth > depth
+                        .also { type = it } != XmlPullParser.END_TAG ||
+                        parser.depth > depth
                     ) &&
                 type != XmlPullParser.END_DOCUMENT
             ) {
@@ -43,7 +44,8 @@ fun Context.getIconInfo(
                     val parsedComponent =
                         component.substring(componentInfoPrefixLength, component.length - 1)
 
-                    if (parsedComponent.isNotEmpty() && !parsedComponent.startsWith("/") &&
+                    if (parsedComponent.isNotEmpty() &&
+                        !parsedComponent.startsWith("/") &&
                         !parsedComponent.endsWith("/")
                     ) {
                         actualComponent = parsedComponent

@@ -249,8 +249,7 @@ private fun HandleTouchInteractions(
     }
 }
 
-private fun formatIconRequestList(iconRequestList: List<IconRequest>) =
-    iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
+private fun formatIconRequestList(iconRequestList: List<IconRequest>) = iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
 
 private fun handleRequestClick(
     iconRequestList: List<IconRequest>,
