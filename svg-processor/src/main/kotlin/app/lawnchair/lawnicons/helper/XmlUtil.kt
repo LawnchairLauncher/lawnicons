@@ -28,13 +28,9 @@ import org.dom4j.io.XMLWriter
 object XmlUtil {
     private val UTF_8 = Charsets.UTF_8.name()
 
-    fun getElements(document: Document, path: String): List<Element> {
-        return document.rootElement.elements(path)
-    }
+    fun getElements(document: Document, path: String): List<Element> = document.rootElement.elements(path)
 
-    fun getDocument(xmlPath: String): Document {
-        return SAXReader().apply { encoding = UTF_8 }.read(xmlPath)
-    }
+    fun getDocument(xmlPath: String): Document = SAXReader().apply { encoding = UTF_8 }.read(xmlPath)
 
     fun getFileWithExtension(target: Path, extension: String = "xml"): String {
         val svgFilePath = target.toFile().absolutePath
