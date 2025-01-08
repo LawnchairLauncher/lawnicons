@@ -33,9 +33,11 @@ class WebsiteApiModule {
 
     @Provides
     @Singleton
-    fun providesWebsiteIconRequestApi(): IconRequestSettingsAPI = Retrofit.Builder()
-        .baseUrl("https://lawnchair.app/")
-        .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
-        .build()
-        .create()
+    fun providesWebsiteIconRequestApi(): IconRequestSettingsAPI {
+        return Retrofit.Builder()
+            .baseUrl("https://lawnchair.app/")
+            .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
+            .build()
+            .create()
+    }
 }
