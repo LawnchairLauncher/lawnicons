@@ -53,7 +53,8 @@ object SvgFilesProcessor {
     }
 
     private val fileVisitor = object : FileVisitor<Path> {
-        override fun postVisitDirectory(dir: Path, exc: IOException?): FileVisitResult = FileVisitResult.CONTINUE
+        override fun postVisitDirectory(dir: Path, exc: IOException?): FileVisitResult =
+            FileVisitResult.CONTINUE
 
         override fun preVisitDirectory(dir: Path, attrs: BasicFileAttributes?): FileVisitResult {
             // Skip folder which is processing svgs to xml
@@ -77,7 +78,8 @@ object SvgFilesProcessor {
             return FileVisitResult.CONTINUE
         }
 
-        override fun visitFileFailed(file: Path, exc: IOException?): FileVisitResult = FileVisitResult.CONTINUE
+        override fun visitFileFailed(file: Path, exc: IOException?): FileVisitResult =
+            FileVisitResult.CONTINUE
     }
 
     private fun convertToVector(svgSource: Path, vectorTargetPath: Path) {

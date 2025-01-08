@@ -101,30 +101,31 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
         _searchedIconInfoModel.value = _iconInfoModel.value
     }
 
-    private suspend fun getIconRequestList(systemPackageList: List<IconInfo>) = withContext(Dispatchers.Default) {
-        val lawniconsData = _iconInfoModel.value.iconInfo
+    private suspend fun getIconRequestList(systemPackageList: List<IconInfo>) =
+        withContext(Dispatchers.Default) {
+            val lawniconsData = _iconInfoModel.value.iconInfo
 
-        val systemData = systemPackageList.map { info ->
-            info.getFirstLabelAndComponent()
-        }
-
-        val lawniconsComponents = lawniconsData
-            .splitByComponentName()
-            .map { it.getFirstLabelAndComponent().componentName }
-            .sortedBy { it.lowercase() }
-            .toSet()
-
-        val commonItems = systemData.filter { it.componentName !in lawniconsComponents }
-            .map {
-                IconRequest(
-                    label = it.label,
-                    componentName = it.componentName,
-                )
+            val systemData = systemPackageList.map { info ->
+                info.getFirstLabelAndComponent()
             }
 
-        iconRequestList.value = IconRequestModel(
-            list = commonItems,
-            iconCount = commonItems.size,
-        )
-    }
+            val lawniconsComponents = lawniconsData
+                .splitByComponentName()
+                .map { it.getFirstLabelAndComponent().componentName }
+                .sortedBy { it.lowercase() }
+                .toSet()
+
+            val commonItems = systemData.filter { it.componentName !in lawniconsComponents }
+                .map {
+                    IconRequest(
+                        label = it.label,
+                        componentName = it.componentName,
+                    )
+                }
+
+            iconRequestList.value = IconRequestModel(
+                list = commonItems,
+                iconCount = commonItems.size,
+            )
+        }
 }

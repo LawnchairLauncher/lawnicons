@@ -35,15 +35,17 @@ abstract class BasePreferenceManager(
         fun toggle() = set(!get())
 
         @Composable
-        fun asState(): State<Boolean> = produceState(initialValue = get(), this) {
-            val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, changedKey ->
-                if (changedKey == key) {
-                    value = get() // Update the state value when the preference changes
+        fun asState(): State<Boolean> {
+            return produceState(initialValue = get(), this) {
+                val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, changedKey ->
+                    if (changedKey == key) {
+                        value = get() // Update the state value when the preference changes
+                    }
                 }
-            }
-            prefs.registerOnSharedPreferenceChangeListener(listener)
-            awaitDispose {
-                prefs.unregisterOnSharedPreferenceChangeListener(listener)
+                prefs.registerOnSharedPreferenceChangeListener(listener)
+                awaitDispose {
+                    prefs.unregisterOnSharedPreferenceChangeListener(listener)
+                }
             }
         }
     }
@@ -61,15 +63,17 @@ abstract class BasePreferenceManager(
         fun set(value: Int) = editor.putInt(key, value).apply()
 
         @Composable
-        fun asState(): State<Int> = produceState(initialValue = get(), this) {
-            val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, changedKey ->
-                if (changedKey == key) {
-                    value = get() // Update the state value when the preference changes
+        fun asState(): State<Int> {
+            return produceState(initialValue = get(), this) {
+                val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, changedKey ->
+                    if (changedKey == key) {
+                        value = get() // Update the state value when the preference changes
+                    }
                 }
-            }
-            prefs.registerOnSharedPreferenceChangeListener(listener)
-            awaitDispose {
-                prefs.unregisterOnSharedPreferenceChangeListener(listener)
+                prefs.registerOnSharedPreferenceChangeListener(listener)
+                awaitDispose {
+                    prefs.unregisterOnSharedPreferenceChangeListener(listener)
+                }
             }
         }
     }
@@ -97,16 +101,20 @@ class PreferenceManager private constructor(
         /**
          * Returns a singleton instance of [PreferenceManager]
          */
-        fun getInstance(context: Context): PreferenceManager = instance ?: synchronized(this) {
-            instance ?: PreferenceManager(
-                context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE),
-            ).also { instance = it }
+        fun getInstance(context: Context): PreferenceManager {
+            return instance ?: synchronized(this) {
+                instance ?: PreferenceManager(
+                    context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE),
+                ).also { instance = it }
+            }
         }
 
         /**
          * Get dummy instance of [PreferenceManager] for testing and Compose previews
          */
-        fun getDummyInstance(): PreferenceManager = PreferenceManager(DummySharedPreferences())
+        fun getDummyInstance(): PreferenceManager {
+            return PreferenceManager(DummySharedPreferences())
+        }
     }
 }
 
@@ -144,7 +152,7 @@ class DummySharedPreferences : SharedPreferences {
     /**
      * Dummy implementation of [SharedPreferences.Editor] for Compose previews
      */
-    class DummyEditor : SharedPreferences.Editor {
+    class DummyEditor() : SharedPreferences.Editor {
         override fun putString(key: String?, value: String?) = DummyEditor()
         override fun putStringSet(key: String?, values: MutableSet<String>?) = DummyEditor()
 
