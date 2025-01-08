@@ -20,8 +20,7 @@ import kotlinx.coroutines.flow.stateIn
 @HiltViewModel
 class AcknowledgementViewModel @Inject constructor(
     private val ossLibraryRepository: OssLibraryRepository,
-) :
-    ViewModel() {
+) : ViewModel() {
 
     val ossLibraries = ossLibraryRepository.ossLibraries
 

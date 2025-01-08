@@ -152,7 +152,7 @@ class DummySharedPreferences : SharedPreferences {
     /**
      * Dummy implementation of [SharedPreferences.Editor] for Compose previews
      */
-    class DummyEditor() : SharedPreferences.Editor {
+    class DummyEditor : SharedPreferences.Editor {
         override fun putString(key: String?, value: String?) = DummyEditor()
         override fun putStringSet(key: String?, values: MutableSet<String>?) = DummyEditor()
 
