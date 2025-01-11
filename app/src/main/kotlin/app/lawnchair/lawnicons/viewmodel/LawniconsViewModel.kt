@@ -43,7 +43,8 @@ class LawniconsViewModelImpl @Inject constructor(
     private val iconRepository: IconRepository,
     private val newIconsRepository: NewIconsRepository,
     private val iconRequestSettingsRepository: IconRequestSettingsRepository,
-) : LawniconsViewModel, ViewModel() {
+) : ViewModel(),
+    LawniconsViewModel {
     override val iconInfoModel = iconRepository.iconInfoModel
     override val searchedIconInfoModel = iconRepository.searchedIconInfoModel
     override val iconRequestModel = iconRepository.iconRequestList
