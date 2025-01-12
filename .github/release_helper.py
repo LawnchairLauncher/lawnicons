@@ -3,11 +3,13 @@ from functools import lru_cache
 import json
 import os
 import re
-import sys
 import git
 import datetime
 import xml.etree.ElementTree as ET
 from typing import Optional
+
+
+IS_CI = os.getenv("CI") or os.getenv("CI_PIPELINE_SOURCE")
 
 
 LINK_THRESHOLD = os.getenv("RELEASE_LINK_THRESHOLD") or 20
@@ -91,11 +93,12 @@ def is_greenlight(
     """Check if the new icons meet the threshold for release
 
     Args:
-        result (tuple): Tuple of new icons
-        manually_triggered (bool): Check if the workflow is manually dispatched
-        day_threshold (int, optional): Number of days to check. Defaults to 1.
-        link_threshold (int, optional): Number of linked icons to check. Defaults to 20.
-        new_threshold (int, optional): Number of new icons to check. Defaults to 100.
+        result (tuple): Tuple of new icons and linked icons
+        manually_triggered (bool): True if the event is manually dispatched, False otherwise
+        dry_run (bool): Dry run mode (Behaves like manually_triggered but verbose and skip all checks)
+        day_threshold (int, optional): Day threshold for the release. Defaults to 1.
+        link_threshold (int, optional): Link threshold for the release. Defaults to 20.
+        new_threshold (int, optional): New threshold for the release. Defaults to 100.
 
     Returns:
         bool: True if the new icons is eligible for release, False otherwise, will skip all checks if manually triggered.
@@ -205,7 +208,7 @@ def release_generation(
     total_links: int,
     additions: int,
     linked: Optional[int] = None,
-    dry_run: Optional[bool] = True,
+    dry_run: Optional[bool] = False, # Set this to true to prevent writing to the file
 ):
     """
     Generate the release note and return the version number.
@@ -256,7 +259,7 @@ Lawnicons {future_version} is here! Compared to the previous one, this release i
     return template
 
 
-def new_icon_since(last_tag: str) -> tuple:
+def new_icon_since() -> tuple:
     cmd = "gradlew :svg-processor:run"
     os.system(cmd)
 
@@ -301,15 +304,16 @@ def new_icon_since(last_tag: str) -> tuple:
     print(f"📊 Total icons: {total_icons}")
     print(f"📊 Total links: {total_links}")
 
-    print(f"::set-output name=new_icons::{json.dumps(new_icons)}")
-    print(f"::set-output name=linked_icons::{json.dumps(linked_icons)}")
-    print(f"::set-output name=total_icons::{total_icons}")
-    print(f"::set-output name=total_links::{total_links}")
+    if IS_CI:
+        print(f"::set-output name=new_icons::{json.dumps(new_icons)}")
+        print(f"::set-output name=linked_icons::{json.dumps(linked_icons)}")
+        print(f"::set-output name=total_icons::{total_icons}")
+        print(f"::set-output name=total_links::{total_links}")
 
     return new_icons, linked_icons, total_icons, total_links
 
 
-result = new_icon_since(last_tag)
+result = new_icon_since()
 
 
 print(f"🎉 There have been {len(result[0])} new icons since release!")
@@ -332,8 +336,9 @@ next_version = next_release_predictor(result, last_tag, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
 
-print(f"::set-output name=next_version::{next_version}")
-print(f"::set-output name=greenlight::{str(greenlight).lower()}")
+if IS_CI:
+    print(f"::set-output name=next_version::{next_version}")
+    print(f"::set-output name=greenlight::{str(greenlight).lower()}")
 release_generation(
     "CHANGELOG.md",
     last_tag,
@@ -344,14 +349,6 @@ release_generation(
     len(result[1]),
     True,
 )
-
-github_output = os.environ.get("GITHUB_OUTPUT")
-if github_output:
-    with open(github_output, "a") as output_file:
-        print(f"next_version={next_version}", file=output_file)
-        print(f"greenlight={str(greenlight).lower()}", file=output_file)
-else:
-    print("GITHUB_OUTPUT environment variable is not set.", file=sys.stderr)
 
 
 exit(1 if not greenlight else 0)
