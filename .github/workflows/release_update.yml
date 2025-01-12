@@ -24,6 +24,11 @@ on:
           - major
           - minor
           - patch
+      advanced-release:
+        description: Should Publish to Google Play Store
+        type: boolean
+        default: false
+        required: true
 
 jobs:
   release-validation:
@@ -116,7 +121,7 @@ jobs:
   publish-google-play-store-release:
     runs-on: ubuntu-latest
     needs: build-release-apk
-    if: needs.release-validation.outputs.greenlight == 'true'
+    if: github.event.inputs.advanced-release == 'true' && needs.release-validation.outputs.greenlight == 'true'
     permissions:
       contents: write
     steps:
