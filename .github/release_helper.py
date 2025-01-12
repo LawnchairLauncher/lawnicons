@@ -1,5 +1,6 @@
 from contextlib import contextmanager
 from functools import lru_cache
+import json
 import os
 import re
 import sys
@@ -299,6 +300,11 @@ def new_icon_since(last_tag: str) -> tuple:
     print(f"📊 Total linked icons: {len(linked_icons)}")
     print(f"📊 Total icons: {total_icons}")
     print(f"📊 Total links: {total_links}")
+
+    print(f"::set-output name=new_icons::{json.dumps(new_icons)}")
+    print(f"::set-output name=linked_icons::{json.dumps(linked_icons)}")
+    print(f"::set-output name=total_icons::{total_icons}")
+    print(f"::set-output name=total_links::{total_links}")
 
     return new_icons, linked_icons, total_icons, total_links
 
