@@ -90,7 +90,7 @@ def is_greenlight(
     """Check if the new icons meet the threshold for release
 
     Args:
-        result (list): List of new icons
+        result (tuple): Tuple of new icons
         manually_triggered (bool): Check if the workflow is manually dispatched
         day_threshold (int, optional): Number of days to check. Defaults to 1.
         link_threshold (int, optional): Number of linked icons to check. Defaults to 20.
@@ -126,7 +126,7 @@ def is_greenlight(
     return True
 
 
-def next_release_predictor(result: list, last_version: str, increment_type: str = "default") -> str:
+def next_release_predictor(result: tuple, last_version: str, increment_type: str = "default") -> str:
     """
     Predict the next release version by incrementing the MAJOR, MINOR, or 
     PATCH component based on Semantic Versioning 2.0.0.
