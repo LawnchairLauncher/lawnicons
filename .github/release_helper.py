@@ -6,6 +6,7 @@ import sys
 import git
 import datetime
 import xml.etree.ElementTree as ET
+from typing import Optional
 
 
 LINK_THRESHOLD = os.getenv("RELEASE_LINK_THRESHOLD") or 20
@@ -85,7 +86,7 @@ def git_checkout(repo: git.Repo, ref: str):
 
 
 def is_greenlight(
-    result: tuple, manually_triggered: bool, day_threshold=1, link_threshold=20, new_threshold=100
+    result: tuple, manually_triggered: bool, dry_run: bool, day_threshold=1, link_threshold=20, new_threshold=100
 ) -> bool:
     """Check if the new icons meet the threshold for release
 
@@ -106,21 +107,36 @@ def is_greenlight(
 
     today_day = datetime.datetime.now().day
     if today_day != day_threshold:
-        print(
-            f"🔴 Today is {today_day}, which isn't the target release day {day_threshold}."
-        )
-        return False
+        if dry_run:
+            print(
+                f"🟢 Dry run mode enabled, skipping the day check. Today is {today_day}, which isn't the target release day {day_threshold}."
+            )
+        else:
+            print(
+                f"🔴 Today is {today_day}, which isn't the target release day {day_threshold}."
+            )
+            return False
 
     if len(result[0]) < new_threshold:
-        print(
-            f"🔴 Only {len(result[0])} new icons found since the last release, below the threshold of {new_threshold}."
-        )
-        return False
+        if dry_run:
+            print(
+                f"🟢 Dry run mode enabled, skipping the new icons check. Only {len(result[0])} new icons found since the last release, below the threshold of {new_threshold}."
+            )
+        else:
+            print(
+                f"🔴 Only {len(result[0])} new icons found since the last release, below the threshold of {new_threshold}."
+            )
+            return False
     if len(result[1]) < link_threshold:
-        print(
-            f"🔴 Only {len(result[1])} icons linked to a new component found since the last release, below the threshold of {link_threshold}."
-        )
-        return False
+        if dry_run:
+            print(
+                f"🟢 Dry run mode enabled, skipping the linked icons check. Only {len(result[1])} icons linked to a new component found since the last release, below the threshold of {link_threshold}."
+            )
+        else:
+            print(
+                f"🔴 Only {len(result[1])} icons linked to a new component found since the last release, below the threshold of {link_threshold}."
+            )
+            return False
 
     print("🟢 Greenlight!")
     return True
@@ -181,50 +197,64 @@ def next_release_predictor(result: tuple, last_version: str, increment_type: str
     return f"v{major}.{minor}.{patch}"
 
 
-def release_generation(markdownfile: str, version: str, additions: int, linked: int = None, dry_run: bool = True):
+def release_generation(
+    markdownfile: str,
+    version: str,
+    future_version: str,
+    total_icons: int,
+    total_links: int,
+    additions: int,
+    linked: Optional[int] = None,
+    dry_run: Optional[bool] = True,
+):
     """
-    Parse the release note and return the version number.
+    Generate the release note and return the version number.
 
     Args:
         markdownfile (str): Path to the markdown file.
-        version (str): Designated version.
+        version (str): Current version of the current.
+        future_version (str): Next version of the release.
+        total_icons (int): Total icons in the repository.
+        total_links (int): Total links in the repository.
         additions (int): Number of new icons.
         linked (int, optional): Number of linked icons. Defaults to None.
-        dry_run (bool, optional): Dry run mode. Defaults to False.
+        dry_run (bool, optional): Dry run mode. Defaults to True.
 
     Returns:
         Markdown (str): Changelog in markdown format.
     """
+    # Format the release note
+    template = f"""# Lawnicons {future_version}
+Lawnicons {future_version} is here! Compared to the previous one, this release includes:
+"""
+
     if additions > 50:
         additions_rounded = round(additions / 50) * 50
-        additional_message_additions = f"includes {additions_rounded} new icons"
-    else:
-        additional_message_additions = f"includes {additions} new icons" if additions else "includes zero icons added in this release"
+        template += (
+            f"* {additions_rounded} unique icons ({total_icons} icons in total)\n"
+        )
+    elif additions > 0:
+        template += f"* {additions} unique icons ({total_icons} icons in total)\n"
 
     if linked > 50:
         linked_rounded = round(linked / 50) * 50
-        additional_message_linked = f" and additional support for around {linked_rounded} apps thanks to previously added icons."
+        template += f"* {linked_rounded} new links ({total_links} links in total)\n"
     elif linked > 0:
-        additional_message_linked = f" and additional support for around {linked} apps."
-    else:
-        additional_message_linked = " and additional support for around 0 apps."
+        template += f"* {linked} new links ({total_links} links in total)\n"
 
-    if not additions:
-        additional_message_linked = additional_message_linked.replace(" and ", "")
+    if additions == 0 and linked == 0:
+        template += "Nothing much was added for now.\n"
 
-    if not linked and additions:
-        additional_message_linked = "."
-        
-        template = f"""# Lawnicons {version}
-    
-    This release {additional_message_additions}{additional_message_linked}
-    """
+    template += f"Full changelog: https://github.com/LawnchairLauncher/lawnicons/compare/{version}...{future_version}\n"
+
+    print(template)
+
     if not dry_run:
         with open(markdownfile, "a") as file:
             file.write(template)
 
-    raise NotImplementedError
-        
+    return template
+
 
 class new_icon_since:
     """
@@ -261,89 +291,74 @@ class new_icon_since:
 
         return list(current_icons - previous_icons)
 
-    def from_appfilter(xml_file: str, last_tag: str) -> tuple:
-        """
-        Compare current icons to {last_tag} based on the appfilter.xml file.
+    def from_svg_processor(last_tag: str) -> tuple:
+        # cmd = "gradlew :svg-processor:run"
+        # os.system(cmd)
 
-        Checkout the {last_tag} and compare it with the current appfilter.xml file.
+        appfilter_tree = ET.parse("app/src/runtime/res/xml/appfilter.xml")
+        appfilter_root = appfilter_tree.getroot()
 
-        Args:
-            xml_file (str): Path to the appfilter.xml file.
-            last_tag (str): Last tag to compare.
+        appfilter_diff_tree = ET.parse("app/src/runtime/res/xml/appfilter_diff.xml")
+        appfilter_diff_root = appfilter_diff_tree.getroot()
 
-        Returns:
-            tuple: List of new icons and linked icons
-        """
-        current_icons = []
-        previous_icons = []
+        # Get all existing drawables and count all links
+        existing_drawables = set()
+        all_links = []
 
-        for _, elem in ET.iterparse(xml_file, events=("start",)):
-            if elem.tag == "item":
-                component = elem.get("component")
-                drawable = elem.get("drawable")
-                name = elem.get("name")
-                icon = {
-                    "component": component,
-                    "drawable": drawable,
-                    "name": name,
-                }
-                current_icons.append(icon)
+        for item in appfilter_root.findall("item"):
+            existing_drawables.add(item.get("drawable"))
+            all_links.append({"component": item.get("component"), "drawable": item.get("drawable"), "name": item.get("name")})
 
-        with git_checkout(git.Repo(REPOSITORY), last_tag):
-            for _, elem in ET.iterparse(xml_file, events=("start",)):
-                if elem.tag == "item":
-                    component = elem.get("component")
-                    drawable = elem.get("drawable")
-                    name = elem.get("name")
-                    icon = {
-                        "component": component,
-                        "drawable": drawable,
-                        "name": name,
-                    }
-                    previous_icons.append(icon)
+        new_icons = []
+        linked_icons = []
 
-        current_icons_set = set(
-            (icon["component"], icon["drawable"]) for icon in current_icons
-        )
-        previous_icons_set = set(
-            (icon["component"], icon["drawable"]) for icon in previous_icons
-        )
+        for item in appfilter_diff_root.findall("item"):
+            component = item.get("component")
+            drawable = item.get("drawable")
+            name = item.get("name")
 
-        # This prone to `TypeError: unhashable type: 'dict'` for no reason
-        new_icons_set = current_icons_set - previous_icons_set
-
-        previous_drawables_set = set(icon["drawable"] for icon in previous_icons)
-
-        linked_icons_set = set()
-        true_new_icons_set = set()
-        for component, drawable in new_icons_set:
-            if drawable in previous_drawables_set:
-                linked_icons_set.add((component, drawable))
+            if drawable in existing_drawables:
+                linked_icons.append(
+                    {"component": component, "drawable": drawable, "name": name}
+                )
             else:
-                true_new_icons_set.add((component, drawable))
+                new_icons.append(
+                    {"component": component, "drawable": drawable, "name": name}
+                )
+                existing_drawables.add(drawable)
 
-        true_new_icons_list = [
-            {"component": component, "drawable": drawable}
-            for component, drawable in true_new_icons_set
-        ]
-        linked_icons_list = [
-            {"component": component, "drawable": drawable}
-            for component, drawable in linked_icons_set
-        ]
+            all_links.append({"component": component, "drawable": drawable, "name": name})
 
-        return true_new_icons_list, linked_icons_list
+        total_icons = len(existing_drawables)
+        total_links = len(all_links)
+
+        print(f"📊 Total new icons: {len(new_icons)}")
+        print(f"📊 Total linked icons: {len(linked_icons)}")
+        print(f"📊 Total icons: {total_icons}")
+        print(f"📊 Total links: {total_links}")
+
+        return new_icons, linked_icons, total_icons, total_links
 
 
 if ICONS_CALCULATION_TYPE.lower() == "svgs":
     result = new_icon_since.from_svg(SVG_PATH, last_tag)
-else:
+elif ICONS_CALCULATION_TYPE.lower() == "appfilter":
     result = new_icon_since.from_appfilter(APPFILTER_PATH, last_tag)
+else:
+    result = new_icon_since.from_svg_processor(last_tag)
 
 
 print(f"🎉 There have been {len(result[0])} new icons since release!")
 print(f"🔗 {len(result[1])} icons have been linked to a new component since release!")
 
-greenlight = is_greenlight(result, is_workflow_dispatch(), DAY_THRESHOLD, LINK_THRESHOLD, NEW_THRESHOLD)
+greenlight = is_greenlight(
+    result,
+    is_workflow_dispatch(),
+    True,
+    DAY_THRESHOLD,
+    LINK_THRESHOLD,
+    NEW_THRESHOLD,
+)
 print(
     f"🚦 {'Not eligible for release!' if not greenlight else 'Eligible for release! Greenlight away!'}"
 )
@@ -353,6 +368,18 @@ next_version = next_release_predictor(result, last_tag, INCREMENT_TYPE)
 print(f"{next_version}")
 print(f"{str(greenlight).lower()}")
 
+print(f"::set-output name=next_version::{next_version}")
+print(f"::set-output name=greenlight::{str(greenlight).lower()}")
+release_generation(
+    "CHANGELOG.md",
+    last_tag,
+    next_version,
+    result[2],
+    result[3],
+    len(result[0]),
+    len(result[1]),
+    True,
+)
 
 github_output = os.environ.get("GITHUB_OUTPUT")
 if github_output:
