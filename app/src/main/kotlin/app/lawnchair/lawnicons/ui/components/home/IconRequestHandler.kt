@@ -344,6 +344,5 @@ private fun openLink(context: Context, link: String) {
 }
 
 private fun buildForm(string: String): String {
-    // TODO: override with new link once available
-    return "https://docs.google.com/forms/d/e/1FAIpQLSe8ItNYse9f4z2aT1QgXkKeueVTucRdUYNhUpys5ShHPyRijg/viewform?entry.1759726669=$string"
+    return "https://docs.google.com/forms/d/e/1FAIpQLSez5LqhhGPSp4evrj2vjvf-vGSLLPE5OvvpwktRQv6aCP4Nsg/viewform?entry.1400319382=$string"
 }
