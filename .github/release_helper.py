@@ -181,20 +181,50 @@ def next_release_predictor(result: tuple, last_version: str, increment_type: str
     return f"v{major}.{minor}.{patch}"
 
 
-def release_parser(markdownfile: str) -> NotImplementedError:
+def release_generation(markdownfile: str, version: str, additions: int, linked: int = None, dry_run: bool = True):
     """
     Parse the release note and return the version number.
 
     Args:
         markdownfile (str): Path to the markdown file.
+        version (str): Designated version.
+        additions (int): Number of new icons.
+        linked (int, optional): Number of linked icons. Defaults to None.
+        dry_run (bool, optional): Dry run mode. Defaults to False.
 
     Returns:
-        str: Version number
+        Markdown (str): Changelog in markdown format.
     """
-    with open(markdownfile, "r") as file:
-        file.readlines()
-    return NotImplementedError
+    if additions > 50:
+        additions_rounded = round(additions / 50) * 50
+        additional_message_additions = f"includes {additions_rounded} new icons"
+    else:
+        additional_message_additions = f"includes {additions} new icons" if additions else "includes zero icons added in this release"
 
+    if linked > 50:
+        linked_rounded = round(linked / 50) * 50
+        additional_message_linked = f" and additional support for around {linked_rounded} apps thanks to previously added icons."
+    elif linked > 0:
+        additional_message_linked = f" and additional support for around {linked} apps."
+    else:
+        additional_message_linked = " and additional support for around 0 apps."
+
+    if not additions:
+        additional_message_linked = additional_message_linked.replace(" and ", "")
+
+    if not linked and additions:
+        additional_message_linked = "."
+        
+        template = f"""# Lawnicons {version}
+    
+    This release {additional_message_additions}{additional_message_linked}
+    """
+    if not dry_run:
+        with open(markdownfile, "a") as file:
+            file.write(template)
+
+    raise NotImplementedError
+        
 
 class new_icon_since:
     """
