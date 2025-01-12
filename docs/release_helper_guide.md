@@ -71,13 +71,8 @@ MINOR:
 
 ### Get icons
 
-> [!CAUTION]
-> The result between In-apps, Appfilter and SVGS method could be different:
-> * Appfilter -> In-apps: ±7~
-> * SVGS -> Appfilter: ±50~
-
-#### Appfilter Method
-Support: `New Icons Check` | `Linked Icons Check`
+#### SVG-Processor / Appfilter Method
+Support: `Total Icons Check` | `Total Linked Icons Check` | `New Icons Check` | `Linked Icons Check`
 
 > [!IMPORTANT]
 > This is the format of `appfilter.xml`
@@ -93,12 +88,7 @@ Support: `New Icons Check` | `Linked Icons Check`
 > ```
 > The script completely ignores the `<calendar>` element from the calculation so the main of focus is going to be all of `<item>` with `component` and `drawable`.
 
-The script get new and linked icons by intersecting the new and old set.
-
-#### SVGS Method
-Support: `New Icons Check` | `Total Icons Check`
-
-The script intersect the new set in the current SVGS and old set in the tagged SVGS.
+The script runs the svg-processor to compare the `appfilter.xml` with `appfilter_diff.xml` to get new icons/links.
 
 ### Configuration
 Set any of the variable as enviroment and you'll be good to go:
@@ -112,4 +102,3 @@ Set any of the variable as enviroment and you'll be good to go:
 - `APPFILTER_PATH` (default: `REPOSITORY` + `app` + `assets` + `appfilter.xml`) - Appfilter.xml's file.
 
 - `INCREMENT` (default: `default` | `auto`) - Override version predictor's decision.
-- `ICONS_CALCULATION` (default: `default` | `appfilter`) - Switch calculation from appfilter.xml and svgs.

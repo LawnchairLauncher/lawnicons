@@ -25,7 +25,7 @@ on:
           - minor
           - patch
       advanced-release:
-        description: Should Publish to Google Play Store
+        description: Should Publish to Google Play Store?
         type: boolean
         default: false
         required: true
