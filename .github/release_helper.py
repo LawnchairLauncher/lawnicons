@@ -20,7 +20,6 @@ APPFILTER_PATH = os.getenv("PATH_TO_APPFILTER") or os.path.join(REPOSITORY, "app
 
 
 INCREMENT_TYPE = os.getenv("INCREMENT") or "default"
-ICONS_CALCULATION_TYPE = os.getenv("ICONS_CALCULATION") or "default"
 
 
 # Get the third most recent tag, which is the last release
@@ -223,7 +222,7 @@ def release_generation(
     Returns:
         Markdown (str): Changelog in markdown format.
     """
-    # Format the release note
+    # Format the release note, release note might change, please check
     template = f"""# Lawnicons {future_version}
 Lawnicons {future_version} is here! Compared to the previous one, this release includes:
 """
@@ -256,96 +255,55 @@ Lawnicons {future_version} is here! Compared to the previous one, this release i
     return template
 
 
-class new_icon_since:
-    """
-    Get the new icons since the last release.
+def new_icon_since(last_tag: str) -> tuple:
+    cmd = "gradlew :svg-processor:run"
+    os.system(cmd)
 
-    This class provides two methods to get the new icons since the last release:
-    - from_svg: Get the new icons based on amount of content in the folder.
-    - from_appfilter: Get the new icons based on the appfilter.xml file.
+    appfilter_tree = ET.parse("app/src/runtime/res/xml/appfilter.xml")
+    appfilter_root = appfilter_tree.getroot()
 
-    **NOTE**: from_svg doesn't returns the linked icons status.
-    """
-    def from_svg(folder_path: str, last_tag: str) -> tuple:
-        """
-        Compare current icons to {last_tag} based on amount of content in the folder.
+    appfilter_diff_tree = ET.parse("app/src/runtime/res/xml/appfilter_diff.xml")
+    appfilter_diff_root = appfilter_diff_tree.getroot()
 
-        Checkout the {last_tag} and compare it with the current content in the folder.
+    existing_drawables = set()
+    all_links = []
 
-        Args:
-            folder_path (str): Path to the folder containing the icons.
-            last_tag (str): The last release version.
+    for item in appfilter_root.findall("item"):
+        existing_drawables.add(item.get("drawable"))
+        all_links.append({"component": item.get("component"), "drawable": item.get("drawable"), "name": item.get("name")})
 
-        Returns:
-            tuple: List of new icons.
-        """
-        print("⚠️ This method doesn't support linked icons status.")
-        current_icons = set(os.listdir(folder_path))
+    new_icons = []
+    linked_icons = []
 
-        print(f"Checking out version {last_tag}")
-        with git_checkout(git.Repo(REPOSITORY), last_tag):
-            previous_icons = set(os.listdir(folder_path))
+    for item in appfilter_diff_root.findall("item"):
+        component = item.get("component")
+        drawable = item.get("drawable")
+        name = item.get("name")
 
-        print(f"📊 Total current icons: {len(current_icons)}")
-        print(f"📊 Total previous icons: {len(previous_icons)}")
+        if drawable in existing_drawables:
+            linked_icons.append(
+                {"component": component, "drawable": drawable, "name": name}
+            )
+        else:
+            new_icons.append(
+                {"component": component, "drawable": drawable, "name": name}
+            )
+            existing_drawables.add(drawable)
 
-        return list(current_icons - previous_icons)
+        all_links.append({"component": component, "drawable": drawable, "name": name})
 
-    def from_svg_processor(last_tag: str) -> tuple:
-        # cmd = "gradlew :svg-processor:run"
-        # os.system(cmd)
+    total_icons = len(existing_drawables)
+    total_links = len(all_links)
 
-        appfilter_tree = ET.parse("app/src/runtime/res/xml/appfilter.xml")
-        appfilter_root = appfilter_tree.getroot()
+    print(f"📊 Total new icons: {len(new_icons)}")
+    print(f"📊 Total linked icons: {len(linked_icons)}")
+    print(f"📊 Total icons: {total_icons}")
+    print(f"📊 Total links: {total_links}")
 
-        appfilter_diff_tree = ET.parse("app/src/runtime/res/xml/appfilter_diff.xml")
-        appfilter_diff_root = appfilter_diff_tree.getroot()
-
-        # Get all existing drawables and count all links
-        existing_drawables = set()
-        all_links = []
-
-        for item in appfilter_root.findall("item"):
-            existing_drawables.add(item.get("drawable"))
-            all_links.append({"component": item.get("component"), "drawable": item.get("drawable"), "name": item.get("name")})
-
-        new_icons = []
-        linked_icons = []
-
-        for item in appfilter_diff_root.findall("item"):
-            component = item.get("component")
-            drawable = item.get("drawable")
-            name = item.get("name")
-
-            if drawable in existing_drawables:
-                linked_icons.append(
-                    {"component": component, "drawable": drawable, "name": name}
-                )
-            else:
-                new_icons.append(
-                    {"component": component, "drawable": drawable, "name": name}
-                )
-                existing_drawables.add(drawable)
-
-            all_links.append({"component": component, "drawable": drawable, "name": name})
-
-        total_icons = len(existing_drawables)
-        total_links = len(all_links)
-
-        print(f"📊 Total new icons: {len(new_icons)}")
-        print(f"📊 Total linked icons: {len(linked_icons)}")
-        print(f"📊 Total icons: {total_icons}")
-        print(f"📊 Total links: {total_links}")
-
-        return new_icons, linked_icons, total_icons, total_links
+    return new_icons, linked_icons, total_icons, total_links
 
 
-if ICONS_CALCULATION_TYPE.lower() == "svgs":
-    result = new_icon_since.from_svg(SVG_PATH, last_tag)
-elif ICONS_CALCULATION_TYPE.lower() == "appfilter":
-    result = new_icon_since.from_appfilter(APPFILTER_PATH, last_tag)
-else:
-    result = new_icon_since.from_svg_processor(last_tag)
+result = new_icon_since(last_tag)
 
 
 print(f"🎉 There have been {len(result[0])} new icons since release!")
