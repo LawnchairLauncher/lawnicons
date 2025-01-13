@@ -344,5 +344,5 @@ private fun openLink(context: Context, link: String) {
 }
 
 private fun buildForm(string: String): String {
-    return "https://docs.google.com/forms/d/e/1FAIpQLSez5LqhhGPSp4evrj2vjvf-vGSLLPE5OvvpwktRQv6aCP4Nsg/viewform?entry.1400319382=$string"
+    return "https://lawnchair.app/lawnicons-request/?request=$string"
 }
