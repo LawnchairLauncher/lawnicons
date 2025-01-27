@@ -48,7 +48,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Contributing
 We put the quality of icons first. Please see our guidelines for information on contributing icons or code, it will save you time.
 
-[Lawnicons guidelines](CONTRIBUTING.md) • [Icon samples in Figma](https://www.figma.com/community/file/1227718471680779613) • [Popular icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=609680142#gid=609680142) • [Development issues](https://github.com/LawnchairLauncher/lawnicons/issues)
+[Simplest icon requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Lawnicons guidelines](CONTRIBUTING.md) • [Icon samples in Figma](https://www.figma.com/community/file/1227718471680779613) • [Development issues](https://github.com/LawnchairLauncher/lawnicons/issues)
 
 ## Requesting icons
 [Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml)
