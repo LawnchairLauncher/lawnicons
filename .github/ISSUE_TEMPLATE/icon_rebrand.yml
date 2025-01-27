@@ -1,4 +1,4 @@
-name: Update an existing icon
+name: Update design of an existing icon
 description: Request changing an icon if it is outdated or applied incorrectly.
 labels: ["icon update"]
 body:
@@ -11,8 +11,8 @@ body:
         You can find the current icon and application name in [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). For example, you found "...**drawable="ladb" name="ADB Shell" />**". The icon is [ladb](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/ladb.svg) and the application name is **ADB Shell**.
 
         **Sample response**
-        Now: Twitter, https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg
-        New: X, https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png
+        - Now: Twitter, https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg
+        - New: X, https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png
         
       placeholder: Tell us what should be changed and how
     validations:
