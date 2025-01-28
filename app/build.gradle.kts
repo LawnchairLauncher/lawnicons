@@ -168,5 +168,5 @@ dependencies {
 
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation("com.github.nanihadesuka:LazyColumnScrollbar:2.2.0")
-    implementation("io.github.fornewid:material-motion-compose-core:1.2.1")
+    implementation("io.github.fornewid:material-motion-compose-core:2.0.1")
 }
