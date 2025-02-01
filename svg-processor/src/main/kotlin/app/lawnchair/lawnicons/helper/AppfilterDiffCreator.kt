@@ -27,16 +27,8 @@ object AppfilterDiffCreator {
         return try {
             runGitCommand(listOf("fetch", "--tags"))
 
-            val tagCommand =
-                listOf("/usr/bin/bash", "-c", "git tag --sort=-creatordate | head -n 1")
-            val tagProcess = ProcessBuilder(tagCommand)
-                .redirectErrorStream(true)
-                .start()
-
-            val latestTag = tagProcess.inputStream.bufferedReader().readLine()
-            if (tagProcess.waitFor() != 0) {
-                throw RuntimeException("Failed to get latest tag")
-            }
+            val tags = runGitCommand(listOf("tag", "--sort=-creatordate"))
+            val latestTag = tags.firstOrNull() ?: throw RuntimeException("No tags found")
 
             runGitCommand(listOf("show", "$latestTag:$appFilterFile"))
         } catch (e: Exception) {
