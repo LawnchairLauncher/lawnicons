@@ -1146,6 +1146,7 @@
   <item component="ComponentInfo{com.appberrini/com.appberrini.MainActivity}" drawable="berrini" name="Berrini" />
   <item component="ComponentInfo{com.bestbuy.android/com.bestbuy.android.activity.HomeScreen}" drawable="best_buy" name="Best Buy" />
   <item component="ComponentInfo{com.bestbuy.android/com.bestbuy.android.activity.SplashActivity}" drawable="best_buy" name="Best Buy" />
+  <item component="ComponentInfo{com.coppi.bestbuy/com.bestbuy.android.activity.HomeScreenActivity}" drawable="best_buy" name="Best Buy" />
   <item component="ComponentInfo{com.bt.bestknots/com.bt.bestknots.splash}" drawable="best_knots" name="Best Knots" />
   <item component="ComponentInfo{it.mirko.beta/it.mirko.beta.login.LoginActivity}" drawable="beta_maniac" name="Beta Maniac" />
   <item component="ComponentInfo{it.mirko.beta/it.mirko.beta.login.LoadingActivity}" drawable="beta_maniac" name="Beta Maniac" />
@@ -4862,6 +4863,7 @@
   <item component="ComponentInfo{com.hihonor.email/com.android.email.activity.Welcome}" drawable="honor_email" name="Honor Email" />
   <item component="ComponentInfo{com.hihonor.HnMultiScreenShot/com.android.systemui.flashlight.FlashlightActivity}" drawable="flashlight" name="Honor Flashlight" />
   <item component="ComponentInfo{com.hihonor.android.fmradio/com.hihonor.android.fmradio.FMRadioMainActivity}" drawable="huawei_fm_radio" name="Honor FM Radio" />
+  <item component="ComponentInfo{com.hihonor.photos/com.hihonor.gallery.app.GalleryMain}" drawable="gallery" name="Honor Gallery" />
   <item component="ComponentInfo{com.hihonor.gamecenter/com.hihonor.gamecenter.bu_games_display.splash.SplashActivity}" drawable="xiaomi_game_center" name="Honor Game Center" />
   <item component="ComponentInfo{com.hihonor.health/com.hihonor.health.splash.SplashActivity}" drawable="honor_health" name="HONOR Health" />
   <item component="ComponentInfo{com.hihonor.mirror/com.hihonor.mirror.Mirror}" drawable="huawei_mirror" name="Honor Mirror" />
@@ -5849,9 +5851,11 @@
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.TCLAlarmClockActivity}" drawable="clock" name="LG Clock" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.DefaultAlarmClockActivity}" drawable="clock" name="LG Clock" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.AlarmClockActivity}" drawable="clock" name="LG Clock" />
+  <item component="ComponentInfo{com.lge.filemanager/com.lge.filemanager.view.LaunchActivity}" drawable="files" name="LG File Manager" />
   <item component="ComponentInfo{com.lge.fmradio/com.lge.fmradio.IntroActivity}" drawable="lg_fm_radio" name="LG FM Radio" />
   <item component="ComponentInfo{com.lge.gamelauncher/com.lge.gamelauncher.ui.home.GameLauncherActivity}" drawable="lg_game_launcher" name="LG Game Launcher" />
   <item component="ComponentInfo{com.lge.music/com.lge.music.MusicBrowserActivity}" drawable="apple_music" name="LG Music" />
+  <item component="ComponentInfo{com.lge.qmemoplus/com.lge.qmemoplus.ui.main.MainActivity}" drawable="notes" name="LG QuickMemo" />
   <item component="ComponentInfo{com.lge.lgworld/com.lge.lgworld.ui.activity.MainActivity}" drawable="lg_smartworld" name="LG SmartWorld" />
   <item component="ComponentInfo{com.lgeha.nuts/com.lgeha.nuts.MainActivity}" drawable="lg_thinq" name="LG ThinQ" />
   <item component="ComponentInfo{com.lgeha.nuts/com.lgeha.nuts.DashboardActivity50}" drawable="lg_thinq" name="LG ThinQ" />
@@ -9588,9 +9592,10 @@
   <item component="ComponentInfo{com.samsung.android.keyscafe/com.samsung.android.keyscafe.main.ui.KeysCafeSplashActivity}" drawable="samsung_keys_cafe" name="Samsung Keys Cafe" />
   <item component="ComponentInfo{com.sec.android.app.kidshome/com.sec.android.app.kidshome.start.ui.LaunchActivity}" drawable="samsung_kids" name="Samsung Kids" />
   <item component="ComponentInfo{com.samsung.android.app.simplesharing/com.samsung.android.app.simplesharing.linksharing.history.Launcher}" drawable="samsung_link_sharing" name="Samsung Link Sharing" />
-  <item component="ComponentInfo{com.opera.max.global/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max_vpn" name="Samsung Max VPN" />
-  <item component="ComponentInfo{com.opera.max.global/com.opera.max.ui.v2.UltraLauncherActivity}" drawable="samsung_max_vpn" name="Samsung Max VPN" />
-  <item component="ComponentInfo{com.opera.max.oem/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max_vpn" name="Samsung Max VPN" />
+  <item component="ComponentInfo{com.opera.max.global/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max" name="Samsung Max" />
+  <item component="ComponentInfo{com.opera.max.global/com.opera.max.ui.v2.UltraLauncherActivity}" drawable="samsung_max" name="Samsung Max" />
+  <item component="ComponentInfo{com.opera.max.oem/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max" name="Samsung Max" />
+  <item component="ComponentInfo{com.samsung.max.go/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max" name="Samsung Max" />
   <item component="ComponentInfo{com.samsung.android.mdx/com.samsung.android.mdx.windowslink.tileservice.LinkToWidowsLauncherActivityDummy}" drawable="samsung_media_and_devices" name="Samsung Media and Devices" />
   <item component="ComponentInfo{com.samsung.android.voc/com.samsung.android.voc.MainActivity}" drawable="samsung_members" name="Samsung Members" />
   <item component="ComponentInfo{com.samsung.android.voc/com.samsung.android.voc.app.LauncherActivity}" drawable="samsung_members" name="Samsung Members" />
@@ -10668,6 +10673,7 @@
   <item component="ComponentInfo{com.katiearose.sobriety/com.katiearose.sobriety.Main}" drawable="sobriety" name="Sobriety" />
   <item component="ComponentInfo{com.katiearose.sobriety/com.katiearose.sobriety.activities.Main}" drawable="sobriety" name="Sobriety" />
   <item component="ComponentInfo{com.ijsoft.socl/com.ijsoft.socl.SplashActivity}" drawable="socl" name="SoC-L" />
+  <item component="ComponentInfo{com.sockslitepro.net/com.sockslitepro.net.SplashScreenActivity}" drawable="vpn_super_unlimited_proxy" name="Sockslite" />
   <item component="ComponentInfo{com.nasoft.socmark/com.nasoft.socmark.ui.MainActivity}" drawable="socmark" name="socmark" />
   <item component="ComponentInfo{com.google.socratic/com.google.android.apps.education.bloom.app.home.HomeActivity}" drawable="socratic" name="Socratic" />
   <item component="ComponentInfo{com.sofascore.results/com.sofascore.results.main.start.StartActivity}" drawable="sofascore" name="Sofascore" />
@@ -12106,6 +12112,7 @@
   <item component="ComponentInfo{com.ubercab/com.ubercab.activities.MapActivity}" drawable="uber" name="Uber" />
   <item component="ComponentInfo{com.ubercab/com.ubercab.presidio.app.core.root.RootActivity}" drawable="uber" name="Uber" />
   <item component="ComponentInfo{com.ubercab/com.ubercab.UBUberActivity}" drawable="uber" name="Uber" />
+  <item component="ComponentInfo{ru.yandex.uber/ru.yandex.taxi.activity.MainActivity}" drawable="uber" name="Uber" />
   <item component="ComponentInfo{com.ubercab.driver/com.google.android.archive.ReactivateActivity}" drawable="uber_driver" name="Uber Driver" />
   <item component="ComponentInfo{com.ubercab.driver/com.ubercab.driver.feature.launch.LauncherActivity}" drawable="uber_driver" name="Uber Driver" />
   <item component="ComponentInfo{com.ubercab.driver/com.ubercab.carbon.core.CarbonActivity}" drawable="uber_driver" name="Uber Driver" />
@@ -12487,6 +12494,7 @@
   <item component="ComponentInfo{com.vivo.game/com.vivo.game.ui.LogoActivity}" drawable="vivo_game_space" name="vivo Game Space" />
   <item component="ComponentInfo{com.vivo.health/com.vivo.health.main.activity.GuideActivity}" drawable="vivo_health" name="vivo Health" />
   <item component="ComponentInfo{com.vivo.vhome/com.vivo.vhome.ui.VHomeActivity}" drawable="vivo_jovi_inlife" name="vivo Jovi InLife" />
+  <item component="ComponentInfo{com.vivo.vhome/com.vivo.vhome.ir.ui.IRDeviceManageActivity}" drawable="vivo_jovi_inlife" name="vivo Jovi InLife" />
   <item component="ComponentInfo{com.vivo.agent/com.vivo.agent.desktop.view.activities.JoviHomeNewActivity}" drawable="vivo_jovi_voice" name="vivo Jovi Voice" />
   <item component="ComponentInfo{com.vivo.childrenmode/com.vivo.childrenmode.activity.ChildHomeActivity}" drawable="vivo_kids_mode" name="vivo Kids Mode" />
   <item component="ComponentInfo{com.android.bbk.lockscreen3/com.android.bbk.lockscreen3.LockScreenActivity}" drawable="vivo_lock" name="vivo Lock" />
