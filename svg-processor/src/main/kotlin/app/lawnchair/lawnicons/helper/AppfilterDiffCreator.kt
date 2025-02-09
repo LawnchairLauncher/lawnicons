@@ -76,7 +76,17 @@ object AppfilterDiffCreator {
         mainLines: List<String>,
         developLines: List<String>,
     ): List<String> {
-        return developLines.filterNot { it in mainLines }
+        val drawablesInMain = mainLines.mapNotNull { extractDrawableItem(it) }.toSet()
+
+        return developLines.filter { item ->
+            val drawable = extractDrawableItem(item)
+            drawable != null && drawable !in drawablesInMain
+        }
+    }
+
+    private fun extractDrawableItem(item: String): String? {
+        val regex = """drawable="([^"]+)"""".toRegex()
+        return regex.find(item)?.groups?.get(1)?.value
     }
 
     private fun writeDiffToFile(
