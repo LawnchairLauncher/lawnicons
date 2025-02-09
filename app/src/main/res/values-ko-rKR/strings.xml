@@ -33,7 +33,7 @@
     <!-- Contribution -->
     <string name="contribution_core">코어 앱</string>
     <string name="contribution_icons">아이콘</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">인프라</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Special thanks</string>
@@ -62,9 +62,10 @@
     <string name="copied_text">텍스트를 복사했습니다.</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
+    <string name="icon_requests_suspended">Icon requests are currently suspended</string>
     <string name="snackbar_request_too_large">아이콘 요청 정보를 클립보드에 복사했습니다. 아이콘을 요청하려면 세부 정보를 폼에 입력하세요.</string>
     <string name="snackbar_use_fallback_link">폼 열기</string>
     <string name="clear">기록 삭제</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons_in_version">버전 %1$s의 새로운 아이콘</string>
+    <string name="new_icons">새로운 아이콘 (%1$s)</string>
 </resources>

@@ -12,7 +12,7 @@
     <!-- Search tooltip -->
     <string name="search">Recherche</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">Aucune icône trouvée</string>
+    <string name="no_items_found">%s introuvable</string>
     <!-- About page -->
     <string name="about">À propos</string>
     <!-- External Links -->
@@ -38,9 +38,9 @@
     <!-- Special Thanks label -->
     <string name="special_thanks">Remerciements spéciaux</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Pour avoir inspiré l\'icône de l\'application.</string>
+    <string name="special_thanks_icon">Pour avoir inspiré l\'icône de l\'application</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Pour avoir donné le nom à l\'application.</string>
+    <string name="special_thanks_name">Pour avoir donné le nom à l\'application</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">Mentions légales</string>
     <!-- Icon Information Popup window -->
@@ -53,7 +53,7 @@
     <!-- Mapped components -->
     <string name="mapped_components">Application</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">Si l\'icône est obsolète en raison d\'un changement de marque, veuillez nous aviser sur GitHub.</string>
+    <string name="icon_info_outdated_warning">Si l\'icône est obsolète en raison d\'un changement de marque, créez un « problème » sur GitHub.</string>
     <!-- Chevron a11y description -->
     <string name="toggle_visibility_of_contents">Activer/désactiver la visibilité des contenus</string>
     <!-- Request icons button -->
@@ -61,10 +61,11 @@
     <string name="copy_to_clipboard">Copier dans le presse-papier</string>
     <string name="copied_text">Texte copié</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
+    <string name="snackbar_request_icons_hint">Demander icônes manquantes de la barre inférieure</string>
+    <string name="icon_requests_suspended">Icon requests are currently suspended</string>
     <string name="snackbar_request_too_large">Détails de la demande d\'icône copiés dans le presse-papiers. Pour les demander, entrez les détails dans le formulaire.</string>
     <string name="snackbar_use_fallback_link">Ouvrir le formulaire</string>
     <string name="clear">Effacer</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons_in_version">Nouvelles icônes dans v%1$s</string>
+    <string name="new_icons">Nouvelles icônes (%1$s)</string>
 </resources>
