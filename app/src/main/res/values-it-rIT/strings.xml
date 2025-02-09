@@ -3,68 +3,69 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">Versione %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_hint">Cerca tra %d icone</string>
+    <string name="search_bar_icon_picker">Seleziona un\'icona</string>
     <!-- Search tooltip -->
     <string name="search">Ricerca</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">Nessun risultato per ‘%s’</string>
     <!-- About page -->
     <string name="about">Informazioni</string>
     <!-- External Links -->
     <!-- GitHub repository link-->
     <!-- Icon Request form link -->
-    <string name="request_form">Icon request form</string>
+    <string name="request_form">Modulo di richiesta icone</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Contributori</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Contributori principali</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Vedi tutti i contributori</string>
     <!-- View on GitHub link -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Visualizza su GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">Condividi i dettagli</string>
     <!-- Contribution -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Core dell\'app</string>
     <string name="contribution_icons">Icone</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruttura</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Ringraziamenti speciali</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Per aver ispirato l\'icona dell\'app</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Per aver dato il nome all\'app</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Licenze open-source</string>
     <!-- Icon Information Popup window -->
     <!-- Name -->
-    <string name="name">Name</string>
+    <string name="name">Nome</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">Disegnabile</string>
     <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="component">Nome del componente</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">Componenti mappati</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Se l\'icona è obsoleta a causa di un rebranding, crea un\'issue su GitHub.</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">Attiva/Disattiva la visibilità dei contenuti</string>
     <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="copied_text">Copied text</string>
+    <string name="request_icons">Richiedi icone</string>
+    <string name="copy_to_clipboard">Copia negli appunti</string>
+    <string name="copied_text">Testo copiato</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
-    <string name="clear">Clear</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="snackbar_request_icons_hint">Richiedi icone mancanti dalla barra inferiore</string>
+    <string name="icon_requests_suspended">Le richieste d\'icone sono attualmente sospese</string>
+    <string name="snackbar_request_too_large">Dettagli della richiesta delle icone copiati negli appunti. Per richiederle, inviali nel modulo.</string>
+    <string name="snackbar_use_fallback_link">Apri il modulo</string>
+    <string name="clear">Cancella</string>
+    <string name="new_icons_in_version">Nuove icone in v%1$s</string>
+    <string name="new_icons">Nuove icone (%1$s)</string>
 </resources>

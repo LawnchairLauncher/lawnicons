@@ -23,7 +23,7 @@
     <!-- Contributors label -->
     <string name="contributors">Közreműködők</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Alapvető közreműködők</string>
+    <string name="core_contributors">Fő közreműködők</string>
     <!-- Item that links to the Contributors page -->
     <string name="see_all_contributors">Az összes közreműködő megtekintése</string>
     <!-- View on GitHub link -->
@@ -62,9 +62,10 @@
     <string name="copied_text">Másolt szöveg</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">A hiányzó ikonokat az alsó sávról kérje</string>
+    <string name="icon_requests_suspended">Az ikonigénylés jelenleg nem érhető el</string>
     <string name="snackbar_request_too_large">Az ikonkérelem részletei a vágólapra másolva. Kéréséhez adja meg a részleteket az űrlapon.</string>
     <string name="snackbar_use_fallback_link">Az űrlap megnyitása</string>
-    <string name="clear">Clear</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="clear">Törlés</string>
+    <string name="new_icons_in_version">%1$s-verzió új ikonjai</string>
+    <string name="new_icons">Új ikonok (%1$s)</string>
 </resources>

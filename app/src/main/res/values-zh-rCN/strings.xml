@@ -3,7 +3,7 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">版本：%s</string>
+    <string name="version_x">版本 %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
@@ -47,13 +47,13 @@
     <!-- Name -->
     <string name="name">名称</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">绘制对象</string>
     <!-- Package prefix -->
     <string name="component">组件名称</string>
     <!-- Mapped components -->
     <string name="mapped_components">映射的组件</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">如果图标过时，请在 GitHub 上提交 issue</string>
+    <string name="icon_info_outdated_warning">如果图标设计已更改，请在 GitHub 上提交 issue</string>
     <!-- Chevron a11y description -->
     <string name="toggle_visibility_of_contents">切换内容可见性</string>
     <!-- Request icons button -->
@@ -62,6 +62,7 @@
     <string name="copied_text">已复制文本</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">从底栏请求缺失的图标</string>
+    <string name="icon_requests_suspended">图标请求目前已暂停</string>
     <string name="snackbar_request_too_large">图标申请详情已复制到剪贴板，请将这些详情填写到申请表单中以完成申请。</string>
     <string name="snackbar_use_fallback_link">打开表单</string>
     <string name="clear">清除</string>

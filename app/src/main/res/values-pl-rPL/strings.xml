@@ -33,14 +33,14 @@
     <!-- Contribution -->
     <string name="contribution_core">Aplikacja bazowa</string>
     <string name="contribution_icons">Ikony</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktura</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Specjalne podziękowania</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">Za zainspirowanie ikony aplikacji.</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Za nazwanie aplikacji.</string>
+    <string name="special_thanks_name">Za nazwanie aplikacji</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">Podziękowanie</string>
     <!-- Icon Information Popup window -->
@@ -59,12 +59,13 @@
     <!-- Request icons button -->
     <string name="request_icons">Zażądaj ikon</string>
     <string name="copy_to_clipboard">Skopiuj do schowka</string>
-    <string name="copied_text">Skopiowany tekst</string>
+    <string name="copied_text">Skopiowano tekst</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="snackbar_request_too_large">Skopiowano szczegóły żądania ikon do schowka. Aby je poprosić, prześlij szczegóły do formularza.</string>
+    <string name="snackbar_request_icons_hint">Zażądaj brakujących ikon z paska dolnego</string>
+    <string name="icon_requests_suspended">Żądania ikon są obecnie zawieszone</string>
+    <string name="snackbar_request_too_large">Skopiowano szczegóły żądania ikon do schowka. Aby o nie poprosić, prześlij szczegóły do formularza.</string>
     <string name="snackbar_use_fallback_link">Otwórz formularz</string>
     <string name="clear">Wyczyść</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons_in_version">Nowe ikony w v%1$s</string>
+    <string name="new_icons">Nowe ikony (%1$s)</string>
 </resources>
