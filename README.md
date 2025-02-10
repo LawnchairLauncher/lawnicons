@@ -53,4 +53,4 @@ We put the quality of icons first. Please see our guidelines for information on 
 ## Requesting icons
 [Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml)
 
-<!-- `Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response` -->
+Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response
