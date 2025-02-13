@@ -1,31 +1,29 @@
 {
-    "labels": [
-        "dependencies",
+    labels: [
+        'dependencies',
     ],
-    "extends": [
-        "config:base",
+    extends: [
+        'config:recommended',
     ],
-    "packageRules": [
+    packageRules: [
         {
-            "groupName": "Kotlin and KSP",
-            "matchPackagePrefixes": [
-                "com.google.devtools.ksp",
+            groupName: 'Kotlin and KSP',
+            matchPackageNames: [
+                'com.google.devtools.ksp{/,}**',
+                '/org.jetbrains.kotlin.*/',
             ],
-            "matchPackagePatterns": [
-                "org.jetbrains.kotlin.*",
-            ]
         },
         {
-            "groupName": "AGP",
-            "matchPackagePatterns": [
-                "com.android.*",
-            ]
+            groupName: 'AGP',
+            matchPackageNames: [
+                '/com.android.*/',
+            ],
         },
         {
-            "groupName": "Hilt",
-            "matchPackagePrefixes": [
-                "com.google.dagger",
-            ]
-        }
-    ]
+            groupName: 'Hilt',
+            matchPackageNames: [
+                'com.google.dagger{/,}**',
+            ],
+        },
+    ],
 }
