@@ -4610,6 +4610,17 @@
   <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.editors.kix.KixDocumentCreatorActivity}" drawable="google_sheets" name="Google Sheets" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.editors.kix.KixEditorActivity}" drawable="google_sheets" name="Google Sheets" />
   <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.SettingsActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.WeatherActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.ui.SettingsActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.WeatherActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.PasswordManagerActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.MusicSearchActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.GamesActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.AssistantActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.PasswordManagerActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.MusicSearchActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.GameActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.AssistantActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.archive.ReactivateActivity}" drawable="google_slides" name="Google Slides" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_slides" name="Google Slides" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.editors.punch.PunchActivity}" drawable="google_slides" name="Google Slides" />
@@ -6916,6 +6927,7 @@
   <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity}" drawable="mj_pdf" name="MJ PDF" />
   <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.LauncherAlias}" drawable="mj_pdf" name="MJ PDF" />
   <item component="ComponentInfo{foundation.e.pdfviewer/com.gsnathan.pdfviewer.LauncherAlias}" drawable="grapheneos_pdf" name="MJ PDF" />
+  <item component="ComponentInfo{foundation.e.pdfviewer/com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity}" drawable="grapheneos_pdf" name="MJ PDF" />
   <item component="ComponentInfo{com.javiersantos.mlmanager/com.javiersantos.mlmanager.activities.MainActivity}" drawable="ml_manager" name="ML Manager" />
   <item component="ComponentInfo{com.javiersantos.mlmanagerpro/com.javiersantos.mlmanager.activities.MainActivity}" drawable="ml_manager_pro" name="ML Manager Pro" />
   <item component="ComponentInfo{app.mlauncher/com.github.droidworksstudio.mlauncher.MainActivity}" drawable="mlauncher" name="mLauncher" />
@@ -7368,6 +7380,9 @@
   <item component="ComponentInfo{com.dapat.mypay/com.dapat.mypay.MainActivity}" drawable="mypay" name="MyPay" />
   <item component="ComponentInfo{com.dafturn.mypertamina/com.dafturn.mypertamina.presentation.onboarding.splash.SplashActivity}" drawable="mypertamina" name="MyPertamina" />
   <item component="ComponentInfo{com.fjsoft.myphoneexplorer.client/com.fjsoft.myphoneexplorer.client.MainActivity}" drawable="myphoneexplorer" name="MyPhoneExplorer" />
+  <item component="ComponentInfo{com.fjsoft.myphoneexplorer.client/com.fjsoft.myphoneexplorer.tasks.TaskList}" drawable="myphoneexplorer" name="MyPhoneExplorer" />
+  <item component="ComponentInfo{com.fjsoft.myphoneexplorer.client/com.fjsoft.myphoneexplorer.sheduler.ShedulerList}" drawable="myphoneexplorer" name="MyPhoneExplorer" />
+  <item component="ComponentInfo{com.fjsoft.myphoneexplorer.client/com.fjsoft.myphoneexplorer.notes.NoteList}" drawable="myphoneexplorer" name="MyPhoneExplorer" />
   <item component="ComponentInfo{ph.com.smart.mypldtsmart/ph.com.smart.mypldtsmart.activity.welcome.WelcomeActivity}" drawable="mypldt_smart" name="myPLDT Smart" />
   <item component="ComponentInfo{de.mypostcard.app/de.mypostcard.app.activities.SplashScreenActivityKt}" drawable="mypostcard" name="MyPostcard" />
   <item component="ComponentInfo{com.thehutgroup.ecommerce.myprotein/com.thehutgroup.ecommerce.MainActivity}" drawable="myprotein" name="Myprotein" />
@@ -7416,6 +7431,7 @@
   <item component="ComponentInfo{pl.orange.mojeorange/crc64292f37a41a990363.SplashScreenWithAnimationView}" drawable="moj_orange" name="Mój Orange ~~ Moj Orange" />
   <item component="ComponentInfo{at.helloagain.muellerde/com.shoutemapp.MainActivity}" drawable="muller" name="Müller ~~ Muller" />
   <item component="ComponentInfo{com.hearthborn.studios.ndial/com.hearthborn.studios.ndial.ndialguide.NDialGuide}" drawable="n_dial" name="N Dial" />
+  <item component="ComponentInfo{com.hearthborn.studios.ndial/com.hearthborn.studios.ndial.contacts.CallLogs}" drawable="n_dial" name="N Dial" />
   <item component="ComponentInfo{com.aktifbank.nkolay/com.aktifbank.nkolay.feature.core.activity.MainActivity}" drawable="n_kolay" name="N Kolay" />
   <item component="ComponentInfo{com.rivuspurus.nbackchallenge/com.rivuspurus.nbackchallenge.MainActivity}" drawable="n_back_challenge" name="N-Back Challenge" />
   <item component="ComponentInfo{com.mihoyo.desktopportal/com.mihoyo.desktopportal.ui.splash.SplashActivity}" drawable="n0va_desktop" name="N0va Desktop" />
@@ -7864,6 +7880,7 @@
   <item component="ComponentInfo{com.fsn.nykaa.man/com.fsn.nykaa.SplashScreenActivityV2}" drawable="nykaa_man" name="Nykaa Man" />
   <item component="ComponentInfo{com.fsn.nykaa.man/com.fsn.nykaa.SplashScreenActivity}" drawable="nykaa_man" name="Nykaa Man" />
   <item component="ComponentInfo{net.nymtech.nymvpn/net.nymtech.nymvpn.ui.MainActivity}" drawable="nymvpn" name="NymVPN" />
+  <item component="ComponentInfo{net.nymtech.nymvpn/net.nymtech.nymvpn.ui.SplashActivity}" drawable="nymvpn" name="NymVPN" />
   <item component="ComponentInfo{com.nytimes.crossword/com.nytimes.games.core.activity.MainActivity}" drawable="nyt_games_word_games_and_sudoku" name="NYT Games: Word Games &amp; Sudoku" />
   <item component="ComponentInfo{com.nytimes.crossword/com.nytimes.crosswordlib.activity.MainActivity}" drawable="nyt_games_word_games_and_sudoku" name="NYT Games: Word Games &amp; Sudoku" />
   <item component="ComponentInfo{com.awedea.nyx/com.awedea.nyx.ui.SplashScreenActivity}" drawable="nyx_music_player" name="Nyx Music Player" />
@@ -8029,6 +8046,7 @@
   <item component="ComponentInfo{net.oneplus.forums/com.oplus.community.activity.LauncherActivity}" drawable="oneplus_community" name="OnePlus Community" />
   <item component="ComponentInfo{net.oneplus.forums/com.oneplus.community.activity.LauncherActivity}" drawable="oneplus_community" name="OnePlus Community" />
   <item component="ComponentInfo{andes.oplus.documentsreader/andes.oplus.documentsreader.launcher.activity.MainActivity}" drawable="oneplus_documents" name="OnePlus Documents" />
+  <item component="ComponentInfo{andes.oplus.documentsreader/andes.oplus.documentsreader.launcher.activity.MainViewActivity}" drawable="oneplus_documents" name="OnePlus Documents" />
   <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" name="OnePlus File Manager" />
   <item component="ComponentInfo{com.oneplus.filemanager/com.oplus.filemanager.main.ui.MainActivity#0}" drawable="files" name="OnePlus File Manager" />
   <item component="ComponentInfo{com.oneplus.filemanager/com.oplus.filemanager.main.ui.MainActivity}" drawable="files" name="OnePlus File Manager" />
@@ -11575,6 +11593,7 @@
   <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.DefaultIcon}" drawable="telegram" name="Telegram" />
   <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.PremiumIcon}" drawable="telegram" name="Telegram" />
   <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.ui.LaunchActivity}" drawable="telegram" name="Telegram" />
+  <item component="ComponentInfo{org.telegram.messenger/com.min.n.MainActivity}" drawable="telegram" name="Telegram" />
   <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.NoxIcon}" drawable="telegram" name="Telegram Beta" />
   <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.AquaIcon}" drawable="telegram" name="Telegram Beta" />
   <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="telegram" name="Telegram Beta" />
