@@ -2,11 +2,11 @@ import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep
 
 plugins {
-    id("com.android.application") version "8.8.1" apply false
+    id("com.android.application") version "8.8.2" apply false
     id("org.jetbrains.kotlin.android") version "2.1.10" apply false
     id("org.jetbrains.kotlin.plugin.compose") version "2.1.10"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10" apply false
-    id("com.google.devtools.ksp") version "2.1.10-1.0.30" apply false
+    id("com.google.devtools.ksp") version "2.1.10-1.0.31" apply false
     id("com.google.dagger.hilt.android") version "2.55" apply false
     id("app.cash.licensee") version "1.12.0" apply false
     id("com.diffplug.spotless") version "7.0.2" apply false
