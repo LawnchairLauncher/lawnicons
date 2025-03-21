@@ -1,7 +1,6 @@
-import app.cash.licensee.LicenseeTask
+import app.cash.licensee.SpdxId
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import com.android.build.gradle.tasks.MergeResources
-import java.util.Locale
 import java.util.Properties
 
 plugins {
@@ -109,21 +108,6 @@ android {
     }
 }
 
-androidComponents.onVariants { variant ->
-    val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-    val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
-    val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
-        dependsOn(licenseeTask)
-        from(licenseeTask.map { it.jsonOutput })
-        // Copy artifacts.json to a new directory.
-        into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
-    }
-    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
-        // Avoid using LicenseeTask::outputDir as it contains extra files that we don't need.
-        objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
-    }
-}
-
 // Process SVGs before every build.
 tasks.withType<MergeResources>().configureEach {
     dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
@@ -135,8 +119,10 @@ composeCompiler {
 }
 
 licensee {
-    allow("Apache-2.0")
-    allow("MIT")
+    allow(SpdxId.Apache_20)
+    allow(SpdxId.MIT)
+
+    bundleAndroidAsset = true
 }
 
 dependencies {
@@ -157,7 +143,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.8.0")
 
-    val hiltVersion = "2.55"
+    val hiltVersion = "2.56"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     ksp("com.google.dagger:hilt-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
