@@ -1,6 +1,5 @@
 import app.cash.licensee.SpdxId
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.android.build.gradle.tasks.MergeResources
 import java.util.Properties
 
 plugins {
@@ -113,11 +112,6 @@ android {
     }
 }
 
-// Process SVGs before every build.
-tasks.withType<MergeResources>().configureEach {
-    dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
-}
-
 composeCompiler {
     stabilityConfigurationFile = layout.projectDirectory.file("compose_compiler_config.conf")
     reportsDestination = layout.buildDirectory.dir("compose_build_reports")
@@ -160,4 +154,8 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation("com.github.nanihadesuka:LazyColumnScrollbar:2.2.0")
     implementation("io.github.fornewid:material-motion-compose-core:2.0.1")
+}
+
+tasks.preBuild {
+    dependsOn(project(projects.svgProcessor.path).tasks.named("run"))
 }
