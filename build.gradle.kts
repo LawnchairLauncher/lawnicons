@@ -2,7 +2,6 @@ import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.jvm.JvmTargetValidationMode
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -53,7 +52,6 @@ allprojects {
     tasks.withType<KotlinCompile>().configureEach {
         compilerOptions {
             jvmTarget = JvmTarget.JVM_17
-            jvmTargetValidationMode = JvmTargetValidationMode.WARNING
         }
     }
 }

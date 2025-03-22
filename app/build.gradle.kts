@@ -106,6 +106,11 @@ android {
                 "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 }
 
 // Process SVGs before every build.
