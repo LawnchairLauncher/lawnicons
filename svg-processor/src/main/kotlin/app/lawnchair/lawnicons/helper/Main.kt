@@ -16,14 +16,12 @@
 
 package app.lawnchair.lawnicons.helper
 
-fun main() {
-    val rootDir = ".."
-    val sourceDir = "$rootDir/svgs/"
-    val resDir = "$rootDir/app/src/runtime/res"
-    val appFilterFile = "$rootDir/app/assets/appfilter.xml"
+fun main(args: Array<String>) {
+    val (svgDir, resDir, assetsDir) = args
+    val appFilterFile = "$assetsDir/appfilter.xml"
 
     // Convert svg to drawable in runtime
-    SvgFilesProcessor.process(sourceDir, "$resDir/drawable")
+    SvgFilesProcessor.process(svgDir, "$resDir/drawable")
     println("SvgToVectorDrawable task completed")
 
     // Read appfilter xml and create icon, drawable xml file.
