@@ -49,11 +49,13 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 Please see our guidelines for information on contributing icons or code. We put the quality of icons first, so we recommend starting with simple icons. We are glad to see those who are determined to finish the job.
 
-**Note:** Currently we don't have much time for Lawnicons, so if you want to review icons or solve issues, then let us know [in our Discord](https://discord.gg/3x8qNWxgGZ).
+Currently we don't have much time for Lawnicons. If you want to review icons or solve issues, then let us know [in our Discord](https://discord.gg/3x8qNWxgGZ).
 
 [Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Lawnicons guidelines](CONTRIBUTING.md) • [Icon samples in Figma](https://www.figma.com/community/file/1227718471680779613) • [Development issues](https://github.com/LawnchairLauncher/lawnicons/issues)
 
 ## Requesting icons
 `Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
+
+We have about 30 000 icon requests in the queue. If you have the skills to create high-quality icons, then you can avoid waiting indefinitely and contribute the icons yourself.
 
 [Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml)
