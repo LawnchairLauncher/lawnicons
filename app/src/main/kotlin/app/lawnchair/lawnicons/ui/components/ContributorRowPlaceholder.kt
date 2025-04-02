@@ -19,51 +19,51 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun ContributorRowPlaceholder(
-    modifier: Modifier = Modifier,
-    first: Boolean = false,
-    last: Boolean = false,
-    divider: Boolean = true,
+  modifier: Modifier = Modifier,
+  first: Boolean = false,
+  last: Boolean = false,
+  divider: Boolean = true,
 ) {
-    Row(
-        modifier = modifier,
-    ) {
-        ListRow(
-            divider = divider,
-            background = true,
-            first = first,
-            last = last,
-            startIcon = {
-                Box(
-                    modifier = Modifier
-                        .size(32.dp)
-                        .placeholder(
-                            visible = true,
-                            shape = CircleShape,
-                            color = MaterialTheme.colorScheme.surfaceContainerHighest,
-                            highlight = PlaceholderHighlight.fade(),
-                        ),
-                )
-            },
-            label = {
-                Box(
-                    modifier = Modifier
-                        .width(96.dp)
-                        .height(18.dp)
-                        .placeholder(
-                            visible = true,
-                            color = MaterialTheme.colorScheme.surfaceContainerHighest,
-                            highlight = PlaceholderHighlight.fade(),
-                        ),
-                )
-            },
+  Row(
+    modifier = modifier,
+  ) {
+    ListRow(
+      divider = divider,
+      background = true,
+      first = first,
+      last = last,
+      startIcon = {
+        Box(
+          modifier = Modifier
+            .size(32.dp)
+            .placeholder(
+              visible = true,
+              shape = CircleShape,
+              color = MaterialTheme.colorScheme.surfaceContainerHighest,
+              highlight = PlaceholderHighlight.fade(),
+            ),
         )
-    }
+      },
+      label = {
+        Box(
+          modifier = Modifier
+            .width(96.dp)
+            .height(18.dp)
+            .placeholder(
+              visible = true,
+              color = MaterialTheme.colorScheme.surfaceContainerHighest,
+              highlight = PlaceholderHighlight.fade(),
+            ),
+        )
+      },
+    )
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun ContributorRowPlaceholderPreview() {
-    LawniconsTheme {
-        ContributorRowPlaceholder()
-    }
+  LawniconsTheme {
+    ContributorRowPlaceholder()
+  }
 }

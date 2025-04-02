@@ -33,87 +33,87 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun IconLink(
-    @DrawableRes iconResId: Int,
-    label: String,
-    url: String,
-    modifier: Modifier = Modifier,
+  @DrawableRes iconResId: Int,
+  label: String,
+  url: String,
+  modifier: Modifier = Modifier,
 ) {
-    val context = LocalContext.current
-    val inPreviewMode = LocalInspectionMode.current
-    IconLink(
-        iconResId = iconResId,
-        label = label,
-        onClick = {
-            if (!inPreviewMode) {
-                val webpage = Uri.parse(url)
-                val intent = Intent(Intent.ACTION_VIEW, webpage)
-                if (intent.resolveActivity(context.packageManager) != null) {
-                    context.startActivity(intent)
-                }
-            }
-        },
-        modifier = modifier,
-    )
+  val context = LocalContext.current
+  val inPreviewMode = LocalInspectionMode.current
+  IconLink(
+    iconResId = iconResId,
+    label = label,
+    onClick = {
+      if (!inPreviewMode) {
+        val webpage = Uri.parse(url)
+        val intent = Intent(Intent.ACTION_VIEW, webpage)
+        if (intent.resolveActivity(context.packageManager) != null) {
+          context.startActivity(intent)
+        }
+      }
+    },
+    modifier = modifier,
+  )
 }
 
 @Composable
 fun IconLink(
-    @DrawableRes iconResId: Int,
-    label: String,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
+  @DrawableRes iconResId: Int,
+  label: String,
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
 ) {
-    val inPreviewMode = LocalInspectionMode.current
+  val inPreviewMode = LocalInspectionMode.current
 
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = modifier
-            .padding(horizontal = 16.dp)
-            .height(64.dp)
-            .clip(MaterialTheme.shapes.medium)
-            .clickable {
-                onClick()
-            },
-    ) {
-        if (!inPreviewMode) {
-            Image(
-                painterResource(id = iconResId),
-                contentDescription = null,
-                colorFilter = ColorFilter.tint(color = LocalContentColor.current),
-                modifier = Modifier
-                    .size(24.dp),
-            )
-        } else {
-            Image(
-                Icons.Rounded.Star,
-                contentDescription = null,
-                colorFilter = ColorFilter.tint(color = LocalContentColor.current),
-                modifier = Modifier
-                    .size(24.dp),
-            )
-        }
-        Spacer(modifier = Modifier.requiredHeight(4.dp))
-        Text(
-            text = label,
-            modifier = Modifier.padding(horizontal = 16.dp),
-            style = MaterialTheme.typography.bodyMedium,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
-        )
+  Column(
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center,
+    modifier = modifier
+      .padding(horizontal = 16.dp)
+      .height(64.dp)
+      .clip(MaterialTheme.shapes.medium)
+      .clickable {
+        onClick()
+      },
+  ) {
+    if (!inPreviewMode) {
+      Image(
+        painterResource(id = iconResId),
+        contentDescription = null,
+        colorFilter = ColorFilter.tint(color = LocalContentColor.current),
+        modifier = Modifier
+          .size(24.dp),
+      )
+    } else {
+      Image(
+        Icons.Rounded.Star,
+        contentDescription = null,
+        colorFilter = ColorFilter.tint(color = LocalContentColor.current),
+        modifier = Modifier
+          .size(24.dp),
+      )
     }
+    Spacer(modifier = Modifier.requiredHeight(4.dp))
+    Text(
+      text = label,
+      modifier = Modifier.padding(horizontal = 16.dp),
+      style = MaterialTheme.typography.bodyMedium,
+      maxLines = 1,
+      overflow = TextOverflow.Ellipsis,
+    )
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun FancyButtonLinkPreview() {
-    LawniconsTheme {
-        Surface {
-            IconLink(
-                iconResId = 0,
-                label = "Example",
-                url = "https://example.com",
-            )
-        }
+  LawniconsTheme {
+    Surface {
+      IconLink(
+        iconResId = 0,
+        label = "Example",
+        url = "https://example.com",
+      )
     }
+  }
 }

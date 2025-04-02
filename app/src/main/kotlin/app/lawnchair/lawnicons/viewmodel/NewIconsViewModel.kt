@@ -23,9 +23,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class NewIconsViewModel @Inject constructor(
-    private val newIconsRepository: NewIconsRepository,
+  private val newIconsRepository: NewIconsRepository,
 ) : ViewModel() {
 
-    @JvmField
-    val newIconsInfoModel = newIconsRepository.newIconsInfoModel
+  @JvmField
+  val newIconsInfoModel = newIconsRepository.newIconsInfoModel
 }

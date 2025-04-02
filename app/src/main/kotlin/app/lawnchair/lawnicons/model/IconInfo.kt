@@ -11,15 +11,15 @@ import kotlinx.serialization.Serializable
  * @property id A unique identifier for the icon.
  */
 data class IconInfo(
-    val drawableName: String,
-    val componentNames: List<LabelAndComponent>,
-    val id: Int,
+  val drawableName: String,
+  val componentNames: List<LabelAndComponent>,
+  val id: Int,
 ) {
-    /**
-     * The user-facing label associated with the icon, derived from the first available
-     * [LabelAndComponent] object.
-     */
-    val label = componentNames.firstOrNull()?.label ?: ""
+  /**
+   * The user-facing label associated with the icon, derived from the first available
+   * [LabelAndComponent] object.
+   */
+  val label = componentNames.firstOrNull()?.label ?: ""
 }
 
 /**
@@ -30,15 +30,15 @@ data class IconInfo(
  *         sharing the same drawable name.
  */
 fun List<IconInfo>.mergeByDrawableName(): List<IconInfo> {
-    return groupBy { it.drawableName }
-        .map { (drawableName, icons) ->
-            val mergedComponentNames = icons.flatMap { it.componentNames }
-            IconInfo(
-                componentNames = mergedComponentNames,
-                drawableName = drawableName,
-                id = icons.first().id,
-            )
-        }
+  return groupBy { it.drawableName }
+    .map { (drawableName, icons) ->
+      val mergedComponentNames = icons.flatMap { it.componentNames }
+      IconInfo(
+        componentNames = mergedComponentNames,
+        drawableName = drawableName,
+        id = icons.first().id,
+      )
+    }
 }
 
 /**
@@ -48,25 +48,25 @@ fun List<IconInfo>.mergeByDrawableName(): List<IconInfo> {
  * @return A new list of [IconInfo] objects, each with a single component name.
  */
 fun List<IconInfo>.splitByComponentName(): List<IconInfo> {
-    val splitList = mutableListOf<IconInfo>()
-    for (iconInfo in this) {
-        for (nameAndComponent in iconInfo.componentNames) {
-            splitList.add(
-                IconInfo(
-                    componentNames = listOf(nameAndComponent),
-                    drawableName = iconInfo.drawableName,
-                    id = iconInfo.id,
-                ),
-            )
-        }
+  val splitList = mutableListOf<IconInfo>()
+  for (iconInfo in this) {
+    for (nameAndComponent in iconInfo.componentNames) {
+      splitList.add(
+        IconInfo(
+          componentNames = listOf(nameAndComponent),
+          drawableName = iconInfo.drawableName,
+          id = iconInfo.id,
+        ),
+      )
     }
-    return splitList
+  }
+  return splitList
 }
 
 fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
-    val firstLabel = componentNames.firstOrNull()?.label ?: ""
-    val firstComponent = componentNames.firstOrNull()?.componentName ?: ""
-    return LabelAndComponent(firstLabel, firstComponent)
+  val firstLabel = componentNames.firstOrNull()?.label ?: ""
+  val firstComponent = componentNames.firstOrNull()?.componentName ?: ""
+  return LabelAndComponent(firstLabel, firstComponent)
 }
 
 /**
@@ -77,6 +77,6 @@ fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
  */
 @Serializable
 data class LabelAndComponent(
-    val label: String,
-    val componentName: String,
+  val label: String,
+  val componentName: String,
 )

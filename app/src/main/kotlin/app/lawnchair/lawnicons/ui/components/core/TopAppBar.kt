@@ -19,71 +19,71 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopAppBar(
-    navigationIcon: @Composable () -> Unit,
-    scrollBehavior: TopAppBarScrollBehavior,
-    title: String,
-    modifier: Modifier = Modifier,
-    isExpandedScreen: Boolean = false,
+  navigationIcon: @Composable () -> Unit,
+  scrollBehavior: TopAppBarScrollBehavior,
+  title: String,
+  modifier: Modifier = Modifier,
+  isExpandedScreen: Boolean = false,
 ) {
-    if (!isExpandedScreen) {
-        LargeTopAppBar(
-            modifier = modifier,
-            scrollBehavior = scrollBehavior,
-            navigationIcon = navigationIcon,
-            title = {
-                Text(title)
-            },
-        )
-    } else {
-        TopAppBar(
-            modifier = modifier,
-            scrollBehavior = scrollBehavior,
-            navigationIcon = navigationIcon,
-            title = {
-                Text(title)
-            },
-        )
-    }
+  if (!isExpandedScreen) {
+    LargeTopAppBar(
+      modifier = modifier,
+      scrollBehavior = scrollBehavior,
+      navigationIcon = navigationIcon,
+      title = {
+        Text(title)
+      },
+    )
+  } else {
+    TopAppBar(
+      modifier = modifier,
+      scrollBehavior = scrollBehavior,
+      navigationIcon = navigationIcon,
+      title = {
+        Text(title)
+      },
+    )
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @PreviewLawnicons
 @Composable
 private fun SmallTopAppBarPreview() {
-    LawniconsTheme {
-        TopAppBar(
-            navigationIcon = {
-                NavigationIconButton(
-                    onClick = {},
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                    size = 40.dp,
-                    modifier = Modifier.padding(horizontal = 4.dp),
-                )
-            },
-            scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
-            title = "Example",
-            isExpandedScreen = true,
+  LawniconsTheme {
+    TopAppBar(
+      navigationIcon = {
+        NavigationIconButton(
+          onClick = {},
+          imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+          size = 40.dp,
+          modifier = Modifier.padding(horizontal = 4.dp),
         )
-    }
+      },
+      scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
+      title = "Example",
+      isExpandedScreen = true,
+    )
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @PreviewLawnicons
 @Composable
 private fun LargeTopAppBarPreview() {
-    LawniconsTheme {
-        TopAppBar(
-            navigationIcon = {
-                NavigationIconButton(
-                    onClick = {},
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                    size = 40.dp,
-                    modifier = Modifier.padding(horizontal = 4.dp),
-                )
-            },
-            scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
-            title = "Example",
-            isExpandedScreen = false,
+  LawniconsTheme {
+    TopAppBar(
+      navigationIcon = {
+        NavigationIconButton(
+          onClick = {},
+          imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+          size = 40.dp,
+          modifier = Modifier.padding(horizontal = 4.dp),
         )
-    }
+      },
+      scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
+      title = "Example",
+      isExpandedScreen = false,
+    )
+  }
 }

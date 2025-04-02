@@ -44,74 +44,74 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun NewIconsCard(
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
+  onClick: () -> Unit,
+  modifier: Modifier = Modifier,
 ) {
-    val prefs = preferenceManager()
-    val cardState = prefs.showNewIconsCard.asState()
-    NewIconsCard(
-        onClick = onClick,
-        visible = cardState.value,
-        onVisibilityChange = {
-            prefs.showNewIconsCard.set(false)
-        },
-        modifier = modifier,
-    )
+  val prefs = preferenceManager()
+  val cardState = prefs.showNewIconsCard.asState()
+  NewIconsCard(
+    onClick = onClick,
+    visible = cardState.value,
+    onVisibilityChange = {
+      prefs.showNewIconsCard.set(false)
+    },
+    modifier = modifier,
+  )
 }
 
 @Composable
 fun NewIconsCard(
-    onClick: () -> Unit,
-    visible: Boolean,
-    onVisibilityChange: () -> Unit,
-    modifier: Modifier = Modifier,
+  onClick: () -> Unit,
+  visible: Boolean,
+  onVisibilityChange: () -> Unit,
+  modifier: Modifier = Modifier,
 ) {
-    AnimatedVisibility(visible) {
-        Surface(
-            color = MaterialTheme.colorScheme.surfaceContainer,
-            shape = MaterialTheme.shapes.extraLarge,
-            modifier = modifier
-                .padding(horizontal = 8.dp)
-                .padding(bottom = 12.dp)
-                .fillMaxWidth(),
-        ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .clickable { onClick() }
-                    .padding(start = 12.dp),
-            ) {
-                Row {
-                    Icon(
-                        painterResource(R.drawable.new_releases),
-                        contentDescription = null,
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = stringResource(
-                            R.string.new_icons_in_version,
-                            BuildConfig.VERSION_NAME,
-                        ),
-                        style = MaterialTheme.typography.titleSmall,
-                    )
-                }
-                Spacer(Modifier.weight(1f))
-                IconButton(
-                    onClick = onVisibilityChange,
-                ) {
-                    Icon(Icons.Rounded.Clear, contentDescription = stringResource(R.string.clear))
-                }
-            }
+  AnimatedVisibility(visible) {
+    Surface(
+      color = MaterialTheme.colorScheme.surfaceContainer,
+      shape = MaterialTheme.shapes.extraLarge,
+      modifier = modifier
+        .padding(horizontal = 8.dp)
+        .padding(bottom = 12.dp)
+        .fillMaxWidth(),
+    ) {
+      Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+          .clickable { onClick() }
+          .padding(start = 12.dp),
+      ) {
+        Row {
+          Icon(
+            painterResource(R.drawable.new_releases),
+            contentDescription = null,
+          )
+          Spacer(Modifier.width(8.dp))
+          Text(
+            text = stringResource(
+              R.string.new_icons_in_version,
+              BuildConfig.VERSION_NAME,
+            ),
+            style = MaterialTheme.typography.titleSmall,
+          )
         }
+        Spacer(Modifier.weight(1f))
+        IconButton(
+          onClick = onVisibilityChange,
+        ) {
+          Icon(Icons.Rounded.Clear, contentDescription = stringResource(R.string.clear))
+        }
+      }
     }
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun NewIconsCardPreview() {
-    LawniconsTheme {
-        Surface {
-            NewIconsCard({})
-        }
+  LawniconsTheme {
+    Surface {
+      NewIconsCard({})
     }
+  }
 }

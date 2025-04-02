@@ -68,241 +68,241 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
  */
 @Composable
 fun LawniconsSearchBar(
-    query: String,
-    isQueryEmpty: Boolean,
-    onClear: () -> Unit,
-    onBack: () -> Unit,
-    onSearch: () -> Unit,
-    onQueryChange: (String) -> Unit,
-    iconCount: Int,
-    onNavigate: () -> Unit,
-    modifier: Modifier = Modifier,
-    inputFieldModifier: Modifier = Modifier,
-    isExpandedScreen: Boolean = false,
-    isIconPicker: Boolean = false,
-    content: @Composable (() -> Unit),
+  query: String,
+  isQueryEmpty: Boolean,
+  onClear: () -> Unit,
+  onBack: () -> Unit,
+  onSearch: () -> Unit,
+  onQueryChange: (String) -> Unit,
+  iconCount: Int,
+  onNavigate: () -> Unit,
+  modifier: Modifier = Modifier,
+  inputFieldModifier: Modifier = Modifier,
+  isExpandedScreen: Boolean = false,
+  isIconPicker: Boolean = false,
+  content: @Composable (() -> Unit),
 ) {
-    var active by rememberSaveable { mutableStateOf(false) }
-    val padding = WindowInsets.navigationBars.toPaddingValues(
-        additionalStart = 16.dp,
-        additionalEnd = 16.dp,
-    )
+  var active by rememberSaveable { mutableStateOf(false) }
+  val padding = WindowInsets.navigationBars.toPaddingValues(
+    additionalStart = 16.dp,
+    additionalEnd = 16.dp,
+  )
 
-    Box(
-        modifier = modifier
-            .animateContentSize()
-            .thenIf(isExpandedScreen) {
-                padding(padding).statusBarsPadding()
-            }
-            .semantics {
-                isTraversalGroup = true
-            }
-            .zIndex(1f)
-            .fillMaxSize(),
-        contentAlignment = Alignment.TopCenter,
-    ) {
-        ResponsiveSearchBar(
-            query = query,
-            onQueryChange = onQueryChange,
-            onSearch = { if (query != "") onSearch() },
-            active = active,
-            onActiveChange = {
-                active = it
-                if (!active) {
-                    onBack()
-                }
-            },
-            placeholder = {
-                Text(
-                    stringResource(
-                        id = if (isIconPicker) {
-                            R.string.search_bar_icon_picker
-                        } else {
-                            R.string.search_bar_hint
-                        },
-                        iconCount,
-                    ),
-                )
-            },
-            leadingIcon = {
-                SearchIcon(
-                    active = active,
-                    onButtonClick = {
-                        onBack()
-                        active = !active
-                    },
-                )
-            },
-            trailingIcon = {
-                if (!isIconPicker) {
-                    SearchActionButton(
-                        isQueryEmpty = isQueryEmpty,
-                        navigateContent = {
-                            if (isExpandedScreen) {
-                                IconButton(
-                                    onClick = it,
-                                ) {
-                                    Icon(
-                                        imageVector = ImageVector.vectorResource(id = R.drawable.lawnicons_foreground),
-                                        contentDescription = null,
-                                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        modifier = Modifier
-                                            .size(24.dp),
-                                    )
-                                }
-                            }
-                        },
-                        onNavigate = onNavigate,
-                        onClear = onClear,
-                    )
-                }
-            },
-            isExpandedScreen = isExpandedScreen,
-            inputFieldModifier = inputFieldModifier,
-        ) {
-            content()
+  Box(
+    modifier = modifier
+      .animateContentSize()
+      .thenIf(isExpandedScreen) {
+        padding(padding).statusBarsPadding()
+      }
+      .semantics {
+        isTraversalGroup = true
+      }
+      .zIndex(1f)
+      .fillMaxSize(),
+    contentAlignment = Alignment.TopCenter,
+  ) {
+    ResponsiveSearchBar(
+      query = query,
+      onQueryChange = onQueryChange,
+      onSearch = { if (query != "") onSearch() },
+      active = active,
+      onActiveChange = {
+        active = it
+        if (!active) {
+          onBack()
         }
+      },
+      placeholder = {
+        Text(
+          stringResource(
+            id = if (isIconPicker) {
+              R.string.search_bar_icon_picker
+            } else {
+              R.string.search_bar_hint
+            },
+            iconCount,
+          ),
+        )
+      },
+      leadingIcon = {
+        SearchIcon(
+          active = active,
+          onButtonClick = {
+            onBack()
+            active = !active
+          },
+        )
+      },
+      trailingIcon = {
+        if (!isIconPicker) {
+          SearchActionButton(
+            isQueryEmpty = isQueryEmpty,
+            navigateContent = {
+              if (isExpandedScreen) {
+                IconButton(
+                  onClick = it,
+                ) {
+                  Icon(
+                    imageVector = ImageVector.vectorResource(id = R.drawable.lawnicons_foreground),
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier
+                      .size(24.dp),
+                  )
+                }
+              }
+            },
+            onNavigate = onNavigate,
+            onClear = onClear,
+          )
+        }
+      },
+      isExpandedScreen = isExpandedScreen,
+      inputFieldModifier = inputFieldModifier,
+    ) {
+      content()
     }
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun ResponsiveSearchBar(
-    query: String,
-    onQueryChange: (String) -> Unit,
-    onSearch: (String) -> Unit,
-    active: Boolean,
-    onActiveChange: (Boolean) -> Unit,
-    placeholder: @Composable () -> Unit,
-    leadingIcon: @Composable () -> Unit,
-    trailingIcon: @Composable () -> Unit,
-    isExpandedScreen: Boolean,
-    modifier: Modifier = Modifier,
-    inputFieldModifier: Modifier = Modifier,
-    content: @Composable ColumnScope.() -> Unit,
+  query: String,
+  onQueryChange: (String) -> Unit,
+  onSearch: (String) -> Unit,
+  active: Boolean,
+  onActiveChange: (Boolean) -> Unit,
+  placeholder: @Composable () -> Unit,
+  leadingIcon: @Composable () -> Unit,
+  trailingIcon: @Composable () -> Unit,
+  isExpandedScreen: Boolean,
+  modifier: Modifier = Modifier,
+  inputFieldModifier: Modifier = Modifier,
+  content: @Composable ColumnScope.() -> Unit,
 ) {
-    val inputField =
-        @Composable {
-            SearchBarDefaults.InputField(
-                query = query,
-                onQueryChange = onQueryChange,
-                onSearch = onSearch,
-                modifier = inputFieldModifier,
-                expanded = active,
-                onExpandedChange = onActiveChange,
-                placeholder = placeholder,
-                leadingIcon = leadingIcon,
-                trailingIcon = trailingIcon,
-            )
-        }
-
-    if (isExpandedScreen) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = modifier,
-        ) {
-            DockedSearchBar(
-                inputField = inputField,
-                expanded = active,
-                onExpandedChange = onActiveChange,
-                content = content,
-            )
-        }
-    } else {
-        SearchBar(
-            inputField = inputField,
-            expanded = active,
-            onExpandedChange = onActiveChange,
-            modifier = Modifier.fillMaxWidth(),
-            content = content,
-        )
+  val inputField =
+    @Composable {
+      SearchBarDefaults.InputField(
+        query = query,
+        onQueryChange = onQueryChange,
+        onSearch = onSearch,
+        modifier = inputFieldModifier,
+        expanded = active,
+        onExpandedChange = onActiveChange,
+        placeholder = placeholder,
+        leadingIcon = leadingIcon,
+        trailingIcon = trailingIcon,
+      )
     }
+
+  if (isExpandedScreen) {
+    Row(
+      verticalAlignment = Alignment.CenterVertically,
+      horizontalArrangement = Arrangement.Center,
+      modifier = modifier,
+    ) {
+      DockedSearchBar(
+        inputField = inputField,
+        expanded = active,
+        onExpandedChange = onActiveChange,
+        content = content,
+      )
+    }
+  } else {
+    SearchBar(
+      inputField = inputField,
+      expanded = active,
+      onExpandedChange = onActiveChange,
+      modifier = Modifier.fillMaxWidth(),
+      content = content,
+    )
+  }
 }
 
 @Composable
 internal fun SearchIcon(
-    active: Boolean,
-    onButtonClick: () -> Unit,
+  active: Boolean,
+  onButtonClick: () -> Unit,
 ) {
-    if (active) {
-        NavigationIconButton(
-            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-            onClick = onButtonClick,
-        )
-    } else {
-        Icon(Icons.Rounded.Search, contentDescription = null)
-    }
+  if (active) {
+    NavigationIconButton(
+      imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+      onClick = onButtonClick,
+    )
+  } else {
+    Icon(Icons.Rounded.Search, contentDescription = null)
+  }
 }
 
 @Composable
 internal fun SearchActionButton(
-    isQueryEmpty: Boolean,
-    navigateContent: @Composable (() -> Unit) -> Unit,
-    onNavigate: () -> Unit,
-    onClear: () -> Unit,
+  isQueryEmpty: Boolean,
+  navigateContent: @Composable (() -> Unit) -> Unit,
+  onNavigate: () -> Unit,
+  onClear: () -> Unit,
 ) {
-    Crossfade(isQueryEmpty, label = "") {
-        if (it) {
-            navigateContent(onNavigate)
-        } else {
-            NavigationIconButton(
-                onClick = onClear,
-                imageVector = Icons.Rounded.Close,
-            )
-        }
+  Crossfade(isQueryEmpty, label = "") {
+    if (it) {
+      navigateContent(onNavigate)
+    } else {
+      NavigationIconButton(
+        onClick = onClear,
+        imageVector = Icons.Rounded.Close,
+      )
     }
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun SearchBarPreview() {
-    var searchTerm by remember { mutableStateOf(value = "") }
-    val iconInfo = SampleData.iconInfoList
+  var searchTerm by remember { mutableStateOf(value = "") }
+  val iconInfo = SampleData.iconInfoList
 
-    LawniconsTheme {
-        LawniconsSearchBar(
-            query = searchTerm,
-            isQueryEmpty = false,
-            onClear = {},
-            onBack = {},
-            onSearch = {},
-            onQueryChange = { newValue ->
-                searchTerm = newValue
-            },
-            iconCount = 2,
-            onNavigate = {},
-            isExpandedScreen = true,
-            content = {
-                SearchContents(
-                    "",
-                    SearchMode.LABEL,
-                    {},
-                    iconInfo,
-                )
-            },
+  LawniconsTheme {
+    LawniconsSearchBar(
+      query = searchTerm,
+      isQueryEmpty = false,
+      onClear = {},
+      onBack = {},
+      onSearch = {},
+      onQueryChange = { newValue ->
+        searchTerm = newValue
+      },
+      iconCount = 2,
+      onNavigate = {},
+      isExpandedScreen = true,
+      content = {
+        SearchContents(
+          "",
+          SearchMode.LABEL,
+          {},
+          iconInfo,
         )
-    }
+      },
+    )
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun SearchIconPreview() {
-    LawniconsTheme {
-        Column {
-            SearchIcon(active = true) {}
-            SearchIcon(active = false) {}
-        }
+  LawniconsTheme {
+    Column {
+      SearchIcon(active = true) {}
+      SearchIcon(active = false) {}
     }
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun SearchActionButtonPreview() {
-    LawniconsTheme {
-        Column {
-            SearchActionButton(isQueryEmpty = false, {}, {}, {})
-            SearchActionButton(isQueryEmpty = true, {}, {}, {})
-        }
+  LawniconsTheme {
+    Column {
+      SearchActionButton(isQueryEmpty = false, {}, {}, {})
+      SearchActionButton(isQueryEmpty = true, {}, {}, {})
     }
+  }
 }

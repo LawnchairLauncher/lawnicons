@@ -55,103 +55,103 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlaceholderUI(
-    showDummyCard: Boolean,
-    modifier: Modifier = Modifier,
+  showDummyCard: Boolean,
+  modifier: Modifier = Modifier,
 ) {
-    val contentPadding = IconPreviewGridPadding.Defaults
-    Scaffold(
-        modifier = modifier,
-        bottomBar = {
-            BottomAppBar(
-                modifier = Modifier.placeholder(
-                    visible = true,
-                    color = BottomAppBarDefaults.containerColor,
-                    highlight = PlaceholderHighlight.shimmer(
-                        MaterialTheme.colorScheme.surfaceContainer,
-                    ),
-                ),
-            ) {}
-        },
+  val contentPadding = IconPreviewGridPadding.Defaults
+  Scaffold(
+    modifier = modifier,
+    bottomBar = {
+      BottomAppBar(
+        modifier = Modifier.placeholder(
+          visible = true,
+          color = BottomAppBarDefaults.containerColor,
+          highlight = PlaceholderHighlight.shimmer(
+            MaterialTheme.colorScheme.surfaceContainer,
+          ),
+        ),
+      ) {}
+    },
+  ) {
+    LazyVerticalGrid(
+      columns = GridCells.Adaptive(80.dp),
+      userScrollEnabled = false,
+      contentPadding = WindowInsets.navigationBars.toPaddingValues(
+        additionalStart = contentPadding.horizontalPadding,
+        additionalTop = contentPadding.topPadding,
+        additionalEnd = contentPadding.horizontalPadding,
+      ),
     ) {
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(80.dp),
-            userScrollEnabled = false,
-            contentPadding = WindowInsets.navigationBars.toPaddingValues(
-                additionalStart = contentPadding.horizontalPadding,
-                additionalTop = contentPadding.topPadding,
-                additionalEnd = contentPadding.horizontalPadding,
-            ),
-        ) {
-            item(
-                span = { GridItemSpan(maxLineSpan) },
+      item(
+        span = { GridItemSpan(maxLineSpan) },
+      ) {
+        CenterAlignedTopAppBar(
+          title = {
+            Row(
+              verticalAlignment = Alignment.CenterVertically,
             ) {
-                CenterAlignedTopAppBar(
-                    title = {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically,
-                        ) {
-                            Box(
-                                modifier = Modifier
-                                    .size(36.dp)
-                                    .clip(CircleShape)
-                                    .placeholder(
-                                        visible = true,
-                                        color = MaterialTheme.colorScheme.surfaceContainer,
-                                        highlight = PlaceholderHighlight.fade(),
-                                    ),
-                            )
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Box(
-                                modifier = Modifier
-                                    .width(96.dp)
-                                    .height(16.dp)
-                                    .clip(MaterialTheme.shapes.small)
-                                    .placeholder(
-                                        visible = true,
-                                        color = MaterialTheme.colorScheme.surfaceContainer,
-                                        highlight = PlaceholderHighlight.fade(),
-                                    ),
-                            )
-                        }
-                    },
-                )
+              Box(
+                modifier = Modifier
+                  .size(36.dp)
+                  .clip(CircleShape)
+                  .placeholder(
+                    visible = true,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                    highlight = PlaceholderHighlight.fade(),
+                  ),
+              )
+              Spacer(modifier = Modifier.width(8.dp))
+              Box(
+                modifier = Modifier
+                  .width(96.dp)
+                  .height(16.dp)
+                  .clip(MaterialTheme.shapes.small)
+                  .placeholder(
+                    visible = true,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                    highlight = PlaceholderHighlight.fade(),
+                  ),
+              )
             }
-            if (showDummyCard) {
-                item(span = { GridItemSpan(maxLineSpan) }) {
-                    Box(
-                        modifier = Modifier
-                            .padding(horizontal = 8.dp)
-                            .padding(bottom = 12.dp)
-                            .height(48.dp)
-                            .fillMaxWidth()
-                            .clip(CircleShape)
-                            .placeholder(
-                                visible = true,
-                                color = MaterialTheme.colorScheme.surfaceContainer,
-                                highlight = PlaceholderHighlight.shimmer(
-                                    MaterialTheme.colorScheme.surfaceContainerHigh,
-                                ),
-                            ),
-                    ) {}
-                }
-            }
-
-            items(100) {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .padding(all = 8.dp)
-                        .aspectRatio(ratio = 1F)
-                        .clip(shape = CircleShape)
-                        .placeholder(
-                            visible = true,
-                            color = MaterialTheme.colorScheme.iconColor,
-                            highlight = PlaceholderHighlight.shimmer(
-                                MaterialTheme.colorScheme.surfaceContainer,
-                            ),
-                        ),
-                ) {}
-            }
+          },
+        )
+      }
+      if (showDummyCard) {
+        item(span = { GridItemSpan(maxLineSpan) }) {
+          Box(
+            modifier = Modifier
+              .padding(horizontal = 8.dp)
+              .padding(bottom = 12.dp)
+              .height(48.dp)
+              .fillMaxWidth()
+              .clip(CircleShape)
+              .placeholder(
+                visible = true,
+                color = MaterialTheme.colorScheme.surfaceContainer,
+                highlight = PlaceholderHighlight.shimmer(
+                  MaterialTheme.colorScheme.surfaceContainerHigh,
+                ),
+              ),
+          ) {}
         }
+      }
+
+      items(100) {
+        Box(
+          contentAlignment = Alignment.Center,
+          modifier = Modifier
+            .padding(all = 8.dp)
+            .aspectRatio(ratio = 1F)
+            .clip(shape = CircleShape)
+            .placeholder(
+              visible = true,
+              color = MaterialTheme.colorScheme.iconColor,
+              highlight = PlaceholderHighlight.shimmer(
+                MaterialTheme.colorScheme.surfaceContainer,
+              ),
+            ),
+        ) {}
+      }
     }
+  }
 }

@@ -15,13 +15,13 @@ import retrofit2.create
 @InstallIn(SingletonComponent::class)
 class GithubApiModule {
 
-    @Provides
-    @Singleton
-    fun providesGitHubContributorsApi(): GitHubContributorsAPI {
-        return Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
-            .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
-            .build()
-            .create()
-    }
+  @Provides
+  @Singleton
+  fun providesGitHubContributorsApi(): GitHubContributorsAPI {
+    return Retrofit.Builder()
+      .baseUrl("https://api.github.com/")
+      .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
+      .build()
+      .create()
+  }
 }

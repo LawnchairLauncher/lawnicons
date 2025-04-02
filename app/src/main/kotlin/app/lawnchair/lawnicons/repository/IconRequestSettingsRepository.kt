@@ -20,7 +20,7 @@ import app.lawnchair.lawnicons.api.IconRequestSettingsAPI
 import javax.inject.Inject
 
 class IconRequestSettingsRepository @Inject constructor(
-    private val api: IconRequestSettingsAPI,
+  private val api: IconRequestSettingsAPI,
 ) {
-    suspend fun getEnabledState() = api.getIconRequestSettings().enabled
+  suspend fun getEnabledState() = api.getIconRequestSettings().enabled
 }

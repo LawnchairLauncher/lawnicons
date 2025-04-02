@@ -11,21 +11,21 @@ import androidx.compose.ui.graphics.toArgb
 
 @Composable
 fun ComponentActivity.SetupEdgeToEdge(
-    scrimColor: Int,
+  scrimColor: Int,
 ) {
-    val contentColor = MaterialTheme.colorScheme.onBackground.toArgb()
-    val isDarkTheme = MaterialTheme.colorScheme.surface.luminance() < 0.5f
+  val contentColor = MaterialTheme.colorScheme.onBackground.toArgb()
+  val isDarkTheme = MaterialTheme.colorScheme.surface.luminance() < 0.5f
 
-    LaunchedEffect(Unit) {
-        enableEdgeToEdge(
-            navigationBarStyle = if (isDarkTheme) {
-                SystemBarStyle.dark(scrimColor)
-            } else {
-                SystemBarStyle.light(
-                    scrimColor,
-                    contentColor,
-                )
-            },
+  LaunchedEffect(Unit) {
+    enableEdgeToEdge(
+      navigationBarStyle = if (isDarkTheme) {
+        SystemBarStyle.dark(scrimColor)
+      } else {
+        SystemBarStyle.light(
+          scrimColor,
+          contentColor,
         )
-    }
+      },
+    )
+  }
 }

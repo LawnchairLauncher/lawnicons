@@ -30,62 +30,62 @@ import soup.compose.material.motion.animation.rememberSlideDistance
 @Composable
 @ExperimentalFoundationApi
 fun Lawnicons(
-    isExpandedScreen: Boolean,
-    onSendResult: (IconInfo) -> Unit,
-    modifier: Modifier = Modifier,
-    isIconPicker: Boolean = false,
+  isExpandedScreen: Boolean,
+  onSendResult: (IconInfo) -> Unit,
+  modifier: Modifier = Modifier,
+  isIconPicker: Boolean = false,
 ) {
-    val navController = rememberNavController()
-    val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
-    val slideDistance = rememberSlideDistance()
-    Surface(
-        modifier = modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background,
+  val navController = rememberNavController()
+  val isRtl = LocalLayoutDirection.current == LayoutDirection.Rtl
+  val slideDistance = rememberSlideDistance()
+  Surface(
+    modifier = modifier.fillMaxSize(),
+    color = MaterialTheme.colorScheme.background,
+  ) {
+    NavHost(
+      navController = navController,
+      startDestination = Home,
+      enterTransition = { materialSharedAxisXIn(!isRtl, slideDistance) },
+      exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
+      popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
+      popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
     ) {
-        NavHost(
-            navController = navController,
-            startDestination = Home,
-            enterTransition = { materialSharedAxisXIn(!isRtl, slideDistance) },
-            exitTransition = { materialSharedAxisXOut(!isRtl, slideDistance) },
-            popEnterTransition = { materialSharedAxisXIn(isRtl, slideDistance) },
-            popExitTransition = { materialSharedAxisXOut(isRtl, slideDistance) },
-        ) {
-            homeDestination(
-                onNavigateToAbout = { navController.navigate(About) },
-                onNavigateToNewIcons = { navController.navigate(NewIcons) },
-                isExpandedScreen = isExpandedScreen,
-                isIconPicker = isIconPicker,
-                onSendResult = onSendResult,
-            )
-            acknowledgementsDestination(
-                onBack = navController::popBackStack,
-                onNavigate = {
-                    navController.navigate(Acknowledgement(it))
-                },
-                isExpandedScreen = isExpandedScreen,
-            )
-            acknowledgementDestination(
-                onBack = navController::popBackStack,
-                isExpandedScreen = isExpandedScreen,
-            )
-            aboutDestination(
-                onBack = navController::popBackStack,
-                onNavigateToContributors = {
-                    navController.navigate(Contributors)
-                },
-                onNavigateToAcknowledgements = {
-                    navController.navigate(Acknowledgements)
-                },
-                isExpandedScreen = isExpandedScreen,
-            )
-            contributorsDestination(
-                onBack = navController::popBackStack,
-                isExpandedScreen = isExpandedScreen,
-            )
-            newIconsDestination(
-                onBack = navController::popBackStack,
-                isExpandedScreen = isExpandedScreen,
-            )
-        }
+      homeDestination(
+        onNavigateToAbout = { navController.navigate(About) },
+        onNavigateToNewIcons = { navController.navigate(NewIcons) },
+        isExpandedScreen = isExpandedScreen,
+        isIconPicker = isIconPicker,
+        onSendResult = onSendResult,
+      )
+      acknowledgementsDestination(
+        onBack = navController::popBackStack,
+        onNavigate = {
+          navController.navigate(Acknowledgement(it))
+        },
+        isExpandedScreen = isExpandedScreen,
+      )
+      acknowledgementDestination(
+        onBack = navController::popBackStack,
+        isExpandedScreen = isExpandedScreen,
+      )
+      aboutDestination(
+        onBack = navController::popBackStack,
+        onNavigateToContributors = {
+          navController.navigate(Contributors)
+        },
+        onNavigateToAcknowledgements = {
+          navController.navigate(Acknowledgements)
+        },
+        isExpandedScreen = isExpandedScreen,
+      )
+      contributorsDestination(
+        onBack = navController::popBackStack,
+        isExpandedScreen = isExpandedScreen,
+      )
+      newIconsDestination(
+        onBack = navController::popBackStack,
+        isExpandedScreen = isExpandedScreen,
+      )
     }
+  }
 }

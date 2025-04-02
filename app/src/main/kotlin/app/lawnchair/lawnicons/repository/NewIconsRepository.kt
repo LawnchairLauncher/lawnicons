@@ -30,32 +30,32 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 interface NewIconsRepository {
-    val newIconsInfoModel: StateFlow<IconInfoModel>
+  val newIconsInfoModel: StateFlow<IconInfoModel>
 }
 
 class NewIconsRepositoryImpl @Inject constructor(application: Application) : NewIconsRepository {
 
-    private val coroutineScope = CoroutineScope(Dispatchers.IO)
-    private val prefs = PreferenceManager.getInstance(application)
+  private val coroutineScope = CoroutineScope(Dispatchers.IO)
+  private val prefs = PreferenceManager.getInstance(application)
 
-    private val _newIconsInfoModel = MutableStateFlow(IconInfoModel())
-    override val newIconsInfoModel = _newIconsInfoModel.asStateFlow()
+  private val _newIconsInfoModel = MutableStateFlow(IconInfoModel())
+  override val newIconsInfoModel = _newIconsInfoModel.asStateFlow()
 
-    init {
-        val currentVersionCode = prefs.currentLawniconsVersion.get()
-        val newVersionCode = BuildConfig.VERSION_CODE
+  init {
+    val currentVersionCode = prefs.currentLawniconsVersion.get()
+    val newVersionCode = BuildConfig.VERSION_CODE
 
-        if (currentVersionCode != newVersionCode) {
-            prefs.currentLawniconsVersion.set(newVersionCode)
-            prefs.showNewIconsCard.set(true)
-        }
-
-        coroutineScope.launch {
-            val iconInfo = application.getIconInfo(R.xml.appfilter_diff).sortedBy { it.label.lowercase() }
-            _newIconsInfoModel.value = IconInfoModel(
-                iconInfo,
-                iconInfo.size,
-            )
-        }
+    if (currentVersionCode != newVersionCode) {
+      prefs.currentLawniconsVersion.set(newVersionCode)
+      prefs.showNewIconsCard.set(true)
     }
+
+    coroutineScope.launch {
+      val iconInfo = application.getIconInfo(R.xml.appfilter_diff).sortedBy { it.label.lowercase() }
+      _newIconsInfoModel.value = IconInfoModel(
+        iconInfo,
+        iconInfo.size,
+      )
+    }
+  }
 }

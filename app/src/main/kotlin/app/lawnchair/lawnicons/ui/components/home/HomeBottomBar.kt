@@ -30,91 +30,91 @@ import app.lawnchair.lawnicons.ui.util.Constants
 
 @Composable
 fun HomeBottomBar(
-    context: Context,
-    iconRequestsEnabled: Boolean,
-    iconRequestModel: IconRequestModel?,
-    snackbarHostState: SnackbarHostState,
-    onNavigate: () -> Unit,
-    onExpandSearch: () -> Unit,
-    modifier: Modifier = Modifier,
+  context: Context,
+  iconRequestsEnabled: Boolean,
+  iconRequestModel: IconRequestModel?,
+  snackbarHostState: SnackbarHostState,
+  onNavigate: () -> Unit,
+  onExpandSearch: () -> Unit,
+  modifier: Modifier = Modifier,
 ) {
-    BottomAppBar(
-        actions = {
-            SimpleTooltipBox(
-                label = stringResource(id = R.string.github),
-            ) {
-                IconButton(
-                    onClick = {
-                        val webpage = Uri.parse(Constants.GITHUB)
-                        val intent = Intent(Intent.ACTION_VIEW, webpage)
-                        if (intent.resolveActivity(context.packageManager) != null) {
-                            context.startActivity(intent)
-                        }
-                    },
-                ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.github_foreground),
-                        contentDescription = stringResource(id = R.string.github),
-                        modifier = Modifier.requiredSize(24.dp),
-                    )
-                }
+  BottomAppBar(
+    actions = {
+      SimpleTooltipBox(
+        label = stringResource(id = R.string.github),
+      ) {
+        IconButton(
+          onClick = {
+            val webpage = Uri.parse(Constants.GITHUB)
+            val intent = Intent(Intent.ACTION_VIEW, webpage)
+            if (intent.resolveActivity(context.packageManager) != null) {
+              context.startActivity(intent)
             }
+          },
+        ) {
+          Icon(
+            painter = painterResource(id = R.drawable.github_foreground),
+            contentDescription = stringResource(id = R.string.github),
+            modifier = Modifier.requiredSize(24.dp),
+          )
+        }
+      }
 
-            IconRequestIconButton(
-                snackbarHostState = snackbarHostState,
-                iconRequestsEnabled = iconRequestsEnabled,
-                iconRequestModel = iconRequestModel,
-            )
+      IconRequestIconButton(
+        snackbarHostState = snackbarHostState,
+        iconRequestsEnabled = iconRequestsEnabled,
+        iconRequestModel = iconRequestModel,
+      )
 
-            SimpleTooltipBox(
-                label = stringResource(id = R.string.about),
-            ) {
-                IconButton(onClick = onNavigate) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.about_icon),
-                        contentDescription = stringResource(id = R.string.about),
-                        modifier = Modifier.requiredSize(24.dp),
-                    )
-                }
-            }
-        },
-        floatingActionButton = {
-            SimpleTooltipBox(
-                label = stringResource(id = R.string.search),
-            ) {
-                FloatingActionButton(
-                    onClick = onExpandSearch,
-                    containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
-                    elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
-                ) {
-                    Icon(
-                        imageVector = Icons.Rounded.Search,
-                        contentDescription = stringResource(id = R.string.search),
-                    )
-                }
-            }
-        },
-        modifier = modifier,
-    )
+      SimpleTooltipBox(
+        label = stringResource(id = R.string.about),
+      ) {
+        IconButton(onClick = onNavigate) {
+          Icon(
+            painter = painterResource(id = R.drawable.about_icon),
+            contentDescription = stringResource(id = R.string.about),
+            modifier = Modifier.requiredSize(24.dp),
+          )
+        }
+      }
+    },
+    floatingActionButton = {
+      SimpleTooltipBox(
+        label = stringResource(id = R.string.search),
+      ) {
+        FloatingActionButton(
+          onClick = onExpandSearch,
+          containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
+          elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
+        ) {
+          Icon(
+            imageVector = Icons.Rounded.Search,
+            contentDescription = stringResource(id = R.string.search),
+          )
+        }
+      }
+    },
+    modifier = modifier,
+  )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun SimpleTooltipBox(
-    label: String,
-    modifier: Modifier = Modifier,
-    content: @Composable (() -> Unit),
+  label: String,
+  modifier: Modifier = Modifier,
+  content: @Composable (() -> Unit),
 ) {
-    TooltipBox(
-        positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-        tooltip = {
-            PlainTooltip {
-                Text(label)
-            }
-        },
-        state = rememberTooltipState(),
-        modifier = modifier,
-    ) {
-        content()
-    }
+  TooltipBox(
+    positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
+    tooltip = {
+      PlainTooltip {
+        Text(label)
+      }
+    },
+    state = rememberTooltipState(),
+    modifier = modifier,
+  ) {
+    content()
+  }
 }

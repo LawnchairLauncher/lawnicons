@@ -7,6 +7,6 @@ package app.lawnchair.lawnicons.model
  * @property iconCount The total number of icons.
  */
 data class IconInfoModel(
-    val iconInfo: List<IconInfo> = emptyList(),
-    val iconCount: Int = 0,
+  val iconInfo: List<IconInfo> = emptyList(),
+  val iconCount: Int = 0,
 )

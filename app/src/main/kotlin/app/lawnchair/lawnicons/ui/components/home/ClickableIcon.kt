@@ -21,35 +21,35 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun NavigationIconButton(
-    onClick: () -> Unit,
-    imageVector: ImageVector,
-    modifier: Modifier = Modifier,
-    size: Dp = 48.dp,
-    tint: Color = MaterialTheme.colorScheme.onSurface,
+  onClick: () -> Unit,
+  imageVector: ImageVector,
+  modifier: Modifier = Modifier,
+  size: Dp = 48.dp,
+  tint: Color = MaterialTheme.colorScheme.onSurface,
 ) {
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier
-            .size(size)
-            .clip(CircleShape)
-            .clickable(onClick = onClick),
-    ) {
-        Icon(
-            imageVector = imageVector,
-            contentDescription = null,
-            tint = tint,
-        )
-    }
+  Box(
+    contentAlignment = Alignment.Center,
+    modifier = modifier
+      .size(size)
+      .clip(CircleShape)
+      .clickable(onClick = onClick),
+  ) {
+    Icon(
+      imageVector = imageVector,
+      contentDescription = null,
+      tint = tint,
+    )
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun NavigationIconButtonPreview() {
-    LawniconsTheme {
-        NavigationIconButton(
-            imageVector = Icons.Rounded.Clear,
-            size = 52.dp,
-            onClick = {},
-        )
-    }
+  LawniconsTheme {
+    NavigationIconButton(
+      imageVector = Icons.Rounded.Clear,
+      size = 52.dp,
+      onClick = {},
+    )
+  }
 }

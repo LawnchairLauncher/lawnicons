@@ -48,301 +48,301 @@ import kotlinx.coroutines.launch
 
 @Composable
 fun IconRequestFAB(
-    iconRequestsEnabled: Boolean,
-    iconRequestModel: IconRequestModel?,
-    lazyGridState: LazyGridState,
-    snackbarHostState: SnackbarHostState,
-    modifier: Modifier = Modifier,
+  iconRequestsEnabled: Boolean,
+  iconRequestModel: IconRequestModel?,
+  lazyGridState: LazyGridState,
+  snackbarHostState: SnackbarHostState,
+  modifier: Modifier = Modifier,
 ) {
-    val prefs = preferenceManager()
-    val list = iconRequestModel?.list ?: emptyList()
-    val enabled = iconRequestModel != null
-    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
+  val prefs = preferenceManager()
+  val list = iconRequestModel?.list ?: emptyList()
+  val enabled = iconRequestModel != null
+  val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
 
-    RequestHandler(
-        enabled = enabled,
-        iconRequestsEnabled = requestsEnabled,
-        iconRequestList = list,
-        snackbarHostState = snackbarHostState,
-        onLongClick = {},
-    ) { interactionSource ->
-        ExtendedFloatingActionButton(
-            text = {
-                Text(stringResource(R.string.request_icons))
-            },
-            icon = {
-                Icon(
-                    painter = painterResource(id = R.drawable.icon_request_app),
-                    contentDescription = null,
-                )
-            },
-            onClick = {},
-            expanded = lazyGridState.isScrollingUp(),
-            interactionSource = if (enabled) interactionSource else null,
-            containerColor = if (!enabled) MaterialTheme.colorScheme.surfaceVariant else FloatingActionButtonDefaults.containerColor,
-            modifier = modifier,
+  RequestHandler(
+    enabled = enabled,
+    iconRequestsEnabled = requestsEnabled,
+    iconRequestList = list,
+    snackbarHostState = snackbarHostState,
+    onLongClick = {},
+  ) { interactionSource ->
+    ExtendedFloatingActionButton(
+      text = {
+        Text(stringResource(R.string.request_icons))
+      },
+      icon = {
+        Icon(
+          painter = painterResource(id = R.drawable.icon_request_app),
+          contentDescription = null,
         )
-    }
+      },
+      onClick = {},
+      expanded = lazyGridState.isScrollingUp(),
+      interactionSource = if (enabled) interactionSource else null,
+      containerColor = if (!enabled) MaterialTheme.colorScheme.surfaceVariant else FloatingActionButtonDefaults.containerColor,
+      modifier = modifier,
+    )
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IconRequestIconButton(
-    snackbarHostState: SnackbarHostState,
-    iconRequestsEnabled: Boolean,
-    iconRequestModel: IconRequestModel?,
-    modifier: Modifier = Modifier,
+  snackbarHostState: SnackbarHostState,
+  iconRequestsEnabled: Boolean,
+  iconRequestModel: IconRequestModel?,
+  modifier: Modifier = Modifier,
 ) {
-    val prefs = preferenceManager()
+  val prefs = preferenceManager()
 
-    val list = iconRequestModel?.list ?: emptyList()
-    val enabled = iconRequestModel != null
-    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
+  val list = iconRequestModel?.list ?: emptyList()
+  val enabled = iconRequestModel != null
+  val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
 
-    val tooltipState = rememberTooltipState()
-    val scope = rememberCoroutineScope()
+  val tooltipState = rememberTooltipState()
+  val scope = rememberCoroutineScope()
 
-    RequestHandler(
-        enabled = enabled,
-        iconRequestsEnabled = requestsEnabled,
-        iconRequestList = list,
-        snackbarHostState = snackbarHostState,
-        onLongClick = {
-            scope.launch {
-                tooltipState.show()
-            }
-        },
-    ) { interactionSource ->
-        TooltipBox(
-            positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
-            tooltip = {
-                PlainTooltip {
-                    Text(stringResource(R.string.request_icons))
-                }
-            },
-            state = tooltipState,
-            modifier = modifier,
-            enableUserInput = false,
-        ) {
-            IconButton(
-                onClick = {},
-                enabled = enabled,
-                interactionSource = if (enabled) interactionSource else null,
-            ) {
-                Icon(
-                    painter = painterResource(id = R.drawable.icon_request_app),
-                    contentDescription = stringResource(R.string.request_icons),
-                    modifier = Modifier.requiredSize(24.dp),
-                )
-            }
+  RequestHandler(
+    enabled = enabled,
+    iconRequestsEnabled = requestsEnabled,
+    iconRequestList = list,
+    snackbarHostState = snackbarHostState,
+    onLongClick = {
+      scope.launch {
+        tooltipState.show()
+      }
+    },
+  ) { interactionSource ->
+    TooltipBox(
+      positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
+      tooltip = {
+        PlainTooltip {
+          Text(stringResource(R.string.request_icons))
         }
+      },
+      state = tooltipState,
+      modifier = modifier,
+      enableUserInput = false,
+    ) {
+      IconButton(
+        onClick = {},
+        enabled = enabled,
+        interactionSource = if (enabled) interactionSource else null,
+      ) {
+        Icon(
+          painter = painterResource(id = R.drawable.icon_request_app),
+          contentDescription = stringResource(R.string.request_icons),
+          modifier = Modifier.requiredSize(24.dp),
+        )
+      }
     }
+  }
 }
 
 @Composable
 fun RequestHandler(
-    enabled: Boolean,
-    iconRequestsEnabled: Boolean,
-    iconRequestList: List<IconRequest>,
-    snackbarHostState: SnackbarHostState,
-    onLongClick: () -> Unit,
-    content: @Composable (interactionSource: MutableInteractionSource) -> Unit,
+  enabled: Boolean,
+  iconRequestsEnabled: Boolean,
+  iconRequestList: List<IconRequest>,
+  snackbarHostState: SnackbarHostState,
+  onLongClick: () -> Unit,
+  content: @Composable (interactionSource: MutableInteractionSource) -> Unit,
 ) {
-    val prefs = preferenceManager()
-    val showFirstLaunchSnackbar by prefs.showFirstLaunchSnackbar.asState()
-    val context = LocalContext.current
+  val prefs = preferenceManager()
+  val showFirstLaunchSnackbar by prefs.showFirstLaunchSnackbar.asState()
+  val context = LocalContext.current
 
-    val requestList = formatIconRequestList(iconRequestList)
-    val encodedRequestList = buildForm(requestList.replace("\n", "%20"))
-    val directLinkEnabled = encodedRequestList.length < Constants.DIRECT_LINK_MAX_LENGTH
+  val requestList = formatIconRequestList(iconRequestList)
+  val encodedRequestList = buildForm(requestList.replace("\n", "%20"))
+  val directLinkEnabled = encodedRequestList.length < Constants.DIRECT_LINK_MAX_LENGTH
 
-    val scope = rememberCoroutineScope()
-    val interactionSource = remember { MutableInteractionSource() }
+  val scope = rememberCoroutineScope()
+  val interactionSource = remember { MutableInteractionSource() }
 
-    HandleTouchInteractions(
-        enabled = enabled,
-        iconRequestsEnabled = iconRequestsEnabled,
-        interactionSource = interactionSource,
-        viewConfiguration = LocalViewConfiguration.current,
-        context = context,
-        coroutineScope = scope,
-        onLongClick = onLongClick,
-        iconRequestList = iconRequestList,
-        directLinkEnabled = directLinkEnabled,
-        requestList = requestList,
-        encodedRequestList = encodedRequestList,
-        snackbarHostState = snackbarHostState,
-    )
+  HandleTouchInteractions(
+    enabled = enabled,
+    iconRequestsEnabled = iconRequestsEnabled,
+    interactionSource = interactionSource,
+    viewConfiguration = LocalViewConfiguration.current,
+    context = context,
+    coroutineScope = scope,
+    onLongClick = onLongClick,
+    iconRequestList = iconRequestList,
+    directLinkEnabled = directLinkEnabled,
+    requestList = requestList,
+    encodedRequestList = encodedRequestList,
+    snackbarHostState = snackbarHostState,
+  )
 
-    content(interactionSource)
+  content(interactionSource)
 
-    LaunchedEffect(enabled) {
-        if (showFirstLaunchSnackbar && enabled) {
-            openSnackbarFirstLaunchContent(
-                context,
-                scope,
-                { prefs.showFirstLaunchSnackbar.set(false) },
-                snackbarHostState,
-            )
-        }
+  LaunchedEffect(enabled) {
+    if (showFirstLaunchSnackbar && enabled) {
+      openSnackbarFirstLaunchContent(
+        context,
+        scope,
+        { prefs.showFirstLaunchSnackbar.set(false) },
+        snackbarHostState,
+      )
     }
+  }
 }
 
 @Composable
 private fun HandleTouchInteractions(
-    enabled: Boolean,
-    iconRequestsEnabled: Boolean,
-    interactionSource: MutableInteractionSource,
-    viewConfiguration: ViewConfiguration,
-    context: Context,
-    coroutineScope: CoroutineScope,
-    onLongClick: () -> Unit,
-    iconRequestList: List<IconRequest>,
-    directLinkEnabled: Boolean,
-    requestList: String,
-    encodedRequestList: String,
-    snackbarHostState: SnackbarHostState,
+  enabled: Boolean,
+  iconRequestsEnabled: Boolean,
+  interactionSource: MutableInteractionSource,
+  viewConfiguration: ViewConfiguration,
+  context: Context,
+  coroutineScope: CoroutineScope,
+  onLongClick: () -> Unit,
+  iconRequestList: List<IconRequest>,
+  directLinkEnabled: Boolean,
+  requestList: String,
+  encodedRequestList: String,
+  snackbarHostState: SnackbarHostState,
 ) {
-    val latestOnClick by rememberUpdatedState(newValue = onLongClick)
+  val latestOnClick by rememberUpdatedState(newValue = onLongClick)
 
-    if (enabled) {
-        LaunchedEffect(interactionSource) {
-            var isLongClick = false
+  if (enabled) {
+    LaunchedEffect(interactionSource) {
+      var isLongClick = false
 
-            interactionSource.interactions.collectLatest { interaction ->
-                when (interaction) {
-                    is PressInteraction.Press -> {
-                        isLongClick = false
-                        delay(viewConfiguration.longPressTimeoutMillis)
-                        isLongClick = true
-                        latestOnClick()
-                    }
+      interactionSource.interactions.collectLatest { interaction ->
+        when (interaction) {
+          is PressInteraction.Press -> {
+            isLongClick = false
+            delay(viewConfiguration.longPressTimeoutMillis)
+            isLongClick = true
+            latestOnClick()
+          }
 
-                    is PressInteraction.Release -> {
-                        if (!isLongClick) {
-                            if (iconRequestsEnabled) {
-                                handleRequestClick(
-                                    iconRequestList,
-                                    context,
-                                    directLinkEnabled,
-                                    encodedRequestList,
-                                    requestList,
-                                    coroutineScope,
-                                    snackbarHostState,
-                                )
-                            } else {
-                                openSnackbarRequestsDisabled(
-                                    context,
-                                    coroutineScope,
-                                    snackbarHostState,
-                                )
-                            }
-                        }
-                    }
-
-                    is PressInteraction.Cancel -> {
-                        isLongClick = false
-                    }
-                }
+          is PressInteraction.Release -> {
+            if (!isLongClick) {
+              if (iconRequestsEnabled) {
+                handleRequestClick(
+                  iconRequestList,
+                  context,
+                  directLinkEnabled,
+                  encodedRequestList,
+                  requestList,
+                  coroutineScope,
+                  snackbarHostState,
+                )
+              } else {
+                openSnackbarRequestsDisabled(
+                  context,
+                  coroutineScope,
+                  snackbarHostState,
+                )
+              }
             }
+          }
+
+          is PressInteraction.Cancel -> {
+            isLongClick = false
+          }
         }
+      }
     }
+  }
 }
 
 private fun formatIconRequestList(iconRequestList: List<IconRequest>) = iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
 
 private fun handleRequestClick(
-    iconRequestList: List<IconRequest>,
-    context: Context,
-    directLinkEnabled: Boolean,
-    encodedRequestList: String,
-    requestList: String,
-    coroutineScope: CoroutineScope,
-    snackbarHostState: SnackbarHostState,
+  iconRequestList: List<IconRequest>,
+  context: Context,
+  directLinkEnabled: Boolean,
+  encodedRequestList: String,
+  requestList: String,
+  coroutineScope: CoroutineScope,
+  snackbarHostState: SnackbarHostState,
 ) {
-    if (iconRequestList.isEmpty()) {
-        openLink(context, Constants.ICON_REQUEST_FORM)
-    } else if (directLinkEnabled) {
-        openLink(context, encodedRequestList)
-    } else {
-        openSnackbarWarningContent(
-            context,
-            requestList,
-            coroutineScope,
-            snackbarHostState,
-        )
-    }
+  if (iconRequestList.isEmpty()) {
+    openLink(context, Constants.ICON_REQUEST_FORM)
+  } else if (directLinkEnabled) {
+    openLink(context, encodedRequestList)
+  } else {
+    openSnackbarWarningContent(
+      context,
+      requestList,
+      coroutineScope,
+      snackbarHostState,
+    )
+  }
 }
 
 private fun openSnackbarFirstLaunchContent(
-    context: Context,
-    coroutineScope: CoroutineScope,
-    onActionPerformed: () -> Unit,
-    snackbarHostState: SnackbarHostState,
+  context: Context,
+  coroutineScope: CoroutineScope,
+  onActionPerformed: () -> Unit,
+  snackbarHostState: SnackbarHostState,
 ) {
-    coroutineScope.launch {
-        val result = snackbarHostState
-            .showSnackbar(
-                message = context.getString(R.string.snackbar_request_icons_hint),
-                duration = SnackbarDuration.Short,
-            )
-        if (result == SnackbarResult.Dismissed) {
-            onActionPerformed()
-            snackbarHostState.currentSnackbarData?.dismiss()
-        }
+  coroutineScope.launch {
+    val result = snackbarHostState
+      .showSnackbar(
+        message = context.getString(R.string.snackbar_request_icons_hint),
+        duration = SnackbarDuration.Short,
+      )
+    if (result == SnackbarResult.Dismissed) {
+      onActionPerformed()
+      snackbarHostState.currentSnackbarData?.dismiss()
     }
+  }
 }
 
 private fun openSnackbarRequestsDisabled(
-    context: Context,
-    coroutineScope: CoroutineScope,
-    snackbarHostState: SnackbarHostState,
+  context: Context,
+  coroutineScope: CoroutineScope,
+  snackbarHostState: SnackbarHostState,
 ) {
-    coroutineScope.launch {
-        val result = snackbarHostState
-            .showSnackbar(
-                message = context.getString(R.string.icon_requests_suspended),
-                duration = SnackbarDuration.Short,
-            )
-        if (result == SnackbarResult.Dismissed) {
-            snackbarHostState.currentSnackbarData?.dismiss()
-        }
+  coroutineScope.launch {
+    val result = snackbarHostState
+      .showSnackbar(
+        message = context.getString(R.string.icon_requests_suspended),
+        duration = SnackbarDuration.Short,
+      )
+    if (result == SnackbarResult.Dismissed) {
+      snackbarHostState.currentSnackbarData?.dismiss()
     }
+  }
 }
 
 private fun openSnackbarWarningContent(
-    context: Context,
-    list: String,
-    coroutineScope: CoroutineScope,
-    snackbarHostState: SnackbarHostState,
+  context: Context,
+  list: String,
+  coroutineScope: CoroutineScope,
+  snackbarHostState: SnackbarHostState,
 ) {
-    copyTextToClipboard(context, list)
-    coroutineScope.launch {
-        val result = snackbarHostState
-            .showSnackbar(
-                message = context.getString(R.string.snackbar_request_too_large),
-                actionLabel = context.getString(R.string.snackbar_use_fallback_link),
-                withDismissAction = true,
-                duration = SnackbarDuration.Indefinite,
-            )
-        when (result) {
-            SnackbarResult.ActionPerformed -> {
-                openLink(context, Constants.ICON_REQUEST_FORM)
-            }
+  copyTextToClipboard(context, list)
+  coroutineScope.launch {
+    val result = snackbarHostState
+      .showSnackbar(
+        message = context.getString(R.string.snackbar_request_too_large),
+        actionLabel = context.getString(R.string.snackbar_use_fallback_link),
+        withDismissAction = true,
+        duration = SnackbarDuration.Indefinite,
+      )
+    when (result) {
+      SnackbarResult.ActionPerformed -> {
+        openLink(context, Constants.ICON_REQUEST_FORM)
+      }
 
-            SnackbarResult.Dismissed -> {
-                snackbarHostState.currentSnackbarData?.dismiss()
-            }
-        }
+      SnackbarResult.Dismissed -> {
+        snackbarHostState.currentSnackbarData?.dismiss()
+      }
     }
+  }
 }
 
 private fun openLink(context: Context, link: String) {
-    val website = Uri.parse(link)
-    val intent = Intent(Intent.ACTION_VIEW, website)
-    context.startActivity(intent)
+  val website = Uri.parse(link)
+  val intent = Intent(Intent.ACTION_VIEW, website)
+  context.startActivity(intent)
 }
 
 private fun buildForm(string: String): String {
-    return "https://lawnchair.app/lawnicons-request/?request=$string"
+  return "https://lawnchair.app/lawnicons-request/?request=$string"
 }

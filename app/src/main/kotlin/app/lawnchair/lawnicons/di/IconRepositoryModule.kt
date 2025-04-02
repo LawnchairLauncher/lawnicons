@@ -13,7 +13,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object IconRepositoryModule {
 
-    @Provides
-    @Singleton
-    fun provideIconRepository(application: Application): IconRepository = IconRepositoryImpl(application)
+  @Provides
+  @Singleton
+  fun provideIconRepository(application: Application): IconRepository = IconRepositoryImpl(application)
 }

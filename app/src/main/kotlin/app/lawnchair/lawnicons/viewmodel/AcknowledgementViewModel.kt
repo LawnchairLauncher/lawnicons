@@ -19,45 +19,45 @@ import kotlinx.coroutines.flow.stateIn
 
 @HiltViewModel
 class AcknowledgementViewModel @Inject constructor(
-    private val ossLibraryRepository: OssLibraryRepository,
+  private val ossLibraryRepository: OssLibraryRepository,
 ) : ViewModel() {
 
-    val ossLibraries = ossLibraryRepository.ossLibraries
+  val ossLibraries = ossLibraryRepository.ossLibraries
 
-    fun getNoticeForOssLibrary(
-        ossLibraryName: String,
-        linkStyle: SpanStyle,
-    ): StateFlow<AnnotatedString?> = ossLibraryRepository.getNoticeForOssLibrary(
-        ossLibraryName = ossLibraryName,
-        annotate = { annotate(it, linkStyle) },
-    )
-        .flowOn(Dispatchers.Default)
-        .stateIn(viewModelScope, SharingStarted.Lazily, null)
+  fun getNoticeForOssLibrary(
+    ossLibraryName: String,
+    linkStyle: SpanStyle,
+  ): StateFlow<AnnotatedString?> = ossLibraryRepository.getNoticeForOssLibrary(
+    ossLibraryName = ossLibraryName,
+    annotate = { annotate(it, linkStyle) },
+  )
+    .flowOn(Dispatchers.Default)
+    .stateIn(viewModelScope, SharingStarted.Lazily, null)
 
-    private fun annotate(
-        notice: String,
-        linkStyle: SpanStyle,
-    ): AnnotatedString {
-        val spannable = SpannableString(notice)
-        Linkify.addLinks(spannable, Linkify.WEB_URLS)
-        val urlSpans = spannable.getSpans(0, notice.length, URLSpan::class.java)
-        return buildAnnotatedString {
-            append(notice)
-            urlSpans.forEach {
-                val start = spannable.getSpanStart(it)
-                val end = spannable.getSpanEnd(it)
-                addStyle(
-                    start = start,
-                    end = end,
-                    style = linkStyle,
-                )
-                addStringAnnotation(
-                    tag = "URL",
-                    annotation = it.url,
-                    start = start,
-                    end = end,
-                )
-            }
-        }
+  private fun annotate(
+    notice: String,
+    linkStyle: SpanStyle,
+  ): AnnotatedString {
+    val spannable = SpannableString(notice)
+    Linkify.addLinks(spannable, Linkify.WEB_URLS)
+    val urlSpans = spannable.getSpans(0, notice.length, URLSpan::class.java)
+    return buildAnnotatedString {
+      append(notice)
+      urlSpans.forEach {
+        val start = spannable.getSpanStart(it)
+        val end = spannable.getSpanEnd(it)
+        addStyle(
+          start = start,
+          end = end,
+          style = linkStyle,
+        )
+        addStringAnnotation(
+          tag = "URL",
+          annotation = it.url,
+          start = start,
+          end = end,
+        )
+      }
     }
+  }
 }

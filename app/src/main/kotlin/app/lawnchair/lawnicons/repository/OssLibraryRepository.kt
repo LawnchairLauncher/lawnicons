@@ -16,38 +16,38 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 
 interface OssLibraryRepository {
-    val ossLibraries: StateFlow<List<OssLibrary>>
+  val ossLibraries: StateFlow<List<OssLibrary>>
 
-    fun getNoticeForOssLibrary(
-        ossLibraryName: String,
-        annotate: (String) -> AnnotatedString,
-    ): Flow<AnnotatedString?>
+  fun getNoticeForOssLibrary(
+    ossLibraryName: String,
+    annotate: (String) -> AnnotatedString,
+  ): Flow<AnnotatedString?>
 }
 
 class OssLibraryRepositoryImpl @Inject constructor(private val application: Application) : OssLibraryRepository {
 
-    private val coroutineScope = MainScope()
+  private val coroutineScope = MainScope()
 
-    override val ossLibraries: StateFlow<List<OssLibrary>> = flow {
-        val jsonString = application.resources.assets.open("app/cash/licensee/artifacts.json")
-            .bufferedReader().use { it.readText() }
-        val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
-            .asSequence()
-            .filter { it.name != OssLibrary.UNKNOWN_NAME }
-            .distinctBy { "${it.groupId}:${it.artifactId}" }
-            .sortedBy { it.name }
-            .toList()
-        emit(ossLibraries)
-    }
-        .flowOn(Dispatchers.IO)
-        .stateIn(coroutineScope, SharingStarted.Lazily, emptyList())
+  override val ossLibraries: StateFlow<List<OssLibrary>> = flow {
+    val jsonString = application.resources.assets.open("app/cash/licensee/artifacts.json")
+      .bufferedReader().use { it.readText() }
+    val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
+      .asSequence()
+      .filter { it.name != OssLibrary.UNKNOWN_NAME }
+      .distinctBy { "${it.groupId}:${it.artifactId}" }
+      .sortedBy { it.name }
+      .toList()
+    emit(ossLibraries)
+  }
+    .flowOn(Dispatchers.IO)
+    .stateIn(coroutineScope, SharingStarted.Lazily, emptyList())
 
-    override fun getNoticeForOssLibrary(
-        ossLibraryName: String,
-        annotate: (String) -> AnnotatedString,
-    ): Flow<AnnotatedString?> = ossLibraries.map { it ->
-        val ossLib = it.first { it.name == ossLibraryName }
-        val string = (ossLib.spdxLicenses ?: ossLib.unknownLicenses)?.firstOrNull()?.url.orEmpty()
-        annotate(string)
-    }
+  override fun getNoticeForOssLibrary(
+    ossLibraryName: String,
+    annotate: (String) -> AnnotatedString,
+  ): Flow<AnnotatedString?> = ossLibraries.map { it ->
+    val ossLib = it.first { it.name == ossLibraryName }
+    val string = (ossLib.spdxLicenses ?: ossLib.unknownLicenses)?.firstOrNull()?.url.orEmpty()
+    annotate(string)
+  }
 }

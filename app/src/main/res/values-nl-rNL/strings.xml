@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- General -->
-    <!-- Application name -->
-    <!-- Version name, with %s as the version code -->
-    <string name="version_x">Versie %s</string>
-    <!-- Search bar -->
-    <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Zoeken door %d pictogrammen</string>
-    <string name="search_bar_icon_picker">Kies een pictogram</string>
-    <!-- Search tooltip -->
-    <string name="search">Zoeken</string>
-    <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s niet gevonden</string>
-    <!-- About page -->
-    <string name="about">Over</string>
-    <!-- External Links -->
-    <!-- GitHub repository link-->
-    <!-- Icon Request form link -->
-    <string name="request_form">Pictogram aanvraagformulier</string>
-    <!-- Contributors section of About page -->
-    <!-- Contributors label -->
-    <string name="contributors">Bijdragen</string>
-    <!-- Core Contributors label -->
-    <string name="core_contributors">Belangrijke bijdragen</string>
-    <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">Alle bijdragen weergeven</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">Bekijken op GitHub</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">Details delen</string>
-    <!-- Contribution -->
-    <string name="contribution_core">Basis-app</string>
-    <string name="contribution_icons">Pictogrammen</string>
-    <string name="contribution_infra">Infrastructuur</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
-    <string name="special_thanks">Bijzondere dank</string>
-    <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Voor inspiratie voor het app-pictogram</string>
-    <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Voor het noemen van de app</string>
-    <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenties</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
-    <string name="name">Naam</string>
-    <!-- Drawable prefix -->
-    <string name="drawable">Tekenbaar</string>
-    <!-- Package prefix -->
-    <string name="component">Naam onderdeel</string>
-    <!-- Mapped components -->
-    <string name="mapped_components">Toegewezen onderdelen</string>
-    <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">Als het pictogram verouderd is, meld dan een probleem op GitHub.</string>
-    <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Zichtbaarheid van inhoud in-/uitschakelen</string>
-    <!-- Request icons button -->
-    <string name="request_icons">Pictogrammen aanvragen</string>
-    <string name="copy_to_clipboard">Kopiëren naar klembord</string>
-    <string name="copied_text">Tekst gekopieerd</string>
-    <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Ontbrekende pictogrammen op onderste balk aanvragen</string>
-    <string name="icon_requests_suspended">Icon requests are currently suspended</string>
-    <string name="snackbar_request_too_large">Gegevens voor pictogramaanvraag gekopieerd naar klembord. Plak de gegevens in het aanvraagformulier.</string>
-    <string name="snackbar_use_fallback_link">Formulier openen</string>
-    <string name="clear">Verwijderen</string>
-    <string name="new_icons_in_version">Nieuwe pictogrammen in v%1$s</string>
-    <string name="new_icons">Nieuwe pictogrammen (%1$s)</string>
+  <!-- General -->
+  <!-- Application name -->
+  <!-- Version name, with %s as the version code -->
+  <string name="version_x">Versie %s</string>
+  <!-- Search bar -->
+  <!-- The hint shown in the search bar, with %d as the number of icons. -->
+  <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+  <string name="search_bar_hint">Zoeken door %d pictogrammen</string>
+  <string name="search_bar_icon_picker">Kies een pictogram</string>
+  <!-- Search tooltip -->
+  <string name="search">Zoeken</string>
+  <!-- Text shown when there are no search results-->
+  <string name="no_items_found">%s niet gevonden</string>
+  <!-- About page -->
+  <string name="about">Over</string>
+  <!-- External Links -->
+  <!-- GitHub repository link-->
+  <!-- Icon Request form link -->
+  <string name="request_form">Pictogram aanvraagformulier</string>
+  <!-- Contributors section of About page -->
+  <!-- Contributors label -->
+  <string name="contributors">Bijdragen</string>
+  <!-- Core Contributors label -->
+  <string name="core_contributors">Belangrijke bijdragen</string>
+  <!-- Item that links to the Contributors page -->
+  <string name="see_all_contributors">Alle bijdragen weergeven</string>
+  <!-- View on GitHub link -->
+  <string name="view_on_github">Bekijken op GitHub</string>
+  <!-- Share button on icon info popup -->
+  <string name="share">Details delen</string>
+  <!-- Contribution -->
+  <string name="contribution_core">Basis-app</string>
+  <string name="contribution_icons">Pictogrammen</string>
+  <string name="contribution_infra">Infrastructuur</string>
+  <!-- Special Thanks section of About page -->
+  <!-- Special Thanks label -->
+  <string name="special_thanks">Bijzondere dank</string>
+  <!-- Subtitle displayed below the user who inspired the app icon -->
+  <string name="special_thanks_icon">Voor inspiratie voor het app-pictogram</string>
+  <!-- Subtitle displayed below the user who named the app -->
+  <string name="special_thanks_name">Voor het noemen van de app</string>
+  <!-- List item that links to the Acknowledgements page -->
+  <string name="acknowledgements">Open-source licenties</string>
+  <!-- Icon Information Popup window -->
+  <!-- Name -->
+  <string name="name">Naam</string>
+  <!-- Drawable prefix -->
+  <string name="drawable">Tekenbaar</string>
+  <!-- Package prefix -->
+  <string name="component">Naam onderdeel</string>
+  <!-- Mapped components -->
+  <string name="mapped_components">Toegewezen onderdelen</string>
+  <!-- Outdated icon info -->
+  <string name="icon_info_outdated_warning">Als het pictogram verouderd is, meld dan een probleem op GitHub.</string>
+  <!-- Chevron a11y description -->
+  <string name="toggle_visibility_of_contents">Zichtbaarheid van inhoud in-/uitschakelen</string>
+  <!-- Request icons button -->
+  <string name="request_icons">Pictogrammen aanvragen</string>
+  <string name="copy_to_clipboard">Kopiëren naar klembord</string>
+  <string name="copied_text">Tekst gekopieerd</string>
+  <!-- Snackbar content -->
+  <string name="snackbar_request_icons_hint">Ontbrekende pictogrammen op onderste balk aanvragen</string>
+  <string name="icon_requests_suspended">Icon requests are currently suspended</string>
+  <string name="snackbar_request_too_large">Gegevens voor pictogramaanvraag gekopieerd naar klembord. Plak de gegevens in het aanvraagformulier.</string>
+  <string name="snackbar_use_fallback_link">Formulier openen</string>
+  <string name="clear">Verwijderen</string>
+  <string name="new_icons_in_version">Nieuwe pictogrammen in v%1$s</string>
+  <string name="new_icons">Nieuwe pictogrammen (%1$s)</string>
 </resources>

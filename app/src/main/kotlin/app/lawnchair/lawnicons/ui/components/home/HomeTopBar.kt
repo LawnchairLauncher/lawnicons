@@ -22,108 +22,108 @@ import app.lawnchair.lawnicons.ui.components.home.search.LawniconsSearchBar
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 
 data class HomeTopBarUiState(
-    val isSearchExpanded: Boolean,
-    val isExpandedScreen: Boolean,
-    val searchTerm: String,
-    val searchMode: SearchMode,
-    val searchedIconInfoModel: IconInfoModel?,
-    val isIconPicker: Boolean,
+  val isSearchExpanded: Boolean,
+  val isExpandedScreen: Boolean,
+  val searchTerm: String,
+  val searchMode: SearchMode,
+  val searchedIconInfoModel: IconInfoModel?,
+  val isIconPicker: Boolean,
 )
 
 @Composable
 fun HomeTopBar(
-    uiState: HomeTopBarUiState,
-    onFocusChange: () -> Unit,
-    onClearSearch: () -> Unit,
-    onChangeMode: (SearchMode) -> Unit,
-    onSearchIcons: (String) -> Unit,
-    onNavigate: () -> Unit,
-    onSendResult: (IconInfo) -> Unit,
-    focusRequester: FocusRequester,
-    modifier: Modifier = Modifier,
+  uiState: HomeTopBarUiState,
+  onFocusChange: () -> Unit,
+  onClearSearch: () -> Unit,
+  onChangeMode: (SearchMode) -> Unit,
+  onSearchIcons: (String) -> Unit,
+  onNavigate: () -> Unit,
+  onSendResult: (IconInfo) -> Unit,
+  focusRequester: FocusRequester,
+  modifier: Modifier = Modifier,
 ) {
-    val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker) = uiState
+  val (isSearchExpanded, isExpandedScreen, searchTerm, searchMode, searchedIconInfoModel, isIconPicker) = uiState
 
-    searchedIconInfoModel?.let { iconInfoModel ->
-        AnimatedSearchBar(
-            modifier = modifier,
-            searchTerm = searchTerm,
-            onClearSearch = onClearSearch,
-            onModeChange = onChangeMode,
-            onSearch = onSearchIcons,
-            iconInfoModel = iconInfoModel,
-            onNavigate = onNavigate,
-            isSearchExpanded = isSearchExpanded,
-            isExpandedScreen = isExpandedScreen,
-            isIconPicker = isIconPicker,
-            searchMode = searchMode,
-            onSendResult = onSendResult,
-            onFocusChange = onFocusChange,
-            inputFieldModifier = Modifier.focusRequester(focusRequester),
-        )
-    }
+  searchedIconInfoModel?.let { iconInfoModel ->
+    AnimatedSearchBar(
+      modifier = modifier,
+      searchTerm = searchTerm,
+      onClearSearch = onClearSearch,
+      onModeChange = onChangeMode,
+      onSearch = onSearchIcons,
+      iconInfoModel = iconInfoModel,
+      onNavigate = onNavigate,
+      isSearchExpanded = isSearchExpanded,
+      isExpandedScreen = isExpandedScreen,
+      isIconPicker = isIconPicker,
+      searchMode = searchMode,
+      onSendResult = onSendResult,
+      onFocusChange = onFocusChange,
+      inputFieldModifier = Modifier.focusRequester(focusRequester),
+    )
+  }
 }
 
 @Composable
 private fun AnimatedSearchBar(
-    searchMode: SearchMode,
-    searchTerm: String,
-    onSearch: (String) -> Unit,
-    onClearSearch: () -> Unit,
-    onModeChange: (SearchMode) -> Unit,
-    onNavigate: () -> Unit,
-    isSearchExpanded: Boolean,
-    isExpandedScreen: Boolean,
-    isIconPicker: Boolean,
-    onSendResult: (IconInfo) -> Unit,
-    iconInfoModel: IconInfoModel,
-    onFocusChange: () -> Unit,
-    modifier: Modifier = Modifier,
-    inputFieldModifier: Modifier = Modifier,
+  searchMode: SearchMode,
+  searchTerm: String,
+  onSearch: (String) -> Unit,
+  onClearSearch: () -> Unit,
+  onModeChange: (SearchMode) -> Unit,
+  onNavigate: () -> Unit,
+  isSearchExpanded: Boolean,
+  isExpandedScreen: Boolean,
+  isIconPicker: Boolean,
+  onSendResult: (IconInfo) -> Unit,
+  iconInfoModel: IconInfoModel,
+  onFocusChange: () -> Unit,
+  modifier: Modifier = Modifier,
+  inputFieldModifier: Modifier = Modifier,
 ) {
-    val offset = animateDpAsState(
-        targetValue = (if (isSearchExpanded || isExpandedScreen) 0 else -1000).dp,
-        label = "move search bar",
-        animationSpec = tween(
-            durationMillis = 600,
-        ),
-    )
+  val offset = animateDpAsState(
+    targetValue = (if (isSearchExpanded || isExpandedScreen) 0 else -1000).dp,
+    label = "move search bar",
+    animationSpec = tween(
+      durationMillis = 600,
+    ),
+  )
 
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .offset {
-                IntOffset(0, offset.value.roundToPx())
-            },
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
-        LawniconsSearchBar(
-            query = searchTerm,
-            isQueryEmpty = searchTerm == "",
-            onClear = onClearSearch,
-            onBack = onFocusChange,
-            onSearch = {
-                isIconInfoShown.value = true
-            },
-            onQueryChange = onSearch,
-            iconCount = iconInfoModel.iconCount,
-            onNavigate = onNavigate,
-            isExpandedScreen = isExpandedScreen,
-            isIconPicker = isIconPicker,
-            content = {
-                SearchContents(
-                    searchTerm = searchTerm,
-                    searchMode = searchMode,
-                    onModeChange = onModeChange,
-                    iconInfo = iconInfoModel.iconInfo,
-                    onSendResult = onSendResult,
-                    showSheet = isIconInfoShown.value,
-                    onToggleSheet = { isIconInfoShown.value = it },
-                )
-            },
-            inputFieldModifier = inputFieldModifier,
+  Column(
+    modifier = modifier
+      .fillMaxWidth()
+      .offset {
+        IntOffset(0, offset.value.roundToPx())
+      },
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally,
+  ) {
+    val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+    LawniconsSearchBar(
+      query = searchTerm,
+      isQueryEmpty = searchTerm == "",
+      onClear = onClearSearch,
+      onBack = onFocusChange,
+      onSearch = {
+        isIconInfoShown.value = true
+      },
+      onQueryChange = onSearch,
+      iconCount = iconInfoModel.iconCount,
+      onNavigate = onNavigate,
+      isExpandedScreen = isExpandedScreen,
+      isIconPicker = isIconPicker,
+      content = {
+        SearchContents(
+          searchTerm = searchTerm,
+          searchMode = searchMode,
+          onModeChange = onModeChange,
+          iconInfo = iconInfoModel.iconInfo,
+          onSendResult = onSendResult,
+          showSheet = isIconInfoShown.value,
+          onToggleSheet = { isIconInfoShown.value = it },
         )
-    }
+      },
+      inputFieldModifier = inputFieldModifier,
+    )
+  }
 }

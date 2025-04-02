@@ -65,210 +65,210 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IconInfoSheet(
-    iconInfo: IconInfo,
-    modifier: Modifier = Modifier,
-    isPopupShown: (Boolean) -> Unit,
+  iconInfo: IconInfo,
+  modifier: Modifier = Modifier,
+  isPopupShown: (Boolean) -> Unit,
 ) {
-    val context = LocalContext.current
+  val context = LocalContext.current
 
-    val sheetState = rememberModalBottomSheetState(
-        skipPartiallyExpanded = true,
-    )
+  val sheetState = rememberModalBottomSheetState(
+    skipPartiallyExpanded = true,
+  )
 
-    val groupedComponents = rememberSaveable {
-        iconInfo.componentNames
-            .groupBy { it.label }
-            .map { (label, components) ->
-                label to components.map { it.componentName }
-            }
-    }
+  val groupedComponents = rememberSaveable {
+    iconInfo.componentNames
+      .groupBy { it.label }
+      .map { (label, components) ->
+        label to components.map { it.componentName }
+      }
+  }
 
-    val githubName = iconInfo.drawableName.replace(
-        oldValue = "_foreground",
-        newValue = "",
-    )
+  val githubName = iconInfo.drawableName.replace(
+    oldValue = "_foreground",
+    newValue = "",
+  )
 
-    val shareContents = rememberSaveable { getShareContents(githubName, groupedComponents) }
+  val shareContents = rememberSaveable { getShareContents(githubName, groupedComponents) }
 
-    ModalBottomSheet(
-        onDismissRequest = {
-            isPopupShown(false)
-        },
-        sheetState = sheetState,
-        contentWindowInsets = {
-            WindowInsets(0.dp)
-        },
-        modifier = modifier,
+  ModalBottomSheet(
+    onDismissRequest = {
+      isPopupShown(false)
+    },
+    sheetState = sheetState,
+    contentWindowInsets = {
+      WindowInsets(0.dp)
+    },
+    modifier = modifier,
+  ) {
+    LazyColumn(
+      modifier = Modifier.fillMaxWidth(),
     ) {
-        LazyColumn(
-            modifier = Modifier.fillMaxWidth(),
+      item {
+        Row(
+          modifier = Modifier.fillMaxWidth(),
+          horizontalArrangement = Arrangement.Center,
         ) {
-            item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                ) {
-                    if (LocalInspectionMode.current) {
-                        val icon = when (iconInfo.id) {
-                            1 -> Icons.Rounded.Email
-                            2 -> Icons.Rounded.Search
-                            3 -> Icons.Rounded.Call
-                            else -> Icons.Rounded.Warning
-                        }
-                        Icon(
-                            icon,
-                            contentDescription = iconInfo.drawableName,
-                            modifier = Modifier.size(250.dp),
-                            tint = MaterialTheme.colorScheme.onBackground,
-                        )
-                    } else {
-                        Icon(
-                            painterResource(id = iconInfo.id),
-                            contentDescription = iconInfo.drawableName,
-                            modifier = Modifier.size(250.dp),
-                            tint = MaterialTheme.colorScheme.onBackground,
-                        )
-                    }
-                }
+          if (LocalInspectionMode.current) {
+            val icon = when (iconInfo.id) {
+              1 -> Icons.Rounded.Email
+              2 -> Icons.Rounded.Search
+              3 -> Icons.Rounded.Call
+              else -> Icons.Rounded.Warning
             }
-            item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.Center,
-                ) {
-                    IconLink(
-                        iconResId = R.drawable.github_foreground,
-                        label = stringResource(id = R.string.view_on_github),
-                        url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
-                    )
-                    Spacer(Modifier.width(16.dp))
-                    IconLink(
-                        iconResId = R.drawable.share_icon,
-                        label = stringResource(id = R.string.share),
-                        onClick = {
-                            val intent = Intent().apply {
-                                action = Intent.ACTION_SEND
-                                putExtra(Intent.EXTRA_TEXT, shareContents)
-                                type = "text/plain"
-                            }
-
-                            val shareIntent = Intent.createChooser(intent, null)
-                            context.startActivity(shareIntent)
-                        },
-                    )
-                }
-            }
-            item {
-                LinkHeader(
-                    label = stringResource(id = R.string.drawable),
-                )
-            }
-            item {
-                ListRow(
-                    label = {
-                        Text(githubName)
-                    },
-                    description = {
-                        Text(
-                            text = stringResource(R.string.icon_info_outdated_warning),
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    },
-                    divider = false,
-                    enforceHeight = false,
-                )
-            }
-            item {
-                Spacer(Modifier.height(16.dp))
-            }
-            item {
-                LinkHeader(
-                    label = stringResource(id = R.string.mapped_components),
-                )
-            }
-            items(groupedComponents) { (label, componentName) ->
-                IconInfoListRow(label, componentName)
-            }
-            item {
-                Spacer(Modifier.height(24.dp))
-            }
-            item {
-                Spacer(Modifier.navigationBarsPadding())
-            }
+            Icon(
+              icon,
+              contentDescription = iconInfo.drawableName,
+              modifier = Modifier.size(250.dp),
+              tint = MaterialTheme.colorScheme.onBackground,
+            )
+          } else {
+            Icon(
+              painterResource(id = iconInfo.id),
+              contentDescription = iconInfo.drawableName,
+              modifier = Modifier.size(250.dp),
+              tint = MaterialTheme.colorScheme.onBackground,
+            )
+          }
         }
+      }
+      item {
+        Row(
+          modifier = Modifier.fillMaxWidth(),
+          horizontalArrangement = Arrangement.Center,
+        ) {
+          IconLink(
+            iconResId = R.drawable.github_foreground,
+            label = stringResource(id = R.string.view_on_github),
+            url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
+          )
+          Spacer(Modifier.width(16.dp))
+          IconLink(
+            iconResId = R.drawable.share_icon,
+            label = stringResource(id = R.string.share),
+            onClick = {
+              val intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, shareContents)
+                type = "text/plain"
+              }
+
+              val shareIntent = Intent.createChooser(intent, null)
+              context.startActivity(shareIntent)
+            },
+          )
+        }
+      }
+      item {
+        LinkHeader(
+          label = stringResource(id = R.string.drawable),
+        )
+      }
+      item {
+        ListRow(
+          label = {
+            Text(githubName)
+          },
+          description = {
+            Text(
+              text = stringResource(R.string.icon_info_outdated_warning),
+              style = MaterialTheme.typography.bodyMedium,
+              color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+          },
+          divider = false,
+          enforceHeight = false,
+        )
+      }
+      item {
+        Spacer(Modifier.height(16.dp))
+      }
+      item {
+        LinkHeader(
+          label = stringResource(id = R.string.mapped_components),
+        )
+      }
+      items(groupedComponents) { (label, componentName) ->
+        IconInfoListRow(label, componentName)
+      }
+      item {
+        Spacer(Modifier.height(24.dp))
+      }
+      item {
+        Spacer(Modifier.navigationBarsPadding())
+      }
     }
+  }
 }
 
 private fun getShareContents(
-    githubName: String,
-    groupedComponents: List<Pair<String, List<String>>>,
+  githubName: String,
+  groupedComponents: List<Pair<String, List<String>>>,
 ): String {
-    val formattedComponents =
-        groupedComponents.joinToString(separator = "\n") { (group, components) ->
-            val componentList = components.joinToString(separator = "\n") { it }
-            "$group:\n$componentList"
-        }
-    return "Drawable: $githubName\n\nMapped components: \n$formattedComponents"
+  val formattedComponents =
+    groupedComponents.joinToString(separator = "\n") { (group, components) ->
+      val componentList = components.joinToString(separator = "\n") { it }
+      "$group:\n$componentList"
+    }
+  return "Drawable: $githubName\n\nMapped components: \n$formattedComponents"
 }
 
 @Composable
 private fun LinkHeader(
-    label: String,
-    modifier: Modifier = Modifier,
+  label: String,
+  modifier: Modifier = Modifier,
 ) {
-    Text(
-        text = label,
-        style = MaterialTheme.typography.titleSmall,
-        color = MaterialTheme.colorScheme.primary,
-        modifier = modifier.padding(start = 16.dp, bottom = 6.dp),
-    )
+  Text(
+    text = label,
+    style = MaterialTheme.typography.titleSmall,
+    color = MaterialTheme.colorScheme.primary,
+    modifier = modifier.padding(start = 16.dp, bottom = 6.dp),
+  )
 }
 
 @Composable
 private fun IconInfoListRow(
-    label: String,
-    componentNames: List<String>,
+  label: String,
+  componentNames: List<String>,
 ) {
-    SelectionContainer {
-        ListRow(
-            label = {
-                Text(
-                    text = label,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis,
-                )
-            },
-            description = {
-                Spacer(Modifier.height(4.dp))
-                Column {
-                    componentNames.forEach {
-                        Text(
-                            text = it,
-                            maxLines = 2,
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                        Spacer(Modifier.height(6.dp))
-                    }
-                }
-            },
-            divider = false,
-            enforceHeight = false,
+  SelectionContainer {
+    ListRow(
+      label = {
+        Text(
+          text = label,
+          maxLines = 2,
+          overflow = TextOverflow.Ellipsis,
         )
-        Spacer(Modifier.height(16.dp))
-    }
+      },
+      description = {
+        Spacer(Modifier.height(4.dp))
+        Column {
+          componentNames.forEach {
+            Text(
+              text = it,
+              maxLines = 2,
+              style = MaterialTheme.typography.bodyMedium,
+              color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(Modifier.height(6.dp))
+          }
+        }
+      },
+      divider = false,
+      enforceHeight = false,
+    )
+    Spacer(Modifier.height(16.dp))
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun IconInfoPopupPreview() {
-    val showPopup = remember { mutableStateOf(true) }
-    LawniconsTheme {
-        IconInfoSheet(
-            iconInfo = SampleData.iconInfoSample,
-        ) {
-            showPopup.value = it
-        }
+  val showPopup = remember { mutableStateOf(true) }
+  LawniconsTheme {
+    IconInfoSheet(
+      iconInfo = SampleData.iconInfoSample,
+    ) {
+      showPopup.value = it
     }
+  }
 }

@@ -22,41 +22,41 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun PlaceholderSearchBar(
-    modifier: Modifier = Modifier,
+  modifier: Modifier = Modifier,
 ) {
-    Column(
-        modifier = modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
+  Column(
+    modifier = modifier.fillMaxWidth(),
+    verticalArrangement = Arrangement.Center,
+    horizontalAlignment = Alignment.CenterHorizontally,
+  ) {
+    Row(
+      verticalAlignment = Alignment.CenterVertically,
+      horizontalArrangement = Arrangement.Center,
     ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-        ) {
-            Box(
-                content = {},
-                contentAlignment = Alignment.TopCenter,
-                modifier = Modifier
-                    .width(360.dp)
-                    .zIndex(1f)
-                    .statusBarsPadding()
-                    .padding(top = 8.dp)
-                    .padding(horizontal = 16.dp)
-                    .fillMaxWidth()
-                    .height(56.dp)
-                    .background(
-                        color = MaterialTheme.colorScheme.surfaceContainerHigh,
-                        shape = RoundedCornerShape(100),
-                    ),
-            )
-        }
+      Box(
+        content = {},
+        contentAlignment = Alignment.TopCenter,
+        modifier = Modifier
+          .width(360.dp)
+          .zIndex(1f)
+          .statusBarsPadding()
+          .padding(top = 8.dp)
+          .padding(horizontal = 16.dp)
+          .fillMaxWidth()
+          .height(56.dp)
+          .background(
+            color = MaterialTheme.colorScheme.surfaceContainerHigh,
+            shape = RoundedCornerShape(100),
+          ),
+      )
     }
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun PlaceholderSearchBarPreview() {
-    LawniconsTheme {
-        PlaceholderSearchBar()
-    }
+  LawniconsTheme {
+    PlaceholderSearchBar()
+  }
 }

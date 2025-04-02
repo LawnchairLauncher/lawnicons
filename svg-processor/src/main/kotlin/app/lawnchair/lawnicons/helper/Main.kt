@@ -17,17 +17,17 @@
 package app.lawnchair.lawnicons.helper
 
 fun main(args: Array<String>) {
-    val (svgDir, resDir, assetsDir) = args
-    val appFilterFile = "$assetsDir/appfilter.xml"
+  val (svgDir, resDir, assetsDir) = args
+  val appFilterFile = "$assetsDir/appfilter.xml"
 
-    // Convert svg to drawable in runtime
-    SvgFilesProcessor.process(svgDir, "$resDir/drawable")
-    println("SvgToVectorDrawable task completed")
+  // Convert svg to drawable in runtime
+  SvgFilesProcessor.process(svgDir, "$resDir/drawable")
+  println("SvgToVectorDrawable task completed")
 
-    // Read appfilter xml and create icon, drawable xml file.
-    ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir)
-    println("ConfigProcessor task completed")
+  // Read appfilter xml and create icon, drawable xml file.
+  ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir)
+  println("ConfigProcessor task completed")
 
-    AppfilterDiffCreator.createAppfilterDiff(resDir, appFilterFile)
-    println("Appfilter diff task completed")
+  AppfilterDiffCreator.createAppfilterDiff(resDir, appFilterFile)
+  println("Appfilter diff task completed")
 }

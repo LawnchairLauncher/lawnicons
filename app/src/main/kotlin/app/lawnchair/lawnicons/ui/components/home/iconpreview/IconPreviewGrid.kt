@@ -80,226 +80,226 @@ import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
 
 data class IconPreviewGridPadding(
-    val topPadding: Dp,
-    val bottomPadding: Dp,
-    val horizontalPadding: Dp,
+  val topPadding: Dp,
+  val bottomPadding: Dp,
+  val horizontalPadding: Dp,
 ) {
 
-    companion object {
-        val Defaults = IconPreviewGridPadding(
-            topPadding = 0.dp,
-            bottomPadding = 80.dp,
-            horizontalPadding = 8.dp,
-        )
+  companion object {
+    val Defaults = IconPreviewGridPadding(
+      topPadding = 0.dp,
+      bottomPadding = 80.dp,
+      horizontalPadding = 8.dp,
+    )
 
-        val ExpandedSize = IconPreviewGridPadding(
-            topPadding = 72.dp,
-            bottomPadding = 0.dp,
-            horizontalPadding = 32.dp,
-        )
-    }
+    val ExpandedSize = IconPreviewGridPadding(
+      topPadding = 72.dp,
+      bottomPadding = 0.dp,
+      horizontalPadding = 32.dp,
+    )
+  }
 }
 
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
-    iconInfo: List<IconInfo>,
-    onSendResult: (IconInfo) -> Unit,
-    modifier: Modifier = Modifier,
-    containerModifier: Modifier = Modifier
-        .applyGridInsets(),
-    contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
-    isIconPicker: Boolean = false,
-    gridState: LazyGridState = rememberLazyGridState(),
-    otherContent: (LazyGridScope.() -> Unit) = {},
+  iconInfo: List<IconInfo>,
+  onSendResult: (IconInfo) -> Unit,
+  modifier: Modifier = Modifier,
+  containerModifier: Modifier = Modifier
+    .applyGridInsets(),
+  contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
+  isIconPicker: Boolean = false,
+  gridState: LazyGridState = rememberLazyGridState(),
+  otherContent: (LazyGridScope.() -> Unit) = {},
 ) {
-    val indexOfFirstItem by remember { derivedStateOf { gridState.firstVisibleItemIndex } }
-    val letter = iconInfo[indexOfFirstItem].label[0].uppercase()
-    var thumbSelected by remember { mutableStateOf(false) }
+  val indexOfFirstItem by remember { derivedStateOf { gridState.firstVisibleItemIndex } }
+  val letter = iconInfo[indexOfFirstItem].label[0].uppercase()
+  var thumbSelected by remember { mutableStateOf(false) }
 
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = modifier.fillMaxWidth(),
+  Column(
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.Center,
+    modifier = modifier.fillMaxWidth(),
+  ) {
+    Box(
+      modifier = containerModifier
+        .padding(bottom = contentPadding.bottomPadding),
     ) {
-        Box(
-            modifier = containerModifier
-                .padding(bottom = contentPadding.bottomPadding),
-        ) {
-            LazyVerticalGrid(
-                columns = GridCells.Adaptive(minSize = 80.dp),
-                contentPadding = WindowInsets.navigationBars.toPaddingValues(
-                    additionalStart = contentPadding.horizontalPadding,
-                    additionalTop = contentPadding.topPadding,
-                    additionalEnd = contentPadding.horizontalPadding,
-                ),
-                state = gridState,
-            ) {
-                otherContent()
-                items(
-                    items = iconInfo,
-                    contentType = { "icon_preview" },
-                ) { iconInfo ->
-                    val scale by animateFloatAsState(
-                        if (thumbSelected && iconInfo.label.first().toString() == letter) {
-                            1.1f
-                        } else {
-                            1f
-                        },
-                        label = "",
-                    )
-                    IconPreview(
-                        modifier = Modifier
-                            .scale(scale),
-                        iconInfo = iconInfo,
-                        isIconPicker = isIconPicker,
-                        onSendResult = onSendResult,
-                    )
-                }
-            }
-            ScrollbarLayout(
-                gridState,
-                { thumbSelected = it },
-                letter,
-                contentPadding.topPadding,
-            )
+      LazyVerticalGrid(
+        columns = GridCells.Adaptive(minSize = 80.dp),
+        contentPadding = WindowInsets.navigationBars.toPaddingValues(
+          additionalStart = contentPadding.horizontalPadding,
+          additionalTop = contentPadding.topPadding,
+          additionalEnd = contentPadding.horizontalPadding,
+        ),
+        state = gridState,
+      ) {
+        otherContent()
+        items(
+          items = iconInfo,
+          contentType = { "icon_preview" },
+        ) { iconInfo ->
+          val scale by animateFloatAsState(
+            if (thumbSelected && iconInfo.label.first().toString() == letter) {
+              1.1f
+            } else {
+              1f
+            },
+            label = "",
+          )
+          IconPreview(
+            modifier = Modifier
+              .scale(scale),
+            iconInfo = iconInfo,
+            isIconPicker = isIconPicker,
+            onSendResult = onSendResult,
+          )
         }
+      }
+      ScrollbarLayout(
+        gridState,
+        { thumbSelected = it },
+        letter,
+        contentPadding.topPadding,
+      )
     }
+  }
 }
 
 private fun Modifier.applyGridInsets() = this
-    .widthIn(max = 640.dp)
-    .fillMaxWidth()
-    .statusBarsPadding()
+  .widthIn(max = 640.dp)
+  .fillMaxWidth()
+  .statusBarsPadding()
 
 @Composable
 private fun ScrollbarLayout(
-    gridState: LazyGridState,
-    onSelectedChange: (Boolean) -> Unit,
-    currentLetter: String,
-    topPadding: Dp = 0.dp,
+  gridState: LazyGridState,
+  onSelectedChange: (Boolean) -> Unit,
+  currentLetter: String,
+  topPadding: Dp = 0.dp,
 ) {
-    Box(
-        contentAlignment = Alignment.CenterEnd,
-        modifier = Modifier.padding(top = topPadding),
-    ) {
-        Spacer(
-            Modifier
-                .fillMaxHeight()
-                .width(8.dp)
-                .background(MaterialTheme.colorScheme.surfaceContainer)
-                .clip(CircleShape),
-        )
-        InternalLazyVerticalGridScrollbar(
-            modifier = Modifier.offset(7.dp),
-            state = gridState,
-            settings = ScrollbarSettings(
-                alwaysShowScrollbar = true,
-                thumbUnselectedColor = MaterialTheme.colorScheme.primary,
-                thumbSelectedColor = MaterialTheme.colorScheme.primary,
-                selectionMode = ScrollbarSelectionMode.Thumb,
-            ),
-            indicatorContent = { _, isThumbSelected ->
-                onSelectedChange(isThumbSelected)
-                ScrollbarIndicator(currentLetter, isThumbSelected)
-            },
-        )
-    }
+  Box(
+    contentAlignment = Alignment.CenterEnd,
+    modifier = Modifier.padding(top = topPadding),
+  ) {
+    Spacer(
+      Modifier
+        .fillMaxHeight()
+        .width(8.dp)
+        .background(MaterialTheme.colorScheme.surfaceContainer)
+        .clip(CircleShape),
+    )
+    InternalLazyVerticalGridScrollbar(
+      modifier = Modifier.offset(7.dp),
+      state = gridState,
+      settings = ScrollbarSettings(
+        alwaysShowScrollbar = true,
+        thumbUnselectedColor = MaterialTheme.colorScheme.primary,
+        thumbSelectedColor = MaterialTheme.colorScheme.primary,
+        selectionMode = ScrollbarSelectionMode.Thumb,
+      ),
+      indicatorContent = { _, isThumbSelected ->
+        onSelectedChange(isThumbSelected)
+        ScrollbarIndicator(currentLetter, isThumbSelected)
+      },
+    )
+  }
 }
 
 @Composable
 private fun ScrollbarIndicator(
-    label: String,
-    isThumbSelected: Boolean,
+  label: String,
+  isThumbSelected: Boolean,
 ) {
-    AnimatedVisibility(
-        visible = isThumbSelected,
-        enter = fadeIn(),
-        exit = fadeOut(),
+  AnimatedVisibility(
+    visible = isThumbSelected,
+    enter = fadeIn(),
+    exit = fadeOut(),
+  ) {
+    Box(
+      modifier = Modifier
+        .padding(end = 16.dp)
+        .background(
+          color = MaterialTheme.colorScheme.primary,
+          shape = MaterialTheme.shapes.large,
+        ),
     ) {
-        Box(
-            modifier = Modifier
-                .padding(end = 16.dp)
-                .background(
-                    color = MaterialTheme.colorScheme.primary,
-                    shape = MaterialTheme.shapes.large,
-                ),
-        ) {
-            Text(
-                modifier = Modifier.padding(16.dp),
-                text = label,
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onPrimary,
-            )
-        }
+      Text(
+        modifier = Modifier.padding(16.dp),
+        text = label,
+        style = MaterialTheme.typography.titleMedium,
+        color = MaterialTheme.colorScheme.onPrimary,
+      )
     }
+  }
 }
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun AppBarListItem(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    val prefs = preferenceManager(context)
-    CenterAlignedTopAppBar(
-        modifier = modifier,
-        title = {
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                if (!LocalInspectionMode.current) {
-                    Image(
-                        bitmap = context.appIcon().asImageBitmap(),
-                        contentDescription = stringResource(id = R.string.app_name),
-                        modifier = Modifier
-                            .size(36.dp)
-                            .clip(CircleShape)
-                            .combinedClickable(
-                                onClick = {},
-                                onLongClick = {
-                                    prefs.showDebugMenu.toggle()
-                                },
-                            ),
-                    )
-                }
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(
-                    stringResource(id = R.string.app_name),
-                )
-            }
-        },
-    )
+  val context = LocalContext.current
+  val prefs = preferenceManager(context)
+  CenterAlignedTopAppBar(
+    modifier = modifier,
+    title = {
+      Row(
+        verticalAlignment = Alignment.CenterVertically,
+      ) {
+        if (!LocalInspectionMode.current) {
+          Image(
+            bitmap = context.appIcon().asImageBitmap(),
+            contentDescription = stringResource(id = R.string.app_name),
+            modifier = Modifier
+              .size(36.dp)
+              .clip(CircleShape)
+              .combinedClickable(
+                onClick = {},
+                onLongClick = {
+                  prefs.showDebugMenu.toggle()
+                },
+              ),
+          )
+        }
+        Spacer(modifier = Modifier.width(8.dp))
+        Text(
+          stringResource(id = R.string.app_name),
+        )
+      }
+    },
+  )
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @PreviewLawnicons
 @Composable
 private fun IconGridPreview() {
-    LawniconsTheme {
-        Surface {
-            IconPreviewGrid(
-                iconInfo = SampleData.iconInfoList,
-                onSendResult = {},
-                modifier = Modifier,
-                contentPadding = IconPreviewGridPadding.Defaults,
-                isIconPicker = false,
-            )
-        }
+  LawniconsTheme {
+    Surface {
+      IconPreviewGrid(
+        iconInfo = SampleData.iconInfoList,
+        onSendResult = {},
+        modifier = Modifier,
+        contentPadding = IconPreviewGridPadding.Defaults,
+        isIconPicker = false,
+      )
     }
+  }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @PreviewLawnicons
 @Composable
 private fun IconGridExpandedPreview() {
-    LawniconsTheme {
-        Surface {
-            IconPreviewGrid(
-                iconInfo = SampleData.iconInfoList,
-                onSendResult = {},
-                modifier = Modifier,
-                contentPadding = IconPreviewGridPadding.ExpandedSize,
-                isIconPicker = false,
-            )
-        }
+  LawniconsTheme {
+    Surface {
+      IconPreviewGrid(
+        iconInfo = SampleData.iconInfoList,
+        onSendResult = {},
+        modifier = Modifier,
+        contentPadding = IconPreviewGridPadding.ExpandedSize,
+        isIconPicker = false,
+      )
     }
+  }
 }

@@ -44,187 +44,187 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
 
 @Composable
 fun SearchContents(
-    searchTerm: String,
-    searchMode: SearchMode,
-    onModeChange: (SearchMode) -> Unit,
-    iconInfo: List<IconInfo>,
-    modifier: Modifier = Modifier,
-    onSendResult: (IconInfo) -> Unit = {},
-    showSheet: Boolean = false,
-    onToggleSheet: (Boolean) -> Unit = {},
+  searchTerm: String,
+  searchMode: SearchMode,
+  onModeChange: (SearchMode) -> Unit,
+  iconInfo: List<IconInfo>,
+  modifier: Modifier = Modifier,
+  onSendResult: (IconInfo) -> Unit = {},
+  showSheet: Boolean = false,
+  onToggleSheet: (Boolean) -> Unit = {},
 ) {
-    Column(
-        modifier = modifier,
+  Column(
+    modifier = modifier,
+  ) {
+    Row(
+      horizontalArrangement = Arrangement.spacedBy(8.dp),
+      modifier = Modifier
+        .horizontalScroll(rememberScrollState())
+        .padding(start = 16.dp, end = 16.dp, top = 8.dp),
     ) {
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier
-                .horizontalScroll(rememberScrollState())
-                .padding(start = 16.dp, end = 16.dp, top = 8.dp),
-        ) {
-            FilterChip(
-                leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.LABEL) {
-                        Icon(
-                            imageVector = Icons.Rounded.Check,
-                            contentDescription = null,
-                        )
-                    }
-                },
-                selected = searchMode == SearchMode.LABEL,
-                onClick = {
-                    onModeChange(SearchMode.LABEL)
-                },
-                label = {
-                    Text(text = stringResource(R.string.name))
-                },
+      FilterChip(
+        leadingIcon = {
+          AnimatedVisibility(searchMode == SearchMode.LABEL) {
+            Icon(
+              imageVector = Icons.Rounded.Check,
+              contentDescription = null,
             )
-            FilterChip(
-                leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.COMPONENT) {
-                        Icon(
-                            imageVector = Icons.Rounded.Check,
-                            contentDescription = null,
-                        )
-                    }
-                },
-                selected = searchMode == SearchMode.COMPONENT,
-                onClick = {
-                    onModeChange(SearchMode.COMPONENT)
-                },
-                label = {
-                    Text(text = stringResource(id = R.string.component))
-                },
+          }
+        },
+        selected = searchMode == SearchMode.LABEL,
+        onClick = {
+          onModeChange(SearchMode.LABEL)
+        },
+        label = {
+          Text(text = stringResource(R.string.name))
+        },
+      )
+      FilterChip(
+        leadingIcon = {
+          AnimatedVisibility(searchMode == SearchMode.COMPONENT) {
+            Icon(
+              imageVector = Icons.Rounded.Check,
+              contentDescription = null,
             )
-            FilterChip(
-                leadingIcon = {
-                    AnimatedVisibility(searchMode == SearchMode.DRAWABLE) {
-                        Icon(
-                            imageVector = Icons.Rounded.Check,
-                            contentDescription = null,
-                        )
-                    }
-                },
-                selected = searchMode == SearchMode.DRAWABLE,
-                onClick = {
-                    onModeChange(SearchMode.DRAWABLE)
-                },
-                label = {
-                    Text(text = stringResource(id = R.string.drawable))
-                },
+          }
+        },
+        selected = searchMode == SearchMode.COMPONENT,
+        onClick = {
+          onModeChange(SearchMode.COMPONENT)
+        },
+        label = {
+          Text(text = stringResource(id = R.string.component))
+        },
+      )
+      FilterChip(
+        leadingIcon = {
+          AnimatedVisibility(searchMode == SearchMode.DRAWABLE) {
+            Icon(
+              imageVector = Icons.Rounded.Check,
+              contentDescription = null,
             )
-        }
-        Crossfade(
-            targetState = iconInfo.size,
-            label = "On item count modified",
-        ) { count ->
-            when (count) {
-                1 -> {
-                    IconInfoListItem(
-                        iconInfo,
-                        showSheet,
-                        onToggleSheet,
-                    )
-                }
-
-                0 -> {
-                    Box(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(PaddingValues(16.dp)),
-                        contentAlignment = Alignment.Center,
-                    ) {
-                        Text(
-                            textAlign = TextAlign.Center,
-                            text = stringResource(R.string.no_items_found, searchTerm),
-                        )
-                    }
-                }
-
-                else -> {
-                    Crossfade(
-                        targetState = iconInfo,
-                        label = "Item changed",
-                        animationSpec = tween(50),
-                    ) { iconInfo ->
-                        LazyVerticalGrid(
-                            columns = GridCells.Adaptive(minSize = 80.dp),
-                            contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
-                        ) {
-                            itemsIndexed(
-                                items = iconInfo,
-                                contentType = { _, _ -> "icon_preview" },
-                            ) { index, it ->
-                                if (index == 0 && searchTerm != "") {
-                                    IconPreview(
-                                        iconInfo = it,
-                                        onSendResult = onSendResult,
-                                        iconBackground = MaterialTheme.colorScheme.surface,
-                                        showSheet = showSheet,
-                                        onToggleSheet = onToggleSheet,
-                                    )
-                                } else {
-                                    IconPreview(
-                                        iconInfo = it,
-                                        onSendResult = onSendResult,
-                                        iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
-                                    )
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+          }
+        },
+        selected = searchMode == SearchMode.DRAWABLE,
+        onClick = {
+          onModeChange(SearchMode.DRAWABLE)
+        },
+        label = {
+          Text(text = stringResource(id = R.string.drawable))
+        },
+      )
     }
+    Crossfade(
+      targetState = iconInfo.size,
+      label = "On item count modified",
+    ) { count ->
+      when (count) {
+        1 -> {
+          IconInfoListItem(
+            iconInfo,
+            showSheet,
+            onToggleSheet,
+          )
+        }
+
+        0 -> {
+          Box(
+            modifier = Modifier
+              .fillMaxWidth()
+              .padding(PaddingValues(16.dp)),
+            contentAlignment = Alignment.Center,
+          ) {
+            Text(
+              textAlign = TextAlign.Center,
+              text = stringResource(R.string.no_items_found, searchTerm),
+            )
+          }
+        }
+
+        else -> {
+          Crossfade(
+            targetState = iconInfo,
+            label = "Item changed",
+            animationSpec = tween(50),
+          ) { iconInfo ->
+            LazyVerticalGrid(
+              columns = GridCells.Adaptive(minSize = 80.dp),
+              contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
+            ) {
+              itemsIndexed(
+                items = iconInfo,
+                contentType = { _, _ -> "icon_preview" },
+              ) { index, it ->
+                if (index == 0 && searchTerm != "") {
+                  IconPreview(
+                    iconInfo = it,
+                    onSendResult = onSendResult,
+                    iconBackground = MaterialTheme.colorScheme.surface,
+                    showSheet = showSheet,
+                    onToggleSheet = onToggleSheet,
+                  )
+                } else {
+                  IconPreview(
+                    iconInfo = it,
+                    onSendResult = onSendResult,
+                    iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
+                  )
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @Composable
 private fun IconInfoListItem(
-    iconInfo: List<IconInfo>,
-    showSheet: Boolean,
-    onToggleSheet: (Boolean) -> Unit,
+  iconInfo: List<IconInfo>,
+  showSheet: Boolean,
+  onToggleSheet: (Boolean) -> Unit,
 ) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(PaddingValues(16.dp)),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-    ) {
-        val it = try {
-            iconInfo[0]
-        } catch (_: Exception) {
-            return@IconInfoListItem
-        }
-
-        ListItem(
-            headlineContent = { Text(it.getFirstLabelAndComponent().label) },
-            supportingContent = { Text(it.getFirstLabelAndComponent().componentName) },
-            leadingContent = {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .padding(all = 8.dp)
-                        .clip(shape = CircleShape)
-                        .size(48.dp),
-                ) {
-                    Icon(
-                        painter = painterResource(id = it.id),
-                        contentDescription = null,
-                        modifier = Modifier.fillMaxSize(0.6f),
-                    )
-                }
-            },
-            modifier = Modifier
-                .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = { onToggleSheet(true) }),
-        )
-        AnimatedVisibility(showSheet) {
-            IconInfoSheet(
-                iconInfo = it,
-            ) {
-                onToggleSheet(it)
-            }
-        }
+  Column(
+    modifier = Modifier
+      .fillMaxWidth()
+      .padding(PaddingValues(16.dp)),
+    verticalArrangement = Arrangement.spacedBy(4.dp),
+  ) {
+    val it = try {
+      iconInfo[0]
+    } catch (_: Exception) {
+      return@IconInfoListItem
     }
+
+    ListItem(
+      headlineContent = { Text(it.getFirstLabelAndComponent().label) },
+      supportingContent = { Text(it.getFirstLabelAndComponent().componentName) },
+      leadingContent = {
+        Box(
+          contentAlignment = Alignment.Center,
+          modifier = Modifier
+            .padding(all = 8.dp)
+            .clip(shape = CircleShape)
+            .size(48.dp),
+        ) {
+          Icon(
+            painter = painterResource(id = it.id),
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(0.6f),
+          )
+        }
+      },
+      modifier = Modifier
+        .clip(RoundedCornerShape(16.dp))
+        .clickable(onClick = { onToggleSheet(true) }),
+    )
+    AnimatedVisibility(showSheet) {
+      IconInfoSheet(
+        iconInfo = it,
+      ) {
+        onToggleSheet(it)
+      }
+    }
+  }
 }

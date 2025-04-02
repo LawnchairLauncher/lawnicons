@@ -20,6 +20,6 @@ import app.lawnchair.lawnicons.model.IconRequestSettings
 import retrofit2.http.GET
 
 interface IconRequestSettingsAPI {
-    @GET("lawnicons-request/settings.json")
-    suspend fun getIconRequestSettings(): IconRequestSettings
+  @GET("lawnicons-request/settings.json")
+  suspend fun getIconRequestSettings(): IconRequestSettings
 }

@@ -10,18 +10,18 @@ import androidx.compose.runtime.setValue
 
 @Composable
 fun LazyGridState.isScrollingUp(): Boolean {
-    var previousIndex by remember(this) { mutableIntStateOf(firstVisibleItemIndex) }
-    var previousScrollOffset by remember(this) { mutableIntStateOf(firstVisibleItemScrollOffset) }
-    return remember(this) {
-        derivedStateOf {
-            if (previousIndex != firstVisibleItemIndex) {
-                previousIndex > firstVisibleItemIndex
-            } else {
-                previousScrollOffset >= firstVisibleItemScrollOffset
-            }.also {
-                previousIndex = firstVisibleItemIndex
-                previousScrollOffset = firstVisibleItemScrollOffset
-            }
-        }
-    }.value
+  var previousIndex by remember(this) { mutableIntStateOf(firstVisibleItemIndex) }
+  var previousScrollOffset by remember(this) { mutableIntStateOf(firstVisibleItemScrollOffset) }
+  return remember(this) {
+    derivedStateOf {
+      if (previousIndex != firstVisibleItemIndex) {
+        previousIndex > firstVisibleItemIndex
+      } else {
+        previousScrollOffset >= firstVisibleItemScrollOffset
+      }.also {
+        previousIndex = firstVisibleItemIndex
+        previousScrollOffset = firstVisibleItemScrollOffset
+      }
+    }
+  }.value
 }

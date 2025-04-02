@@ -23,86 +23,86 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LawniconsScaffold(
-    title: String,
-    onBack: () -> Unit,
-    isExpandedScreen: Boolean,
-    modifier: Modifier = Modifier,
-    content: @Composable (PaddingValues) -> Unit,
+  title: String,
+  onBack: () -> Unit,
+  isExpandedScreen: Boolean,
+  modifier: Modifier = Modifier,
+  content: @Composable (PaddingValues) -> Unit,
 ) {
-    val scrollBehavior =
-        if (isExpandedScreen) TopAppBarDefaults.pinnedScrollBehavior() else TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+  val scrollBehavior =
+    if (isExpandedScreen) TopAppBarDefaults.pinnedScrollBehavior() else TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
 
-    Scaffold(
-        modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = {
-            TopAppBar(
-                scrollBehavior = scrollBehavior,
-                title = title,
-                navigationIcon = {
-                    NavigationIconButton(
-                        onClick = onBack,
-                        imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                        size = 40.dp,
-                        modifier = Modifier.padding(horizontal = 4.dp),
-                    )
-                },
-                isExpandedScreen = isExpandedScreen,
-            )
+  Scaffold(
+    modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+    topBar = {
+      TopAppBar(
+        scrollBehavior = scrollBehavior,
+        title = title,
+        navigationIcon = {
+          NavigationIconButton(
+            onClick = onBack,
+            imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+            size = 40.dp,
+            modifier = Modifier.padding(horizontal = 4.dp),
+          )
         },
-    ) {
-        Box(
-            modifier = Modifier.then(
-                if (isExpandedScreen) {
-                    Modifier.padding(
-                        WindowInsets.navigationBars.toPaddingValues(
-                            additionalStart = 32.dp,
-                            additionalEnd = 32.dp,
-                        ),
-                    )
-                } else {
-                    Modifier
-                },
+        isExpandedScreen = isExpandedScreen,
+      )
+    },
+  ) {
+    Box(
+      modifier = Modifier.then(
+        if (isExpandedScreen) {
+          Modifier.padding(
+            WindowInsets.navigationBars.toPaddingValues(
+              additionalStart = 32.dp,
+              additionalEnd = 32.dp,
             ),
-        ) {
-            content(it)
-        }
+          )
+        } else {
+          Modifier
+        },
+      ),
+    ) {
+      content(it)
     }
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun LawniconsScaffoldPreview() {
-    LawniconsTheme {
-        LawniconsScaffold(
-            title = "Example small bar",
-            onBack = { },
-            isExpandedScreen = false,
-            content = {
-                Box(
-                    modifier = Modifier.padding(it),
-                ) {
-                    Text("Hello World")
-                }
-            },
-        )
-    }
+  LawniconsTheme {
+    LawniconsScaffold(
+      title = "Example small bar",
+      onBack = { },
+      isExpandedScreen = false,
+      content = {
+        Box(
+          modifier = Modifier.padding(it),
+        ) {
+          Text("Hello World")
+        }
+      },
+    )
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun LawniconsScaffoldExpandedPreview() {
-    LawniconsTheme {
-        LawniconsScaffold(
-            title = "Example small bar",
-            onBack = { },
-            isExpandedScreen = true,
-            content = {
-                Box(
-                    modifier = Modifier.padding(it),
-                ) {
-                    Text("Hello World")
-                }
-            },
-        )
-    }
+  LawniconsTheme {
+    LawniconsScaffold(
+      title = "Example small bar",
+      onBack = { },
+      isExpandedScreen = true,
+      content = {
+        Box(
+          modifier = Modifier.padding(it),
+        ) {
+          Text("Hello World")
+        }
+      },
+    )
+  }
 }

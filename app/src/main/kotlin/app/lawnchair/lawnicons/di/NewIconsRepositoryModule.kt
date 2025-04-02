@@ -28,7 +28,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NewIconsRepositoryModule {
-    @Provides
-    @Singleton
-    fun provideNewIconsRepository(application: Application): NewIconsRepository = NewIconsRepositoryImpl(application)
+  @Provides
+  @Singleton
+  fun provideNewIconsRepository(application: Application): NewIconsRepository = NewIconsRepositoryImpl(application)
 }

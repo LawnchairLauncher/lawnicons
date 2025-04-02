@@ -26,62 +26,62 @@ import kotlinx.serialization.Serializable
 data object Acknowledgements
 
 fun NavGraphBuilder.acknowledgementsDestination(
-    isExpandedScreen: Boolean,
-    onBack: () -> Unit,
-    onNavigate: (String) -> Unit,
+  isExpandedScreen: Boolean,
+  onBack: () -> Unit,
+  onNavigate: (String) -> Unit,
 ) {
-    composable<Acknowledgements> {
-        Acknowledgements(
-            onBack = onBack,
-            onNavigate = onNavigate,
-            isExpandedScreen = isExpandedScreen,
-        )
-    }
+  composable<Acknowledgements> {
+    Acknowledgements(
+      onBack = onBack,
+      onNavigate = onNavigate,
+      isExpandedScreen = isExpandedScreen,
+    )
+  }
 }
 
 @Composable
 private fun Acknowledgements(
-    onBack: () -> Unit,
-    onNavigate: (String) -> Unit,
-    isExpandedScreen: Boolean,
-    modifier: Modifier = Modifier,
-    acknowledgementsViewModel: AcknowledgementViewModel = hiltViewModel(),
+  onBack: () -> Unit,
+  onNavigate: (String) -> Unit,
+  isExpandedScreen: Boolean,
+  modifier: Modifier = Modifier,
+  acknowledgementsViewModel: AcknowledgementViewModel = hiltViewModel(),
 ) {
-    val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsStateWithLifecycle()
+  val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsStateWithLifecycle()
 
-    LawniconsScaffold(
-        modifier = modifier,
-        title = stringResource(id = R.string.acknowledgements),
-        onBack = onBack,
-        isExpandedScreen = isExpandedScreen,
-    ) { paddingValues ->
-        Crossfade(
-            targetState = ossLibraries,
-            label = "",
-        ) { libraries ->
-            val layoutDirection = LocalLayoutDirection.current
-            val verticalListPadding = 8.dp
-            LazyColumn(
-                contentPadding = PaddingValues(
-                    start = paddingValues.calculateStartPadding(layoutDirection),
-                    top = paddingValues.calculateTopPadding() + verticalListPadding,
-                    end = paddingValues.calculateEndPadding(layoutDirection),
-                    bottom = paddingValues.calculateBottomPadding() + verticalListPadding,
-                ),
-            ) {
-                itemsIndexed(libraries) { index, it ->
-                    SimpleListRow(
-                        label = it.name,
-                        first = index == 0,
-                        background = true,
-                        last = index == libraries.lastIndex,
-                        divider = index != libraries.lastIndex,
-                        onClick = {
-                            onNavigate(it.name)
-                        },
-                    )
-                }
-            }
+  LawniconsScaffold(
+    modifier = modifier,
+    title = stringResource(id = R.string.acknowledgements),
+    onBack = onBack,
+    isExpandedScreen = isExpandedScreen,
+  ) { paddingValues ->
+    Crossfade(
+      targetState = ossLibraries,
+      label = "",
+    ) { libraries ->
+      val layoutDirection = LocalLayoutDirection.current
+      val verticalListPadding = 8.dp
+      LazyColumn(
+        contentPadding = PaddingValues(
+          start = paddingValues.calculateStartPadding(layoutDirection),
+          top = paddingValues.calculateTopPadding() + verticalListPadding,
+          end = paddingValues.calculateEndPadding(layoutDirection),
+          bottom = paddingValues.calculateBottomPadding() + verticalListPadding,
+        ),
+      ) {
+        itemsIndexed(libraries) { index, it ->
+          SimpleListRow(
+            label = it.name,
+            first = index == 0,
+            background = true,
+            last = index == libraries.lastIndex,
+            divider = index != libraries.lastIndex,
+            onClick = {
+              onNavigate(it.name)
+            },
+          )
         }
+      }
     }
+  }
 }

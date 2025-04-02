@@ -32,79 +32,79 @@ import dagger.hilt.android.AndroidEntryPoint
 @ExperimentalMaterial3Api
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen()
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+  @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    installSplashScreen()
+    super.onCreate(savedInstanceState)
+    enableEdgeToEdge()
 
-        val isIconPicker = intent?.action == Constants.ICON_PICKER_INTENT_ACTION
+    val isIconPicker = intent?.action == Constants.ICON_PICKER_INTENT_ACTION
 
-        setContent {
-            val context = LocalContext.current
-            val windowSizeClass = calculateWindowSizeClass(this)
-            LawniconsTheme {
-                val isExpandedScreen =
-                    windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
+    setContent {
+      val context = LocalContext.current
+      val windowSizeClass = calculateWindowSizeClass(this)
+      LawniconsTheme {
+        val isExpandedScreen =
+          windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
-                val navBarColor = if (isExpandedScreen) {
-                    MaterialTheme.colorScheme.background.copy(alpha = 0.95f)
-                } else {
-                    MaterialTheme.colorScheme.surfaceContainer
-                }
-
-                SetupEdgeToEdge(navBarColor.toArgb())
-                Lawnicons(
-                    isExpandedScreen = isExpandedScreen,
-                    onSendResult = { iconInfo ->
-                        setIntentResult(context, iconInfo)
-                        finish()
-                    },
-                    isIconPicker = isIconPicker,
-                )
-            }
-        }
-    }
-
-    @Suppress("DEPRECATION")
-    private fun setIntentResult(
-        context: Context,
-        iconInfo: IconInfo,
-    ) {
-        val intent = Intent()
-
-        val primaryForegroundColor = context.getColor(R.color.primaryForeground)
-        val primaryBackgroundColor = context.getColor(R.color.primaryBackground)
-
-        val drawable: Drawable? =
-            ResourcesCompat.getDrawable(context.resources, iconInfo.id, theme)?.mutate()?.let {
-                DrawableCompat.wrap(
-                    it,
-                )
-            }
-
-        if (drawable != null) {
-            DrawableCompat.setTintList(drawable, ColorStateList.valueOf(primaryForegroundColor))
-            DrawableCompat.setTintList(drawable, ColorStateList.valueOf(primaryBackgroundColor))
-
-            val bitmap = drawable.toBitmap()
-
-            try {
-                intent.putExtra(
-                    "icon",
-                    if (bitmap.isRecycled) {
-                        bitmap
-                    } else {
-                        bitmap.copy(requireNotNull(bitmap.config), false)
-                    },
-                )
-            } catch (e: Exception) {
-                Log.d("ERROR", e.toString())
-            }
-            intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconInfo.id)
-            setResult(RESULT_OK, intent)
+        val navBarColor = if (isExpandedScreen) {
+          MaterialTheme.colorScheme.background.copy(alpha = 0.95f)
         } else {
-            setResult(RESULT_CANCELED, intent)
+          MaterialTheme.colorScheme.surfaceContainer
         }
+
+        SetupEdgeToEdge(navBarColor.toArgb())
+        Lawnicons(
+          isExpandedScreen = isExpandedScreen,
+          onSendResult = { iconInfo ->
+            setIntentResult(context, iconInfo)
+            finish()
+          },
+          isIconPicker = isIconPicker,
+        )
+      }
     }
+  }
+
+  @Suppress("DEPRECATION")
+  private fun setIntentResult(
+    context: Context,
+    iconInfo: IconInfo,
+  ) {
+    val intent = Intent()
+
+    val primaryForegroundColor = context.getColor(R.color.primaryForeground)
+    val primaryBackgroundColor = context.getColor(R.color.primaryBackground)
+
+    val drawable: Drawable? =
+      ResourcesCompat.getDrawable(context.resources, iconInfo.id, theme)?.mutate()?.let {
+        DrawableCompat.wrap(
+          it,
+        )
+      }
+
+    if (drawable != null) {
+      DrawableCompat.setTintList(drawable, ColorStateList.valueOf(primaryForegroundColor))
+      DrawableCompat.setTintList(drawable, ColorStateList.valueOf(primaryBackgroundColor))
+
+      val bitmap = drawable.toBitmap()
+
+      try {
+        intent.putExtra(
+          "icon",
+          if (bitmap.isRecycled) {
+            bitmap
+          } else {
+            bitmap.copy(requireNotNull(bitmap.config), false)
+          },
+        )
+      } catch (e: Exception) {
+        Log.d("ERROR", e.toString())
+      }
+      intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconInfo.id)
+      setResult(RESULT_OK, intent)
+    } else {
+      setResult(RESULT_CANCELED, intent)
+    }
+  }
 }

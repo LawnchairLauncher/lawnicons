@@ -58,126 +58,126 @@ import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DebugMenu(
-    iconInfoModel: IconInfoModel,
-    iconRequestModel: IconRequestModel?,
-    newIconsInfoModel: IconInfoModel,
+  iconInfoModel: IconInfoModel,
+  iconRequestModel: IconRequestModel?,
+  newIconsInfoModel: IconInfoModel,
 ) {
-    val context = LocalContext.current
-    val prefs = preferenceManager()
-    val sheetState = rememberModalBottomSheetState(
-        skipPartiallyExpanded = true,
-    )
+  val context = LocalContext.current
+  val prefs = preferenceManager()
+  val sheetState = rememberModalBottomSheetState(
+    skipPartiallyExpanded = true,
+  )
 
-    ModalBottomSheet(
-        onDismissRequest = { prefs.showDebugMenu.set(false) },
-        sheetState = sheetState,
-        dragHandle = {
-            Spacer(Modifier.height(22.dp))
-        },
-    ) {
-        SheetContent(
-            iconInfoCount = iconInfoModel.iconInfo.size,
-            componentCount = iconInfoModel.iconInfo.splitByComponentName().size,
-            newIconInfoList = newIconsInfoModel.toString(),
-            newIconInfoCount = newIconsInfoModel.iconInfo.size,
-            iconRequestList = iconRequestModel?.list?.joinToString("\n") { "${it.label}\n${it.componentName}" }
-                ?: "null",
-            iconRequestCount = iconRequestModel?.iconCount ?: 0,
-            context,
-            prefs,
-        )
-    }
+  ModalBottomSheet(
+    onDismissRequest = { prefs.showDebugMenu.set(false) },
+    sheetState = sheetState,
+    dragHandle = {
+      Spacer(Modifier.height(22.dp))
+    },
+  ) {
+    SheetContent(
+      iconInfoCount = iconInfoModel.iconInfo.size,
+      componentCount = iconInfoModel.iconInfo.splitByComponentName().size,
+      newIconInfoList = newIconsInfoModel.toString(),
+      newIconInfoCount = newIconsInfoModel.iconInfo.size,
+      iconRequestList = iconRequestModel?.list?.joinToString("\n") { "${it.label}\n${it.componentName}" }
+        ?: "null",
+      iconRequestCount = iconRequestModel?.iconCount ?: 0,
+      context,
+      prefs,
+    )
+  }
 }
 
 @Composable
 private fun SheetContent(
-    iconInfoCount: Int,
-    componentCount: Int,
-    newIconInfoList: String,
-    newIconInfoCount: Int,
-    iconRequestList: String,
-    iconRequestCount: Int,
-    context: Context,
-    prefs: PreferenceManager,
+  iconInfoCount: Int,
+  componentCount: Int,
+  newIconInfoList: String,
+  newIconInfoCount: Int,
+  iconRequestList: String,
+  iconRequestCount: Int,
+  context: Context,
+  prefs: PreferenceManager,
 ) {
-    Column(
-        modifier = Modifier
-            .padding(16.dp)
-            .verticalScroll(rememberScrollState())
-            .fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-    ) {
-        SimpleListRow("Icon count: $iconInfoCount")
-        SimpleListRow("Component count: $componentCount")
-        SimpleListRow("New icon count: $newIconInfoCount")
-        SimpleListRow("Icon request count: $iconRequestCount")
+  Column(
+    modifier = Modifier
+      .padding(16.dp)
+      .verticalScroll(rememberScrollState())
+      .fillMaxWidth(),
+    horizontalAlignment = Alignment.CenterHorizontally,
+    verticalArrangement = Arrangement.spacedBy(12.dp),
+  ) {
+    SimpleListRow("Icon count: $iconInfoCount")
+    SimpleListRow("Component count: $componentCount")
+    SimpleListRow("New icon count: $newIconInfoCount")
+    SimpleListRow("Icon request count: $iconRequestCount")
 
-        SwitchPref(prefs.showDebugMenu)
-        SwitchPref(prefs.showNewIconsCard)
-        SwitchPref(prefs.forceEnableIconRequest)
-        SwitchPref(prefs.showFirstLaunchSnackbar)
+    SwitchPref(prefs.showDebugMenu)
+    SwitchPref(prefs.showNewIconsCard)
+    SwitchPref(prefs.forceEnableIconRequest)
+    SwitchPref(prefs.showFirstLaunchSnackbar)
 
-        SimpleListRow(
-            "Current version",
-            description = prefs.currentLawniconsVersion.asState().value.toString(),
-        )
-        SimpleListRow(
-            "Actual version",
-            description = BuildConfig.VERSION_CODE.toString(),
-        )
-        Button({ prefs.currentLawniconsVersion.set(0) }) { Text("Reset version code") }
+    SimpleListRow(
+      "Current version",
+      description = prefs.currentLawniconsVersion.asState().value.toString(),
+    )
+    SimpleListRow(
+      "Actual version",
+      description = BuildConfig.VERSION_CODE.toString(),
+    )
+    Button({ prefs.currentLawniconsVersion.set(0) }) { Text("Reset version code") }
 
-        CopyableList(iconRequestList, context)
-        CopyableList(newIconInfoList, context)
-    }
+    CopyableList(iconRequestList, context)
+    CopyableList(newIconInfoList, context)
+  }
 }
 
 @Composable
 private fun CopyableList(string: String, context: Context) {
-    Card {
-        Column(
-            modifier = Modifier
-                .padding(16.dp),
+  Card {
+    Column(
+      modifier = Modifier
+        .padding(16.dp),
+    ) {
+      Text(
+        text = string,
+        fontFamily = FontFamily.Monospace,
+        modifier = Modifier
+          .horizontalScroll(rememberScrollState()),
+      )
+      Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center,
+      ) {
+        TextButton(
+          onClick = {
+            copyTextToClipboard(context, string)
+          },
         ) {
-            Text(
-                text = string,
-                fontFamily = FontFamily.Monospace,
-                modifier = Modifier
-                    .horizontalScroll(rememberScrollState()),
-            )
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
-            ) {
-                TextButton(
-                    onClick = {
-                        copyTextToClipboard(context, string)
-                    },
-                ) {
-                    Text(stringResource(R.string.copy_to_clipboard))
-                }
-            }
+          Text(stringResource(R.string.copy_to_clipboard))
         }
+      }
     }
+  }
 }
 
 @Composable
 private fun SwitchPref(
-    pref: BasePreferenceManager.BoolPref,
-    modifier: Modifier = Modifier,
+  pref: BasePreferenceManager.BoolPref,
+  modifier: Modifier = Modifier,
 ) {
-    val interactionSource = remember { MutableInteractionSource() }
-    SimpleListRow(
-        pref.key,
-        endIcon = {
-            Switch(
-                checked = pref.asState().value,
-                onCheckedChange = pref::set,
-                interactionSource = interactionSource,
-            )
-        },
-        onClick = pref::toggle,
-        modifier = modifier,
-    )
+  val interactionSource = remember { MutableInteractionSource() }
+  SimpleListRow(
+    pref.key,
+    endIcon = {
+      Switch(
+        checked = pref.asState().value,
+        onCheckedChange = pref::set,
+        interactionSource = interactionSource,
+      )
+    },
+    onClick = pref::toggle,
+    modifier = modifier,
+  )
 }

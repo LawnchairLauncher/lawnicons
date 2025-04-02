@@ -11,42 +11,42 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
 @Composable
 fun ExternalLinkRow(
-    name: String,
-    url: String,
-    modifier: Modifier = Modifier,
-    divider: Boolean = true,
-    background: Boolean = false,
-    first: Boolean = false,
-    last: Boolean = false,
-    startIcon: @Composable (() -> Unit)? = null,
+  name: String,
+  url: String,
+  modifier: Modifier = Modifier,
+  divider: Boolean = true,
+  background: Boolean = false,
+  first: Boolean = false,
+  last: Boolean = false,
+  startIcon: @Composable (() -> Unit)? = null,
 ) {
-    val context = LocalContext.current
-    val onClick =
-        {
-            val website = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, website)
-            context.startActivity(intent)
-        }
+  val context = LocalContext.current
+  val onClick =
+    {
+      val website = Uri.parse(url)
+      val intent = Intent(Intent.ACTION_VIEW, website)
+      context.startActivity(intent)
+    }
 
-    SimpleListRow(
-        modifier = modifier,
-        background = background,
-        first = first,
-        last = last,
-        divider = divider,
-        label = name,
-        onClick = onClick,
-        startIcon = startIcon,
-    )
+  SimpleListRow(
+    modifier = modifier,
+    background = background,
+    first = first,
+    last = last,
+    divider = divider,
+    label = name,
+    onClick = onClick,
+    startIcon = startIcon,
+  )
 }
 
 @PreviewLawnicons
 @Composable
 private fun ExternalLinkRowPreview() {
-    LawniconsTheme {
-        ExternalLinkRow(
-            name = "User",
-            url = "https://lawnchair.app/",
-        )
-    }
+  LawniconsTheme {
+    ExternalLinkRow(
+      name = "User",
+      url = "https://lawnchair.app/",
+    )
+  }
 }

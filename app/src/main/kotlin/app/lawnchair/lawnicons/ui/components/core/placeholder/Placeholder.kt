@@ -56,25 +56,25 @@ import androidx.compose.ui.unit.LayoutDirection
  * Contains default values used by [Modifier.placeholder] and [PlaceholderHighlight].
  */
 object PlaceholderDefaults {
-    /**
-     * The default [InfiniteRepeatableSpec] to use for [fade].
-     */
-    val fadeAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
-        infiniteRepeatable(
-            animation = tween(delayMillis = 200, durationMillis = 600),
-            repeatMode = RepeatMode.Reverse,
-        )
-    }
+  /**
+   * The default [InfiniteRepeatableSpec] to use for [fade].
+   */
+  val fadeAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
+    infiniteRepeatable(
+      animation = tween(delayMillis = 200, durationMillis = 600),
+      repeatMode = RepeatMode.Reverse,
+    )
+  }
 
-    /**
-     * The default [InfiniteRepeatableSpec] to use for [shimmer].
-     */
-    val shimmerAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
-        infiniteRepeatable(
-            animation = tween(durationMillis = 1700, delayMillis = 200),
-            repeatMode = RepeatMode.Restart,
-        )
-    }
+  /**
+   * The default [InfiniteRepeatableSpec] to use for [shimmer].
+   */
+  val shimmerAnimationSpec: InfiniteRepeatableSpec<Float> by lazy {
+    infiniteRepeatable(
+      animation = tween(durationMillis = 1700, delayMillis = 200),
+      repeatMode = RepeatMode.Restart,
+    )
+  }
 }
 
 /**
@@ -107,110 +107,110 @@ object PlaceholderDefaults {
 @Suppress("ktlint:compose:modifier-composed-check")
 @Composable
 fun Modifier.placeholder(
-    visible: Boolean,
-    color: Color = color(),
-    shape: Shape = MaterialTheme.shapes.small,
-    highlight: PlaceholderHighlight? = null,
-    placeholderFadeTransitionSpec: @Composable Transition.Segment<Boolean>.() -> FiniteAnimationSpec<Float> = { spring() },
-    contentFadeTransitionSpec: @Composable Transition.Segment<Boolean>.() -> FiniteAnimationSpec<Float> = { spring() },
+  visible: Boolean,
+  color: Color = color(),
+  shape: Shape = MaterialTheme.shapes.small,
+  highlight: PlaceholderHighlight? = null,
+  placeholderFadeTransitionSpec: @Composable Transition.Segment<Boolean>.() -> FiniteAnimationSpec<Float> = { spring() },
+  contentFadeTransitionSpec: @Composable Transition.Segment<Boolean>.() -> FiniteAnimationSpec<Float> = { spring() },
 ): Modifier = composed(
-    inspectorInfo = debugInspectorInfo {
-        name = "placeholder"
-        value = visible
-        properties["visible"] = visible
-        properties["color"] = color
-        properties["highlight"] = highlight
-        properties["shape"] = shape
-    },
+  inspectorInfo = debugInspectorInfo {
+    name = "placeholder"
+    value = visible
+    properties["visible"] = visible
+    properties["color"] = color
+    properties["highlight"] = highlight
+    properties["shape"] = shape
+  },
 ) {
-    // Values used for caching purposes
-    val lastSize = remember { Ref<Size>() }
-    val lastLayoutDirection = remember { Ref<LayoutDirection>() }
-    val lastOutline = remember { Ref<Outline>() }
+  // Values used for caching purposes
+  val lastSize = remember { Ref<Size>() }
+  val lastLayoutDirection = remember { Ref<LayoutDirection>() }
+  val lastOutline = remember { Ref<Outline>() }
 
-    // The current highlight animation progress
-    var highlightProgress: Float by remember { mutableFloatStateOf(0f) }
+  // The current highlight animation progress
+  var highlightProgress: Float by remember { mutableFloatStateOf(0f) }
 
-    // This is our crossfade transition
-    val transitionState = remember { MutableTransitionState(visible) }.apply {
-        targetState = visible
-    }
-    val transition = rememberTransition(transitionState, "placeholder_crossfade")
+  // This is our crossfade transition
+  val transitionState = remember { MutableTransitionState(visible) }.apply {
+    targetState = visible
+  }
+  val transition = rememberTransition(transitionState, "placeholder_crossfade")
 
-    val placeholderAlpha by transition.animateFloat(
-        transitionSpec = placeholderFadeTransitionSpec,
-        label = "placeholder_fade",
-        targetValueByState = { placeholderVisible -> if (placeholderVisible) 1f else 0f },
-    )
-    val contentAlpha by transition.animateFloat(
-        transitionSpec = contentFadeTransitionSpec,
-        label = "content_fade",
-        targetValueByState = { placeholderVisible -> if (placeholderVisible) 0f else 1f },
-    )
+  val placeholderAlpha by transition.animateFloat(
+    transitionSpec = placeholderFadeTransitionSpec,
+    label = "placeholder_fade",
+    targetValueByState = { placeholderVisible -> if (placeholderVisible) 1f else 0f },
+  )
+  val contentAlpha by transition.animateFloat(
+    transitionSpec = contentFadeTransitionSpec,
+    label = "content_fade",
+    targetValueByState = { placeholderVisible -> if (placeholderVisible) 0f else 1f },
+  )
 
-    // Run the optional animation spec and update the progress if the placeholder is visible
-    val animationSpec = highlight?.animationSpec
-    if (animationSpec != null && (visible || placeholderAlpha >= 0.01f)) {
-        val infiniteTransition = rememberInfiniteTransition(label = "")
-        highlightProgress = infiniteTransition.animateFloat(
-            initialValue = 0f,
-            targetValue = 1f,
-            animationSpec = animationSpec,
-            label = "",
-        ).value
-    }
+  // Run the optional animation spec and update the progress if the placeholder is visible
+  val animationSpec = highlight?.animationSpec
+  if (animationSpec != null && (visible || placeholderAlpha >= 0.01f)) {
+    val infiniteTransition = rememberInfiniteTransition(label = "")
+    highlightProgress = infiniteTransition.animateFloat(
+      initialValue = 0f,
+      targetValue = 1f,
+      animationSpec = animationSpec,
+      label = "",
+    ).value
+  }
 
-    val paint = remember { Paint() }
-    remember(color, shape, highlight) {
-        drawWithContent {
-            // Draw the composable content first
-            if (contentAlpha in 0.01f..0.99f) {
-                // If the content alpha is between 1% and 99%, draw it in a layer with
-                // the alpha applied
-                paint.alpha = contentAlpha
-                withLayer(paint) {
-                    with(this@drawWithContent) {
-                        drawContent()
-                    }
-                }
-            } else if (contentAlpha >= 0.99f) {
-                // If the content alpha is > 99%, draw it with no alpha
-                drawContent()
-            }
-
-            if (placeholderAlpha in 0.01f..0.99f) {
-                // If the placeholder alpha is between 1% and 99%, draw it in a layer with
-                // the alpha applied
-                paint.alpha = placeholderAlpha
-                withLayer(paint) {
-                    lastOutline.value = drawPlaceholder(
-                        shape = shape,
-                        color = color,
-                        highlight = highlight,
-                        progress = highlightProgress,
-                        lastOutline = lastOutline.value,
-                        lastLayoutDirection = lastLayoutDirection.value,
-                        lastSize = lastSize.value,
-                    )
-                }
-            } else if (placeholderAlpha >= 0.99f) {
-                // If the placeholder alpha is > 99%, draw it with no alpha
-                lastOutline.value = drawPlaceholder(
-                    shape = shape,
-                    color = color,
-                    highlight = highlight,
-                    progress = highlightProgress,
-                    lastOutline = lastOutline.value,
-                    lastLayoutDirection = lastLayoutDirection.value,
-                    lastSize = lastSize.value,
-                )
-            }
-
-            // Keep track of the last size & layout direction
-            lastSize.value = size
-            lastLayoutDirection.value = layoutDirection
+  val paint = remember { Paint() }
+  remember(color, shape, highlight) {
+    drawWithContent {
+      // Draw the composable content first
+      if (contentAlpha in 0.01f..0.99f) {
+        // If the content alpha is between 1% and 99%, draw it in a layer with
+        // the alpha applied
+        paint.alpha = contentAlpha
+        withLayer(paint) {
+          with(this@drawWithContent) {
+            drawContent()
+          }
         }
+      } else if (contentAlpha >= 0.99f) {
+        // If the content alpha is > 99%, draw it with no alpha
+        drawContent()
+      }
+
+      if (placeholderAlpha in 0.01f..0.99f) {
+        // If the placeholder alpha is between 1% and 99%, draw it in a layer with
+        // the alpha applied
+        paint.alpha = placeholderAlpha
+        withLayer(paint) {
+          lastOutline.value = drawPlaceholder(
+            shape = shape,
+            color = color,
+            highlight = highlight,
+            progress = highlightProgress,
+            lastOutline = lastOutline.value,
+            lastLayoutDirection = lastLayoutDirection.value,
+            lastSize = lastSize.value,
+          )
+        }
+      } else if (placeholderAlpha >= 0.99f) {
+        // If the placeholder alpha is > 99%, draw it with no alpha
+        lastOutline.value = drawPlaceholder(
+          shape = shape,
+          color = color,
+          highlight = highlight,
+          progress = highlightProgress,
+          lastOutline = lastOutline.value,
+          lastLayoutDirection = lastLayoutDirection.value,
+          lastSize = lastSize.value,
+        )
+      }
+
+      // Keep track of the last size & layout direction
+      lastSize.value = size
+      lastLayoutDirection.value = layoutDirection
     }
+  }
 }
 
 /**
@@ -224,60 +224,60 @@ fun Modifier.placeholder(
  */
 @Composable
 private fun color(
-    backgroundColor: Color = MaterialTheme.colorScheme.surface,
-    contentColor: Color = contentColorFor(backgroundColor),
-    contentAlpha: Float = 0.1f,
+  backgroundColor: Color = MaterialTheme.colorScheme.surface,
+  contentColor: Color = contentColorFor(backgroundColor),
+  contentAlpha: Float = 0.1f,
 ): Color = contentColor.copy(contentAlpha).compositeOver(backgroundColor)
 
 private fun DrawScope.drawPlaceholder(
-    shape: Shape,
-    color: Color,
-    highlight: PlaceholderHighlight?,
-    progress: Float,
-    lastOutline: Outline?,
-    lastLayoutDirection: LayoutDirection?,
-    lastSize: Size?,
+  shape: Shape,
+  color: Color,
+  highlight: PlaceholderHighlight?,
+  progress: Float,
+  lastOutline: Outline?,
+  lastLayoutDirection: LayoutDirection?,
+  lastSize: Size?,
 ): Outline? {
-    // shortcut to avoid Outline calculation and allocation
-    if (shape === RectangleShape) {
-        // Draw the initial background color
-        drawRect(color = color)
-
-        if (highlight != null) {
-            drawRect(
-                brush = highlight.brush(progress, size),
-                alpha = highlight.alpha(progress),
-            )
-        }
-        // We didn't create an outline so return null
-        return null
-    }
-
-    // Otherwise we need to create an outline from the shape
-    val outline = lastOutline.takeIf {
-        size == lastSize && layoutDirection == lastLayoutDirection
-    } ?: shape.createOutline(size, layoutDirection, this)
-
-    // Draw the placeholder color
-    drawOutline(outline = outline, color = color)
+  // shortcut to avoid Outline calculation and allocation
+  if (shape === RectangleShape) {
+    // Draw the initial background color
+    drawRect(color = color)
 
     if (highlight != null) {
-        drawOutline(
-            outline = outline,
-            brush = highlight.brush(progress, size),
-            alpha = highlight.alpha(progress),
-        )
+      drawRect(
+        brush = highlight.brush(progress, size),
+        alpha = highlight.alpha(progress),
+      )
     }
+    // We didn't create an outline so return null
+    return null
+  }
 
-    // Return the outline we used
-    return outline
+  // Otherwise we need to create an outline from the shape
+  val outline = lastOutline.takeIf {
+    size == lastSize && layoutDirection == lastLayoutDirection
+  } ?: shape.createOutline(size, layoutDirection, this)
+
+  // Draw the placeholder color
+  drawOutline(outline = outline, color = color)
+
+  if (highlight != null) {
+    drawOutline(
+      outline = outline,
+      brush = highlight.brush(progress, size),
+      alpha = highlight.alpha(progress),
+    )
+  }
+
+  // Return the outline we used
+  return outline
 }
 
 private inline fun DrawScope.withLayer(
-    paint: Paint,
-    drawBlock: DrawScope.() -> Unit,
+  paint: Paint,
+  drawBlock: DrawScope.() -> Unit,
 ) = drawIntoCanvas { canvas ->
-    canvas.saveLayer(size.toRect(), paint)
-    drawBlock()
-    canvas.restore()
+  canvas.saveLayer(size.toRect(), paint)
+  drawBlock()
+  canvas.restore()
 }

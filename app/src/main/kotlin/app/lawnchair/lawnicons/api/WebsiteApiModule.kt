@@ -31,13 +31,13 @@ import retrofit2.create
 @InstallIn(SingletonComponent::class)
 class WebsiteApiModule {
 
-    @Provides
-    @Singleton
-    fun providesWebsiteIconRequestApi(): IconRequestSettingsAPI {
-        return Retrofit.Builder()
-            .baseUrl("https://lawnchair.app/")
-            .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
-            .build()
-            .create()
-    }
+  @Provides
+  @Singleton
+  fun providesWebsiteIconRequestApi(): IconRequestSettingsAPI {
+    return Retrofit.Builder()
+      .baseUrl("https://lawnchair.app/")
+      .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
+      .build()
+      .create()
+  }
 }

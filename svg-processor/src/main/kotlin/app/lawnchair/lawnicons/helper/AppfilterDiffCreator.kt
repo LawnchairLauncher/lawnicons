@@ -19,110 +19,110 @@ package app.lawnchair.lawnicons.helper
 import java.io.File
 
 object AppfilterDiffCreator {
-    private const val OUTPUT_FILE = "/xml/appfilter_diff.xml"
+  private const val OUTPUT_FILE = "/xml/appfilter_diff.xml"
 
-    private fun getPreviousReleaseLines(
-        appFilterFile: String,
-    ): List<String> {
-        try {
-            runGitCommand(listOf("fetch", "--tags"))
-        } catch (_: Exception) {
-            // assume that we have fetched the tags already
-        }
-
-        return try {
-            val tags = runGitCommand(listOf("tag", "--sort=-creatordate"))
-            val latestTag = tags.firstOrNull() ?: {
-                // fallback to `main` branch
-                val fallbackTags = runGitCommand(listOf("show", "main"))
-
-                fallbackTags.firstOrNull() ?: throw RuntimeException("No tags found")
-            }
-
-            runGitCommand(listOf("show", "$latestTag:$appFilterFile"))
-        } catch (e: Exception) {
-            println(e)
-            listOf()
-        }
+  private fun getPreviousReleaseLines(
+    appFilterFile: String,
+  ): List<String> {
+    try {
+      runGitCommand(listOf("fetch", "--tags"))
+    } catch (_: Exception) {
+      // assume that we have fetched the tags already
     }
 
-    private fun runGitCommand(
-        args: List<String>,
-    ): List<String> {
-        return try {
-            val command = listOf("git") + args
+    return try {
+      val tags = runGitCommand(listOf("tag", "--sort=-creatordate"))
+      val latestTag = tags.firstOrNull() ?: {
+        // fallback to `main` branch
+        val fallbackTags = runGitCommand(listOf("show", "main"))
 
-            val process = ProcessBuilder(command)
-                .redirectErrorStream(true)
-                .start()
+        fallbackTags.firstOrNull() ?: throw RuntimeException("No tags found")
+      }
 
-            val result = process.inputStream.bufferedReader().readLines()
-            if (process.waitFor() != 0) {
-                throw RuntimeException("Failed to execute $command: $result")
-            }
-            println("task git $args completed")
+      runGitCommand(listOf("show", "$latestTag:$appFilterFile"))
+    } catch (e: Exception) {
+      println(e)
+      listOf()
+    }
+  }
 
-            result
-        } catch (e: Exception) {
-            println(e)
-            listOf()
-        }
+  private fun runGitCommand(
+    args: List<String>,
+  ): List<String> {
+    return try {
+      val command = listOf("git") + args
+
+      val process = ProcessBuilder(command)
+        .redirectErrorStream(true)
+        .start()
+
+      val result = process.inputStream.bufferedReader().readLines()
+      if (process.waitFor() != 0) {
+        throw RuntimeException("Failed to execute $command: $result")
+      }
+      println("task git $args completed")
+
+      result
+    } catch (e: Exception) {
+      println(e)
+      listOf()
+    }
+  }
+
+  private fun readFileContents(filePath: String): List<String> {
+    return File(filePath).readLines()
+  }
+
+  private fun getLineDiff(
+    mainLines: List<String>,
+    developLines: List<String>,
+  ): List<String> {
+    val drawablesInMain = mainLines.mapNotNull { extractDrawableItem(it) }.toSet()
+
+    return developLines.filter { item ->
+      val drawable = extractDrawableItem(item)
+      drawable != null && drawable !in drawablesInMain
+    }
+  }
+
+  private fun extractDrawableItem(item: String): String? {
+    val regex = """drawable="([^"]+)"""".toRegex()
+    return regex.find(item)?.groups?.get(1)?.value
+  }
+
+  private fun writeDiffToFile(
+    diff: List<String>,
+    resDir: String,
+  ) {
+    val outputFile = File(resDir + OUTPUT_FILE)
+    val schema = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+
+    if (diff.isEmpty()) {
+      outputFile.writeText("$schema\n<resources />")
+      return
     }
 
-    private fun readFileContents(filePath: String): List<String> {
-        return File(filePath).readLines()
+    val xmlContent = buildString {
+      appendLine(schema)
+      appendLine("<resources>")
+      diff.forEach { line ->
+        appendLine("    $line")
+      }
+      appendLine("</resources>")
     }
 
-    private fun getLineDiff(
-        mainLines: List<String>,
-        developLines: List<String>,
-    ): List<String> {
-        val drawablesInMain = mainLines.mapNotNull { extractDrawableItem(it) }.toSet()
+    outputFile.writeText(xmlContent)
+  }
 
-        return developLines.filter { item ->
-            val drawable = extractDrawableItem(item)
-            drawable != null && drawable !in drawablesInMain
-        }
-    }
+  fun createAppfilterDiff(
+    resDir: String,
+    appFilterFile: String,
+  ) {
+    val diff = getLineDiff(
+      getPreviousReleaseLines(appFilterFile),
+      readFileContents(appFilterFile),
+    )
 
-    private fun extractDrawableItem(item: String): String? {
-        val regex = """drawable="([^"]+)"""".toRegex()
-        return regex.find(item)?.groups?.get(1)?.value
-    }
-
-    private fun writeDiffToFile(
-        diff: List<String>,
-        resDir: String,
-    ) {
-        val outputFile = File(resDir + OUTPUT_FILE)
-        val schema = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-
-        if (diff.isEmpty()) {
-            outputFile.writeText("$schema\n<resources />")
-            return
-        }
-
-        val xmlContent = buildString {
-            appendLine(schema)
-            appendLine("<resources>")
-            diff.forEach { line ->
-                appendLine("    $line")
-            }
-            appendLine("</resources>")
-        }
-
-        outputFile.writeText(xmlContent)
-    }
-
-    fun createAppfilterDiff(
-        resDir: String,
-        appFilterFile: String,
-    ) {
-        val diff = getLineDiff(
-            getPreviousReleaseLines(appFilterFile),
-            readFileContents(appFilterFile),
-        )
-
-        writeDiffToFile(diff, resDir)
-    }
+    writeDiffToFile(diff, resDir)
+  }
 }

@@ -37,41 +37,41 @@ import kotlinx.serialization.Serializable
 data object NewIcons
 
 fun NavGraphBuilder.newIconsDestination(
-    isExpandedScreen: Boolean,
-    onBack: () -> Unit,
+  isExpandedScreen: Boolean,
+  onBack: () -> Unit,
 ) {
-    composable<NewIcons> {
-        NewIcons(
-            onBack = onBack,
-            isExpandedScreen = isExpandedScreen,
-        )
-    }
+  composable<NewIcons> {
+    NewIcons(
+      onBack = onBack,
+      isExpandedScreen = isExpandedScreen,
+    )
+  }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun NewIcons(
-    onBack: () -> Unit,
-    isExpandedScreen: Boolean,
-    modifier: Modifier = Modifier,
-    newIconsViewModel: NewIconsViewModel = hiltViewModel(),
+  onBack: () -> Unit,
+  isExpandedScreen: Boolean,
+  modifier: Modifier = Modifier,
+  newIconsViewModel: NewIconsViewModel = hiltViewModel(),
 ) {
-    val iconInfoModel by newIconsViewModel.newIconsInfoModel.collectAsStateWithLifecycle()
+  val iconInfoModel by newIconsViewModel.newIconsInfoModel.collectAsStateWithLifecycle()
 
-    LawniconsScaffold(
-        modifier = modifier,
-        title = stringResource(R.string.new_icons, iconInfoModel.iconCount),
-        onBack = onBack,
-        isExpandedScreen = isExpandedScreen,
-    ) { paddingValues ->
-        IconPreviewGrid(
-            iconInfo = iconInfoModel.iconInfo,
-            onSendResult = {},
-            contentPadding = IconPreviewGridPadding(
-                topPadding = paddingValues.calculateTopPadding() - 24.dp,
-                bottomPadding = paddingValues.calculateBottomPadding(),
-                horizontalPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize.horizontalPadding else IconPreviewGridPadding.Defaults.horizontalPadding,
-            ),
-        )
-    }
+  LawniconsScaffold(
+    modifier = modifier,
+    title = stringResource(R.string.new_icons, iconInfoModel.iconCount),
+    onBack = onBack,
+    isExpandedScreen = isExpandedScreen,
+  ) { paddingValues ->
+    IconPreviewGrid(
+      iconInfo = iconInfoModel.iconInfo,
+      onSendResult = {},
+      contentPadding = IconPreviewGridPadding(
+        topPadding = paddingValues.calculateTopPadding() - 24.dp,
+        bottomPadding = paddingValues.calculateBottomPadding(),
+        horizontalPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize.horizontalPadding else IconPreviewGridPadding.Defaults.horizontalPadding,
+      ),
+    )
+  }
 }

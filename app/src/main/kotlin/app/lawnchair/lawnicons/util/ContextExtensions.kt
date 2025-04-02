@@ -6,7 +6,7 @@ import androidx.core.graphics.drawable.toBitmap
 import app.lawnchair.lawnicons.R
 
 fun Context.appIcon(): Bitmap = (
-    this.resources.getDrawable(R.mipmap.ic_launcher, this.theme)
-        ?: packageManager.getApplicationIcon(packageName)
-    )
-    .toBitmap()
+  this.resources.getDrawable(R.mipmap.ic_launcher, this.theme)
+    ?: packageManager.getApplicationIcon(packageName)
+  )
+  .toBitmap()

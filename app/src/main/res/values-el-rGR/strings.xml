@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- General -->
-    <!-- Application name -->
-    <!-- Version name, with %s as the version code -->
-    <string name="version_x">Έκδοση %s</string>
-    <!-- Search bar -->
-    <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Αναζήτηση μέσω %d εικονιδίων</string>
-    <string name="search_bar_icon_picker">Επιλέξτε ένα εικονίδιο</string>
-    <!-- Search tooltip -->
-    <string name="search">Αναζήτηση</string>
-    <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s δεν βρέθηκε</string>
-    <!-- About page -->
-    <string name="about">Πληροφορίες</string>
-    <!-- External Links -->
-    <!-- GitHub repository link-->
-    <!-- Icon Request form link -->
-    <string name="request_form">Φόρμα αιτήματος εικονιδίων</string>
-    <!-- Contributors section of About page -->
-    <!-- Contributors label -->
-    <string name="contributors">Συντελεστές</string>
-    <!-- Core Contributors label -->
-    <string name="core_contributors">Βασικοί συντελεστές</string>
-    <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">Προβολή όλων των συνεισφερόντων</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">Προβολή στο GitHub</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">Κοινή χρήση λεπτομερειών</string>
-    <!-- Contribution -->
-    <string name="contribution_core">Πυρήνας εφαρμογής</string>
-    <string name="contribution_icons">Εικονίδια</string>
-    <string name="contribution_infra">Infrastructure</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
-    <string name="special_thanks">Ιδιαίτερες ευχαριστίες</string>
-    <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Για να εμπνευστείτε το εικονίδιο της εφαρμογής</string>
-    <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Για να ονομάσετε την εφαρμογή</string>
-    <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Άδειες λογισμικού ανοικτού κώδικα</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
-    <string name="name">Όνομα</string>
-    <!-- Drawable prefix -->
-    <string name="drawable">Σχέδιο</string>
-    <!-- Package prefix -->
-    <string name="component">Όνομα στοιχείου</string>
-    <!-- Mapped components -->
-    <string name="mapped_components">Αντιστοιχισμένα στοιχεία</string>
-    <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">Αν το εικονίδιο είναι ξεπερασμένο λόγω επανασχεδιασμού από τον προγραμματιστή του, δημιουργήστε ένα νέο ζήτημα στο GitHub.</string>
-    <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Εναλλαγή ορατότητας των περιεχομένων</string>
-    <!-- Request icons button -->
-    <string name="request_icons">Αίτηση εικονιδίων</string>
-    <string name="copy_to_clipboard">Αντιγραφή στο πρόχειρο</string>
-    <string name="copied_text">Αντιγραμμένο κείμενο</string>
-    <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_suspended">Icon requests are currently suspended</string>
-    <string name="snackbar_request_too_large">Αντιγράφηκαν λεπτομέρειες αιτήματος εικονιδίου στο πρόχειρο. Για να τα ζητήσετε, υποβάλετε τα στοιχεία στη φόρμα.</string>
-    <string name="snackbar_use_fallback_link">Άνοιγμα φόρμας</string>
-    <string name="clear">Εκκαθάριση</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+  <!-- General -->
+  <!-- Application name -->
+  <!-- Version name, with %s as the version code -->
+  <string name="version_x">Έκδοση %s</string>
+  <!-- Search bar -->
+  <!-- The hint shown in the search bar, with %d as the number of icons. -->
+  <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+  <string name="search_bar_hint">Αναζήτηση μέσω %d εικονιδίων</string>
+  <string name="search_bar_icon_picker">Επιλέξτε ένα εικονίδιο</string>
+  <!-- Search tooltip -->
+  <string name="search">Αναζήτηση</string>
+  <!-- Text shown when there are no search results-->
+  <string name="no_items_found">%s δεν βρέθηκε</string>
+  <!-- About page -->
+  <string name="about">Πληροφορίες</string>
+  <!-- External Links -->
+  <!-- GitHub repository link-->
+  <!-- Icon Request form link -->
+  <string name="request_form">Φόρμα αιτήματος εικονιδίων</string>
+  <!-- Contributors section of About page -->
+  <!-- Contributors label -->
+  <string name="contributors">Συντελεστές</string>
+  <!-- Core Contributors label -->
+  <string name="core_contributors">Βασικοί συντελεστές</string>
+  <!-- Item that links to the Contributors page -->
+  <string name="see_all_contributors">Προβολή όλων των συνεισφερόντων</string>
+  <!-- View on GitHub link -->
+  <string name="view_on_github">Προβολή στο GitHub</string>
+  <!-- Share button on icon info popup -->
+  <string name="share">Κοινή χρήση λεπτομερειών</string>
+  <!-- Contribution -->
+  <string name="contribution_core">Πυρήνας εφαρμογής</string>
+  <string name="contribution_icons">Εικονίδια</string>
+  <string name="contribution_infra">Infrastructure</string>
+  <!-- Special Thanks section of About page -->
+  <!-- Special Thanks label -->
+  <string name="special_thanks">Ιδιαίτερες ευχαριστίες</string>
+  <!-- Subtitle displayed below the user who inspired the app icon -->
+  <string name="special_thanks_icon">Για να εμπνευστείτε το εικονίδιο της εφαρμογής</string>
+  <!-- Subtitle displayed below the user who named the app -->
+  <string name="special_thanks_name">Για να ονομάσετε την εφαρμογή</string>
+  <!-- List item that links to the Acknowledgements page -->
+  <string name="acknowledgements">Άδειες λογισμικού ανοικτού κώδικα</string>
+  <!-- Icon Information Popup window -->
+  <!-- Name -->
+  <string name="name">Όνομα</string>
+  <!-- Drawable prefix -->
+  <string name="drawable">Σχέδιο</string>
+  <!-- Package prefix -->
+  <string name="component">Όνομα στοιχείου</string>
+  <!-- Mapped components -->
+  <string name="mapped_components">Αντιστοιχισμένα στοιχεία</string>
+  <!-- Outdated icon info -->
+  <string name="icon_info_outdated_warning">Αν το εικονίδιο είναι ξεπερασμένο λόγω επανασχεδιασμού από τον προγραμματιστή του, δημιουργήστε ένα νέο ζήτημα στο GitHub.</string>
+  <!-- Chevron a11y description -->
+  <string name="toggle_visibility_of_contents">Εναλλαγή ορατότητας των περιεχομένων</string>
+  <!-- Request icons button -->
+  <string name="request_icons">Αίτηση εικονιδίων</string>
+  <string name="copy_to_clipboard">Αντιγραφή στο πρόχειρο</string>
+  <string name="copied_text">Αντιγραμμένο κείμενο</string>
+  <!-- Snackbar content -->
+  <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
+  <string name="icon_requests_suspended">Icon requests are currently suspended</string>
+  <string name="snackbar_request_too_large">Αντιγράφηκαν λεπτομέρειες αιτήματος εικονιδίου στο πρόχειρο. Για να τα ζητήσετε, υποβάλετε τα στοιχεία στη φόρμα.</string>
+  <string name="snackbar_use_fallback_link">Άνοιγμα φόρμας</string>
+  <string name="clear">Εκκαθάριση</string>
+  <string name="new_icons_in_version">New icons in v%1$s</string>
+  <string name="new_icons">New icons (%1$s)</string>
 </resources>

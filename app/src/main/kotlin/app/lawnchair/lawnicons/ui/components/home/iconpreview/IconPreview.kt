@@ -50,111 +50,111 @@ import app.lawnchair.lawnicons.ui.util.SampleData
 import kotlin.math.ln
 
 val ColorScheme.iconColor: Color
-    get() {
-        val elevation = 3.dp
-        val alpha = ((4.5f * ln(elevation.value + 1)) + 2f) / 100f
-        return primary.copy(alpha = alpha).compositeOver(surface)
-    }
+  get() {
+    val elevation = 3.dp
+    val alpha = ((4.5f * ln(elevation.value + 1)) + 2f) / 100f
+    return primary.copy(alpha = alpha).compositeOver(surface)
+  }
 
 @Composable
 fun IconPreview(
-    iconInfo: IconInfo,
-    onSendResult: (IconInfo) -> Unit,
-    modifier: Modifier = Modifier,
-    iconBackground: Color? = null,
-    isIconPicker: Boolean = false,
+  iconInfo: IconInfo,
+  onSendResult: (IconInfo) -> Unit,
+  modifier: Modifier = Modifier,
+  iconBackground: Color? = null,
+  isIconPicker: Boolean = false,
 ) {
-    val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
-    IconPreview(
-        iconInfo = iconInfo,
-        onSendResult = onSendResult,
-        modifier = modifier,
-        iconBackground = iconBackground,
-        isIconPicker = isIconPicker,
-        showSheet = isIconInfoShown.value,
-        onToggleSheet = { isIconInfoShown.value = it },
-    )
+  val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+  IconPreview(
+    iconInfo = iconInfo,
+    onSendResult = onSendResult,
+    modifier = modifier,
+    iconBackground = iconBackground,
+    isIconPicker = isIconPicker,
+    showSheet = isIconInfoShown.value,
+    onToggleSheet = { isIconInfoShown.value = it },
+  )
 }
 
 @Composable
 fun IconPreview(
-    iconInfo: IconInfo,
-    onSendResult: (IconInfo) -> Unit,
-    modifier: Modifier = Modifier,
-    iconBackground: Color? = null,
-    isIconPicker: Boolean = false,
-    showSheet: Boolean = false,
-    onToggleSheet: (Boolean) -> Unit = {},
+  iconInfo: IconInfo,
+  onSendResult: (IconInfo) -> Unit,
+  modifier: Modifier = Modifier,
+  iconBackground: Color? = null,
+  isIconPicker: Boolean = false,
+  showSheet: Boolean = false,
+  onToggleSheet: (Boolean) -> Unit = {},
 ) {
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = modifier
-            .padding(all = 8.dp)
-            .aspectRatio(ratio = 1F)
-            .clip(shape = CircleShape)
-            .clickable(
-                onClick = {
-                    if (isIconPicker) {
-                        onSendResult(iconInfo)
-                    } else {
-                        onToggleSheet(true)
-                    }
-                },
-            )
-            .background(
-                color = iconBackground ?: if (showSheet) {
-                    MaterialTheme.colorScheme.surfaceVariant
-                } else {
-                    MaterialTheme.colorScheme.iconColor
-                },
-            ),
-    ) {
-        if (LocalInspectionMode.current) {
-            val icon = when (iconInfo.id) {
-                1 -> Icons.Rounded.Email
-                2 -> Icons.Rounded.Search
-                3 -> Icons.Rounded.Call
-                else -> Icons.Rounded.Warning
-            }
-            Icon(
-                icon,
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(0.6f),
-                tint = if (showSheet) {
-                    MaterialTheme.colorScheme.onSurfaceVariant
-                } else {
-                    MaterialTheme.colorScheme.onPrimaryContainer
-                },
-            )
+  Box(
+    contentAlignment = Alignment.Center,
+    modifier = modifier
+      .padding(all = 8.dp)
+      .aspectRatio(ratio = 1F)
+      .clip(shape = CircleShape)
+      .clickable(
+        onClick = {
+          if (isIconPicker) {
+            onSendResult(iconInfo)
+          } else {
+            onToggleSheet(true)
+          }
+        },
+      )
+      .background(
+        color = iconBackground ?: if (showSheet) {
+          MaterialTheme.colorScheme.surfaceVariant
         } else {
-            Icon(
-                painter = painterResource(iconInfo.id),
-                contentDescription = null,
-                modifier = Modifier.fillMaxSize(0.6f),
-                tint = if (showSheet) {
-                    MaterialTheme.colorScheme.onSurfaceVariant
-                } else {
-                    MaterialTheme.colorScheme.onPrimaryContainer
-                },
-            )
-        }
+          MaterialTheme.colorScheme.iconColor
+        },
+      ),
+  ) {
+    if (LocalInspectionMode.current) {
+      val icon = when (iconInfo.id) {
+        1 -> Icons.Rounded.Email
+        2 -> Icons.Rounded.Search
+        3 -> Icons.Rounded.Call
+        else -> Icons.Rounded.Warning
+      }
+      Icon(
+        icon,
+        contentDescription = null,
+        modifier = Modifier.fillMaxSize(0.6f),
+        tint = if (showSheet) {
+          MaterialTheme.colorScheme.onSurfaceVariant
+        } else {
+          MaterialTheme.colorScheme.onPrimaryContainer
+        },
+      )
+    } else {
+      Icon(
+        painter = painterResource(iconInfo.id),
+        contentDescription = null,
+        modifier = Modifier.fillMaxSize(0.6f),
+        tint = if (showSheet) {
+          MaterialTheme.colorScheme.onSurfaceVariant
+        } else {
+          MaterialTheme.colorScheme.onPrimaryContainer
+        },
+      )
     }
-    AnimatedVisibility(showSheet) {
-        IconInfoSheet(
-            iconInfo = iconInfo,
-        ) {
-            onToggleSheet(it)
-        }
+  }
+  AnimatedVisibility(showSheet) {
+    IconInfoSheet(
+      iconInfo = iconInfo,
+    ) {
+      onToggleSheet(it)
     }
+  }
 }
 
 @PreviewLawnicons
 @Composable
 private fun IconPreviewComposablePreview() {
-    LawniconsTheme {
-        IconPreview(
-            iconInfo = SampleData.iconInfoSample,
-            {},
-        )
-    }
+  LawniconsTheme {
+    IconPreview(
+      iconInfo = SampleData.iconInfoSample,
+      {},
+    )
+  }
 }

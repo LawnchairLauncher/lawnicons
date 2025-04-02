@@ -20,5 +20,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class IconRequestSettings(
-    val enabled: Boolean,
+  val enabled: Boolean,
 )
