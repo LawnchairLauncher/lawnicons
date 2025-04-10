@@ -58,4 +58,4 @@ Currently we don't have much time for Lawnicons. If you want to review icons or 
 
 We have about 30 000 icon requests in the queue. If you have the skills to create high-quality icons, then you can avoid indefinite waiting and contribute the icons yourself.
 
-[Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?assignees=&labels=icon+update&projects=&template=icon_rebrand.yml)
+[Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
