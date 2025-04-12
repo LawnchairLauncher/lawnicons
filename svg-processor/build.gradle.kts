@@ -10,7 +10,7 @@ application {
 dependencies {
     implementation("com.android.tools:sdk-common:31.9.1")
     implementation("org.dom4j:dom4j:2.1.4")
-    implementation("commons-io:commons-io:2.18.0")
+    implementation("commons-io:commons-io:2.19.0")
 }
 
 val svgDir = rootDir.resolve("svgs")
