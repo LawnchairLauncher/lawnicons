@@ -1,5 +1,5 @@
 <p align="center">
-<img src="docs/images/repo_cover.png" alt="Lawnicons repository cover" width="640" />
+<img src="docs/images/repo-cover.png" alt="Lawnicons repository cover" width="640" />
 </p>
 
 <div align="center">    
