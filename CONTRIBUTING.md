@@ -34,9 +34,9 @@ We recommend:
 
 ### Tools
 
-#### Vector graphics editor (Web, PC or Laptop)
+#### Vector graphics editor
 
-We recommend Figma because it has easier quality control. Mobile vector editors won't work. Our icons are in the SVG format. If you want to save optimized SVGs in Figma, you can use Advanced SVG Export.
+To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. If you want to save optimized SVGs in Figma, you can use Advanced SVG Export.
 
 [Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
 
