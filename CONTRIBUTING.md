@@ -60,33 +60,40 @@ You can use it to find application components. Lawnicons allows you to find comp
 
 ### Lawnicons design guidelines
 
-**Canvas & Sizes**
+#### Canvas & Sizes
 
 ![](docs/images/creating-icons-1-artboard.png)
 
-**Canvas**
+**Canvas**  
+
 The canvas size should be `192×192px` so that there is a safe zone around the icons to control consistency.
 
-**Content area for all but square**
+**Content area for all but square**  
+
 All but square icons must fit the `160×160px` content area size. Be careful with abstract icons: the long side should be `160px`, but the other side can be smaller. Remember to adjust the size of all icons when you change the base stroke thickness (`12px`).
 
-**Content area for squares**
+**Content area for squares**  
+
 Square icons must fit the `154×154px` content area size. Icons that mostly fit in a square are considered square. If the icon is kinda square and kinda not, choose a size based on density: `154×154px` for dense icons, `160×160px` for the rest. Examples: [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
 
 #### Foundation
 
 ![](docs/images/creating-icons-2-foundation.png)
 
-**Color**
+**Color**  
+
 All shapes must have non-transparent black color `#000000`.
 
-**Stroke widths**
+**Stroke widths**  
+
 The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#maintaining-visual-balance) down below.
 
-**End caps**
+**End caps**  
+
 All shapes must have rounded caps and joins.
 
-**Corner radius**
+**Corner radius**  
+
 Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when the others spoil the shape: for example, when a right angle is formed of short lines.
 
 #### Details
