@@ -34,9 +34,9 @@ We recommend:
 
 ### Tools
 
-#### Vector graphics editor
+#### Vector graphics editor (Web, PC or Laptop)
 
-We recommend Figma because it has easier quality control. Our icons are in the SVG format. If you want to save optimized SVGs in Figma, you can use Advanced SVG Export.
+We recommend Figma because it has easier quality control. Mobile vector editors won't work. Our icons are in the SVG format. If you want to save optimized SVGs in Figma, you can use Advanced SVG Export.
 
 [Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
 
@@ -58,7 +58,7 @@ You can use it to find application components. Lawnicons allows you to find comp
 
 **Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
 
-## Lawnicons design guidelines
+### Lawnicons design guidelines
 
 **Canvas & Sizes**
 
@@ -73,7 +73,7 @@ All but square icons must fit the `160×160px` content area size. Be careful wit
 **Content area for squares**
 Square icons must fit the `154×154px` content area size. Icons that mostly fit in a square are considered square. If the icon is kinda square and kinda not, choose a size based on density: `154×154px` for dense icons, `160×160px` for the rest. Examples: [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
 
-### Foundation
+#### Foundation
 
 ![](docs/images/creating-icons-2-foundation.png)
 
@@ -89,7 +89,7 @@ All shapes must have rounded caps and joins.
 **Corner radius**
 Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when the others spoil the shape: for example, when a right angle is formed of short lines.
 
-### Details
+#### Details
 
 ![](docs/images/creating-icons-3-detail.png)
 
@@ -103,7 +103,7 @@ In contrary, it's also important to avoid too few details, as they may not be ea
 
 In the Headspace example above, the circles usually have a face representing mood. By adding one of those faces to the circle, you can make the icon more recognizable.
 
-### Maintaining Consistency
+#### Maintaining Consistency
 
 ![](docs/images/creating-icons-4-outline.png)
 
@@ -111,7 +111,7 @@ All icons must adhere to an outline (not filled) to maintain a consistent theme.
 
 The key is to ensure that any filled elements do not overwhelm the overall icon design and align with the outlined style to create a harmonious and coherent icon set.
 
-### Maintaining Visual Balance
+#### Maintaining Visual Balance
 
 ![](docs/images/creating-icons-4-maintaining-visual-balance.png)
 
@@ -176,11 +176,11 @@ Correct
 <item component="..." drawable="_9gag" name="9GAG" />
 ```
 
-## How to find application components
+### How to find application components
 
 An application component is a record consisting of a package and an activity, separated by /. Components allow you to link icons and applications. 
 
-Lawnicons  
+Sample (Lawnicons)  
 package: `app.lawnchair.lawnicons`  
 activity: `app.lawnchair.lawnicons.MainActivity`  
 component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
@@ -235,7 +235,7 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
-## Adding an icon to Lawnicons
+### Adding an icon to Lawnicons
 
 You need to link your SVGs and application components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
@@ -273,4 +273,3 @@ Please keep your repository up to date, otherwise you may drag the commit histor
 This tool will help you if you regularly create dozens of icons and are familiar with the command line.
 
 [icontool.py guide](/docs/icontool_guide.md)
-
