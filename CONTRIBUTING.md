@@ -188,6 +188,8 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 4. Copy missing components to clipboard.
 5. Save it wherever it's convenient.
 
+[Download Lawnicons](https://github.com/x9136/lawnicons#download)
+
 ### Icon Request
 1. Download and launch `Icon Request`.
 2. Tap one of the options:
