@@ -176,12 +176,12 @@ Correct
 
 An application component is a record consisting of a package and an activity, separated by /. Components allow you to link icons and applications. 
 
-**Lawnicons**  
+Lawnicons  
 package: `app.lawnchair.lawnicons`  
 activity: `app.lawnchair.lawnicons.MainActivity`  
 component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
-### Lawnicons (only missing icons)
+**Lawnicons (only missing icons)**  
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
@@ -190,7 +190,8 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 [Download Lawnicons](https://github.com/x9136/lawnicons#download)
 
-### Icon Request
+**Icon Request**  
+
 1. Download and launch `Icon Request`.
 2. Tap one of the options:
 - UPDATE EXISTING — to copy packages with activities.
@@ -200,7 +201,8 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases)
 
-### Icon Pusher
+**Icon Pusher**  
+
 1. Download and launch `Icon Pusher`.
 2. Select the icons you want to upload or select all by pressing the square in the top right.
 3. Submit the selected apps.
@@ -208,7 +210,8 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 [Google Play](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher) • [Website](https://iconpusher.com/)
 
-### Using `adb`
+**Android Debug Bridge (adb)**  
+
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
 2. Open a new Command Prompt or Terminal window and input `adb devices`.
 3. Finally, type the below-given command to get the information about the currently open application.
@@ -232,7 +235,8 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 You need to link your SVGs and application components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
-### Manual process
+**Manual process**  
+
 Let's imagine that you have an icon in SVG format, a component and an application name.
 
 icon: `lawnicons.svg`  
@@ -260,7 +264,8 @@ Please keep your repository up to date, otherwise you may drag the commit histor
 1. Open `Terminal` on a local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 2. Or delete your repository and start the contribution process from scratch.
 
-### icontool.py
+**Via icontool.py**  
+
 This tool will help you if you regularly create dozens of icons and are familiar with the command line.
 
 [icontool.py guide](/docs/icontool_guide.md)
