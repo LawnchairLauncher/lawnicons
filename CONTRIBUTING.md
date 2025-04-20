@@ -192,7 +192,9 @@ package: `app.lawnchair.lawnicons`
 activity: `app.lawnchair.lawnicons.MainActivity`  
 component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
-**Lawnicons (only missing icons)**  
+**Lawnicons**  
+
+This method is suitable if you are interested in installed applications that don't have icons.
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
