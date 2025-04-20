@@ -1,37 +1,92 @@
 # Lawnicons contributing guide
-Welcome to the Lawnicons contributing guide! This file will tell you what you need to know to contribute to Lawnicons.
+Welcome to the Lawnicons contributing guide!
 
-Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. Afterwards, you can either contribute icons or code.
+When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize time losses. If there is something incorrectly described in the guide, please create an issue or discuss it in our Discord.
+
+[Our Discord](https://discord.com/invite/3x8qNWxgGZ)
+
+## Contributing code
+While adding icons is the main focus for most contributors, code-related contributions are welcome.
+
+To build Lawnicons, select the `appDebug` build variant.
+
+Here are a few contribution tips:
+- [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons' core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
+- You can use either Java or, preferably, Kotlin.
+- Make sure your code is logical and well formatted. If using Kotlin, see ["Coding conventions"](https://kotlinlang.org/docs/coding-conventions.html) in the Kotlin documentation.
+- Set `develop` as the base branch for pull requests.
+- Significant changes to the UI should be discussed on our [Lawnchair's Telegram group chat](https://t.me/lawnchairci). Generally, we want to keep things clean and simple.
 
 ## Contributing icons
-For beginners, it is faster to create icons [in Figma](https://www.figma.com/), although [Inkscape](https://inkscape.org/) and similar software will do. A file explorer, a text editor, and a terminal window will also be useful.
 
-To avoid rework, save time and understand the limitations of the guidelines, it is worth reading reviews (e.g., [+8 icons, +1 link, +4 updates](https://github.com/LawnchairLauncher/lawnicons/pull/1865)) and creating no more than 5 icons in the first contribution. 
+### Icon contribution approach
 
-Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
+The main goal is to create a high-quality icon in the style of Lawnicons. The icon should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. You shouldn't copy an original icon, neglecting the quality.
 
-### Canvas & Sizes
+We recommend:
+- Carefully study the Lawnicons design requirements.
+- See how other contributors have made pull requests (PRs).
+- Practice on easy-to-make icons to understand the whole process.
+- Make no more than 5 icons at a time, as long as your PRs require rework.
+
+[Lawnicons design requirements](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged) • [Easy-to-make icons
+](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+
+### Tools
+
+#### Vector graphics editor
+
+We recommend Figma because it has easier quality control. Our icons are in the SVG format. If you want to save optimized SVGs in Figma, you can use Advanced SVG Export.
+
+[Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
+
+#### GitHub Desktop
+
+You can use it to create a local copy of your repository on GitHub and upload all the changes. Before getting into your repository, the changes must appear in your local copy.
+
+[GitHub Desktop](https://github.com/apps/desktop)
+
+#### Component search tool
+You can use it to find application components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
+
+[How to find application components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#finding-the-package-and-activity-name-of-an-app)
+
+#### Other tools
+**File explorer**. It will help you copy icons to a local copy of your repository.
+
+**Text editor**. It will help you to link icons and their components in `appfilter.xml`. This is how icon packs work.
+
+**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
+
+## Lawnicons design requirements
+
+**Canvas & Sizes**
 
 ![](docs/images/creating-icons-1-artboard.png)
 
-#### Canvas
+**Canvas**
 The canvas size should be `192×192px` so that there is a safe zone around the icons to control consistency.
-#### Content area for all but square
+
+**Content area for all but square**
 All but square icons must fit the `160×160px` content area size. Be careful with abstract icons: the long side should be `160px`, but the other side can be smaller. Remember to adjust the size of all icons when you change the base stroke thickness (`12px`).
-#### Content area for squares
+
+**Content area for squares**
 Square icons must fit the `154×154px` content area size. Icons that mostly fit in a square are considered square. If the icon is kinda square and kinda not, choose a size based on density: `154×154px` for dense icons, `160×160px` for the rest. Examples: [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
 
 ### Foundation
 
 ![](docs/images/creating-icons-2-foundation.png)
 
-#### Color
+**Color**
 All shapes must have non-transparent black color `#000000`.
-#### Stroke widths
+
+**Stroke widths**
 The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#maintaining-visual-balance) down below.
-#### End caps
+
+**End caps**
 All shapes must have rounded caps and joins.
-#### Corner radius
+
+**Corner radius**
 Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when the others spoil the shape: for example, when a right angle is formed of short lines.
 
 ### Details
@@ -117,55 +172,52 @@ Correct
 <item component="..." drawable="_9gag" name="9GAG" />
 ```
 
-## Adding an icon to Lawnicons
-### Prerequisites
-* A fork of the Lawnicons repository.
-* Your icon in the SVG format, adhering to [the above guidelines](#contributing-icons). The filename must use snake case (e.g. `spck_editor.svg`).
-* The package and activity name of the app.
+## How to find application components
 
-### Via `icontool.py`
-Please check [the icon tool guide](/docs/icontool_guide.md) for more information.
+An application component is a record consisting of a package and an activity, separated by /. Components allow you to link icons and applications. 
 
-### Via manual process
-1. Add the ready SVG to the `svgs` directory. If you want to add a link to an existing SVG, you will need its name.
+**Lawnicons**  
+package: `app.lawnchair.lawnicons`  
+activity: `app.lawnchair.lawnicons.MainActivity`  
+component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
-2. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity.
+### Lawnicons (only missing icons)
+1. Install and open Lawnicons.
+2. Long press our logo.
+3. Swipe down.
+4. Copy missing components to clipboard.
+5. Save it wherever it's convenient.
 
-    **Example**
-    - the app name: `Spck Editor`;
-    - the svg (drawable) name: `spck_editor`;
-    - the package and activity of the app: `io.spck/io.spck.EditorActivity`.
-  
-    **The new line**
-    ```xml
-    <item component="ComponentInfo{io.spck/io.spck.EditorActivity}" drawable="spck_editor" name="Spck Editor" />
-    ```
+### Icon Request
+1. Download and launch `Icon Request`.
+2. Tap one of the options:
+- UPDATE EXISTING — to copy packages with activities.
+- REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
+3. Use the app toolbar to select the apps for which youʼd like to request or make icons.
+4. Copy, save or share.
 
-    **General template**
-    ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]" />
-    ```
+[Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases)
 
-4. Done! You're ready to open a pull request. Please set `develop` as the base branch.
+### Icon Pusher
+1. Download and launch `Icon Pusher`.
+2. Select the icons you want to upload or select all by pressing the square in the top right.
+3. Submit the selected apps.
+4. View the submitted components on the Icon Pusher website.
 
-## Finding the package and activity name of an app
-### Using Lawnicons
-1. Install and open [Lawnicons 2.13+](https://github.com/LawnchairLauncher/lawnicons/releases).
-2. Tap "Request icons". After that, our request form will open with a response ready to be submit.
-3. Submit the response. You can copy the submitted activities [from our table](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?resourcekey=&gid=1039095616#gid=1039095616) (sorted by date).
+[Google Play](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher) • [Website](https://iconpusher.com/)
 
 ### Using `adb`
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
 2. Open a new Command Prompt or Terminal window and input `adb devices`.
 3. Finally, type the below-given command to get the information about the currently open application.
 
-  **For Mac or Linux**:
+  **Mac or Linux**
 
   ```console
   adb shell dumpsys window | grep 'mCurrentFocus'
   ```
 
-  **For Windows**:
+  **Windows**
 
   ```console
   adb shell dumpsys window | findstr "mCurrentFocus"
@@ -174,30 +226,40 @@ Please check [the icon tool guide](/docs/icontool_guide.md) for more information
 
   The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
-### Using 3rd-party apps
+## Adding an icon to Lawnicons
 
-#### IconRequest app
-1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
-2. Launch IconRequest and tap one of the options:
-- UPDATE EXISTING — to copy packages with activities.
-- REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
-3. Use the app toolbar to select the apps for which youʼd like to request or make icons.
-4. Copy, save or share.
+You need to link your SVGs and application components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
-#### Icon Pusher app
-1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
-2. Launch the app.
-3. Select the icon(s) you want to upload or select all by pressing the square in the top right. Then press "Send".
-4. View the packages with the activities for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
+### Manual process
+Let's imagine that you have an icon in SVG format, a component and an application name.
 
-## Contributing code
-While adding icons is the main focus for most contributors, code-related contributions are welcome.
+icon: `lawnicons.svg`  
+application name: `Lawnicons`  
+component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
-To build Lawnicons, select the `appDebug` build variant.
+1. Fork our repository so that you have your own copy to work with. Your repository will be a bridge between our repository and your contribution.
+2. Clone your repository in GitHub Desktop and open it with a file explorer.
+3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an application component to an existing icon, you will need its name.
+4. Open `app/assets/appfilter.xml` and evaluate how the lines are designed. Add a new line based on your information, take into account the alphabetical sorting by the application name.
 
-Here are a few contribution tips:
-- [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons' core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
-- You can use either Java or, preferably, Kotlin.
-- Make sure your code is logical and well formatted. If using Kotlin, see ["Coding conventions"](https://kotlinlang.org/docs/coding-conventions.html) in the Kotlin documentation.
-- Set `develop` as the base branch for pull requests.
-- Significant changes to the UI should be discussed on our [Lawnchair's Telegram group chat](https://t.me/lawnchairci). Generally, we want to keep things clean and simple.
+```
+<item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
+```
+
+5. Save all your changes and push it to your repository via GitHub Desktop.
+6. Open your repository in a web browser and open a PR: `Contribute → Open pull request`.
+7. Describe your PR according to our templates and create it.
+8. Make sure that the build went without errors. Wait for a review or do a self-review.
+9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
+
+To link an application component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For example, Just Eat and Menulog have the identical icons.
+
+Please keep your repository up to date, otherwise you may drag the commit history through all your PRs. There are 2 main ways to do this:
+1. Open `Terminal` on a local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
+2. Or delete your repository and start the contribution process from scratch.
+
+### icontool.py
+This tool will help you if you regularly create dozens of icons and are familiar with the command line.
+
+[icontool.py guide](/docs/icontool_guide.md)
+
