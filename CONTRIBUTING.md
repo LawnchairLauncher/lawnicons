@@ -24,12 +24,12 @@ Here are a few contribution tips:
 The main goal is to create a high-quality icon in the style of Lawnicons. The icon should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. You shouldn't copy an original icon, neglecting the quality.
 
 We recommend:
-- Carefully study the Lawnicons design requirements.
+- Carefully study the Lawnicons design guidelines.
 - See how other contributors have made pull requests (PRs).
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 
-[Lawnicons design requirements](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged) • [Easy-to-make icons
+[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged) • [Easy-to-make icons
 ](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
 ### Tools
@@ -58,7 +58,7 @@ You can use it to find application components. Lawnicons allows you to find comp
 
 **Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
 
-## Lawnicons design requirements
+## Lawnicons design guidelines
 
 **Canvas & Sizes**
 
