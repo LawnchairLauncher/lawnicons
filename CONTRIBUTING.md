@@ -122,9 +122,11 @@ To avoid sharp contrast, you can follow either of these two methods:
 1. **Uniform Stroke:** Instead of jumping between stroke thicknesses, use the next immediate increment in width. For example, transition from *12px* to *10px*.
 2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
 
-## Naming
+### Naming
 To make it easier to find icons, you should keep the original names. Arabic, Chinese or Japanese names need to be supplemented with an English version. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
-### App name
+
+**App name**  
+
 Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
 ```
 Wrong • Google Play name: "Zoom - One Platform to Connect"
@@ -152,7 +154,9 @@ Wrong
 Correct
 <item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
 ```
-### Drawable
+
+**Drawable (icon) name**  
+
 Should contain letters from the English alphabet and repeat the app name if possible.
 ```
 Wrong
