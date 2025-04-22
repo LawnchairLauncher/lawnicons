@@ -194,7 +194,7 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 **Lawnicons**  
 
-This method is suitable if you are interested in installed applications that don't have icons.
+This method is suitable if you are interested in installed applications that are not supported in Lawnicons.
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
