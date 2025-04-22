@@ -1,7 +1,7 @@
 # Lawnicons contributing guide
 Welcome to the Lawnicons contributing guide!
 
-When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize time losses. If you find errors or need to clarify something, please create an issue or join our Discord.
+When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize time losses. Please ask questions about the guide in our Discord. If you find errors, create an issue.
 
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
