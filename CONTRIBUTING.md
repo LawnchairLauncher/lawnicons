@@ -205,18 +205,18 @@ This method is suitable if you are interested in installed applications that are
 
 **Icon Request**  
 
-1. Download and launch `Icon Request`.
+1. Download and launch Icon Request.
 2. Tap one of the options:
-- UPDATE EXISTING — to copy packages with activities.
-- REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
-3. Use the app toolbar to select the apps for which youʼd like to request or make icons.
+- UPDATE EXISTING — to copy application components.
+- REQUEST NEW — to save icon images and application components. This option is better if you are creating icons.
+3. Use the Icon Request toolbar to select apps.
 4. Copy, save or share.
 
 [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases)
 
 **Icon Pusher**  
 
-1. Download and launch `Icon Pusher`.
+1. Download and launch Icon Pusher.
 2. Select the icons you want to upload or select all by pressing the square in the top right.
 3. Submit the selected apps.
 4. View the submitted components on the Icon Pusher website.
@@ -250,7 +250,7 @@ You need to link your SVGs and application components correctly, create a PR to 
 
 **Manual process**  
 
-Let's imagine that you have an icon in SVG format, a component and an application name.
+Let's imagine that you have an icon in SVG format, an application name and a component.
 
 icon: `lawnicons.svg`  
 application name: `Lawnicons`  
@@ -274,7 +274,7 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 To link an application component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For example, Just Eat and Menulog have the identical icons.
 
 Please keep your repository up to date, otherwise you may drag the commit history through all your PRs. There are 2 main ways to do this:
-1. Open `Terminal` on a local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
+1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 2. Or delete your repository and start the contribution process from scratch.
 
 **Via icontool.py**  
