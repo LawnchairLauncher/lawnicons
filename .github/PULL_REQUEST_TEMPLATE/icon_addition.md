@@ -15,5 +15,5 @@ App Name (`com.package.app` → `drawable.svg`)
 
 ### Updated
 <!--  When replacing old icons with new ones. -->
-App Name (`com.package.app`)
-App Name (`com.package.app`)
+App Name (`drawable.svg`)
+App Name (`drawable.svg`)
