@@ -6,7 +6,7 @@ When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
 ## Contributing code
-While adding icons is the main focus for most contributors, code-related contributions are welcome.
+Code-related contributions are welcome. The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
 
 To build Lawnicons, select the `appDebug` build variant.
 
@@ -21,7 +21,7 @@ Here are a few contribution tips:
 
 ### Icon contribution approach
 
-The main goal is to create a high-quality icon in the style of Lawnicons. The icon should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. You shouldn't copy an original icon, neglecting the quality.
+The main goal is to create high-quality icons in the style of Lawnicons. The icon should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
 
 We recommend:
 - Carefully study the Lawnicons design guidelines.
