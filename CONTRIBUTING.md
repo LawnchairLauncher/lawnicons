@@ -10,12 +10,14 @@ Code-related contributions are welcome. The main tasks are to maintain Lawnicons
 
 To build Lawnicons, select the `appDebug` build variant.
 
-Here are a few contribution tips:
-- [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons' core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
-- You can use either Java or, preferably, Kotlin.
-- Make sure your code is logical and well formatted. If using Kotlin, see ["Coding conventions"](https://kotlinlang.org/docs/coding-conventions.html) in the Kotlin documentation.
+**Tips**
 - Set `develop` as the base branch for pull requests.
-- Significant changes to the UI should be discussed on our [Lawnchair's Telegram group chat](https://t.me/lawnchairci). Generally, we want to keep things clean and simple.
+- You can use either Java or, preferably, Kotlin.
+- Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
+- The `app` module contains most of Lawnicons' core code, while the `svg-processor` module contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
+- Significant changes to the UI should be discussed on our Lawnchair's Telegram group chat. Generally, we want to keep things clean and simple.
+
+[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [svg-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) • [Lawnchair's Telegram group chat](https://t.me/lawnchairci)
 
 ## Contributing icons
 
@@ -23,7 +25,7 @@ Here are a few contribution tips:
 
 The main goal is to create high-quality icons in the style of Lawnicons. The icon should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
 
-We recommend:
+**Tips**
 - Carefully study the Lawnicons design guidelines.
 - See how other contributors have made pull requests (PRs).
 - Practice on easy-to-make icons to understand the whole process.
