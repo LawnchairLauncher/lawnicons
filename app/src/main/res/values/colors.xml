@@ -9,4 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primaryBackground">@color/white</color>
     <color name="primaryForeground">@color/black</color>
+
+   <!-- Smart Launcher theming -->
+   <color name="org.icontheme.icon_background_color">@color/primaryBackground</color>
+   <color name="org.icontheme.icon_color">@color/primaryForeground</color>
 </resources>
