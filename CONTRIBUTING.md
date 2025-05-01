@@ -23,7 +23,7 @@ To build Lawnicons, select the `appDebug` build variant.
 
 ### Icon contribution approach
 
-The main goal is to create high-quality icons in the style of Lawnicons. The icon should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
+The main goal is to create high-quality icons in the style of Lawnicons. The icons should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
 
 **Tips**
 - Carefully study the Lawnicons design guidelines.
@@ -38,7 +38,7 @@ The main goal is to create high-quality icons in the style of Lawnicons. The ico
 
 #### Vector graphics editor
 
-To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. If you want to save optimized SVGs in Figma, you can use Advanced SVG Export.
+To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
 
 [Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
 
@@ -49,6 +49,7 @@ You can use it to create a local copy of your repository on GitHub and upload al
 [GitHub Desktop](https://github.com/apps/desktop)
 
 #### Component search tool
+
 You can use it to find application components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
 
 [How to find application components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#finding-the-package-and-activity-name-of-an-app)
@@ -187,7 +188,7 @@ Correct
 
 ### How to find application components
 
-An application component is a record consisting of a package and an activity, separated by /. Components allow you to link icons and applications. 
+An application component is a record consisting of a package and an activity, separated by /. Application omponents allow you to link icons and applications. 
 
 Sample (Lawnicons)  
 package: `app.lawnchair.lawnicons`  
@@ -227,9 +228,10 @@ This method is suitable if you are interested in installed applications that are
 
 **Android Debug Bridge (adb)**  
 
-1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
-2. Open a new Command Prompt or Terminal window and input `adb devices`.
-3. Finally, type the below-given command to get the information about the currently open application.
+1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information).
+2. Open the app whose details you want to inspect (e.g. Telegram).
+3. Open a new Command Prompt or Terminal window and input `adb devices`.
+4. Finally, type the below-given command to get the information about the currently open application.
 
   **Mac or Linux**
 
@@ -243,8 +245,6 @@ This method is suitable if you are interested in installed applications that are
   adb shell dumpsys window | findstr "mCurrentFocus"
   ```
   ![](docs/images/contributing-image-3.png)
-
-  The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
 
 ### Adding an icon to Lawnicons
 
@@ -275,7 +275,7 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 To link an application component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For example, Just Eat and Menulog have the identical icons.
 
-Please keep your repository up to date, otherwise you may drag the commit history through all your PRs. There are 2 main ways to do this:
+Please keep your repository up to date, otherwise you may drag a commit history through all your PRs. There are 2 main ways to do this:
 1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 2. Or delete your repository and start the contribution process from scratch.
 
