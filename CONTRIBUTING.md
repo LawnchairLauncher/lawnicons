@@ -10,7 +10,7 @@ Code-related contributions are welcome. The main tasks are to maintain Lawnicons
 
 To build Lawnicons, select the `appDebug` build variant.
 
-**Tips**
+Tips:
 - Set `develop` as the base branch for pull requests.
 - You can use either Java or, preferably, Kotlin.
 - Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
@@ -25,7 +25,7 @@ To build Lawnicons, select the `appDebug` build variant.
 
 The main goal is to create high-quality icons in the style of Lawnicons. The icons should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
 
-**Tips**
+Tips:
 - Carefully study the Lawnicons design guidelines.
 - See how other contributors have made pull requests (PRs).
 - Practice on easy-to-make icons to understand the whole process.
@@ -61,76 +61,148 @@ You can use it to find application components. Lawnicons allows you to find comp
 
 **Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
 
-### Lawnicons design guidelines
+## Lawnicons design guidelines
 
-#### Canvas & Sizes
+The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework and unnecessary waiting. In case of unclear wording, write to us in Discord.  
 
-![](docs/images/creating-icons-1-artboard.png)
+[Lawnicons design guidelines in Figma](https://www.figma.com/design/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?node-id=814-1114&t=fHuLvXCiz0jsFHYB-1) • [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
+
+### Fundamentals
 
 **Canvas**  
 
-The canvas size should be `192×192px` so that there is a safe zone around the icons to control consistency.
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/1-foundation-canvas.png" width="640">
 
-**Content area for all but square**  
+`192 × 192 px`. There should be a safe zone around the icons so they look neat on a screen.  
 
-All but square icons must fit the `160×160px` content area size. Be careful with abstract icons: the long side should be `160px`, but the other side can be smaller. Remember to adjust the size of all icons when you change the base stroke thickness (`12px`).
+**Abstract icons**  
 
-**Content area for squares**  
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/2-foundation-abstract-icons.png" width="640">
 
-Square icons must fit the `154×154px` content area size. Icons that mostly fit in a square are considered square. If the icon is kinda square and kinda not, choose a size based on density: `154×154px` for dense icons, `160×160px` for the rest. Examples: [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
+`160 × 160 px`. The long side of an abstract icon should be **160 px**, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`. In the case of curved boundaries, the margin of error is `<0.1 px`.
 
-#### Foundation
 
-![](docs/images/creating-icons-2-foundation.png)
+**Square icons**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/3-foundation-square-icons.png" width="640">
+
+`154 × 154 px`. These are icons with `50%` or more of the edges running along the square.  
 
 **Color**  
 
-All shapes must have non-transparent black color `#000000`.
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/4-foundation-color.png" width="640">
 
-**Stroke widths**  
+All lines must be non-transparent black color: `#000000`.  
 
-The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#maintaining-visual-balance) down below.
+**Stroke weights**  
 
-**End caps**  
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/5-foundation-stroke-weights.png" width="640">
 
-All shapes must have rounded caps and joins.
+Core weight: `12 px`  
+Allowable weights: `14 px`, `10 px`, `8 px`  
+Fine details: `6 px` 
+
+The stroke weight should be kept at `12 px` in most cases. If an icon is too minimal or dense, you'll need other weights: `14 px` for the most minimal, and `8 px` for the densest. For fine details, you can use `6 px`. Remember to adjust the size of all icons when you change the base stroke weight. No margin of error. Don’t use a fill.   
+
+**Start and end caps**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/6-foundation-end-caps.png" width="640">
+
+Ensure that all strokes have rounded start and end caps.  
+
+**Joints**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/7-foundation-joints.png" width="640">
+
+Use rounded joints.
 
 **Corner radius**  
 
-Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when the others spoil the shape: for example, when a right angle is formed of short lines.
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/8-foundation-corner-radius.png" width="640">
 
-#### Details
+Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave `0 px` radius in cases when the others spoil the shape: for instance, when a right angle is formed of short lines.  
 
-![](docs/images/creating-icons-3-detail.png)
+### Quality
 
-When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
 
-A great example of this is the Subway Surfers icon as seen in the example above. In Lawnicons, it was reimagined by using the graffiti-styled "S" from the game's logo instead of depicting the character, which would have required intricate shapes and varying stroke thicknesses.
+**Consistency**  
 
-![](docs/images/creating-icons-3-balance.png)
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/9-quality-consistency.png" width="640">
 
-In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language.
+All icons should be outlined. If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
 
-In the Headspace example above, the circles usually have a face representing mood. By adding one of those faces to the circle, you can make the icon more recognizable.
+**Visual balance**  
 
-#### Maintaining Consistency
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/10-quality-visual-balance.png" width="640">
 
-![](docs/images/creating-icons-4-outline.png)
+Sharp contrast occurs when there is a drastic change in a stroke weight without a smooth transition. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
-All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline.
+Tips:
+- Avoid large differences between adjacent lines.
+- Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
+- Apply a `14 px` stroke for minimalistic icons.
+- Reduce the main stroke weight depending on an icon density.  
 
-The key is to ensure that any filled elements do not overwhelm the overall icon design and align with the outlined style to create a harmonious and coherent icon set.
+**Black spots**  
 
-#### Maintaining Visual Balance
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/11-quality-black-spots.png" width="640">
 
-![](docs/images/creating-icons-4-maintaining-visual-balance.png)
+Avoid black spots as much as possible.
 
-Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a `12px` stroke and suddenly decreasing it to `8px` creates an unbalanced visual effect in the final icon.
+Tips:
+- Reduce a stroke weight.
+- Shorten lines to get a distance between them.
+- Simplify and redraw.  
 
-To avoid sharp contrast, you can follow either of these two methods:
+**Excessive density**  
 
-1. **Uniform Stroke:** Instead of jumping between stroke thicknesses, use the next immediate increment in width. For example, transition from *12px* to *10px*.
-2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/12-quality-excessive-density.png" width="640">
+
+Whenever possible, keep at least `8 px` between lines. Ideally, at least `12 px`.
+
+Tips:
+- Move or cut individual lines of an icon.
+- Combine parallel lines into one.
+- Enlarge original icons to make the main features easier to draw.
+- Reduce a stroke weight.
+- Shorten lines to get a distance between them.
+- Simplify and redraw.  
+
+**Visual center alignment**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/13-quality-visual-center-aligment.png" width="640">
+
+When icons are geometrically aligned, some of them look off-center because of their shape. The visual center is where your icon looks and feels centered. Align icons to the visual center as much as possible within the content area.  
+
+**Text icons**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/14-quality-text-icons.png" width="640">
+
+Text longer than `3` letters usually don’t fit the Lawnicons style. It comes out either too dense or too small. Brands and applications with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+
+If it’s fundamental to make a text icon, it should be of high quality and occupy at least `¹⁄₃` of the content area.
+
+**Complex icons**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/15-quality-complex-icons.png" width="640">
+
+Some of the complex icons can be made in the Lawnicons style, so it's worth trying first. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an application or a game.
+
+Whatever you come to, the result should be at least logical and high-quality.
+
+Sources for creating a recognizable icon:
+- Branding guidelines.
+- UI or gameplay.
+- Website’s favicons.
+- In-app icons.
+- Essence of an application or a game.
+- Combination of recognizable features and your own ideas.  
+
+**Minimalistic icons**  
+
+<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/16-quality-minimalistic-icons.png" width="640">
+
+Such icons may relate to multiple applications. Add distinctive features to them when it makes sense.  
 
 ### Naming
 To make it easier to find icons, you should keep the original names. Arabic, Chinese or Japanese names need to be supplemented with an English version. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
@@ -273,7 +345,7 @@ component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 8. Make sure that the build went without errors. Wait for a review or do a self-review.
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
-To link an application component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For example, Just Eat and Menulog have the identical icons.
+To link an application component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.
 
 Please keep your repository up to date, otherwise you may drag a commit history through all your PRs. There are 2 main ways to do this:
 1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
