@@ -31,7 +31,7 @@ The main goal is to create high-quality icons in the style of Lawnicons. The ico
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 
-[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
+[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
 ](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
 ### Tools
@@ -204,7 +204,7 @@ This method is suitable if you are interested in installed applications that are
 4. Copy missing components to clipboard.
 5. Save it wherever it's convenient.
 
-[Download Lawnicons](https://github.com/x9136/lawnicons#download)
+[Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
 
 **Icon Request**  
 
