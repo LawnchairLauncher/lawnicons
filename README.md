@@ -22,7 +22,7 @@
 
 Lawnicons is an icon pack developed by the Lawnchair team and supported by our community. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons, it can now be used on many launchers.
 
-Lawnicons is best used [on the latest version of Lawnchair](https://play.google.com/store/apps/details?id=app.lawnchair.play). You can enable themed icons on Lawnchair by going to `Home Settings → General → Icon Style` and choosing the desired option.
+Try Lawnicons [on the latest version of Lawnchair](https://play.google.com/store/apps/details?id=app.lawnchair.play). You can enable themed icons by going to `Home Settings → General → Icon Style` and choosing the desired option.
 
 ## Download
 
@@ -47,15 +47,16 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-Please see our guidelines for information on contributing icons or code. We put the quality of icons first, so we recommend starting with simple icons. We are glad to see those who are determined to finish the job.
+> [!NOTE]
+> We will update the Lawnicons design guidelines in a month ([draft](https://github.com/LawnchairLauncher/lawnicons/pull/2668)). Please leave feedback, if you have any.
 
-Currently we don't have much time for Lawnicons. If you want to review icons or solve issues, then let us know [in our Discord](https://discord.gg/3x8qNWxgGZ).
+Please see our guidelines for information on contributing icons or code. You can add your icons, fulfill icon requests, fix and update existing icons, add missing application components, or develop Lawnicons by solving issues. Please stick to the DIY approach.
 
-[Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Lawnicons guidelines](CONTRIBUTING.md) • [Icon samples in Figma](https://www.figma.com/community/file/1227718471680779613) • [Development issues](https://github.com/LawnchairLauncher/lawnicons/issues)
+[Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Add missing components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-an-icon-to-lawnicons) • [Lawnicons guidelines](CONTRIBUTING.md)
 
 ## Requesting icons
 `Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
 
-We have about 30 000 icon requests in the queue. If you have the skills to create high-quality icons, then you can avoid indefinite waiting and contribute the icons yourself.
+Icon requests are fulfilled only by those who want to, the wait can take years. Please consider contributing icons if you have the skills to create quality icons. Contributors who make icons according to the Lawnicons guidelines can promptly add desired icons to Lawnicons.
 
 [Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
