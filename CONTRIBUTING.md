@@ -261,9 +261,9 @@ Correct
 An application component is a record consisting of a package and an activity, separated by /. Application omponents allow you to link icons and applications. 
 
 Sample (Lawnicons)  
-package: `app.lawnchair.lawnicons`  
-activity: `app.lawnchair.lawnicons.MainActivity`  
-component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
+Package: `app.lawnchair.lawnicons`  
+Activity: `app.lawnchair.lawnicons.MainActivity`  
+Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
 **Lawnicons**  
 
@@ -324,9 +324,9 @@ You need to link your SVGs and application components correctly, create a PR to 
 
 Let's imagine that you have an icon in SVG format, an application name and a component.
 
-icon: `lawnicons.svg`  
-application name: `Lawnicons`  
-component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
+Icon: `lawnicons.svg`  
+Application name: `Lawnicons`  
+Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 1. Fork our repository so that you have your own copy to work with. Your repository will be a bridge between our repository and your contribution.
 2. Clone your repository in GitHub Desktop and open it with a file explorer.
