@@ -50,7 +50,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 > [!NOTE]
 > We will update the Lawnicons guidelines in a month ([draft](https://github.com/LawnchairLauncher/lawnicons/pull/2668)). Please leave feedback, if you have any.
 
-Please see our guidelines for information on contributing icons or code. You can add your icons, fulfill icon requests, fix and update old icons, add missing application components, or develop Lawnicons by solving issues. Currently, the main contributors don't have much time for Lawnicons. Please stick to the DIY approach.
+Please see our guidelines for information on contributing icons or code. You can add your icons, fulfill icon requests, fix and update existing icons, add missing application components, or develop Lawnicons by solving issues. Currently, the main contributors don't have much time for Lawnicons. Please stick to the DIY approach.
 
 [Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Add missing components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-an-icon-to-lawnicons) • [Lawnicons guidelines](CONTRIBUTING.md)
 
