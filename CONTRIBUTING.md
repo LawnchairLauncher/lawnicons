@@ -258,7 +258,7 @@ Correct
 
 ### How to find application components
 
-An application component is a record consisting of a package and an activity, separated by /. Application omponents allow you to link icons and applications. 
+An application component is a record consisting of a package and an activity, separated by `/`. Application omponents allow you to link icons and applications. 
 
 Sample (Lawnicons)  
 Package: `app.lawnchair.lawnicons`  
