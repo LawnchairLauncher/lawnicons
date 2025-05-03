@@ -63,7 +63,9 @@ You can use it to find application components. Lawnicons allows you to find comp
 
 ## Lawnicons design guidelines
 
-The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework and unnecessary waiting. In case of unclear wording, write to us in Discord.  
+The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework and unnecessary waiting. In case of unclear wording, write to us in Discord.
+
+Authors of previous versions: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
 
 [Lawnicons design guidelines in Figma](https://www.figma.com/design/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?node-id=814-1114&t=fHuLvXCiz0jsFHYB-1) • [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
