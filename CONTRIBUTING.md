@@ -63,9 +63,7 @@ You can use it to find application components. Lawnicons allows you to find comp
 
 ## Lawnicons design guidelines
 
-The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework and unnecessary waiting. In case of unclear wording, write to us in Discord.
-
-Authors of previous versions: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
+The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework and unnecessary waiting. In case of unclear wording, write to us in Discord. Authors of previous versions: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
 
 [Lawnicons design guidelines in Figma](https://www.figma.com/design/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?node-id=814-1114&t=fHuLvXCiz0jsFHYB-1) • [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
@@ -81,8 +79,7 @@ Authors of previous versions: [GrabsterTV](https://github.com/Grabstertv) and [C
 
 <img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/2-foundation-abstract-icons.png" width="640">
 
-`160 × 160 px`. The long side of an abstract icon should be **160 px**, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`. In the case of curved boundaries, the margin of error is `<0.1 px`.
-
+`160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`. In the case of curved boundaries, the margin of error is `<0.1 px`.
 
 **Square icons**  
 
@@ -125,7 +122,6 @@ Use rounded joints.
 Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave `0 px` radius in cases when the others spoil the shape: for instance, when a right angle is formed of short lines.  
 
 ### Quality
-
 
 **Consistency**  
 
