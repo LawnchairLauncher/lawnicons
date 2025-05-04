@@ -254,7 +254,7 @@ Correct
 <item component="..." drawable="_9gag" name="9GAG" />
 ```
 
-### How to find application components
+## How to find application components
 
 An application component is a record consisting of a package and an activity, separated by `/`. Application omponents allow you to link icons and applications. 
 
@@ -314,7 +314,7 @@ This method is suitable if you are interested in installed applications that are
   ```
   ![](docs/images/contributing-image-3.png)
 
-### Adding an icon to Lawnicons
+## Adding an icon to Lawnicons
 
 You need to link your SVGs and application components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
