@@ -57,15 +57,17 @@ You can use it to find application components. Lawnicons allows you to find comp
 #### Other tools
 **File explorer**. It will help you copy icons to a local copy of your repository.
 
-**Text editor**. It will help you to link icons and their components in `appfilter.xml`. This is how icon packs work.
+**Text editor**. It will help you to link icons and application components in `appfilter.xml`. This is how icon packs work.
 
 **Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
 
 ## Lawnicons design guidelines
 
-The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework and unnecessary waiting. In case of unclear wording, write to us in Discord. Authors of previous versions: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
+The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework. In case of unclear wording, write to us in Discord.
 
-[Lawnicons design guidelines in Figma](https://www.figma.com/design/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?node-id=814-1114&t=fHuLvXCiz0jsFHYB-1) • [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
+The people who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
+
+[View in Figma](https://www.figma.com/design/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?node-id=814-1114&t=fHuLvXCiz0jsFHYB-1) • [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
 ### Fundamentals
 
@@ -79,7 +81,7 @@ The consistency of Lawnicons is based on fundamentals and quality. Please read i
 
 ![](docs/images/fundamentals-2-abstract-icons.png)
 
-`160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`. In the case of curved boundaries, the margin of error is `<0.1 px`.
+`160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`.  
 
 **Square icons**  
 
@@ -115,19 +117,19 @@ Start and end caps, as well as joints, should be rounded.
 
 ![](docs/images/fundamentals-7-corner-radius.png)
 
-Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
+Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
 
 ### Quality
 
 **Consistency**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/9-quality-consistency.png" width="640">
+![](docs/images/quality-1-consistency.png)
 
 All icons should be outlined. If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
 
 **Visual balance**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/10-quality-visual-balance.png" width="640">
+![](docs/images/quality-2-visual-balance.png)
 
 Sharp contrast occurs when there is a drastic change in a stroke weight without a smooth transition. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
@@ -139,48 +141,48 @@ Tips:
 
 **Black spots**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/11-quality-black-spots.png" width="640">
+![](docs/images/quality-3-black-spots.png)
 
 Avoid black spots as much as possible.
 
 Tips:
-- Reduce a stroke weight.
-- Shorten lines to get a distance between them.
-- Simplify and redraw.  
+- Trim lines.
+- Reduce stroke weights.
+- Simplify or redraw.  
 
 **Excessive density**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/12-quality-excessive-density.png" width="640">
+![](docs/images/quality-4-excessive-density.png)
 
-Whenever possible, keep at least `8 px` between lines. Ideally, at least `12 px`.
+Keep at least `8 px` between lines. Ideally, at least `12 px`.
 
 Tips:
-- Move or cut individual lines of an icon.
+- Move lines further apart.
 - Combine parallel lines into one.
+- Trim or extend lines.
+- Reduce stroke weights.
 - Enlarge original icons to make the main features easier to draw.
-- Reduce a stroke weight.
-- Shorten lines to get a distance between them.
-- Simplify and redraw.  
+- Simplify or redraw.
 
 **Visual center alignment**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/13-quality-visual-center-aligment.png" width="640">
+![](docs/images/quality-5-visual-center-aligment.png)
 
-When icons are geometrically aligned, some of them look off-center because of their shape. The visual center is where your icon looks and feels centered. Align icons to the visual center as much as possible within the content area.  
+When icons are geometrically aligned, some of them look off-center because of their shape. The visual center is where your icon looks and feels centered. Align icons to the visual center as much as possible within the icon content area.  
 
 **Text icons**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/14-quality-text-icons.png" width="640">
+![](docs/images/quality-6-text-icons.png)
 
-Text longer than `3` letters usually don’t fit the Lawnicons style. It comes out either too dense or too small. Brands and applications with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+Text longer than `3` letters usually don’t fit the Lawnicons style. Brands and applications with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
-If it’s fundamental to make a text icon, it should be of high quality and occupy at least `¹⁄₃` of the content area.
+If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area. This is rare.
 
 **Complex icons**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/15-quality-complex-icons.png" width="640">
+![](docs/images/quality-7-complex-icons.png)
 
-Some of the complex icons can be made in the Lawnicons style, so it's worth trying first. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an application or a game.
+Many complex icons can be made in the Lawnicons style, taking into account the original, so it's worth giving it a try first. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an application or a game.
 
 Whatever you come to, the result should be at least logical and high-quality.
 
@@ -194,7 +196,7 @@ Sources for creating a recognizable icon:
 
 **Minimalistic icons**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/16-quality-minimalistic-icons.png" width="640">
+![](docs/images/quality-8-minimalistic-icons.png)
 
 Such icons may relate to multiple applications. Add distinctive features to them when it makes sense.  
 
