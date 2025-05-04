@@ -71,55 +71,51 @@ The consistency of Lawnicons is based on fundamentals and quality. Please read i
 
 **Canvas**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/1-foundation-canvas.png" width="640">
+![](docs/images/fundamentals-1-canvas.png)
 
-`192 × 192 px`. There should be a safe zone around the icons so they look neat on a screen.  
+`192 × 192 px`. Use the correct canvas size to create a safe zone around icons.  
 
 **Abstract icons**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/2-foundation-abstract-icons.png" width="640">
+![](docs/images/fundamentals-2-abstract-icons.png)
 
 `160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`. In the case of curved boundaries, the margin of error is `<0.1 px`.
 
 **Square icons**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/3-foundation-square-icons.png" width="640">
+![](docs/images/fundamentals-3-square-icons.png)
 
 `154 × 154 px`. These are icons with `50%` or more of the edges running along the square.  
 
 **Color**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/4-foundation-color.png" width="640">
+![](docs/images/fundamentals-4-color.png)
 
 All lines must be non-transparent black color: `#000000`.  
 
 **Stroke weights**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/5-foundation-stroke-weights.png" width="640">
+![](docs/images/fundamentals-5-stroke-weights.png)
 
 Core weight: `12 px`  
 Allowable weights: `14 px`, `10 px`, `8 px`  
 Fine details: `6 px` 
 
-The stroke weight should be kept at `12 px` in most cases. If an icon is too minimal or dense, you'll need other weights: `14 px` for the most minimal, and `8 px` for the densest. For fine details, you can use `6 px`. Remember to adjust the size of all icons when you change the base stroke weight. No margin of error. Don’t use a fill.   
+The stroke weight should be kept at `12 px` in most cases. If an icon is too minimal or dense, you'll need other weights: `14 px` for the most minimal, and `8 px` for the densest. For fine details, you can use `6 px`.
 
-**Start and end caps**  
+No margin of error. Don’t use a fill. Remember to adjust the size of icons when you change the stroke weights.  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/6-foundation-end-caps.png" width="640">
+**Start and end caps, joints**  
 
-Ensure that all strokes have rounded start and end caps.  
+![](docs/images/fundamentals-6-start-and-end-caps-joints.png)
 
-**Joints**  
-
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/7-foundation-joints.png" width="640">
-
-Use rounded joints.
+Start and end caps, as well as joints, should be rounded.  
 
 **Corner radius**  
 
-<img src="https://raw.githubusercontent.com/x9136/lawnicons/refs/heads/develop/docs/images/8-foundation-corner-radius.png" width="640">
+![](docs/images/fundamentals-7-corner-radius.png)
 
-Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave `0 px` radius in cases when the others spoil the shape: for instance, when a right angle is formed of short lines.  
+Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
 
 ### Quality
 
