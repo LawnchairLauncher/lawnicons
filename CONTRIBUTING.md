@@ -198,7 +198,7 @@ Sources for creating a recognizable icon:
 
 ![](docs/images/quality-8-minimalistic-icons.png)
 
-Such icons may relate to multiple apps. Add distinctive features to them when it makes sense. Use an application design as a basis.  
+Such icons may relate to multiple apps. Add distinctive features to them when it makes sense. Use an app design as a basis.  
 
 ### Naming
 The main app name should be in its native language, but there should always be an English version. Use the English app name for its icon name.
@@ -207,55 +207,56 @@ The main app name should be in its native language, but there should always be a
 
 **App name**  
 
-Official name, as in app stores. Delete things that are not part of an app name.  
+Official name, usually as in app stores or primary sources. Delete things that are not part of an app name. Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
 
 ```
-Wrong • Google Play: "Zoom - One Platform to Connect"
-<item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
-```
-
-```
-Correct • Cleared: "Zoom"
+Do
+<item component="..." drawable="gps_status_and_toolbox" name="GPS Status &amp; Toolbox" />
+<item component="..." drawable="playstation" name="PlayStation" />
 <item component="..." drawable="zoom" name="Zoom" />
+
+Don't
+<item component="..." drawable="gps_status_and_toolbox" name="GPS Status & Toolbox" />
+<item component="..." drawable="playstation" name="PlayStation App" />
+<item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
 ```
 
 Separate app names using `~~`. First, the main app name, then the additional one.  
 
 ```
-Wrong
-<item component="..." drawable="hulu" name="フールー ~~ Hulu" />
-```
-
-```
-Correct • Considering the origin of the Hulu app
+Do • Considering the origin of the Hulu app
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
+
+Don't
+<item component="..." drawable="hulu" name="フールー ~~ Hulu" />
 ```
 
 **Icon name (drawable)**  
 
-Repeat an app name. When multiple apps are linked to an icon, choose the most popular name for it.  
-
+Repeat an app name. Use `a–z`, `0–9` and `_` for spaces. When multiple apps are linked to an icon, choose the most popular name for it.  
+ 
 ```
-Wrong
-<item component="..." drawable="bladeplayer" name="Blade Player" />
-```
-
-```
-Wrong
+Do
+<item component="..." drawable="a_and_w" name="A&amp;W" />
 <item component="..." drawable="blade_player" name="Blade Player" />
+<item component="..." drawable="yahoo_news" name="Yahoo!ニュース ~~ Yahoo! News" />
+
+Don't
+<item component="..." drawable="aw" name="A&amp;W" />
+<item component="..." drawable="bladeplayer" name="Blade Player" />
+<item component="..." drawable="yahoo!_news" name="Yahoo!ニュース ~~ Yahoo! News" />
 ```
 
-If an app name starts with a digit, start it with `_`.  
+Insert `_` before a digit at the beginning of an icon name.
 
 ```
-Wrong
+Do
+<item component="..." drawable="_9gag" name="9GAG" />
+
+Don't
 <item component="..." drawable="ninegag" name="9GAG" />
 ```
 
-```
-Correct
-<item component="..." drawable="_9gag" name="9GAG" />
-```
 
 ## How to find app components
 
