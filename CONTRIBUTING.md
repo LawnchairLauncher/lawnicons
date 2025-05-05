@@ -198,7 +198,7 @@ Sources for creating a recognizable icon:
 
 ![](docs/images/quality-8-minimalistic-icons.png)
 
-Such icons may relate to multiple apps. Add distinctive features to them when it makes sense.  
+Such icons may relate to multiple apps. Add distinctive features to them when it makes sense. Use an application design as a basis.  
 
 ### Naming
 The main app name should be in its native language, but there should always be an English version. Use the English app name for its icon name.
