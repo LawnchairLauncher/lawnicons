@@ -205,7 +205,7 @@ The main app name should be in its native language, but there should always be a
 
 [Examples in appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
 
-**app name**  
+**App name**  
 
 Official name, as in app stores. Delete things that are not part of an app name.  
 
@@ -231,7 +231,7 @@ Correct • Considering the origin of the Hulu app
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
 
-**Icon name (drawable)**
+**Icon name (drawable)**  
 
 Repeat an app name. When multiple apps are linked to an icon, choose the most popular name for it.  
 
