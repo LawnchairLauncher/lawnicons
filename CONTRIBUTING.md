@@ -23,7 +23,7 @@ Tips:
 
 ### Icon contribution approach
 
-The main goal is to create high-quality icons in the style of Lawnicons. The icons should make it clear which application will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
+The main goal is to create high-quality icons in the style of Lawnicons. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
 
 Tips:
 - Carefully study the Lawnicons design guidelines.
@@ -50,14 +50,14 @@ You can use it to create a local copy of your repository on GitHub and upload al
 
 #### Component search tool
 
-You can use it to find application components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
+You can use it to find app components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
 
-[How to find application components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#finding-the-package-and-activity-name-of-an-app)
+[How to find app components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
 
 #### Other tools
 **File explorer**. It will help you copy icons to a local copy of your repository.
 
-**Text editor**. It will help you to link icons and application components in `appfilter.xml`. This is how icon packs work.
+**Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
 
 **Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
 
@@ -174,7 +174,7 @@ When icons are geometrically aligned, some of them look off-center because of th
 
 ![](docs/images/quality-6-text-icons.png)
 
-Text longer than `3` letters usually don’t fit the Lawnicons style. Brands and applications with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+Text longer than `3` letters usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area. This is rare.
 
@@ -182,7 +182,7 @@ If you want to keep only a text, then it should be of high quality and occupy at
 
 ![](docs/images/quality-7-complex-icons.png)
 
-Many complex icons can be made in the Lawnicons style, taking into account the original, so it's worth giving it a try first. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an application or a game.
+Many complex icons can be made in the Lawnicons style, taking into account the original, so it's worth giving it a try first. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game.
 
 Whatever you come to, the result should be at least logical and high-quality.
 
@@ -191,72 +191,75 @@ Sources for creating a recognizable icon:
 - UI or gameplay.
 - Website’s favicons.
 - In-app icons.
-- Essence of an application or a game.
+- Essence of an app or a game.
 - Combination of recognizable features and your own ideas.  
 
 **Minimalistic icons**  
 
 ![](docs/images/quality-8-minimalistic-icons.png)
 
-Such icons may relate to multiple applications. Add distinctive features to them when it makes sense.  
+Such icons may relate to multiple apps. Add distinctive features to them when it makes sense.  
 
 ### Naming
-To make it easier to find icons, you should keep the original names. Arabic, Chinese or Japanese names need to be supplemented with an English version. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
+The main app name should be in its native language, but there should always be an English version. Use the English app name for its icon name.
 
-**App name**  
+[Examples in appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
 
-Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
+**app name**  
+
+Official name, as in app stores. Delete things that are not part of an app name.  
+
 ```
-Wrong • Google Play name: "Zoom - One Platform to Connect"
+Wrong • Google Play: "Zoom - One Platform to Connect"
 <item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
 ```
+
 ```
-Correct • Edited name: "Zoom"
+Correct • Cleared: "Zoom"
 <item component="..." drawable="zoom" name="Zoom" />
 ```
-Names in different languages are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
+
+Separate app names using `~~`. First, the main app name, then the additional one.  
+
 ```
 Wrong
 <item component="..." drawable="hulu" name="フールー ~~ Hulu" />
 ```
+
 ```
-Correct
+Correct • Considering the origin of the Hulu app
 <item component="..." drawable="hulu" name="Hulu ~~ フールー" />
 ```
-If the first `3` characters of the app name contain letters not from the English alphabet, then it's worth adding the transliterated name.
+
+**Icon name (drawable)**
+
+Repeat an app name. When multiple apps are linked to an icon, choose the most popular name for it.  
+
 ```
 Wrong
-<item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
-```
-```
-Correct
-<item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
+<item component="..." drawable="bladeplayer" name="Blade Player" />
 ```
 
-**Drawable (icon) name**  
-
-Should contain letters from the English alphabet and repeat the app name if possible.
 ```
 Wrong
-<item component="..." drawable="itaú" name="Itaú" />
+<item component="..." drawable="blade_player" name="Blade Player" />
 ```
-```
-Correct
-<item component=..." drawable="itau" name="Itaú" />
-```
-If the app name starts with a digit, then the drawable should start with `_`.
+
+If an app name starts with a digit, start it with `_`.  
+
 ```
 Wrong
 <item component="..." drawable="ninegag" name="9GAG" />
 ```
+
 ```
 Correct
 <item component="..." drawable="_9gag" name="9GAG" />
 ```
 
-## How to find application components
+## How to find app components
 
-An application component is a record consisting of a package and an activity, separated by `/`. Application omponents allow you to link icons and applications. 
+An app component is a record consisting of a package and an activity, separated by `/`. App omponents allow you to link icons and apps. 
 
 Sample (Lawnicons)  
 Package: `app.lawnchair.lawnicons`  
@@ -265,7 +268,7 @@ Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 **Lawnicons**  
 
-This method is suitable if you are interested in installed applications that are not supported in Lawnicons.
+This method is suitable if you are interested in installed apps that are not supported in Lawnicons.
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
@@ -278,8 +281,8 @@ This method is suitable if you are interested in installed applications that are
 
 1. Download and launch Icon Request.
 2. Tap one of the options:
-- UPDATE EXISTING — to copy application components.
-- REQUEST NEW — to save icon images and application components. This option is better if you are creating icons.
+- UPDATE EXISTING — to copy app components.
+- REQUEST NEW — to save icon images and app components. This option is better if you are creating icons.
 3. Use the Icon Request toolbar to select apps.
 4. Copy, save or share.
 
@@ -299,7 +302,7 @@ This method is suitable if you are interested in installed applications that are
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information).
 2. Open the app whose details you want to inspect (e.g. Telegram).
 3. Open a new Command Prompt or Terminal window and input `adb devices`.
-4. Finally, type the below-given command to get the information about the currently open application.
+4. Finally, type the below-given command to get the information about the currently open app.
 
   **Mac or Linux**
 
@@ -316,20 +319,20 @@ This method is suitable if you are interested in installed applications that are
 
 ## Adding an icon to Lawnicons
 
-You need to link your SVGs and application components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
+You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
 **Manual process**  
 
-Let's imagine that you have an icon in SVG format, an application name and a component.
+Let's imagine that you have an icon in SVG format, an app name and a component.
 
 Icon: `lawnicons.svg`  
-Application name: `Lawnicons`  
+App name: `Lawnicons`  
 Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 1. Fork our repository so that you have your own copy to work with. Your repository will be a bridge between our repository and your contribution.
 2. Clone your repository in GitHub Desktop and open it with a file explorer.
-3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an application component to an existing icon, you will need its name.
-4. Open `app/assets/appfilter.xml` and evaluate how the lines are designed. Add a new line based on your information, take into account the alphabetical sorting by the application name.
+3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an app component to an existing icon, you will need its name.
+4. Open `app/assets/appfilter.xml` and evaluate how the lines are designed. Add a new line based on your information, take into account the alphabetical sorting by the app name.
 
 ```
 <item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
@@ -341,7 +344,7 @@ Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 8. Make sure that the build went without errors. Wait for a review or do a self-review.
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
-To link an application component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.
+To link an app component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.
 
 Please keep your repository up to date, otherwise you may drag a commit history through all your PRs. There are 2 main ways to do this:
 1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
