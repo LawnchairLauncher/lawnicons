@@ -233,7 +233,7 @@ Don't
 
 **Icon name (drawable)**  
 
-Repeat an app name. Use `a–z`, `0–9` and `_` for spaces. When multiple apps are linked to an icon, choose the most popular name for it.  
+Repeat an app name. Use `a–z`, `0–9` and `_` for spaces. When multiple apps are linked to an icon, choose the most popular app name for it.  
  
 ```
 Do
@@ -254,13 +254,14 @@ Do
 <item component="..." drawable="_9gag" name="9GAG" />
 
 Don't
+<item component="..." drawable="9gag" name="9GAG" />
 <item component="..." drawable="ninegag" name="9GAG" />
 ```
 
 
 ## How to find app components
 
-An app component is a record consisting of a package and an activity, separated by `/`. App omponents allow you to link icons and apps. 
+An app component is a record consisting of a package and an activity, separated by `/`. App components allow you to link icons and apps. 
 
 Sample (Lawnicons)  
 Package: `app.lawnchair.lawnicons`  
@@ -320,11 +321,17 @@ This method is suitable if you are interested in installed apps that are not sup
 
 ## Adding an icon to Lawnicons
 
-You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
+**Adding icons**. You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.  
+
+**Adding missing components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. The main thing is to consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
+
+The software you will need is described in the Tools section.
+
+[Tools](https://github.com/x9136/lawnicons/edit/develop/CONTRIBUTING.md#tools)
 
 **Manual process**  
 
-Let's imagine that you have an icon in SVG format, an app name and a component.
+Let's imagine that you have an icon in SVG format, an app name and a component.  
 
 Icon: `lawnicons.svg`  
 App name: `Lawnicons`  
@@ -344,8 +351,6 @@ Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 7. Describe your PR according to our templates and create it.
 8. Make sure that the build went without errors. Wait for a review or do a self-review.
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
-
-To link an app component to an existing icon, you need to go through the same process. The main thing is to consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.
 
 Please keep your repository up to date, otherwise you may drag a commit history through all your PRs. There are 2 main ways to do this:
 1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
