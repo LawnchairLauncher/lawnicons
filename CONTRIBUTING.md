@@ -71,31 +71,31 @@ The people who laid the foundations: [GrabsterTV](https://github.com/Grabstertv)
 
 ### Fundamentals
 
-**Canvas**  
+**1 Canvas**  
 
 ![](docs/images/fundamentals-1-canvas.png)
 
 `192 × 192 px`. Use the correct canvas size to create a safe zone around icons.  
 
-**Abstract icons**  
+**2 Abstract icons**  
 
 ![](docs/images/fundamentals-2-abstract-icons.png)
 
 `160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`.  
 
-**Square icons**  
+**3 Square icons**  
 
 ![](docs/images/fundamentals-3-square-icons.png)
 
 `154 × 154 px`. These are icons with `50%` or more of the edges running along the square.  
 
-**Color**  
+**4 Color**  
 
 ![](docs/images/fundamentals-4-color.png)
 
 All lines must be non-transparent black color: `#000000`.  
 
-**Stroke weights**  
+**5 Stroke weights**  
 
 ![](docs/images/fundamentals-5-stroke-weights.png)
 
@@ -107,13 +107,13 @@ The stroke weight should be kept at `12 px` in most cases. If an icon is too min
 
 No margin of error. Don’t use a fill. Remember to adjust the size of icons when you change the stroke weights.  
 
-**Start and end caps, joints**  
+**6 Start and end caps, joints**  
 
 ![](docs/images/fundamentals-6-start-and-end-caps-joints.png)
 
 Start and end caps, as well as joints, should be rounded.  
 
-**Corner radius**  
+**7 Corner radius**  
 
 ![](docs/images/fundamentals-7-corner-radius.png)
 
@@ -121,13 +121,13 @@ Use `6–32 px` for `90°` angles. Refer to the original icon to select a value 
 
 ### Quality
 
-**Consistency**  
+**1 Consistency**  
 
 ![](docs/images/quality-1-consistency.png)
 
 All icons should be outlined. If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
 
-**Visual balance**  
+**2 Visual balance**  
 
 ![](docs/images/quality-2-visual-balance.png)
 
@@ -139,7 +139,7 @@ Tips:
 - Apply a `14 px` stroke for minimal icons.
 - Reduce the main stroke weight depending on an icon density.  
 
-**Black spots**  
+**3 Black spots**  
 
 ![](docs/images/quality-3-black-spots.png)
 
@@ -150,7 +150,7 @@ Tips:
 - Reduce stroke weights.
 - Simplify or redraw.  
 
-**Excessive density**  
+**4 Excessive density**  
 
 ![](docs/images/quality-4-excessive-density.png)
 
@@ -164,13 +164,13 @@ Tips:
 - Enlarge original icons to make the main features easier to draw.
 - Simplify or redraw.
 
-**Visual center alignment**  
+**5 Visual center alignment**  
 
 ![](docs/images/quality-5-visual-center-aligment.png)
 
 When icons are geometrically aligned, some of them look off-center because of their shape. The visual center is where your icon looks and feels centered. Align icons to the visual center as much as possible within the icon content area.  
 
-**Text icons**  
+**6 Text icons**  
 
 ![](docs/images/quality-6-text-icons.png)
 
@@ -178,7 +178,7 @@ Text longer than `3` letters usually don’t fit the Lawnicons style. Brands and
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area. This is rare.
 
-**Complex icons**  
+**7 Complex icons**  
 
 ![](docs/images/quality-7-complex-icons.png)
 
@@ -194,11 +194,11 @@ Sources for creating a recognizable icon:
 - Essence of an app or a game.
 - Combination of recognizable features and your own ideas.  
 
-**Minimal icons**  
+**8 Minimal icons**  
 
 ![](docs/images/quality-8-minimal-icons.png)
 
-Some minimal icons, to become more recognizable, should be detailed based on an app design. Add distinctive features to them when it makes sense.  
+Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
 
 ### Naming
 The main app name should be in its native language, but there should always be an English version. Use the English app name for its icon name.
