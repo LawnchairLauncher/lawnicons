@@ -136,7 +136,7 @@ Sharp contrast occurs when there is a drastic change in a stroke weight without 
 Tips:
 - Avoid large differences between adjacent lines.
 - Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
-- Apply a `14 px` stroke for minimalistic icons.
+- Apply a `14 px` stroke for minimal icons.
 - Reduce the main stroke weight depending on an icon density.  
 
 **Black spots**  
@@ -194,11 +194,11 @@ Sources for creating a recognizable icon:
 - Essence of an app or a game.
 - Combination of recognizable features and your own ideas.  
 
-**Minimalistic icons**  
+**Minimal icons**  
 
-![](docs/images/quality-8-minimalistic-icons.png)
+![](docs/images/quality-8-minimal-icons.png)
 
-Such icons may relate to multiple apps. Add distinctive features to them when it makes sense. Use an app design as a basis.  
+Some minimal icons, to become more recognizable, should be detailed based on an app design. Add distinctive features to them when it makes sense.  
 
 ### Naming
 The main app name should be in its native language, but there should always be an English version. Use the English app name for its icon name.
@@ -323,7 +323,7 @@ This method is suitable if you are interested in installed apps that are not sup
 
 **Adding icons**. You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.  
 
-**Adding missing components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. The main thing is to consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
+**Adding missing components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
 
 The software you will need is described in the Tools section.
 
