@@ -61,9 +61,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -74,7 +74,6 @@ import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
-import app.lawnchair.lawnicons.util.appIcon
 import my.nanihadesuka.compose.InternalLazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
@@ -248,7 +247,7 @@ fun AppBarListItem(modifier: Modifier = Modifier) {
             ) {
                 if (!LocalInspectionMode.current) {
                     Image(
-                        bitmap = context.appIcon().asImageBitmap(),
+                        painter = painterResource(R.drawable.lawnicons_logo),
                         contentDescription = stringResource(id = R.string.app_name),
                         modifier = Modifier
                             .size(36.dp)
