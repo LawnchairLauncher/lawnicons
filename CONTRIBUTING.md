@@ -166,7 +166,7 @@ Tips:
 
 **5 Alignment**  
 
-![](docs/images/quality-5-aligment.png)
+![](docs/images/quality-5-alignment.png)
 
 Icons should be centered, but shape-aware.
 
