@@ -164,11 +164,11 @@ Tips:
 - Enlarge original icons to make the main features easier to draw.
 - Simplify or redraw.
 
-**5 Visual center alignment**  
+**5 Optical alignment**  
 
-![](docs/images/quality-5-visual-center-aligment.png)
+![](docs/images/quality-5-optical-aligment.png)
 
-When icons are geometrically aligned, some of them look off-center because of their shape. The visual center is where your icon looks and feels centered. Align icons to the visual center as much as possible within the icon content area.  
+When icons are geometrically aligned, some of them look off-center because of their shape. The optical aligment is where your icon looks and feels centered. Align icons to the optical center as much as possible within the icon content area.  
 
 **6 Text icons**  
 
