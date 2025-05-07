@@ -164,11 +164,13 @@ Tips:
 - Enlarge original icons to make the main features easier to draw.
 - Simplify or redraw.
 
-**5 Optical alignment**  
+**5 Alignment**  
 
-![](docs/images/quality-5-optical-aligment.png)
+![](docs/images/quality-5-aligment.png)
 
-When icons are geometrically aligned, some of them look off-center because of their shape. The optical aligment is where your icon looks and feels centered. Align icons to the optical center as much as possible within the icon content area.  
+Icons should be centered, but shape-aware.
+
+In most cases, you should place an icon so that the vertical and horizontal margins from the canvas borders are the same. Some icons will look misaligned because of their shape. You need to align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks  and feels centered.
 
 **6 Text icons**  
 
