@@ -329,7 +329,7 @@ This method is suitable if you are interested in installed apps that are not sup
 
 The software you will need is described in the Tools section.
 
-[Tools](https://github.com/x9136/lawnicons/edit/develop/CONTRIBUTING.md#tools)
+[Tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#tools)
 
 **Manual process**  
 
@@ -360,6 +360,6 @@ Please keep your repository up to date, otherwise you may drag a commit history 
 
 **Via icontool.py**  
 
-This tool will help you if you regularly create dozens of icons and are familiar with the command line.
+This tool will help you if you regularly contribute dozens of icons and are familiar with the command line.
 
 [icontool.py guide](/docs/icontool_guide.md)
