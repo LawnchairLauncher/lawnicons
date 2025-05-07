@@ -21,29 +21,34 @@ import java.io.File
 object AppfilterDiffCreator {
     private const val OUTPUT_FILE = "/xml/appfilter_diff.xml"
 
-    private fun getPreviousReleaseLines(
-        appFilterFile: String,
-    ): List<String> {
+    private fun writePreviousRelease(
+        previousAppFilterFile: String,
+    ) {
         try {
             runGitCommand(listOf("fetch", "--tags"))
         } catch (_: Exception) {
             // assume that we have fetched the tags already
         }
 
-        return try {
+        var lines = listOf<String>()
+
+        try {
             val tags = runGitCommand(listOf("tag", "--sort=-creatordate"))
-            val latestTag = tags.firstOrNull() ?: {
+            val latestTag = tags.firstOrNull { it != "nightly" } ?: {
                 // fallback to `main` branch
                 val fallbackTags = runGitCommand(listOf("show", "main"))
 
                 fallbackTags.firstOrNull() ?: throw RuntimeException("No tags found")
             }
 
-            runGitCommand(listOf("show", "$latestTag:$appFilterFile"))
+            // use relative file path, as `git show` does not work with absolute paths
+            lines = runGitCommand(listOf("show", "$latestTag:app/assets/appfilter.xml"))
         } catch (e: Exception) {
             println(e)
-            listOf()
         }
+
+        val outputFile = File(previousAppFilterFile)
+        outputFile.writeText(lines.joinToString(separator = "\n"))
     }
 
     private fun runGitCommand(
@@ -60,7 +65,7 @@ object AppfilterDiffCreator {
             if (process.waitFor() != 0) {
                 throw RuntimeException("Failed to execute $command: $result")
             }
-            println("task git $args completed")
+            println("Task `git $args` completed")
 
             result
         } catch (e: Exception) {
@@ -117,9 +122,12 @@ object AppfilterDiffCreator {
     fun createAppfilterDiff(
         resDir: String,
         appFilterFile: String,
+        previousAppFilterFile: String,
     ) {
+        writePreviousRelease(previousAppFilterFile)
+
         val diff = getLineDiff(
-            getPreviousReleaseLines(appFilterFile),
+            readFileContents(previousAppFilterFile),
             readFileContents(appFilterFile),
         )
 
