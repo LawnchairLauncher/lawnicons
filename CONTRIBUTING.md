@@ -176,9 +176,9 @@ In most cases, you should place an icon so that the vertical and horizontal marg
 
 ![](docs/images/quality-6-text-icons.png)
 
-Text longer than `3` letters usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+Text longer than `3` letters in `1` line usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
-If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area. This is rare.
+If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
 **7 Complex icons**  
 
