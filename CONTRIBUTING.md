@@ -1,7 +1,7 @@
 # Lawnicons contributing guide
 Welcome to the Lawnicons contributing guide!
 
-When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize time losses. Please ask questions about the guide in our Discord. If you find errors in the guide, create an issue.
+When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize time losses. In case of unclear wording, write to us in Discord. If you find errors in the guide, create an issue.
 
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
@@ -54,9 +54,7 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 ### Approach
 
-The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework. In case of unclear wording, write to us in Discord.
-
-The main goal is to create high-quality icons in the style of Lawnicons. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
+Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't sacrifice quality and avoid compromises.
 
 Tips:
 - Carefully study the Lawnicons design guidelines.
@@ -64,7 +62,7 @@ Tips:
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 
-[Our Discord](https://discord.com/invite/3x8qNWxgGZ) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
+[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
 ](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
 ### Fundamentals
@@ -207,7 +205,7 @@ The main app name should be in its native language, but there should always be a
 
 **App name**  
 
-Official name, usually as in app stores or primary sources. Delete things that are not part of an app name. Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+Official name, usually as in app stores or primary sources. Delete things that aren't part of an app name. Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
 
 ```
 Do
@@ -233,7 +231,7 @@ Don't
 
 **Icon name (drawable)**  
 
-Repeat an app name. Use `a–z`, `0–9` and `_` for spaces. When multiple apps are linked to an icon, choose the most popular app name for it.  
+Repeat an app name. Use `a–z`, `0–9`, and `_` for spaces. When multiple apps are linked to `1` icon, choose the most popular app name for it.  
  
 ```
 Do
@@ -269,7 +267,7 @@ Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 **Lawnicons**  
 
-This method is suitable if you are interested in installed apps that are not supported in Lawnicons.
+This method is suitable if you are interested in installed apps that aren't supported in Lawnicons.
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
