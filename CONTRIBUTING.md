@@ -19,9 +19,42 @@ Tips:
 
 [Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) • [Lawnchair's Telegram](https://t.me/lawnchairci)
 
-## Contributing icons
+## Icon contribution tools
 
-### Icon contribution approach
+### Vector graphics editor
+
+To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
+
+[Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
+
+### GitHub Desktop
+
+You can use it to create a local copy of your repository on GitHub and upload all the changes. Before getting into your repository, the changes must appear in your local copy.
+
+[GitHub Desktop](https://github.com/apps/desktop)
+
+### Component search tool
+
+You can use it to find app components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
+
+[How to find app components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
+
+### Other tools
+**File explorer**. It will help you copy icons to a local copy of your repository.
+
+**Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
+
+**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
+
+## Lawnicons design guidelines
+
+The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
+
+[View in Figma](https://www.figma.com/community/file/1227718471680779613)
+
+### Approach
+
+The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework. In case of unclear wording, write to us in Discord.
 
 The main goal is to create high-quality icons in the style of Lawnicons. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't copy original icons, neglecting the quality. Avoid compromise as much as possible.
 
@@ -31,43 +64,8 @@ Tips:
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 
-[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
+[Our Discord](https://discord.com/invite/3x8qNWxgGZ) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
 ](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
-
-### Tools
-
-#### Vector graphics editor
-
-To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
-
-[Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
-
-#### GitHub Desktop
-
-You can use it to create a local copy of your repository on GitHub and upload all the changes. Before getting into your repository, the changes must appear in your local copy.
-
-[GitHub Desktop](https://github.com/apps/desktop)
-
-#### Component search tool
-
-You can use it to find app components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
-
-[How to find app components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
-
-#### Other tools
-**File explorer**. It will help you copy icons to a local copy of your repository.
-
-**Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
-
-**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
-
-## Lawnicons design guidelines
-
-The consistency of Lawnicons is based on fundamentals and quality. Please read it carefully to avoid any rework. In case of unclear wording, write to us in Discord.
-
-The people who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
-
-[View in Figma](https://www.figma.com/design/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?node-id=814-1114&t=fHuLvXCiz0jsFHYB-1) • [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
 ### Fundamentals
 
@@ -260,7 +258,6 @@ Don't
 <item component="..." drawable="ninegag" name="9GAG" />
 ```
 
-
 ## How to find app components
 
 An app component is a record consisting of a package and an activity, separated by `/`. App components allow you to link icons and apps. 
@@ -331,7 +328,7 @@ The software you will need is described in the Tools section.
 
 [Tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#tools)
 
-**Manual process**  
+### Manual process
 
 Let's imagine that you have an icon in SVG format, an app name and a component.  
 
@@ -358,7 +355,7 @@ Please keep your repository up to date, otherwise you may drag a commit history 
 1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 2. Or delete your repository and start the contribution process from scratch.
 
-**Via icontool.py**  
+### Via icontool.py
 
 This tool will help you if you regularly contribute dozens of icons and are familiar with the command line.
 
