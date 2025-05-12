@@ -33,18 +33,22 @@ You can use it to create a local copy of your repository on GitHub and upload al
 
 [GitHub Desktop](https://github.com/apps/desktop)
 
-### Component search tool
+### App components search tool
 
-You can use it to find app components. Lawnicons allows you to find components for missing icons. Icon Request and Icon Pusher are better suited for any icons. If you fulfill icon requests from our table, all the components are there.
+You can use it to find app components. If you fulfill icon requests from our table, all the components are there.
 
-[How to find app components](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
+[How to find app components](https://github.com/x9136/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
+<!---
+Replace the link.
+-->
 
 ### Other tools
+
 **File explorer**. It will help you copy icons to a local copy of your repository.
 
 **Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
 
-**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons or want to avoid an end-to-end history of changes in your PRs.
+**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons.
 
 ## Lawnicons design guidelines
 
@@ -298,29 +302,31 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 **Android Debug Bridge (adb)**  
 
-1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information).
+1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed.
 2. Open the app whose details you want to inspect (e.g. Telegram).
 3. Open a new Command Prompt or Terminal window and input `adb devices`.
 4. Finally, type the below-given command to get the information about the currently open app.
 
-  **Mac or Linux**
+[How to install ADB](https://www.xda-developers.com/install-adb-windows-macos-linux/)
+
+  Mac or Linux
 
   ```console
   adb shell dumpsys window | grep 'mCurrentFocus'
   ```
 
-  **Windows**
+  Windows
 
   ```console
   adb shell dumpsys window | findstr "mCurrentFocus"
   ```
   ![](docs/images/contributing-image-3.png)
 
-## Adding an icon to Lawnicons
+## Adding icons or missing components to Lawnicons
 
-**Adding icons**. You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.  
+**Icons**. You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.  
 
-**Adding missing components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
+**Missing components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
 
 The software you will need is described in the Tools section.
 
@@ -330,13 +336,13 @@ The software you will need is described in the Tools section.
 
 Let's imagine that you have an icon in SVG format, an app name and a component.  
 
-Icon: `lawnicons.svg`  
+Icon: `lawnicons`.svg  
 App name: `Lawnicons`  
 Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 1. Fork our repository so that you have your own copy to work with. Your repository will be a bridge between our repository and your contribution.
 2. Clone your repository in GitHub Desktop and open it with a file explorer.
-3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an app component to an existing icon, you will need its name.
+3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an app component to an existing icon, you will need the icon name.
 4. Open `app/assets/appfilter.xml` and evaluate how the lines are designed. Add a new line based on your information, take into account the alphabetical sorting by the app name.
 
 ```
@@ -353,7 +359,7 @@ Please keep your repository up to date, otherwise you may drag a commit history 
 1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 2. Or delete your repository and start the contribution process from scratch.
 
-### Via icontool.py
+### icontool.py
 
 This tool will help you if you regularly contribute dozens of icons and are familiar with the command line.
 
