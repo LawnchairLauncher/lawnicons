@@ -19,37 +19,6 @@ Tips:
 
 [Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) • [Lawnchair's Telegram](https://t.me/lawnchairci)
 
-## Icon contribution tools
-
-### Vector graphics editor
-
-To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
-
-[Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
-
-### GitHub Desktop
-
-You can use it to create a local copy of your repository on GitHub and upload all the changes. Before getting into your repository, the changes must appear in your local copy.
-
-[GitHub Desktop](https://github.com/apps/desktop)
-
-### App components search tool
-
-You can use it to find app components. If you fulfill icon requests from our table, all the components are there.
-
-[How to find app components](https://github.com/x9136/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
-<!---
-Replace the link.
--->
-
-### Other tools
-
-**File explorer**. It will help you copy icons to a local copy of your repository.
-
-**Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
-
-**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons.
-
 ## Lawnicons design guidelines
 
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
@@ -260,6 +229,37 @@ Don't
 <item component="..." drawable="ninegag" name="9GAG" />
 ```
 
+## Icon contribution tools
+
+### Vector graphics editor
+
+To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
+
+[Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
+
+### GitHub Desktop
+
+You can use it to create a local copy of your repository on GitHub and upload all the changes. Before getting into your repository, the changes must appear in your local copy.
+
+[GitHub Desktop](https://github.com/apps/desktop)
+
+### App components search tool
+
+You can use it to find app components. If you fulfill icon requests from our table, all the app components are there.
+
+[How to find app components](https://github.com/x9136/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-components)
+<!---
+Replace the link.
+-->
+
+### Other tools
+
+**File explorer**. It will help you copy icons to a local copy of your repository.
+
+**Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
+
+**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons.
+
 ## How to find app components
 
 An app component is a record consisting of a package and an activity, separated by `/`. App components allow you to link icons and apps. 
@@ -267,7 +267,7 @@ An app component is a record consisting of a package and an activity, separated 
 Sample (Lawnicons)  
 Package: `app.lawnchair.lawnicons`  
 Activity: `app.lawnchair.lawnicons.MainActivity`  
-Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
+App component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
 **Lawnicons**  
 
@@ -275,7 +275,7 @@ This method is suitable if you are interested in installed apps that aren't supp
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
-4. Copy missing components to clipboard.
+4. Copy missing app components to clipboard.
 5. Save it wherever it's convenient.
 
 [Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
@@ -296,7 +296,7 @@ This method is suitable if you are interested in installed apps that aren't supp
 1. Download and launch Icon Pusher.
 2. Select the icons you want to upload or select all by pressing the square in the top right.
 3. Submit the selected apps.
-4. View the submitted components on the Icon Pusher website.
+4. View your submission on the Icon Pusher website.
 
 [Google Play](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher) • [Website](https://iconpusher.com/)
 
@@ -322,11 +322,11 @@ This method is suitable if you are interested in installed apps that aren't supp
   ```
   ![](docs/images/contributing-image-3.png)
 
-## Adding icons or missing components to Lawnicons
+## Adding icons or missing app components to Lawnicons
 
 **Icons**. You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.  
 
-**Missing components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
+**Missing app components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
 
 The software you will need is described in the Tools section.
 
@@ -334,15 +334,15 @@ The software you will need is described in the Tools section.
 
 ### Manual process
 
-Let's imagine that you have an icon in SVG format, an app name and a component.  
+Let's imagine that you have an icon in SVG format, an app name and an app component.  
 
 Icon: `lawnicons`.svg  
 App name: `Lawnicons`  
-Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
+App component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 1. Fork our repository so that you have your own copy to work with. Your repository will be a bridge between our repository and your contribution.
 2. Clone your repository in GitHub Desktop and open it with a file explorer.
-3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an app component to an existing icon, you will need the icon name.
+3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an app component to an existing icon, you will need the existing icon name.
 4. Open `app/assets/appfilter.xml` and evaluate how the lines are designed. Add a new line based on your information, take into account the alphabetical sorting by the app name.
 
 ```
@@ -356,11 +356,11 @@ Component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
 Please keep your repository up to date, otherwise you may drag a commit history through all your PRs. There are 2 main ways to do this:
-1. Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
-2. Or delete your repository and start the contribution process from scratch.
+- Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
+- Or delete your repository and start the contribution process from scratch.
 
 ### icontool.py
 
-This tool will help you if you regularly contribute dozens of icons and are familiar with the command line.
+This tool will help you if you regularly contribute dozens of icons.
 
 [icontool.py guide](/docs/icontool_guide.md)
