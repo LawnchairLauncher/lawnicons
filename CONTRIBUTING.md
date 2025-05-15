@@ -359,9 +359,7 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 **Missing app components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
 
-The software you will need is described in the Tools section.
-
-[Tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#tools)
+[Icon contribution tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-contribution-tools)
 
 ### Manual process
 
