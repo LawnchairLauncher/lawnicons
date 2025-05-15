@@ -16,7 +16,7 @@ The main tasks are to maintain Lawnicons and interaction with launchers, fix bug
 
 **Icons**  
 
-You can contribute your icons, fulfill icon requests, add missing app components, refine and update existing icons, clean up dead apps and duplicates. When you have mastered the Lawnicons design guidelines in practice, you will also be able to do icon reviews.
+You can contribute your icons, fulfill icon requests, add missing app components, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
 
 [Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors)
 
