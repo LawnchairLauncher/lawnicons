@@ -188,27 +188,36 @@ Sources for creating a recognizable icon:
 Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
 
 ### Naming
-The main app name should be in its native language, but there should always be an English version. Use the English app name for its icon name.
-
-[Examples in appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
 
 **App name**  
 
-Official name, usually as in app stores or primary sources. Delete things that aren't part of an app name. Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+The main app name should be in its native language. It can be found in app stores or primary sources.
+
+An additional name is needed for non-English apps and should consist of letters of the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
+
+Tips:
+- Use localized names if available.
+- Transliterate non-English names when there are no localized ones.
+- Delete things that aren't part of an app name.
+- Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+
+[Thousands of examples in appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
 
 ```
 Do
+<item component="..." drawable="doviz" name="Döviz" />
 <item component="..." drawable="gps_status_and_toolbox" name="GPS Status &amp; Toolbox" />
 <item component="..." drawable="playstation" name="PlayStation" />
-<item component="..." drawable="zoom" name="Zoom" />
+<item component="..." drawable="eromodo" name="Vágyaid ~~ Eromodo" />
 
 Don't
+<item component="..." drawable="doviz" name="Döviz ~~ Doviz" />
 <item component="..." drawable="gps_status_and_toolbox" name="GPS Status & Toolbox" />
 <item component="..." drawable="playstation" name="PlayStation App" />
-<item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
+<item component="..." drawable="eromodo" name="Eromodo" />
 ```
 
-Separate app names using `~~`. First, the main app name, then the additional one.  
+Separate app names using `~~`. First, the main app name, then the additional one.
 
 ```
 Do • Considering the origin of the Hulu app
@@ -220,17 +229,23 @@ Don't
 
 **Icon name (drawable)**  
 
-Repeat an app name. Use `a–z`, `0–9`, and `_` for spaces. When multiple apps are linked to `1` icon, choose the most popular app name for it.  
- 
+Repeat the app name if possible. Use `a–z`, `0–9`, and `_` for spaces.  
+
+Tips
+- When multiple apps are linked to `1` icon, choose the most popular app name for it.
+- Replace non-English letters with English letters.
+
 ```
 Do
 <item component="..." drawable="a_and_w" name="A&amp;W" />
 <item component="..." drawable="blade_player" name="Blade Player" />
+<item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
 <item component="..." drawable="yahoo_news" name="Yahoo!ニュース ~~ Yahoo! News" />
 
 Don't
 <item component="..." drawable="aw" name="A&amp;W" />
 <item component="..." drawable="bladeplayer" name="Blade Player" />
+<item component="..." drawable="länsförsäkringar" name="Länsförsäkringar" />
 <item component="..." drawable="yahoo!_news" name="Yahoo!ニュース ~~ Yahoo! News" />
 ```
 
