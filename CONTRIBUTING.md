@@ -22,7 +22,7 @@ You can contribute your icons, fulfill icon requests, add missing app components
 
 ## Contributing code
 
-Code-related contributions are welcome.
+Code-related contributions are welcome. Significant changes to the UI should be discussed on our Lawnchair's Telegram group chat. Generally, we want to keep things clean and simple.
 
 To build Lawnicons, select the `appDebug` build variant.
 
@@ -31,9 +31,8 @@ Tips:
 - You can use either Java or, preferably, Kotlin.
 - Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
 - The `app` module contains most of Lawnicons' core code, while the `svg-processor` module contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
-- Significant changes to the UI should be discussed on our Lawnchair's Telegram group chat. Generally, we want to keep things clean and simple.
 
-[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) • [Lawnchair's Telegram](https://t.me/lawnchairci)
+[Lawnchair's Telegram](https://t.me/lawnchairci) • [Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor)
 
 ## Lawnicons design guidelines
 
@@ -43,7 +42,7 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 ### Approach
 
-Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Avoid compromises.
+Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch.
 
 Tips:
 - Carefully study the Lawnicons design guidelines.
