@@ -6,7 +6,7 @@ In case of unclear wording, write to us in Discord. If you find errors in the gu
 
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
-## Contributions
+## Contributors
 
 The Lawnchair team does most of the development, while our community makes icons and sometimes touches the code too. 
 
@@ -193,10 +193,10 @@ Some minimal icons should be detailed based on an app design to become more reco
 
 The main app name should be in its native language. It can be found in app stores or primary sources.
 
-An additional name is needed for non-English apps and should consist of letters of the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
+Non-English apps require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
 
 Tips:
-- Use localized names if available.
+- Add localized names if available.
 - Transliterate non-English names when there are no localized ones.
 - Delete things that aren't part of an app name.
 - Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
@@ -386,7 +386,7 @@ App component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 8. Make sure that the build went without errors. Wait for a review or do a self-review.
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
-Please keep your repository up to date, otherwise you may drag a commit history through all your PRs. There are 2 main ways to do this:
+Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag a commit history through all your PRs. There are two main ways to do this:
 - Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 - Or delete your repository and start the contribution process from scratch.
 
