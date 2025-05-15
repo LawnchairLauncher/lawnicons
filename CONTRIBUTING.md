@@ -1,12 +1,28 @@
 # Lawnicons contributing guide
+
 Welcome to the Lawnicons contributing guide!
 
-When working on Lawnicons, we adhere to the DIY principle. Let's try to minimize time losses. In case of unclear wording, write to us in Discord. If you find errors in the guide, create an issue.
+In case of unclear wording, write to us in Discord. If you find errors in the guide, create an issue.
 
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
+## Contributions
+
+The Lawnchair team does most of the development, while our community makes icons and sometimes touches the code too. 
+
+**Development**  
+
+The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
+
+**Icons**  
+
+You can contribute your icons, fulfill icon requests, add missing app components, refine and update existing icons, clean up dead apps and duplicates. When you have mastered the Lawnicons design guidelines in practice, you will also be able to do icon reviews.
+
+[Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors)
+
 ## Contributing code
-Code-related contributions are welcome. The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
+
+Code-related contributions are welcome.
 
 To build Lawnicons, select the `appDebug` build variant.
 
@@ -27,13 +43,14 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 ### Approach
 
-Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Don't sacrifice quality and avoid compromises.
+Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch. Avoid compromises.
 
 Tips:
 - Carefully study the Lawnicons design guidelines.
 - See how other contributors have made pull requests (PRs).
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
+- Don't sacrifice quality.
 
 [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
 ](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
