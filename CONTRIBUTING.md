@@ -356,11 +356,13 @@ This method is suitable if you are interested in installed apps that aren't supp
   ```
   ![](docs/images/contributing-image-3.png)
 
-## Adding icons or missing app components to Lawnicons
+## Adding icons and missing app components to Lawnicons
 
-**Icons**. You need to link your SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.  
+You need to link SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
-**Missing app components**. You need to link existing SVGs and missing app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed. Consider the identity of the icons. For instance, Just Eat and Menulog have the identical icons.  
+Tips
+- Avoid name conflicts.
+- Add missing components to icons that are identical to the originals.
 
 [Icon contribution tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-contribution-tools)
 
@@ -368,24 +370,27 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 Let's imagine that you have an icon in SVG format, an app name and an app component.  
 
-Icon: `lawnicons`.svg  
+Icon: `lawnicons.svg`  
 App name: `Lawnicons`  
 App component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 1. Fork our repository so that you have your own copy to work with. Your repository will be a bridge between our repository and your contribution.
-2. Clone your repository in GitHub Desktop and open it with a file explorer.
-3. Copy `lawnicons.svg` to `svgs/` folder. Avoid name conflicts. If you want to link an app component to an existing icon, you will need the existing icon name.
-4. Open `app/assets/appfilter.xml` and evaluate how the lines are designed. Add a new line based on your information, take into account the alphabetical sorting by the app name.
+2. Clone your repository in GitHub Desktop and open it with a file explorer. This is your local copy.
+3. Сopy `lawnicons.svg` to `svgs/` folder. Memorize the icon name so that you can link the app component to it.
+4. Open `app/assets/appfilter.xml` and add a new line based on your information. Take into account the alphabetical sorting by the app name.
 
 ```
+Do
 <item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
+
+Template
+<item component="ComponentInfo{APP_COMPONENT}" drawable="ICON_NAME" name="APP_NAME" />
 ```
 
 5. Save all your changes and push it to your repository via GitHub Desktop.
-6. Open your repository in a web browser and open a PR: `Contribute → Open pull request`.
-7. Describe your PR according to our templates and create it.
-8. Make sure that the build went without errors. Wait for a review or do a self-review.
-9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
+6. Open your repository in a web browser and create a PR: `Contribute → Open pull request`. Describe your PR according to our templates.
+7. Make sure that the build went without errors. Wait for a review or do a self-review.
+8. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
 Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag a commit history through all your PRs. There are two main ways to do this:
 - Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
