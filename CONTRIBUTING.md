@@ -10,15 +10,19 @@ In case of unclear wording, write to us in Discord. If you find errors in the gu
 
 The Lawnchair team does most of the development, while our community makes icons and sometimes touches the code too. 
 
+[Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors)
+
 **Development**  
 
 The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
+
+[Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 
 **Icons**  
 
 You can contribute your icons, fulfill icon requests, add missing app components, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
 
-[Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
 ## Contributing code
 
@@ -26,7 +30,7 @@ Code-related contributions are welcome. Significant changes to the UI should be 
 
 To build Lawnicons, select the `appDebug` build variant.
 
-Tips:
+Tips
 - Set `develop` as the base branch for pull requests.
 - You can use either Java or, preferably, Kotlin.
 - Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
@@ -36,7 +40,7 @@ Tips:
 
 ## Lawnicons design guidelines
 
-The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski)
+The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
 [View in Figma](https://www.figma.com/community/file/1227718471680779613)
 
@@ -44,15 +48,14 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch.
 
-Tips:
+Tips
 - Carefully study the Lawnicons design guidelines.
 - See how other contributors have made pull requests (PRs).
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 - Don't sacrifice quality.
 
-[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons) • [Easy-to-make icons
-](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
 ### Fundamentals
 
@@ -118,7 +121,7 @@ All icons should be outlined. If necessary, you can use small shapes that mimic
 
 Sharp contrast occurs when there is a drastic change in a stroke weight without a smooth transition. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
-Tips:
+Tips
 - Avoid large differences between adjacent lines.
 - Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
 - Apply a `14 px` stroke for minimal icons.
@@ -130,7 +133,7 @@ Tips:
 
 Avoid black spots as much as possible.
 
-Tips:
+Tips
 - Trim lines.
 - Reduce stroke weights.
 - Simplify or redraw.  
@@ -141,7 +144,7 @@ Tips:
 
 Keep at least `8 px` between lines. Ideally, at least `12 px`.
 
-Tips:
+Tips
 - Move lines further apart.
 - Combine parallel lines into one.
 - Trim or extend lines.
@@ -195,13 +198,13 @@ The main app name should be in its native language. It can be found in app store
 
 Non-English apps require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
 
-Tips:
+Tips
 - Add localized names if available.
 - Transliterate non-English names when there are no localized ones.
 - Delete things that aren't part of an app name.
 - Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
 
-[Thousands of examples in appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
+[Thousands of examples](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
 
 ```
 Do
