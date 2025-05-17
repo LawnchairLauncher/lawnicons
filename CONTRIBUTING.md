@@ -393,6 +393,8 @@ Template
 7. Make sure that the build went without errors. Wait for a review or do a self-review.
 8. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
+**Clean commit history**  
+
 Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag a commit history through all your PRs. There are two main ways to do this:
 - Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
 - Or delete your repository and start the contribution process from scratch.
