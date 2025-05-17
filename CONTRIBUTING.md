@@ -6,17 +6,17 @@ In case of unclear wording, write to us in Discord. If you find errors in the gu
 
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
-## Contributors
+## Involvement
 
-The Lawnchair team does most of the development, while our community makes icons and sometimes touches the code too. 
+**Contributors**
 
-[Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors)
+The Lawnchair team is focused on development only. Our community (basically everyone who wants to) makes icons and sometimes touches the code too. 
+
+[Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors) • [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 
 **Development**  
 
 The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
-
-[Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 
 **Icons**  
 
@@ -363,8 +363,9 @@ You need to link SVGs and app components correctly, create a PR to our repositor
 Tips
 - Avoid name conflicts.
 - Add missing components to icons that are identical to the originals.
+- Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[Icon contribution tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-contribution-tools)
+[Icon contribution tools](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-contribution-tools) • [appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 
