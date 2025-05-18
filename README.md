@@ -49,19 +49,15 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-> [!NOTE]
-> We will update the Lawnicons design guidelines in early June ([draft](https://github.com/LawnchairLauncher/lawnicons/pull/2668)). Please leave feedback, if you have any. You can create icons based on the update.
-
 Please see our guidelines for information on contributing icons or code.
-<!---
-You can add your icons, fulfill icon requests, fix and update existing icons, add missing application components, or develop Lawnicons by solving issues.
--->
 
-[Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Link apps to identical icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-an-icon-to-lawnicons) • [Lawnicons guidelines](CONTRIBUTING.md)
+[Lawnicons guidelines](CONTRIBUTING.md) (updated: May 2025) • [Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Link apps and icons](CONTRIBUTING.md#adding-icons-and-missing-app-components-to-lawnicons)
 
 ## Requesting icons
-`Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
 
-We plan to close icon requests in early June. Please request icons in advance.
+> [!NOTE]
+> We plan to close icon requests in early June. Please request icons in advance.
+
+`Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
 
 [Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
