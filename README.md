@@ -54,8 +54,10 @@ Please see our guidelines for information on contributing icons or code.
 [Lawnicons guidelines](CONTRIBUTING.md) (updated: May 2025) • [Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Link apps and icons](CONTRIBUTING.md#adding-icons-and-missing-app-components-to-lawnicons)
 
 ## Requesting icons
-`Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
 
-We plan to close icon requests in early June. Please request icons in advance.
+> [!NOTE]
+> We plan to close icon requests in early June. Please request icons in advance.
+
+`Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
 
 [Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
