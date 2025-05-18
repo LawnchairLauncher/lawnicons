@@ -2,7 +2,7 @@
 
 Welcome to the Lawnicons contributing guide!
 
-In case of unclear wording, write to us in Discord. If you find errors in the guide, create an issue.
+In case of unclear wording, ask us in our Discord. If you find errors or want to suggest improvements in the guide itself, create an issue.
 
 [Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
@@ -26,7 +26,7 @@ You can contribute your icons, fulfill icon requests, add missing app components
 
 ## Contributing code
 
-Code-related contributions are welcome. Significant changes to the UI should be discussed on our Lawnchair's Telegram group chat. Generally, we want to keep things clean and simple.
+Code-related contributions are welcome. Significant changes to the UI should be discussed in our Discord. Generally, we want to keep things clean and simple.
 
 To build Lawnicons, select the `appDebug` build variant.
 
@@ -36,7 +36,7 @@ Tips
 - Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
 - The `app` module contains most of Lawnicons' core code, while the `svg-processor` module contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
 
-[Lawnchair's Telegram](https://t.me/lawnchairci) • [Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor)
+[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor)
 
 ## Lawnicons design guidelines
 
@@ -46,14 +46,14 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 ### Approach
 
-Lawnicons style is based on fundamentals and quality. Please read it carefully to avoid any rework. The main goal is to create high-quality icons in the Lawnicons style. The icons should make it clear which app will open. Sometimes, to achieve this goal, you need to create an icon from scratch.
+The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
 
 Tips
 - Carefully study the Lawnicons design guidelines.
 - See how other contributors have made pull requests (PRs).
 - Practice on easy-to-make icons to understand the whole process.
 - Make no more than 5 icons at a time, as long as your PRs require rework.
-- Don't sacrifice quality.
+- Prioritize quality.
 
 [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
