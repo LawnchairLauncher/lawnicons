@@ -36,7 +36,7 @@ Tips
 - Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
 - The `app` module contains most of Lawnicons' core code, while the `svg-processor` module contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
 
-[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) • [SVG-processor module](svg-processor)
+[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](app) • [SVG-processor module](svg-processor)
 
 ## Lawnicons design guidelines
 
@@ -203,7 +203,7 @@ Tips
 - Delete things that aren't part of an app name.
 - Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
 
-[Thousands of examples](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml)
+[Thousands of examples](app/assets/appfilter.xml)
 
 ```
 Do
@@ -361,7 +361,7 @@ Tips
 - Add missing components to icons that are identical to the originals.
 - Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 
