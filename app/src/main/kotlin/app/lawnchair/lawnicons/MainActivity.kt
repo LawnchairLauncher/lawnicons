@@ -3,6 +3,7 @@ package app.lawnchair.lawnicons
 import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
+import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
@@ -18,8 +19,8 @@ import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.DrawableCompat
-import androidx.core.graphics.drawable.toBitmap
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.Lawnicons
@@ -84,10 +85,31 @@ class MainActivity : ComponentActivity() {
             }
 
         if (drawable != null) {
-            DrawableCompat.setTintList(drawable, ColorStateList.valueOf(primaryForegroundColor))
-            DrawableCompat.setTintList(drawable, ColorStateList.valueOf(primaryBackgroundColor))
+            val targetBitmapSize = 192
+            val bitmap = createBitmap(targetBitmapSize, targetBitmapSize)
+            val canvas = Canvas(bitmap)
 
-            val bitmap = drawable.toBitmap()
+            canvas.drawColor(primaryBackgroundColor)
+
+            val foregroundDrawable = drawable.apply {
+                DrawableCompat.setTintList(this, ColorStateList.valueOf(primaryForegroundColor))
+            }
+
+            val foregroundActualSize = (targetBitmapSize * (2.0f / 3.0f)).toInt()
+
+            val insetFromEdgeHorizontal = (targetBitmapSize - foregroundActualSize) / 2
+            val insetFromEdgeVertical = (targetBitmapSize - foregroundActualSize) / 2
+
+            val right = targetBitmapSize - insetFromEdgeHorizontal
+            val bottom = targetBitmapSize - insetFromEdgeVertical
+
+            foregroundDrawable.setBounds(
+                insetFromEdgeHorizontal,
+                insetFromEdgeVertical,
+                right,
+                bottom,
+            )
+            foregroundDrawable.draw(canvas)
 
             try {
                 intent.putExtra(
@@ -99,9 +121,20 @@ class MainActivity : ComponentActivity() {
                     },
                 )
             } catch (e: Exception) {
-                Log.d("ERROR", e.toString())
+                Log.d("SetIntentResult", e.toString())
             }
-            intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconInfo.id)
+            val iconRes = Intent.ShortcutIconResource.fromContext(this, iconInfo.id)
+
+            if (BuildConfig.DEBUG) {
+                Log.d(
+                    "SetIntentResult",
+                    "Preparing to send bitmap. " +
+                        "Width: ${bitmap.width}, Height: ${bitmap.height}, " +
+                        "Config: ${bitmap.config}, ByteCount: ${bitmap.byteCount}, " +
+                        "isRecycled: ${bitmap.isRecycled}",
+                )
+            }
+            intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, iconRes)
             setResult(RESULT_OK, intent)
         } else {
             setResult(RESULT_CANCELED, intent)
