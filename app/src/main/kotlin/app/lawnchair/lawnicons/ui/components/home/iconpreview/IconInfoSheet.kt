@@ -75,7 +75,7 @@ fun IconInfoSheet(
         skipPartiallyExpanded = true,
     )
 
-    val groupedComponents = rememberSaveable {
+    val groupedComponents = remember {
         iconInfo.componentNames
             .groupBy { it.label }
             .map { (label, components) ->
