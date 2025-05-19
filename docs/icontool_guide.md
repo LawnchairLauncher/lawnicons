@@ -17,7 +17,7 @@ For Mac/Linux users, you can simply type `./icontool` to run the program. Otherw
 
 ## Adding icons
 ```console
-python3 icontool.py add /path/to/ICON APP_COMPONENT "APP_NAME"
+python3 icontool.py add /path/to/ICON_NAME APP_COMPONENT "APP_NAME"
 ```
 
 The `.svg` extension for `icon.svg` is optional, since the program automatically adds them.
