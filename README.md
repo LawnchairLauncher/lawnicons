@@ -49,9 +49,9 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-Please see our guidelines for information on contributing icons or code.
+You can contribute to the project by adding icons and solving development issues. Please see our guidelines for more info.  
 
-[Lawnicons guidelines](CONTRIBUTING.md) (updated: May 2025) • [Easy-to-make icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Link apps and icons](CONTRIBUTING.md#adding-icons-and-missing-app-components-to-lawnicons)
+[Lawnicons guidelines](CONTRIBUTING.md) (updated: May 2025) • [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Link apps and icons](CONTRIBUTING.md#adding-icons-and-missing-app-components-to-lawnicons)
 
 ## Requesting icons
 
