@@ -83,7 +83,6 @@ class PreferenceManager private constructor(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {
     val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", false)
-    val showNewIconsCard = BoolPref("show_new_icons_card", true)
     val showDebugMenu = BoolPref("debug_menu", false)
     val forceEnableIconRequest = BoolPref("force_icon_request", false)
     val iconRequestsEnabled = BoolPref("icon_requests_enabled", false)

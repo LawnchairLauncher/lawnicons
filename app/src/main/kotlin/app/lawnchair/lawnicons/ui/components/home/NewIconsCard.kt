@@ -16,17 +16,15 @@
 
 package app.lawnchair.lawnicons.ui.components.home
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Clear
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -38,7 +36,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
@@ -47,60 +44,40 @@ fun NewIconsCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    val prefs = preferenceManager()
-    val cardState = prefs.showNewIconsCard.asState()
-    NewIconsCard(
-        onClick = onClick,
-        visible = cardState.value,
-        onVisibilityChange = {
-            prefs.showNewIconsCard.set(false)
-        },
-        modifier = modifier,
-    )
-}
-
-@Composable
-fun NewIconsCard(
-    onClick: () -> Unit,
-    visible: Boolean,
-    onVisibilityChange: () -> Unit,
-    modifier: Modifier = Modifier,
-) {
-    AnimatedVisibility(visible) {
-        Surface(
-            color = MaterialTheme.colorScheme.surfaceContainer,
-            shape = MaterialTheme.shapes.extraLarge,
-            modifier = modifier
-                .padding(horizontal = 8.dp)
-                .padding(bottom = 12.dp)
-                .fillMaxWidth(),
+    Surface(
+        color = MaterialTheme.colorScheme.surfaceContainer,
+        shape = MaterialTheme.shapes.extraLarge,
+        modifier = modifier
+            .padding(horizontal = 8.dp)
+            .padding(bottom = 12.dp)
+            .fillMaxWidth(),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .clickable { onClick() }
+                .padding(start = 12.dp),
         ) {
+            Icon(
+                painterResource(R.drawable.new_releases),
+                contentDescription = null,
+            )
+            Spacer(
+                modifier = Modifier
+                    .height(48.dp)
+                    .width(8.dp),
+            )
             Row(
                 verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier
-                    .clickable { onClick() }
-                    .padding(start = 12.dp),
             ) {
-                Row {
-                    Icon(
-                        painterResource(R.drawable.new_releases),
-                        contentDescription = null,
-                    )
-                    Spacer(Modifier.width(8.dp))
-                    Text(
-                        text = stringResource(
-                            R.string.new_icons_in_version,
-                            BuildConfig.VERSION_NAME,
-                        ),
-                        style = MaterialTheme.typography.titleSmall,
-                    )
-                }
-                Spacer(Modifier.weight(1f))
-                IconButton(
-                    onClick = onVisibilityChange,
-                ) {
-                    Icon(Icons.Rounded.Clear, contentDescription = stringResource(R.string.clear))
-                }
+                Text(
+                    text = stringResource(
+                        R.string.new_icons_in_version,
+                        BuildConfig.VERSION_NAME,
+                    ),
+                    style = MaterialTheme.typography.titleSmall,
+                    modifier = Modifier.fillMaxHeight(),
+                )
             }
         }
     }

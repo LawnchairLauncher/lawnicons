@@ -114,7 +114,6 @@ private fun SheetContent(
         SimpleListRow("Icon request count", description = iconRequestCount.toString())
 
         SwitchPref(prefs.showDebugMenu)
-        SwitchPref(prefs.showNewIconsCard)
         SwitchPref(prefs.forceEnableIconRequest)
         SwitchPref(prefs.showFirstLaunchSnackbar)
         SwitchPref(prefs.iconRequestsEnabled)
