@@ -175,7 +175,7 @@ private fun Home(
                 if (isExpandedScreen) {
                     PlaceholderSearchBar()
                 } else {
-                    PlaceholderUI(prefs.showNewIconsCard.asState().value)
+                    PlaceholderUI()
                 }
             }
         }

@@ -55,7 +55,6 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlaceholderUI(
-    showDummyCard: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val contentPadding = IconPreviewGridPadding.Defaults
@@ -116,26 +115,23 @@ fun PlaceholderUI(
                     },
                 )
             }
-            if (showDummyCard) {
-                item(span = { GridItemSpan(maxLineSpan) }) {
-                    Box(
-                        modifier = Modifier
-                            .padding(horizontal = 8.dp)
-                            .padding(bottom = 12.dp)
-                            .height(48.dp)
-                            .fillMaxWidth()
-                            .clip(CircleShape)
-                            .placeholder(
-                                visible = true,
-                                color = MaterialTheme.colorScheme.surfaceContainer,
-                                highlight = PlaceholderHighlight.shimmer(
-                                    MaterialTheme.colorScheme.surfaceContainerHigh,
-                                ),
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                Box(
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
+                        .padding(bottom = 12.dp)
+                        .height(48.dp)
+                        .fillMaxWidth()
+                        .clip(CircleShape)
+                        .placeholder(
+                            visible = true,
+                            color = MaterialTheme.colorScheme.surfaceContainer,
+                            highlight = PlaceholderHighlight.shimmer(
+                                MaterialTheme.colorScheme.surfaceContainerHigh,
                             ),
-                    ) {}
-                }
+                        ),
+                ) {}
             }
-
             items(100) {
                 Box(
                     contentAlignment = Alignment.Center,

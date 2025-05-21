@@ -47,7 +47,6 @@ class NewIconsRepositoryImpl @Inject constructor(application: Application) : New
 
         if (currentVersionCode != newVersionCode) {
             prefs.currentLawniconsVersion.set(newVersionCode)
-            prefs.showNewIconsCard.set(true)
         }
 
         coroutineScope.launch {
