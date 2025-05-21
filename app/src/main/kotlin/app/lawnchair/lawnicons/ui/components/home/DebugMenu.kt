@@ -108,15 +108,16 @@ private fun SheetContent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
-        SimpleListRow("Icon count: $iconInfoCount")
-        SimpleListRow("Component count: $componentCount")
-        SimpleListRow("New icon count: $newIconInfoCount")
-        SimpleListRow("Icon request count: $iconRequestCount")
+        SimpleListRow("Icon count", description = iconInfoCount.toString())
+        SimpleListRow("Component count", description = componentCount.toString())
+        SimpleListRow("New icon count", description = newIconInfoCount.toString())
+        SimpleListRow("Icon request count", description = iconRequestCount.toString())
 
         SwitchPref(prefs.showDebugMenu)
         SwitchPref(prefs.showNewIconsCard)
         SwitchPref(prefs.forceEnableIconRequest)
         SwitchPref(prefs.showFirstLaunchSnackbar)
+        SwitchPref(prefs.iconRequestsEnabled)
 
         SimpleListRow(
             "Current version",
@@ -134,7 +135,10 @@ private fun SheetContent(
 }
 
 @Composable
-private fun CopyableList(string: String, context: Context) {
+private fun CopyableList(
+    string: String,
+    context: Context,
+) {
     Card {
         Column(
             modifier = Modifier

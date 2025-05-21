@@ -186,6 +186,10 @@ private fun Home(
             }
         }
 
+        LaunchedEffect(iconRequestsEnabled) {
+            prefs.iconRequestsEnabled.set(iconRequestsEnabled)
+        }
+
         if (prefs.showDebugMenu.asState().value) {
             DebugMenu(
                 iconInfoModel,
