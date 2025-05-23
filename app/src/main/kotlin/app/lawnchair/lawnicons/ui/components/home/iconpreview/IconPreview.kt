@@ -89,7 +89,7 @@ fun IconPreview(
     showSheet: Boolean = false,
     onToggleSheet: (Boolean) -> Unit = {},
 ) {
-    val shape = when (iconInfo.componentNames.size) {
+    val shape = when (iconInfo.componentNames.map { it.label }.distinct().size) {
         1 -> MaterialShapes.Circle
         2 -> MaterialShapes.Cookie4Sided
         3 -> MaterialShapes.Gem
