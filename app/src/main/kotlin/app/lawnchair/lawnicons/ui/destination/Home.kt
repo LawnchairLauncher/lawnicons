@@ -1,10 +1,7 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import android.annotation.SuppressLint
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridItemSpan
@@ -18,7 +15,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -29,7 +25,6 @@ import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.DebugMenu
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
-import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderUI
@@ -87,7 +82,6 @@ private fun Home(
         val lazyGridState = rememberLazyGridState()
         val snackbarHostState = remember { SnackbarHostState() }
 
-        val focusRequester = remember { FocusRequester() }
         val prefs = preferenceManager(context)
 
         Crossfade(
@@ -99,39 +93,30 @@ private fun Home(
                 Scaffold(
                     topBar = {
                         HomeTopBar(
-                            uiState = HomeTopBarUiState(
-                                isSearchExpanded = expandSearch,
-                                isExpandedScreen = isExpandedScreen,
-                                searchedIconInfoModel = searchedIconInfoModel,
-                                searchTerm = searchTerm,
-                                searchMode = searchMode,
-                                isIconPicker = isIconPicker,
-                            ),
-                            onFocusChange = { expandSearch = !expandSearch },
-                            onClearSearch = ::clearSearch,
-                            onChangeMode = ::changeMode,
-                            onSearchIcons = ::searchIcons,
+                            textFieldState = searchTermTextState,
+                            mode = searchMode,
+                            onBack = {
+                                expandSearch = false
+                            },
                             onNavigate = onNavigateToAbout,
+                            onModeChange = ::changeMode,
+                            expandSearch = expandSearch,
+                            isExpandedScreen = isExpandedScreen,
+                            isIconPicker = isIconPicker,
                             onSendResult = onSendResult,
-                            focusRequester = focusRequester,
+                            iconInfoModel = searchedIconInfoModel,
                         )
                     },
                     bottomBar = {
                         if (!isExpandedScreen) {
-                            AnimatedVisibility(
-                                !expandSearch,
-                                enter = fadeIn(),
-                                exit = fadeOut(),
-                            ) {
-                                HomeBottomBar(
-                                    context = context,
-                                    iconRequestsEnabled = iconRequestsEnabled,
-                                    iconRequestModel = iconRequestModel,
-                                    snackbarHostState = snackbarHostState,
-                                    onNavigate = onNavigateToAbout,
-                                    onExpandSearch = { expandSearch = true },
-                                )
-                            }
+                            HomeBottomBar(
+                                context = context,
+                                iconRequestsEnabled = iconRequestsEnabled,
+                                iconRequestModel = iconRequestModel,
+                                snackbarHostState = snackbarHostState,
+                                onNavigate = onNavigateToAbout,
+                                onExpandSearch = { expandSearch = true },
+                            )
                         }
                     },
                     floatingActionButton = {
@@ -180,10 +165,8 @@ private fun Home(
             }
         }
 
-        LaunchedEffect(expandSearch) {
-            if (expandSearch) {
-                focusRequester.requestFocus()
-            }
+        LaunchedEffect(searchTermTextState.text) {
+            searchIcons(searchTermTextState.text.toString())
         }
 
         LaunchedEffect(iconRequestsEnabled) {
