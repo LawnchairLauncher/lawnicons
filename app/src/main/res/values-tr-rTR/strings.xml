@@ -33,7 +33,7 @@
     <!-- Contribution -->
     <string name="contribution_core">Çekirdek uygulama</string>
     <string name="contribution_icons">Resimleyici</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Altyapı</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Teşekkürler</string>
@@ -49,23 +49,23 @@
     <!-- Drawable prefix -->
     <string name="drawable">Çizilebilir</string>
     <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="component">Bileşen adı</string>
     <!-- Mapped components -->
     <string name="mapped_components">Mapped components</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Simge, marka yenileme nedeniyle güncelliğini yitirmişse GitHub\'da bir issue oluşturun.</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">İçeriklerin görünürlüğünü değiştir</string>
     <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="copied_text">Copied text</string>
+    <string name="request_icons">Simge talep et</string>
+    <string name="copy_to_clipboard">Panoya kopyala</string>
+    <string name="copied_text">Kopyalanmış metin</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_suspended">Icon requests are currently suspended</string>
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
+    <string name="snackbar_request_icons_hint">Alt çubuktan eksik ikonları isteyin</string>
+    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
+    <string name="snackbar_request_too_large">Simge isteği ayrıntıları panoya kopyalandı. İsteği göndermek için ayrıntıları forma girin.</string>
+    <string name="snackbar_use_fallback_link">Formu aç</string>
     <string name="clear">Geçmişi temizle</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons_in_version">V%1$sdaki yeni simgeler</string>
+    <string name="new_icons">Yeni simgeler (%1$s)</string>
 </resources>
