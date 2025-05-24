@@ -17,6 +17,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
@@ -49,6 +50,7 @@ fun LawniconsScaffold(
                 isExpandedScreen = isExpandedScreen,
             )
         },
+        containerColor = adaptiveSurfaceColor,
     ) {
         Box(
             modifier = Modifier.then(

@@ -4,7 +4,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.LargeTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.LargeFlexibleTopAppBar
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
@@ -14,9 +16,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun TopAppBar(
     navigationIcon: @Composable () -> Unit,
@@ -25,14 +28,20 @@ fun TopAppBar(
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
 ) {
+    val topAppBarColors = TopAppBarDefaults.topAppBarColors().copy(
+        containerColor = adaptiveSurfaceColor,
+        scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+    )
+
     if (!isExpandedScreen) {
-        LargeTopAppBar(
+        LargeFlexibleTopAppBar(
             modifier = modifier,
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
                 Text(title)
             },
+            colors = topAppBarColors,
         )
     } else {
         TopAppBar(
@@ -42,6 +51,7 @@ fun TopAppBar(
             title = {
                 Text(title)
             },
+            colors = topAppBarColors,
         )
     }
 }

@@ -3,9 +3,13 @@ package app.lawnchair.lawnicons.ui.destination
 import android.annotation.SuppressLint
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.FloatingToolbarDefaults
+import androidx.compose.material3.FloatingToolbarExitDirection
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -15,6 +19,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -61,7 +66,7 @@ fun NavGraphBuilder.homeDestination(
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun Home(
     onNavigateToAbout: () -> Unit,
@@ -83,6 +88,10 @@ private fun Home(
         val snackbarHostState = remember { SnackbarHostState() }
 
         val prefs = preferenceManager(context)
+
+        val scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
+            FloatingToolbarExitDirection.Bottom,
+        )
 
         Crossfade(
             modifier = modifier,
@@ -107,18 +116,6 @@ private fun Home(
                             iconInfoModel = searchedIconInfoModel,
                         )
                     },
-                    bottomBar = {
-                        if (!isExpandedScreen) {
-                            HomeBottomBar(
-                                context = context,
-                                iconRequestsEnabled = iconRequestsEnabled,
-                                iconRequestModel = iconRequestModel,
-                                snackbarHostState = snackbarHostState,
-                                onNavigate = onNavigateToAbout,
-                                onExpandSearch = { expandSearch = true },
-                            )
-                        }
-                    },
                     floatingActionButton = {
                         if (isExpandedScreen) {
                             IconRequestFAB(
@@ -132,27 +129,41 @@ private fun Home(
                     snackbarHost = {
                         SnackbarHost(hostState = snackbarHostState)
                     },
+                    modifier = Modifier.nestedScroll(scrollBehavior),
                 ) {
-                    IconPreviewGrid(
-                        iconInfo = iconInfoModel.iconInfo,
-                        onSendResult = onSendResult,
-                        contentPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize else IconPreviewGridPadding.Defaults,
-                        isIconPicker = isIconPicker,
-                        gridState = lazyGridState,
-                    ) {
-                        if (!isExpandedScreen) {
-                            item(
-                                span = { GridItemSpan(maxLineSpan) },
-                            ) {
-                                AppBarListItem()
+                    Box {
+                        IconPreviewGrid(
+                            iconInfo = iconInfoModel.iconInfo,
+                            onSendResult = onSendResult,
+                            contentPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize else IconPreviewGridPadding.Defaults,
+                            isIconPicker = isIconPicker,
+                            gridState = lazyGridState,
+                        ) {
+                            if (!isExpandedScreen) {
+                                item(
+                                    span = { GridItemSpan(maxLineSpan) },
+                                ) {
+                                    AppBarListItem()
+                                }
+                            }
+                            if (newIconsInfoModel.iconCount != 0) {
+                                item(
+                                    span = { GridItemSpan(maxLineSpan) },
+                                ) {
+                                    NewIconsCard(onNavigateToNewIcons)
+                                }
                             }
                         }
-                        if (newIconsInfoModel.iconCount != 0) {
-                            item(
-                                span = { GridItemSpan(maxLineSpan) },
-                            ) {
-                                NewIconsCard(onNavigateToNewIcons)
-                            }
+                        if (!isExpandedScreen) {
+                            HomeBottomBar(
+                                context = context,
+                                scrollBehavior = scrollBehavior,
+                                iconRequestsEnabled = iconRequestsEnabled,
+                                iconRequestModel = iconRequestModel,
+                                snackbarHostState = snackbarHostState,
+                                onNavigate = onNavigateToAbout,
+                                onExpandSearch = { expandSearch = true },
+                            )
                         }
                     }
                 }

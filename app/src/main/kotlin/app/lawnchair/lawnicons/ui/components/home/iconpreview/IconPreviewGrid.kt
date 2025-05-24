@@ -87,7 +87,7 @@ data class IconPreviewGridPadding(
     companion object {
         val Defaults = IconPreviewGridPadding(
             topPadding = 0.dp,
-            bottomPadding = 80.dp,
+            bottomPadding = 0.dp,
             horizontalPadding = 8.dp,
         )
 
@@ -110,7 +110,7 @@ fun IconPreviewGrid(
     contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
     isIconPicker: Boolean = false,
     gridState: LazyGridState = rememberLazyGridState(),
-    otherContent: (LazyGridScope.() -> Unit) = {},
+    startContent: (LazyGridScope.() -> Unit) = {},
 ) {
     val indexOfFirstItem by remember { derivedStateOf { gridState.firstVisibleItemIndex } }
     val letter = iconInfo[indexOfFirstItem].label[0].uppercase()
@@ -134,7 +134,7 @@ fun IconPreviewGrid(
                 ),
                 state = gridState,
             ) {
-                otherContent()
+                startContent()
                 items(
                     items = iconInfo,
                     contentType = { "icon_preview" },

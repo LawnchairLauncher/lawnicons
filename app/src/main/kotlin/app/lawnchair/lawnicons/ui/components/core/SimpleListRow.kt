@@ -36,6 +36,7 @@ fun SimpleListRow(
             Text(
                 text = label,
                 maxLines = 1,
+                style = MaterialTheme.typography.bodyLarge,
                 overflow = TextOverflow.Ellipsis,
             )
         },

@@ -12,16 +12,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.draw.drawBehind
-import androidx.compose.ui.geometry.Offset
-import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.util.thenIf
 import app.lawnchair.lawnicons.ui.util.thenIfNotNull
 
@@ -43,14 +40,11 @@ fun ListRow(
     onClick: (() -> Unit)? = null,
     enforceHeight: Boolean = true,
 ) {
-    val dividerHeight = 1.dp
-    val dividerHeightPx = with(LocalDensity.current) { dividerHeight.toPx() }
-    val dividerColor = MaterialTheme.colorScheme.outlineVariant
-    val topCornerRadius = if (first) 16.dp else 0.dp
-    val bottomCornerRadius = if (last) 16.dp else 0.dp
-    val basePaddingPx = with(LocalDensity.current) { basePadding.toPx() }
+    val dividerHeight = 2.dp
+    val topCornerRadius = if (first) 16.dp else 2.dp
+    val bottomCornerRadius = if (last) 16.dp else 2.dp
 
-    val backgroundColor = MaterialTheme.colorScheme.surfaceContainer
+    val backgroundColor = adaptiveSurfaceContainerColor
 
     Box(
         modifier = modifier
@@ -60,6 +54,9 @@ fun ListRow(
             ) {}
             .thenIf(enforceHeight) {
                 Modifier.height(if (tall) 72.dp else 56.dp)
+            }
+            .thenIf(divider) {
+                padding(bottom = dividerHeight)
             }
             .thenIf(background) {
                 padding(horizontal = basePadding)
@@ -74,22 +71,6 @@ fun ListRow(
                     .background(
                         backgroundColor,
                     )
-            }
-            .thenIf(divider) {
-                drawBehind {
-                    drawLine(
-                        strokeWidth = dividerHeightPx,
-                        color = dividerColor,
-                        start = Offset(
-                            x = basePaddingPx,
-                            y = size.height - dividerHeightPx / 2,
-                        ),
-                        end = Offset(
-                            x = size.width - basePaddingPx,
-                            y = size.height - dividerHeightPx / 2,
-                        ),
-                    )
-                }
             },
     ) {
         Content(
