@@ -1,7 +1,5 @@
 package app.lawnchair.lawnicons.ui.components
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
@@ -16,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
@@ -35,11 +34,7 @@ fun ContributorRow(
     val context = LocalContext.current
     val url = profileUrl ?: socialUrl
     val onClick = if (url != null) {
-        {
-            val website = Uri.parse(url)
-            val intent = Intent(Intent.ACTION_VIEW, website)
-            context.startActivity(intent)
-        }
+        { context.visitUrl(url) }
     } else {
         null
     }

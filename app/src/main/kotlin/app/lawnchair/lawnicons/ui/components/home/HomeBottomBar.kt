@@ -1,8 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.requiredSize
@@ -31,10 +29,11 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconRequestModel
 import app.lawnchair.lawnicons.ui.util.Constants
+import app.lawnchair.lawnicons.ui.util.visitUrl
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
-fun BoxScope.HomeBottomBar(
+fun BoxScope.HomeBottomToolbar(
     context: Context,
     iconRequestsEnabled: Boolean,
     iconRequestModel: IconRequestModel?,
@@ -67,11 +66,7 @@ fun BoxScope.HomeBottomBar(
             ) {
                 IconButton(
                     onClick = {
-                        val webpage = Uri.parse(Constants.GITHUB)
-                        val intent = Intent(Intent.ACTION_VIEW, webpage)
-                        if (intent.resolveActivity(context.packageManager) != null) {
-                            context.startActivity(intent)
-                        }
+                        context.visitUrl(Constants.GITHUB)
                     },
                 ) {
                     Icon(

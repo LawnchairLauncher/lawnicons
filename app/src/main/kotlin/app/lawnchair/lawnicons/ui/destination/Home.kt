@@ -2,15 +2,18 @@ package app.lawnchair.lawnicons.ui.destination
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.Crossfade
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarExitDirection
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
@@ -21,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
@@ -28,7 +32,7 @@ import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.DebugMenu
-import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
+import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
@@ -127,7 +131,17 @@ private fun Home(
                         }
                     },
                     snackbarHost = {
-                        SnackbarHost(hostState = snackbarHostState)
+                        SnackbarHost(
+                            hostState = snackbarHostState,
+                        ) {
+                            val offset by animateDpAsState(
+                                if (scrollBehavior.state.offset != 0F) 0.dp else FloatingToolbarDefaults.ContainerSize,
+                            )
+                            Snackbar(
+                                it,
+                                modifier = Modifier.padding(bottom = offset),
+                            )
+                        }
                     },
                     modifier = Modifier.nestedScroll(scrollBehavior),
                 ) {
@@ -155,7 +169,7 @@ private fun Home(
                             }
                         }
                         if (!isExpandedScreen) {
-                            HomeBottomBar(
+                            HomeBottomToolbar(
                                 context = context,
                                 scrollBehavior = scrollBehavior,
                                 iconRequestsEnabled = iconRequestsEnabled,
