@@ -856,6 +856,9 @@
   <item component="ComponentInfo{com.gameloft.android.SAMS.GloftA9SS/com.gameloft.android.SAMS.GloftA9SS.MainActivity}" drawable="asphalt_legends_unite" name="Asphalt Legends Unite" />
   <item component="ComponentInfo{com.gameloft.android.ANMP.GloftA9HM/com.gameloft.android.ANMP.GloftA9HM.MainActivity}" drawable="asphalt_legends_unite" name="Asphalt Legends Unite" />
   <item component="ComponentInfo{com.nll.asr/com.nll.asr.ui.MainActivity}" drawable="asr_voice_recorder" name="ASR Voice Recorder" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.AssistantActivity}" drawable="google_gemini" name="Assistant (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.AssistantActivity}" drawable="google_gemini" name="Assistant (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.AssistantShortcut}" drawable="google_gemini" name="Assistant (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.ithersta.assistantforsv.android/com.ithersta.assistantforsv.android.MainActivity}" drawable="assistant_for_stardew_valley" name="Assistant for Stardew Valley" />
   <item component="ComponentInfo{com.appsgenz.assistivetouch.phone.ios/com.appsgenz.assistivetouch.phone.ios.views.SplashActivity}" drawable="assistive_touch" name="Assistive Touch" />
   <item component="ComponentInfo{com.infinityvector.assolutoracing/com.google.firebase.MessagingUnityPlayerActivity}" drawable="assoluto_racing" name="Assoluto Racing" />
@@ -3969,6 +3972,7 @@
   <item component="ComponentInfo{com.huawei.hidisk/com.huawei.hidisk.Main}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.huawei.hidisk/.filemanager.FileManager}" drawable="files" name="Files" />
   <item component="ComponentInfo{com.marc.files/nl.marc_apps.files.MainActivity}" drawable="files" name="Files" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.FilesShortcut}" drawable="files" name="Files (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google" />
   <item component="ComponentInfo{com.google.android.apps.nbu.files/.home.HomeActivity}" drawable="files_by_google" name="Files by Google" />
   <item component="ComponentInfo{org.aospstudio.files/com.aospstudio.shortcuts.MainActivity}" drawable="files" name="Files Shortcut" />
@@ -4473,6 +4477,9 @@
   <item component="ComponentInfo{com.oplus.games/com.oplus.assistant.activity.StartActivity}" drawable="generic_games" name="Games" />
   <item component="ComponentInfo{com.oplus.games/com.oplus.games.ui.main.MainGameActivity#0}" drawable="generic_games" name="Games" />
   <item component="ComponentInfo{com.oplus.games/com.oplus.games.ui.main.MainGameActivity}" drawable="generic_games" name="Games" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.GameActivity}" drawable="games_google_shortcuts_launcher" name="Games (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.GamesActivity}" drawable="games_google_shortcuts_launcher" name="Games (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.GamesShortcut}" drawable="games_google_shortcuts_launcher" name="Games (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{games.talisman.gamingnews.android/games.talisman.gamingnews.android.MainActivity}" drawable="gamescope" name="GameScope" />
   <item component="ComponentInfo{com.gamestop.powerup/com.gamestop.powerup.SplashActivity}" drawable="gamestop" name="GameStop" />
   <item component="ComponentInfo{com.gamestop.powerup/com.gamestop.powerup.GamestopActivity}" drawable="gamestop" name="GameStop" />
@@ -4685,6 +4692,8 @@
   <item component="ComponentInfo{com.apps.adrcotfas.goodtime/com.apps.adrcotfas.goodtime.main.TimerActivity}" drawable="goodtime" name="Goodtime" />
   <item component="ComponentInfo{com.apps.adrcotfas.goodtime/com.apps.adrcotfas.goodtime.MainActivity}" drawable="goodtime" name="Goodtime" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.search.clientui.SearchServiceClientActivity}" drawable="google" name="Google" />
+  <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.apps.search.soundsearch.shortcut.AddShortcutActivity}" drawable="music_search_google_shortcuts_launcher" name="Google" />
+  <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.apps.search.soundsearch.shortcut.AliasAddShortcutActivity}" drawable="music_search_google_shortcuts_launcher" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.apps.search.weather.entrypoints.appicon.WeatherAppIconActivity}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.apps.gsa.staticplugins.opa.EnterOpaActivityFromLauncher}" drawable="google" name="Google" />
   <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.apps.gsa.velour.DynamicActivityTrampoline}" drawable="google" name="Google" />
@@ -4827,27 +4836,7 @@
   <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.editors.kix.KixDocumentCreatorActivity}" drawable="google_sheets" name="Google Sheets" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.editors.kix.KixEditorActivity}" drawable="google_sheets" name="Google Sheets" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.archive.ReactivateActivity}" drawable="google_sheets" name="Google Sheets" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.SettingsActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.WeatherActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.ui.SettingsActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.WeatherActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.PasswordManagerActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.MusicSearchActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.GamesActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.AssistantActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.PasswordManagerActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.MusicSearchActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.GameActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.AssistantActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.WeatherShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.QuickShareShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.PasswordManagerShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.MusicSearchShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.LensShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.GamesShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.FilesShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.AssistantShortcut}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
-  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.activity.SettingsActivity}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
+  <item component="ComponentInfo{App}" drawable="google_shortcuts_launcher" name="Google Shortcuts Launcher" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.archive.ReactivateActivity}" drawable="google_slides" name="Google Slides" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_slides" name="Google Slides" />
   <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.editors.punch.PunchActivity}" drawable="google_slides" name="Google Slides" />
@@ -5537,6 +5526,7 @@
   <item component="ComponentInfo{com.polywise.lucid/com.polywise.lucid.ui.screens.freemium.onboarding.OnboardingFreemium}" drawable="imprint" name="Imprint" />
   <item component="ComponentInfo{com.polywise.lucid/com.polywise.lucid.ui.screens.onboarding.OnboardingActivity}" drawable="imprint" name="Imprint" />
   <item component="ComponentInfo{org.inaturalist.android/org.inaturalist.android.ObservationListActivity.inaturalist}" drawable="inaturalist" name="iNaturalist" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.IncognitoShortcut}" drawable="incognito_google_shortcuts_launcher" name="Incognito (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.androidbull.incognito.browser/com.androidbull.incognito.browser.SplashActivity}" drawable="incognito_browser" name="Incognito Browser" />
   <item component="ComponentInfo{photocollage.photoeditor.collagemaker/com.camerasideas.collagemaker.activity.DummyActivity}" drawable="incollage" name="InCollage" />
   <item component="ComponentInfo{org.incredibleindia/org.incredibleindia.MainActivity}" drawable="incredible_india" name="Incredible India" />
@@ -6279,6 +6269,7 @@
   <item component="ComponentInfo{com.lenovo.hec.lenovoextend/com.lenovo.hec.companionapp.auth.presentation.SplashActivity2}" drawable="lenovo_freestyle" name="Lenovo Freestyle" />
   <item component="ComponentInfo{com.tblenovo.soundrecorder/com.tblenovo.soundrecorder.SoundRecorder}" drawable="asr_voice_recorder" name="Lenovo Sound Recorder" />
   <item component="ComponentInfo{com.zui.filemanager/com.zui.filemanager.MainActivity}" drawable="files" name="Lenovo ZUI File Manager" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.LensShortcut}" drawable="google_lens" name="Lens (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.lensdistortions.ld/com.lensdistortions.ld.ui.choosephoto.ChoosePhotoActivity}" drawable="lens_distortions" name="Lens Distortions (LD)" />
   <item component="ComponentInfo{com.lensdistortions.ld/com.lensdistortions.ld.ui.SplashActivity}" drawable="lens_distortions" name="Lens Distortions (LD)" />
   <item component="ComponentInfo{com.lensa.app/com.lensa.original}" drawable="lensa" name="Lensa" />
@@ -7503,6 +7494,9 @@
   <item component="ComponentInfo{com.iven.musicplayergo/com.iven.musicplayergo.ui.MainActivity}" drawable="music_player_go" name="Music Player GO" />
   <item component="ComponentInfo{com.beat.light/com.beat.light.activities.MainActivity}" drawable="music_recognition" name="Music Recognition" />
   <item component="ComponentInfo{zank.remote/zank.remote.ActivityMusicController}" drawable="music_remote" name="Music Remote" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.MusicSearchActivity}" drawable="music_search_google_shortcuts_launcher" name="Music Search (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.MusicSearchActivity}" drawable="music_search_google_shortcuts_launcher" name="Music Search (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.MusicSearchShortcut}" drawable="music_search_google_shortcuts_launcher" name="Music Search (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.smp.musicspeed/com.smp.musicspeed.MainActivity}" drawable="music_speed_changer" name="Music Speed Changer" />
   <item component="ComponentInfo{com.freedomlabs.tagger.music.tag.editor/com.freedomlabs.tagger.music.tag.editor.activities.MainActivity}" drawable="music_tag_editor" name="Music Tag Editor" />
   <item component="ComponentInfo{com.lstapps.musicwidgetandroid12/com.lstapps.musicwidgetandroid12.MainActivity}" drawable="music_widget_android" name="Music Widget Android" />
@@ -8779,6 +8773,9 @@
   <item component="ComponentInfo{dev.msfjarvis.aps/dev.msfjarvis.aps.ui.main.LaunchActivity}" drawable="password_store" name="Password Store" />
   <item component="ComponentInfo{dev.msfjarvis.aps/com.zeapo.pwdstore.LaunchActivity}" drawable="password_store" name="Password Store" />
   <item component="ComponentInfo{dev.msfjarvis.aps/com.zeapo.pwdstore.PasswordStore}" drawable="password_store" name="Password Store" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.PasswordManagerActivity}" drawable="passwords_google_shortcuts_launcher" name="Passwords (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.PasswordManagerActivity}" drawable="passwords_google_shortcuts_launcher" name="Passwords (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.PasswordManagerShortcut}" drawable="passwords_google_shortcuts_launcher" name="Passwords (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.arrow.wallpapers.pastelwall/com.arrow.wallpapers.pastelwall.activity.SplashScreen}" drawable="pastel_wallpapers" name="Pastel Wallpapers" />
   <item component="ComponentInfo{com.arrow.wallpapers.pastelwall/com.arrow.wallpapers.pastelwall.activities.ActivitySplash}" drawable="pastel_wallpapers" name="Pastel Wallpapers" />
   <item component="ComponentInfo{com.gmg.pastel.lina.iconpack/com.gmg.pastel.lina.iconpack.activities.SplashActivity}" drawable="pastelina_icons" name="PasteLina Icons" />
@@ -9733,6 +9730,7 @@
   <item component="ComponentInfo{com.samsung.android.ruler/com.android.camera.CameraLauncher}" drawable="quick_measure" name="Quick Measure" />
   <item component="ComponentInfo{com.samsung.android.ruler/com.samsung.android.ruler.main.rulerPreviewActivity}" drawable="quick_measure" name="Quick Measure" />
   <item component="ComponentInfo{it.simonesestito.ntiles/it.simonesestito.ntiles.MainSplash}" drawable="quick_settings" name="Quick Settings" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.QuickShareShortcut}" drawable="quick_share_google_shortcuts_launcher" name="Quick Share (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.rhmsoft.edit/com.rhmsoft.edit.activity.MainActivity}" drawable="quickedit" name="QuickEdit" />
   <item component="ComponentInfo{com.rhmsoft.edit.pro/com.rhmsoft.edit.activity.MainActivity}" drawable="quickedit" name="QuickEdit" />
   <item component="ComponentInfo{com.lagradost.quicknovel/com.lagradost.quicknovel.MainActivity}" drawable="quick_novel" name="QuickNovel" />
@@ -10516,6 +10514,7 @@
   <item component="ComponentInfo{com.junkfood.seal.preview/com.junkfood.seal.MainActivity}" drawable="seal" name="Seal Preview" />
   <item component="ComponentInfo{com.hkapps.sealdownloader/com.hkapps.sealdownloader.activities.SplashScreen}" drawable="sealx_downloader" name="SealX Downloader" />
   <item component="ComponentInfo{com.hkapps.sealdownloader/com.hkapps.sealdownloader.SplashScreen}" drawable="sealx_downloader" name="SealX Downloader" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.SearchShortcut}" drawable="search_google_shortcuts_launcher" name="Search (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{rk.android.app.searchbarwidget/rk.android.app.searchbarwidget.activity.HomeActivity}" drawable="search_widget_material_you" name="Search Widget (Material You)" />
   <item component="ComponentInfo{de.t_dankworth.secscanqr/de.t_dankworth.secscanqr.activities.MainActivity}" drawable="secscanqr" name="SecScanQR" />
   <item component="ComponentInfo{prox.lab.calclock/laboratory27.sectograph.MainActivity}" drawable="sectograph" name="Sectograph" />
@@ -10655,6 +10654,9 @@
   <item component="ComponentInfo{com.android.settings/.HWSettings}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/.MainSettings}" drawable="settings" name="Settings" />
   <item component="ComponentInfo{com.android.settings/.Settings}" drawable="settings" name="Settings" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.activity.SettingsActivity}" drawable="settings_google_shortcuts_launcher" name="Settings (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.SettingsActivity}" drawable="settings_google_shortcuts_launcher" name="Settings (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.ui.SettingsActivity}" drawable="settings_google_shortcuts_launcher" name="Settings (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{cz.destil.settleup/cz.destil.settleup.gui.MainActivity}" drawable="settle_up" name="Settle Up" />
   <item component="ComponentInfo{com.setupvpn.main/com.setupvpn.main.MainActivity}" drawable="setupvpn" name="SetupVPN" />
   <item component="ComponentInfo{se.perigee.android.seven/com.perigee.seven.ui.activity.MainActivity}" drawable="seven" name="Seven" />
@@ -13639,6 +13641,9 @@
   <item component="ComponentInfo{de.wetteronline.wetterapp/de.wetteronline.wetterapp.MainActivityGoogle}" drawable="weather_and_radar" name="Weather &amp; Radar" />
   <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivity}" drawable="weather_and_radar" name="Weather &amp; Radar Pro" />
   <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivityGoogle}" drawable="weather_and_radar" name="Weather &amp; Radar Pro" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.WeatherActivity}" drawable="weather_google_shortcuts_launcher" name="Weather (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.WeatherShortcut}" drawable="weather_google_shortcuts_launcher" name="Weather (Google Shortcuts Launcher)" />
+  <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.WeatherActivity}" drawable="weather_google_shortcuts_launcher" name="Weather (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{org.secuso.privacyfriendlyweather/org.secuso.privacyfriendlyweather.activities.SplashActivity}" drawable="weather" name="Weather (PFA)" />
   <item component="ComponentInfo{xyz.matteobattilana.weatherview/com.github.matteobattilana.demo.MainActivity}" drawable="weather_demo_library" name="Weather Demo Library" />
   <item component="ComponentInfo{aplicacion.tiempo/aplicacion.TiempoActivity}" drawable="weather_radar" name="Weather Radar" />
