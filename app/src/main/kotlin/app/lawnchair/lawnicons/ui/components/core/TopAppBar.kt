@@ -13,6 +13,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
@@ -27,9 +28,10 @@ fun TopAppBar(
     title: String,
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
+    containerColor: Color = adaptiveSurfaceColor,
 ) {
     val topAppBarColors = TopAppBarDefaults.topAppBarColors().copy(
-        containerColor = adaptiveSurfaceColor,
+        containerColor = containerColor,
         scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
     )
 

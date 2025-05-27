@@ -17,6 +17,7 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -63,6 +64,7 @@ private fun NewIcons(
         title = stringResource(R.string.new_icons, iconInfoModel.iconCount),
         onBack = onBack,
         isExpandedScreen = isExpandedScreen,
+        containerColor = MaterialTheme.colorScheme.surface,
     ) { paddingValues ->
         IconPreviewGrid(
             iconInfo = iconInfoModel.iconInfo,
