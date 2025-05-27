@@ -3,6 +3,11 @@ name: Build release APK
 
 on:
   workflow_dispatch:
+    inputs:
+      customTag:
+        description: Custom tag
+        type: string
+        required: false
 
 jobs:
   build-release-apk:
@@ -30,8 +35,10 @@ jobs:
             echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties
             echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
           fi
+      - name: Assign needed environment variables
+        run: echo "CUSTOM_TAG=${{ github.event.inputs.customTag }}" >> $GITHUB_ENV
       - name: Build release APK
-        run: ./gradlew app:assembleRelease
+        run: ./gradlew clean app:assembleRelease
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
