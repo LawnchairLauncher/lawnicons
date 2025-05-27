@@ -17,7 +17,7 @@
 package app.lawnchair.lawnicons.helper
 
 fun main(args: Array<String>) {
-    val (svgDir, resDir, assetsDir) = args
+    val (svgDir, resDir, customTag, assetsDir) = args
     val appFilterFile = "$assetsDir/appfilter.xml"
     val previousAppFilterFile = "$resDir/xml/appfilter_previous.xml"
 
@@ -29,6 +29,6 @@ fun main(args: Array<String>) {
     ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir)
     println("ConfigProcessor task completed")
 
-    AppfilterDiffCreator.createAppfilterDiff(resDir, appFilterFile, previousAppFilterFile)
+    AppfilterDiffCreator.createAppfilterDiff(resDir, customTag, appFilterFile, previousAppFilterFile)
     println("Appfilter diff task completed")
 }

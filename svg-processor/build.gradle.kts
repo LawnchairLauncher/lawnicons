@@ -15,6 +15,7 @@ dependencies {
 
 val svgDir = rootDir.resolve("svgs")
 val resDir = rootDir.resolve("app/src/runtime/res")
+val customTag = providers.environmentVariable("CUSTOM_TAG").orNull.orEmpty()
 val assetsDir = rootDir.resolve("app/assets")
 
 tasks.run.configure {
@@ -26,6 +27,7 @@ tasks.run.configure {
     args(
         svgDir,
         resDir,
+        customTag,
         assetsDir,
     )
 }
