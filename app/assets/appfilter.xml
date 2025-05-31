@@ -2510,8 +2510,8 @@
   <item component="ComponentInfo{jp.co.celsys.clipstudiopaint.galaxystore/com.celsys.pwlegacyandroidhelpers.PWLegacyJniCustomNativeActivityAndroid}" drawable="clip_studio_paint" name="Clip Studio Paint" />
   <item component="ComponentInfo{io.github.deweyreed.clipboardcleaner/io.github.deweyreed.clipboardcleaner.MainActivity}" drawable="clipboard_cleaner" name="Clipboard Cleaner" />
   <item component="ComponentInfo{me.lucky.clipeus/me.lucky.clipeus.MainActivity}" drawable="clipeus" name="Clipeus" />
-  <item component="ComponentInfo{com.github.lamarios.clipious/com.ryanheise.audioservice.AudioServiceActivity}" drawable="clipious" name="Clipious" />
-  <item component="ComponentInfo{com.github.lamarios.clipious/com.github.lamarios.clipious.MainActivity}" drawable="clipious" name="Clipious" />
+  <item component="ComponentInfo{com.github.lamarios.clipious/com.ryanheise.audioservice.AudioServiceActivity}" drawable="just_player" name="Clipious" />
+  <item component="ComponentInfo{com.github.lamarios.clipious/com.github.lamarios.clipious.MainActivity}" drawable="just_player" name="Clipious" />
   <item component="ComponentInfo{studio.onelab.clipboard/studio.onelab.clipboard.ui.main.MainActivity}" drawable="clipt" name="Clipt" />
   <item component="ComponentInfo{com.wb.clipboard.pro/clipto.AppContainer}" drawable="clipto" name="Clipto" />
   <item component="ComponentInfo{com.android.deskclock.go/com.android.deskclock.DeskClockTabActivity}" drawable="clock" name="Clock" />
@@ -2707,7 +2707,7 @@
   <item component="ComponentInfo{ch.documed.kompendium/com.compendiumapp.MainActivity}" drawable="compendium" name="Compendium" />
   <item component="ComponentInfo{com.binaryguilt.completemusicreadingtrainer/com.binaryguilt.completemusicreadingtrainer.CMRTActivity}" drawable="complete_music_reading_trainer" name="Complete Music Reading Trainer" />
   <item component="ComponentInfo{androidx.compose.material.catalog/androidx.compose.material.catalog.CatalogActivity}" drawable="compose_material_catalog" name="Compose Material Catalog" />
-  <item component="ComponentInfo{com.mobso.photoreducer.lite/com.mobso.photoreducer.lite.MainActivity}" drawable="compress_image_size" name="Compress image size" />
+  <item component="ComponentInfo{com.mobso.photoreducer.lite/com.mobso.photoreducer.lite.MainActivity}" drawable="image_resizer_and_compressor" name="Compress image" />
   <item component="ComponentInfo{com.tophatch.concepts/com.tophatch.concepts.MainActivity}" drawable="concepts" name="Concepts" />
   <item component="ComponentInfo{com.confirmtkt.lite/com.confirmtkt.lite.LaunchActivity}" drawable="confirmtkt" name="Confirmtkt" />
   <item component="ComponentInfo{de.congstar.meincongstar/de.congstar.meincongstar.ui.login.LoginActivity}" drawable="congstar" name="congstar" />
@@ -2970,7 +2970,7 @@
   <item component="ComponentInfo{ao.daikin.remoapp/ao.daikin.remoapp.MainActivity}" drawable="daikin_mobile_controller" name="DAIKIN Mobile Controller" />
   <item component="ComponentInfo{com.voklen.daily_diary/com.voklen.daily_diary.MainActivity}" drawable="daily_diary" name="Daily Diary" />
   <item component="ComponentInfo{tan_devos.dailywallpaperfrombing/tan_devos.dailywallpaperfrombing.views.MainActivity}" drawable="daily_wallpaper_from_bing" name="Daily Wallpaper from Bing" />
-  <item component="ComponentInfo{com.rlk.weathers/com.rlk.weathers.activity.WeatherMainActivity}" drawable="weather" name="Daily Weather" />
+  <item component="ComponentInfo{com.rlk.weathers/com.rlk.weathers.activity.WeatherMainActivity}" drawable="weather_radar" name="Daily Weather" />
   <item component="ComponentInfo{com.transsion.weathers/com.rlk.weathers.activity.WeatherMainActivity}" drawable="kde_weather" name="Daily Weather" />
   <item component="ComponentInfo{com.demizo.daily_you/com.activity.MainActivity}" drawable="daily_you" name="Daily You" />
   <item component="ComponentInfo{com.demizo.daily_you/com.demizo.daily_you.MainActivity}" drawable="daily_you" name="Daily You" />
@@ -8571,10 +8571,10 @@
   <item component="ComponentInfo{com.fixeads.olxportugal/com.fixeads.olx.SplashActivity}" drawable="olx" name="OLX" />
   <item component="ComponentInfo{com.fixeads.olxportugal/pl.olx.activities.OlxMainActivity}" drawable="olx" name="OLX" />
   <item component="ComponentInfo{com.fixeads.olxportugal/pl.tablica2.app.startup.activity.StartupActivity}" drawable="olx" name="OLX" />
-  <item component="ComponentInfo{com.olxmena.horizontal/com.olxmena.horizontal.activities.MainActivity}" drawable="olx" name="OLX" />
-  <item component="ComponentInfo{com.olxmena.horizontal/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="olx" name="OLX" />
-  <item component="ComponentInfo{com.olxmena.horizontal/pl.olx.activities.OlxMainActivity}" drawable="olx" name="OLX" />
-  <item component="ComponentInfo{com.olxmena.horizontal/pl.olx.activities.TakeOverActivityMena}" drawable="olx" name="OLX" />
+  <item component="ComponentInfo{com.olxmena.horizontal/com.olxmena.horizontal.activities.MainActivity}" drawable="dubizzle" name="dubizzle" />
+  <item component="ComponentInfo{com.olxmena.horizontal/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="dubizzle" name="dubizzle" />
+  <item component="ComponentInfo{com.olxmena.horizontal/pl.olx.activities.OlxMainActivity}" drawable="dubizzle" name="dubizzle" />
+  <item component="ComponentInfo{com.olxmena.horizontal/pl.olx.activities.TakeOverActivityMena}" drawable="dubizzle" name="dubizzle" />
   <item component="ComponentInfo{com.olx.olx/com.olxgroup.panamera.app.buyers.splash.SplashActivity}" drawable="olx" name="OLX" />
   <item component="ComponentInfo{com.olx.olx/com.olxgroup.panamera.app.users.onboarding.activities.SplashActivity}" drawable="olx" name="OLX" />
   <item component="ComponentInfo{com.olx.olx/com.olxgroup.panamera.app.users.onboarding.splash.SplashActivity}" drawable="olx" name="OLX" />
@@ -8635,7 +8635,7 @@
   <item component="ComponentInfo{app.omnivore.omnivore/com.google.android.archive.ReactivateActivity}" drawable="omnivore" name="Omnivore" />
   <item component="ComponentInfo{app.omnivore.omnivore/app.omnivore.omnivore.MainActivity}" drawable="omnivore" name="Omnivore" />
   <item component="ComponentInfo{com.igloocreations.ondago/com.mapgears.ondago.application.StartupActivity}" drawable="ondago" name="Ondago" />
-  <item component="ComponentInfo{rk.android.app.lockscreen/rk.android.app.lockscreen.activity.HomeActivity}" drawable="one_click_lock_screen" name="One Click Lock Screen" />
+  <item component="ComponentInfo{rk.android.app.lockscreen/rk.android.app.lockscreen.activity.HomeActivity}" drawable="volumelockr" name="One Click Lock Screen" />
   <item component="ComponentInfo{com.fulldive.extension.fullroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="sony_game_enhancer" name="One Emulator" />
   <item component="ComponentInfo{com.samsung.android.sidegesturepad/com.samsung.android.sidegesturepad.settings.SGPSettingsActivity}" drawable="one_hand_operation" name="One Hand Operation" />
   <item component="ComponentInfo{com.colanotes.android/com.colanotes.android.activity.LaunchActivity}" drawable="one_jotter" name="One Jotter" />
@@ -13326,7 +13326,7 @@
   <item component="ComponentInfo{com.cubic.ctp.app/com.moovit.app.home.HomeActivity}" drawable="umo_mobility" name="Umo Mobility" />
   <item component="ComponentInfo{com.unacademyapp/com.unacademy.consumption.unacademyapp.SplashActivity}" drawable="unacademy" name="Unacademy" />
   <item component="ComponentInfo{com.unacademyapp/com.unacademy.consumption.unacademyapp.UnacademyReactActivity}" drawable="unacademy" name="Unacademy" />
-  <item component="ComponentInfo{vladyslavpohrebniakov.uninstaller/vladyslavpohrebniakov.uninstaller.main.MainActivity}" drawable="unapp" name="UnApp" />
+  <item component="ComponentInfo{vladyslavpohrebniakov.uninstaller/vladyslavpohrebniakov.uninstaller.main.MainActivity}" drawable="guerrilla_mail" name="UnApp" />
   <item component="ComponentInfo{com.tectumgames.unblock/org.cocos2dx.cpp.AppActivity}" drawable="unblock" name="Unblock" />
   <item component="ComponentInfo{com.github.livingwithhippos.unchained/com.github.livingwithhippos.unchained.base.MainActivity}" drawable="unchained" name="Unchained" />
   <item component="ComponentInfo{com.unciv.app/com.unciv.app.AndroidLauncher}" drawable="uniciv" name="Unciv" />
@@ -13575,7 +13575,7 @@
   <item component="ComponentInfo{com.whatever.verifit/com.example.verifit.ui.MainActivity}" drawable="verifit" name="Verifit" />
   <item component="ComponentInfo{com.vzw.ecid/com.cequint.hs.client.frontend.WebShell}" drawable="verizon_call_filter" name="Verizon Call Filter" />
   <item component="ComponentInfo{com.vzw.ecid/com.cequint.callfilter.MainActivity}" drawable="verizon_call_filter" name="Verizon Call Filter" />
-  <item component="ComponentInfo{com.vcast.mediamanager/com.vcast.mediamanager.gui.activities.SplashLogoActivity}" drawable="verizon_cloud" name="Verizon Cloud" />
+  <item component="ComponentInfo{com.vcast.mediamanager/com.vcast.mediamanager.gui.activities.SplashLogoActivity}" drawable="verizon_call_filter" name="Verizon Cloud" />
   <item component="ComponentInfo{com.securityandprivacy.android.verizon.vms/com.mcafee.vzwmms.activity.VZWBaseActivity}" drawable="verizon_protect" name="Verizon Protect" />
   <item component="ComponentInfo{com.securityandprivacy.android.verizon.vms/com.mcafee.app.LauncherDelegateActivity}" drawable="verizon_protect" name="Verizon Protect" />
   <item component="ComponentInfo{com.securityandprivacy.android.verizon.vms/com.verizon.neon.ui.activities.NeonMainActivity}" drawable="verizon_protect" name="Verizon Protect" />
@@ -13684,7 +13684,7 @@
   <item component="ComponentInfo{com.wstxda.viper4android/com.wstxda.viper4android.MainActivity}" drawable="viper4android" name="ViPER4Android FX" />
   <item component="ComponentInfo{com.aam.viper4android/com.aam.viper4android.MainActivity}" drawable="viper4android" name="ViPER4Android FX" />
   <item component="ComponentInfo{no.dnb.vipps/com.dnb.vipps.android.startup.ui.StartupActivity}" drawable="vipps" name="Vipps" />
-  <item component="ComponentInfo{no.dnb.vipps/com.dnb.vipps.consentcard.activities.SplashActivity}" drawable="vipps_mobilepay" name="Vipps MobilePay" />
+  <item component="ComponentInfo{no.dnb.vipps/com.dnb.vipps.consentcard.activities.SplashActivity}" drawable="vipps" name="Vipps" />
   <item component="ComponentInfo{fi.danskebank.mobilepay/com.dnb.vipps.android.startup.ui.StartupActivity}" drawable="vipps_mobilepay" name="Vipps MobilePay" />
   <item component="ComponentInfo{fi.danskebank.mobilepay/com.dnb.vipps.consentcard.activities.SplashActivity}" drawable="vipps_mobilepay" name="Vipps MobilePay" />
   <item component="ComponentInfo{dk.danskebank.mobilepay/com.dnb.vipps.android.startup.ui.StartupActivity}" drawable="vipps_mobilepay" name="Vipps MobilePay" />
@@ -13984,16 +13984,16 @@
   <item component="ComponentInfo{com.mk.wearsocials/com.mk.wearsocials.ui.app.views.main.MainActivity}" drawable="wearsocials" name="WearSocials" />
   <item component="ComponentInfo{com.inmobi.weather/com.weather.app.common.MainActivity}" drawable="_1weather" name="Weather" />
   <item component="ComponentInfo{com.inmobi.weather/com.handmark.expressweather.ui.activities.MainActivity}" drawable="_1weather" name="Weather" />
-  <item component="ComponentInfo{com.google.android.apps.weather/com.google.android.apps.weather.home.HomeActivity}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.meizu.flyme.weather/com.meizu.flyme.weather.WeatherMainActivity}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.meizu.flyme.weather/com.meizu.flyme.weather.modules.home.WeatherMainActivity}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.rlk.weathers/com.rlk.weathers.ui.main.MainActivity}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.coloros.weather2/com.oplus.weather.main.view.WeatherMainActivity}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.main.view.WeatherMainActivity}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.OppoMainActivity}" drawable="weather" name="Weather" />
+  <item component="ComponentInfo{com.google.android.apps.weather/com.google.android.apps.weather.home.HomeActivity}" drawable="weather_google_shortcuts_launcher" name="Google Weather" />
+  <item component="ComponentInfo{com.meizu.flyme.weather/com.meizu.flyme.weather.WeatherMainActivity}" drawable="coloros_weather" name="Weather" />
+  <item component="ComponentInfo{com.meizu.flyme.weather/com.meizu.flyme.weather.modules.home.WeatherMainActivity}" drawable="coloros_weather" name="Weather" />
+  <item component="ComponentInfo{com.rlk.weathers/com.rlk.weathers.ui.main.MainActivity}" drawable="weather_radar" name="Daily Weather" />
+  <item component="ComponentInfo{com.coloros.weather2/com.oplus.weather.main.view.WeatherMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
+  <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.main.view.WeatherMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
+  <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.OppoMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
   <item component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherCycle}" drawable="weather" name="Weather" />
   <item component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherMain}" drawable="weather" name="Weather" />
-  <item component="ComponentInfo{com.meizu.flyme.weather/com.hy.weather.mz.modules.home.WeatherMainActivity}" drawable="weather" name="Weather" />
+  <item component="ComponentInfo{com.meizu.flyme.weather/com.hy.weather.mz.modules.home.WeatherMainActivity}" drawable="coloros_weather" name="Weather" />
   <item component="ComponentInfo{de.wetteronline.wetterapp/de.wetteronline.wetterapp.MainActivity}" drawable="weather_and_radar" name="Weather &amp; Radar" />
   <item component="ComponentInfo{de.wetteronline.wetterapp/de.wetteronline.wetterapp.MainActivityGoogle}" drawable="weather_and_radar" name="Weather &amp; Radar" />
   <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivity}" drawable="weather_and_radar" name="Weather &amp; Radar Pro" />
@@ -14287,7 +14287,7 @@
   <item component="ComponentInfo{com.wo.voice2/com.wo.voice2.MainActivity}" drawable="wo_mic" name="WO Mic" />
   <item component="ComponentInfo{com.wo.voice2/com.wo.voice2.MainActivity2}" drawable="wo_mic" name="WO Mic" />
   <item component="ComponentInfo{de.dbregio.wohinduwillst/de.dbregio.wohinduwillst.feature.splashscreen.SplashscreenActivity}" drawable="wohin_du_willst" name="Wohin·Du·Willst" />
-  <item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alpha.activity.WolframAlphaActivity}" drawable="wolframalpha" name="WolframAlpha" />
+  <item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alpha.activity.WolframAlphaActivity}" drawable="wolframalpha_classic" name="WolframAlpha Classic" />
   <item component="ComponentInfo{com.wolfram.android.alphapro/com.wolfram.android.alphapro.activity.ProUserOnBoardingActivity}" drawable="wolframalpha" name="WolframAlpha" />
   <item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alphalibrary.activity.SplashScreenActivity}" drawable="wolframalpha_classic" name="WolframAlpha Classic" />
   <item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alpha.activity.WolframAlpha}" drawable="wolframalpha_classic" name="WolframAlpha Classic" />
