@@ -1,10 +1,17 @@
 changelog:
   categories:
-    - title: ""
+    - title: 📱 New Icons & Links
       labels:
-        - nightlylog
-      exclude:
         - icons
+    - title: 🧹 Code
+      labels:
         - code
+      exclude:
+        labels:
+          - dependencies
+    - title: 🧑‍💻 Dependencies
+      labels:
         - dependencies
+    - title: 💬 Localization
+      labels:
         - locale
