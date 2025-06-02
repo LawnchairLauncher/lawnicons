@@ -131,8 +131,6 @@ object SvgFilesProcessor {
                 .addAttribute("android:toDegrees", "60060.0")
                 .addAttribute("android:pivotX", "50.0%")
                 .addAttribute("android:pivotY", "50.0%")
-            foregroundElementLayerlist.addElement("item")
-                .addAttribute("android:drawable", "@drawable/clock_bg")
 
             val monochromeElementLayerlist = root.addElement("monochrome").addElement("layer-list")
             monochromeElementLayerlist.addElement("item").addElement("rotate")
@@ -147,8 +145,6 @@ object SvgFilesProcessor {
                 .addAttribute("android:toDegrees", "60060.0")
                 .addAttribute("android:pivotX", "50.0%")
                 .addAttribute("android:pivotY", "50.0%")
-            monochromeElementLayerlist.addElement("item")
-                .addAttribute("android:drawable", "@drawable/clock_bg")
 
         }else {
             root.addElement("foreground").addElement("inset")
