@@ -17,7 +17,7 @@ for other issues or contributing go to official lawnicons repo.
 ## Download
 <p align="left">
 
-  <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
+  <a href="https://t.me/MotoCustomization">
     <img src="docs/images/tg.svg" alt="Get it on Telegram" height="60" />
   </a>
 </p>
