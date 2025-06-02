@@ -1,17 +1,3 @@
-changelog:
-  categories:
-    - title: 📱 New Icons & Links
-      labels:
-        - icons
-    - title: 🧹 Code
-      labels:
-        - code
-      exclude:
-        labels:
-          - dependencies
-    - title: 🧑‍💻 Dependencies
-      labels:
-        - dependencies
-    - title: 💬 Localization
-      labels:
-        - locale
+template: |
+  **📋 Full changelog**
+  $CHANGES_URL

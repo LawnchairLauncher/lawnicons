@@ -151,4 +151,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release view "nightly" && gh release delete "nightly" -y --cleanup-tag
-          gh release create "nightly" "$APK_NAME" -p -t "Lawnicons Nightly" --generate-notes
+          CHANGES_URL="https://github.com/$GITHUB_REPOSITORY/compare/$(git describe --tags --abbrev=0)...$GITHUB_REF_NAME"
+          gh release create "nightly" "$APK_NAME" -p -t "Lawnicons Nightly" -n "$CHANGES_URL"
