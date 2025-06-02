@@ -79,7 +79,7 @@ object AppfilterDiffCreator {
     }
 
     private fun readFileContents(filePath: String): List<String> {
-        return File(filePath).readLines()
+        return File(filePath).readLines().filterNot { it.trim().startsWith("<?xml") || it.trim().startsWith("<resources") }
     }
 
     private fun getLineDiff(
@@ -91,7 +91,7 @@ object AppfilterDiffCreator {
         return developLines.filter { item ->
             val drawable = extractDrawableItem(item)
             drawable != null && drawable !in drawablesInMain
-        }
+        }.filterNot { it.trim().startsWith("<?xml") || it.trim().startsWith("<resources") }
     }
 
     private fun extractDrawableItem(item: String): String? {
@@ -106,7 +106,13 @@ object AppfilterDiffCreator {
         val outputFile = File(resDir + OUTPUT_FILE)
         val schema = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
 
-        if (diff.isEmpty()) {
+        // Filter out any lines that could conflict with the XML structureAdd commentMore actions
+        val filteredDiff = diff.filterNot {
+            it.trim().startsWith("<?xml") || it.trim().startsWith("<resources>") || it.trim().startsWith("</resources>")
+        }
+
+        // Handle empty diff case
+        if (filteredDiff.isEmpty()) {
             outputFile.writeText("$schema\n<resources />")
             return
         }
@@ -114,7 +120,7 @@ object AppfilterDiffCreator {
         val xmlContent = buildString {
             appendLine(schema)
             appendLine("<resources>")
-            diff.forEach { line ->
+            filteredDiff.forEach { line ->
                 appendLine("    $line")
             }
             appendLine("</resources>")

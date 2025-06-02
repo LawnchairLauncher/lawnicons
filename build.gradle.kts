@@ -5,7 +5,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.application") version "8.10.0" apply false
+    id("com.android.application") version "8.10.1" apply false
     id("org.jetbrains.kotlin.android") version "2.1.21" apply false
     id("org.jetbrains.kotlin.plugin.compose") version "2.1.21"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.1.21" apply false
