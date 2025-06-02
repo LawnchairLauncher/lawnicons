@@ -1,8 +1,10 @@
 changelog:
   categories:
-    - title: "A title to display the changelog link"
+    - title: ""
+      labels:
+        - nightlylog
       exclude:
-      - icons
-      - code
-      - dependencies
-      - locale
+        - icons
+        - code
+        - dependencies
+        - locale
