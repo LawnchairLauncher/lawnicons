@@ -55,9 +55,6 @@ You can contribute by adding icons and solving development issues. Please see ou
 
 ## Requesting icons
 
-> [!NOTE]
-> We plan to close icon requests in early June. Please request icons in advance.
+Icon requests are suspended. The collected requests are available to contributors. 
 
-`Open Lawnicons 2.13+ → Tap "Request icons" → Submit the response`
-
-[Icon request form](https://forms.gle/nR4ozeeJBKrLwGfk6) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
+[Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
