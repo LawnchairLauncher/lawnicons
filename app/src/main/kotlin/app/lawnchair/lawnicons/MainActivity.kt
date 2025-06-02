@@ -61,7 +61,7 @@ class MainActivity : ComponentActivity() {
                         setIntentResult(context, iconInfo)
                         finish()
                     },
-                    isIconPicker = true,
+                    isIconPicker = isIconPicker,
                 )
             }
         }
