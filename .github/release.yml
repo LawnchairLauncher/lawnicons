@@ -1,9 +1,17 @@
-template: |
-  ## 📜 Full changelog
-  $CHANGES_URL
-
 changelog:
-  enabled: false
-  change-template: ""
-  no-changes-template: ""
-  categories: []
+  categories:
+    - title: 📱 New Icons & Links
+      labels:
+        - icons
+    - title: 🧹 Code
+      labels:
+        - code
+      exclude:
+        labels:
+          - dependencies
+    - title: 🧑‍💻 Dependencies
+      labels:
+        - dependencies
+    - title: 💬 Localization
+      labels:
+        - locale
