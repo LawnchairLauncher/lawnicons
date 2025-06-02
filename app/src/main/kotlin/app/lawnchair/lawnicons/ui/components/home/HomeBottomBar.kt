@@ -1,11 +1,13 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Search
+import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
@@ -90,6 +92,25 @@ fun BoxScope.HomeBottomToolbar(
                     Icon(
                         painter = painterResource(id = R.drawable.about_icon),
                         contentDescription = stringResource(id = R.string.about),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
+            SimpleTooltipBox(
+                label = stringResource(id = R.string.Apply),
+            ) {
+                IconButton(
+                    onClick = {
+                        val intent = Intent()
+                        intent.setClassName("com.motorola.personalize", "com.motorola.personalize.app.IconPacksActivity")
+                        if (intent.resolveActivity(context.packageManager) != null) {
+                            context.startActivity(intent)
+                        }
+                    },
+                ) {
+                    Icon(
+                        imageVector = Icons.Rounded.Star,
+                        contentDescription = stringResource(id = R.string.Apply),
                         modifier = Modifier.requiredSize(24.dp),
                     )
                 }

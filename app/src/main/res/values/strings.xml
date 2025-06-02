@@ -2,7 +2,7 @@
     <!-- General -->
 
     <!-- Application name -->
-    <string name="app_name" translatable="false">Lawnicons</string>
+    <string name="app_name" translatable="false">LawniconsMoto</string>
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Version %s</string>
 
@@ -29,7 +29,7 @@
     <!-- Icon Request form link -->
     <string name="request_form">Icon request form</string>
     <!-- Send feedback form link -->
-    <string name="send_feedback">Send feedback</string>
+    <string name="send_feedback" translatable="false">Send feedback</string>
 
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
@@ -92,4 +92,7 @@
     <string name="clear">Clear</string>
     <string name="new_icons_in_version">New icons in v%1$s</string>
     <string name="new_icons">New icons (%1$s)</string>
+    <string name="Apply" translatable="false">Apply To Moto</string>
+    <string name="Moto_Maintainer">MotoPort Maintainer</string>
+    <string name="contribution_moto">Motorola Port</string>
 </resources>

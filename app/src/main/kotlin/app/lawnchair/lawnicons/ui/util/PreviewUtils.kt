@@ -28,7 +28,7 @@ import app.lawnchair.lawnicons.model.LabelAndComponent
     uiMode = Configuration.UI_MODE_NIGHT_YES,
     wallpaper = Wallpapers.RED_DOMINATED_EXAMPLE,
 )
-annotation class PreviewLawnicons
+annotation class PreviewLawnicons()
 
 object SampleData {
     val iconInfoSample = IconInfo(

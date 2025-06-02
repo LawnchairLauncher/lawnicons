@@ -146,6 +146,24 @@ private fun About(
                 Spacer(Modifier.height(16.dp))
             }
             item(contentType = ColumnTypes.HEADER) {
+                CardHeader(stringResource(id = R.string.Moto_Maintainer))
+            }
+            itemsIndexed(MotoContributors) { index, it ->
+                ContributorRow(
+                    name = it.name,
+                    photoUrl = it.photoUrl,
+                    profileUrl = it.socialUrl,
+                    divider = index != MotoContributors.lastIndex,
+                    description = it.descriptionRes?.let { stringResource(id = it) },
+                    background = true,
+                    first = index == 0,
+                    last = index == MotoContributors.lastIndex,
+                )
+            }
+            item(contentType = ColumnTypes.SPACER) {
+                Spacer(Modifier.height(16.dp))
+            }
+            item(contentType = ColumnTypes.HEADER) {
                 CardHeader(stringResource(id = R.string.core_contributors))
             }
             itemsIndexed(coreContributors) { index, it ->
@@ -220,6 +238,16 @@ private val externalLinks = listOf(
         name = R.string.send_feedback,
         url = Constants.FEEDBACK_FORM,
     ),
+)
+
+private val MotoContributors = listOf(
+    Contributor(
+        name = "Kalp Shah",
+        username = "Kalpu-24",
+        photoUrl = "https://avatars.githubusercontent.com/u/69300733",
+        socialUrl = "https://t.me/MotoCustomization",
+        descriptionRes = R.string.contribution_moto,
+    )
 )
 
 private val coreContributors = listOf(
