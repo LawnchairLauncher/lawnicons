@@ -117,18 +117,53 @@ object SvgFilesProcessor {
             .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
         root.addElement("background")
             .addAttribute("android:drawable", bgColor)
-        root.addElement("foreground").addElement("inset")
-            .addAttribute("android:inset", "32%")
-            .addAttribute(
-                "android:drawable",
-                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
-            )
-        root.addElement("monochrome").addElement("inset")
-            .addAttribute("android:inset", "28%")
-            .addAttribute(
-                "android:drawable",
-                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
-            )
+        if (drawableName == "clock") {
+            val foregroundElementLayerlist = root.addElement("foreground").addElement("layer-list")
+            foregroundElementLayerlist.addElement("item").addElement("rotate")
+                .addAttribute("android:drawable", "@drawable/motohourarm")
+                .addAttribute("android:fromDegrees", "300.0")
+                .addAttribute("android:toDegrees", "5330.0")
+                .addAttribute("android:pivotX", "50.0%")
+                .addAttribute("android:pivotY", "50.0%")
+            foregroundElementLayerlist.addElement("item").addElement("rotate")
+                .addAttribute("android:drawable", "@drawable/motominarm")
+                .addAttribute("android:fromDegrees", "60.0")
+                .addAttribute("android:toDegrees", "60060.0")
+                .addAttribute("android:pivotX", "50.0%")
+                .addAttribute("android:pivotY", "50.0%")
+            foregroundElementLayerlist.addElement("item")
+                .addAttribute("android:drawable", "@drawable/clock_bg")
+
+            val monochromeElementLayerlist = root.addElement("monochrome").addElement("layer-list")
+            monochromeElementLayerlist.addElement("item").addElement("rotate")
+                .addAttribute("android:drawable", "@drawable/motohourarm")
+                .addAttribute("android:fromDegrees", "300.0")
+                .addAttribute("android:toDegrees", "5330.0")
+                .addAttribute("android:pivotX", "50.0%")
+                .addAttribute("android:pivotY", "50.0%")
+            monochromeElementLayerlist.addElement("item").addElement("rotate")
+                .addAttribute("android:drawable", "@drawable/motominarm")
+                .addAttribute("android:fromDegrees", "60.0")
+                .addAttribute("android:toDegrees", "60060.0")
+                .addAttribute("android:pivotX", "50.0%")
+                .addAttribute("android:pivotY", "50.0%")
+            monochromeElementLayerlist.addElement("item")
+                .addAttribute("android:drawable", "@drawable/clock_bg")
+
+        }else {
+            root.addElement("foreground").addElement("inset")
+                .addAttribute("android:inset", "32%")
+                .addAttribute(
+                    "android:drawable",
+                    "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
+                )
+            root.addElement("monochrome").addElement("inset")
+                .addAttribute("android:inset", "28%")
+                .addAttribute(
+                    "android:drawable",
+                    "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
+                )
+        }
         XmlUtil.writeDocumentToFile(document, "$resPath$drawableName.xml")
     }
 
