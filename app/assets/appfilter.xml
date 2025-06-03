@@ -1391,7 +1391,7 @@
   <item component="ComponentInfo{com.bitdefender.security/com.bitdefender.security.material.MainActivity}" drawable="bitdefender_security" name="Bitdefender Security" />
   <item component="ComponentInfo{com.bitexenglobal.exchangeapp/com.bitexenglobal.exchangeapp.activity.SplashScreenActivity}" drawable="bitexen_global" name="Bitexen Global" />
   <item component="ComponentInfo{com.bitget.exchange/com.upex.exchange.splash.SplashActivity}" drawable="bitget" name="Bitget" />
-  <item component="ComponentInfo{com.bitkeep.wallet/com.bitkeep.wallet.MainActivity}" drawable="bitget" name="Bitget Wallet" />
+  <item component="ComponentInfo{com.bitkeep.wallet/com.bitkeep.wallet.MainActivity}" drawable="bitget_wallet" name="Bitget Wallet" />
   <item component="ComponentInfo{com.candywriter.bitlife/com.android.support.MainActivity}" drawable="bitlife" name="BitLife" />
   <item component="ComponentInfo{com.candywriter.bitlife/com.unity3d.player.UnityPlayerActivity}" drawable="bitlife" name="BitLife" />
   <item component="ComponentInfo{com.candywriter.bitlife/com.google.firebase.MessagingUnityPlayerActivity}" drawable="bitlife" name="BitLife" />
@@ -2997,7 +2997,7 @@
   <item component="ComponentInfo{com.donanimhaber.dhandroid/com.donanimhaber.dhandroid.dh_app_mvvm.ui.navigator.NavigatorActivity}" drawable="dh" name="DH" />
   <item component="ComponentInfo{com.dhan.live/com.raise.dhan.MainActivity}" drawable="dhan" name="Dhan" />
   <item component="ComponentInfo{com.alifewithallah.app/com.ryanheise.audioservice.AudioServiceActivity}" drawable="dhikr_and_dua" name="Dhikr &amp; Dua" />
-  <item component="ComponentInfo{com.rosan.dhizuku/com.rosan.dhizuku.ui.activity.SettingsActivity}" drawable="ashell" name="Dhizuku" />
+  <item component="ComponentInfo{com.rosan.dhizuku/com.rosan.dhizuku.ui.activity.SettingsActivity}" drawable="dhizuku" name="Dhizuku" />
   <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="dialer" name="Dialer" />
   <item component="ComponentInfo{com.motorola.dialer/com.motorola.dialer.CallLogShortcut}" drawable="dialer" name="Dialer" />
   <item component="ComponentInfo{com.motorola.dialer/com.motorola.dialer.DialtactsContactsEntryActivity}" drawable="dialer" name="Dialer" />
@@ -3144,9 +3144,6 @@
   <item component="ComponentInfo{com.disneyplus.ph/com.hotstar.MainActivity}" drawable="disney_plus" name="Disney+" />
   <item component="ComponentInfo{in.startv.hotstar.dplus/com.hotstar.MainActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
   <item component="ComponentInfo{in.startv.hotstar.dplus/in.startv.hotstar.rocky.launch.splash.SplashActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
-  <item component="ComponentInfo{in.startv.hotstar/in.startv.hotstar.activities.splash.SplashActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
-  <item component="ComponentInfo{in.startv.hotstar/in.startv.hotstar.rocky.launch.splash.SplashActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
-  <item component="ComponentInfo{in.startv.hotstar/com.hotstar.MainActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
   <item component="ComponentInfo{com.mydito/com.mydito.app_icon_6}" drawable="dito" name="DITO" />
   <item component="ComponentInfo{com.mydito/com.mydito.MainActivity}" drawable="dito" name="DITO" />
   <item component="ComponentInfo{com.mydito/com.mydito.ui.login.GuidePageActivity}" drawable="dito" name="DITO" />
@@ -3428,7 +3425,7 @@
   <item component="ComponentInfo{com.gstarmc.android/com.stone.app.ui.activity.AppSplashActivity}" drawable="dwg_fastview" name="DWG FastView" />
   <item component="ComponentInfo{io.dynalist/io.dynalist.MainActivity}" drawable="infinite_craft" name="Dynalist" />
   <item component="ComponentInfo{iconpack.onsurface.monet/com.candybar.dev.activities.MainActivity}" drawable="dynamic_material_you_icons" name="Dynamic Material You Icons" />
-  <item component="ComponentInfo{com.jamworks.dynamicspot/com.jamworks.dynamicspot.SettingsHome}" drawable="dynamic_spot" name="dynamicSpot" />
+  <item component="ComponentInfo{com.jamworks.dynamicspot/com.jamworks.dynamicspot.SettingsHome}" drawable="dynamicspot" name="dynamicSpot" />
   <item component="ComponentInfo{com.newtypegames.dl2hmt/com.taiyouxi.tk.SlashActivity}" drawable="dynasty_legends_2" name="Dynasty Legends 2" />
   <item component="ComponentInfo{pl.edu.vulcan.hebe/pl.edu.vulcan.MainActivity}" drawable="dzienniczek_vulcan" name="Dzienniczek VULCAN" />
   <item component="ComponentInfo{pl.edu.vulcan.hebe/pl.edu.vulcan.vulcan_flutter.MainActivity}" drawable="dzienniczek_vulcan" name="Dzienniczek VULCAN" />
@@ -4515,7 +4512,7 @@
   <item component="ComponentInfo{f.f.freezer/f.f.freezer.MainActivity}" drawable="deezer" name="Freezer" />
   <item component="ComponentInfo{com.jujinkim.frequaw/com.jujinkim.frequaw.ui.MainActivity}" drawable="frequaw" name="Frequaw" />
   <item component="ComponentInfo{com.luxdelux.frequencygenerator/com.luxdelux.frequencygenerator.activity.LauncherActivity}" drawable="frequency_generator" name="Frequency Generator" />
-  <item component="ComponentInfo{com.boedec.hoel.frequencygenerator/com.boedec.hoel.frequencygenerator.MainActivity}" drawable="frequency_generator" name="Frequency Sound Generator" />
+  <item component="ComponentInfo{com.boedec.hoel.frequencygenerator/com.boedec.hoel.frequencygenerator.MainActivity}" drawable="sound_frequency_generator" name="Frequency Sound Generator" />
   <item component="ComponentInfo{com.techburner.freshwalls/com.techburner.freshwalls.presentation.activities.MainActivity}" drawable="freshwalls" name="FreshWalls" />
   <item component="ComponentInfo{com.techburner.freshwalls/com.techburner.freshwalls.ui.activities.SplashActivity}" drawable="freshwalls" name="FreshWalls" />
   <item component="ComponentInfo{com.techburner.freshwalls/com.oddlyspaced.walls.ui.activity.MainActivity}" drawable="freshwalls" name="FreshWalls" />
@@ -6125,6 +6122,9 @@
   <item component="ComponentInfo{com.jio.jiogames/com.jio.jiogamestore.NewMainActivity}" drawable="jiogames" name="JioGames" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.ui.activity.SplashActivity}" drawable="jiohome" name="JioHome" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.cleanarchitecture.common.screen.JioHomeLaunchActivity}" drawable="jiohome" name="JioHome" />
+  <item component="ComponentInfo{in.startv.hotstar/in.startv.hotstar.activities.splash.SplashActivity}" drawable="jiohotstar" name="JioHotstar" />
+  <item component="ComponentInfo{in.startv.hotstar/in.startv.hotstar.rocky.launch.splash.SplashActivity}" drawable="jiohotstar" name="JioHotstar" />
+  <item component="ComponentInfo{in.startv.hotstar/com.hotstar.MainActivity}" drawable="jiohotstar" name="JioHotstar" />
   <item component="ComponentInfo{com.jpl.jiomart/com.jpl.jiomart.dashboard.activities.SplashActivityAlias1}" drawable="jiomart" name="JioMart" />
   <item component="ComponentInfo{com.jpl.jiomart/com.jpl.jiomart.dashboard.activities.SplashActivity}" drawable="jiomart" name="JioMart" />
   <item component="ComponentInfo{com.jpl.jiomart/com.jpl.jiomartsdk.dashboard.activities.SplashScreenActivityAlias1}" drawable="jiomart" name="JioMart" />
@@ -12055,9 +12055,9 @@
   <item component="ComponentInfo{soko.ekibun.stitch/soko.ekibun.stitch.MainActivity}" drawable="stitch" name="Stitch" />
   <item component="ComponentInfo{de.stocard.stocard/de.stocard.ui.main.InitActivity}" drawable="stocard" name="Stocard" />
   <item component="ComponentInfo{de.dsvgruppe.pba/de.dsvgruppe.pba.SplashScreenActivity}" drawable="stock_market_learning" name="Stock Market Learning" />
+  <item component="ComponentInfo{com.stock.widget/com.stock.widget.activity.home.HomeActivity}" drawable="stock_widget" name="Stock Widget" />
   <item component="ComponentInfo{com.github.premnirmal.tickerwidget/com.github.premnirmal.ticker.home.MainActivity}" drawable="stocks_widget" name="Stocks Widget" />
   <item component="ComponentInfo{com.github.premnirmal.tickerwidget/com.github.premnirmal.ticker.home.SplashActivity}" drawable="stocks_widget" name="Stocks Widget" />
-  <item component="ComponentInfo{com.stock.widget/com.stock.widget.activity.home.HomeActivity}" drawable="stock_widget" name="Stock Widget" />
   <item component="ComponentInfo{com.stockx.stockx/com.stockx.stockx.ui.activity.MainActivity}" drawable="stockx" name="StockX" />
   <item component="ComponentInfo{com.harry.stokie/com.harry.stokie.ui.activity.MainActivity}" drawable="stokie" name="STOKiE" />
   <item component="ComponentInfo{com.harry.stokiepro/com.harry.stokiepro.ui.activity.MainActivity}" drawable="stokie" name="STOKiE PRO" />
