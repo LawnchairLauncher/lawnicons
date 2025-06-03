@@ -42,7 +42,10 @@ Tips
 
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
-[View in Figma](https://www.figma.com/community/file/1227718471680779613)
+> [!TIP]
+> The design guidelines are also available in Figma, you can practice there.  
+> [View in Figma](https://www.figma.com/community/file/1227718471680779613)
+
 
 ### Approach
 
