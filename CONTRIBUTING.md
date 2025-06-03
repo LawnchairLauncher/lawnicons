@@ -364,7 +364,7 @@ Tips
 - Add missing components to icons that are identical to the originals.
 - Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[View on YouTube](https://youtu.be/EAvYelOK5Nw) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[View on YouTube](https://youtu.be/EAvYelOK5Nw) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 
