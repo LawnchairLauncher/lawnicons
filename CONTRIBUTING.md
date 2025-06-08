@@ -57,7 +57,7 @@ Tips
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 - Prioritize quality.
 
-[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
+[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
 ### Fundamentals
 
