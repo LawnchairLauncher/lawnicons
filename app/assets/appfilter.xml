@@ -1962,7 +1962,9 @@
   <item component="ComponentInfo{com.samsung.android.scan3d/com.vibhorsrv.shamim.cameraids.MainActivity}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.samsung.android.scan3d/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.MirrorCameraActivity}" drawable="camera" name="Camera" />
-    <item component="ComponentInfo{com.motorola.camera5/com.motorola.camera.MirrorCameraActivity}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.motorola.camera5/com.motorola.camera.MirrorCameraActivity}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="camera" name="Camera"/>
+  <item component="ComponentInfo{com.motorola.camera5/com.motorola.camera.Camera}" drawable="camera" name="Camera"/>
   <item component="ComponentInfo{com.ontim.camera2/com.ontim.camera2.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.mediatek.hz.camera/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.samsung.agc.gcam84/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
@@ -3810,6 +3812,7 @@
   <item component="ComponentInfo{com.codemasters.F1Mobile/com.google.firebase.MessagingUnityPlayerActivity}" drawable="f1_mobile_racing" name="F1 Mobile Racing" />
   <item component="ComponentInfo{com.formulaone.production/formulaone.com.ui.SplashActivity}" drawable="f1" name="F1 TV" />
   <item component="ComponentInfo{com.formulaone.production/com.avs.f1.ui.splash.SplashActivity}" drawable="f1" name="F1 TV" />
+  <item component="ComponentInfo{co.fable.fable/co.fable.fable.ui.main.MainActivity}" drawable="fable" name="Fable" />
   <item component="ComponentInfo{com.transsion.faceidsub/com.transsion.faceid.FaceManagerActivity}" drawable="face_unlock" name="Face Unlock" />
   <item component="ComponentInfo{com.transsion.faceid/com.transsion.faceid.FaceManagerActivity}" drawable="face_unlock" name="Face Unlock" />
   <item component="ComponentInfo{io.faceapp/io.faceapp.MainActivity}" drawable="faceapp" name="FaceApp" />
@@ -5816,6 +5819,7 @@
   <item component="ComponentInfo{com.jio.jiogames/com.jio.jiogamestore.NewMainActivity}" drawable="jiogames" name="JioGames" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.ui.activity.SplashActivity}" drawable="jiohome" name="JioHome" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.cleanarchitecture.common.screen.JioHomeLaunchActivity}" drawable="jiohome" name="JioHome" />
+  <item component="ComponentInfo{com.jio.jse/com.jio.jse.mobile.ui.activity.SplashScreenActivity}" drawable="jiojoin" name="JioJoin"/>
   <item component="ComponentInfo{com.jpl.jiomart/com.jpl.jiomart.dashboard.activities.SplashActivityAlias1}" drawable="jiomart" name="JioMart" />
   <item component="ComponentInfo{com.jpl.jiomart/com.jpl.jiomart.dashboard.activities.SplashActivity}" drawable="jiomart" name="JioMart" />
   <item component="ComponentInfo{com.jpl.jiomart/com.jpl.jiomartsdk.dashboard.activities.SplashScreenActivityAlias1}" drawable="jiomart" name="JioMart" />
@@ -6255,6 +6259,9 @@
   <item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
   <item component="ComponentInfo{app.lawnchair.lawnicons.play/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
   <item component="ComponentInfo{app.lawnchair.lawnicons.light/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons Light" />
+    <item component="ComponentInfo{app.lawnchair.betterlawnicons/app.lawnchair.betterlawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
+    <item component="ComponentInfo{app.lawnchair.betterlawnicons.play/app.lawnchair.betterlawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
+    <item component="ComponentInfo{app.lawnchair.betterlawnicons.light/app.lawnchair.betterlawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons Light" />
   <item component="ComponentInfo{com.instagram.layout/com.instagram.layout.LayoutActivity}" drawable="layout_from_instagram" name="Layout from Instagram" />
   <item component="ComponentInfo{com.lazada.android/com.lazada.activities.EnterActivity}" drawable="lazada" name="Lazada" />
   <item component="ComponentInfo{com.lazada.android/pt.rocket.view.SplashScreenActivity}" drawable="lazada" name="Lazada" />
@@ -11420,6 +11427,7 @@
   <item component="ComponentInfo{com.microsoft.android.smsorganizer/com.microsoft.android.smsorganizer.StartupActivity}" drawable="sms_organizer" name="SMS Organizer" />
   <item component="ComponentInfo{com.smule.singandroid/com.smule.singandroid.StartupActivity_}" drawable="smule" name="Smule" />
   <item component="ComponentInfo{com.smule.singandroid/com.smule.singandroid.StartupActivity}" drawable="smule" name="Smule" />
+  <item component="ComponentInfo{kalp.snake.wall/kalp.snake.wall.MainActivity}" drawable="snakewall" name="SnakeWall" />
   <item component="ComponentInfo{com.kwai.bulldog/com.yxcorp.gifshow.HomeActivity}" drawable="snackvideo" name="SnackVideo" />
   <item component="ComponentInfo{com.kwai.bulldog/com.yxcorp.gifshow.tiny.TinyLaunchActivity}" drawable="snackvideo" name="SnackVideo" />
   <item component="ComponentInfo{com.kwai.bulldog/com.yxcorp.gifshow.homepage.HomeActivity}" drawable="snackvideo" name="SnackVideo" />
