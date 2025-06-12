@@ -2064,6 +2064,11 @@
   <item component="ComponentInfo{com.mediatek.camera/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.android.MGC_8_9_097/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.simplemobiletools.camera/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity.Orange}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.MainActivity}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Grey_black}" drawable="camera" name="Camera" />
+  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Orange}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Yellow}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Teal}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Purple}" drawable="camera" name="Camera" />
@@ -2174,10 +2179,6 @@
   <item component="ComponentInfo{com.sec.android.app.camera/.Camera}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.sec.android.app.camera/com.sec.android.app.camera.Camera}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.shamim.cam/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.MainActivity}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Grey_black}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Orange}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.sonyericsson.android.camera/.CameraActivity}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.sonyericsson.android.camera/com.sonyericsson.android.camera.CameraActivity}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.tcl.camera/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
@@ -2192,7 +2193,6 @@
   <item component="ComponentInfo{com.android.lmc82/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{org.derpfest.flash/org.derpfest.flash.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{org.codeaurora.snapcam/com.google.android.apps.cameralite.capture.CaptureActivity}" drawable="camera" name="Camera" />
-  <item component="ComponentInfo{com.simplemobiletools.camera/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity.Orange}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.shamim.camera/com.android.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.lenovotab.camera/com.lenovotab.camera.CameraLauncher}" drawable="camera" name="Camera" />
   <item component="ComponentInfo{com.google.android.GoogleCameraEng/com.google.android.apps.cameralite.capture.CaptureActivity}" drawable="camera" name="Camera" />
@@ -6669,7 +6669,6 @@
   <item component="ComponentInfo{com.lastpass.lpandroid/com.lastpass.lpandroid.WebBrowserActivity}" drawable="lastpass" name="LastPass" />
   <item component="ComponentInfo{com.lastpass.authenticator/com.lastpass.authenticator.ui.MainActivity}" drawable="lastpass" name="LastPass Authenticator" />
   <item component="ComponentInfo{com.redenes.lacuerda/com.redenes.lacuerda.MainActivity}" drawable="real_guitar" name="Latin Chords" />
-  <item component="ComponentInfo{com.simplemobiletools.launcher/com.simplemobiletools.launcher.activities.SplashActivity.Blue_grey}" drawable="house" name="Launcher" />
   <item component="ComponentInfo{com.flea.gsd.flea/com.flea.gsd.activities.MainActivity}" drawable="launcher_ops" name="Launcher Ops" />
   <item component="ComponentInfo{com.babydola.launcherios/com.android.launcher3.SplashActivity}" drawable="launcher_os" name="Launcher OS" />
   <item component="ComponentInfo{com.babydola.launcherios/com.android.launcher3.feature.weather.SplashWeatherActivity}" drawable="launcher_os" name="Launcher OS" />
@@ -7982,9 +7981,6 @@
   <item component="ComponentInfo{com.binghuo.audioeditor.mp3editor.musiceditor/com.binghuo.audioeditor.mp3editor.musiceditor.launcher.LauncherActivity}" drawable="audio_editor" name="Music Editor" />
   <item component="ComponentInfo{com.brainfm.app/com.brainfm.app.MainActivity}" drawable="music_for_focus" name="Music for Focus" />
   <item component="ComponentInfo{com.coloros.musiclink/com.coloros.musiclink.ui.MainActivity}" drawable="music_party" name="Music Party" />
-  <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity}" drawable="headphones" name="Music Player" />
-  <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Orange}" drawable="headphones" name="Music Player" />
-  <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Purple}" drawable="headphones" name="Music Player" />
   <item component="ComponentInfo{com.musicplayer.player.mp3player.white/com.musicplayer.player.mp3player.white.activity.MainActivity}" drawable="generic_player" name="Music Player" />
   <item component="ComponentInfo{media.music.musicplayer/com.ijoysoft.music.activity.WelcomeActivity}" drawable="apple_music" name="Music Player" />
   <item component="ComponentInfo{com.shaiban.audioplayer.mplayer/com.shaiban.audioplayer.mplayer.common.splash.NavigatingActivity}" drawable="apple_music" name="Music Player" />
@@ -11631,6 +11627,7 @@
   <item component="ComponentInfo{com.simplemobiletools.keyboard/com.simplemobiletools.keyboard.activities.SplashActivity.Yellow}" drawable="generic_keyboard" name="Simple Keyboard" />
   <item component="ComponentInfo{rkr.simplekeyboard.inputmethod/rkr.simplekeyboard.inputmethod.latin.settings.SettingsActivity}" drawable="simple_keyboard" name="Simple Keyboard" />
   <item component="ComponentInfo{com.simplemobiletools.launcher/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity.Orange}" drawable="house" name="Simple Launcher" />
+  <item component="ComponentInfo{com.simplemobiletools.launcher/com.simplemobiletools.launcher.activities.SplashActivity.Blue_grey}" drawable="house" name="Simple Launcher" />
   <item component="ComponentInfo{com.simplemobiletools.launcher/com.simplemobiletools.launcher.activities.SplashActivity.Amber}" drawable="house" name="Simple Launcher" />
   <item component="ComponentInfo{com.simplemobiletools.launcher/com.simplemobiletools.launcher.activities.SplashActivity.Blue}" drawable="house" name="Simple Launcher" />
   <item component="ComponentInfo{com.simplemobiletools.launcher/com.simplemobiletools.launcher.activities.SplashActivity.Brown}" drawable="house" name="Simple Launcher" />
@@ -11651,6 +11648,9 @@
   <item component="ComponentInfo{com.simplemobiletools.launcher/com.simplemobiletools.launcher.activities.SplashActivity.Yellow}" drawable="house" name="Simple Launcher" />
   <item component="ComponentInfo{com.xycz.simple_live/com.xycz.simple_live.MainActivity}" drawable="neutron_music_player" name="Simple Live" />
   <item component="ComponentInfo{com.github.anrimian.musicplayer/com.github.anrimian.musicplayer.ui.main.MainActivity}" drawable="music_player" name="Simple Music Player" />
+  <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity}" drawable="headphones" name="Simple Music Player" />
+  <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Orange}" drawable="headphones" name="Simple Music Player" />
+  <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Purple}" drawable="headphones" name="Simple Music Player" />
   <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Yellow}" drawable="headphones" name="Simple Music Player" />
   <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Teal}" drawable="headphones" name="Simple Music Player" />
   <item component="ComponentInfo{com.simplemobiletools.musicplayer/com.simplemobiletools.musicplayer.activities.SplashActivity.Pink}" drawable="headphones" name="Simple Music Player" />
