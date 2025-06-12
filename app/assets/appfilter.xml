@@ -962,6 +962,7 @@
   <item component="ComponentInfo{com.bdroid.audiomediaconverter/com.bdroid.audiomediaconverter.activity.LauncherActivity}" drawable="audio_converter" name="Audio Converter" />
   <item component="ComponentInfo{audioeditor.musiceditor.soundeditor.songeditor/app.better.audioeditor.activity.SplashActivity}" drawable="audio_editor" name="Audio Editor" />
   <item component="ComponentInfo{com.shuojie.audioeditor/com.shuojie.audioeditor.activity.SplashActivity}" drawable="audio_editor" name="Audio Editor" />
+  <item component="ComponentInfo{com.appzcloud.audioeditor/com.appzcloud.audioeditor.MainActivity}" drawable="audio_editor" name="Audio MP3 Cutter" />
   <item component="ComponentInfo{com.dimowner.audiorecorder/com.dimowner.audiorecorder.app.main.MainActivity}" drawable="audio_recorder" name="Audio Recorder" />
   <item component="ComponentInfo{io.github.mkckr0.audio_share_app/io.github.mkckr0.audio_share_app.MainActivity}" drawable="audio_share" name="Audio Share" />
   <item component="ComponentInfo{io.github.mkckr0.audio_share_app/io.github.mkckr0.audio_share_app.ui.MainActivity}" drawable="audio_share" name="Audio Share" />
@@ -2031,6 +2032,7 @@
   <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.PermissionGrantActivity}" drawable="call_of_duty" name="Call of Duty" />
   <item component="ComponentInfo{com.activision.callofduty.warzone/com.activision.game.MainActivity}" drawable="call_of_duty_warzone" name="Call of Duty: Warzone" />
   <item component="ComponentInfo{com.callapp.contacts/com.callapp.contacts.activity.contact.list.ContactsListActivity}" drawable="callapp" name="CallApp" />
+  <item component="ComponentInfo{com.callapp.callerid.spamcallblocker/com.callapp.callerid.spamcallblocker.ui.activity.SplashScreen}" drawable="dialer" name="Caller ID" />
   <item component="ComponentInfo{com.calm.android/com.calm.android.ui.misc.SplashActivity}" drawable="calm" name="Calm" />
   <item component="ComponentInfo{com.calm.android/com.calm.android.ui.splash.SplashActivity}" drawable="calm" name="Calm" />
   <item component="ComponentInfo{com.abdz.breathing/com.abdz.breathing.NewHome}" drawable="calmaria" name="Calmaria" />
@@ -5583,7 +5585,7 @@
   <item component="ComponentInfo{app.hiddify.com/com.hiddify.hiddify.MainActivity}" drawable="hiddify" name="Hiddify" />
   <item component="ComponentInfo{com.tsng.hidemyapplist/com.tsng.hidemyapplist.MainActivityLauncher}" drawable="hide_my_applist" name="Hide My Applist" />
   <item component="ComponentInfo{com.hitrock.hideonline/com.unity3d.player.UnityPlayerActivity}" drawable="hide_online" name="Hide Online" />
-  <item component="ComponentInfo{com.calculator.hideu/com.calculator.hideu.SplashActivity}" drawable="hideu" name="HideU" />
+  <item component="ComponentInfo{com.calculator.hideu/com.calculator.hideu.SplashActivity}" drawable="calculator" name="HideU" />
   <item component="ComponentInfo{com.hidive.android/com.twentyfouri.hidive.splash.ui.view.SplashActivity}" drawable="hidive" name="HIDIVE" />
   <item component="ComponentInfo{com.kodelokus.hijri/com.kodelokus.hijri.MainActivity}" drawable="hijri_calendar" name="Hijri Calendar" />
   <item component="ComponentInfo{com.connect.enduser/com.hikvision.hikconnect.login.LoadingActivity}" drawable="hik_connect" name="Hik-Connect" />
@@ -6196,6 +6198,7 @@
   <item component="ComponentInfo{com.iyox.wormhole/com.iyox.wormhole.MainActivity}" drawable="iyox_wormhole" name="iyox Wormhole" />
   <item component="ComponentInfo{com.iyps/com.iyps.activities.MainActivity}" drawable="iyps" name="IYPS" />
   <item component="ComponentInfo{fr.smoney.android.izly.REC/fr.smoney.android.izly.ui.publicview.login.LoginActivity}" drawable="izly" name="Izly" />
+  <item component="ComponentInfo{in.sunilpaulmathew.izzyondroid/in.sunilpaulmathew.izzyondroid.MainActivity}" drawable="izzyondroid" name="IzzyOnDroid" />
   <item component="ComponentInfo{com.belbim.istanbulkart/com.belbim.istanbulkart.MainActivity}" drawable="istanbulkart" name="İstanbulkart" />
   <item component="ComponentInfo{com.pozitron.iscep/com.pozitron.iscep.features.prelogin.splash.SplashActivity}" drawable="iscep" name="İşCep" />
   <item component="ComponentInfo{ru.playsoftware.j2meloader/ru.playsoftware.j2meloader.MainActivity}" drawable="j2me_loader" name="J2ME Loader" />
@@ -7938,6 +7941,7 @@
   <item component="ComponentInfo{org.mozilla.firefox.vpn/org.qtproject.qt5.android.bindings.QtActivity}" drawable="mozilla_vpn" name="Mozilla VPN" />
   <item component="ComponentInfo{com.clogica.audiomerger/com.clogica.audiomerger.activity.SplashActivity}" drawable="mp3_audio_merger" name="MP3 Audio Merger" />
   <item component="ComponentInfo{ringtone.maker.mp3.cutter.audio/com.inshot.videotomp3.SplashActivity}" drawable="audio_editor" name="MP3 Cutter and Ringtone Maker" />
+  <item component="ComponentInfo{com.atomic.apps.ringtone.cutter/com.atomic.apps.ringtone.cutter.SplashActivity}" drawable="audio_editor" name="MP3 Cutter and Ringtone Maker" />
   <item component="ComponentInfo{com.springwalk.mediaconverter/com.springwalk.mediaconverter.SplashActivity}" drawable="mp3_video_converter" name="MP3 Video Converter" />
   <item component="ComponentInfo{com.gspl.mpaisa/com.gspl.mpaisa.MainActivity}" drawable="mpaisa" name="mPaisa" />
   <item component="ComponentInfo{ru.maximoff.sheller/ru.maximoff.sheller.MainActivity}" drawable="mpatcher" name="MPatcher" />
@@ -7987,6 +7991,7 @@
   <item component="ComponentInfo{com.shaiban.audioplayer.mplayer/com.shaiban.audioplayer.mplayer.common.splash.NavigatingActivity}" drawable="apple_music" name="Music Player" />
   <item component="ComponentInfo{com.shaiban.audioplayer.mplayer/com.shaiban.audioplayer.mplayer.app.navigation.NavigatingActivity}" drawable="apple_music" name="Music Player" />
   <item component="ComponentInfo{com.media.music.mp3.musicplayer/com.media.music.ui.main.MainActivity}" drawable="apple_music" name="Music player" />
+  <item component="ComponentInfo{musicplayer.hdvideoplayer.backgroundmusic/musicplayer.hdvideoplayer.backgroundmusic.myActivities.MainActivity}" drawable="apple_music" name="Music Player" />
   <item component="ComponentInfo{musicplayer.musicapps.music.mp3player/musicplayer.musicapps.music.mp3player.activities.SplashActivity}" drawable="music_player_and_mp3_player" name="Music Player &amp; MP3 Player" />
   <item component="ComponentInfo{com.iven.musicplayergo/com.iven.musicplayergo.MainActivity}" drawable="music_player_go" name="Music Player GO" />
   <item component="ComponentInfo{com.iven.musicplayergo/com.iven.musicplayergo.ui.MainActivity}" drawable="music_player_go" name="Music Player GO" />
@@ -9353,6 +9358,7 @@
   <item component="ComponentInfo{pdfreader.pdfviewer.officetool.pdfscanner/pdfreader.pdfviewer.officetool.pdfscanner.views.activities.splash.SplashLatest}" drawable="pdf_viewer" name="PDF Reader" />
   <item component="ComponentInfo{com.pdfreader.free.viewer.documentreader/com.pdfreader.free.viewer.ui.ReaderSplashActivity}" drawable="pdf_viewer" name="PDF Reader" />
   <item component="ComponentInfo{com.ezt.pdfreader.pdfviewer/com.ezt.pdfreader.pdfviewer.SplashScreen}" drawable="pdf_viewer" name="PDF Reader" />
+  <item component="ComponentInfo{com.trustedapp.pdfreaderpdfviewer/com.trustedapp.pdfreader.view.splash.SplashActivity}" drawable="pdf_viewer" name="PDF Reader" />
   <item component="ComponentInfo{com.document.reader.pdfreader.pdf/com.document.reader.pdfreader.pdf.SplashScreenActivity}" drawable="pdf_viewer" name="PDF Reader &amp; PDF Viewer" />
   <item component="ComponentInfo{foundation.e.pdfviewer/com.gitlab.mudlej.MjPdfReader.LauncherAlias}" drawable="grapheneos_secure_pdf_viewer" name="Pdf Viewer Plus" />
   <item component="ComponentInfo{com.gsnathan.pdfviewer/com.gsnathan.pdfviewer.MainActivity_}" drawable="pdf_viewer_plus" name="Pdf Viewer Plus" />
@@ -12595,6 +12601,7 @@
   <item component="ComponentInfo{com.tailscale.ipn/com.tailscale.ipn.MainActivity}" drawable="tailscale" name="Tailscale" />
   <item component="ComponentInfo{com.tailscale.ipn/org.gioui.GioActivity}" drawable="tailscale" name="Tailscale" />
   <item component="ComponentInfo{com.tailscale.ipn/com.tailscale.ipn.IPNActivity}" drawable="tailscale" name="Tailscale" />
+  <item component="ComponentInfo{com.next.innovation.takatak/com.mx.buzzify.activity.SplashActivity}" drawable="generic_player" name="Takatak" />
   <item component="ComponentInfo{be.pizza.android/com.takeaway.android.activity.Splash}" drawable="just_eat" name="Takeaway" />
   <item component="ComponentInfo{be.pizza.android/com.takeaway.android.Startup}" drawable="just_eat" name="Takeaway" />
   <item component="ComponentInfo{ch.lieferservice.android/com.takeaway.android.activity.Splash}" drawable="just_eat" name="Takeaway" />
@@ -13086,6 +13093,7 @@
   <item component="ComponentInfo{com.nytimes.android/com.nytimes.android.MainActivity}" drawable="the_new_york_times" name="The New York Times" />
   <item component="ComponentInfo{com.theracemadialtd.therace/crc643f8e59ff9f999875.SplashActivity}" drawable="the_race" name="The Race" />
   <item component="ComponentInfo{com.ea.gp.simsmobile/com.ea.gp.simsmobile.TSMActivity}" drawable="the_sims" name="The Sims" />
+  <item component="ComponentInfo{com.ea.games.simsfreeplay_row/com.ea.games.simsfreeplay.GameActivity}" drawable="the_sims" name="The Sims FreePlay" />
   <item component="ComponentInfo{com.thesouledstore/com.thesouledstore.SplashActivity}" drawable="the_souled_store" name="The Souled Store" />
   <item component="ComponentInfo{com.weather.Weather/com.weather.Weather.app.SplashScreenActivity}" drawable="the_weather_channel" name="The Weather Channel" />
   <item component="ComponentInfo{com.weather.Weather/com.weather.corgikit.view.CorgiActivity}" drawable="the_weather_channel" name="The Weather Channel" />
