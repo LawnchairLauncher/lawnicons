@@ -1,8 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.requiredSize
@@ -19,7 +17,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipBox
-import androidx.compose.material3.TooltipDefaults
+import androidx.compose.material3.TooltipDefaults.rememberTooltipPositionProvider
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -41,6 +39,7 @@ import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
 import app.lawnchair.lawnicons.ui.util.isScrollingUp
+import app.lawnchair.lawnicons.ui.util.visitUrl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
@@ -114,7 +113,7 @@ fun IconRequestIconButton(
         },
     ) { interactionSource ->
         TooltipBox(
-            positionProvider = TooltipDefaults.rememberPlainTooltipPositionProvider(),
+            positionProvider = rememberTooltipPositionProvider(),
             tooltip = {
                 PlainTooltip {
                     Text(stringResource(R.string.request_icons))
@@ -261,9 +260,9 @@ private fun handleRequestClick(
     snackbarHostState: SnackbarHostState,
 ) {
     if (iconRequestList.isEmpty()) {
-        openLink(context, Constants.ICON_REQUEST_FORM)
+        context.visitUrl(Constants.ICON_REQUEST_FORM)
     } else if (directLinkEnabled) {
-        openLink(context, encodedRequestList)
+        context.visitUrl(encodedRequestList)
     } else {
         openSnackbarWarningContent(
             context,
@@ -327,7 +326,7 @@ private fun openSnackbarWarningContent(
             )
         when (result) {
             SnackbarResult.ActionPerformed -> {
-                openLink(context, Constants.ICON_REQUEST_FORM)
+                context.visitUrl(Constants.ICON_REQUEST_FORM)
             }
 
             SnackbarResult.Dismissed -> {
@@ -335,12 +334,6 @@ private fun openSnackbarWarningContent(
             }
         }
     }
-}
-
-private fun openLink(context: Context, link: String) {
-    val website = Uri.parse(link)
-    val intent = Intent(Intent.ACTION_VIEW, website)
-    context.startActivity(intent)
 }
 
 private fun buildForm(string: String): String {

@@ -82,10 +82,10 @@ abstract class BasePreferenceManager(
 class PreferenceManager private constructor(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {
-    val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", true)
-    val showNewIconsCard = BoolPref("show_new_icons_card", true)
+    val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", false)
     val showDebugMenu = BoolPref("debug_menu", false)
     val forceEnableIconRequest = BoolPref("force_icon_request", false)
+    val iconRequestsEnabled = BoolPref("icon_requests_enabled", false)
     val currentLawniconsVersion = IntPref("current_lawnicons_version", BuildConfig.VERSION_CODE)
 
     /**

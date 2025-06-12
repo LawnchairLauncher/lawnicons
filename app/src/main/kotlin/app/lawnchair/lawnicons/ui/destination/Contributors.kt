@@ -1,7 +1,5 @@
 package app.lawnchair.lawnicons.ui.destination
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -40,6 +38,7 @@ import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.visitUrl
 import app.lawnchair.lawnicons.viewmodel.ContributorsUiState
 import app.lawnchair.lawnicons.viewmodel.ContributorsViewModel
 import kotlinx.serialization.Serializable
@@ -208,9 +207,7 @@ private fun ContributorListError(
     SideEffect {
         onBack()
         // we might be rate-limited, open the web ui instead
-        val website = Uri.parse(CONTRIBUTOR_URL)
-        val intent = Intent(Intent.ACTION_VIEW, website)
-        context.startActivity(intent)
+        context.visitUrl(CONTRIBUTOR_URL)
     }
 }
 

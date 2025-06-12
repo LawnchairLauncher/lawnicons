@@ -32,8 +32,6 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -55,23 +53,11 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlaceholderUI(
-    showDummyCard: Boolean,
     modifier: Modifier = Modifier,
 ) {
     val contentPadding = IconPreviewGridPadding.Defaults
     Scaffold(
         modifier = modifier,
-        bottomBar = {
-            BottomAppBar(
-                modifier = Modifier.placeholder(
-                    visible = true,
-                    color = BottomAppBarDefaults.containerColor,
-                    highlight = PlaceholderHighlight.shimmer(
-                        MaterialTheme.colorScheme.surfaceContainer,
-                    ),
-                ),
-            ) {}
-        },
     ) {
         LazyVerticalGrid(
             columns = GridCells.Adaptive(80.dp),
@@ -116,26 +102,23 @@ fun PlaceholderUI(
                     },
                 )
             }
-            if (showDummyCard) {
-                item(span = { GridItemSpan(maxLineSpan) }) {
-                    Box(
-                        modifier = Modifier
-                            .padding(horizontal = 8.dp)
-                            .padding(bottom = 12.dp)
-                            .height(48.dp)
-                            .fillMaxWidth()
-                            .clip(CircleShape)
-                            .placeholder(
-                                visible = true,
-                                color = MaterialTheme.colorScheme.surfaceContainer,
-                                highlight = PlaceholderHighlight.shimmer(
-                                    MaterialTheme.colorScheme.surfaceContainerHigh,
-                                ),
+            item(span = { GridItemSpan(maxLineSpan) }) {
+                Box(
+                    modifier = Modifier
+                        .padding(horizontal = 8.dp)
+                        .padding(bottom = 12.dp)
+                        .height(48.dp)
+                        .fillMaxWidth()
+                        .clip(CircleShape)
+                        .placeholder(
+                            visible = true,
+                            color = MaterialTheme.colorScheme.surfaceContainer,
+                            highlight = PlaceholderHighlight.shimmer(
+                                MaterialTheme.colorScheme.surfaceContainerHigh,
                             ),
-                    ) {}
-                }
+                        ),
+                ) {}
             }
-
             items(100) {
                 Box(
                     contentAlignment = Alignment.Center,

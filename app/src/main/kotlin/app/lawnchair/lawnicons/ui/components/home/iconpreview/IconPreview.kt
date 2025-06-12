@@ -23,15 +23,17 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Call
 import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -76,6 +78,7 @@ fun IconPreview(
     )
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
@@ -86,12 +89,19 @@ fun IconPreview(
     showSheet: Boolean = false,
     onToggleSheet: (Boolean) -> Unit = {},
 ) {
+    val shape = when (iconInfo.componentNames.map { it.label }.distinct().size) {
+        1 -> MaterialShapes.Circle
+        2 -> MaterialShapes.Cookie4Sided
+        3 -> MaterialShapes.Gem
+        else -> MaterialShapes.VerySunny
+    }.toShape()
+
     Box(
         contentAlignment = Alignment.Center,
         modifier = modifier
             .padding(all = 8.dp)
             .aspectRatio(ratio = 1F)
-            .clip(shape = CircleShape)
+            .clip(shape = shape)
             .clickable(
                 onClick = {
                     if (isIconPicker) {

@@ -5,12 +5,15 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material3.Icon
@@ -19,7 +22,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
@@ -31,7 +33,7 @@ import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.IconLink
-import app.lawnchair.lawnicons.ui.components.core.Card
+import app.lawnchair.lawnicons.ui.components.core.CardHeader
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
@@ -40,6 +42,13 @@ import app.lawnchair.lawnicons.ui.util.Contributor
 import app.lawnchair.lawnicons.ui.util.ExternalLink
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import kotlinx.serialization.Serializable
+
+enum class ColumnTypes {
+    SPACER,
+    HEADER,
+    NAVIGATION_ITEM,
+    LIST_ITEM,
+}
 
 @Serializable
 data object About
@@ -68,8 +77,6 @@ private fun About(
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    val context = LocalContext.current
-
     LawniconsScaffold(
         modifier = modifier,
         title = stringResource(id = R.string.about),
@@ -135,53 +142,68 @@ private fun About(
                     }
                 }
             }
-            item {
-                Card(label = stringResource(id = R.string.core_contributors), modifier = Modifier.padding(top = 16.dp)) {
-                    coreContributors.mapIndexed { index, it ->
-                        ContributorRow(
-                            name = it.name,
-                            photoUrl = it.photoUrl,
-                            profileUrl = it.socialUrl,
-                            divider = index != coreContributors.lastIndex,
-                            description = it.descriptionRes?.let { stringResource(id = it) },
-                        )
-                    }
-                }
+            item(contentType = ColumnTypes.SPACER) {
+                Spacer(Modifier.height(16.dp))
+            }
+            item(contentType = ColumnTypes.HEADER) {
+                CardHeader(stringResource(id = R.string.core_contributors))
+            }
+            itemsIndexed(coreContributors) { index, it ->
+                ContributorRow(
+                    name = it.name,
+                    photoUrl = it.photoUrl,
+                    profileUrl = it.socialUrl,
+                    divider = index != coreContributors.lastIndex,
+                    description = it.descriptionRes?.let { stringResource(id = it) },
+                    background = true,
+                    first = index == 0,
+                    last = index == coreContributors.lastIndex,
+                )
+            }
+            item(contentType = ColumnTypes.SPACER) {
+                Spacer(Modifier.height(16.dp))
             }
             item {
-                Card(modifier = Modifier.padding(top = 16.dp)) {
-                    SimpleListRow(
-                        onClick = onNavigateToContributors,
-                        label = stringResource(id = R.string.see_all_contributors),
-                        divider = false,
-                    )
-                }
+                SimpleListRow(
+                    onClick = onNavigateToContributors,
+                    label = stringResource(id = R.string.see_all_contributors),
+                    divider = false,
+                    first = true,
+                    last = true,
+                    background = true,
+                )
+            }
+            item(contentType = ColumnTypes.SPACER) {
+                Spacer(Modifier.height(16.dp))
+            }
+            item(contentType = ColumnTypes.HEADER) {
+                CardHeader(stringResource(id = R.string.special_thanks))
+            }
+            itemsIndexed(specialThanks) { index, it ->
+                ContributorRow(
+                    name = it.name,
+                    photoUrl = it.photoUrl,
+                    profileUrl = it.username?.let { "https://github.com/$it" },
+                    description = it.descriptionRes?.let { stringResource(id = it) },
+                    divider = index != specialThanks.lastIndex,
+                    socialUrl = it.socialUrl,
+                    background = true,
+                    first = index == 0,
+                    last = index == specialThanks.lastIndex,
+                )
+            }
+            item(contentType = ColumnTypes.SPACER) {
+                Spacer(Modifier.height(16.dp))
             }
             item {
-                Card(
-                    label = stringResource(id = R.string.special_thanks),
-                    modifier = Modifier.padding(top = 16.dp),
-                ) {
-                    specialThanks.mapIndexed { index, it ->
-                        ContributorRow(
-                            name = it.name,
-                            photoUrl = it.photoUrl,
-                            profileUrl = it.username?.let { "https://github.com/$it" },
-                            description = it.descriptionRes?.let { stringResource(id = it) },
-                            divider = index != specialThanks.lastIndex,
-                            socialUrl = it.socialUrl,
-                        )
-                    }
-                }
-            }
-            item {
-                Card(modifier = Modifier.padding(top = 16.dp)) {
-                    SimpleListRow(
-                        onClick = onNavigateToAcknowledgements,
-                        label = stringResource(id = R.string.acknowledgements),
-                        divider = false,
-                    )
-                }
+                SimpleListRow(
+                    onClick = onNavigateToAcknowledgements,
+                    label = stringResource(id = R.string.acknowledgements),
+                    divider = false,
+                    first = true,
+                    last = true,
+                    background = true,
+                )
             }
         }
     }
@@ -194,9 +216,9 @@ private val externalLinks = listOf(
         url = Constants.GITHUB,
     ),
     ExternalLink(
-        iconResId = R.drawable.icon_request_app,
-        name = R.string.request_form,
-        url = Constants.ICON_REQUEST_FORM,
+        iconResId = R.drawable.feedback_icon,
+        name = R.string.send_feedback,
+        url = Constants.FEEDBACK_FORM,
     ),
 )
 

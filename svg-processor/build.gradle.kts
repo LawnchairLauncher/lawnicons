@@ -8,13 +8,14 @@ application {
 }
 
 dependencies {
-    implementation("com.android.tools:sdk-common:31.10.0")
+    implementation("com.android.tools:sdk-common:31.10.1")
     implementation("org.dom4j:dom4j:2.1.4")
     implementation("commons-io:commons-io:2.19.0")
 }
 
 val svgDir = rootDir.resolve("svgs")
 val resDir = rootDir.resolve("app/src/runtime/res")
+val customTag = providers.environmentVariable("CUSTOM_TAG").orNull.orEmpty()
 val assetsDir = rootDir.resolve("app/assets")
 
 tasks.run.configure {
@@ -26,6 +27,7 @@ tasks.run.configure {
     args(
         svgDir,
         resDir,
+        customTag,
         assetsDir,
     )
 }

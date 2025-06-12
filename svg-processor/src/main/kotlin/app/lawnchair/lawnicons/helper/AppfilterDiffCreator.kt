@@ -23,6 +23,7 @@ object AppfilterDiffCreator {
 
     private fun writePreviousRelease(
         previousAppFilterFile: String,
+        customTag: String = "",
     ) {
         try {
             runGitCommand(listOf("fetch", "--tags"))
@@ -34,12 +35,15 @@ object AppfilterDiffCreator {
 
         try {
             val tags = runGitCommand(listOf("tag", "--sort=-creatordate"))
-            val latestTag = tags.firstOrNull { it != "nightly" } ?: {
-                // fallback to `main` branch
-                val fallbackTags = runGitCommand(listOf("show", "main"))
+            val latestTag =
+                customTag.ifEmpty {
+                    tags.firstOrNull { it != "nightly" } ?: {
+                        // fallback to `main` branch
+                        val fallbackTags = runGitCommand(listOf("show", "main"))
 
-                fallbackTags.firstOrNull() ?: throw RuntimeException("No tags found")
-            }
+                        fallbackTags.firstOrNull() ?: throw RuntimeException("No tags found")
+                    }
+                }
 
             // use relative file path, as `git show` does not work with absolute paths
             lines = runGitCommand(listOf("show", "$latestTag:app/assets/appfilter.xml"))
@@ -121,10 +125,11 @@ object AppfilterDiffCreator {
 
     fun createAppfilterDiff(
         resDir: String,
+        customTag: String,
         appFilterFile: String,
         previousAppFilterFile: String,
     ) {
-        writePreviousRelease(previousAppFilterFile)
+        writePreviousRelease(previousAppFilterFile, customTag)
 
         val diff = getLineDiff(
             readFileContents(previousAppFilterFile),

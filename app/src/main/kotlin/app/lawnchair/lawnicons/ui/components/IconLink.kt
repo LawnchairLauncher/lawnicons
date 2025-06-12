@@ -1,7 +1,5 @@
 package app.lawnchair.lawnicons.ui.components
 
-import android.content.Intent
-import android.net.Uri
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -30,6 +28,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.visitUrl
 
 @Composable
 fun IconLink(
@@ -45,11 +44,7 @@ fun IconLink(
         label = label,
         onClick = {
             if (!inPreviewMode) {
-                val webpage = Uri.parse(url)
-                val intent = Intent(Intent.ACTION_VIEW, webpage)
-                if (intent.resolveActivity(context.packageManager) != null) {
-                    context.startActivity(intent)
-                }
+                context.visitUrl(url)
             }
         },
         modifier = modifier,

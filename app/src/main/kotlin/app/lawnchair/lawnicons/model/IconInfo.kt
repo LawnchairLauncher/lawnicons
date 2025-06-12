@@ -10,6 +10,7 @@ import kotlinx.serialization.Serializable
  * labels of the apps that have the icon.
  * @property id A unique identifier for the icon.
  */
+@Serializable
 data class IconInfo(
     val drawableName: String,
     val componentNames: List<LabelAndComponent>,

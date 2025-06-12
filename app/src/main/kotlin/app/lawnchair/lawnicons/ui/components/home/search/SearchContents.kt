@@ -2,7 +2,6 @@ package app.lawnchair.lawnicons.ui.components.home.search
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -49,6 +48,7 @@ fun SearchContents(
     onModeChange: (SearchMode) -> Unit,
     iconInfo: List<IconInfo>,
     modifier: Modifier = Modifier,
+    isIconPicker: Boolean = false,
     onSendResult: (IconInfo) -> Unit = {},
     showSheet: Boolean = false,
     onToggleSheet: (Boolean) -> Unit = {},
@@ -121,9 +121,11 @@ fun SearchContents(
             when (count) {
                 1 -> {
                     IconInfoListItem(
-                        iconInfo,
-                        showSheet,
-                        onToggleSheet,
+                        iconInfo = iconInfo.firstOrNull(),
+                        showSheet = showSheet,
+                        onToggleSheet = onToggleSheet,
+                        isIconPicker = isIconPicker,
+                        onSendResult = onSendResult,
                     )
                 }
 
@@ -142,34 +144,30 @@ fun SearchContents(
                 }
 
                 else -> {
-                    Crossfade(
-                        targetState = iconInfo,
-                        label = "Item changed",
-                        animationSpec = tween(50),
-                    ) { iconInfo ->
-                        LazyVerticalGrid(
-                            columns = GridCells.Adaptive(minSize = 80.dp),
-                            contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
-                        ) {
-                            itemsIndexed(
-                                items = iconInfo,
-                                contentType = { _, _ -> "icon_preview" },
-                            ) { index, it ->
-                                if (index == 0 && searchTerm != "") {
-                                    IconPreview(
-                                        iconInfo = it,
-                                        onSendResult = onSendResult,
-                                        iconBackground = MaterialTheme.colorScheme.surface,
-                                        showSheet = showSheet,
-                                        onToggleSheet = onToggleSheet,
-                                    )
-                                } else {
-                                    IconPreview(
-                                        iconInfo = it,
-                                        onSendResult = onSendResult,
-                                        iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
-                                    )
-                                }
+                    LazyVerticalGrid(
+                        columns = GridCells.Adaptive(minSize = 80.dp),
+                        contentPadding = PaddingValues(16.dp, 16.dp, 16.dp, 80.dp),
+                    ) {
+                        itemsIndexed(
+                            items = iconInfo,
+                            contentType = { _, _ -> "icon_preview" },
+                        ) { index, it ->
+                            if (index == 0 && searchTerm != "") {
+                                IconPreview(
+                                    iconInfo = it,
+                                    isIconPicker = isIconPicker,
+                                    onSendResult = onSendResult,
+                                    iconBackground = MaterialTheme.colorScheme.surface,
+                                    showSheet = showSheet,
+                                    onToggleSheet = onToggleSheet,
+                                )
+                            } else {
+                                IconPreview(
+                                    iconInfo = it,
+                                    isIconPicker = isIconPicker,
+                                    onSendResult = onSendResult,
+                                    iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
+                                )
                             }
                         }
                     }
@@ -181,25 +179,23 @@ fun SearchContents(
 
 @Composable
 private fun IconInfoListItem(
-    iconInfo: List<IconInfo>,
+    iconInfo: IconInfo?,
     showSheet: Boolean,
     onToggleSheet: (Boolean) -> Unit,
+    isIconPicker: Boolean = false,
+    onSendResult: (IconInfo) -> Unit = {},
 ) {
+    if (iconInfo == null) return
+
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(PaddingValues(16.dp)),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        val it = try {
-            iconInfo[0]
-        } catch (_: Exception) {
-            return@IconInfoListItem
-        }
-
         ListItem(
-            headlineContent = { Text(it.getFirstLabelAndComponent().label) },
-            supportingContent = { Text(it.getFirstLabelAndComponent().componentName) },
+            headlineContent = { Text(iconInfo.getFirstLabelAndComponent().label) },
+            supportingContent = { Text(iconInfo.getFirstLabelAndComponent().componentName) },
             leadingContent = {
                 Box(
                     contentAlignment = Alignment.Center,
@@ -209,7 +205,7 @@ private fun IconInfoListItem(
                         .size(48.dp),
                 ) {
                     Icon(
-                        painter = painterResource(id = it.id),
+                        painter = painterResource(id = iconInfo.id),
                         contentDescription = null,
                         modifier = Modifier.fillMaxSize(0.6f),
                     )
@@ -217,11 +213,19 @@ private fun IconInfoListItem(
             },
             modifier = Modifier
                 .clip(RoundedCornerShape(16.dp))
-                .clickable(onClick = { onToggleSheet(true) }),
+                .clickable(
+                    onClick = {
+                        if (isIconPicker) {
+                            onSendResult(iconInfo)
+                        } else {
+                            onToggleSheet(true)
+                        }
+                    },
+                ),
         )
         AnimatedVisibility(showSheet) {
             IconInfoSheet(
-                iconInfo = it,
+                iconInfo = iconInfo,
             ) {
                 onToggleSheet(it)
             }

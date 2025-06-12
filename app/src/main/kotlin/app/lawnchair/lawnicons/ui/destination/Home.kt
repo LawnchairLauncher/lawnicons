@@ -1,15 +1,19 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import android.annotation.SuppressLint
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.FloatingToolbarDefaults
+import androidx.compose.material3.FloatingToolbarExitDirection
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Surface
@@ -18,8 +22,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
@@ -27,9 +32,8 @@ import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.DebugMenu
-import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
+import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
-import app.lawnchair.lawnicons.ui.components.home.HomeTopBarUiState
 import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderUI
@@ -66,7 +70,7 @@ fun NavGraphBuilder.homeDestination(
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun Home(
     onNavigateToAbout: () -> Unit,
@@ -87,8 +91,11 @@ private fun Home(
         val lazyGridState = rememberLazyGridState()
         val snackbarHostState = remember { SnackbarHostState() }
 
-        val focusRequester = remember { FocusRequester() }
         val prefs = preferenceManager(context)
+
+        val scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
+            FloatingToolbarExitDirection.Bottom,
+        )
 
         Crossfade(
             modifier = modifier,
@@ -99,40 +106,19 @@ private fun Home(
                 Scaffold(
                     topBar = {
                         HomeTopBar(
-                            uiState = HomeTopBarUiState(
-                                isSearchExpanded = expandSearch,
-                                isExpandedScreen = isExpandedScreen,
-                                searchedIconInfoModel = searchedIconInfoModel,
-                                searchTerm = searchTerm,
-                                searchMode = searchMode,
-                                isIconPicker = isIconPicker,
-                            ),
-                            onFocusChange = { expandSearch = !expandSearch },
-                            onClearSearch = ::clearSearch,
-                            onChangeMode = ::changeMode,
-                            onSearchIcons = ::searchIcons,
+                            textFieldState = searchTermTextState,
+                            mode = searchMode,
+                            onBack = {
+                                expandSearch = false
+                            },
                             onNavigate = onNavigateToAbout,
+                            onModeChange = ::changeMode,
+                            expandSearch = expandSearch,
+                            isExpandedScreen = isExpandedScreen,
+                            isIconPicker = isIconPicker,
                             onSendResult = onSendResult,
-                            focusRequester = focusRequester,
+                            iconInfoModel = searchedIconInfoModel,
                         )
-                    },
-                    bottomBar = {
-                        if (!isExpandedScreen) {
-                            AnimatedVisibility(
-                                !expandSearch,
-                                enter = fadeIn(),
-                                exit = fadeOut(),
-                            ) {
-                                HomeBottomBar(
-                                    context = context,
-                                    iconRequestsEnabled = iconRequestsEnabled,
-                                    iconRequestModel = iconRequestModel,
-                                    snackbarHostState = snackbarHostState,
-                                    onNavigate = onNavigateToAbout,
-                                    onExpandSearch = { expandSearch = true },
-                                )
-                            }
-                        }
                     },
                     floatingActionButton = {
                         if (isExpandedScreen) {
@@ -145,29 +131,53 @@ private fun Home(
                         }
                     },
                     snackbarHost = {
-                        SnackbarHost(hostState = snackbarHostState)
+                        SnackbarHost(
+                            hostState = snackbarHostState,
+                        ) {
+                            val offset by animateDpAsState(
+                                if (scrollBehavior.state.offset != 0F) 0.dp else FloatingToolbarDefaults.ContainerSize,
+                            )
+                            Snackbar(
+                                it,
+                                modifier = Modifier.padding(bottom = offset),
+                            )
+                        }
                     },
+                    modifier = Modifier.nestedScroll(scrollBehavior),
                 ) {
-                    IconPreviewGrid(
-                        iconInfo = iconInfoModel.iconInfo,
-                        onSendResult = onSendResult,
-                        contentPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize else IconPreviewGridPadding.Defaults,
-                        isIconPicker = isIconPicker,
-                        gridState = lazyGridState,
-                    ) {
-                        if (!isExpandedScreen) {
-                            item(
-                                span = { GridItemSpan(maxLineSpan) },
-                            ) {
-                                AppBarListItem()
+                    Box {
+                        IconPreviewGrid(
+                            iconInfo = iconInfoModel.iconInfo,
+                            onSendResult = onSendResult,
+                            contentPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize else IconPreviewGridPadding.Defaults,
+                            isIconPicker = isIconPicker,
+                            gridState = lazyGridState,
+                        ) {
+                            if (!isExpandedScreen) {
+                                item(
+                                    span = { GridItemSpan(maxLineSpan) },
+                                ) {
+                                    AppBarListItem()
+                                }
+                            }
+                            if (newIconsInfoModel.iconCount != 0) {
+                                item(
+                                    span = { GridItemSpan(maxLineSpan) },
+                                ) {
+                                    NewIconsCard(onNavigateToNewIcons)
+                                }
                             }
                         }
-                        if (newIconsInfoModel.iconCount != 0) {
-                            item(
-                                span = { GridItemSpan(maxLineSpan) },
-                            ) {
-                                NewIconsCard(onNavigateToNewIcons)
-                            }
+                        if (!isExpandedScreen) {
+                            HomeBottomToolbar(
+                                context = context,
+                                scrollBehavior = scrollBehavior,
+                                iconRequestsEnabled = iconRequestsEnabled,
+                                iconRequestModel = iconRequestModel,
+                                snackbarHostState = snackbarHostState,
+                                onNavigate = onNavigateToAbout,
+                                onExpandSearch = { expandSearch = true },
+                            )
                         }
                     }
                 }
@@ -175,15 +185,17 @@ private fun Home(
                 if (isExpandedScreen) {
                     PlaceholderSearchBar()
                 } else {
-                    PlaceholderUI(prefs.showNewIconsCard.asState().value)
+                    PlaceholderUI()
                 }
             }
         }
 
-        LaunchedEffect(expandSearch) {
-            if (expandSearch) {
-                focusRequester.requestFocus()
-            }
+        LaunchedEffect(searchTermTextState.text) {
+            searchIcons(searchTermTextState.text.toString())
+        }
+
+        LaunchedEffect(iconRequestsEnabled) {
+            prefs.iconRequestsEnabled.set(iconRequestsEnabled)
         }
 
         if (prefs.showDebugMenu.asState().value) {
