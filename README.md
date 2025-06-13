@@ -53,12 +53,12 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-You can contribute by adding icons and solving development issues. Please see our guidelines for more info.  
+Whether you want to work on icons or solve development issues, please refer to our guidelines. 
 
-[Lawnicons guidelines](CONTRIBUTING.md) (updated: May 2025) • [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Link apps and icons](CONTRIBUTING.md#adding-icons-and-missing-app-components-to-lawnicons)
+[Lawnicons guidelines](CONTRIBUTING.md) (upd: May 2025)
 
 ## Requesting icons
 
-Icon requests are suspended. The collected requests are available to contributors. 
+Icon requests are suspended. The collected requests await icon contributors.
 
-[Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
