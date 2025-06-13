@@ -61,4 +61,4 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 Icon requests are suspended. The collected requests await icon contributors.
 
-[Collected requests](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
