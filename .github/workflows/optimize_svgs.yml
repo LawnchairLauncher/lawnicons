@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - develop
-    path:
+    paths:
       - .github/workflows/optimize_svgs.yml
   workflow_dispatch:
 
