@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  pull-requests: write
   contents: write
 
 jobs:
@@ -15,11 +16,30 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Optimize SVGs
-        uses: ericcornelissen/svgo-action@v4
-        id: svgo
-      - name: Commit optimizations
-        uses: stefanzweifel/git-auto-commit-action@v5
-        if: ${{steps.svgo.outputs.DID_OPTIMIZE}}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          commit_message: Optimize ${{steps.svgo.outputs.OPTIMIZED_COUNT}} SVG(s)
+          node-version: '20'
+      
+      - name: Install SVGO
+        run: npm install -g svgo
+      
+      - name: Optimize SVGs
+        id: svgo
+        run: svgo --config=svgo.config.cjs --folder=svgs --recursive
+           
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Optimize SVG(s)
+          title: 'Weekly SVG Optimization'
+          branch: optimize-svgs
+          branch-suffix: 'timestamp'
+      
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --squash --auto --delete-branch ${{ steps.create-pr.outputs.pull-request-number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
