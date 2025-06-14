@@ -77,5 +77,4 @@ enum class SystemNavigation {
     GESTURE,
 }
 
-private fun Context.getSystemNavigationMode() =
-    SystemNavigation.entries[Settings.Secure.getInt(contentResolver, "navigation_mode", -1)]
+private fun Context.getSystemNavigationMode() = SystemNavigation.entries[Settings.Secure.getInt(contentResolver, "navigation_mode", -1)]
