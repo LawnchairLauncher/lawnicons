@@ -1,6 +1,5 @@
 package app.lawnchair.lawnicons.ui
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -28,7 +27,6 @@ import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
 
 @Composable
-@ExperimentalFoundationApi
 fun Lawnicons(
     isExpandedScreen: Boolean,
     onSendResult: (IconInfo) -> Unit,
