@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons.ui.components.home
 
 import android.content.Context
 import androidx.compose.foundation.layout.BoxScope
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.material.icons.Icons
@@ -97,7 +98,8 @@ fun BoxScope.HomeBottomToolbar(
         },
         modifier = modifier
             .align(Alignment.BottomCenter)
-            .offset(y = -ScreenOffset),
+            .offset(y = -ScreenOffset)
+            .navigationBarsPadding(),
     )
 }
 
