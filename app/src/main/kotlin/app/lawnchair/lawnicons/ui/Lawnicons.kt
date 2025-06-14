@@ -11,13 +11,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.destination.About
-import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
 import app.lawnchair.lawnicons.ui.destination.Contributors
 import app.lawnchair.lawnicons.ui.destination.Home
 import app.lawnchair.lawnicons.ui.destination.NewIcons
 import app.lawnchair.lawnicons.ui.destination.aboutDestination
-import app.lawnchair.lawnicons.ui.destination.acknowledgementDestination
 import app.lawnchair.lawnicons.ui.destination.acknowledgementsDestination
 import app.lawnchair.lawnicons.ui.destination.contributorsDestination
 import app.lawnchair.lawnicons.ui.destination.homeDestination
@@ -56,13 +54,6 @@ fun Lawnicons(
                 onSendResult = onSendResult,
             )
             acknowledgementsDestination(
-                onBack = navController::popBackStack,
-                onNavigate = {
-                    navController.navigate(Acknowledgement(it))
-                },
-                isExpandedScreen = isExpandedScreen,
-            )
-            acknowledgementDestination(
                 onBack = navController::popBackStack,
                 isExpandedScreen = isExpandedScreen,
             )
