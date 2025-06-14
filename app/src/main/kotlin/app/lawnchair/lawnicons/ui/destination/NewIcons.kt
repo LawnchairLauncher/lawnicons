@@ -70,8 +70,7 @@ private fun NewIcons(
             iconInfo = iconInfoModel.iconInfo,
             onSendResult = {},
             contentPadding = IconPreviewGridPadding(
-                topPadding = paddingValues.calculateTopPadding() - 24.dp,
-                bottomPadding = paddingValues.calculateBottomPadding(),
+                topPadding = paddingValues.calculateTopPadding() - 12.dp,
                 horizontalPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize.horizontalPadding else IconPreviewGridPadding.Defaults.horizontalPadding,
             ),
         )

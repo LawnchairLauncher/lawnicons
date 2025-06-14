@@ -42,7 +42,10 @@ Tips
 
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
-[View in Figma](https://www.figma.com/community/file/1227718471680779613)
+> [!TIP]
+> The design guidelines are also available in Figma, you can practice there.  
+> [View in Figma](https://www.figma.com/community/file/1227718471680779613)
+
 
 ### Approach
 
@@ -54,7 +57,7 @@ Tips
 - Make no more than 5 icons at a time, as long as your PRs require rework.
 - Prioritize quality.
 
-[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
+[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
 ### Fundamentals
 
@@ -358,10 +361,10 @@ You need to link SVGs and app components correctly, create a PR to our repositor
 
 Tips
 - Avoid name conflicts.
-- Add missing components to icons that are identical to the originals.
+- Add missing app components to icons that are identical to the originals.
 - Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[View on YouTube](https://youtu.be/EAvYelOK5Nw) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[View on YouTube](https://youtu.be/EAvYelOK5Nw) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 

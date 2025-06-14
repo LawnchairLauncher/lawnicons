@@ -80,20 +80,17 @@ import my.nanihadesuka.compose.ScrollbarSettings
 
 data class IconPreviewGridPadding(
     val topPadding: Dp,
-    val bottomPadding: Dp,
     val horizontalPadding: Dp,
 ) {
 
     companion object {
         val Defaults = IconPreviewGridPadding(
             topPadding = 0.dp,
-            bottomPadding = 0.dp,
             horizontalPadding = 8.dp,
         )
 
         val ExpandedSize = IconPreviewGridPadding(
             topPadding = 72.dp,
-            bottomPadding = 0.dp,
             horizontalPadding = 32.dp,
         )
     }
@@ -105,8 +102,7 @@ fun IconPreviewGrid(
     iconInfo: List<IconInfo>,
     onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
-    containerModifier: Modifier = Modifier
-        .applyGridInsets(),
+    containerModifier: Modifier = Modifier.applyGridInsets(),
     contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
     isIconPicker: Boolean = false,
     gridState: LazyGridState = rememberLazyGridState(),
@@ -122,8 +118,7 @@ fun IconPreviewGrid(
         modifier = modifier.fillMaxWidth(),
     ) {
         Box(
-            modifier = containerModifier
-                .padding(bottom = contentPadding.bottomPadding),
+            modifier = containerModifier,
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
@@ -180,14 +175,18 @@ private fun ScrollbarLayout(
 ) {
     Box(
         contentAlignment = Alignment.CenterEnd,
-        modifier = Modifier.padding(top = topPadding),
+        modifier = Modifier
+            .padding(top = topPadding)
+            .padding(
+                bottom = WindowInsets.navigationBars.toPaddingValues().calculateBottomPadding(),
+            ),
     ) {
         Spacer(
             Modifier
                 .fillMaxHeight()
                 .width(8.dp)
-                .background(MaterialTheme.colorScheme.surfaceContainer)
-                .clip(CircleShape),
+                .clip(CircleShape)
+                .background(MaterialTheme.colorScheme.surfaceContainer),
         )
         InternalLazyVerticalGridScrollbar(
             modifier = Modifier.offset(7.dp),

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -12,11 +13,9 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
-import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.createBitmap
@@ -39,6 +38,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            @Suppress("DEPRECATION")
+            window.setDecorFitsSystemWindows(false)
+            window.setNavigationBarContrastEnforced(false)
+        }
+
         val isIconPicker = intent?.action == Constants.ICON_PICKER_INTENT_ACTION
 
         setContent {
@@ -48,13 +53,6 @@ class MainActivity : ComponentActivity() {
                 val isExpandedScreen =
                     windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
 
-                val navBarColor = if (isExpandedScreen) {
-                    MaterialTheme.colorScheme.background.copy(alpha = 0.95f)
-                } else {
-                    MaterialTheme.colorScheme.surfaceContainer
-                }
-
-                SetupEdgeToEdge(navBarColor.toArgb())
                 Lawnicons(
                     isExpandedScreen = isExpandedScreen,
                     onSendResult = { iconInfo ->
@@ -63,6 +61,7 @@ class MainActivity : ComponentActivity() {
                     },
                     isIconPicker = isIconPicker,
                 )
+                SetupEdgeToEdge(isExpandedScreen)
             }
         }
     }

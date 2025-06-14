@@ -259,10 +259,10 @@ private val coreContributors = listOf(
         descriptionRes = R.string.contribution_icons,
     ),
     Contributor(
-        name = "Zongle Wang",
+        name = "Goooler",
         username = "Goooler",
         photoUrl = "https://avatars.githubusercontent.com/u/10363352",
-        socialUrl = "https://androiddev.social/@Goooler",
+        socialUrl = "https://github.com/Goooler",
         descriptionRes = R.string.contribution_infra,
     ),
 )

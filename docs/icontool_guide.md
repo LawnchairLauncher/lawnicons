@@ -17,14 +17,14 @@ For Mac/Linux users, you can simply type `./icontool` to run the program. Otherw
 
 ## Adding icons
 ```console
-python3 icontool.py add /path/to/ICON_NAME APP_COMPONENT "APP_NAME"
+python3 ./icontool.py add /path/to/ICON_NAME APP_COMPONENT "APP_NAME"
 ```
 
 The `.svg` extension for `icon.svg` is optional, since the program automatically adds them.
 
 ## Linking icons
 ```console
-python3 icontool.py link APP_COMPONENT "APP_NAME"
+python3 ./icontool.py link APP_COMPONENT "APP_NAME"
 ```
 
 Note that `icon.svg` should be an SVG file located in the `svgs/` directory. The `.svg` extension for `icon.svg` is optional as well.
@@ -32,19 +32,19 @@ Note that `icon.svg` should be an SVG file located in the `svgs/` directory. The
 ## Removing icons
 ### Normal usage
 ```console
-python3 icontool.py remove APP_COMPONENT
+python3 ./icontool.py remove APP_COMPONENT
 ```
 
 ### Removing components with the same package name
 ```console
-python3 icontool.py remove PACKAGE
+python3 ./icontool.py remove PACKAGE
 ```
 
 ### Removing a component and its SVG file
 Simply pass the `-d` or `--delete` flag:
 
 ```console
-python3 icontool.py remove PACKAGE -d
+python3 ./icontool.py remove PACKAGE -d
 ```
 
 Note that the SVG file's name is based on the `drawable` attribute of the first `<item>` element.
@@ -53,6 +53,10 @@ Note that the SVG file's name is based on the `drawable` attribute of the first 
 Some common utilities are described below.
 
 ### Sorting appfilter.xml
+```console
+python3 ./icontool.py sort
+```
+
 This will sort the `appfilter.xml` file via the `name` attribute.
 
 ### Finding duplicate entries in appfilter.xml

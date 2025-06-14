@@ -1,6 +1,5 @@
 package app.lawnchair.lawnicons.ui
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -12,13 +11,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import app.lawnchair.lawnicons.model.IconInfo
 import app.lawnchair.lawnicons.ui.destination.About
-import app.lawnchair.lawnicons.ui.destination.Acknowledgement
 import app.lawnchair.lawnicons.ui.destination.Acknowledgements
 import app.lawnchair.lawnicons.ui.destination.Contributors
 import app.lawnchair.lawnicons.ui.destination.Home
 import app.lawnchair.lawnicons.ui.destination.NewIcons
 import app.lawnchair.lawnicons.ui.destination.aboutDestination
-import app.lawnchair.lawnicons.ui.destination.acknowledgementDestination
 import app.lawnchair.lawnicons.ui.destination.acknowledgementsDestination
 import app.lawnchair.lawnicons.ui.destination.contributorsDestination
 import app.lawnchair.lawnicons.ui.destination.homeDestination
@@ -28,7 +25,6 @@ import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
 
 @Composable
-@ExperimentalFoundationApi
 fun Lawnicons(
     isExpandedScreen: Boolean,
     onSendResult: (IconInfo) -> Unit,
@@ -58,13 +54,6 @@ fun Lawnicons(
                 onSendResult = onSendResult,
             )
             acknowledgementsDestination(
-                onBack = navController::popBackStack,
-                onNavigate = {
-                    navController.navigate(Acknowledgement(it))
-                },
-                isExpandedScreen = isExpandedScreen,
-            )
-            acknowledgementDestination(
                 onBack = navController::popBackStack,
                 isExpandedScreen = isExpandedScreen,
             )

@@ -6,16 +6,13 @@ import kotlinx.serialization.Serializable
 data class OssLibrary(
     val groupId: String,
     val artifactId: String,
-    val name: String = UNKNOWN_NAME,
-    val spdxLicenses: List<License>? = null,
-    val unknownLicenses: List<License>? = null,
+    val version: String,
+    val name: String,
+    val spdxLicenses: List<License>,
 ) {
     @Serializable
     data class License(
+        val name: String,
         val url: String,
     )
-
-    companion object {
-        const val UNKNOWN_NAME = "Unknown"
-    }
 }
