@@ -30,7 +30,7 @@ Code-related contributions are welcome. Significant changes to the UI should be 
 
 To build Lawnicons, select the `appDebug` build variant.
 
-Tips  
+Tips
 - Set `develop` as the base branch for pull requests.
 - You can use either Java or, preferably, Kotlin.
 - Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
@@ -51,7 +51,7 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
 
-Tips  
+Tips
 - Use the Lawnicons style, rather than trying to reproduce the original exactly.
 - Practice on easy-to-make icons to understand the whole process.
 - See how other contributors have made pull requests (PRs).
