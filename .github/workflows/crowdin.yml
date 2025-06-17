@@ -5,21 +5,16 @@ on:
     - cron: "0 0 * * 1"
   workflow_dispatch:
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
-
   synchronize-with-crowdin:
     name: Synchronize with Crowdin
-    if: github.repository_owner == 'LawnchairLauncher'
+    if: github.event.repository.fork == false
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Sync Translations
         uses: crowdin/github-action@v2
         with:
