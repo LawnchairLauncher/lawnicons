@@ -13,8 +13,7 @@ jobs:
     outputs:
       skip_steps: ${{ steps.filter.outputs.workflows && !steps.nofilter.outputs.workflows }}
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - name: Check for ignored paths
@@ -54,8 +53,7 @@ jobs:
     if: needs.check-paths.outputs.skip_steps != 'true'
     continue-on-error: true
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - uses: actions/setup-java@v4
@@ -103,8 +101,7 @@ jobs:
     needs: [ build-debug-apk, check-style, check-paths ]
     if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
