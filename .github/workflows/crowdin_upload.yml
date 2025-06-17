@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - 'develop'
+    paths:
+      - app/src/main/res # Trigger only when there are changes in the res directory.
   workflow_dispatch:
 
 jobs:
