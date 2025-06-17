@@ -2,7 +2,7 @@ name: Optimize SVGs
 
 on:
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 0 */3 * *"
   push:
     branches:
       - develop

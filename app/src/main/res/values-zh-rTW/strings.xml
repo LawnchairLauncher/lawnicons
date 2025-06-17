@@ -3,69 +3,71 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">版本 %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_hint">搜尋 %d 的圖示</string>
+    <string name="search_bar_icon_picker">選擇一個圖示</string>
     <!-- Search tooltip -->
     <string name="search">搜尋</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">找不到 %s</string>
     <!-- About page -->
     <string name="about">關於</string>
     <!-- External Links -->
     <!-- GitHub repository link-->
     <!-- Icon Request form link -->
-    <string name="request_form">Icon request form</string>
+    <string name="request_form">申請圖示表單</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">傳送意見</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">貢獻者</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">核心貢獻者</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">查看所有貢獻者</string>
     <!-- View on GitHub link -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">在 GitHub 檢視</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">分享資訊</string>
     <!-- Contribution -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">核心應用程式</string>
     <string name="contribution_icons">圖示</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">基礎設施</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">特別感謝</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">應用程式圖示靈感</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">應用程式命名</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">開放原始碼授權</string>
     <!-- Icon Information Popup window -->
     <!-- Name -->
-    <string name="name">Name</string>
+    <string name="name">名稱</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">可繪製資源</string>
     <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="component">元件名稱</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">映射元件</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">若圖示因重塑導致失效，請在 GitHub 張貼問題。</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">切換內容顯示</string>
     <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="copied_text">Copied text</string>
+    <string name="request_icons">申請圖示</string>
+    <string name="copy_to_clipboard">已複製到剪貼簿</string>
+    <string name="copied_text">已複製文字</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
+    <string name="snackbar_request_icons_hint">透過底部操作列要求遺失的圖示</string>
+    <string name="icon_requests_suspended">已停止申請圖示。若您想提供圖示，請造訪我們的 GitHub。</string>
+    <string name="snackbar_request_too_large">已將申請圖示詳細資訊複製到剪貼簿。請將內容提交至表單以便回報。</string>
+    <string name="snackbar_use_fallback_link">開啟表單</string>
     <string name="clear">清除</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons_in_version">版本 %1$s 中的新圖示</string>
+    <string name="new_icons">新圖示 (%1$s)</string>
 </resources>
