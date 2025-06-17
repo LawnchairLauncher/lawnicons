@@ -1,6 +1,8 @@
 name: Crowdin Synchronization
 
 on:
+  schedule:
+    - cron: "0 0 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -15,19 +17,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Sync Translations
-      uses: crowdin/github-action@v2
-      with:
-        upload_translations: false
-        upload_sources: true
-        download_translations: true
-        localization_branch_name: i18n
-        create_pull_request: true
-        base_url: 'https://lawnchair.crowdin.com'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
-        CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
+      - name: Sync Translations
+        uses: crowdin/github-action@v2
+        with:
+          upload_translations: false
+          upload_sources: true
+          download_translations: true
+          localization_branch_name: i18n
+          create_pull_request: true
+          base_url: 'https://lawnchair.crowdin.com'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
