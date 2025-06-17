@@ -13,8 +13,7 @@ jobs:
     outputs:
       skip_steps: ${{ steps.filter.outputs.workflows && !steps.nofilter.outputs.workflows }}
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - name: Check for ignored paths
@@ -47,14 +46,14 @@ jobs:
               - '!.gitattributes'
               - '!.github/labeler.yml'
               - '!.github/release.yml'
+
   build-debug-apk:
     runs-on: ubuntu-latest
     needs: check-paths
     if: needs.check-paths.outputs.skip_steps != 'true'
     continue-on-error: true
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
       - uses: actions/setup-java@v4
@@ -65,7 +64,7 @@ jobs:
         with:
           cache-encryption-key: Da25KUVSE5jbGds2zXmfXw==
       - name: Write sign info
-        if: github.repository_owner == 'LawnchairLauncher'
+        if: github.event.repository.fork == false
         run: |
           if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
             echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
@@ -81,6 +80,7 @@ jobs:
         with:
           name: Debug APK
           path: app/build/outputs/apk/app/debug/*.apk
+
   check-style:
     runs-on: ubuntu-latest
     needs: check-paths
@@ -98,11 +98,10 @@ jobs:
 
   send-notifications:
     runs-on: ubuntu-latest
-    needs: [build-debug-apk, check-style, check-paths]
+    needs: [ build-debug-apk, check-style, check-paths ]
     if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           submodules: true
           fetch-depth: 0
@@ -131,7 +130,7 @@ jobs:
 
   nightly-release:
     runs-on: ubuntu-latest
-    if: github.repository_owner == 'LawnchairLauncher' && github.event_name == 'push' && needs.check-paths.outputs.skip_steps != 'true'
+    if: github.event.repository.fork == false && github.event_name == 'push' && needs.check-paths.outputs.skip_steps != 'true'
     needs: build-debug-apk
     permissions:
       contents: write

@@ -1,11 +1,11 @@
 name: Comment icon checklist
 
 on:
-    pull_request_target:
-      branches: [develop]
-      types: [opened]
-      paths:
-        - svgs/*
+  pull_request_target:
+    branches: [ develop ]
+    types: [ opened ]
+    paths:
+      - svgs/*
 
 permissions:
   contents: read
@@ -16,9 +16,7 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Comment on PR
         uses: actions/github-script@v7
         with:
@@ -30,4 +28,3 @@ jobs:
               ...issue,
               body: ICON_CHECKLIST
             });
- 

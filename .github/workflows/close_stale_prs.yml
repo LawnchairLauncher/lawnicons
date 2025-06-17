@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: 0 0 1-31 * *
   workflow_dispatch:
-  
+
 jobs:
   stale:
     runs-on: ubuntu-latest
