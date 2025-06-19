@@ -1,4 +1,4 @@
-# Description
+## Description
 <!-- Please provide a short summary of your pull request. -->
 
 ## Icons
@@ -6,15 +6,15 @@
 
 ### Added
 <!--  Apps for which you add icons. -->
-App name (`com.package.app`)
-App name (`com.package.app`)
+App name (`com.package.app`)  
+App name (`com.package.app`)  
 
 ### Linked
 <!--  New app components for existing icons. -->
-App name (`com.package.app` → `drawable.svg`)
-App name (`com.package.app` → `drawable.svg`)
+App name (`com.package.app` → `drawable.svg`)  
+App name (`com.package.app` → `drawable.svg`)  
 
 ### Updated
 <!--  Outdated icons that you've updated. -->
-App name (`com.package.app`)
-App name (`com.package.app`)
+App name (`com.package.app`)  
+App name (`com.package.app`)  
