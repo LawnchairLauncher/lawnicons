@@ -5,7 +5,10 @@ body:
   - type: textarea
     id: question
     attributes:
-      label: About this discussion
-      description: Add the contents of your discussion here.
+      label: Description
+      description: |
+        **Before you start**  
+        If you want to report a bug, it may have been fixed in [the latest development build](https://github.com/LawnchairLauncher/lawnicons#download).  
+        
     validations:
       required: true
