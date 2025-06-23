@@ -40,12 +40,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
 import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
 import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.ui.components.core.placeholder.shimmer
-import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPadding
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.iconColor
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
@@ -54,8 +55,8 @@ import app.lawnchair.lawnicons.ui.util.toPaddingValues
 @Composable
 fun PlaceholderUI(
     modifier: Modifier = Modifier,
+    horizontalPadding: Dp = IconPreviewGridPaddings.Default,
 ) {
-    val contentPadding = IconPreviewGridPadding.Defaults
     Scaffold(
         modifier = modifier,
     ) {
@@ -63,9 +64,8 @@ fun PlaceholderUI(
             columns = GridCells.Adaptive(80.dp),
             userScrollEnabled = false,
             contentPadding = WindowInsets.navigationBars.toPaddingValues(
-                additionalStart = contentPadding.horizontalPadding,
-                additionalTop = contentPadding.topPadding,
-                additionalEnd = contentPadding.horizontalPadding,
+                additionalStart = horizontalPadding,
+                additionalEnd = horizontalPadding,
             ),
         ) {
             item(

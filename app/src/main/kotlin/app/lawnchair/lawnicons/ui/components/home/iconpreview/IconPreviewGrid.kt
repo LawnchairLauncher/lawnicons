@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
@@ -38,7 +39,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyGridScope
 import androidx.compose.foundation.lazy.grid.LazyGridState
@@ -78,22 +78,9 @@ import my.nanihadesuka.compose.InternalLazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
 
-data class IconPreviewGridPadding(
-    val topPadding: Dp,
-    val horizontalPadding: Dp,
-) {
-
-    companion object {
-        val Defaults = IconPreviewGridPadding(
-            topPadding = 0.dp,
-            horizontalPadding = 8.dp,
-        )
-
-        val ExpandedSize = IconPreviewGridPadding(
-            topPadding = 72.dp,
-            horizontalPadding = 32.dp,
-        )
-    }
+object IconPreviewGridPaddings {
+    val Default = 8.dp
+    val Expanded = 32.dp
 }
 
 @Composable
@@ -103,7 +90,7 @@ fun IconPreviewGrid(
     onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     containerModifier: Modifier = Modifier.applyGridInsets(),
-    contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
+    horizontalPadding: Dp = IconPreviewGridPaddings.Default,
     isIconPicker: Boolean = false,
     gridState: LazyGridState = rememberLazyGridState(),
     startContent: (LazyGridScope.() -> Unit) = {},
@@ -123,9 +110,8 @@ fun IconPreviewGrid(
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
                 contentPadding = WindowInsets.navigationBars.toPaddingValues(
-                    additionalStart = contentPadding.horizontalPadding,
-                    additionalTop = contentPadding.topPadding,
-                    additionalEnd = contentPadding.horizontalPadding,
+                    additionalStart = horizontalPadding,
+                    additionalEnd = horizontalPadding,
                 ),
                 state = gridState,
             ) {
@@ -155,15 +141,13 @@ fun IconPreviewGrid(
                 gridState,
                 { thumbSelected = it },
                 letter,
-                contentPadding.topPadding,
             )
         }
     }
 }
 
 private fun Modifier.applyGridInsets() = this
-    .widthIn(max = 640.dp)
-    .fillMaxWidth()
+    .displayCutoutPadding()
     .statusBarsPadding()
 
 @Composable
@@ -171,12 +155,10 @@ private fun ScrollbarLayout(
     gridState: LazyGridState,
     onSelectedChange: (Boolean) -> Unit,
     currentLetter: String,
-    topPadding: Dp = 0.dp,
 ) {
     Box(
         contentAlignment = Alignment.CenterEnd,
         modifier = Modifier
-            .padding(top = topPadding)
             .padding(
                 bottom = WindowInsets.navigationBars.toPaddingValues().calculateBottomPadding(),
             ),
@@ -278,7 +260,7 @@ private fun IconGridPreview() {
                 iconInfo = SampleData.iconInfoList,
                 onSendResult = {},
                 modifier = Modifier,
-                contentPadding = IconPreviewGridPadding.Defaults,
+                horizontalPadding = IconPreviewGridPaddings.Default,
                 isIconPicker = false,
             )
         }
@@ -295,7 +277,7 @@ private fun IconGridExpandedPreview() {
                 iconInfo = SampleData.iconInfoList,
                 onSendResult = {},
                 modifier = Modifier,
-                contentPadding = IconPreviewGridPadding.ExpandedSize,
+                horizontalPadding = IconPreviewGridPaddings.Expanded,
                 isIconPicker = false,
             )
         }

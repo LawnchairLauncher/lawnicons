@@ -14,6 +14,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
+import androidx.compose.material3.windowsizeclass.WindowHeightSizeClass
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.platform.LocalContext
@@ -51,7 +52,11 @@ class MainActivity : ComponentActivity() {
             val windowSizeClass = calculateWindowSizeClass(this)
             LawniconsTheme {
                 val isExpandedScreen =
-                    windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded
+                    windowSizeClass.widthSizeClass == WindowWidthSizeClass.Expanded &&
+                        (
+                            windowSizeClass.heightSizeClass == WindowHeightSizeClass.Medium ||
+                                windowSizeClass.heightSizeClass == WindowHeightSizeClass.Expanded
+                            )
 
                 Lawnicons(
                     isExpandedScreen = isExpandedScreen,

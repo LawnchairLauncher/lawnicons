@@ -34,13 +34,11 @@ import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.DebugMenu
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
-import app.lawnchair.lawnicons.ui.components.home.IconRequestFAB
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
 import app.lawnchair.lawnicons.ui.components.home.PlaceholderUI
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.AppBarListItem
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPadding
-import app.lawnchair.lawnicons.ui.components.home.search.PlaceholderSearchBar
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.viewmodel.DummyLawniconsViewModel
@@ -97,6 +95,9 @@ private fun Home(
             FloatingToolbarExitDirection.Bottom,
         )
 
+        val horizontalPadding =
+            if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default
+
         Crossfade(
             modifier = modifier,
             targetState = iconInfoModel.iconCount > 0,
@@ -120,16 +121,6 @@ private fun Home(
                             iconInfoModel = searchedIconInfoModel,
                         )
                     },
-                    floatingActionButton = {
-                        if (isExpandedScreen) {
-                            IconRequestFAB(
-                                iconRequestsEnabled = iconRequestsEnabled,
-                                iconRequestModel = iconRequestModel,
-                                lazyGridState = lazyGridState,
-                                snackbarHostState = snackbarHostState,
-                            )
-                        }
-                    },
                     snackbarHost = {
                         SnackbarHost(
                             hostState = snackbarHostState,
@@ -149,16 +140,14 @@ private fun Home(
                         IconPreviewGrid(
                             iconInfo = iconInfoModel.iconInfo,
                             onSendResult = onSendResult,
-                            contentPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize else IconPreviewGridPadding.Defaults,
+                            horizontalPadding = horizontalPadding,
                             isIconPicker = isIconPicker,
                             gridState = lazyGridState,
                         ) {
-                            if (!isExpandedScreen) {
-                                item(
-                                    span = { GridItemSpan(maxLineSpan) },
-                                ) {
-                                    AppBarListItem()
-                                }
+                            item(
+                                span = { GridItemSpan(maxLineSpan) },
+                            ) {
+                                AppBarListItem()
                             }
                             if (newIconsInfoModel.iconCount != 0) {
                                 item(
@@ -168,25 +157,19 @@ private fun Home(
                                 }
                             }
                         }
-                        if (!isExpandedScreen) {
-                            HomeBottomToolbar(
-                                context = context,
-                                scrollBehavior = scrollBehavior,
-                                iconRequestsEnabled = iconRequestsEnabled,
-                                iconRequestModel = iconRequestModel,
-                                snackbarHostState = snackbarHostState,
-                                onNavigate = onNavigateToAbout,
-                                onExpandSearch = { expandSearch = true },
-                            )
-                        }
+                        HomeBottomToolbar(
+                            context = context,
+                            scrollBehavior = scrollBehavior,
+                            iconRequestsEnabled = iconRequestsEnabled,
+                            iconRequestModel = iconRequestModel,
+                            snackbarHostState = snackbarHostState,
+                            onNavigate = onNavigateToAbout,
+                            onExpandSearch = { expandSearch = true },
+                        )
                     }
                 }
             } else {
-                if (isExpandedScreen) {
-                    PlaceholderSearchBar()
-                } else {
-                    PlaceholderUI()
-                }
+                PlaceholderUI(horizontalPadding = horizontalPadding)
             }
         }
 

@@ -4,13 +4,9 @@ import android.content.Context
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.PressInteraction
 import androidx.compose.foundation.layout.requiredSize
-import androidx.compose.foundation.lazy.grid.LazyGridState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExtendedFloatingActionButton
-import androidx.compose.material3.FloatingActionButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHostState
@@ -38,51 +34,11 @@ import app.lawnchair.lawnicons.model.IconRequestModel
 import app.lawnchair.lawnicons.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
-import app.lawnchair.lawnicons.ui.util.isScrollingUp
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-
-@Composable
-fun IconRequestFAB(
-    iconRequestsEnabled: Boolean,
-    iconRequestModel: IconRequestModel?,
-    lazyGridState: LazyGridState,
-    snackbarHostState: SnackbarHostState,
-    modifier: Modifier = Modifier,
-) {
-    val prefs = preferenceManager()
-    val list = iconRequestModel?.list ?: emptyList()
-    val enabled = iconRequestModel != null
-    val requestsEnabled = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value
-
-    RequestHandler(
-        enabled = enabled,
-        iconRequestsEnabled = requestsEnabled,
-        iconRequestList = list,
-        snackbarHostState = snackbarHostState,
-        onLongClick = {},
-    ) { interactionSource ->
-        ExtendedFloatingActionButton(
-            text = {
-                Text(stringResource(R.string.request_icons))
-            },
-            icon = {
-                Icon(
-                    painter = painterResource(id = R.drawable.icon_request_app),
-                    contentDescription = null,
-                )
-            },
-            onClick = {},
-            expanded = lazyGridState.isScrollingUp(),
-            interactionSource = if (enabled) interactionSource else null,
-            containerColor = if (!enabled) MaterialTheme.colorScheme.surfaceVariant else FloatingActionButtonDefaults.containerColor,
-            modifier = modifier,
-        )
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
