@@ -28,15 +28,9 @@ You can contribute your icons, fulfill icon requests, add missing app components
 
 Code-related contributions are welcome. Significant changes to the UI should be discussed in our Discord. Generally, we want to keep things clean and simple.
 
-To build Lawnicons, select the `appDebug` build variant.
+Visit the Lawnicons developer wiki for developer information regarding Lawnicons.
 
-Tips
-- Set `develop` as the base branch for pull requests.
-- You can use either Java or, preferably, Kotlin.
-- Make sure your code is logical and well formatted. If using Kotlin, see "Coding conventions" in the Kotlin documentation.
-- The `app` module contains most of Lawnicons' core code, while the `svg-processor` module contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
-
-[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html) • [App module](app/) • [SVG-processor module](svg-processor/)
+[Lawnicons developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ## Lawnicons design guidelines
 
