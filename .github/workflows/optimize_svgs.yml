@@ -22,14 +22,12 @@ jobs:
       - name: Install SVGO
         run: npm install -g svgo
       - name: Optimize SVGs
-        id: svgo
         run: |
           # Run SVGO optimization multiple times to ensure all optimizations are applied.
           for i in {1..5}; do
             svgo ./svgs
           done
       - name: Create Pull Request
-        id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: |
