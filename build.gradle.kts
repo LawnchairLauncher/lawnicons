@@ -6,10 +6,10 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("com.android.application") version "8.10.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.21" apply false
-    id("org.jetbrains.kotlin.plugin.compose") version "2.1.21"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.21" apply false
-    id("com.google.devtools.ksp") version "2.1.21-2.0.2" apply false
+    id("org.jetbrains.kotlin.android") version "2.2.0" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.0" apply false
+    id("com.google.devtools.ksp") version "2.2.0-2.0.2" apply false
     id("com.google.dagger.hilt.android") version "2.56.2" apply false
     id("app.cash.licensee") version "1.13.0" apply false
     id("com.diffplug.spotless") version "7.0.4" apply false
