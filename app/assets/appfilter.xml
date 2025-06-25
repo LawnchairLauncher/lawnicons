@@ -907,7 +907,6 @@
   <item component="ComponentInfo{jp.co.arigatobank.kifutown/jp.co.arigatobank.kifutown.MainActivity}" drawable="arigatobank" name="arigatobank" />
   <item component="ComponentInfo{org.woheller69.arity/arity.calculator.Calculator}" drawable="aritycalc" name="ArityCalc" />
   <item component="ComponentInfo{com.YoStarEN.Arknights/com.u8.sdk.U8UnityContext}" drawable="arknights" name="Arknights" />
-  <item component="ComponentInfo{com.hypergryph.arknights/com.u8.sdk.U8UnityContext}" drawable="arknights" name="Arknights" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.armenian2/com.anysoftkeyboard.languagepack.armenian2.MainActivity}" drawable="anysoftkeyboard" name="Armenian for AnySoftKeyboard" />
   <item component="ComponentInfo{cn.arp.app.newarp.releaseAuth2Production/cn.arp.app.newarp.ui.SplashActivity}" drawable="arp" name="ARP" />
   <item component="ComponentInfo{ai.nokto.wire/ai.nokto.wire.MainActivity}" drawable="artifact" name="Artifact" />
@@ -5869,8 +5868,7 @@
   <item component="ComponentInfo{cc.honista.app/com.app.launcher_0}" drawable="honista" name="Honista" />
   <item component="ComponentInfo{cc.honista.app/com.app.launcher_9}" drawable="honista" name="Honista" />
   <item component="ComponentInfo{cc.honista.lite/com.instagram.business.activity.Ai5w}" drawable="honista" name="Honista Lite" />
-  <item component="ComponentInfo{com.miHoYo.bh3oversea/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="Honkai Impact 3" />
-  <item component="ComponentInfo{com.miHoYo.enterprise.NGHSoD/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="Honkai Impact 3" />
+  <item component="ComponentInfo{com.miHoYo.bh3oversea/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="Honkai Impact 3rd" />
   <item component="ComponentInfo{com.miHoYo.bh3oversea_vn/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="Honkai Impact 3rd" />
   <item component="ComponentInfo{com.miHoYo.bh3global/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="Honkai Impact 3rd" />
   <item component="ComponentInfo{com.hihonor.magichome/com.hihonor.magichome.oversea.app.WelcomeActivity}" drawable="honor_ai_space" name="Honor AI Space" />
@@ -6367,6 +6365,7 @@
   <item component="ComponentInfo{com.fusionmedia.investing/com.fusionmedia.investing.feature.splash.screen.ui.StartActivity}" drawable="investing" name="Investing" />
   <item component="ComponentInfo{fr.mathis.invisiblewidget/fr.mathis.invisiblewidget.MainActivity}" drawable="invisible_widget" name="Invisible Widget" />
   <item component="ComponentInfo{pan.alexander.tordnscrypt.stable/pan.alexander.tordnscrypt.MainActivity}" drawable="invizible_pro" name="InviZible Pro" />
+  <item component="ComponentInfo{pan.alexander.tordnscrypt.gp/pan.alexander.tordnscrypt.MainActivity}" drawable="invizible_pro" name="InviZible Pro" />
   <item component="ComponentInfo{pan.alexander.tordnscrypt/pan.alexander.tordnscrypt.MainActivity}" drawable="invizible_pro" name="InviZible Pro" />
   <item component="ComponentInfo{com.evo.inware/com.evo.inware.ui.activities.SplashActivity}" drawable="inware" name="Inware" />
   <item component="ComponentInfo{com.evo.inware/com.evo.inware.ui.activities.SweetHomeActivity}" drawable="inware" name="Inware" />
@@ -7278,6 +7277,7 @@
   <item component="ComponentInfo{com.aesar.krios/com.aesar.krios.MainActivity}" drawable="loklok" name="Loklok" />
   <item component="ComponentInfo{com.bergel.tauros/com.bergel.tauros.MainActivity}" drawable="loklok" name="Loklok" />
   <item component="ComponentInfo{com.noaisu.loliSnatcher/com.noaisu.loliSnatcher.MainActivity}" drawable="loli_snatcher" name="Loli Snatcher" />
+  <item component="ComponentInfo{com.noaisu.play.loliSnatcher/com.noaisu.loliSnatcher.MainActivity}" drawable="loli_snatcher" name="Loli Snatcher" />
   <item component="ComponentInfo{com.longint.lomag.scanner.pay/com.longint.lomag.scanner.MainActivity}" drawable="qr_reader" name="LoMag Data Scanner" />
   <item component="ComponentInfo{com.rtbishop.look4sat/com.rtbishop.look4sat.presentation.MainActivity}" drawable="look4sat" name="Look4Sat" />
   <item component="ComponentInfo{com.google.android.apps.accessibility.reveal/com.google.android.apps.accessibility.reveal.activities.ProxyActivity}" drawable="lookout" name="Lookout" />
@@ -9485,9 +9485,10 @@
   <item component="ComponentInfo{com.akylas.documentscanner/com.akylas.documentscanner.MainActivity}" drawable="oss_document_scanner" name="OSS Document Scanner" />
   <item component="ComponentInfo{com.akylas.weather/com.tns.NativeScriptActivity}" drawable="oss_weather" name="OSS Weather" />
   <item component="ComponentInfo{com.akylas.weather/com.akylas.weather.MainActivity}" drawable="oss_weather" name="OSS Weather" />
-  <item component="ComponentInfo{ru.nsu.ccfit.zuev.osuplus/ru.nsu.ccfit.zuev.osu.MainActivity}" drawable="osu" name="osu!" />
   <item component="ComponentInfo{sh.ppy.osulazer/crc64f3e94a995e5d9e96.OsuGameActivity}" drawable="osu" name="osu!" />
   <item component="ComponentInfo{sh.ppy.osulazer/md59c875562ee5070384021e1e981f7bd4e.OsuGameActivity}" drawable="osu" name="osu!" />
+  <item component="ComponentInfo{ru.nsu.ccfit.zuev.osu/ru.nsu.ccfit.zuev.osu.menu.MainMenuActivity}" drawable="osu" name="osu!droid" />
+  <item component="ComponentInfo{ru.nsu.ccfit.zuev.osuplus/ru.nsu.ccfit.zuev.osu.MainActivity}" drawable="osu" name="osu!droid" />
   <item component="ComponentInfo{sh.ppy.osustream/crc6484b8820ed7fe2f2b.Application}" drawable="osu" name="osu!stream" />
   <item component="ComponentInfo{com.piyush.music/com.piyush.music.activities.main.MainActivity}" drawable="oto_music" name="Oto Music" />
   <item component="ComponentInfo{com.iett.otobusumnerede/com.iett.mobiett.ui.activity.SplashActivity}" drawable="otobusum_nerede" name="Otobüsüm Nerede" />
@@ -11021,6 +11022,7 @@
   <item component="ComponentInfo{com.riseup.game/com.google.firebase.MessagingUnityPlayerActivity}" drawable="rise_up_balloon_game" name="Rise Up: Balloon Game" />
   <item component="ComponentInfo{se.leap.riseupvpn/se.leap.bitmaskclient.base.StartActivity}" drawable="riseupvpn" name="RiseupVPN" />
   <item component="ComponentInfo{se.leap.riseupvpn/se.leap.bitmaskclient.StartActivity}" drawable="riseupvpn" name="RiseupVPN" />
+  <item component="ComponentInfo{com.leiting.RizlineHk.android/com.leiting.RizlineHk.android.MainActivity}" drawable="rizline" name="Rizline" />
   <item component="ComponentInfo{com.PigeonGames.Rizline/com.unity3d.player.UnityPlayerActivity}" drawable="rizline" name="Rizline" />
   <item component="ComponentInfo{com.xiaomi.rmswrapasia/com.microsoft.msapps.SplashActivity}" drawable="manage_apps_shortcut" name="RMS" />
   <item component="ComponentInfo{com.cubic.rmvgo/com.cubic.rmv30.MainActivity}" drawable="rmvgo" name="RMVgo" />
@@ -15882,6 +15884,7 @@
   <item component="ComponentInfo{com.yodobashi.iShop/com.yodobashi.iShop.YdMainActivity}" drawable="yodobashi" name="ヨドバシゴ ~~ Yodobashi" />
   <item component="ComponentInfo{com.tscsoft.naroureader/com.tscsoft.naroureader.activities.NovelListActivity}" drawable="reader" name="リーダ ~~ Reader" />
   <item component="ComponentInfo{com.leber/com.leber.MainActivity}" drawable="leber" name="リーバー ~~ LEBER" />
+  <item component="ComponentInfo{com.bluepoch.m.jp.reverse1999.and/com.ssgame.mobile.overseas.frame.activity.AppStartUpActivity}" drawable="reverse_1999" name="リバース：1999 ~~ Reverse: 1999" />
   <item component="ComponentInfo{com.One.WoodenLetter/com.One.WoodenLetter.LetterActivity}" drawable="wooden_letter" name="一个木函 ~~ Wooden Letter" />
   <item component="ComponentInfo{com.jv.samsungeshop/com.samsung.ecomm.global.shop_app.MainActivity}" drawable="galaxy_store" name="三星网上商城 ~~ Samsung Online Mall" />
   <item component="ComponentInfo{com.xiachufang/com.xiachufang.startpage.ui.StartPageActivity}" drawable="xiachufang" name="下厨房 ~~ Xiachufang" />
@@ -15916,6 +15919,8 @@
   <item component="ComponentInfo{com.android.bankabc/com.android.bankabc.LauncherActivity}" drawable="agricultural_bank_of_china" name="农行掌上银行 ~~ Agricultural Bank of China" />
   <item component="ComponentInfo{com.kaidishi.lock/com.kaidishi.lock.WelcomeActivity}" drawable="kaadas" name="凯迪仕 ~~ Kaadas" />
   <item component="ComponentInfo{com.x7890.shortcutcreator/com.x7890.shortcutcreator.AppListActivity}" drawable="shortcut_creator" name="创建快捷方式 ~~ Shortcut Creator" />
+  <item component="ComponentInfo{com.hermes.mk/com.bytedance.ttgame.module.privacy.PrivacyLauncherActivity}" drawable="hatsune_miku_colorful_stage" name="初音未来：缤纷舞台 ~~ HATSUNE MIKU: COLORFUL STAGE!" />
+  <item component="ComponentInfo{com.hermes.mk.bilibili/com.hermes.mk.SDKActivity}" drawable="hatsune_miku_colorful_stage" name="初音未来：缤纷舞台 ~~ HATSUNE MIKU: COLORFUL STAGE!" />
   <item component="ComponentInfo{com.jingcai.apps.qualitydev/com.jingcai.apps.qualitydev.qualitync.SplashActivity}" drawable="dream" name="到梦空间 ~~ Dream" />
   <item component="ComponentInfo{com.lemon.lv/com.vega.main.MainActivity}" drawable="capcut" name="剪映 ~~ CapCut" />
   <item component="ComponentInfo{tw.com.gamer.android.animad/tw.com.gamer.android.animad.AnimadActivity}" drawable="animation_crazy" name="動畫瘋 ~~ Animation Crazy" />
@@ -15958,13 +15963,16 @@
   <item component="ComponentInfo{com.max.xiaoheihe/com.max.xiaoheihe.SplashActivity}" drawable="xiaoheihe" name="小黑盒 ~~ Xiaoheihe" />
   <item component="ComponentInfo{com.sspai.sspaiandroid/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="minority" name="少数派 ~~ Minority" />
   <item component="ComponentInfo{com.lingnanpass/com.lingnanpass.GuideActivity}" drawable="lingnan_pass" name="岭南通 ~~ Lingnan Pass" />
+  <item component="ComponentInfo{com.miHoYo.enterprise.NGHSoD/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩坏3 ~~ Honkai Impact 3rd" />
+  <item component="ComponentInfo{com.miHoYo.bh3.bilibili/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩坏3 ~~ Honkai Impact 3rd" />
   <item component="ComponentInfo{com.tencent.tmgp.bh3/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩坏3 ~~ Honkai Impact 3rd" />
   <item component="ComponentInfo{com.miHoYo.hkrpg/com.mihoyo.combosdk.ComboSDKActivity}" drawable="honkai_star_rail" name="崩坏：星穹铁道 ~~ Honkai: Star Rail" />
+  <item component="ComponentInfo{com.miHoYo.hkrpg.bilibili/com.mihoyo.combosdk.ComboSDKActivity}" drawable="honkai_star_rail" name="崩坏：星穹铁道 ~~ Honkai: Star Rail" />
   <item component="ComponentInfo{com.HoYoverse.hkrpgoversea/com.mihoyo.combosdk.ComboSDKActivity}" drawable="honkai_star_rail" name="崩坏：星穹铁道 ~~ Honkai: Star Rail" />
   <item component="ComponentInfo{com.miHoYo.bh3rdJP/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩壊3rd ~~ Honkai Impact 3rd" />
   <item component="ComponentInfo{com.miHoYo.bh3tw/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩壞3rd ~~ Honkai Impact 3rd" />
-  <item component="ComponentInfo{com.leiting.ldgj/com.leiting.sdk.activity.PrivacyActivity}" drawable="rizline_cn" name="律动轨迹 ~~ Rizline" />
-  <item component="ComponentInfo{com.leiting.ldgj/com.unity3d.player.UnityPlayerActivity}" drawable="rizline_cn" name="律动轨迹 ~~ Rizline" />
+  <item component="ComponentInfo{com.leiting.ldgj/com.leiting.sdk.activity.PrivacyActivity}" drawable="rizline" name="律动轨迹 ~~ Rizline" />
+  <item component="ComponentInfo{com.leiting.ldgj/com.unity3d.player.UnityPlayerActivity}" drawable="rizline" name="律动轨迹 ~~ Rizline" />
   <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
   <item component="ComponentInfo{com.tencent.weread/com.tencent.weread.presenter.LauncherActivity}" drawable="weread" name="微信读书 ~~ WeRead" />
   <item component="ComponentInfo{com.tencent.weread.eink/com.tencent.weread.LauncherActivity}" drawable="weread" name="微信读书墨水屏版 ~~ WeRead E Ink" />
@@ -15998,6 +16006,8 @@
   <item component="ComponentInfo{com.xayah.databackup.alpha/com.xayah.databackup.SplashActivity}" drawable="databackup" name="数据备份 ~~ DataBackup" />
   <item component="ComponentInfo{com.xd.rotaeno.googleplay/com.unity3d.player.UnityPlayerActivity}" drawable="rotaeno" name="旋转音律 ~~ Rotaeno" />
   <item component="ComponentInfo{com.xd.rotaeno.tapcn/com.unity3d.player.UnityPlayerActivity}" drawable="rotaeno" name="旋转音律 ~~ Rotaeno" />
+  <item component="ComponentInfo{com.hypergryph.arknights/com.u8.sdk.U8UnityContext}" drawable="arknights" name="明日方舟 ~~ Arknights" />
+  <item component="ComponentInfo{com.hypergryph.arknights.bilibili/com.u8.sdk.U8UnityContext}" drawable="arknights" name="明日方舟 ~~ Arknights" />
   <item component="ComponentInfo{tw.txwy.and.arknights/com.u8.sdk.U8UnityContext}" drawable="arknights" name="明日方舟 ~~ Arknights" />
   <item component="ComponentInfo{com.china3s.android/com.china3s.android.home.view.Main}" drawable="spring_airlines" name="春秋航空 ~~ Spring Airlines" />
   <item component="ComponentInfo{com.xiaolian.prometheus/com.xiaolian.launch.ui.SplashActivity}" drawable="zhihui_xiaolian" name="智慧笑联 ~~ Zhihui Xiaolian" />
@@ -16044,6 +16054,7 @@
   <item component="ComponentInfo{com.mystyle.purelive/com.mystyle.purelive.MainActivity}" drawable="purelive" name="纯粹直播 ~~ PureLive" />
   <item component="ComponentInfo{com.HoYoverse.NapVn/com.mihoyo.combosdk.ComboSDKActivity}" drawable="zenless_zone_zero" name="绝区零 ~~ Zenless Zone Zero" />
   <item component="ComponentInfo{com.miHoYo.Nap/com.mihoyo.combosdk.ComboSDKActivity}" drawable="zenless_zone_zero" name="绝区零 ~~ Zenless Zone Zero" />
+  <item component="ComponentInfo{com.miHoYo.Nap.bilibili/com.mihoyo.combosdk.ComboSDKActivity}" drawable="zenless_zone_zero" name="绝区零 ~~ Zenless Zone Zero" />
   <item component="ComponentInfo{com.HoYoverse.Nap/com.miHoYo.Nap}" drawable="zenless_zone_zero" name="绝区零 ~~ Zenless Zone Zero" />
   <item component="ComponentInfo{com.HoYoverse.Nap/com.mihoyoos.sdk.platform.SchemeActivity}" drawable="zenless_zone_zero" name="绝区零 ~~ Zenless Zone Zero" />
   <item component="ComponentInfo{com.HoYoverse.Nap/com.mihoyo.combosdk.ComboSDKActivity}" drawable="zenless_zone_zero" name="绝区零 ~~ Zenless Zone Zero" />
@@ -16056,6 +16067,7 @@
   <item component="ComponentInfo{com.sankuai.meituan/com.meituan.android.pt.homepage.activity.Welcome}" drawable="meituan" name="美团 ~~ Meituan" />
   <item component="ComponentInfo{com.sankuai.meituan.takeoutnew/com.sankuai.meituan.takeoutnew.ui.page.boot.WelcomeActivity}" drawable="meituan_takeaway" name="美团外卖 ~~ Meituan Takeaway" />
   <item component="ComponentInfo{com.telexpress.kfctaiwanapps/com.telexpress.kfctaiwanapps.MainActivity}" drawable="kfc" name="肯德基 ~~ KFC" />
+  <item component="ComponentInfo{com.tencent.nikke/com.tencent.nikke.MainActivity}" drawable="goddess_of_victory_nikke" name="胜利女神：新的希望 ~~ GODDESS OF VICTORY: NIKKE" />
   <item component="ComponentInfo{com.tencent.wemeet.app/com.tencent.wemeet.app.StartupActivity}" drawable="tencent_meeting" name="腾讯会议 ~~ Tencent Meeting" />
   <item component="ComponentInfo{com.tencent.qqlive/com.tencent.qqlive.ona.activity.SplashHomeActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
   <item component="ComponentInfo{com.tencent.qqlivehd/com.tencent.qqlivehd.activity.WelcomeActivity}" drawable="tencent_video" name="腾讯视频 ~~ Tencent Video ~~ WeTV" />
@@ -16068,6 +16080,8 @@
   <item component="ComponentInfo{com.cainiao.wireless/com.cainiao.wireless.homepage.view.activity.WelcomeActivity}" drawable="cainiao" name="菜鸟 ~~ Cainiao" />
   <item component="ComponentInfo{com.sfacg/com.sf.ui.launcher.SplashSecondActivity}" drawable="sfacg" name="菠萝包轻小说 ~~ SFAcg" />
   <item component="ComponentInfo{com.android.superli.btremote/com.android.superli.btremote.ui.activity.SplashActivity}" drawable="bluetooth_control" name="蓝牙遥控 ~~ Bluetooth control" />
+  <item component="ComponentInfo{com.RoamingStar.BlueArchive/com.yostar.supersdk.activity.YoStarSplashActivity}" drawable="blue_archive" name="蔚蓝档案 ~~ Blue Archive" />
+  <item component="ComponentInfo{com.RoamingStar.BlueArchive.bilibili/com.yostar.supersdk.activity.YoStarSplashActivity}" drawable="blue_archive" name="蔚蓝档案 ~~ Blue Archive" />
   <item component="ComponentInfo{com.mxbc.mxsa/com.mxbc.mxsa.modules.splash.SplashActivity}" drawable="mixue_ice_city" name="蜜雪冰城 ~~ Mixue Ice City" />
   <item component="ComponentInfo{com.shopee.tw/com.shopee.app.ui.home.HomeActivity_}" drawable="shopee" name="蝦皮購物 ~~ Shopee" />
   <item component="ComponentInfo{info.ebstudio.bookviewer.free/info.ebstudio.bookviewer.free.BookViewerActivity}" drawable="readfriend_lite" name="読書尚友 Lite ~~ Readfriend Lite" />
@@ -16091,6 +16105,9 @@
   <item component="ComponentInfo{com.example.c001apk/com.example.c001apk.ui.main.MainActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
   <item component="ComponentInfo{com.example.c001apk/com.example.c001apk.ui.activity.MainActivity}" drawable="coolapk" name="酷安 ~~ CoolAPK" />
   <item component="ComponentInfo{com.xt.retouch/com.xt.retouch.uilauncher.LaunchActivity}" drawable="xingtu" name="醒图 ~~ Xingtu" />
+  <item component="ComponentInfo{com.mover.twcfwl1999/com.ssgame.mobile.overseas.frame.activity.AppStartUpActivity}" drawable="reverse_1999" name="重返未來：1999 ~~ Reverse: 1999" />
+  <item component="ComponentInfo{com.shenlan.m.reverse1999/com.ssgame.mobile.gamesdk.frame.AppStartUpActivity}" drawable="reverse_1999" name="重返未来：1999 ~~ Reverse: 1999" />
+  <item component="ComponentInfo{com.shenlan.m.reverse1999.bilibili/com.ssgame.mobile.gamesdk.frame.AppStartUpActivity}" drawable="reverse_1999" name="重返未来：1999 ~~ Reverse: 1999" />
   <item component="ComponentInfo{com.MobileTicket/com.alipay.mobile.quinox.LauncherActivity}" drawable="railway_12306" name="铁路12306 ~~ Railway 12306" />
   <item component="ComponentInfo{com.MobileTicket/com.MobileTicket.ui.activity.WelcomeGuideActivity}" drawable="railway_12306" name="铁路12306 ~~ Railway 12306" />
   <item component="ComponentInfo{com.chinarailway.globalticketing/com.MobileTicket.ui.activity.WelcomeGuideActivity}" drawable="railway_12306" name="铁路12306 ~~ Railway 12306" />
@@ -16111,8 +16128,10 @@
   <item component="ComponentInfo{com.taobao.trip/com.alipay.mobile.quinox.LauncherActivity}" drawable="fliggy" name="飞猪 ~~ Fliggy" />
   <item component="ComponentInfo{com.autonavi.minimap/com.autonavi.map.activity.SplashActivity}" drawable="amap" name="高德地圖 ~~ Amap" />
   <item component="ComponentInfo{com.kurogame.mingchao/com.kurogame.mingchao.KrSdkSplashActivity}" drawable="wuthering_waves" name="鸣潮 ~~ Wuthering Waves" />
+  <item component="ComponentInfo{com.kurogame.mingchao.bilibili/com.kurogame.mingchao.KrSdkSplashActivity}" drawable="wuthering_waves" name="鸣潮 ~~ Wuthering Waves" />
   <item component="ComponentInfo{com.nhn.android.search/com.nhn.android.search.ui.pages.SearchHomePage}" drawable="naver" name="네이버 ~~ NAVER" />
   <item component="ComponentInfo{net.daum.android.mail/net.daum.android.mail.StartActivity}" drawable="sony_email" name="다음 메일 ~~ Daum Mail" />
+  <item component="ComponentInfo{kr.haoplay.game.and.reverse/com.ssgame.mobile.overseas.frame.activity.AppStartUpActivity}" drawable="reverse_1999" name="리버스: 1999 ~~ Reverse: 1999" />
   <item component="ComponentInfo{com.iloen.melon/com.iloen.melon.MusicBrowserActivity}" drawable="melon" name="멜론 ~~ Melon" />
   <item component="ComponentInfo{com.YoStarKR.Arknights/com.u8.sdk.U8UnityContext}" drawable="arknights" name="명일방주 ~~ Arknights" />
   <item component="ComponentInfo{com.lifeplatform.better/com.lifeplatform.better.MainActivity}" drawable="better" name="베터 ~~ Better" />
