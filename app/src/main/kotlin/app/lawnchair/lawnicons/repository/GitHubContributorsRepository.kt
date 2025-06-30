@@ -8,6 +8,8 @@ val coreContributorIds = listOf(
     29139614,
     // Remove renovate-bot from contributors list, since we don't count bots as contributors
     56888459,
+    // GitHub Actions bot
+    41898282,
     // suphon-t
     8080853,
     // SuperDragonXD
