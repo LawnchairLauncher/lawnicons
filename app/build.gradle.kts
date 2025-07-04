@@ -155,6 +155,7 @@ dependencies {
     val retrofitVersion = "3.0.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-kotlinx-serialization:$retrofitVersion")
+    implementation("com.squareup.okhttp3:okhttp:5.0.0")
 
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation("com.github.nanihadesuka:LazyColumnScrollbar:2.2.0")
