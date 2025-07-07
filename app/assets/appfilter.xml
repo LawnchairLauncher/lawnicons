@@ -527,7 +527,6 @@
   <item component="ComponentInfo{com.balaji.alt/com.balaji.alt.activities.SplashActivity}" drawable="altt" name="ALTT" />
   <item component="ComponentInfo{com.balaji.alt/com.altbalaji.play.MainActivity}" drawable="altt" name="ALTT" />
   <item component="ComponentInfo{com.balaji.alt/com.altbalaji.play.SplashActivity}" drawable="altt" name="ALTT" />
-  <item component="ComponentInfo{com.sparkine.muvizedge/com.sparkine.muvizedge.activity.HomeActivity}" drawable="always_on_edge_music_lighting" name="Always On: Edge Music Lighting" />
   <item component="ComponentInfo{cz.alza.eshop/cz.alza.base.android.setup.ui.activity.MainActivity}" drawable="alza" name="Alza" />
   <item component="ComponentInfo{deltazero.amarok/deltazero.amarok.ui.MainActivity}" drawable="amarok" name="Amarok" />
   <item component="ComponentInfo{deltazero.amarok/deltazero.amarok.launcher.default}" drawable="amarok" name="Amarok" />
@@ -1137,8 +1136,8 @@
   <item component="ComponentInfo{com.backmarket/com.backmarket.MAIN.Launcher}" drawable="back_market" name="Back Market" />
   <item component="ComponentInfo{com.backdrops.wallpapers/com.backdrops.wallpapers.ToastActivity}" drawable="backdrops" name="Backdrops" />
   <item component="ComponentInfo{com.backdrops.wallpapers/com.backdrops.wallpapers.WelcomeActivity}" drawable="backdrops" name="Backdrops" />
-  <item component="ComponentInfo{com.handycloset.android.eraser/com.handycloset.android.eraser.MainActivity}" drawable="background_eraser" name="Background Eraser" />
-  <item component="ComponentInfo{photoeditor.cutout.backgrounderaser/com.camerasideas.collagemaker.activity.DummyActivity}" drawable="background_eraser_remove_bg" name="Background Eraser — Remove BG" />
+  <item component="ComponentInfo{com.handycloset.android.eraser/com.handycloset.android.eraser.MainActivity}" drawable="generic_background_eraser" name="Background Eraser" />
+  <item component="ComponentInfo{photoeditor.cutout.backgrounderaser/com.camerasideas.collagemaker.activity.DummyActivity}" drawable="generic_background_eraser" name="Background Eraser" />
   <item component="ComponentInfo{com.coolncoolapps.easyvideorecorder/com.coolncoolapps.secretvideorecorderhd.activities.OneTouchRecordingActivity}" drawable="kimcy_screen_recorder" name="Background video recorder" />
   <item component="ComponentInfo{com.coolncoolapps.easyvideorecorder/com.coolncoolapps.secretvideorecorderhd.activities.MainActivity}" drawable="kimcy_screen_recorder" name="Background video recorder" />
   <item component="ComponentInfo{com.helgeapps.backgroundvideorecorder/com.helgeapps.backgroundvideorecorder.MainActivity}" drawable="kimcy_screen_recorder" name="Background Video Recorder" />
@@ -3372,7 +3371,6 @@
   <item component="ComponentInfo{de.felixnuesse.disky/de.felixnuesse.disky.MainActivity}" drawable="disky" name="disky" />
   <item component="ComponentInfo{com.lilithgames.xgame.gp/com.epicgames.ue4.SplashActivity}" drawable="dislyte" name="Dislyte" />
   <item component="ComponentInfo{com.vercel.riblink.disposemail/com.vercel.riblink.disposemail.MainActivity}" drawable="dismail" name="DisMail" />
-  <item component="ComponentInfo{com.disney.starplus/com.bamtechmedia.dominguez.main.MainActivity}" drawable="disney_star_plus" name="Disney Star+" />
   <item component="ComponentInfo{com.disney.disneyplus/com.bamtechmedia.dominguez.main.MainActivity}" drawable="disney_plus" name="Disney+" />
   <item component="ComponentInfo{com.disneyplus.mea/com.hotstar.MainActivity}" drawable="disney_plus" name="Disney+" />
   <item component="ComponentInfo{com.disneyplus.ph/com.hotstar.MainActivity}" drawable="disney_plus" name="Disney+" />
@@ -3819,9 +3817,9 @@
   <item component="ComponentInfo{im.vector.app/im.vector.app.features.MainActivity}" drawable="element" name="Element" />
   <item component="ComponentInfo{im.vector.app/im.vector.application.features.Alias}" drawable="element" name="Element" />
   <item component="ComponentInfo{im.vector.app/im.vector.riotx.features.Alias}" drawable="element" name="Element" />
+  <item component="ComponentInfo{io.element.enterprise/io.element.android.x.MainActivity}" drawable="element_x" name="Element Pro" />
   <item component="ComponentInfo{io.element.android.x/io.element.android.x.MainActivity}" drawable="element_x" name="Element X" />
   <item component="ComponentInfo{io.element.android.x.debug/io.element.android.x.MainActivity}" drawable="element_x" name="Element X Debug" />
-  <item component="ComponentInfo{io.element.enterprise/io.element.android.x.MainActivity}" drawable="element_x" name="Element Pro" />
   <item component="ComponentInfo{com.elfeedcljsrn/com.elfeedcljsrn.MainActivity}" drawable="elfeed" name="Elfeed" />
   <item component="ComponentInfo{ats.ksa.elite.patient/com.ats.hospital.presenter.ui.activities.SplashActivity}" drawable="elite_hospital" name="Elite Hospital" />
   <item component="ComponentInfo{com.eljur.client/com.eljur.client.feature.splash.view.SplashActivity}" drawable="eljur_student" name="Eljur.Student" />
@@ -8334,6 +8332,7 @@
   <item component="ComponentInfo{com.bitsmedia.android.muslimpro/com.bitsmedia.android.muslimpro.core.activities.SplashActivity}" drawable="muslim_pro" name="Muslim Pro" />
   <item component="ComponentInfo{com.muso.musicplayer/com.muso.musicplayer.MainActivity}" drawable="apple_music" name="Muso" />
   <item component="ComponentInfo{com.ttnet.muzik/com.ttnet.muzik.DefaultAppIconAlias}" drawable="music_player" name="Muud" />
+  <item component="ComponentInfo{com.sparkine.muvizedge/com.sparkine.muvizedge.activity.HomeActivity}" drawable="muviz_edge" name="Muviz Edge" />
   <item component="ComponentInfo{net.nurik.roman.muzei/com.google.android.apps.muzei.MuzeiActivity}" drawable="muzei" name="Muzei" />
   <item component="ComponentInfo{de.mvg.more/de.swm.mvgo.main.MainActivity}" drawable="mvgo" name="MVGO" />
   <item component="ComponentInfo{hu.mvmnext.onlineugyintezes/com.nkmomni.app.screen.splash.SplashActivity}" drawable="substratum_lite" name="MVM Next" />
@@ -9728,7 +9727,6 @@
   <item component="ComponentInfo{dev.zwander.peertuberedirect/dev.zwander.peertuberedirect.MainActivity}" drawable="lemmy_redirect" name="PeerTube Redirect" />
   <item component="ComponentInfo{com.onepeloton.callisto/com.onepeloton.callisto.MainActivity}" drawable="peloton" name="Peloton" />
   <item component="ComponentInfo{com.getpenta.app/com.getpenta.app.MainActivity}" drawable="penta" name="Penta" />
-  <item component="ComponentInfo{com.samsung.android.pentastic/com.samsung.android.pentastic.settings.SettingsActivity}" drawable="pentastic" name="Pentastic" />
   <item component="ComponentInfo{com.sec.penup/com.sec.penup.ui.SplashActivity}" drawable="penup" name="PENUP" />
   <item component="ComponentInfo{softax.pekao.powerpay/softax.pekao.powerpay.screen.Menu}" drawable="peopay" name="PeoPay" />
   <item component="ComponentInfo{softax.pekao.powerpay/softax.pekao.powerpay.frontend.screen.home.SplashActivity}" drawable="peopay" name="PeoPay" />
@@ -11280,6 +11278,7 @@
   <item component="ComponentInfo{com.samsung.android.samsungpass/com.samsung.android.samsungpass.launcher.EntryActivity}" drawable="samsung_pass" name="Samsung Pass" />
   <item component="ComponentInfo{com.samsung.android.spaymini/com.samsung.android.spay.ui.SpayMainActivity}" drawable="samsung_pay_mini" name="Samsung Pay Mini" />
   <item component="ComponentInfo{com.samsung.android.brdigitalaccount/com.samsung.android.brdigitalaccount.ui.spayminiwelcome.SPayMiniWelcomeActivity}" drawable="samsung_pay_mini" name="Samsung Pay Mini" />
+  <item component="ComponentInfo{com.samsung.android.pentastic/com.samsung.android.pentastic.settings.SettingsActivity}" drawable="samsung_pentastic" name="Samsung Pentastic" />
   <item component="ComponentInfo{com.samsung.android.dialer/com.samsung.android.dialer.DialtactsActivity}" drawable="dialer" name="Samsung Phone" />
   <item component="ComponentInfo{com.samsung.android.dialer/.DialtactsActivity}" drawable="dialer" name="Samsung Phone" />
   <item component="ComponentInfo{com.sec.app.samsungprintservice/com.sec.mobileprint.printservice.plugin.ui.launcher.view.LauncherActivity}" drawable="printer" name="Samsung Print Service Plugin" />
@@ -11671,6 +11670,7 @@
   <item component="ComponentInfo{com.noxinfinity.shell/com.noxinfinity.shell.MainActivity}" drawable="terminal" name="ShizuShell" />
   <item component="ComponentInfo{com.legendsayantan.adbtools/com.legendsayantan.adbtools.InitialActivity}" drawable="system_ui_tuner" name="ShizuTools" />
   <item component="ComponentInfo{cn.com.aftershokz.app/cn.com.aftershokz.app.ui.auth.SplashActivity}" drawable="shokz" name="Shokz" />
+  <item component="ComponentInfo{com.shopify.arrive/com.shopify.arrive.MainActivity}" drawable="shop" name="Shop" />
   <item component="ComponentInfo{com.shopback.app/com.google.android.archive.ReactivateActivity}" drawable="shopback" name="ShopBack" />
   <item component="ComponentInfo{com.shopback.app/com.shopback.app.core.ui.splash.SplashActivity}" drawable="shopback" name="ShopBack" />
   <item component="ComponentInfo{com.shopee.my/com.shopee.app.ui.tutorial.TutorialActivity_}" drawable="shopee" name="Shopee" />
@@ -11690,7 +11690,6 @@
   <item component="ComponentInfo{com.shopeepay.id/com.shopee.app.ui.home.HomeActivity_}" drawable="shopeepay" name="ShopeePay" />
   <item component="ComponentInfo{com.beeasy.airpay/com.airpay.login.splash.SplashActivity}" drawable="shopeepay" name="ShopeePay" />
   <item component="ComponentInfo{com.beeasy.toppay/com.airpay.login.splash.SplashActivity}" drawable="shopeepay" name="ShopeePay" />
-  <item component="ComponentInfo{com.shopify.arrive/com.shopify.arrive.MainActivity}" drawable="shopify_shop" name="Shopify Shop" />
   <item component="ComponentInfo{com.woefe.shoppinglist/com.woefe.shoppinglist.activity.MainActivity}" drawable="shopping_list" name="Shopping List" />
   <item component="ComponentInfo{pl.edu.pjwstk.s999844.shoppinglist/pl.edu.pjwstk.s999844.shoppinglist.activities.MainActivity}" drawable="shopping_list" name="Shopping List" />
   <item component="ComponentInfo{com.flipkart.shopsy/com.flipkart.shopsy.SplashActivity}" drawable="shopsy" name="Shopsy" />
