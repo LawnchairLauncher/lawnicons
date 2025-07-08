@@ -12,7 +12,7 @@ plugins {
     id("com.google.devtools.ksp") version "2.2.0-2.0.2" apply false
     id("com.google.dagger.hilt.android") version "2.56.2" apply false
     id("app.cash.licensee") version "1.13.0" apply false
-    id("com.diffplug.spotless") version "7.0.4" apply false
+    id("com.diffplug.spotless") version "7.1.0" apply false
     id("org.gradle.android.cache-fix") version "3.0.1" apply false
 }
 
