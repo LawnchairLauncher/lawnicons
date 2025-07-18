@@ -141,7 +141,7 @@ jobs:
           name: Debug APK
           path: artifacts/debug-apk
       - name: Export APK_NAME for later use
-        run: echo "APK_NAME=Lawnicons.Debug.${{ github.ref_name }}.Nightly-CI_${{ github.run_number }}-$(echo ${{ github.sha }} | cut -c1-7).apk" >> $GITHUB_ENV
+        run: echo "APK_NAME=Lawnicons.Nightly.$(echo ${{ github.sha }} | cut -c1-7).apk" >> $GITHUB_ENV
       - name: Rename .apk file
         run: |
           mv artifacts/debug-apk/*.apk $APK_NAME
