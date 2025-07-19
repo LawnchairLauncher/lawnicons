@@ -174,8 +174,6 @@ If you want to keep only a text, then it should be of high quality and occupy at
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
-Whatever you come to, the result should be at least logical and high-quality.
-
 Sources for creating a recognizable icon
 - Branding guidelines.
 - UI or gameplay.
