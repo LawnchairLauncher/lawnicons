@@ -192,7 +192,7 @@ Some minimal icons should be detailed based on an app design to become more reco
 
 ![](docs/images/quality-9-version-badges.png)
 
-Use one of our version badges to highlight individual version of an app. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
+Use one of our version badges to highlight individual version of an app if the original icons are indistinguishable. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
 
 Tips
 - Create a safe zone around the version badge by cutting lines (refer to the Excessive density section).
