@@ -85,12 +85,15 @@ All lines must be non-transparent black color: `#000000`.
 ![](docs/images/fundamentals-5-stroke-weights.png)
 
 Core weight: `12 px`  
-Allowable weights: `14 px`, `10 px`, `8 px`  
+Rare cases: `14 px`, `10 px`, `8 px`  
 Fine details: `6 px` 
 
-The stroke weight should be kept at `12 px` in most cases. If an icon is too minimal or dense, you'll need other weights: `14 px` for the most minimal, and `8 px` for the densest. For fine details, you can use `6 px`.
+The stroke weight should be kept at `12 px`, except in rare cases. If an icon is too minimal or dense, you'll need other weights: `14 px` for the most minimal, and `8 px` for the densest. For fine details, you can use `6 px`.
 
-No margin of error. Don’t use a fill. Remember to adjust the size of icons when you change the stroke weights.  
+Tips
+- No margin of error.
+- Don’t use a fill.
+- Remember to adjust the size of icons when you change the stroke weights. 
 
 **6 Start and end caps, joints**  
 
@@ -110,7 +113,9 @@ Use `6–32 px` for `90°` angles. Refer to the original icon to select a value 
 
 ![](docs/images/quality-1-consistency.png)
 
-All icons should be outlined. If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
+All icons should be outlined.
+
+If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
 
 **2 Visual balance**  
 
@@ -139,7 +144,7 @@ Tips
 
 ![](docs/images/quality-4-excessive-density.png)
 
-Keep at least `8 px` between lines. Ideally, at least `12 px`.
+Keep at least `8 px` between lines.
 
 Tips
 - Move lines further apart.
@@ -153,9 +158,7 @@ Tips
 
 ![](docs/images/quality-5-alignment.png)
 
-Icons should be centered, but shape-aware.
-
-In most cases, you should place an icon so that the vertical and horizontal margins from the canvas borders are the same. Some icons will look misaligned because of their shape. You need to align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks  and feels centered.
+Icons should be centered, but shape-aware. For some icons, it’s not enough to focus on equal distances from the canvas borders, because they may look misaligned due to their shape. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
 
 **6 Text icons**  
 
@@ -169,11 +172,9 @@ If you want to keep only a text, then it should be of high quality and occupy at
 
 ![](docs/images/quality-7-complex-icons.png)
 
-Many complex icons can be made in the Lawnicons style, taking into account the original, so it's worth giving it a try first. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game.
+First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
-Whatever you come to, the result should be at least logical and high-quality.
-
-Sources for creating a recognizable icon:
+Sources for creating a recognizable icon
 - Branding guidelines.
 - UI or gameplay.
 - Website’s favicons.
@@ -186,6 +187,18 @@ Sources for creating a recognizable icon:
 ![](docs/images/quality-8-minimal-icons.png)
 
 Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
+
+**9 Version badges**  
+
+![](docs/images/quality-9-version-badges.png)
+
+Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
+
+Tips
+- Create a safe zone around the version badge by cutting lines (refer to the Excessive density section).
+- The default location for the badge is the lower right corner, but a lot depends on the icon shape.
+- Avoid shifting icons for the sake of the badge.
+- Create an issue if there aren’t enough version badges.
 
 ### Naming
 
