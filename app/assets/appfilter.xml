@@ -315,8 +315,8 @@
   <item component="ComponentInfo{com.chatgpt.aichat.gpt3.aichatbot/com.android.ntduc.chatgpt.ui.component.splash.SplashActivity}" drawable="ai_chat_ask_assistant" name="AI Chat Ask Assistant" />
   <item component="ComponentInfo{com.chatgpt.aichat.gpt3.aichatbot/com.example.chatgpt.ui.component.splash.SplashActivity}" drawable="ai_chat_ask_assistant" name="AI Chat Ask Assistant" />
   <item component="ComponentInfo{com.aidungeon/com.aidungeon.MainActivity}" drawable="ai_dungeon" name="AI Dungeon" />
-  <item component="ComponentInfo{com.gallery20/com.gallery20.activities.GalleryActivity}" drawable="gallery" name="AI Gallery" />
-  <item component="ComponentInfo{com.gallery20/com.gallery20.HomeActivity}" drawable="gallery" name="AI Gallery" />
+  <item component="ComponentInfo{com.gallery20/com.gallery20.activities.GalleryActivity}" drawable="generic_gallery" name="AI Gallery" />
+  <item component="ComponentInfo{com.gallery20/com.gallery20.HomeActivity}" drawable="generic_gallery" name="AI Gallery" />
   <item component="ComponentInfo{com.aiphone.secondphonenumber/ai.braw.aiphone.StartActivity}" drawable="true_phone" name="AI Phone" />
   <item component="ComponentInfo{com.wallart.ai.wallpapers/com.wallart.ai.wallpapers.activity.MainActivity}" drawable="ai_wallpapers" name="Ai Wallpapers" />
   <item component="ComponentInfo{com.finalwire.aida64/com.finalwire.aida64.HHMainActivity}" drawable="aida64" name="AIDA64" />
@@ -618,8 +618,8 @@
   <item component="ComponentInfo{com.google.android.sambadocumentsprovider/com.google.android.sambadocumentsprovider.mount.MountServerActivity}" drawable="android_samba_client" name="Android Samba Client" />
   <item component="ComponentInfo{com.google.android.webview.dev/org.chromium.android_webview.devui.LauncherActivity}" drawable="android_system_webview" name="Android System WebView" />
   <item component="ComponentInfo{com.google.android.webview/org.chromium.android_webview.devui.LauncherActivity}" drawable="android_system_webview" name="Android System WebView" />
-  <item component="ComponentInfo{com.google.android.webview.beta/org.chromium.android_webview.devui.LauncherActivity}" drawable="android_system_webview" name="Android System WebView Beta" />
-  <item component="ComponentInfo{com.google.android.webview.canary/org.chromium.android_webview.devui.LauncherActivity}" drawable="android_system_webview" name="Android System WebView Canary" />
+  <item component="ComponentInfo{com.google.android.webview.beta/org.chromium.android_webview.devui.LauncherActivity}" drawable="android_system_webview_beta" name="Android System WebView Beta" />
+  <item component="ComponentInfo{com.google.android.webview.canary/org.chromium.android_webview.devui.LauncherActivity}" drawable="android_system_webview_canary" name="Android System WebView Canary" />
   <item component="ComponentInfo{svarzee.android.apps.adb_mouse/svarzee.android.apps.adb_mouse.MainActivity}" drawable="android_tv_adb_mouse_keyboard" name="Android TV ADB Mouse Keyboard" />
   <item component="ComponentInfo{com.google.android.tv.remote/com.google.android.tv.remote.RemoteActivity}" drawable="android_tv_remote_service" name="Android TV Remote Service" />
   <item component="ComponentInfo{com.github.mueller_ma.viewandroidversion/com.github.mueller_ma.viewandroidversion.MainActivity}" drawable="ashell" name="Android version" />
@@ -965,7 +965,7 @@
   <item component="ComponentInfo{com.evertec.athmovil.android/com.evertec.athmovil.android.SplashScreen}" drawable="ath_movil" name="ATH Móvil" />
   <item component="ComponentInfo{dev.sebaubuntu.athena/dev.sebaubuntu.athena.MainActivity}" drawable="zorin_connect" name="Athena" />
   <item component="ComponentInfo{cs14.pixelperfect.iconpack.athenadark/com.candybar.dev.activities.SplashActivity}" drawable="athena_dark_icons" name="Athena Dark Icons" />
-  <item component="ComponentInfo{dev.sebaubuntu.athena.dev/dev.sebaubuntu.athena.MainActivity}" drawable="zorin_connect" name="Athena Dev" />
+  <item component="ComponentInfo{dev.sebaubuntu.athena.dev/dev.sebaubuntu.athena.MainActivity}" drawable="athena_dev" name="Athena Dev" />
   <item component="ComponentInfo{com.athermobileapp/com.athermobileapp.ui.main.MainActivity}" drawable="ather" name="Ather" />
   <item component="ComponentInfo{com.athermobileapp/com.athermobileapp.SplashActivity}" drawable="ather" name="Ather" />
   <item component="ComponentInfo{com.atlasobscura.android/com.atlasobscura.app.ui.MainActivity}" drawable="atlas_obscura" name="Atlas Obscura" />
@@ -1563,9 +1563,9 @@
   <item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.VALENTINE}" drawable="blinkit" name="Blinkit" />
   <item component="ComponentInfo{com.grofers.customerapp.lit/com.grofers.customerapp.DEFAULT}" drawable="blinkit" name="Blinkit" />
   <item component="ComponentInfo{de.blitzer/de.blitzer.activity.SplashScreen}" drawable="camsam" name="Blitzer.de" />
-  <item component="ComponentInfo{de.blitzer.plus/com.eifrig.blitzerde.activity.splash.SplashActivity}" drawable="camsam" name="Blitzer.de PRO" />
-  <item component="ComponentInfo{de.blitzer.plus/net.graphmasters.blitzerde.activity.splash.SplashActivity}" drawable="camsam" name="Blitzer.de PRO" />
-  <item component="ComponentInfo{net.graphmasters.blitzerdex/com.eifrig.blitzerde.activity.splash.SplashActivity}" drawable="camsam" name="Blitzer.de PRO (Preview)" />
+  <item component="ComponentInfo{de.blitzer.plus/com.eifrig.blitzerde.activity.splash.SplashActivity}" drawable="blitzer_de_pro" name="Blitzer.de PRO" />
+  <item component="ComponentInfo{de.blitzer.plus/net.graphmasters.blitzerde.activity.splash.SplashActivity}" drawable="blitzer_de_pro" name="Blitzer.de PRO" />
+  <item component="ComponentInfo{net.graphmasters.blitzerdex/com.eifrig.blitzerde.activity.splash.SplashActivity}" drawable="blitzer_de_pro" name="Blitzer.de PRO (Preview)" />
   <item component="ComponentInfo{com.block.juggle/org.cocos2dx.javascript.AppActivity}" drawable="block_blast" name="Block Blast!" />
   <item component="ComponentInfo{piuk.blockchain.android/piuk.blockchain.android.ui.launcher.LauncherActivity}" drawable="blockchain_com" name="Blockchain.com" />
   <item component="ComponentInfo{com.blockchain.exchange/com.blockchain.exchange.MainActivity}" drawable="blockchain_com" name="Blockchain.com Exchange" />
@@ -2302,7 +2302,7 @@
   <item component="ComponentInfo{com.samsung.android.app.cameraassistant/com.samsung.android.app.cameraassistant.MainActivity}" drawable="camera_assistant" name="Camera Assistant" />
   <item component="ComponentInfo{de.kromke.andreas.cameradatefolders/de.kromke.andreas.cameradatefolders.MainActivity}" drawable="camera_date_folders" name="Camera Date Folders" />
   <item component="ComponentInfo{com.flavionet.android.camera.pro/com.flavionet.android.camera.MainActivity}" drawable="camera_fv_5" name="Camera FV-5" />
-  <item component="ComponentInfo{com.flavionet.android.camera.lite/com.flavionet.android.camera.MainActivity}" drawable="camera_fv_5" name="Camera FV-5 Lite" />
+  <item component="ComponentInfo{com.flavionet.android.camera.lite/com.flavionet.android.camera.MainActivity}" drawable="camera_fv_5_lite" name="Camera FV-5 Lite" />
   <item component="ComponentInfo{com.smartwatchstudios.app.camera/com.smartwatchstudios.app.camera.CameraActivity}" drawable="camera_pro" name="Camera Pro" />
   <item component="ComponentInfo{slide.cameraZoom/slide.cameraZoom.CameraZoomActivity}" drawable="camera_zoom_fx" name="Camera ZOOM FX" />
   <item component="ComponentInfo{slide.cameraZoom/slide.cameraZoom.CheckPermissionsActivity}" drawable="camera_zoom_fx" name="Camera ZOOM FX" />
@@ -2313,7 +2313,7 @@
   <item component="ComponentInfo{com.infinitecampus.student.campusportalhybrid/com.campusportalhybrid.MainActivity}" drawable="campus_student" name="Campus Student" />
   <item component="ComponentInfo{com.vladpen.cams/com.vladpen.cams.MainActivity}" drawable="kimcy_screen_recorder" name="Cams" />
   <item component="ComponentInfo{com.camsam/de.blitzer.activity.SplashScreen}" drawable="camsam" name="CamSam" />
-  <item component="ComponentInfo{com.camsam.plus/de.blitzer.activity.SplashScreen}" drawable="camsam" name="CamSam PLUS" />
+  <item component="ComponentInfo{com.camsam.plus/de.blitzer.activity.SplashScreen}" drawable="camsam_plus" name="CamSam PLUS" />
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.launcher.WelcomeDefaultActivity}" drawable="camscanner" name="CamScanner" />
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.launcher.WelcomePremiumActivity}" drawable="camscanner" name="CamScanner" />
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.MainMenuActivity}" drawable="camscanner" name="CamScanner" />
@@ -2831,8 +2831,8 @@
   <item component="ComponentInfo{com.coloros.note/com.nearme.note.view.AllNoteActivity}" drawable="notes" name="ColorOS Notes" />
   <item component="ComponentInfo{com.coloros.note/com.nearme.note.main.MainActivity}" drawable="notes" name="ColorOS Notes" />
   <item component="ComponentInfo{com.oplus.dialer/com.android.contacts.DialtactsActivityAlias}" drawable="dialer" name="ColorOS ODialer" />
-  <item component="ComponentInfo{com.oppo.gallery3d/.app.Gallery}" drawable="gallery" name="ColorOS Photos" />
-  <item component="ComponentInfo{com.oppo.gallery3d/com.oppo.gallery3d.app.Gallery}" drawable="gallery" name="ColorOS Photos" />
+  <item component="ComponentInfo{com.oppo.gallery3d/.app.Gallery}" drawable="generic_gallery" name="ColorOS Photos" />
+  <item component="ComponentInfo{com.oppo.gallery3d/com.oppo.gallery3d.app.Gallery}" drawable="generic_gallery" name="ColorOS Photos" />
   <item component="ComponentInfo{com.coloros.screenrecorder/com.coloros.screenrecorder.MainActivity}" drawable="kimcy_screen_recorder" name="ColorOS Screen Recording" />
   <item component="ComponentInfo{com.coloros.translate/com.coloros.translate.ui.MainActivity}" drawable="coloros_translate" name="ColorOS Translate" />
   <item component="ComponentInfo{com.coloros.weather/com.coloros.weather.OppoMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
@@ -3768,7 +3768,7 @@
   <item component="ComponentInfo{com.reader.books/com.reader.books.gui.activities.MainActivity}" drawable="eboox" name="eBoox" />
   <item component="ComponentInfo{com.samsung.android.shealthmonitor/com.samsung.android.shealthmonitor.MainActivity}" drawable="samsung_health_monitor" name="ECG Tile Link" />
   <item component="ComponentInfo{dev.brahmkshatriya.echo/dev.brahmkshatriya.echo.MainActivity}" drawable="echo" name="Echo" />
-  <item component="ComponentInfo{dev.brahmkshatriya.echo.nightly/dev.brahmkshatriya.echo.MainActivity}" drawable="echo" name="Echo Nightly" />
+  <item component="ComponentInfo{dev.brahmkshatriya.echo.nightly/dev.brahmkshatriya.echo.MainActivity}" drawable="echo_nightly" name="Echo Nightly" />
   <item component="ComponentInfo{com.ecobee.athenamobile/com.ecobee.athenamobile.launcher.LauncherActivity}" drawable="ecobee" name="ecobee" />
   <item component="ComponentInfo{com.ecosia.android/org.chromium.chrome.browser.vr.VrMainActivity}" drawable="ecosia" name="Ecosia" />
   <item component="ComponentInfo{com.ecosia.android/com.google.android.apps.chrome.Main}" drawable="ecosia" name="Ecosia" />
@@ -4035,7 +4035,7 @@
   <item component="ComponentInfo{de.human_resources/com.godot.game.GodotApp}" drawable="factory_escape" name="Factory Escape" />
   <item component="ComponentInfo{de.hafas.android.vbn/de.hafas.main.HafasApp}" drawable="fahrplaner" name="FahrPlaner" />
   <item component="ComponentInfo{de.degener.campus/de.degener.campus.MainActivity}" drawable="fahrschul_campus" name="Fahrschul-Campus" />
-  <item component="ComponentInfo{com.fairphone.android.fairbudsapp/com.fairphone.fairsound.MainActivity}" drawable="recorder" name="Fairbuds" />
+  <item component="ComponentInfo{com.fairphone.android.fairbudsapp/com.fairphone.fairsound.MainActivity}" drawable="generic_recorder" name="Fairbuds" />
   <item component="ComponentInfo{eu.faircode.email/eu.faircode.email.ActivityMain}" drawable="fairemail" name="FairEmail" />
   <item component="ComponentInfo{navanvi.conversation.app/navanvi.conversation.conversation.MainActivity}" drawable="fake_chat" name="Fake Chat" />
   <item component="ComponentInfo{com.lexa.fakegps/com.lexa.fakegps.TickToint}" drawable="fake_gps" name="Fake GPS" />
@@ -4358,8 +4358,8 @@
   <item component="ComponentInfo{com.floraincognita.app.floraincognita/com.floraincognita.app.floraincognita.MainActivity}" drawable="flora_incognita" name="Flora Incognita" />
   <item component="ComponentInfo{com.absolute.floral/com.absolute.floral.ui.FirstActivity}" drawable="floral" name="Floral" />
   <item component="ComponentInfo{dev.patrickgold.florisboard/dev.patrickgold.florisboard.SettingsLauncherAlias}" drawable="florisboard" name="FlorisBoard" />
-  <item component="ComponentInfo{dev.patrickgold.florisboard.beta/dev.patrickgold.florisboard.SettingsLauncherAlias}" drawable="florisboard" name="FlorisBoard Beta" />
-  <item component="ComponentInfo{dev.patrickgold.florisboard.debug/dev.patrickgold.florisboard.SettingsLauncherAlias}" drawable="florisboard" name="FlorisBoard Debug" />
+  <item component="ComponentInfo{dev.patrickgold.florisboard.beta/dev.patrickgold.florisboard.SettingsLauncherAlias}" drawable="florisboard_beta" name="FlorisBoard Beta" />
+  <item component="ComponentInfo{dev.patrickgold.florisboard.debug/dev.patrickgold.florisboard.SettingsLauncherAlias}" drawable="florisboard_debug" name="FlorisBoard Debug" />
   <item component="ComponentInfo{com.anticor.flossy/com.anticor.flossy.activities.SplashActivity}" drawable="flossy_icons" name="Flossy Icons" />
   <item component="ComponentInfo{ar.com.cablevision.attv.android.myminerva/ar.com.cablevision.attv.android.myminerva.view.ui.SplashActivity}" drawable="flow" name="Flow" />
   <item component="ComponentInfo{com.floweq.equalizer/com.floweq.equalizer.ui.activities.MainActivity}" drawable="flow_equalizer" name="Flow Equalizer" />
@@ -4726,25 +4726,25 @@
   <item component="ComponentInfo{org.fossify.thankyou/org.fossify.thankyou.activities.SplashActivity.Blue}" drawable="generic_heart" name="Fossify Thank You" />
   <item component="ComponentInfo{org.fossify.thankyou/org.fossify.thankyou.activities.SplashActivity.Orange}" drawable="generic_heart" name="Fossify Thank You" />
   <item component="ComponentInfo{org.fossify.thankyou/org.fossify.thankyou.activities.SplashActivity.Red}" drawable="generic_heart" name="Fossify Thank You" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Amber}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Blue}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Blue_grey}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Brown}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Cyan}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Deep_orange}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Deep_purple}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Green}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Grey_black}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Indigo}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Light_blue}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Light_green}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Lime}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Orange}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Pink}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Purple}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Red}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Teal}" drawable="recorder" name="Fossify Voice Recorder" />
-  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Yellow}" drawable="recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Amber}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Blue}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Blue_grey}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Brown}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Cyan}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Deep_orange}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Deep_purple}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Green}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Grey_black}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Indigo}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Light_blue}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Light_green}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Lime}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Orange}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Pink}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Purple}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Red}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Teal}" drawable="generic_recorder" name="Fossify Voice Recorder" />
+  <item component="ComponentInfo{org.fossify.voicerecorder/org.fossify.voicerecorder.activities.SplashActivity.Yellow}" drawable="generic_recorder" name="Fossify Voice Recorder" />
   <item component="ComponentInfo{com.fossil.wearables.fossil/com.portfolio.platform.uirenew.splash.SplashScreenActivity}" drawable="fossil" name="Fossil" />
   <item component="ComponentInfo{com.fossil.wearables.fossil/com.misfit.fossil.MainActivity}" drawable="fossil" name="Fossil" />
   <item component="ComponentInfo{com.mobilefootie.fotmobpro/com.mobilefootie.fotmob.gui.v2.MainActivityWrapper}" drawable="fotmob" name="FotMob" />
@@ -4868,7 +4868,8 @@
   <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.textedit.EditorActivity}" drawable="fx_file_explorer" name="FX File Explorer" />
   <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.ExplorerActivity}" drawable="fx_file_explorer" name="FX File Explorer" />
   <item component="ComponentInfo{de.theorie24.fs.mofa/de.theorie24.fs.mofa.MainActivity}" drawable="fuhrerschein" name="Führerschein" />
-  <item component="ComponentInfo{de.theorie24.fs.multilingualpro/de.theorie24.fs.multilingualpro.MainActivity}" drawable="fuhrerschein" name="Führerschein GOLD" />
+  <item component="ComponentInfo{de.theorie24.fs.multilingualpro/de.theorie24.fs.multilingualpro.MainActivity}" drawable="fuhrerschein_gold" name="Führerschein GOLD" />
+  <item component="ComponentInfo{de.theorie24.fs.multilingual/de.theorie24.fs.multilingual.MainActivityy}" drawable="fuhrerschein_lite" name="Führerschein LITE" />
   <item component="ComponentInfo{com.insideinc.gcpu/com.insideinc.gpuinfo.MainActivity}" drawable="g_cpu" name="G-CPU" />
   <item component="ComponentInfo{com.g2a.marketplace/com.g2a.marketplace.main.MainActivity}" drawable="g2a" name="G2A" />
   <item component="ComponentInfo{com.gaana/com.gaana.SplashScreenActivityMMX}" drawable="gaana" name="Gaana" />
@@ -4884,47 +4885,47 @@
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SKSamsungMainActivity}" drawable="galaxy_store" name="Galaxy Store" />
   <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.WTLauncher}" drawable="galaxy_themes" name="Galaxy Themes" />
   <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.Launcher}" drawable="galaxy_themes" name="Galaxy Themes" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.camera_activity1}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.medialist.PlayListActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.freeme.gallery.app.GalleryNewActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.feature_node.presentation.main.MainActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.VideoCamera}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.MainActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/.app.GalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/.app.Gallery}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.acer.muse.app.GalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.CameraActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.Camera}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.CameraLauncher}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.LauncherActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.Gallery}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryTabActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryVideoActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.HmctGalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.MainActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.MovieGallery}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.PermissionActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.StarosGalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.TNGalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.VideoBrowserActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.VideoListWrapper}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.v2.app.GalleryActivity2}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.VideoPlayerLauncher}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.hwcamera}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.newgallery.NewGallery}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.android.photos.GalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.huawei.gallery.app.GalleryActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.huawei.gallery.app.GalleryMain}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.sprd.gallery3d.app.NewVideoActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.sprd.gallery3d.app.VideoActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.zte.gallery3d.activity.launcher.MainGallery}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.huawei.photos/com.huawei.gallery.app.GalleryMain}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.miui.gallery/.activity.HomePageActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.app.Gallery}" drawable="gallery" name="Gallery" />
-  <item component="ComponentInfo{com.android.gallery3d/com.amazon.gallery3d.app.AmazonGalleryActivity}" drawable="gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.camera_activity1}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.medialist.PlayListActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.freeme.gallery.app.GalleryNewActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.feature_node.presentation.main.MainActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.VideoCamera}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.MainActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/.app.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/.app.Gallery}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.acer.muse.app.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.CameraActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.Camera}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.CameraLauncher}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.camera.LauncherActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.Gallery}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryTabActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryVideoActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.HmctGalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.MainActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.MovieGallery}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.PermissionActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.StarosGalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.TNGalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.VideoBrowserActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.VideoListWrapper}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.v2.app.GalleryActivity2}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.VideoPlayerLauncher}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.hwcamera}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.newgallery.NewGallery}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.android.photos.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.huawei.gallery.app.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.huawei.gallery.app.GalleryMain}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.sprd.gallery3d.app.NewVideoActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.sprd.gallery3d.app.VideoActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.zte.gallery3d.activity.launcher.MainGallery}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.huawei.photos/com.huawei.gallery.app.GalleryMain}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.miui.gallery/.activity.HomePageActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.app.Gallery}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.android.gallery3d/com.amazon.gallery3d.app.AmazonGalleryActivity}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{gallery.photomanager.picturegalleryapp.imagegallery/gallery.photomanager.picturegalleryapp.imagegallery.activity.GalleryActivity}" drawable="gallery_by_photozen" name="Gallery by PhotoZen" />
   <item component="ComponentInfo{com.g19mobile.gameboosterplus/com.g19mobile.gameboosterplus.SplashActivity}" drawable="game_booster" name="Game Booster" />
   <item component="ComponentInfo{com.g19mobile.gamebooster/com.fenixphoneboosterltd.gamebooster.SplashActivity}" drawable="game_booster" name="Game Booster" />
@@ -5887,7 +5888,7 @@
   <item component="ComponentInfo{com.hihonor.email/com.android.email.activity.Welcome}" drawable="honor_email" name="Honor Email" />
   <item component="ComponentInfo{com.hihonor.HnMultiScreenShot/com.android.systemui.flashlight.FlashlightActivity}" drawable="flashlight" name="Honor Flashlight" />
   <item component="ComponentInfo{com.hihonor.android.fmradio/com.hihonor.android.fmradio.FMRadioMainActivity}" drawable="huawei_fm_radio" name="Honor FM Radio" />
-  <item component="ComponentInfo{com.hihonor.photos/com.hihonor.gallery.app.GalleryMain}" drawable="gallery" name="Honor Gallery" />
+  <item component="ComponentInfo{com.hihonor.photos/com.hihonor.gallery.app.GalleryMain}" drawable="generic_gallery" name="Honor Gallery" />
   <item component="ComponentInfo{com.hihonor.gamecenter/com.hihonor.gamecenter.bu_games_display.splash.SplashActivity}" drawable="xiaomi_game_center" name="Honor Game Center" />
   <item component="ComponentInfo{com.hihonor.health/com.hihonor.health.splash.SplashActivity}" drawable="honor_health" name="HONOR Health" />
   <item component="ComponentInfo{com.hihonor.mirror/com.hihonor.mirror.Mirror}" drawable="huawei_mirror" name="Honor Mirror" />
@@ -5895,7 +5896,7 @@
   <item component="ComponentInfo{com.hihonor.notepad/com.hihonor.notes.NotePad}" drawable="notes" name="Honor Notes" />
   <item component="ComponentInfo{com.hihonor.notepad/com.example.android.notepad.NotePadActivity}" drawable="notes" name="Honor Notes" />
   <item component="ComponentInfo{com.hihonor.notepad/com.hihonor.notes.NotePadActivity}" drawable="notes" name="Honor Notes" />
-  <item component="ComponentInfo{com.hihonor.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="recorder" name="Honor Recorder" />
+  <item component="ComponentInfo{com.hihonor.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="generic_recorder" name="Honor Recorder" />
   <item component="ComponentInfo{com.hihonor.ridemode/com.hihonor.ridemode.RideModeStartActivity}" drawable="honor_ride_mode" name="Honor Ride mode" />
   <item component="ComponentInfo{com.hihonor.android.thememanager/com.hihonor.android.thememanager.PageActivity}" drawable="huawei_themes" name="Honor Themes" />
   <item component="ComponentInfo{com.hihonor.tips/com.hihonor.tips.launch.ui.SplashActivity}" drawable="huawei_tips" name="Honor Tips" />
@@ -5991,7 +5992,7 @@
   <item component="ComponentInfo{com.huawei.ridemode/com.huawei.ridemode.RideModeStartActivity}" drawable="honor_ride_mode" name="Huawei Ride mode" />
   <item component="ComponentInfo{com.hihonor.ouc/com.hihonor.android.hnouc.ui.activities.MainEntranceActivity}" drawable="huawei_software_update" name="Huawei Software Update" />
   <item component="ComponentInfo{com.huawei.android.hwouc/com.huawei.android.hwouc.ui.activities.MainEntranceActivity}" drawable="huawei_software_update" name="Huawei Software Update" />
-  <item component="ComponentInfo{com.huawei.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="recorder" name="Huawei Sound Recorder" />
+  <item component="ComponentInfo{com.huawei.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="generic_recorder" name="Huawei Sound Recorder" />
   <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.HwThemeManagerActivity}" drawable="huawei_themes" name="Huawei Themes" />
   <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.PageActivity}" drawable="huawei_themes" name="Huawei Themes" />
   <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.mvp.view.activity.onlinebase.PageActivity}" drawable="huawei_themes" name="Huawei Themes" />
@@ -6794,7 +6795,7 @@
   <item component="ComponentInfo{com.kivra.Kivra/com.kivra.android.login.LoginActivity}" drawable="kivra" name="Kivra" />
   <item component="ComponentInfo{com.kivra.Kivra/com.kivra.android.home.HomeActivity}" drawable="kivra" name="Kivra" />
   <item component="ComponentInfo{com.kiwibrowser.browser/com.google.android.apps.chrome.Main}" drawable="kiwi_browser" name="Kiwi Browser" />
-  <item component="ComponentInfo{com.kiwibrowser.browser.dev/com.google.android.apps.chrome.Main}" drawable="kiwi_browser" name="Kiwi Browser Dev" />
+  <item component="ComponentInfo{com.kiwibrowser.browser.dev/com.google.android.apps.chrome.Main}" drawable="kiwi_browser_dev" name="Kiwi Browser Dev" />
   <item component="ComponentInfo{kiwivpn.connectip.ipchanger.unblocksites/com.fast.vpn.SplashActivity}" drawable="kiwi_vpn" name="Kiwi VPN" />
   <item component="ComponentInfo{com.skypicker.main/com.kiwi.android.feature.splash.impl.ui.SplashActivity}" drawable="kiwi_com" name="Kiwi.com" />
   <item component="ComponentInfo{nz.co.kiwibank.mobile/nz.co.kiwibank.mobile.ui.unauthenticated.UnauthenticatedActivity}" drawable="kiwibank" name="Kiwibank" />
@@ -6866,7 +6867,7 @@
   <item component="ComponentInfo{com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge/com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge.MainActivity}" drawable="kotak811" name="Kotak811" />
   <item component="ComponentInfo{com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge/com.kotak811mobilebankingapp.instantsavingsupiscanandpayrecharge.MainActivitySuper811}" drawable="kotak811" name="Kotak811" />
   <item component="ComponentInfo{org.koitharu.kotatsu/org.koitharu.kotatsu.main.ui.MainActivity}" drawable="kotatsu" name="Kotatsu" />
-  <item component="ComponentInfo{org.koitharu.kotatsu.nightly/org.koitharu.kotatsu.main.ui.MainActivity}" drawable="kotatsu" name="Kotatsu Nightly" />
+  <item component="ComponentInfo{org.koitharu.kotatsu.nightly/org.koitharu.kotatsu.main.ui.MainActivity}" drawable="kotatsu_nightly" name="Kotatsu Nightly" />
   <item component="ComponentInfo{com.koton.app/com.koton.app.MainActivity}" drawable="koton" name="Koton" />
   <item component="ComponentInfo{com.kraken.invest.app/com.kraken.invest.app.MainActivity}" drawable="kraken" name="Kraken" />
   <item component="ComponentInfo{com.kraken.trade/com.kraken.trade.MainActivity}" drawable="kraken_pro" name="Kraken Pro" />
@@ -6888,9 +6889,9 @@
   <item component="ComponentInfo{xyz.luft.tachiyomi.mi.debug/eu.kanade.tachiyomi.ui.main.MainActivity}" drawable="kuukiyomi" name="Kuukiyomi" />
   <item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.legacy.activity.LauncherActivity}" drawable="kvaesitso" name="Kvaesitso" />
   <item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso" name="Kvaesitso" />
-  <item component="ComponentInfo{de.mm20.launcher2.debug/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso" name="Kvaesitso Debug" />
+  <item component="ComponentInfo{de.mm20.launcher2.debug/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso_debug" name="Kvaesitso Debug" />
   <item component="ComponentInfo{de.kvaesitso.icons/de.kvaesitso.icons.MainActivity}" drawable="kvaesitso_icons" name="Kvaesitso Icons" />
-  <item component="ComponentInfo{de.mm20.launcher2.nightly/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso" name="Kvaesitso Nightly" />
+  <item component="ComponentInfo{de.mm20.launcher2.nightly/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso_nightly" name="Kvaesitso Nightly" />
   <item component="ComponentInfo{com.kvb.mobilebanking/com.kvb.mobilebanking.AppzillonMainScreen}" drawable="kvb" name="KVB" />
   <item component="ComponentInfo{smartmobile.videodownloaderforkwai.withoutwatermark/smartmobile.videodownloaderforkwai.withoutwatermark.main}" drawable="download_twitter_videos" name="KW Video Downloader" />
   <item component="ComponentInfo{com.kwai.video/com.yxcorp.gifshow.HomeActivity}" drawable="kwai" name="Kwai" />
@@ -6963,10 +6964,10 @@
   <item component="ComponentInfo{ch.deletescape.lawnchair/ch.deletescape.lawnchair.Launcher}" drawable="lawnchair" name="Lawnchair" />
   <item component="ComponentInfo{ch.deletescape.lawnchair.ci/ch.deletescape.lawnchair.LawnchairLauncher}" drawable="lawnchair" name="Lawnchair" />
   <item component="ComponentInfo{ch.deletescape.lawnchair.ci/ch.deletescape.lawnchair.settings.ui.SettingsLauncherActivity}" drawable="lawnchair" name="Lawnchair" />
-  <item component="ComponentInfo{ch.deletescape.lawnchair.plah.debug/app.lawnchair.LawnchairLauncher}" drawable="lawnchair" name="Lawnchair Debug" />
-  <item component="ComponentInfo{app.lawnchair.debug/leakcanary.internal.activity.LeakLauncherActivity}" drawable="lawnchair" name="Lawnchair Debug" />
-  <item component="ComponentInfo{app.lawnchair.debug/app.lawnchair.LawnchairLauncher}" drawable="lawnchair" name="Lawnchair Debug" />
-  <item component="ComponentInfo{app.lawnchair.nightly/app.lawnchair.LawnchairLauncher}" drawable="lawnchair" name="Lawnchair Nightly" />
+  <item component="ComponentInfo{ch.deletescape.lawnchair.plah.debug/app.lawnchair.LawnchairLauncher}" drawable="lawnchair_debug" name="Lawnchair Debug" />
+  <item component="ComponentInfo{app.lawnchair.debug/leakcanary.internal.activity.LeakLauncherActivity}" drawable="lawnchair_debug" name="Lawnchair Debug" />
+  <item component="ComponentInfo{app.lawnchair.debug/app.lawnchair.LawnchairLauncher}" drawable="lawnchair_debug" name="Lawnchair Debug" />
+  <item component="ComponentInfo{app.lawnchair.nightly/app.lawnchair.LawnchairLauncher}" drawable="lawnchair_nightly" name="Lawnchair Nightly" />
   <item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
   <item component="ComponentInfo{app.lawnchair.lawnicons.play/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
   <item component="ComponentInfo{app.lawnchair.lawnicons.light/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons Light" />
@@ -7052,7 +7053,7 @@
   <item component="ComponentInfo{com.lexus.oneapp/com.toyota.oneapp.ui.splash.SplashActivity}" drawable="lexus" name="Lexus" />
   <item component="ComponentInfo{com.lgeil.serviceindia/com.lgeil.serviceindia.MainActivity}" drawable="lg_smartworld" name="LG" />
   <item component="ComponentInfo{com.lge.appcatalog.v2/com.lge.appcatalog.activity.SplashActivity}" drawable="tiktokdownloader" name="LG Aplicativos" />
-  <item component="ComponentInfo{com.lge.hifirecorder/com.lge.hifirecorder.LaunchHifiRecorder}" drawable="recorder" name="LG Audio Recorder" />
+  <item component="ComponentInfo{com.lge.hifirecorder/com.lge.hifirecorder.LaunchHifiRecorder}" drawable="generic_recorder" name="LG Audio Recorder" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.TCLAlarmClockActivity}" drawable="clock" name="LG Clock" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.DefaultAlarmClockActivity}" drawable="clock" name="LG Clock" />
   <item component="ComponentInfo{com.lge.clock/com.lge.clock.AlarmClockActivity}" drawable="clock" name="LG Clock" />
@@ -7151,16 +7152,16 @@
   <item component="ComponentInfo{jp.linecorp.linemusic.android/com.naver.vibe.SplashActivity}" drawable="line_music" name="LINE MUSIC" />
   <item component="ComponentInfo{jp.linecorp.linemusic.android/com.naver.vibe.MainHolderActivity}" drawable="line_music" name="LINE MUSIC" />
   <item component="ComponentInfo{com.linecorp.lineoa/com.linecorp.lineoa.MainActivity}" drawable="line_official_account" name="LINE Official Account" />
-  <item component="ComponentInfo{org.lineageos.glimpse/org.lineageos.glimpse.MainActivity}" drawable="gallery" name="LineageOS Gallery" />
-  <item component="ComponentInfo{org.lineageos.glimpse.dev/org.lineageos.glimpse.MainActivity}" drawable="gallery" name="LineageOS Gallery Dev" />
+  <item component="ComponentInfo{org.lineageos.glimpse/org.lineageos.glimpse.MainActivity}" drawable="generic_gallery" name="LineageOS Gallery" />
+  <item component="ComponentInfo{org.lineageos.glimpse.dev/org.lineageos.glimpse.MainActivity}" drawable="generic_gallery_dev" name="LineageOS Gallery Dev" />
   <item component="ComponentInfo{org.lineageos.jelly/org.lineageos.jelly.MainActivity}" drawable="lineageos_jelly_browser" name="LineageOS Jelly Browser" />
   <item component="ComponentInfo{org.droidtr.jelly/org.droidtr.jelly.MainActivity}" drawable="lineageos_jelly_browser" name="LineageOS Jelly Browser" />
   <item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="lineageos_music_11" name="LineageOS Music 11" />
   <item component="ComponentInfo{org.lineageos.twelve/org.lineageos.twelve.MainActivity}" drawable="calyxos_music" name="LineageOS Music 12" />
-  <item component="ComponentInfo{org.lineageos.twelve.dev/org.lineageos.twelve.MainActivity}" drawable="calyxos_music" name="LineageOS Music 12 Dev" />
-  <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="recorder" name="LineageOS Recorder" />
-  <item component="ComponentInfo{org.lineageos.recorder/.RecorderActivity}" drawable="recorder" name="LineageOS Recorder" />
-  <item component="ComponentInfo{org.lineageos.recorder.dev/org.lineageos.recorder.RecorderActivity}" drawable="recorder" name="LineageOS Recorder Dev" />
+  <item component="ComponentInfo{org.lineageos.twelve.dev/org.lineageos.twelve.MainActivity}" drawable="lineageos_music_12_dev" name="LineageOS Music 12 Dev" />
+  <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="generic_recorder" name="LineageOS Recorder" />
+  <item component="ComponentInfo{org.lineageos.recorder/.RecorderActivity}" drawable="generic_recorder" name="LineageOS Recorder" />
+  <item component="ComponentInfo{org.lineageos.recorder.dev/org.lineageos.recorder.RecorderActivity}" drawable="generic_recorder_dev" name="LineageOS Recorder Dev" />
   <item component="ComponentInfo{com.edzondm.linebit/com.edzondm.linebit.MainActivity}" drawable="linebit_icons" name="Linebit Icons" />
   <item component="ComponentInfo{com.getliner.liner/com.getliner.liner.MainActivity}" drawable="liner" name="Liner" />
   <item component="ComponentInfo{com.jndapp.linex.black.iconpack/com.jndapp.linex.black.iconpack.MainActivity}" drawable="linex_black_icons" name="LineX Black Icons" />
@@ -7183,9 +7184,9 @@
   <item component="ComponentInfo{com.linkedin.android/com.linkedin.android.authenticator.AATestDefaultActivityAlias}" drawable="linkedin" name="LinkedIn" />
   <item component="ComponentInfo{com.linkedin.android.learning/com.linkedin.android.learning.launchscreen.LaunchScreenActivity}" drawable="linkedin_learning" name="LinkedIn Learning" />
   <item component="ComponentInfo{fe.linksheet/fe.linksheet.activity.MainActivity}" drawable="linksheet" name="LinkSheet" />
-  <item component="ComponentInfo{fe.linksheet.debug/fe.linksheet.activity.MainActivity}" drawable="linksheet" name="LinkSheet Debug" />
-  <item component="ComponentInfo{fe.linksheet.nightly/fe.linksheet.activity.MainActivity}" drawable="linksheet" name="LinkSheet Nightly" />
-  <item component="ComponentInfo{fe.linksheet.nightly/fe.linksheet.activity.main.MainActivity}" drawable="linksheet" name="LinkSheet Nightly" />
+  <item component="ComponentInfo{fe.linksheet.debug/fe.linksheet.activity.MainActivity}" drawable="linksheet_debug" name="LinkSheet Debug" />
+  <item component="ComponentInfo{fe.linksheet.nightly/fe.linksheet.activity.MainActivity}" drawable="linksheet_nightly" name="LinkSheet Nightly" />
+  <item component="ComponentInfo{fe.linksheet.nightly/fe.linksheet.activity.main.MainActivity}" drawable="linksheet_nightly" name="LinkSheet Nightly" />
   <item component="ComponentInfo{com.cisco.connect.cloud/com.cisco.connect.cloud.MainActivity}" drawable="linksys" name="Linksys" />
   <item component="ComponentInfo{ee.linktr.admin/ee.linktr.admin.MainActivity}" drawable="linktree" name="Linktree" />
   <item component="ComponentInfo{org.linphone/org.linphone.activities.LinphoneLauncherActivity}" drawable="linphone" name="Linphone" />
@@ -7193,8 +7194,8 @@
   <item component="ComponentInfo{org.linphone/org.linphone.LinphoneLauncherActivity}" drawable="linphone" name="Linphone" />
   <item component="ComponentInfo{org.linphone/org.linphone.ui.main.MainActivity}" drawable="linphone" name="Linphone" />
   <item component="ComponentInfo{com.inspiredandroid.linuxcommandbibliotheca/com.inspiredandroid.linuxcommandbibliotheca.MainActivity}" drawable="linux_command_library" name="Linux Command Library" />
-  <item component="ComponentInfo{dev.linwood.butterfly.nightly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly" name="Linwood Butterfly" />
   <item component="ComponentInfo{dev.linwood.butterfly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly" name="Linwood Butterfly" />
+  <item component="ComponentInfo{dev.linwood.butterfly.nightly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly_nightly" name="Linwood Butterfly Nightly" />
   <item component="ComponentInfo{com.woi.liputan6.android/com.woi.liputan6.android.activity.Splash}" drawable="liputan6" name="Liputan6" />
   <item component="ComponentInfo{com.woi.liputan6.android/com.woi.liputan6.android.Launcher}" drawable="liputan6" name="Liputan6" />
   <item component="ComponentInfo{com.teamliquid.liquipedia.liquipedia_app/com.teamliquid.liquipedia.liquipedia_app.MainActivity}" drawable="liquipedia" name="Liquipedia" />
@@ -8044,8 +8045,8 @@
   <item component="ComponentInfo{com.mixplorer/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" name="MiXplorer" />
   <item component="ComponentInfo{com.mixplorer/com.mixplorer.activities.SplashActivity}" drawable="mixplorer" name="MiXplorer" />
   <item component="ComponentInfo{com.mixplorer/com.mixplorer.activities.TextEditorActivity}" drawable="mixplorer" name="MiXplorer" />
-  <item component="ComponentInfo{com.mixplorer.beta/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" name="MiXplorer Beta" />
-  <item component="ComponentInfo{com.mixplorer.silver/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" name="MiXplorer Silver" />
+  <item component="ComponentInfo{com.mixplorer.beta/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer_beta" name="MiXplorer Beta" />
+  <item component="ComponentInfo{com.mixplorer.silver/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer_silver" name="MiXplorer Silver" />
   <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity}" drawable="mj_pdf" name="MJ PDF" />
   <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.LauncherAlias}" drawable="mj_pdf" name="MJ PDF" />
   <item component="ComponentInfo{foundation.e.pdfviewer/com.gsnathan.pdfviewer.LauncherAlias}" drawable="grapheneos_secure_pdf_viewer" name="MJ PDF" />
@@ -8129,7 +8130,7 @@
   <item component="ComponentInfo{com.oriondev.moneywallet/com.oriondev.moneywallet.ui.activity.LauncherActivity}" drawable="moneywallet" name="MoneyWallet" />
   <item component="ComponentInfo{im.monica.app.monica/im.monica.app.monica.MainActivity}" drawable="monica_ai" name="Monica AI" />
   <item component="ComponentInfo{app.com.example.szymi.myapplication/app.com.example.szymi.MainActivity}" drawable="monitor_burz" name="Monitor Burz" />
-  <item component="ComponentInfo{com.techbitdata.monitorforndihx/com.techbitdata.monitorforndihx.StartActivity}" drawable="recorder" name="Monitor for NDI HX" />
+  <item component="ComponentInfo{com.techbitdata.monitorforndihx/com.techbitdata.monitorforndihx.StartActivity}" drawable="generic_recorder" name="Monitor for NDI HX" />
   <item component="ComponentInfo{com.ftband.mono/com.ftband.app.StartActivity.Mono}" drawable="monobank" name="monobank" />
   <item component="ComponentInfo{moe.zhs.monochrome/moe.zhs.monochrome.ui.MainActivity}" drawable="fwallet" name="Monochrome" />
   <item component="ComponentInfo{monochrome.dd.kwgt/monochrome.dd.kwgt.MainActivity}" drawable="monochrome_kwgt" name="Monochrome KWGT" />
@@ -8195,7 +8196,7 @@
   <item component="ComponentInfo{com.motorola.audiofx/com.motorola.motoaudio.ui.welcome.WelcomeActivity}" drawable="moto_audio_effects" name="Moto Audio Effects" />
   <item component="ComponentInfo{com.motorola.email/com.android.email.activity.Welcome}" drawable="email" name="Moto Email" />
   <item component="ComponentInfo{com.motorola.help/com.motorola.feedback.HomeScreenActivityLauncher}" drawable="moto_feedback" name="Moto Feedback" />
-  <item component="ComponentInfo{com.motorola.cn.gallery/com.motorola.cn.gallery.app.GalleryActivity}" drawable="gallery" name="Moto Gallery" />
+  <item component="ComponentInfo{com.motorola.cn.gallery/com.motorola.cn.gallery.app.GalleryActivity}" drawable="generic_gallery" name="Moto Gallery" />
   <item component="ComponentInfo{com.motorola.gamemode/com.motorola.gamemode.ui.launcher.main.PRCGameCenterActivity}" drawable="moto_gametime" name="Moto Gametime" />
   <item component="ComponentInfo{com.motorola.gamemode/com.motorola.gamemode.ui.launcher.main.GameCenterActivity}" drawable="moto_gametime" name="Moto Gametime" />
   <item component="ComponentInfo{com.rn_sgw/com.rn_sgw.MainActivity}" drawable="moto" name="Moto hellovoice" />
@@ -8792,7 +8793,7 @@
   <item component="ComponentInfo{org.schabi.newpipe/org.schabi.newpipe.MainActivity}" drawable="newpipe" name="NewPipe" />
   <item component="ComponentInfo{org.schabi.newpipe/org.schabi.newpipe.VideoItemListActivity}" drawable="newpipe" name="NewPipe" />
   <item component="ComponentInfo{org.schabi.newpipelegacy/org.schabi.newpipelegacy.MainActivity}" drawable="newpipe" name="NewPipe Legacy" />
-  <item component="ComponentInfo{org.schabi.newpipe.nightly/org.schabi.newpipe.MainActivity}" drawable="newpipe" name="NewPipe Nightly" />
+  <item component="ComponentInfo{org.schabi.newpipe.nightly/org.schabi.newpipe.MainActivity}" drawable="newpipe_nightly" name="NewPipe Nightly" />
   <item component="ComponentInfo{com.javulticat.newpipe/org.schabi.newpipe.MainActivity}" drawable="newpipe" name="NewPipe SponsorBlock" />
   <item component="ComponentInfo{io.github.takusan23.newradiosupporter/io.github.takusan23.newradiosupporter.MainActivity}" drawable="newradiosupporter" name="NewRadioSupporter" />
   <item component="ComponentInfo{co.appreactor.news/common.AppActivity}" drawable="news" name="News" />
@@ -8816,8 +8817,8 @@
   <item component="ComponentInfo{de.lukasneugebauer.nextcloudcookbook/de.lukasneugebauer.nextcloudcookbook.core.presentation.MainActivity}" drawable="generic_silverware" name="Nextcloud Cookbook" />
   <item component="ComponentInfo{it.niedermann.nextcloud.deck/it.niedermann.nextcloud.deck.ui.main.MainActivity}" drawable="nextcloud_deck" name="Nextcloud Deck" />
   <item component="ComponentInfo{it.niedermann.nextcloud.deck/it.niedermann.nextcloud.deck.ui.MainActivity}" drawable="nextcloud_deck" name="Nextcloud Deck" />
-  <item component="ComponentInfo{com.nextcloud.android.beta/com.nmc.android.ui.LauncherActivity}" drawable="nextcloud" name="Nextcloud Dev" />
-  <item component="ComponentInfo{com.nextcloud.android.beta/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextcloud" name="Nextcloud Dev" />
+  <item component="ComponentInfo{com.nextcloud.android.beta/com.nmc.android.ui.LauncherActivity}" drawable="nextcloud_dev" name="Nextcloud Dev" />
+  <item component="ComponentInfo{com.nextcloud.android.beta/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextcloud_dev" name="Nextcloud Dev" />
   <item component="ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.NewsReaderListActivity}" drawable="nextcloud_news" name="Nextcloud News" />
   <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.android.activity.NotesListViewActivity}" drawable="nextcloud_notes" name="Nextcloud Notes" />
   <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.android.activity.SplashscreenActivity}" drawable="nextcloud_notes" name="Nextcloud Notes" />
@@ -9296,11 +9297,11 @@
   <item component="ComponentInfo{com.oneplus.filemanager/com.oplus.filemanager.main.ui.MainActivity#0}" drawable="files" name="OnePlus File Manager" />
   <item component="ComponentInfo{com.oneplus.filemanager/com.oplus.filemanager.main.ui.MainActivity}" drawable="files" name="OnePlus File Manager" />
   <item component="ComponentInfo{com.oneplus.filemanager/.HomePageActivity}" drawable="files" name="OnePlus File Manager" />
-  <item component="ComponentInfo{com.oneplus.gallery/com.coloros.gallery3d.app.MainActivity}" drawable="gallery" name="OnePlus Gallery" />
-  <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.app.MainActivity}" drawable="gallery" name="OnePlus Gallery" />
-  <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.app.MainActivity#0}" drawable="gallery" name="OnePlus Gallery" />
-  <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.OPGalleryActivity}" drawable="gallery" name="OnePlus Gallery" />
-  <item component="ComponentInfo{com.oneplus.gallery/.OPGalleryActivity}" drawable="gallery" name="OnePlus Gallery" />
+  <item component="ComponentInfo{com.oneplus.gallery/com.coloros.gallery3d.app.MainActivity}" drawable="generic_gallery" name="OnePlus Gallery" />
+  <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.app.MainActivity}" drawable="generic_gallery" name="OnePlus Gallery" />
+  <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.app.MainActivity#0}" drawable="generic_gallery" name="OnePlus Gallery" />
+  <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.OPGalleryActivity}" drawable="generic_gallery" name="OnePlus Gallery" />
+  <item component="ComponentInfo{com.oneplus.gallery/.OPGalleryActivity}" drawable="generic_gallery" name="OnePlus Gallery" />
   <item component="ComponentInfo{com.oneplus.gamespace/com.oneplus.gamespace.ui.main.MainActivity}" drawable="generic_games" name="OnePlus Games" />
   <item component="ComponentInfo{com.oneplus.gamespace/com.oplus.games.ui.main.MainGameActivity}" drawable="generic_games" name="OnePlus Games" />
   <item component="ComponentInfo{com.oneplus.health.international/com.heytap.health.launch.LaunchActivity}" drawable="oneplus_health" name="OnePlus Health" />
@@ -9311,10 +9312,10 @@
   <item component="ComponentInfo{com.oneplus.note/.ui.MainActivity}" drawable="notes" name="OnePlus Notes" />
   <item component="ComponentInfo{com.oplus.phonemanager/com.oplus.phonemanager.FakeActivity}" drawable="oneplus_phone_manager" name="OnePlus Phone Manager" />
   <item component="ComponentInfo{com.oplus.phoneinfosetting/com.oplus.phoneinfosetting.MainActivity}" drawable="ashell" name="OnePlus RadioInfo Tool" />
-  <item component="ComponentInfo{com.oneplus.soundrecorder/oplus.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder" name="OnePlus Recorder" />
-  <item component="ComponentInfo{com.oneplus.soundrecorder/com.soundrecorder.browsefile.BrowseFile}" drawable="recorder" name="OnePlus Recorder" />
-  <item component="ComponentInfo{com.oneplus.soundrecorder/com.oneplus.soundrecorder.SoundRecorder}" drawable="recorder" name="OnePlus Recorder" />
-  <item component="ComponentInfo{com.oneplus.soundrecorder/.SoundRecorder}" drawable="recorder" name="OnePlus Recorder" />
+  <item component="ComponentInfo{com.oneplus.soundrecorder/oplus.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="generic_recorder" name="OnePlus Recorder" />
+  <item component="ComponentInfo{com.oneplus.soundrecorder/com.soundrecorder.browsefile.BrowseFile}" drawable="generic_recorder" name="OnePlus Recorder" />
+  <item component="ComponentInfo{com.oneplus.soundrecorder/com.oneplus.soundrecorder.SoundRecorder}" drawable="generic_recorder" name="OnePlus Recorder" />
+  <item component="ComponentInfo{com.oneplus.soundrecorder/.SoundRecorder}" drawable="generic_recorder" name="OnePlus Recorder" />
   <item component="ComponentInfo{com.oneplus.store/com.oneplus.store.view.SplashActivity}" drawable="oneplus_store" name="OnePlus Store" />
   <item component="ComponentInfo{com.oneplus.store/com.oneplus.mall.view.SplashActivity}" drawable="oneplus_store" name="OnePlus Store" />
   <item component="ComponentInfo{com.oneplus.mall/com.oneplus.mall.view.SplashActivity}" drawable="oneplus_store" name="OnePlus Store" />
@@ -9398,8 +9399,8 @@
   <item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks" name="OpenTracks" />
   <item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.TrackListActivity}" drawable="opentracks" name="OpenTracks" />
   <item component="ComponentInfo{de.dennisguse.opentracks.playstore/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks" name="OpenTracks" />
-  <item component="ComponentInfo{de.dennisguse.opentracks.debug/de.dennisguse.opentracks.TrackListActivity}" drawable="opentracks" name="OpenTracks Debug" />
-  <item component="ComponentInfo{de.dennisguse.opentracks.nightly/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks" name="OpenTracks Nightly" />
+  <item component="ComponentInfo{de.dennisguse.opentracks.debug/de.dennisguse.opentracks.TrackListActivity}" drawable="opentracks_debug" name="OpenTracks Debug" />
+  <item component="ComponentInfo{de.dennisguse.opentracks.nightly/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks_nightly" name="OpenTracks Nightly" />
   <item component="ComponentInfo{net.openvpn.openvpn/net.openvpn.openvpn.OpenVPNClient}" drawable="openvpn" name="OpenVPN Connect" />
   <item component="ComponentInfo{net.openvpn.openvpn/net.openvpn.unified.MainActivity}" drawable="openvpn" name="OpenVPN Connect" />
   <item component="ComponentInfo{de.blinkt.openvpn/de.blinkt.openvpn.activities.MainActivity}" drawable="openvpn_for_android" name="OpenVPN for Android" />
@@ -9481,8 +9482,8 @@
   <item component="ComponentInfo{com.ddm.activity/com.ddm.activity.ui.MainActivity}" drawable="os_monitor" name="OS Monitor" />
   <item component="ComponentInfo{org.sbaudio.oscope/org.sbaudio.oscope.MainActivity}" drawable="oscilloscope" name="Oscilloscope" />
   <item component="ComponentInfo{de.storchp.opentracks.osmplugin/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osm_dashboard" name="OSM Dashboard" />
-  <item component="ComponentInfo{de.storchp.opentracks.osmplugin.nightly/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osm_dashboard" name="OSM Dashboard" />
   <item component="ComponentInfo{de.storchp.opentracks.osmplugin.offline/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osm_dashboard" name="OSM Dashboard" />
+  <item component="ComponentInfo{de.storchp.opentracks.osmplugin.nightly/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osm_dashboard_nightly" name="OSM Dashboard Nightly" />
   <item component="ComponentInfo{net.retiolus.osm2gmaps/net.retiolus.osm2gmaps.activities.MainActivity}" drawable="browser" name="osm2gmaps" />
   <item component="ComponentInfo{net.osmand/net.osmand.activities.MainMenuActivity}" drawable="osmand" name="OsmAnd" />
   <item component="ComponentInfo{net.osmand/net.osmand.plus.activities.MainMenuActivity}" drawable="osmand" name="OsmAnd" />
@@ -10802,36 +10803,36 @@
   <item component="ComponentInfo{dje073.android.modernrecforge/dje073.android.modernrecforge.ActivityMain}" drawable="generic_voice_recorder" name="RecForge II" />
   <item component="ComponentInfo{com.HonduneGames.ReCharge/com.unity3d.player.UnityPlayerActivity}" drawable="recharge_rc" name="Recharge RC" />
   <item component="ComponentInfo{com.bnyro.recorder/com.bnyro.recorder.ui.MainActivity}" drawable="record_you" name="Record You" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.activity.MzRecorderActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.NewSoundRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.bv.soundrecorder.RecorderActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.RecorderActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.StartActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.coloros.soundrecorder/com.soundrecorder.browsefile.BrowseFile}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.coloros.soundrecorder/oplus.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.ReclistActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.SoundRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.bbksoundrecorder.SoundRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.AsusRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.HQSoundRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.LewaSoundRecordMainActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.MainActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.MzRecorderActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecorderActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.Sound}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorderLauncher}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorderTab}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.VoiceNoteRecorder}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.android.soundrecorder/com.sprd.soundrecorder.RecorderActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.LauncherActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.MainActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.motorola.audiorecorder/com.motorola.audiorecorder.ui.main.MainActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{com.vivo.soundrecorder/com.vivo.activity.ReclistActivity}" drawable="recorder" name="Recorder" />
-  <item component="ComponentInfo{org.calyxos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.activity.MzRecorderActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.NewSoundRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.bv.soundrecorder.RecorderActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.RecorderActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.StartActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.coloros.soundrecorder/com.soundrecorder.browsefile.BrowseFile}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.coloros.soundrecorder/oplus.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.ReclistActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.SoundRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.bbksoundrecorder.SoundRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.AsusRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.HQSoundRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.LewaSoundRecordMainActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.MainActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.MzRecorderActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecorderActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.Sound}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorderLauncher}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorderTab}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.VoiceNoteRecorder}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.android.soundrecorder/com.sprd.soundrecorder.RecorderActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.LauncherActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.MainActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.motorola.audiorecorder/com.motorola.audiorecorder.ui.main.MainActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{com.vivo.soundrecorder/com.vivo.activity.ReclistActivity}" drawable="generic_recorder" name="Recorder" />
+  <item component="ComponentInfo{org.calyxos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="generic_recorder" name="Recorder" />
   <item component="ComponentInfo{ro.recorder.app/ro.recorder.app.ui.MainActivity}" drawable="recorder_ro" name="Recorder.ro" />
   <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence" name="Recurrence" />
   <item component="ComponentInfo{de.dbauer.expensetracker/de.dbauer.expensetracker.MainActivity}" drawable="recurring_expense_tracker" name="Recurring Expense Tracker" />
@@ -11197,11 +11198,11 @@
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderActivity}" drawable="samsung_finder" name="Samsung Finder" />
   <item component="ComponentInfo{com.samsung.android.galaxycontinuity/com.samsung.android.galaxycontinuity.SplashActivity}" drawable="samsung_flow" name="Samsung Flow" />
   <item component="ComponentInfo{com.foodient.whisk/com.foodient.whisk.entry.AppActivity}" drawable="samsung_food" name="Samsung Food" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/.app.GalleryOpaqueActivity}" drawable="gallery" name="Samsung Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.samsung.android.gallery.app.activity.GalleryActivity}" drawable="gallery" name="Samsung Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryActivity}" drawable="gallery" name="Samsung Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}" drawable="gallery" name="Samsung Gallery" />
-  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity}" drawable="gallery" name="Samsung Gallery" />
+  <item component="ComponentInfo{com.sec.android.gallery3d/.app.GalleryOpaqueActivity}" drawable="generic_gallery" name="Samsung Gallery" />
+  <item component="ComponentInfo{com.sec.android.gallery3d/com.samsung.android.gallery.app.activity.GalleryActivity}" drawable="generic_gallery" name="Samsung Gallery" />
+  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryActivity}" drawable="generic_gallery" name="Samsung Gallery" />
+  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}" drawable="generic_gallery" name="Samsung Gallery" />
+  <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity}" drawable="generic_gallery" name="Samsung Gallery" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.app.MainActivity}" drawable="samsung_game_launcher" name="Samsung Game Launcher" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivityCN}" drawable="samsung_game_launcher" name="Samsung Game Launcher" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivity}" drawable="samsung_game_launcher" name="Samsung Game Launcher" />
@@ -11324,7 +11325,7 @@
   <item component="ComponentInfo{com.samsung.vvm/com.samsung.vvm.vvmapp.VVMApplicationAlias}" drawable="samsung_visual_voicemail" name="Samsung Visual Voicemail" />
   <item component="ComponentInfo{com.samsung.vvm/com.samsung.vvm.vvmapp.VVMApplication}" drawable="samsung_visual_voicemail" name="Samsung Visual Voicemail" />
   <item component="ComponentInfo{com.samsung.vvm.se/com.samsung.vvm.vvmapp.VVMApplication}" drawable="samsung_visual_voicemail" name="Samsung Voice Mail" />
-  <item component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity}" drawable="recorder" name="Samsung Voice Recorder" />
+  <item component="ComponentInfo{com.sec.android.app.voicenote/com.sec.android.app.voicenote.main.VNMainActivity}" drawable="generic_recorder" name="Samsung Voice Recorder" />
   <item component="ComponentInfo{com.samsung.android.spay/com.samsung.android.spay.InitActivity}" drawable="samsung_wallet" name="Samsung Wallet (Pay)" />
   <item component="ComponentInfo{com.samsung.android.rajaampat/com.srin.rajaampat.view.activity.SplashScreenActivity}" drawable="samsung_wallet" name="Samsung Wallet (Pay)" />
   <item component="ComponentInfo{com.samsung.android.spay/com.samsung.android.spay.ui.SpayMainActivity}" drawable="samsung_wallet" name="Samsung Wallet (Pay)" />
@@ -12515,8 +12516,8 @@
   <item component="ComponentInfo{com.google.android.accessibility.soundamplifier/com.google.android.accessibility.soundamplifier.LauncherActivity}" drawable="sound_amplifier" name="Sound Amplifier" />
   <item component="ComponentInfo{com.gamebasic.decibel/com.gamebasic.decibel.DecibelActivi}" drawable="sound_meter" name="Sound Meter" />
   <item component="ComponentInfo{com.gamebasic.decibel/com.gamebasic.decibel.DecibelActi}" drawable="sound_meter" name="Sound Meter" />
-  <item component="ComponentInfo{com.codeclickers.soundmeter/com.codeclickers.soundmeter.MainActivity}" drawable="recorder" name="Sound Meter" />
-  <item component="ComponentInfo{com.transsion.soundrecorder/com.transsion.soundrecorder.SoundRecorder}" drawable="recorder" name="Sound Recorder" />
+  <item component="ComponentInfo{com.codeclickers.soundmeter/com.codeclickers.soundmeter.MainActivity}" drawable="generic_recorder" name="Sound Meter" />
+  <item component="ComponentInfo{com.transsion.soundrecorder/com.transsion.soundrecorder.SoundRecorder}" drawable="generic_recorder" name="Sound Recorder" />
   <item component="ComponentInfo{com.ape.soundrecorder/com.ape.soundrecorder.SoundRecorder}" drawable="generic_voice_recorder" name="Sound Recorder" />
   <item component="ComponentInfo{com.rocketsauce83.musicsearch/com.rocketsauce83.musicsearch.MainActivity}" drawable="sound_search" name="Sound Search" />
   <item component="ComponentInfo{com.grmasa.soundtoggle/com.grmasa.soundtoggle.MainActivity}" drawable="sound_toggle" name="Sound Toggle" />
@@ -12921,8 +12922,8 @@
   <item component="ComponentInfo{org.ligi.survivalmanual/org.ligi.survivalmanual.ui.MainActivity}" drawable="survival_manual" name="Survival Manual" />
   <item component="ComponentInfo{com.destructo.sushi_mal/com.destructo.sushi.ui.auth.LoginActivity}" drawable="sushi" name="Sushi" />
   <item component="ComponentInfo{org.suyu.suyu_emu/org.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu" name="Suyu" />
-  <item component="ComponentInfo{dev.suyu.suyu_emu.relWithDebInfo/dev.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu" name="Suyu Debug" />
-  <item component="ComponentInfo{dev.suyu.suyu_emu/dev.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu" name="Suyu Dev" />
+  <item component="ComponentInfo{dev.suyu.suyu_emu.relWithDebInfo/dev.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu_dev" name="Suyu Debug" />
+  <item component="ComponentInfo{dev.suyu.suyu_emu/dev.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu_dev" name="Suyu Dev" />
   <item component="ComponentInfo{com.msil.suzukiconnect_generation_2/com.msil.suzukiconnect_generation_2.ui_modules.splash.ui.SplashActivity}" drawable="suzuki_connect" name="Suzuki Connect" />
   <item component="ComponentInfo{com.svpteam.svp/com.google.android.archive.ReactivateActivity}" drawable="svplayer" name="SVPlayer" />
   <item component="ComponentInfo{com.svpteam.svp/com.svpteam.SVPActivity}" drawable="svplayer" name="SVPlayer" />
@@ -14451,7 +14452,7 @@
   <item component="ComponentInfo{com.vimeo.android.videoapp/com.vimeo.android.videoapp.launch.LaunchActivity}" drawable="vimeo" name="Vimeo" />
   <item component="ComponentInfo{net.petafuel.mobile.vimpay/net.petafuel.mobile.vimpay.StartActivity}" drawable="vimpay" name="VIMpay" />
   <item component="ComponentInfo{it.vfsfitvnm.vimusic/it.vfsfitvnm.vimusic.MainActivity}" drawable="vimusic" name="ViMusic" />
-  <item component="ComponentInfo{it.vfsfitvnm.vimusic.nightly/it.vfsfitvnm.vimusic.MainActivity}" drawable="vimusic" name="ViMusic Nightly" />
+  <item component="ComponentInfo{it.vfsfitvnm.vimusic.nightly/it.vfsfitvnm.vimusic.MainActivity}" drawable="vimusic_nightly" name="ViMusic Nightly" />
   <item component="ComponentInfo{fr.vinted/com.vinted.activities.MDActivity}" drawable="vinted" name="Vinted" />
   <item component="ComponentInfo{com.esethnet.vinty/com.esethnet.vinty.LicenseActivity}" drawable="vinty_icons" name="Vinty Icons" />
   <item component="ComponentInfo{com.poupa.vinylmusicplayer/com.poupa.vinylmusicplayer.ui.activities.MainActivity}" drawable="vinyl_music_player" name="Vinyl Music Player" />
@@ -14490,7 +14491,7 @@
   <item component="ComponentInfo{com.snowcorp.vita/com.snow.stuckyi.presentation.splash.SplashActivity}" drawable="vita" name="VITA" />
   <item component="ComponentInfo{org.vita3k.emulator/org.vita3k.emulator.Emulator}" drawable="vita3k" name="Vita3K" />
   <item component="ComponentInfo{app.vitune.android/app.vitune.android.MainActivity}" drawable="vitune" name="ViTune" />
-  <item component="ComponentInfo{app.vitune.android.nightly/app.vitune.android.MainActivity}" drawable="vitune" name="ViTune Nightly" />
+  <item component="ComponentInfo{app.vitune.android.nightly/app.vitune.android.MainActivity}" drawable="vitune_nightly" name="ViTune Nightly" />
   <item component="ComponentInfo{com.viu.phone/com.viu.phone.ui.activity.WelcomeActivity}" drawable="viu" name="Viu" />
   <item component="ComponentInfo{com.vuclip.viu/com.viu.phone.ui.activity.WelcomeActivity}" drawable="viu" name="Viu" />
   <item component="ComponentInfo{com.vuclip.viu/com.vuclip.viu.ui.screens.MainActivity}" drawable="viu" name="Viu" />
@@ -14512,7 +14513,7 @@
   <item component="ComponentInfo{com.vivo.feedback/com.vivo.feedback.feedback.complain.ComplainActivity}" drawable="vivo_feedback" name="vivo Feedback" />
   <item component="ComponentInfo{com.vivo.FMRadio/com.vivo.FMRadio.FMRadioActivity}" drawable="fm_radio" name="vivo FM Radio" />
   <item component="ComponentInfo{com.vivo.FMRadio/com.vivo.FMRadio.FMRadio}" drawable="fm_radio" name="vivo FM Radio" />
-  <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery" name="vivo Gallery" />
+  <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="generic_gallery" name="vivo Gallery" />
   <item component="ComponentInfo{com.vivo.game/com.vivo.game.gamespace.ui.GameSpaceSplashActivity}" drawable="vivo_game_space" name="vivo Game Space" />
   <item component="ComponentInfo{com.vivo.game/com.vivo.game.gamecenter.ui.LogoActivity}" drawable="vivo_game_space" name="vivo Game Space" />
   <item component="ComponentInfo{com.vivo.game/com.vivo.game.ui.LogoActivity}" drawable="vivo_game_space" name="vivo Game Space" />
@@ -14584,10 +14585,10 @@
   <item component="ComponentInfo{com.google.android.apps.accessibility.voiceaccess/com.google.android.apps.accessibility.voiceaccess.LauncherActivity}" drawable="voice_access" name="Voice Access" />
   <item component="ComponentInfo{com.google.android.apps.accessibility.voiceaccess/com.google.android.apps.accessibility.voiceaccess.activities.LaunchActivity}" drawable="voice_access" name="Voice Access" />
   <item component="ComponentInfo{com.baviux.voicechanger/com.baviux.voicechanger.activities.MainActivity}" drawable="voice_changer_with_effects" name="Voice changer with effects" />
-  <item component="ComponentInfo{com.first75.voicerecorder2/com.first75.voicerecorder2.ui.MainActivity}" drawable="recorder" name="Voice Recorder" />
-  <item component="ComponentInfo{com.first75.voicerecorder2/com.first75.voicerecorder2.ui.main.MainActivity}" drawable="recorder" name="Voice Recorder" />
+  <item component="ComponentInfo{com.first75.voicerecorder2/com.first75.voicerecorder2.ui.MainActivity}" drawable="generic_recorder" name="Voice Recorder" />
+  <item component="ComponentInfo{com.first75.voicerecorder2/com.first75.voicerecorder2.ui.main.MainActivity}" drawable="generic_recorder" name="Voice Recorder" />
   <item component="ComponentInfo{com.splendapps.voicerec/com.splendapps.voicerec.MainActivity}" drawable="generic_voice_recorder" name="Voice Recorder" />
-  <item component="ComponentInfo{myrecorder.voicerecorder.voicememos.audiorecorder.recordingapp/com.myviocerecorder.voicerecorder.ui.activities.SplashActivity}" drawable="recorder" name="Voice Recorder &amp; Voice Memos" />
+  <item component="ComponentInfo{myrecorder.voicerecorder.voicememos.audiorecorder.recordingapp/com.myviocerecorder.voicerecorder.ui.activities.SplashActivity}" drawable="generic_recorder" name="Voice Recorder &amp; Voice Memos" />
   <item component="ComponentInfo{com.media.bestrecorder.audiorecorder/com.media.bestrecorder.audiorecorder.NavigationActivity}" drawable="voice_recorder_by_quality_apps" name="Voice Recorder by quality apps" />
   <item component="ComponentInfo{com.DevExtras.VoiceTools/crc6424aa7cfad14660ae.SplashActivity}" drawable="generic_voice_recorder" name="Voice Tools" />
   <item component="ComponentInfo{gpt.voice.chatgpt/gpt.voice.chatgpt.MainActivity}" drawable="voicegpt" name="VoiceGPT" />
@@ -14984,7 +14985,7 @@
   <item component="ComponentInfo{com.whicons.iconpack/com.whicons.iconpack.MainActivity}" drawable="whicons" name="Whicons" />
   <item component="ComponentInfo{sh.whisper/sh.whisper.WMainActivity}" drawable="whisper" name="Whisper" />
   <item component="ComponentInfo{com.vector123.whiteborder/com.vector123.blank.activity.HomeActivity}" drawable="white_border" name="White Border" />
-  <item component="ComponentInfo{net.relaxio.relaxio/net.relaxio.relaxio.SplashActivity}" drawable="recorder" name="White Noise Generator" />
+  <item component="ComponentInfo{net.relaxio.relaxio/net.relaxio.relaxio.SplashActivity}" drawable="generic_recorder" name="White Noise Generator" />
   <item component="ComponentInfo{com.hungrydroid.whitescreen/com.hungrydroid.whitescreen.MainActivity}" drawable="black_screen" name="White Screen" />
   <item component="ComponentInfo{org.woheller69.whobird/org.tensorflow.lite.examples.soundclassifier.DownloadActivity}" drawable="whobird" name="whoBIRD" />
   <item component="ComponentInfo{org.woheller69.whobird/org.tensorflow.lite.examples.soundclassifier.MainActivity}" drawable="whobird" name="whoBIRD" />
@@ -15545,7 +15546,7 @@
   <item component="ComponentInfo{xyz.deepdaikon.zoysii/xyz.deepdaikon.zoysii.MainActivity}" drawable="zoysii" name="Zoysii" />
   <item component="ComponentInfo{com.zozoplayer/com.zozoplayer.activity.SplashActivity}" drawable="generic_player" name="ZoZo Player" />
   <item component="ComponentInfo{com.zte.videoplayer/com.zte.videoplayer.stock.VideoStockBrowserActivity}" drawable="jiocinema" name="ZTE Video Player" />
-  <item component="ComponentInfo{cn.zte.recorder/cn.zte.recorder.RecordHomeActivity}" drawable="recorder" name="ZTE Voice Recorder" />
+  <item component="ComponentInfo{cn.zte.recorder/cn.zte.recorder.RecordHomeActivity}" drawable="generic_recorder" name="ZTE Voice Recorder" />
   <item component="ComponentInfo{com.zte.weather/com.zte.weather.ui.HomeActivity}" drawable="huawei_weather" name="ZTE Weather" />
   <item component="ComponentInfo{ru.zdevs.zugate/ru.zdevs.zugate.MainActivity}" drawable="zugate" name="ZUGate" />
   <item component="ComponentInfo{com.zgkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="zugerkb_twint" name="ZugerKB TWINT" />
@@ -15751,7 +15752,7 @@
   <item component="ComponentInfo{ru.yandex.taxi/ru.yandex.taxi.activity.StartActivity}" drawable="yandex_go" name="Яндекс Go ~~ Yandex Go" />
   <item component="ComponentInfo{ru.yandex.taxi/com.yandex.go.activity.alias.DefaultMainActivityAlias}" drawable="yandex_go" name="Яндекс Go ~~ Yandex Go" />
   <item component="ComponentInfo{com.yandex.browser/com.yandex.browser.YandexBrowserActivity}" drawable="yandex_browser" name="Яндекс Браузер ~~ Yandex Browser" />
-  <item component="ComponentInfo{com.yandex.browser.alpha/com.yandex.browser.YandexBrowserActivity}" drawable="yandex_browser" name="Яндекс Браузер Альфа ~~ Yandex Browser Alpha" />
+  <item component="ComponentInfo{com.yandex.browser.alpha/com.yandex.browser.YandexBrowserActivity}" drawable="yandex_browser_alpha" name="Яндекс Браузер Альфа ~~ Yandex Browser Alpha" />
   <item component="ComponentInfo{ru.yandex.disk/ru.yandex.disk.DefaultIcon}" drawable="yandex_disk" name="Яндекс Диск ~~ Yandex Disk" />
   <item component="ComponentInfo{ru.yandex.disk/ru.yandex.disk.gallery.ui.activity.GalleryActivity}" drawable="yandex_disk" name="Яндекс Диск ~~ Yandex Disk" />
   <item component="ComponentInfo{ru.yandex.disk/ru.yandex.disk.MainActivity}" drawable="yandex_disk" name="Яндекс Диск ~~ Yandex Disk" />
