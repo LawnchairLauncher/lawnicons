@@ -16,6 +16,7 @@
 
 package app.lawnchair.lawnicons.ui.components.home
 
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
@@ -36,6 +37,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.model.IconInfo
@@ -44,7 +46,6 @@ import app.lawnchair.lawnicons.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
-import app.lawnchair.lawnicons.ui.util.thenIf
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -96,13 +97,22 @@ fun HomeTopBar(
                 )
             }
 
+            val offset = (-120).dp
+            val offsetState =
+                animateDpAsState(if (searchBarState.currentValue == SearchBarValue.Expanded) 0.dp else offset)
+
             TopSearchBar(
                 inputField = inputField,
                 state = searchBarState,
-                modifier = Modifier.thenIf(!isExpandedScreen) {
-                    // Hide the search bar on compact devices, as we already have a search icon in the toolbar
-                    Modifier.offset(y = (-120).dp)
-                },
+                modifier = Modifier.then(
+                    if (isExpandedScreen) {
+                        Modifier.offset {
+                            IntOffset(0, offsetState.value.roundToPx())
+                        }
+                    } else {
+                        Modifier.offset(y = offset)
+                    },
+                ),
             )
 
             ResponsiveSearchBarContents(

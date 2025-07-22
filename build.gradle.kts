@@ -5,14 +5,14 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.application") version "8.10.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.21" apply false
-    id("org.jetbrains.kotlin.plugin.compose") version "2.1.21"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.21" apply false
-    id("com.google.devtools.ksp") version "2.1.21-2.0.2" apply false
-    id("com.google.dagger.hilt.android") version "2.56.2" apply false
+    id("com.android.application") version "8.11.1" apply false
+    id("org.jetbrains.kotlin.android") version "2.2.0" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.2.0"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.0" apply false
+    id("com.google.devtools.ksp") version "2.2.0-2.0.2" apply false
+    id("com.google.dagger.hilt.android") version "2.57" apply false
     id("app.cash.licensee") version "1.13.0" apply false
-    id("com.diffplug.spotless") version "7.0.4" apply false
+    id("com.diffplug.spotless") version "7.2.1" apply false
     id("org.gradle.android.cache-fix") version "3.0.1" apply false
 }
 
@@ -27,7 +27,7 @@ allprojects {
             target("src/**/*.kt")
             ktlint().customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.4.22",
+                    "io.nlopez.compose.rules:ktlint:0.4.25",
                 ),
             ).editorConfigOverride(
                 mapOf(

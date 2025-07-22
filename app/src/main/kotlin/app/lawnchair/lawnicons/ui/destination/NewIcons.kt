@@ -17,12 +17,12 @@
 package app.lawnchair.lawnicons.ui.destination
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
@@ -30,7 +30,7 @@ import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
-import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPadding
+import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.viewmodel.NewIconsViewModel
 import kotlinx.serialization.Serializable
 
@@ -69,10 +69,8 @@ private fun NewIcons(
         IconPreviewGrid(
             iconInfo = iconInfoModel.iconInfo,
             onSendResult = {},
-            contentPadding = IconPreviewGridPadding(
-                topPadding = paddingValues.calculateTopPadding() - 12.dp,
-                horizontalPadding = if (isExpandedScreen) IconPreviewGridPadding.ExpandedSize.horizontalPadding else IconPreviewGridPadding.Defaults.horizontalPadding,
-            ),
+            modifier = Modifier.padding(paddingValues),
+            horizontalPadding = if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default,
         )
     }
 }
