@@ -298,7 +298,7 @@
   <item component="ComponentInfo{dev.ukanth.ufirewall/dev.ukanth.ufirewall.MainActivity}" drawable="afwall_plus" name="AFWall+" />
   <item component="ComponentInfo{com.miniclip.agar.io/com.miniclip.agar.io.AgarioActivity}" drawable="agar_io" name="Agar.io" />
   <item component="ComponentInfo{com.agc.gcam_tools/com.agc.gcam_tools.MainActivity}" drawable="agc_toolkit" name="AGC ToolKit" />
-  <item component="ComponentInfo{com.agc.toolKit/com.agc.gcam_tools.MainActivity}" drawable="agc_toolkit" name="AGC ToolKit Pro" />
+  <item component="ComponentInfo{com.agc.toolKit/com.agc.gcam_tools.MainActivity}" drawable="agc_toolkit_pro" name="AGC ToolKit Pro" />
   <item component="ComponentInfo{web.id.isipulsa.appkita/com.w38s.StartupActivity}" drawable="agen_pulsa_termurah" name="Agen Pulsa Termurah" />
   <item component="ComponentInfo{com.agoda.mobile.consumer/com.agoda.mobile.consumer.screens.splash.AppLauncherActivity}" drawable="agoda" name="Agoda" />
   <item component="ComponentInfo{com.agoradesk.app/io.flutter.embedding.android.FlutterFragmentActivity}" drawable="agoradesk" name="AgoraDesk" />
@@ -658,8 +658,8 @@
   <item component="ComponentInfo{org.aniplay.app/org.aniplay.app.MainActivity}" drawable="aniplay" name="Aniplay!" />
   <item component="ComponentInfo{com.mxt.anitrend/com.mxt.anitrend.view.activity.index.SplashActivity}" drawable="anitrend" name="AniTrend" />
   <item component="ComponentInfo{com.swiftsoft.anixartd/com.swiftsoft.anixartd.ui.activity.StartActivity}" drawable="anixart" name="Anixart" />
-  <item component="ComponentInfo{xyz.jmir.tachiyomi.mi/eu.kanade.tachiyomi.ui.main.MainActivity}" drawable="aniyomi" name="Aniyomi" />
-  <item component="ComponentInfo{xyz.jmir.tachiyomi.mi.debug/eu.kanade.tachiyomi.ui.main.MainActivity}" drawable="aniyomi" name="Aniyomi Debug" />
+  <item component="ComponentInfo{xyz.jmir.tachiyomi.mi/eu.kanade.tachiyomi.ui.main.MainActivity}" drawable="generic_player" name="Aniyomi" />
+  <item component="ComponentInfo{xyz.jmir.tachiyomi.mi.debug/eu.kanade.tachiyomi.ui.main.MainActivity}" drawable="generic_player_debug" name="Aniyomi Debug" />
   <item component="ComponentInfo{com.ichi2.anki/com.ichi2.anki.DeckPicker}" drawable="ankidroid" name="AnkiDroid" />
   <item component="ComponentInfo{com.ichi2.anki/com.ichi2.anki.IntentHandler}" drawable="ankidroid" name="AnkiDroid" />
   <item component="ComponentInfo{com.ichi2.anki/com.ichi2.anki.StudyOptions}" drawable="ankidroid" name="AnkiDroid" />
@@ -3830,16 +3830,16 @@
   <item component="ComponentInfo{rocks.poopjournal.Ella/com.unity3d.player.UnityPlayerActivity}" drawable="ella" name="Ella" />
   <item component="ComponentInfo{ro.emag.android/ro.emag.android.cleancode.app.ActivityStart}" drawable="emag" name="eMAG" />
   <item component="ComponentInfo{ro.emag.android/ro.emag.android.cleancode.app.ActivityStartAlias}" drawable="emag" name="eMAG" />
-  <item component="ComponentInfo{com.android.email/com.wps.multiwindow.main.HomeActivity}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.android.email.activity.ContainerActivity}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.vivo.email.activity.Welcome}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.Welcome}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.setup.GuideActivity}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.android.email.MainActivity}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.amazon.email.activity.EmailActivity}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}" drawable="email" name="Email" />
-  <item component="ComponentInfo{com.android.email/com.android.email.login.activity.WelcomeActivity}" drawable="email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.wps.multiwindow.main.HomeActivity}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.android.email.activity.ContainerActivity}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.vivo.email.activity.Welcome}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.Welcome}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.kingsoft.email.activity.setup.GuideActivity}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.android.email.MainActivity}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.amazon.email.activity.EmailActivity}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.android.email.activity.EmailActivity}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}" drawable="generic_email" name="Email" />
+  <item component="ComponentInfo{com.android.email/com.android.email.login.activity.WelcomeActivity}" drawable="generic_email" name="Email" />
   <item component="ComponentInfo{com.easilydo.mail/com.easilydo.mail.ui.SplashActivity}" drawable="email_by_edison_software" name="Email by Edison Software" />
   <item component="ComponentInfo{com.mb.android/com.mb.android.MainActivity}" drawable="emby" name="Emby" />
   <item component="ComponentInfo{ru.henridellal.emerald/ru.henridellal.emerald.Apps}" drawable="emerald_launcher" name="Emerald Launcher" />
@@ -4139,8 +4139,8 @@
   <item component="ComponentInfo{com.epifi.paisa/com.epifi.paisa.MainActivityAliasDefault}" drawable="fi_money" name="Fi Money" />
   <item component="ComponentInfo{com.epifi.paisa/com.epifi.paisa.MainActivityAliasAlternateAppIconIdentifierSavingsAccountTierPrime}" drawable="fi_money" name="Fi Money" />
   <item component="ComponentInfo{com.fibabanka.Fibabanka.mobile/com.fibabanka.Fibabanka.mobile.MainActivitynormal}" drawable="fibabanka" name="Fibabanka" />
-  <item component="ComponentInfo{com.fidosolutions.myaccount/com.fidosolutions.myaccount.ui.activities.SplashActivity}" drawable="fido_my_account" name="Fido My Account" />
-  <item component="ComponentInfo{com.fidosolutions.myaccount/com.fido.genesis.ui.splash.SplashActivity}" drawable="fido_my_account" name="Fido My Account" />
+  <item component="ComponentInfo{com.fidosolutions.myaccount/com.fidosolutions.myaccount.ui.activities.SplashActivity}" drawable="fido" name="Fido" />
+  <item component="ComponentInfo{com.fidosolutions.myaccount/com.fido.genesis.ui.splash.SplashActivity}" drawable="fido" name="Fido" />
   <item component="ComponentInfo{com.fifa.plus.android/com.fifa.mobile.SplashActivity}" drawable="fifa_plus" name="FIFA+" />
   <item component="ComponentInfo{com.fig/com.fig.MainActivity}" drawable="fig" name="Fig" />
   <item component="ComponentInfo{com.figma.mirror/com.figma.figma.MainActivity2}" drawable="figma" name="Figma" />
@@ -7081,8 +7081,8 @@
   <item component="ComponentInfo{org.documentfoundation.libreoffice/org.libreoffice.ui.LibreOfficeUIActivity}" drawable="libreoffice_viewer" name="LibreOffice Viewer" />
   <item component="ComponentInfo{dev.medzik.librepass.android/dev.medzik.librepass.android.MainActivity}" drawable="librepass" name="LibrePass" />
   <item component="ComponentInfo{com.foobnix.pdf.reader/com.foobnix.ui2.MainTabs2}" drawable="librera" name="Librera" />
-  <item component="ComponentInfo{com.foobnix.pro.pdf.reader/com.foobnix.pdf.info.MainBrowserActivity}" drawable="generic_book" name="Librera PRO" />
-  <item component="ComponentInfo{com.foobnix.pro.pdf.reader/com.foobnix.ui2.MainTabs2}" drawable="generic_book" name="Librera PRO" />
+  <item component="ComponentInfo{com.foobnix.pro.pdf.reader/com.foobnix.pdf.info.MainBrowserActivity}" drawable="librera_pro" name="Librera PRO" />
+  <item component="ComponentInfo{com.foobnix.pro.pdf.reader/com.foobnix.ui2.MainTabs2}" drawable="librera_pro" name="Librera PRO" />
   <item component="ComponentInfo{com.dosse.speedtest/com.fdossena.speedtest.ui.MainActivity}" drawable="librespeed" name="LibreSpeed" />
   <item component="ComponentInfo{com.kaajjo.libresudoku/com.kaajjo.libresudoku.MainActivity}" drawable="libresudoku" name="LibreSudoku" />
   <item component="ComponentInfo{org.proninyaroslav.libretorrent/com.google.android.archive.ReactivateActivity}" drawable="libretorrent" name="LibreTorrent" />
@@ -7311,7 +7311,7 @@
   <item component="ComponentInfo{com.android.shell/org.lsposed.manager.ui.activity.MainActivity}" drawable="lspatch_lsposed" name="LSPosed" />
   <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.MainActivity}" drawable="lte_cleaner" name="LTE Cleaner" />
   <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.controllers.MainActivity}" drawable="lte_cleaner" name="LTE Cleaner" />
-  <item component="ComponentInfo{rs.ltt.android/rs.ltt.android.ui.activity.MainActivity}" drawable="email" name="Ltt.rs" />
+  <item component="ComponentInfo{rs.ltt.android/rs.ltt.android.ui.activity.MainActivity}" drawable="generic_email" name="Ltt.rs" />
   <item component="ComponentInfo{com.lucidchart.android.chart/com.lucidchart.android.chart.MainActivity}" drawable="lucidchart" name="Lucidchart" />
   <item component="ComponentInfo{com.duk.kerala.gst.luckybill/com.duk.kerala.gst.luckybill.ui.components.activities.StarterActivity}" drawable="lucky_bill" name="Lucky Bill" />
   <item component="ComponentInfo{com.dsquares.lucky/com.dsquares.lucky.screens.mainscreens.single.SingleLuckyActivity}" drawable="lucky_financial" name="Lucky Financial" />
@@ -7417,8 +7417,8 @@
   <item component="ComponentInfo{com.dergoogler.mmrl/com.dergoogler.mmrl.MainActivity}" drawable="magisk_module_repo_loader" name="Magisk Module Repo Loader" />
   <item component="ComponentInfo{com.google.android.apps.accessibility.magnifier/com.google.android.apps.accessibility.magnifier.home.HomeActivity}" drawable="magnifier" name="Magnifier" />
   <item component="ComponentInfo{com.msedcl.app/com.msedcl.callcenter.src.SplashActivity}" drawable="mahavitaran" name="Mahavitaran" />
-  <item component="ComponentInfo{foundation.e.mail/com.fsck.k9.activity.MessageList}" drawable="email" name="Mail" />
-  <item component="ComponentInfo{foundation.e.mail/foundation.e.mail.activity.Accounts}" drawable="email" name="Mail" />
+  <item component="ComponentInfo{foundation.e.mail/com.fsck.k9.activity.MessageList}" drawable="generic_email" name="Mail" />
+  <item component="ComponentInfo{foundation.e.mail/foundation.e.mail.activity.Accounts}" drawable="generic_email" name="Mail" />
   <item component="ComponentInfo{ru.mail.mailapp/ru.mail.gamification.alias.RebrandingLauncherAlias}" drawable="mail" name="Mail" />
   <item component="ComponentInfo{ru.mail.mailapp/ru.mail.mailapp.SplashScreenActivity}" drawable="mail" name="Mail" />
   <item component="ComponentInfo{ru.mail.mailapp/ru.mail.gamification.alias.MailLauncherAlias}" drawable="mail" name="Mail" />
@@ -7699,7 +7699,7 @@
   <item component="ComponentInfo{com.meross.meross/com.meross.meross.ui.start.FirstCheckActivity}" drawable="meross" name="meross" />
   <item component="ComponentInfo{com.merriamwebster/com.merriamwebster.activity.StartActivity}" drawable="merriam_webster_dictionary" name="Merriam-Webster Dictionary" />
   <item component="ComponentInfo{com.merriamwebster/com.merriamwebster.dictionary.activity.dictionary.DictionaryActivity}" drawable="merriam_webster_dictionary" name="Merriam-Webster Dictionary" />
-  <item component="ComponentInfo{com.merriamwebster.premium/com.merriamwebster.dictionary.activity.dictionary.DictionaryActivity}" drawable="merriam_webster_dictionary" name="Merriam-Webster Dictionary Premium" />
+  <item component="ComponentInfo{com.merriamwebster.premium/com.merriamwebster.dictionary.activity.dictionary.DictionaryActivity}" drawable="merriam_webster_dictionary_premium" name="Merriam-Webster Dictionary Premium" />
   <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.ConversationListActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.transsion.smartmessage/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{foundation.e.message/com.moez.QKSMS.feature.main.MainActivity}" drawable="messages" name="Messages" />
@@ -8197,7 +8197,7 @@
   <item component="ComponentInfo{com.motorola.moto/com.motorola.assist.ui.screens.MainActivity}" drawable="moto" name="Moto" />
   <item component="ComponentInfo{com.motorola.audiofx/com.motorola.motoaudio.ui.LauncherActivity}" drawable="moto_audio_effects" name="Moto Audio Effects" />
   <item component="ComponentInfo{com.motorola.audiofx/com.motorola.motoaudio.ui.welcome.WelcomeActivity}" drawable="moto_audio_effects" name="Moto Audio Effects" />
-  <item component="ComponentInfo{com.motorola.email/com.android.email.activity.Welcome}" drawable="email" name="Moto Email" />
+  <item component="ComponentInfo{com.motorola.email/com.android.email.activity.Welcome}" drawable="generic_email" name="Moto Email" />
   <item component="ComponentInfo{com.motorola.help/com.motorola.feedback.HomeScreenActivityLauncher}" drawable="moto_feedback" name="Moto Feedback" />
   <item component="ComponentInfo{com.motorola.cn.gallery/com.motorola.cn.gallery.app.GalleryActivity}" drawable="generic_gallery" name="Moto Gallery" />
   <item component="ComponentInfo{com.motorola.gamemode/com.motorola.gamemode.ui.launcher.main.PRCGameCenterActivity}" drawable="moto_gametime" name="Moto Gametime" />
@@ -8782,7 +8782,7 @@
   <item component="ComponentInfo{com.nisargjhaveri.netspeed/com.nisargjhaveri.netspeed.settings.SettingsActivity}" drawable="netspeed_indicator" name="NetSpeed Indicator" />
   <item component="ComponentInfo{com.valuephone.vpnetto/de.netto.b2c.activity.FragmentActivity}" drawable="netto" name="Netto" />
   <item component="ComponentInfo{net.techet.netanalyzerlite.an/net.techet.netanalyzerlite.an.activity.MainActivity}" drawable="network_analyzer" name="Network Analyzer" />
-  <item component="ComponentInfo{net.techet.netanalyzer.an/net.techet.netanalyzer.an.activity.MainActivity}" drawable="network_analyzer" name="Network Analyzer Pro" />
+  <item component="ComponentInfo{net.techet.netanalyzer.an/net.techet.netanalyzer.an.activity.MainActivity}" drawable="network_analyzer_pro" name="Network Analyzer Pro" />
   <item component="ComponentInfo{com.paget96.netspeedindicator/com.paget96.netspeedindicator.activities.SplashScreen}" drawable="network_speed" name="Network Speed" />
   <item component="ComponentInfo{com.evozi.network/com.evozi.network.view.MainActivity}" drawable="network_speed_speed_meter" name="Network Speed — Speed Meter" />
   <item component="ComponentInfo{com.telefonica.netzclub.csc/com.telefonica.netzclub.csc.activity.SplashActivity}" drawable="netzclub" name="netzclub" />
@@ -8847,8 +8847,8 @@
   <item component="ComponentInfo{com.wakdev.nfctasks/com.wakdev.nfctasks.views.MainActivity}" drawable="nfc_tasks" name="NFC Tasks" />
   <item component="ComponentInfo{com.wakdev.wdnfc/com.wakdev.nfctools.free.MainActivityFree}" drawable="nfc_tools" name="NFC Tools" />
   <item component="ComponentInfo{com.wakdev.wdnfc/com.wakdev.nfctools.free.views.MainActivityFree}" drawable="nfc_tools" name="NFC Tools" />
-  <item component="ComponentInfo{com.wakdev.nfctools.pro/com.wakdev.nfctools.pro.MainActivityPro}" drawable="nfc_tools" name="NFC Tools Pro" />
-  <item component="ComponentInfo{com.wakdev.nfctools.pro/com.wakdev.nfctools.pro.views.MainActivityPro}" drawable="nfc_tools" name="NFC Tools Pro" />
+  <item component="ComponentInfo{com.wakdev.nfctools.pro/com.wakdev.nfctools.pro.MainActivityPro}" drawable="nfc_tools_pro" name="NFC Tools Pro" />
+  <item component="ComponentInfo{com.wakdev.nfctools.pro/com.wakdev.nfctools.pro.views.MainActivityPro}" drawable="nfc_tools_pro" name="NFC Tools Pro" />
   <item component="ComponentInfo{com.wakdev.apps.nfctools.se/com.wakdev.apps.nfctools.se.MainActivitySE}" drawable="nfc_tools" name="NFC Tools SE" />
   <item component="ComponentInfo{de.tu_darmstadt.seemoo.nfcgate/de.tu_darmstadt.seemoo.nfcgate.gui.MainActivity}" drawable="nfcgate" name="NFCGate" />
   <item component="ComponentInfo{com.gotv.nflgamecenter.us.lite/com.nfl.mobile.SplashActivity}" drawable="nfl" name="NFL" />
@@ -10033,8 +10033,8 @@
   <item component="ComponentInfo{net.blumia.pineapple.lockscreen.oss/net.blumia.pineapple.lockscreen.MainActivity}" drawable="volumelockr" name="Pineapple Lock Screen" />
   <item component="ComponentInfo{prod.com.pingidentity.pingid/com.pingidentity.v2.ui.screens.splash.PingIdSplashActivity}" drawable="pingid" name="PingID" />
   <item component="ComponentInfo{prod.com.pingidentity.pingid/com.accells.access.AppMgr}" drawable="pingid" name="PingID" />
-  <item component="ComponentInfo{ua.com.streamsoft.pingtools/ua.com.streamsoft.pingtools.MainActivity_AA}" drawable="pingtools_network_utilities" name="PingTools Network Utilities" />
-  <item component="ComponentInfo{ua.com.streamsoft.pingtoolspro/ua.com.streamsoft.pingtools.MainActivity_AA}" drawable="pingtools_network_utilities" name="PingTools Pro" />
+  <item component="ComponentInfo{ua.com.streamsoft.pingtools/ua.com.streamsoft.pingtools.MainActivity_AA}" drawable="pingtools" name="PingTools" />
+  <item component="ComponentInfo{ua.com.streamsoft.pingtoolspro/ua.com.streamsoft.pingtools.MainActivity_AA}" drawable="pingtools_pro" name="PingTools Pro" />
   <item component="ComponentInfo{rk.android.app.pinnedshortcuts/rk.android.app.pinnedshortcuts.activities.launch.LaunchActivity}" drawable="pinned_shortcuts" name="Pinned Shortcuts" />
   <item component="ComponentInfo{dev.sasikanth.pinnit/dev.sasikanth.pinnit.SplashActivity}" drawable="pinnit" name="Pinnit" />
   <item component="ComponentInfo{com.pinterest/com.google.android.archive.ReactivateActivity}" drawable="pinterest" name="Pinterest" />
@@ -11194,7 +11194,7 @@
   <item component="ComponentInfo{com.samsung.dropship_client/com.samsung.dropship_client.MainActivity}" drawable="samsung_dropship" name="Samsung Dropship" />
   <item component="ComponentInfo{com.samsung.android.edgelightingeffectunit/com.samsung.android.edgelightingeffectunit.activity.EdgeLightingUnitActivity}" drawable="samsung_edgelighting" name="Samsung EdgeLighting" />
   <item component="ComponentInfo{com.samsung.android.app.edgetouch/com.samsung.android.app.edgetouch.ui.activity.MainActivity}" drawable="samsung_edgetouch" name="Samsung EdgeTouch" />
-  <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="email" name="Samsung Email" />
+  <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="generic_email" name="Samsung Email" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyraw/com.samsung.android.app.galaxyraw.GalaxyRaw}" drawable="samsung_expert_raw" name="Samsung Expert RAW" />
   <item component="ComponentInfo{com.samsung.android.app.find/com.samsung.android.app.find.SplashActivity}" drawable="samsung_find" name="Samsung Find" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderLauncher}" drawable="samsung_finder" name="Samsung Finder" />
@@ -11848,25 +11848,25 @@
   <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Purple}" drawable="simple_calendar" name="Simple Calendar" />
   <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Red}" drawable="simple_calendar" name="Simple Calendar" />
   <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Yellow}" drawable="simple_calendar" name="Simple Calendar" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Yellow}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Lime}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Indigo}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Green}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Brown}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Amber}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue_grey}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Cyan}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_orange}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_purple}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Grey_black}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_blue}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_green}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Orange}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Pink}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Purple}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Red}" drawable="simple_calendar" name="Simple Calendar Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Teal}" drawable="simple_calendar" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Yellow}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Lime}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Indigo}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Green}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Brown}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Amber}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue_grey}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Cyan}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_orange}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_purple}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Grey_black}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_blue}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_green}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Orange}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Pink}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Purple}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Red}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Teal}" drawable="simple_calendar_pro" name="Simple Calendar Pro" />
   <item component="ComponentInfo{com.trianguloy.clipboardeditor/com.trianguloy.clipboardeditor.Editor}" drawable="simple_clipboard_editor" name="Simple Clipboard Editor" />
   <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Amber}" drawable="generic_contacts" name="Simple Contacts" />
   <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Blue}" drawable="generic_contacts" name="Simple Contacts" />
@@ -12115,25 +12115,25 @@
   <item component="ComponentInfo{com.simplemobiletools.notes/com.simplemobiletools.notes.activities.SplashActivity.Blue_grey}" drawable="simple_notes" name="Simple Notes" />
   <item component="ComponentInfo{com.simplemobiletools.notes/com.simplemobiletools.notes.activities.SplashActivity.Pink}" drawable="simple_notes" name="Simple Notes" />
   <item component="ComponentInfo{com.fragileheart.note/com.fragileheart.note.activity.MainActivity}" drawable="notes" name="Simple Notes" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Red}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Yellow}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Teal}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Purple}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Pink}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Lime}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Light_green}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Light_blue}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Indigo}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Green}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Deep_purple}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Deep_orange}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Cyan}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Brown}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Blue_grey}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Amber}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Blue}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Grey_black}" drawable="simple_notes" name="Simple Notes Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Orange}" drawable="simple_notes" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Red}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Yellow}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Teal}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Purple}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Pink}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Lime}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Light_green}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Light_blue}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Indigo}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Green}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Deep_purple}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Deep_orange}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Cyan}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Brown}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Blue_grey}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Amber}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Blue}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Grey_black}" drawable="simple_notes_pro" name="Simple Notes Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.notes.pro/com.simplemobiletools.notes.pro.activities.SplashActivity.Orange}" drawable="simple_notes_pro" name="Simple Notes Pro" />
   <item component="ComponentInfo{net.alph4.photowidget/net.alph4.photowidget.activities.MainActivity}" drawable="simple_photo_widget" name="Simple Photo Widget" />
   <item component="ComponentInfo{com.tomfong.simpleqr/com.tomfong.simpleqr.MainActivity}" drawable="generic_qr_reader" name="Simple QR" />
   <item component="ComponentInfo{com.streema.simpleradio/com.streema.simpleradio.MainActivity}" drawable="simple_radio" name="Simple Radio" />
@@ -12354,7 +12354,7 @@
   <item component="ComponentInfo{com.riteshsahu.SMSBackupRestore/com.riteshsahu.SMSBackupRestore.FreeMain}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore" />
   <item component="ComponentInfo{com.riteshsahu.SMSBackupRestore/com.riteshsahu.SMSBackupRestore.activities.MainActivity}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore" />
   <item component="ComponentInfo{com.riteshsahu.SMSBackupRestore/com.riteshsahu.SMSBackupRestore.activities.IntroActivity}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore" />
-  <item component="ComponentInfo{com.riteshsahu.SMSBackupRestorePro/com.riteshsahu.SMSBackupRestore.activities.IntroActivity}" drawable="sms_backup_and_restore" name="SMS Backup &amp; Restore Pro" />
+  <item component="ComponentInfo{com.riteshsahu.SMSBackupRestorePro/com.riteshsahu.SMSBackupRestore.activities.IntroActivity}" drawable="sms_backup_and_restore_pro" name="SMS Backup &amp; Restore Pro" />
   <item component="ComponentInfo{com.github.tmo1.sms_ie/com.github.tmo1.sms_ie.MainActivity}" drawable="sms_import_export" name="SMS Import / Export" />
   <item component="ComponentInfo{com.microsoft.android.smsorganizer/com.microsoft.android.smsorganizer.StartupActivity}" drawable="sms_organizer" name="SMS Organizer" />
   <item component="ComponentInfo{com.smule.singandroid/com.smule.singandroid.StartupActivity_}" drawable="smule" name="Smule" />
@@ -14414,7 +14414,7 @@
   <item component="ComponentInfo{com.movisoftnew.videoeditor/com.freevideomaker.videoeditor.slideshow.activity.SplashActivity}" drawable="video_editor" name="Video Editor" />
   <item component="ComponentInfo{com.xvideostudio.videoeditor/com.xvideostudio.videoeditor.activity.SplashRCActivity}" drawable="video_editor_and_maker" name="Video Editor &amp; Maker" />
   <item component="ComponentInfo{com.xvideostudio.videoeditor/com.xvideostudio.videoeditor.activity.SplashSubActivity}" drawable="video_editor_and_maker" name="Video Editor &amp; Maker" />
-  <item component="ComponentInfo{com.xvideostudio.videoeditorpro/com.xvideostudio.videoeditor.activity.SplashActivityImpl}" drawable="video_editor_and_maker" name="Video Editor &amp; Maker Pro" />
+  <item component="ComponentInfo{com.xvideostudio.videoeditorpro/com.xvideostudio.videoeditor.activity.SplashActivityImpl}" drawable="video_editor_and_maker_pro" name="Video Editor &amp; Maker Pro" />
   <item component="ComponentInfo{com.video.fun.app/com.nemo.vidmate.host.WelcomeActivity}" drawable="video_fun" name="Video Fun" />
   <item component="ComponentInfo{com.nemo.vidmate/com.nemo.vidmate.WelcomeActivity}" drawable="video_fun" name="Video Fun" />
   <item component="ComponentInfo{com.naing.vwallpaper/com.naing.vwallpaper.MainActivity}" drawable="video_live_wallpaper" name="Video Live Wallpaper" />
@@ -14734,7 +14734,7 @@
   <item component="ComponentInfo{com.walmart.android/com.walmart.android.app.main.LaunchActivity}" drawable="walmart" name="Walmart" />
   <item component="ComponentInfo{com.walmart.android/com.walmart.glass.integration.splash.SplashActivity}" drawable="walmart" name="Walmart" />
   <item component="ComponentInfo{com.stresscodes.wallp/com.stresscodes.wallp.MainActivity}" drawable="walp" name="WalP" />
-  <item component="ComponentInfo{com.stresscodes.wallp.pro/com.stresscodes.wallp.pro.CustomSplashScreen}" drawable="walp" name="WalP Pro" />
+  <item component="ComponentInfo{com.stresscodes.wallp.pro/com.stresscodes.wallp.pro.CustomSplashScreen}" drawable="walp_pro" name="WalP Pro" />
   <item component="ComponentInfo{com.feresr.walpy/com.feresr.wallpapers.SplashActivity}" drawable="walpy" name="Walpy" />
   <item component="ComponentInfo{com.feresr.walpy/com.feresr.walpy.ui.MainActivity}" drawable="walpy" name="Walpy" />
   <item component="ComponentInfo{com.feresr.walpy/com.feresr.walpy.welcome.WelcomeActivity}" drawable="walpy" name="Walpy" />
