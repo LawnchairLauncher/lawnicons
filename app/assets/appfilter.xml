@@ -1500,6 +1500,8 @@
   <item component="ComponentInfo{com.bittorrent.client/com.bittorrent.client.Main}" drawable="bittorrent" name="BitTorrent" />
   <item component="ComponentInfo{com.bittorrent.client/com.bittorrent.client.EntryActivity}" drawable="bittorrent" name="BitTorrent" />
   <item component="ComponentInfo{com.bittorrent.client/com.bittorrent.app.Main}" drawable="bittorrent" name="BitTorrent" />
+  <item component="ComponentInfo{com.bittorrent.client.pro/com.bittorrent.client.EntryActivity}" drawable="bittorrent_pro" name="BitTorrent Pro" />
+  <item component="ComponentInfo{com.bittorrent.client.pro/com.bittorrent.client.Main}" drawable="bittorrent_pro" name="BitTorrent Pro" />
   <item component="ComponentInfo{com.bitvavo.android/com.bitvavo.android.MainActivity}" drawable="bitvavo" name="Bitvavo" />
   <item component="ComponentInfo{com.bitvavo.android/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="bitvavo" name="Bitvavo" />
   <item component="ComponentInfo{com.bitvavo.android/com.bitvavo.android.LaunchActivity}" drawable="bitvavo" name="Bitvavo" />
@@ -1844,7 +1846,7 @@
   <item component="ComponentInfo{com.netease.buff163/com.netease.buff.entry.launcher.icon1380}" drawable="buff" name="BUFF" />
   <item component="ComponentInfo{com.netease.buff/com.netease.buff.entry.launcher.icon1500}" drawable="buff" name="BUFF" />
   <item component="ComponentInfo{eu.sisik.hackendebug/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger" name="Bugjaeger" />
-  <item component="ComponentInfo{eu.sisik.hackendebug.full/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger" name="Bugjaeger Premium" />
+  <item component="ComponentInfo{eu.sisik.hackendebug.full/eu.sisik.hackendebug.SplashActivity}" drawable="bugjaeger_premium" name="Bugjaeger Premium" />
   <item component="ComponentInfo{org.yoki.android.buienalarm/org.yoki.android.buienalarm.activity.LaunchActivity}" drawable="buienalarm" name="Buienalarm" />
   <item component="ComponentInfo{com.supportware.Buienradar/nl.rtl.buienradar.ui.splash.SplashActivity}" drawable="buienradar" name="Buienradar" />
   <item component="ComponentInfo{com.supportware.Buienradar/nl.rtl.buienradar.main.MainActivity}" drawable="buienradar" name="Buienradar" />
@@ -3725,7 +3727,7 @@
   <item component="ComponentInfo{com.corelink.earfun/com.corelink.earfun.page.login.WelcomeActivity}" drawable="earfun" name="EarFun" />
   <item component="ComponentInfo{com.corelink.earfun/com.corelink.earfun.page.activity.LoadingActivity}" drawable="earfun" name="EarFun" />
   <item component="ComponentInfo{com.afkettler.earth/com.afkettler.earth.LauncherActivity}" drawable="generic_earth" name="Earth &amp; Moon" />
-  <item component="ComponentInfo{com.afkettler.pro.earth/com.afkettler.earth.LauncherActivity}" drawable="generic_earth" name="Earth &amp; Moon Pro" />
+  <item component="ComponentInfo{com.afkettler.pro.earth/com.afkettler.earth.LauncherActivity}" drawable="generic_earth_pro" name="Earth &amp; Moon Pro" />
   <item component="ComponentInfo{com.miui.miwallpaper.earth/com.miui.miwallpaper.earth.MainActivity}" drawable="earth_super_wallpapers_configuration" name="Earth Super Wallpapers Configuration" />
   <item component="ComponentInfo{com.finazzi.distquake/com.finazzi.distquake.MainActivity}" drawable="earthquake_network" name="Earthquake Network" />
   <item component="ComponentInfo{ryey.easer/ryey.easer.core.ui.MainActivity}" drawable="easer" name="Easer" />
@@ -3824,7 +3826,7 @@
   <item component="ComponentInfo{im.vector.app/im.vector.riotx.features.Alias}" drawable="element" name="Element" />
   <item component="ComponentInfo{io.element.enterprise/io.element.android.x.MainActivity}" drawable="element_x" name="Element Pro" />
   <item component="ComponentInfo{io.element.android.x/io.element.android.x.MainActivity}" drawable="element_x" name="Element X" />
-  <item component="ComponentInfo{io.element.android.x.debug/io.element.android.x.MainActivity}" drawable="element_x" name="Element X Debug" />
+  <item component="ComponentInfo{io.element.android.x.debug/io.element.android.x.MainActivity}" drawable="element_x_debug" name="Element X Debug" />
   <item component="ComponentInfo{com.elfeedcljsrn/com.elfeedcljsrn.MainActivity}" drawable="elfeed" name="Elfeed" />
   <item component="ComponentInfo{ats.ksa.elite.patient/com.ats.hospital.presenter.ui.activities.SplashActivity}" drawable="elite_hospital" name="Elite Hospital" />
   <item component="ComponentInfo{com.eljur.client/com.eljur.client.feature.splash.view.SplashActivity}" drawable="eljur_student" name="Eljur.Student" />
@@ -4881,7 +4883,7 @@
   <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.ControlCenter}" drawable="gadgetbridge" name="Gadgetbridge" />
   <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenter}" drawable="gadgetbridge" name="Gadgetbridge" />
   <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge" name="Gadgetbridge" />
-  <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge.nightly/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge" name="Gadgetbridge Nightly" />
+  <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge.nightly/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge_nightly" name="Gadgetbridge Nightly" />
   <item component="ComponentInfo{com.trailbehind.android.gaiagps.pro/com.trailbehind.activities.MainActivity}" drawable="gaia_gps" name="Gaia GPS" />
   <item component="ComponentInfo{com.samsung.android.imageenhancer/com.samsung.android.imageenhancer.MainActivity}" drawable="galaxy_enhance_x" name="Galaxy Enhance-X" />
   <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.Main}" drawable="galaxy_store" name="Galaxy Store" />
@@ -9157,8 +9159,8 @@
   <item component="ComponentInfo{com.officedocument.word.docx.document.viewer/com.happydev.wordoffice.business.splash.SplashFromIconActivity}" drawable="office" name="Office" />
   <item component="ComponentInfo{net.sjava.officereader/net.sjava.officereader.ui.activities.MainActivity}" drawable="office_reader" name="Office Reader" />
   <item component="ComponentInfo{com.mobisystems.office/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite" name="OfficeSuite" />
-  <item component="ComponentInfo{com.mobisystems.editor.office_with_reg/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite" name="OfficeSuite (Trial)" />
-  <item component="ComponentInfo{com.mobisystems.editor.office_registered/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite" name="OfficeSuite Pro" />
+  <item component="ComponentInfo{com.mobisystems.editor.office_with_reg/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite" name="OfficeSuite" />
+  <item component="ComponentInfo{com.mobisystems.editor.office_registered/com.mobisystems.office.splashScreen.SplashScreenActivity}" drawable="officesuite_pro" name="OfficeSuite Pro" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.twrpapp.activities.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.activities.MainActivity}" drawable="official_twrp_app" name="Official TWRP App" />
@@ -9278,7 +9280,7 @@
   <item component="ComponentInfo{com.coloros.onekeylockscreen/com.oplus.onekeylockscreen.OneKeyLockScreen}" drawable="one_tap_lock_screen" name="One-Tap Lock Screen" />
   <item component="ComponentInfo{cs14.pixelperfect.kwgtwidget.one4klwpultimate/cs14.pixelperfect.kwgtwidget.one4klwpultimate.MainActivity}" drawable="one4kwgt" name="One4KLWP Ultimate" />
   <item component="ComponentInfo{cs14.pixelperfect.kwgtwidget.one4kwgtultimate/cs14.pixelperfect.kwgtwidget.one4kwgtultimate.MainActivity}" drawable="one4kwgt" name="One4KWGT" />
-  <item component="ComponentInfo{cs14.pixelperfect.kwgtwidget.one4kwgtpro/cs14.pixelperfect.kwgtwidget.one4kwgtpro.MainActivity}" drawable="one4kwgt" name="One4KWGT Pro" />
+  <item component="ComponentInfo{cs14.pixelperfect.kwgtwidget.one4kwgtpro/cs14.pixelperfect.kwgtwidget.one4kwgtpro.MainActivity}" drawable="one4kwgt_pro" name="One4KWGT Pro" />
   <item component="ComponentInfo{one4studio.wallpaper.one4wall/one4studio.wallpaper.one4wall.MainActivity}" drawable="one4wall" name="One4Wall" />
   <item component="ComponentInfo{cs14.pixelperfect.wallpaper.one4wall/cs14.pixelperfect.wallpaper.one4wall.MainActivity}" drawable="one4wall" name="One4Wall" />
   <item component="ComponentInfo{com.creditcard.onecard/com.creditcard.onecard.MainActivity}" drawable="onecard" name="OneCard" />
@@ -12010,27 +12012,27 @@
   <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Red}" drawable="fossify_gallery" name="Simple Gallery" />
   <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Teal}" drawable="fossify_gallery" name="Simple Gallery" />
   <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Yellow}" drawable="fossify_gallery" name="Simple Gallery" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/.activities.SplashActivity.Orange}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Amber}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue_grey}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Brown}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Cyan}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_orange}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_purple}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Green}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Grey_black}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Indigo}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_blue}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_green}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Lime}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Orange}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Pink}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Primary}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Purple}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Red}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Teal}" drawable="fossify_gallery" name="Simple Gallery Pro" />
-  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Yellow}" drawable="fossify_gallery" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/.activities.SplashActivity.Orange}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Amber}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue_grey}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Brown}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Cyan}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_orange}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_purple}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Green}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Grey_black}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Indigo}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_blue}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_green}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Lime}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Orange}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Pink}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Primary}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Purple}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Red}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Teal}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
+  <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Yellow}" drawable="simple_gallery_pro" name="Simple Gallery Pro" />
   <item component="ComponentInfo{com.simplemobiletools.keyboard/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity.Orange}" drawable="generic_keyboard" name="Simple Keyboard" />
   <item component="ComponentInfo{com.simplemobiletools.keyboard/com.simplemobiletools.keyboard.activities.SplashActivity.Amber}" drawable="generic_keyboard" name="Simple Keyboard" />
   <item component="ComponentInfo{com.simplemobiletools.keyboard/com.simplemobiletools.keyboard.activities.SplashActivity.Blue}" drawable="generic_keyboard" name="Simple Keyboard" />
@@ -12913,7 +12915,7 @@
   <item component="ComponentInfo{app.supershift/app.supershift.TabbarActivity}" drawable="supershift_shift_work_calendar" name="Supershift Shift Work Calendar" />
   <item component="ComponentInfo{org.supertuxkart.stk/android.app.NativeActivity}" drawable="supertuxkart" name="SuperTuxKart" />
   <item component="ComponentInfo{org.supertuxkart.stk/org.supertuxkart.stk.SuperTuxKartActivity}" drawable="supertuxkart" name="SuperTuxKart" />
-  <item component="ComponentInfo{org.supertuxkart.stk_beta/org.supertuxkart.stk_beta.SuperTuxKartActivity}" drawable="supertuxkart" name="SuperTuxKart Beta" />
+  <item component="ComponentInfo{org.supertuxkart.stk_beta/org.supertuxkart.stk_beta.SuperTuxKartActivity}" drawable="supertuxkart_beta" name="SuperTuxKart Beta" />
   <item component="ComponentInfo{com.jrzheng.supervpnfree/com.supersoft.supervpnfree.activity.MainActivity}" drawable="supervpn" name="SuperVPN" />
   <item component="ComponentInfo{com.jrzheng.supervpnpayment/com.jrzheng.supervpnpayment.activity.MainActivity}" drawable="supervpn_pro" name="SuperVPN Pro" />
   <item component="ComponentInfo{com.Neurononfire.SupremeDuelist/com.google.firebase.MessagingUnityPlayerActivity}" drawable="supreme_duelist" name="Supreme Duelist" />
@@ -14789,8 +14791,8 @@
   <item component="ComponentInfo{com.weatherteam.rainy.forecast.radar.widgets/com.innovative.weather.app.ui.SplashActivity}" drawable="yahoo_weather" name="Weather" />
   <item component="ComponentInfo{de.wetteronline.wetterapp/de.wetteronline.wetterapp.MainActivity}" drawable="weather_and_radar" name="Weather &amp; Radar" />
   <item component="ComponentInfo{de.wetteronline.wetterapp/de.wetteronline.wetterapp.MainActivityGoogle}" drawable="weather_and_radar" name="Weather &amp; Radar" />
-  <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivity}" drawable="weather_and_radar" name="Weather &amp; Radar Pro" />
-  <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivityGoogle}" drawable="weather_and_radar" name="Weather &amp; Radar Pro" />
+  <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivity}" drawable="weather_and_radar_pro" name="Weather &amp; Radar Pro" />
+  <item component="ComponentInfo{de.wetteronline.wetterapppro/de.wetteronline.wetterapp.MainActivityGoogle}" drawable="weather_and_radar_po" name="Weather &amp; Radar Pro" />
   <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.WeatherActivity}" drawable="weather_google_shortcuts_launcher" name="Weather (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcuts.WeatherShortcut}" drawable="weather_google_shortcuts_launcher" name="Weather (Google Shortcuts Launcher)" />
   <item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.WeatherActivity}" drawable="weather_google_shortcuts_launcher" name="Weather (Google Shortcuts Launcher)" />
