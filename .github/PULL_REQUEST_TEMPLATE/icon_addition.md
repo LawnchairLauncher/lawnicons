@@ -1,8 +1,12 @@
+<!-- Title example: "+1 icon, +2 links, 3 icons updated"
+     Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
+
 ## Description
 <!-- Please provide a short summary of your pull request. -->
 
 ## Icons
-<!-- Please specify in the sections below which apps and packages you have worked on. Unnecessary sections can be deleted. -->
+<!-- Please specify in the sections below which apps and packages you have worked on.
+     Unnecessary sections can be deleted. -->
 
 ### Added
 <!--  Apps for which you add icons. -->
