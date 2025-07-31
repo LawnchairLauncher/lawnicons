@@ -1,4 +1,4 @@
-<!-- Title example: "+1 icon, +2 links, 3 icons updated"
+<!-- Title example: "+1 icon, +2 links, +3 icon updates"
      Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
 
 ## Description
