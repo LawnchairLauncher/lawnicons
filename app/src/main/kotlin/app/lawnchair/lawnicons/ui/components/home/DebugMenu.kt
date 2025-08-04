@@ -170,7 +170,7 @@ private fun CopyableList(
         }
         TextButton(
             onClick = {
-                copyTextToClipboard(context, content)
+                context.copyTextToClipboard(content)
             },
         ) {
             Text(stringResource(R.string.copy_to_clipboard))
@@ -189,7 +189,7 @@ fun CopyableListItem(
         label,
         description = value.toString(),
         onClick = {
-            copyTextToClipboard(context, "$label: $value")
+            context.copyTextToClipboard("$label: $value")
         },
         modifier = modifier,
     )

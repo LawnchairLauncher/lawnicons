@@ -19,10 +19,30 @@ package app.lawnchair.lawnicons.ui.util
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
+import androidx.core.net.toUri
 import app.lawnchair.lawnicons.R
 
-fun copyTextToClipboard(context: Context, text: String) {
-    val clipboard = context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    val clip = ClipData.newPlainText(context.getString(R.string.copied_text), text)
+/**
+ * Copies the given text to the clipboard.
+ *
+ * @param text The text to be copied.
+ */
+fun Context.copyTextToClipboard(text: String) {
+    val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+    val clip = ClipData.newPlainText(getString(R.string.copied_text), text)
     clipboard.setPrimaryClip(clip)
+}
+
+/**
+ * Opens the given URL in a web browser.
+ *
+ * @param url The URL to be opened.
+ */
+fun Context.visitUrl(url: String) {
+    val webpage = url.toUri()
+    val intent = Intent(Intent.ACTION_VIEW, webpage)
+    if (intent.resolveActivity(packageManager) != null) {
+        startActivity(intent)
+    }
 }

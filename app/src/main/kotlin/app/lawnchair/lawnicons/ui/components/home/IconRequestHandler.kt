@@ -271,7 +271,7 @@ private fun openSnackbarWarningContent(
     coroutineScope: CoroutineScope,
     snackbarHostState: SnackbarHostState,
 ) {
-    copyTextToClipboard(context, list)
+    context.copyTextToClipboard(list)
     coroutineScope.launch {
         val result = snackbarHostState
             .showSnackbar(
