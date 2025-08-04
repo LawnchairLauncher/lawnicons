@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package app.lawnchair.lawnicons.di
+package app.lawnchair.lawnicons.data.repository.home
 
-import android.app.Application
-import app.lawnchair.lawnicons.data.repository.NewIconsRepository
-import app.lawnchair.lawnicons.data.repository.NewIconsRepositoryImpl
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
+import javax.inject.Inject
 
-@Module
-@InstallIn(SingletonComponent::class)
-object NewIconsRepositoryModule {
-    @Provides
-    @Singleton
-    fun provideNewIconsRepository(application: Application): NewIconsRepository = NewIconsRepositoryImpl(application)
+class IconRequestSettingsRepository @Inject constructor(
+    private val api: IconRequestSettingsAPI,
+) {
+    suspend fun getEnabledState() = api.getIconRequestSettings().enabled
 }

@@ -1,8 +1,8 @@
 package app.lawnchair.lawnicons.di
 
 import android.app.Application
-import app.lawnchair.lawnicons.repository.OssLibraryRepository
-import app.lawnchair.lawnicons.repository.OssLibraryRepositoryImpl
+import app.lawnchair.lawnicons.data.repository.OssLibraryRepository
+import app.lawnchair.lawnicons.data.repository.OssLibraryRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

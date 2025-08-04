@@ -28,7 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconRequestModel
+import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.visitUrl
 

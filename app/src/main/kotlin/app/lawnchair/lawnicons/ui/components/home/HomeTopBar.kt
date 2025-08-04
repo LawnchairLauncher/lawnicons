@@ -40,9 +40,9 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoModel
-import app.lawnchair.lawnicons.model.SearchMode
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.data.model.IconInfoModel
+import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents

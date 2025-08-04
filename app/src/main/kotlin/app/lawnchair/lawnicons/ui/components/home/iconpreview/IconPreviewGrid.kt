@@ -68,8 +68,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.repository.preferenceManager
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.data.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData

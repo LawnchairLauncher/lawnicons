@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Lawnchair Launcher
+ * Copyright 2025 Lawnchair Launcher
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,29 @@
 
 package app.lawnchair.lawnicons.di
 
-import android.app.Application
-import app.lawnchair.lawnicons.data.repository.NewIconsRepository
-import app.lawnchair.lawnicons.data.repository.NewIconsRepositoryImpl
+import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
+import app.lawnchair.lawnicons.data.kotlinxJson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.Retrofit
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import retrofit2.create
 
 @Module
 @InstallIn(SingletonComponent::class)
-object NewIconsRepositoryModule {
+class WebsiteApiModule {
+
     @Provides
     @Singleton
-    fun provideNewIconsRepository(application: Application): NewIconsRepository = NewIconsRepositoryImpl(application)
+    fun providesWebsiteIconRequestApi(): IconRequestSettingsAPI {
+        return Retrofit.Builder()
+            .baseUrl("https://lawnchair.app/")
+            .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
+            .build()
+            .create()
+    }
 }

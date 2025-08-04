@@ -22,7 +22,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.Lawnicons
 import app.lawnchair.lawnicons.ui.components.SetupEdgeToEdge
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme

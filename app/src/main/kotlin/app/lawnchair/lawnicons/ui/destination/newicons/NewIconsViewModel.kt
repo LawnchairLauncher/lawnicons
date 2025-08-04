@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Lawnchair Launcher
+ * Copyright 2025 Lawnchair Launcher
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-package app.lawnchair.lawnicons.di
+package app.lawnchair.lawnicons.ui.destination.newicons
 
-import android.app.Application
+import androidx.lifecycle.ViewModel
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
-import app.lawnchair.lawnicons.data.repository.NewIconsRepositoryImpl
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-@Module
-@InstallIn(SingletonComponent::class)
-object NewIconsRepositoryModule {
-    @Provides
-    @Singleton
-    fun provideNewIconsRepository(application: Application): NewIconsRepository = NewIconsRepositoryImpl(application)
+@HiltViewModel
+class NewIconsViewModel @Inject constructor(
+    private val newIconsRepository: NewIconsRepository,
+) : ViewModel() {
+
+    @JvmField
+    val newIconsInfoModel = newIconsRepository.newIconsInfoModel
 }

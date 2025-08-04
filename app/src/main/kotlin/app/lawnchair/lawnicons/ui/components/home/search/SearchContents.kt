@@ -35,9 +35,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.data.model.SearchMode
+import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
 
