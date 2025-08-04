@@ -54,7 +54,6 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
             _searchedIconInfoModel.value = _iconInfoModel.value
 
             val systemPackageList = application.getSystemIconInfoAppfilter()
-                .associateBy { it.label }.values
                 .sortedBy { it.label.lowercase() }
             getIconRequestList(systemPackageList)
         }
