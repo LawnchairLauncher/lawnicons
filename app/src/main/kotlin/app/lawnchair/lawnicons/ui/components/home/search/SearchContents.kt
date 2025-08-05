@@ -195,7 +195,11 @@ private fun IconInfoListItem(
     ) {
         ListItem(
             headlineContent = { Text(iconInfo.getFirstLabelAndComponent().label) },
-            supportingContent = { Text(iconInfo.getFirstLabelAndComponent().componentName) },
+            supportingContent = {
+                Text(
+                    iconInfo.getFirstLabelAndComponent().componentName.flattenToString(),
+                )
+            },
             leadingContent = {
                 Box(
                     contentAlignment = Alignment.Center,
@@ -205,7 +209,7 @@ private fun IconInfoListItem(
                         .size(48.dp),
                 ) {
                     Icon(
-                        painter = painterResource(id = iconInfo.id),
+                        painter = painterResource(id = iconInfo.drawableId),
                         contentDescription = null,
                         modifier = Modifier.fillMaxSize(0.6f),
                     )

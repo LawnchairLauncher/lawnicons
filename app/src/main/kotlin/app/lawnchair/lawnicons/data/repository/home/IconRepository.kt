@@ -17,12 +17,11 @@
 package app.lawnchair.lawnicons.data.repository.home
 
 import android.app.Application
-import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.model.IconInfoModel
-import app.lawnchair.lawnicons.data.model.IconRequest
 import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SearchInfo
 import app.lawnchair.lawnicons.data.model.SearchMode
+import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.data.model.splitByComponentName
 import javax.inject.Inject
@@ -80,7 +79,7 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
         val filteredIcons = _iconInfoModel.value.iconInfo.mapNotNull { candidate ->
             val searchIn = when (mode) {
                 SearchMode.LABEL -> candidate.componentNames.map { it.label }
-                SearchMode.COMPONENT -> candidate.componentNames.map { it.componentName }
+                SearchMode.COMPONENT -> candidate.componentNames.map { it.componentName.flattenToString() }
                 SearchMode.DRAWABLE -> listOf(candidate.drawableName)
             }
             val indexOfMatch = searchIn.map {
@@ -114,24 +113,22 @@ class IconRepositoryImpl @Inject constructor(application: Application) : IconRep
         _searchedIconInfoModel.value = _iconInfoModel.value
     }
 
-    private suspend fun getIconRequestList(systemPackageList: List<IconInfo>) = withContext(Dispatchers.Default) {
+    private suspend fun getIconRequestList(systemPackageList: List<SystemIconInfo>) =
+        withContext(Dispatchers.Default) {
         val lawniconsData = _iconInfoModel.value.iconInfo
-
-        val systemData = systemPackageList.map { info ->
-            info.getFirstLabelAndComponent()
-        }
 
         val lawniconsComponents = lawniconsData
             .splitByComponentName()
             .map { it.getFirstLabelAndComponent().componentName }
-            .sortedBy { it.lowercase() }
+            .sortedBy { it.flattenToString().lowercase() }
             .toSet()
 
-        val commonItems = systemData.filter { it.componentName !in lawniconsComponents }
+            val commonItems = systemPackageList.filter { it.componentName !in lawniconsComponents }
             .map {
-                IconRequest(
+                SystemIconInfo(
                     label = it.label,
                     componentName = it.componentName,
+                    drawable = it.drawable,
                 )
             }
 

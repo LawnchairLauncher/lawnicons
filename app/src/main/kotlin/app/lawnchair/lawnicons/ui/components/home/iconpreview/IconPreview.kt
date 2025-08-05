@@ -120,7 +120,7 @@ fun IconPreview(
             ),
     ) {
         if (LocalInspectionMode.current) {
-            val icon = when (iconInfo.id) {
+            val icon = when (iconInfo.drawableId) {
                 1 -> Icons.Rounded.Email
                 2 -> Icons.Rounded.Search
                 3 -> Icons.Rounded.Call
@@ -138,7 +138,7 @@ fun IconPreview(
             )
         } else {
             Icon(
-                painter = painterResource(iconInfo.id),
+                painter = painterResource(iconInfo.drawableId),
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(0.6f),
                 tint = if (showSheet) {

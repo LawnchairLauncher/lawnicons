@@ -4,7 +4,7 @@ import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
 import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.data.model.LabelAndComponent
+import app.lawnchair.lawnicons.data.model.LabelAndComponentV2
 
 @Preview(
     name = "Normal",
@@ -34,31 +34,31 @@ object SampleData {
     val iconInfoSample = IconInfo(
         drawableName = "@drawable/email",
         componentNames = listOf(
-            LabelAndComponent("Email", "com.android.email"),
+            LabelAndComponentV2("Email", "com.android.email"),
         ),
-        id = 1,
+        drawableId = 1,
     )
     val iconInfoList = listOf(
         IconInfo(
             drawableName = "@drawable/email",
             componentNames = listOf(
-                LabelAndComponent("Email", "com.android.email"),
+                LabelAndComponentV2("Email", "com.android.email"),
             ),
-            id = 1,
+            drawableId = 1,
         ),
         IconInfo(
             drawableName = "@drawable/search",
             componentNames = listOf(
-                LabelAndComponent("Search", "com.android.search"),
+                LabelAndComponentV2("Search", "com.android.search"),
             ),
-            id = 2,
+            drawableId = 2,
         ),
         IconInfo(
             drawableName = "@drawable/phone",
             componentNames = listOf(
-                LabelAndComponent("Phone", "com.android.phone"),
+                LabelAndComponentV2("Phone", "com.android.phone"),
             ),
-            id = 3,
+            drawableId = 3,
         ),
     )
 }

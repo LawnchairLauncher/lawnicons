@@ -82,7 +82,8 @@ class MainActivity : ComponentActivity() {
         val primaryBackgroundColor = context.getColor(R.color.primaryBackground)
 
         val drawable: Drawable? =
-            ResourcesCompat.getDrawable(context.resources, iconInfo.id, theme)?.mutate()?.let {
+            ResourcesCompat.getDrawable(context.resources, iconInfo.drawableId, theme)?.mutate()
+                ?.let {
                 DrawableCompat.wrap(
                     it,
                 )
@@ -127,7 +128,7 @@ class MainActivity : ComponentActivity() {
             } catch (e: Exception) {
                 Log.d("SetIntentResult", e.toString())
             }
-            val iconRes = Intent.ShortcutIconResource.fromContext(this, iconInfo.id)
+            val iconRes = Intent.ShortcutIconResource.fromContext(this, iconInfo.drawableId)
 
             if (BuildConfig.DEBUG) {
                 Log.d(

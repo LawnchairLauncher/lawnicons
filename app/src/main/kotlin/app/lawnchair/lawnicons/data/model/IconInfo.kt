@@ -6,22 +6,16 @@ import kotlinx.serialization.Serializable
  * Data class to hold information about an icon.
  *
  * @property drawableName The name of the drawable resource for the icon.
- * @property componentNames A list of [LabelAndComponent] objects representing the component names and
+ * @property componentNames A list of [LabelAndComponentV2] objects representing the component names and
  * labels of the apps that have the icon.
- * @property id A unique identifier for the icon.
+ * @property drawableId The drawable id of the icon.
  */
 @Serializable
 data class IconInfo(
     val drawableName: String,
-    val componentNames: List<LabelAndComponent>,
-    val id: Int,
-) {
-    /**
-     * The user-facing label associated with the icon, derived from the first available
-     * [LabelAndComponent] object.
-     */
-    val label = componentNames.firstOrNull()?.label ?: ""
-}
+    override val componentNames: List<LabelAndComponentV2>,
+    val drawableId: Int,
+) : BaseIconInfo
 
 /**
  * Merges a list of [IconInfo] objects, grouping them by their `drawableName` and
@@ -37,7 +31,7 @@ fun List<IconInfo>.mergeByDrawableName(): List<IconInfo> {
             IconInfo(
                 componentNames = mergedComponentNames,
                 drawableName = drawableName,
-                id = icons.first().id,
+                drawableId = icons.first().drawableId,
             )
         }
 }
@@ -56,18 +50,12 @@ fun List<IconInfo>.splitByComponentName(): List<IconInfo> {
                 IconInfo(
                     componentNames = listOf(nameAndComponent),
                     drawableName = iconInfo.drawableName,
-                    id = iconInfo.id,
+                    drawableId = iconInfo.drawableId,
                 ),
             )
         }
     }
     return splitList
-}
-
-fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
-    val firstLabel = componentNames.firstOrNull()?.label ?: ""
-    val firstComponent = componentNames.firstOrNull()?.componentName ?: ""
-    return LabelAndComponent(firstLabel, firstComponent)
 }
 
 /**
@@ -76,6 +64,11 @@ fun IconInfo.getFirstLabelAndComponent(): LabelAndComponent {
  * @property label The user-facing label associated with the component.
  * @property componentName The name of the component, typically a fully qualified class name.
  */
+@Deprecated(
+    message = "Use LabelAndComponentV2 instead",
+    replaceWith = ReplaceWith("LabelAndComponentV2"),
+    level = DeprecationLevel.WARNING,
+)
 @Serializable
 data class LabelAndComponent(
     val label: String,

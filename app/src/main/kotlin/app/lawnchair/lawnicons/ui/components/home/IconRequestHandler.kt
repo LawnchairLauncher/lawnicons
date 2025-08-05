@@ -29,8 +29,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.data.model.IconRequest
 import app.lawnchair.lawnicons.data.model.IconRequestModel
+import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.data.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
@@ -98,7 +98,7 @@ fun IconRequestIconButton(
 fun RequestHandler(
     enabled: Boolean,
     iconRequestsEnabled: Boolean,
-    iconRequestList: List<IconRequest>,
+    iconRequestList: List<SystemIconInfo>,
     snackbarHostState: SnackbarHostState,
     onLongClick: () -> Unit,
     content: @Composable (interactionSource: MutableInteractionSource) -> Unit,
@@ -152,7 +152,7 @@ private fun HandleTouchInteractions(
     context: Context,
     coroutineScope: CoroutineScope,
     onLongClick: () -> Unit,
-    iconRequestList: List<IconRequest>,
+    iconRequestList: List<SystemIconInfo>,
     directLinkEnabled: Boolean,
     requestList: String,
     encodedRequestList: String,
@@ -204,10 +204,11 @@ private fun HandleTouchInteractions(
     }
 }
 
-private fun formatIconRequestList(iconRequestList: List<IconRequest>) = iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
+private fun formatIconRequestList(iconRequestList: List<SystemIconInfo>) =
+    iconRequestList.joinToString("\n") { "${it.label}\n${it.componentName}" }
 
 private fun handleRequestClick(
-    iconRequestList: List<IconRequest>,
+    iconRequestList: List<SystemIconInfo>,
     context: Context,
     directLinkEnabled: Boolean,
     encodedRequestList: String,

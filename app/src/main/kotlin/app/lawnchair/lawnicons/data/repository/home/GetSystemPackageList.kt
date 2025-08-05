@@ -16,12 +16,12 @@
 
 package app.lawnchair.lawnicons.data.repository.home
 
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
-import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.data.model.LabelAndComponent
+import app.lawnchair.lawnicons.data.model.SystemIconInfo
 
 fun Context.getPackagesList(): List<ResolveInfo> {
     return try {
@@ -34,20 +34,19 @@ fun Context.getPackagesList(): List<ResolveInfo> {
     }
 }
 
-fun Context.getSystemIconInfoAppfilter(): List<IconInfo> {
+fun Context.getSystemIconInfoAppfilter(): List<SystemIconInfo> {
     return getPackagesList().map { ri ->
         with(ri) {
             val riPkg = activityInfo.packageName
             val component = "$riPkg/${activityInfo.name}"
 
-            val name = loadLabel(packageManager) ?: riPkg
+            val name = loadLabel(packageManager).toString()
+            val drawable = loadIcon(packageManager)
 
-            IconInfo(
-                drawableName = "",
-                componentNames = listOf(
-                    LabelAndComponent(name.toString(), component),
-                ),
-                id = 0,
+            SystemIconInfo(
+                drawable = drawable,
+                label = name,
+                componentName = ComponentName.unflattenFromString(component)!!,
             )
         }
     }

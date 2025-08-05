@@ -162,7 +162,10 @@ private fun About(
             item(contentType = ColumnTypes.HEADER) {
                 CardHeader(stringResource(id = R.string.core_contributors))
             }
-            itemsIndexed(coreContributors) { index, it ->
+            itemsIndexed(
+                coreContributors,
+                contentType = { _, _ -> ColumnTypes.LIST_ITEM },
+            ) { index, it ->
                 ContributorRow(
                     name = it.name,
                     photoUrl = it.photoUrl,
@@ -177,7 +180,7 @@ private fun About(
             item(contentType = ColumnTypes.SPACER) {
                 Spacer(Modifier.height(16.dp))
             }
-            item {
+            item(contentType = ColumnTypes.NAVIGATION_ITEM) {
                 SimpleListRow(
                     onClick = onNavigateToContributors,
                     label = stringResource(id = R.string.see_all_contributors),
@@ -193,7 +196,10 @@ private fun About(
             item(contentType = ColumnTypes.HEADER) {
                 CardHeader(stringResource(id = R.string.special_thanks))
             }
-            itemsIndexed(specialThanks) { index, it ->
+            itemsIndexed(
+                specialThanks,
+                contentType = { _, _ -> ColumnTypes.LIST_ITEM },
+            ) { index, it ->
                 ContributorRow(
                     name = it.name,
                     photoUrl = it.photoUrl,
@@ -209,7 +215,7 @@ private fun About(
             item(contentType = ColumnTypes.SPACER) {
                 Spacer(Modifier.height(16.dp))
             }
-            item {
+            item(contentType = ColumnTypes.NAVIGATION_ITEM) {
                 SimpleListRow(
                     onClick = onNavigateToAcknowledgements,
                     label = stringResource(id = R.string.acknowledgements),
