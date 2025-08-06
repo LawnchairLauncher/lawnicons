@@ -42,13 +42,6 @@ jobs:
         id: pr-message
         run: |
           reduction_kb=${{ steps.size-diff.outputs.reduction_kb }}
-          
-          echo "=== DEBUG ==="
-          echo "Original size: ${{ steps.original-size.outputs.original_size }} bytes"
-          echo "Optimized size: $(find . -name '*.svg' -exec cat {} + | wc -c) bytes"
-          echo "Reduction_kb value: ${reduction_kb}"
-          echo "============="
-                
           if (( $(echo "$reduction_kb > 0" | bc -l) )); then
             echo "message=-${reduction_kb} KB" >> $GITHUB_OUTPUT
           elif (( $(echo "$reduction_kb < 0" | bc -l) )); then
