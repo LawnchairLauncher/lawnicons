@@ -28,7 +28,7 @@ import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
-import app.lawnchair.lawnicons.data.repository.home.IconRequestSettingsRepository
+import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import app.lawnchair.lawnicons.ui.util.SampleData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -59,12 +59,12 @@ interface HomeViewModel {
 class HomeViewModelImpl @Inject constructor(
     private val iconRepository: IconRepository,
     private val newIconsRepository: NewIconsRepository,
-    private val iconRequestSettingsRepository: IconRequestSettingsRepository,
+    private val iconRequestRepository: IconRequestRepository,
 ) : ViewModel(),
     HomeViewModel {
     override val iconInfoModel = iconRepository.iconInfoModel
     override val searchedIconInfoModel = iconRepository.searchedIconInfoModel
-    override val iconRequestModel = iconRepository.iconRequestList
+    override val iconRequestModel = iconRequestRepository.iconRequestList
     override val newIconsInfoModel = newIconsRepository.newIconsInfoModel
 
     override var iconRequestsEnabled = false
@@ -81,7 +81,7 @@ class HomeViewModelImpl @Inject constructor(
     init {
         viewModelScope.launch {
             val result = runCatching {
-                iconRequestSettingsRepository.getEnabledState()
+                iconRequestRepository.getEnabledState()
             }
 
             iconRequestsEnabled = when {

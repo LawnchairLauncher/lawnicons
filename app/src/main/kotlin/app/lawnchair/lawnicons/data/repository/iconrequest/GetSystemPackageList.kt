@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package app.lawnchair.lawnicons.data.repository.home
+package app.lawnchair.lawnicons.data.repository.iconrequest
 
 import android.content.ComponentName
 import android.content.Context
@@ -34,7 +34,7 @@ fun Context.getPackagesList(): List<ResolveInfo> {
     }
 }
 
-fun Context.getSystemIconInfoAppfilter(): List<SystemIconInfo> {
+fun Context.getSystemIconInfo(): List<SystemIconInfo> {
     return getPackagesList().map { ri ->
         with(ri) {
             val riPkg = activityInfo.packageName
