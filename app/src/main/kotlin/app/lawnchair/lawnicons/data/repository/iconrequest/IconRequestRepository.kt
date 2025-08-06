@@ -17,11 +17,13 @@
 package app.lawnchair.lawnicons.data.repository.iconrequest
 
 import android.app.Application
+import android.util.Log
 import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
+import java.io.File
 import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -34,6 +36,8 @@ import kotlinx.coroutines.withContext
 interface IconRequestRepository {
     val iconRequestList: StateFlow<IconRequestModel?>
     suspend fun getEnabledState(): Boolean
+
+    suspend fun createIconRequestZip(currentIconRequests: List<SystemIconInfo>?): File?
 }
 
 class IconRequestRepositoryImpl @Inject constructor(
@@ -77,5 +81,13 @@ class IconRequestRepositoryImpl @Inject constructor(
             list = unthemedApps,
             iconCount = unthemedApps.size,
         )
+    }
+
+    override suspend fun createIconRequestZip(currentIconRequests: List<SystemIconInfo>?): File? {
+        if (currentIconRequests.isNullOrEmpty()) {
+            Log.d("IconRequestRepo", "No icon requests to bundle.")
+            return null
+        }
+        return bundleIconRequestsToZip(application, currentIconRequests)
     }
 }
