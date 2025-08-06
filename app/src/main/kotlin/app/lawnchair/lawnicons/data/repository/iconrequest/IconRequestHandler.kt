@@ -47,12 +47,21 @@ class ArcticonsDashboardHandler @Inject constructor() : IconRequestHandler {
             putExtra(Intent.EXTRA_STREAM, uri)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        context.startActivity(
-            Intent.createChooser(
-                emailIntent,
-                "Send request...",
-            ),
-        )
+
+        emailIntent.setPackage("com.google.android.gm")
+
+        // Check if Gmail is installed and can handle the intent
+        if (emailIntent.resolveActivity(context.packageManager) != null) {
+            context.startActivity(emailIntent)
+        } else {
+            emailIntent.setPackage(null)
+            context.startActivity(
+                Intent.createChooser(
+                    emailIntent,
+                    "Send request...",
+                ),
+            )
+        }
     }
 }
 
