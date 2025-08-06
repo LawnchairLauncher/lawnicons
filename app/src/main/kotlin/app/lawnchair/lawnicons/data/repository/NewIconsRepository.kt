@@ -17,7 +17,6 @@
 package app.lawnchair.lawnicons.data.repository
 
 import android.app.Application
-import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
@@ -36,19 +35,11 @@ interface NewIconsRepository {
 class NewIconsRepositoryImpl @Inject constructor(application: Application) : NewIconsRepository {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
-    private val prefs = PreferenceManager.getInstance(application)
 
     private val _newIconsInfoModel = MutableStateFlow(IconInfoModel())
     override val newIconsInfoModel = _newIconsInfoModel.asStateFlow()
 
     init {
-        val currentVersionCode = prefs.currentLawniconsVersion.get()
-        val newVersionCode = BuildConfig.VERSION_CODE
-
-        if (currentVersionCode != newVersionCode) {
-            prefs.currentLawniconsVersion.set(newVersionCode)
-        }
-
         coroutineScope.launch {
             val iconInfo = application.getIconInfo(R.xml.appfilter_diff).sortedBy { it.label.lowercase() }
             _newIconsInfoModel.value = IconInfoModel(

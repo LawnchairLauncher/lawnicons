@@ -7,7 +7,6 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
-import app.lawnchair.lawnicons.BuildConfig
 
 /**
  * A class that abstracts the functionality of SharedPreferences
@@ -83,10 +82,8 @@ class PreferenceManager private constructor(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {
     val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", false)
-    val showDebugMenu = BoolPref("debug_menu", false)
     val forceEnableIconRequest = BoolPref("force_icon_request", false)
     val iconRequestsEnabled = BoolPref("icon_requests_enabled", false)
-    val currentLawniconsVersion = IntPref("current_lawnicons_version", BuildConfig.VERSION_CODE)
 
     /**
      * Provides a class to handle Lawnicons preferences.

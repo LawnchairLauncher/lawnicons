@@ -51,7 +51,6 @@ import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.repository.preferenceManager
-import app.lawnchair.lawnicons.ui.components.home.DebugMenu
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
@@ -73,6 +72,7 @@ fun NavGraphBuilder.homeDestination(
     onNavigateToAbout: () -> Unit,
     onNavigateToNewIcons: () -> Unit,
     onNavigateToIconRequest: () -> Unit,
+    onNavigateToDebugMenu: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
 ) {
     composable<Home> {
@@ -80,6 +80,7 @@ fun NavGraphBuilder.homeDestination(
             onNavigateToAbout = onNavigateToAbout,
             onNavigateToNewIcons = onNavigateToNewIcons,
             onNavigateToIconRequest = onNavigateToIconRequest,
+            onNavigateToDebugMenu = onNavigateToDebugMenu,
             isExpandedScreen = isExpandedScreen,
             isIconPicker = isIconPicker,
             onSendResult = onSendResult,
@@ -94,6 +95,7 @@ private fun Home(
     onNavigateToAbout: () -> Unit,
     onNavigateToNewIcons: () -> Unit,
     onNavigateToIconRequest: () -> Unit,
+    onNavigateToDebugMenu: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
@@ -168,7 +170,9 @@ private fun Home(
                             item(
                                 span = { GridItemSpan(maxLineSpan) },
                             ) {
-                                AppBarListItem()
+                                AppBarListItem(
+                                    onLongClick = onNavigateToDebugMenu,
+                                )
                             }
                             if (newIconsInfoModel.iconCount != 0) {
                                 item(
@@ -179,11 +183,13 @@ private fun Home(
                             }
                         }
                         val coroutineScope = rememberCoroutineScope()
+                        val iconRequestCount = iconRequestModel?.iconCount ?: 0
 
                         HomeBottomToolbar(
                             context = context,
                             scrollBehavior = scrollBehavior,
-                            showIconRequests = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value,
+                            showIconRequests =
+                                (iconRequestsEnabled && iconRequestCount > 0) || prefs.forceEnableIconRequest.asState().value,
                             onNavigateToAbout = onNavigateToAbout,
                             onNavigateToIconRequest = onNavigateToIconRequest,
                             onIconRequestUnavailable = {
@@ -210,18 +216,6 @@ private fun Home(
         LaunchedEffect(searchTermTextState.text) {
             searchIcons(searchTermTextState.text.toString())
         }
-
-        LaunchedEffect(iconRequestsEnabled) {
-            prefs.iconRequestsEnabled.set(iconRequestsEnabled)
-        }
-
-        if (prefs.showDebugMenu.asState().value) {
-            DebugMenu(
-                iconInfoModel,
-                iconRequestModel,
-                newIconsInfoModel,
-            )
-        }
     }
 }
 
@@ -234,6 +228,7 @@ private fun HomePreview() {
                 onNavigateToAbout = {},
                 onNavigateToNewIcons = {},
                 onNavigateToIconRequest = {},
+                onNavigateToDebugMenu = {},
                 isExpandedScreen = true,
                 onSendResult = {},
                 lawniconsViewModel = DummyLawniconsViewModel(),

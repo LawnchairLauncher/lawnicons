@@ -61,7 +61,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -69,7 +68,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.data.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -215,11 +213,12 @@ private fun ScrollbarIndicator(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppBarListItem(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    val prefs = preferenceManager(context)
+fun AppBarListItem(
+    onLongClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     CenterAlignedTopAppBar(
         modifier = modifier,
         title = {
@@ -235,9 +234,7 @@ fun AppBarListItem(modifier: Modifier = Modifier) {
                             .clip(CircleShape)
                             .combinedClickable(
                                 onClick = {},
-                                onLongClick = {
-                                    prefs.showDebugMenu.toggle()
-                                },
+                                onLongClick = onLongClick,
                             ),
                     )
                 }

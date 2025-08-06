@@ -16,6 +16,8 @@ import app.lawnchair.lawnicons.ui.destination.acknowledgements.Acknowledgements
 import app.lawnchair.lawnicons.ui.destination.acknowledgements.acknowledgementsDestination
 import app.lawnchair.lawnicons.ui.destination.contributors.Contributors
 import app.lawnchair.lawnicons.ui.destination.contributors.contributorsDestination
+import app.lawnchair.lawnicons.ui.destination.debugmenu.DebugMenu
+import app.lawnchair.lawnicons.ui.destination.debugmenu.debugMenuDestination
 import app.lawnchair.lawnicons.ui.destination.home.Home
 import app.lawnchair.lawnicons.ui.destination.home.homeDestination
 import app.lawnchair.lawnicons.ui.destination.iconrequest.IconRequest
@@ -52,9 +54,14 @@ fun Lawnicons(
                 onNavigateToAbout = { navController.navigate(About) },
                 onNavigateToNewIcons = { navController.navigate(NewIcons) },
                 onNavigateToIconRequest = { navController.navigate(IconRequest) },
+                onNavigateToDebugMenu = { navController.navigate(DebugMenu) },
                 isExpandedScreen = isExpandedScreen,
                 isIconPicker = isIconPicker,
                 onSendResult = onSendResult,
+            )
+            debugMenuDestination(
+                isExpandedScreen = isExpandedScreen,
+                onBack = navController::popBackStack,
             )
             iconRequestDestination(
                 isExpandedScreen = isExpandedScreen,
