@@ -25,7 +25,7 @@ import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 
 interface BaseIconInfo {
-    val componentNames: List<LabelAndComponentV2>
+    val componentNames: List<LabelAndComponent>
 
     /**
      * The user-facing label associated with the icon, derived from the first available
@@ -35,10 +35,10 @@ interface BaseIconInfo {
         get() = componentNames.firstOrNull()?.label ?: ""
 }
 
-fun BaseIconInfo.getFirstLabelAndComponent(): LabelAndComponentV2 {
+fun BaseIconInfo.getFirstLabelAndComponent(): LabelAndComponent {
     val firstLabel = componentNames.firstOrNull()?.label ?: ""
     val firstComponent = componentNames.firstOrNull()?.componentName ?: ComponentName("", "")
-    return LabelAndComponentV2(firstLabel, firstComponent)
+    return LabelAndComponent(firstLabel, firstComponent)
 }
 
 /**
@@ -48,7 +48,7 @@ fun BaseIconInfo.getFirstLabelAndComponent(): LabelAndComponentV2 {
  * @property componentName The name of the component, typically a fully qualified class name.
  */
 @Serializable
-data class LabelAndComponentV2(
+data class LabelAndComponent(
     val label: String,
     @Serializable(with = ComponentNameSerializer::class) val componentName: ComponentName,
 ) {
@@ -66,6 +66,7 @@ object ComponentNameSerializer : KSerializer<ComponentName> {
     }
 
     override fun deserialize(decoder: Decoder): ComponentName {
-        return ComponentName.unflattenFromString(decoder.decodeString())!!
+        val componentString = decoder.decodeString()
+        return ComponentName.unflattenFromString(componentString) ?: ComponentName("", "")
     }
 }

@@ -19,10 +19,11 @@ package app.lawnchair.lawnicons.data.repository.home
 import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Context
+import android.util.Log
 import androidx.annotation.XmlRes
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.data.model.LabelAndComponentV2
+import app.lawnchair.lawnicons.data.model.LabelAndComponent
 import app.lawnchair.lawnicons.data.model.mergeByDrawableName
 import org.xmlpull.v1.XmlPullParser
 
@@ -31,60 +32,56 @@ fun Context.getIconInfo(
     @XmlRes xmlId: Int = R.xml.appfilter,
 ): List<IconInfo> {
     val iconInfo = mutableListOf<IconInfo>()
-
     val componentInfoPrefixLength = "ComponentInfo{".length
 
+    if (xmlId == 0) return emptyList()
+
     try {
-        if (xmlId != 0) {
-            val parser = resources.getXml(xmlId)
-            val depth = parser.depth
-            var type: Int
-            while (
-                (
-                    parser.next()
-                        .also { type = it } != XmlPullParser.END_TAG ||
-                        parser.depth > depth
-                    ) &&
-                type != XmlPullParser.END_DOCUMENT
-            ) {
-                if (type != XmlPullParser.START_TAG) continue
-                if ("item" == parser.name) {
-                    val component = parser.getAttributeValue(null, "component")
-                    val iconName = parser.getAttributeValue(null, "name")
+        val parser = resources.getXml(xmlId)
+        var type: Int
+        while (parser.next().also { type = it } != XmlPullParser.END_DOCUMENT) {
+            if (type != XmlPullParser.START_TAG || parser.name != "item") {
+                continue
+            }
 
-                    val initialIconId = parser.getAttributeValue(null, "drawable")
-                    val iconId = "${initialIconId}_foreground"
-                    val iconDrawable = resources.getIdentifier(iconId, "drawable", packageName)
+            val componentString = parser.getAttributeValue(null, "component")
+            val iconName = parser.getAttributeValue(null, "name")
+            val drawableName = parser.getAttributeValue(null, "drawable")
 
-                    var actualComponent = ComponentName("", "")
+            // Defensive check: ensure all required attributes exist
+            if (componentString == null || iconName == null || drawableName == null) {
+                Log.w("IconInfoParser", "Skipping item with missing attributes.")
+                continue
+            }
 
-                    val parsedComponent =
-                        component.substring(componentInfoPrefixLength, component.length - 1)
+            val parsedComponentString =
+                componentString.substring(componentInfoPrefixLength, componentString.length - 1)
 
-                    if (parsedComponent.isNotEmpty() &&
-                        !parsedComponent.startsWith("/") &&
-                        !parsedComponent.endsWith("/")
-                    ) {
-                        actualComponent = ComponentName.unflattenFromString(parsedComponent)!!
-                    }
+            ComponentName.unflattenFromString(parsedComponentString)?.let { componentName ->
+                val iconId = "${drawableName}_foreground"
+                val iconDrawable = resources.getIdentifier(iconId, "drawable", packageName)
 
-                    iconInfo.add(
-                        IconInfo(
-                            iconId,
-                            listOf(
-                                LabelAndComponentV2(
-                                    iconName,
-                                    actualComponent,
-                                ),
+                iconInfo.add(
+                    IconInfo(
+                        drawableName = drawableName,
+                        componentNames = listOf(
+                            LabelAndComponent(
+                                label = iconName,
+                                componentName = componentName,
                             ),
-                            iconDrawable,
                         ),
-                    )
-                }
+                        drawableId = iconDrawable,
+                    ),
+                )
+            } ?: run {
+                Log.e(
+                    "IconInfoParser",
+                    "Failed to parse component string: '$parsedComponentString'",
+                )
             }
         }
     } catch (e: Exception) {
-        e.printStackTrace()
+        Log.e("IconInfoParser", "A critical error occurred during XML parsing.", e)
     }
 
     return iconInfo.mergeByDrawableName()

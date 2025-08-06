@@ -32,7 +32,7 @@ data class SystemIconInfo(
     val componentName: ComponentName,
 ) : BaseIconInfo {
 
-    override val componentNames: List<LabelAndComponentV2> = listOf(
-        LabelAndComponentV2(label, componentName),
+    override val componentNames: List<LabelAndComponent> = listOf(
+        LabelAndComponent(label, componentName),
     )
 }
