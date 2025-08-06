@@ -17,6 +17,9 @@
     <!-- Search tooltip -->
     <string name="search">Search</string>
 
+    <!-- Clear accessibility action -->
+    <string name="clear">Clear</string>
+
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">%s not found</string>
 
@@ -44,7 +47,7 @@
     <!-- Share button on icon info popup -->
     <string name="share">Share details</string>
 
-    <!-- Contribution -->
+    <!-- Contributions -->
     <string name="contribution_core">Core app</string>
     <string name="contribution_icons">Icons</string>
     <string name="contribution_infra">Infrastructure</string>
@@ -89,7 +92,30 @@
 
     <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
     <string name="snackbar_use_fallback_link">Open form</string>
-    <string name="clear">Clear</string>
+
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Missing icons</string>
+
+    <string name="clear_all">Clear selection</string>
+    <string name="select_all">Select all</string>
+
+    <string name="request_icons_button">Request</string>
+    <string name="show_options_sheet">Show options sheet</string>
+
+    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_content_description">Toggle button</string>
+
+    <string name="share_file">Share file</string>
+    <string name="save_file">Save file</string>
+    <string name="copy_components">Copy app components</string>
+
+    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_no_app_available">No app to handle this action</string>
+
+    <!-- New icons screen -->
     <string name="new_icons_in_version">New icons in v%1$s</string>
     <string name="new_icons">New icons (%1$s)</string>
 </resources>
