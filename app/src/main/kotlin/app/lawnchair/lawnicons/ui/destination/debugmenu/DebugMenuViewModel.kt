@@ -18,6 +18,7 @@ package app.lawnchair.lawnicons.ui.destination.debugmenu
 
 import androidx.lifecycle.ViewModel
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
+import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -28,6 +29,7 @@ class DebugMenuViewModel @Inject constructor(
     iconRepository: IconRepository,
     newIconsRepository: NewIconsRepository,
     iconRequestRepository: IconRequestRepository,
+    val preferenceManager: PreferenceManager,
 ) : ViewModel() {
     val iconInfoModel = iconRepository.iconInfoModel
     val newIconsModel = newIconsRepository.newIconsInfoModel

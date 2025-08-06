@@ -50,7 +50,6 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.data.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
@@ -111,8 +110,6 @@ private fun Home(
 
         val lazyGridState = rememberLazyGridState()
         val snackbarHostState = remember { SnackbarHostState() }
-
-        val prefs = preferenceManager(context)
 
         val scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
             FloatingToolbarExitDirection.Bottom,
@@ -189,7 +186,7 @@ private fun Home(
                             context = context,
                             scrollBehavior = scrollBehavior,
                             showIconRequests =
-                                (iconRequestsEnabled && iconRequestCount > 0) || prefs.forceEnableIconRequest.asState().value,
+                            (iconRequestsEnabled && iconRequestCount > 0) || preferenceManager.forceEnableIconRequest.asState().value,
                             onNavigateToAbout = onNavigateToAbout,
                             onNavigateToIconRequest = onNavigateToIconRequest,
                             onIconRequestUnavailable = {

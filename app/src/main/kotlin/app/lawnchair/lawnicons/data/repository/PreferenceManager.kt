@@ -1,12 +1,9 @@
 package app.lawnchair.lawnicons.data.repository
 
-import android.content.Context
 import android.content.SharedPreferences
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.produceState
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalInspectionMode
 
 /**
  * A class that abstracts the functionality of SharedPreferences
@@ -38,7 +35,7 @@ abstract class BasePreferenceManager(
             return produceState(initialValue = get(), this) {
                 val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, changedKey ->
                     if (changedKey == key) {
-                        value = get() // Update the state value when the preference changes
+                        value = get()
                     }
                 }
                 prefs.registerOnSharedPreferenceChangeListener(listener)
@@ -66,7 +63,7 @@ abstract class BasePreferenceManager(
             return produceState(initialValue = get(), this) {
                 val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, changedKey ->
                     if (changedKey == key) {
-                        value = get() // Update the state value when the preference changes
+                        value = get()
                     }
                 }
                 prefs.registerOnSharedPreferenceChangeListener(listener)
@@ -78,56 +75,10 @@ abstract class BasePreferenceManager(
     }
 }
 
-class PreferenceManager private constructor(
+class PreferenceManager(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {
-    val showFirstLaunchSnackbar = BoolPref("show_first_launch_snackbar", false)
     val forceEnableIconRequest = BoolPref("force_icon_request", false)
-    val iconRequestsEnabled = BoolPref("icon_requests_enabled", false)
-
-    /**
-     * Provides a class to handle Lawnicons preferences.
-     *
-     * Use [PreferenceManager.getInstance] to get the instance for use thoughout the app.
-     * @see preferenceManager
-     */
-    companion object {
-        @Volatile
-        private var instance: PreferenceManager? = null
-
-        /**
-         * Returns a singleton instance of [PreferenceManager]
-         */
-        fun getInstance(context: Context): PreferenceManager {
-            return instance ?: synchronized(this) {
-                instance ?: PreferenceManager(
-                    context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE),
-                ).also { instance = it }
-            }
-        }
-
-        /**
-         * Get dummy instance of [PreferenceManager] for testing and Compose previews
-         */
-        fun getDummyInstance(): PreferenceManager {
-            return PreferenceManager(DummySharedPreferences())
-        }
-    }
-}
-
-/**
- * Returns a singleton instance of [PreferenceManager] for use in Composable UIs.
- *
- * In [LocalInspectionMode], the dummy instance is returned instead.
- *
- * @param context the context to use for getting the shared preferences
- * @return a singleton instance of [PreferenceManager]
- */
-@Composable
-fun preferenceManager(context: Context = LocalContext.current) = if (LocalInspectionMode.current) {
-    PreferenceManager.getDummyInstance()
-} else {
-    PreferenceManager.getInstance(context)
 }
 
 /**

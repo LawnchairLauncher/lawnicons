@@ -42,7 +42,6 @@ import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.data.model.splitByComponentName
-import app.lawnchair.lawnicons.data.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
@@ -77,7 +76,7 @@ fun DebugMenu(
     val iconRequestList by viewModel.iconRequestList.collectAsStateWithLifecycle()
 
     val context = LocalContext.current
-    val prefs = preferenceManager()
+    val prefs = viewModel.preferenceManager
 
     val debugList = listOf(
         ListItem("Icon count", iconInfoModel.iconCount),
@@ -88,8 +87,6 @@ fun DebugMenu(
 
     val prefsList = listOf(
         prefs.forceEnableIconRequest,
-        prefs.showFirstLaunchSnackbar,
-        prefs.iconRequestsEnabled,
     )
 
     LawniconsScaffold(
