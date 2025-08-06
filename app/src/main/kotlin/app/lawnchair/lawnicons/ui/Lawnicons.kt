@@ -18,6 +18,8 @@ import app.lawnchair.lawnicons.ui.destination.contributors.Contributors
 import app.lawnchair.lawnicons.ui.destination.contributors.contributorsDestination
 import app.lawnchair.lawnicons.ui.destination.home.Home
 import app.lawnchair.lawnicons.ui.destination.home.homeDestination
+import app.lawnchair.lawnicons.ui.destination.iconrequest.IconRequest
+import app.lawnchair.lawnicons.ui.destination.iconrequest.iconRequestDestination
 import app.lawnchair.lawnicons.ui.destination.newicons.NewIcons
 import app.lawnchair.lawnicons.ui.destination.newicons.newIconsDestination
 import soup.compose.material.motion.animation.materialSharedAxisXIn
@@ -49,9 +51,14 @@ fun Lawnicons(
             homeDestination(
                 onNavigateToAbout = { navController.navigate(About) },
                 onNavigateToNewIcons = { navController.navigate(NewIcons) },
+                onNavigateToIconRequest = { navController.navigate(IconRequest) },
                 isExpandedScreen = isExpandedScreen,
                 isIconPicker = isIconPicker,
                 onSendResult = onSendResult,
+            )
+            iconRequestDestination(
+                isExpandedScreen = isExpandedScreen,
+                onBack = navController::popBackStack,
             )
             acknowledgementsDestination(
                 onBack = navController::popBackStack,

@@ -16,7 +16,6 @@ import androidx.compose.material3.HorizontalFloatingToolbar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.PlainTooltip
-import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults.rememberTooltipPositionProvider
@@ -28,7 +27,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.visitUrl
 
@@ -36,10 +34,10 @@ import app.lawnchair.lawnicons.ui.util.visitUrl
 @Composable
 fun BoxScope.HomeBottomToolbar(
     context: Context,
-    iconRequestsEnabled: Boolean,
-    iconRequestModel: IconRequestModel?,
-    snackbarHostState: SnackbarHostState,
-    onNavigate: () -> Unit,
+    showIconRequests: Boolean,
+    onNavigateToAbout: () -> Unit,
+    onNavigateToIconRequest: () -> Unit,
+    onIconRequestUnavailable: () -> Unit,
     onExpandSearch: () -> Unit,
     scrollBehavior: FloatingToolbarScrollBehavior,
     modifier: Modifier = Modifier,
@@ -78,16 +76,30 @@ fun BoxScope.HomeBottomToolbar(
                 }
             }
 
-            IconRequestIconButton(
-                snackbarHostState = snackbarHostState,
-                iconRequestsEnabled = iconRequestsEnabled,
-                iconRequestModel = iconRequestModel,
-            )
+            SimpleTooltipBox(
+                label = stringResource(R.string.request_icons),
+            ) {
+                IconButton(
+                    onClick = {
+                        if (showIconRequests) {
+                            onNavigateToIconRequest()
+                        } else {
+                            onIconRequestUnavailable()
+                        }
+                    },
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.icon_request_app),
+                        contentDescription = stringResource(id = R.string.request_icons),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
 
             SimpleTooltipBox(
                 label = stringResource(id = R.string.about),
             ) {
-                IconButton(onClick = onNavigate) {
+                IconButton(onClick = onNavigateToAbout) {
                     Icon(
                         painter = painterResource(id = R.drawable.about_icon),
                         contentDescription = stringResource(id = R.string.about),

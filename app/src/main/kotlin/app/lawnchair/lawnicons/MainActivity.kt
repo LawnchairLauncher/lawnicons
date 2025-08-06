@@ -84,10 +84,10 @@ class MainActivity : ComponentActivity() {
         val drawable: Drawable? =
             ResourcesCompat.getDrawable(context.resources, iconInfo.drawableId, theme)?.mutate()
                 ?.let {
-                DrawableCompat.wrap(
-                    it,
-                )
-            }
+                    DrawableCompat.wrap(
+                        it,
+                    )
+                }
 
         if (drawable != null) {
             val targetBitmapSize = 192

@@ -30,13 +30,16 @@ import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarExitDirection
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
@@ -45,6 +48,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.repository.preferenceManager
 import app.lawnchair.lawnicons.ui.components.home.DebugMenu
@@ -57,6 +61,7 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -67,12 +72,14 @@ fun NavGraphBuilder.homeDestination(
     isIconPicker: Boolean,
     onNavigateToAbout: () -> Unit,
     onNavigateToNewIcons: () -> Unit,
+    onNavigateToIconRequest: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
 ) {
     composable<Home> {
         Home(
             onNavigateToAbout = onNavigateToAbout,
             onNavigateToNewIcons = onNavigateToNewIcons,
+            onNavigateToIconRequest = onNavigateToIconRequest,
             isExpandedScreen = isExpandedScreen,
             isIconPicker = isIconPicker,
             onSendResult = onSendResult,
@@ -86,6 +93,7 @@ fun NavGraphBuilder.homeDestination(
 private fun Home(
     onNavigateToAbout: () -> Unit,
     onNavigateToNewIcons: () -> Unit,
+    onNavigateToIconRequest: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
@@ -170,13 +178,26 @@ private fun Home(
                                 }
                             }
                         }
+                        val coroutineScope = rememberCoroutineScope()
+
                         HomeBottomToolbar(
                             context = context,
                             scrollBehavior = scrollBehavior,
-                            iconRequestsEnabled = iconRequestsEnabled,
-                            iconRequestModel = iconRequestModel,
-                            snackbarHostState = snackbarHostState,
-                            onNavigate = onNavigateToAbout,
+                            showIconRequests = iconRequestsEnabled || prefs.forceEnableIconRequest.asState().value,
+                            onNavigateToAbout = onNavigateToAbout,
+                            onNavigateToIconRequest = onNavigateToIconRequest,
+                            onIconRequestUnavailable = {
+                                coroutineScope.launch {
+                                    val result = snackbarHostState
+                                        .showSnackbar(
+                                            message = context.getString(R.string.icon_requests_suspended),
+                                            duration = SnackbarDuration.Short,
+                                        )
+                                    if (result == SnackbarResult.Dismissed) {
+                                        snackbarHostState.currentSnackbarData?.dismiss()
+                                    }
+                                }
+                            },
                             onExpandSearch = { expandSearch = true },
                         )
                     }
@@ -212,6 +233,7 @@ private fun HomePreview() {
             Home(
                 onNavigateToAbout = {},
                 onNavigateToNewIcons = {},
+                onNavigateToIconRequest = {},
                 isExpandedScreen = true,
                 onSendResult = {},
                 lawniconsViewModel = DummyLawniconsViewModel(),
