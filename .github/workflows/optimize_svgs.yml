@@ -35,17 +35,17 @@ jobs:
         id: size-diff
         run: |
           original_size=${{ steps.original-size.outputs.original_size }}
-          optimized_size=$(find . -name '*.svg' -exec cat {} + | wc -c)
+          optimized_size=$(find ./svgs -name '*.svg' -exec cat {} + | wc -c)
           reduction_kb=$(awk "BEGIN { printf \"%.1f\", (${original_size} - ${optimized_size}) / 1024 }")
           echo "reduction_kb=$reduction_kb" >> $GITHUB_OUTPUT
       - name: Prepare PR message
         id: pr-message
         run: |
-          reduction_kb=${{ steps.size-diff.outputs.reduction_kb }} 
-          if [ $reduction_kb -gt 0 ]; then
+          echo "Debug: original=$original_size, optimized=$optimized_size, reduction=$reduction_kb"
+          if (( $(echo "$reduction_kb > 0" | bc -l) )); then
             echo "message=-${reduction_kb} KB" >> $GITHUB_OUTPUT
-          elif [ $reduction_kb -lt 0 ]; then
-            positive_value=$(( -1 * reduction_kb ))
+          elif (( $(echo "$reduction_kb < 0" | bc -l) )); then
+            positive_value=$(echo "scale=1; $reduction_kb * -1" | bc)
             echo "message=+${positive_value} KB" >> $GITHUB_OUTPUT
           else
             echo "message=No changes" >> $GITHUB_OUTPUT
