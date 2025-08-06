@@ -41,12 +41,14 @@ jobs:
       - name: Prepare PR message
         id: pr-message
         run: |
-          if [ ${{ steps.size-diff.outputs.reduction_kb }} -gt 0 ]; then
-            echo "message=-${{ steps.size-diff.outputs.reduction_kb }}" >> $GITHUB_OUTPUT
-          elif [ ${{ steps.size-diff.outputs.reduction_kb }} -lt 0 ]; then
-            echo "message=+${{ -steps.size-diff.outputs.reduction_kb }}" >> $GITHUB_OUTPUT
+          reduction_kb=${{ steps.size-diff.outputs.reduction_kb }} 
+          if [ $reduction_kb -gt 0 ]; then
+            echo "message=-${reduction_kb} KB" >> $GITHUB_OUTPUT
+          elif [ $reduction_kb -lt 0 ]; then
+            positive_value=$(( -1 * reduction_kb ))
+            echo "message=+${positive_value} KB" >> $GITHUB_OUTPUT
           else
-            echo "message=0" >> $GITHUB_OUTPUT
+            echo "message=No changes" >> $GITHUB_OUTPUT
           fi
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
