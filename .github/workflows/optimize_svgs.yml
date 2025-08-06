@@ -13,7 +13,6 @@ on:
 jobs:
   optimize-svgs:
     runs-on: ubuntu-latest
-    if: github.event.repository.fork == false
     permissions:
       pull-requests: write
       contents: write
