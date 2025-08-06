@@ -29,6 +29,8 @@ fun LawniconsScaffold(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
+    bottomBar: @Composable () -> Unit = {},
+    snackbarHost: @Composable () -> Unit = {},
     containerColor: Color = adaptiveSurfaceColor,
     content: @Composable (PaddingValues) -> Unit,
 ) {
@@ -53,6 +55,8 @@ fun LawniconsScaffold(
                 containerColor = containerColor,
             )
         },
+        bottomBar = bottomBar,
+        snackbarHost = snackbarHost,
         containerColor = containerColor,
     ) {
         Box(
