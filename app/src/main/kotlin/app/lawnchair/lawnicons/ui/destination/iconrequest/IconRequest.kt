@@ -23,6 +23,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
@@ -30,6 +31,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.KeyboardArrowDown
 import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material3.BottomAppBarDefaults
@@ -64,7 +66,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -75,6 +81,7 @@ import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.util.Constants
 import coil.compose.AsyncImage
 import kotlinx.serialization.Serializable
 
@@ -155,9 +162,7 @@ fun IconRequest(
                     enabled = selectedIconsCount > 0 && !isSavingInProgress,
                     isExpandedScreen = isExpandedScreen,
                     onRequest = {
-                        viewModel.requestIcons(
-                            context = context,
-                        )
+                        viewModel.requestIcons(context)
                     },
                     onShareFile = {
                         viewModel.shareFile(context)
@@ -180,6 +185,36 @@ fun IconRequest(
         LazyColumn(
             contentPadding = paddingValues,
         ) {
+            item {
+                ListRow(
+                    label = {
+                        Text(
+                            text = buildAnnotatedString {
+                                append(stringResource(R.string.icon_request_mail_hint))
+                                withStyle(
+                                    SpanStyle(
+                                        fontWeight = FontWeight.Bold,
+                                    ),
+                                ) {
+                                    append(Constants.ICON_REQUEST_EMAIL)
+                                }
+                            },
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    },
+                    startIcon = {
+                        Icon(
+                            imageVector = Icons.Rounded.Email,
+                            contentDescription = null,
+                        )
+                    },
+                    background = true,
+                    first = true,
+                    last = true,
+                )
+                Spacer(Modifier.height(8.dp))
+            }
             itemsIndexed(availableIcons) { index, systemIconInfo ->
                 IconRequestRow(
                     systemIconInfo = systemIconInfo,
@@ -247,18 +282,18 @@ private fun IconRequestButton(
                     },
                 ) {
                     val rotation: Float by
-                    animateFloatAsState(
-                        targetValue = if (checked) 180f else 0f,
-                        label = "Trailing icon rotation",
-                    )
+                        animateFloatAsState(
+                            targetValue = if (checked) 180f else 0f,
+                            label = "Trailing icon rotation",
+                        )
                     Icon(
                         Icons.Rounded.KeyboardArrowDown,
                         modifier =
-                            Modifier
-                                .size(SplitButtonDefaults.TrailingIconSize)
-                                .graphicsLayer {
-                                    this.rotationZ = rotation
-                                },
+                        Modifier
+                            .size(SplitButtonDefaults.TrailingIconSize)
+                            .graphicsLayer {
+                                this.rotationZ = rotation
+                            },
                         contentDescription = stringResource(R.string.show_options_sheet),
                     )
                 }

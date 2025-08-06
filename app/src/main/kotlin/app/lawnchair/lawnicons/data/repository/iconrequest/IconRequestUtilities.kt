@@ -98,7 +98,6 @@ internal suspend fun bundleIconRequestsToZip(
             listFile?.delete()
             appfilterFile?.delete()
         }
-
     }
 }
 
@@ -145,7 +144,6 @@ private fun Bitmap.toByteArray(): ByteArray {
     compress(Bitmap.CompressFormat.PNG, 100, stream)
     return stream.toByteArray()
 }
-
 
 /**
  * Converts a list of SystemIconInfo objects into an XML string representation
