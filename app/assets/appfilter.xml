@@ -863,7 +863,6 @@
   <item component="ComponentInfo{io.github.z3r0c00l_2k.aquadroid/io.github.z3r0c00l_2k.aquadroid.MainActivity}" drawable="aquadroid" name="AquaDroid" />
   <item component="ComponentInfo{ua.krou.aqueducts/com.unity3d.player.UnityPlayerActivity}" drawable="aquavias" name="Aquavias ~~ Акведуки" />
   <item component="ComponentInfo{com.cubemg.davincieye/com.cubemg.davincieye.fullscreens.splash.Splash}" drawable="ar_art_projector" name="AR Art Projector" />
-  <item component="ComponentInfo{com.samsung.android.ardrawing/com.samsung.android.ardrawing.main.ShortcutActivity}" drawable="ar_doodle" name="AR Doodle" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.arabic/com.anysoftkeyboard.languagepack.arabic.MainActivity}" drawable="anysoftkeyboard" name="Arabic for AnySoftKeyboard" />
   <item component="ComponentInfo{net.aramex/net.aramex.ui.landingpage.LandingPageActivity}" drawable="aramex" name="Aramex" />
   <item component="ComponentInfo{com.saf.aranetCube.android/com.aranet4.MainActivity}" drawable="aranet_home" name="Aranet Home" />
@@ -8507,7 +8506,7 @@
   <item component="ComponentInfo{com.aakash.myaakashapp/com.aakash.myaakashapp.splashscreen.activity.SplashActivity}" drawable="myaakash" name="myAakash" />
   <item component="ComponentInfo{ro.telekom.myaccount/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="t_mobile" name="MyAccount Telekom" />
   <item component="ComponentInfo{com.resmed.myair/com.resmed.mon.AliasDefaultActivity}" drawable="myair" name="myAir" />
-  <item component="ComponentInfo{com.resmed.myair.canada/com.resmed.mon.AliasDefaultActivity}" drawable="myair_for_canada" name="myAir for Canada" />
+  <item component="ComponentInfo{com.resmed.myair.canada/com.resmed.mon.AliasDefaultActivity}" drawable="myair" name="myAir" />
   <item component="ComponentInfo{net.myanimelist.app/net.myanimelist.presentation.activity.HomeActivity}" drawable="myanimelist" name="MyAnimeList" />
   <item component="ComponentInfo{com.asus.ia.asusapp/com.asus.ia.asusapp.Phone.Init.DefaultLauncherActivity}" drawable="myasus" name="MyASUS" />
   <item component="ComponentInfo{com.db.pbc.mybank.in/com.db.pbc.mybank.in.launcher_833d1c21bca244cdbe479534b73c3f5b62c82b0a9574ddffade3ff55ed835c48}" drawable="deutsche_bank" name="MyBank India -— Deutsche Bank" />
@@ -11185,6 +11184,7 @@
   <item component="ComponentInfo{com.rfi.sams.android/com.walmart.glass.integration.splash.SplashActivity}" drawable="sams_club" name="Sam's Club" />
   <item component="ComponentInfo{de.mlex.same/de.mlex.same.MainActivity}" drawable="app_launcher" name="Same" />
   <item component="ComponentInfo{com.samsung.android.spacear/com.samsung.android.spacear.scene.SceneListActivity}" drawable="samsung_ar_canvas" name="Samsung AR Canvas" />
+  <item component="ComponentInfo{com.samsung.android.ardrawing/com.samsung.android.ardrawing.main.ShortcutActivity}" drawable="samsung_ar_doodle" name="Samsung AR Doodle" />
   <item component="ComponentInfo{com.samsung.android.aremoji/com.samsung.android.aremoji.camera.ShortcutActivity}" drawable="samsung_ar_emoji_camera" name="Samsung AR Emoji Camera" />
   <item component="ComponentInfo{com.samsung.android.aremoji/com.samsung.android.aremoji.home.ShortcutActivity}" drawable="samsung_ar_emoji_camera" name="Samsung AR Emoji Camera" />
   <item component="ComponentInfo{com.samsung.android.arzone/com.samsung.android.arzone.ARZoneLauncher}" drawable="samsung_ar_zone" name="Samsung AR Zone" />
@@ -15289,7 +15289,6 @@
   <item component="ComponentInfo{jp.co.yahoo.android.yjtop/jp.co.yahoo.android.yjtop.YJTopActivity}" drawable="yahoo_japan" name="Yahoo! JAPAN" />
   <item component="ComponentInfo{jp.co.yahoo.android.news/jp.co.yahoo.android.news.activity.SplashActivity}" drawable="yahoo_news" name="Yahoo!ニュース ~~ Yahoo! News" />
   <item component="ComponentInfo{jp.co.yahoo.android.weather.type1/jp.co.yahoo.android.weather.type1.WeatherDetail}" drawable="yahoo_weather_japan" name="Yahoo天気 ~~ Yahoo Weather" />
-  <item component="ComponentInfo{com.yandex.searchapp.beta/ru.yandex.searchplugin.MainActivity}" drawable="yandex_with_alice_beta" name="Yandex with Alice Beta" />
   <item component="ComponentInfo{com.yandex.yango/ru.yandex.taxi.activity.MainActivity}" drawable="yango" name="Yango" />
   <item component="ComponentInfo{pl.neptis.yanosik.mobi.android/pl.neptis.yanosik.mobi.android.common.ui.activities.launcher.LauncherActivity}" drawable="yanosik" name="Yanosik" />
   <item component="ComponentInfo{ru.ritmmedia.yappy/ru.ritmmedia.yappy.splash.ui.activity.SplashActivity}" drawable="yappy" name="Yappy" />
@@ -15804,6 +15803,7 @@
   <item component="ComponentInfo{ru.yandex.mail/ru.yandex.mail.ui.LoginActivity}" drawable="yandex_mail" name="Яндекс Почта ~~ Yandex Mail" />
   <item component="ComponentInfo{ru.yandex.mail/ru.yandex.mail.ui.MailListActivity}" drawable="yandex_mail" name="Яндекс Почта ~~ Yandex Mail" />
   <item component="ComponentInfo{com.yandex.bank/com.yandex.bank.screens.MainActivity}" drawable="yandex_pay" name="Яндекс Пэй ~~ Yandex Pay" />
+  <item component="ComponentInfo{com.yandex.searchapp.beta/ru.yandex.searchplugin.MainActivity}" drawable="yandex_with_alice_beta" name="Яндекс с Алисой (бета) ~~ Yandex with Alice (beta)" />
   <item component="ComponentInfo{com.yandex.searchapp/ru.yandex.searchplugin.MainActivity}" drawable="yandex_with_alice" name="Яндекс с Алисой ~~ Yandex with Alice" />
   <item component="ComponentInfo{ru.yandex.searchplugin/ru.yandex.searchplugin.MainActivity}" drawable="yandex_start" name="Яндекс Старт ~~ Yandex Start" />
   <item component="ComponentInfo{ru.yandex.rasp/ru.yandex.rasp.AMainActivity}" drawable="yandex_trains" name="Яндекс.Электрички ~~ Yandex.Trains" />
@@ -16149,7 +16149,7 @@
   <item component="ComponentInfo{com.yadea.smartmoto/com.yadea.smartmoto.main.view.normal_icon}" drawable="yadea" name="雅迪 ~~ Yadea" />
   <item component="ComponentInfo{digital.cardreader/digital.cardreader.MainActivity}" drawable="japan_train_card_balance_check" name="電子マネーICカード残高確認 ~~ Japan train card balance check" />
   <item component="ComponentInfo{digital.cardreader/digital.cardreader.ui.MainActivity}" drawable="japan_train_card_balance_check" name="電子マネーICカード残高確認 ~~ Japan train card balance check" />
-  <item component="ComponentInfo{com.xjcheng.musictageditor/com.xjcheng.musictageditor.MainActivity}" drawable="music_tag_editor_xjcheng" name="音乐标签编辑器 ~~ Music Tag Editor" />
+  <item component="ComponentInfo{com.xjcheng.musictageditor/com.xjcheng.musictageditor.MainActivity}" drawable="music_tag" name="音乐标签 ~~ Music Tag" />
   <item component="ComponentInfo{com.ss.android.lark/com.ss.android.lark.main.app.MainActivity}" drawable="feishu" name="飞书 ~~ Feishu" />
   <item component="ComponentInfo{vz.com/com.feeyo.vz.DefaultAlias}" drawable="feichangzhun" name="飞常准 ~~ Feichangzhun" />
   <item component="ComponentInfo{com.taobao.trip/com.alipay.mobile.quinox.LauncherActivity}" drawable="fliggy" name="飞猪 ~~ Fliggy" />
