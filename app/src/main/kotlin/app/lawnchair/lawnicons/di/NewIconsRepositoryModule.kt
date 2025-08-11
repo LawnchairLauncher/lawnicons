@@ -17,8 +17,8 @@
 package app.lawnchair.lawnicons.di
 
 import android.app.Application
-import app.lawnchair.lawnicons.repository.NewIconsRepository
-import app.lawnchair.lawnicons.repository.NewIconsRepositoryImpl
+import app.lawnchair.lawnicons.data.repository.NewIconsRepository
+import app.lawnchair.lawnicons.data.repository.NewIconsRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

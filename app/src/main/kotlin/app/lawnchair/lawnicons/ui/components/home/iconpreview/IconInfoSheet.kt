@@ -16,6 +16,7 @@
 
 package app.lawnchair.lawnicons.ui.components.home.iconpreview
 
+import android.content.ComponentName
 import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -54,7 +55,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
@@ -88,7 +89,9 @@ fun IconInfoSheet(
         newValue = "",
     )
 
-    val shareContents = rememberSaveable { getShareContents(githubName, groupedComponents) }
+    val shareContents = rememberSaveable {
+        getShareContents(githubName, groupedComponents)
+    }
 
     ModalBottomSheet(
         onDismissRequest = {
@@ -109,7 +112,7 @@ fun IconInfoSheet(
                     horizontalArrangement = Arrangement.Center,
                 ) {
                     if (LocalInspectionMode.current) {
-                        val icon = when (iconInfo.id) {
+                        val icon = when (iconInfo.drawableId) {
                             1 -> Icons.Rounded.Email
                             2 -> Icons.Rounded.Search
                             3 -> Icons.Rounded.Call
@@ -123,7 +126,7 @@ fun IconInfoSheet(
                         )
                     } else {
                         Icon(
-                            painterResource(id = iconInfo.id),
+                            painterResource(id = iconInfo.drawableId),
                             contentDescription = iconInfo.drawableName,
                             modifier = Modifier.size(250.dp),
                             tint = MaterialTheme.colorScheme.onBackground,
@@ -202,11 +205,13 @@ fun IconInfoSheet(
 
 private fun getShareContents(
     githubName: String,
-    groupedComponents: List<Pair<String, List<String>>>,
+    groupedComponents: List<Pair<String, List<ComponentName>>>,
 ): String {
     val formattedComponents =
         groupedComponents.joinToString(separator = "\n") { (group, components) ->
-            val componentList = components.joinToString(separator = "\n") { it }
+            val componentList = components.joinToString(separator = "\n") {
+                it.flattenToString()
+            }
             "$group:\n$componentList"
         }
     return "Drawable: $githubName\n\nMapped components: \n$formattedComponents"
@@ -228,7 +233,7 @@ private fun LinkHeader(
 @Composable
 private fun IconInfoListRow(
     label: String,
-    componentNames: List<String>,
+    componentNames: List<ComponentName>,
 ) {
     SelectionContainer {
         ListRow(
@@ -244,7 +249,7 @@ private fun IconInfoListRow(
                 Column {
                     componentNames.forEach {
                         Text(
-                            text = it,
+                            text = it.flattenToString(),
                             maxLines = 2,
                             style = MaterialTheme.typography.bodyMedium,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,

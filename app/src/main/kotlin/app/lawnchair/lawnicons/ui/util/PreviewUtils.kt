@@ -3,8 +3,8 @@ package app.lawnchair.lawnicons.ui.util
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.Wallpapers
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.LabelAndComponent
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.data.model.LabelAndComponent
 
 @Preview(
     name = "Normal",
@@ -36,7 +36,7 @@ object SampleData {
         componentNames = listOf(
             LabelAndComponent("Email", "com.android.email"),
         ),
-        id = 1,
+        drawableId = 1,
     )
     val iconInfoList = listOf(
         IconInfo(
@@ -44,21 +44,21 @@ object SampleData {
             componentNames = listOf(
                 LabelAndComponent("Email", "com.android.email"),
             ),
-            id = 1,
+            drawableId = 1,
         ),
         IconInfo(
             drawableName = "@drawable/search",
             componentNames = listOf(
                 LabelAndComponent("Search", "com.android.search"),
             ),
-            id = 2,
+            drawableId = 2,
         ),
         IconInfo(
             drawableName = "@drawable/phone",
             componentNames = listOf(
                 LabelAndComponent("Phone", "com.android.phone"),
             ),
-            id = 3,
+            drawableId = 3,
         ),
     )
 }

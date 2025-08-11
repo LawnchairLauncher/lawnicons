@@ -9,17 +9,21 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.ui.destination.About
-import app.lawnchair.lawnicons.ui.destination.Acknowledgements
-import app.lawnchair.lawnicons.ui.destination.Contributors
-import app.lawnchair.lawnicons.ui.destination.Home
-import app.lawnchair.lawnicons.ui.destination.NewIcons
-import app.lawnchair.lawnicons.ui.destination.aboutDestination
-import app.lawnchair.lawnicons.ui.destination.acknowledgementsDestination
-import app.lawnchair.lawnicons.ui.destination.contributorsDestination
-import app.lawnchair.lawnicons.ui.destination.homeDestination
-import app.lawnchair.lawnicons.ui.destination.newIconsDestination
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.ui.destination.about.About
+import app.lawnchair.lawnicons.ui.destination.about.aboutDestination
+import app.lawnchair.lawnicons.ui.destination.acknowledgements.Acknowledgements
+import app.lawnchair.lawnicons.ui.destination.acknowledgements.acknowledgementsDestination
+import app.lawnchair.lawnicons.ui.destination.contributors.Contributors
+import app.lawnchair.lawnicons.ui.destination.contributors.contributorsDestination
+import app.lawnchair.lawnicons.ui.destination.debugmenu.DebugMenu
+import app.lawnchair.lawnicons.ui.destination.debugmenu.debugMenuDestination
+import app.lawnchair.lawnicons.ui.destination.home.Home
+import app.lawnchair.lawnicons.ui.destination.home.homeDestination
+import app.lawnchair.lawnicons.ui.destination.iconrequest.IconRequest
+import app.lawnchair.lawnicons.ui.destination.iconrequest.iconRequestDestination
+import app.lawnchair.lawnicons.ui.destination.newicons.NewIcons
+import app.lawnchair.lawnicons.ui.destination.newicons.newIconsDestination
 import soup.compose.material.motion.animation.materialSharedAxisXIn
 import soup.compose.material.motion.animation.materialSharedAxisXOut
 import soup.compose.material.motion.animation.rememberSlideDistance
@@ -49,9 +53,19 @@ fun Lawnicons(
             homeDestination(
                 onNavigateToAbout = { navController.navigate(About) },
                 onNavigateToNewIcons = { navController.navigate(NewIcons) },
+                onNavigateToIconRequest = { navController.navigate(IconRequest) },
+                onNavigateToDebugMenu = { navController.navigate(DebugMenu) },
                 isExpandedScreen = isExpandedScreen,
                 isIconPicker = isIconPicker,
                 onSendResult = onSendResult,
+            )
+            debugMenuDestination(
+                isExpandedScreen = isExpandedScreen,
+                onBack = navController::popBackStack,
+            )
+            iconRequestDestination(
+                isExpandedScreen = isExpandedScreen,
+                onBack = navController::popBackStack,
             )
             acknowledgementsDestination(
                 onBack = navController::popBackStack,

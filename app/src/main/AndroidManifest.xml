@@ -130,7 +130,27 @@
                 <action android:name="com.vivid.launcher.theme" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <!-- Mail -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
     <queries>
         <!-- Browser -->
