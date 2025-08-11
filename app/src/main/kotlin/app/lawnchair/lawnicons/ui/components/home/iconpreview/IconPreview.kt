@@ -45,7 +45,7 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -120,7 +120,7 @@ fun IconPreview(
             ),
     ) {
         if (LocalInspectionMode.current) {
-            val icon = when (iconInfo.id) {
+            val icon = when (iconInfo.drawableId) {
                 1 -> Icons.Rounded.Email
                 2 -> Icons.Rounded.Search
                 3 -> Icons.Rounded.Call
@@ -138,7 +138,7 @@ fun IconPreview(
             )
         } else {
             Icon(
-                painter = painterResource(iconInfo.id),
+                painter = painterResource(iconInfo.drawableId),
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(0.6f),
                 tint = if (showSheet) {

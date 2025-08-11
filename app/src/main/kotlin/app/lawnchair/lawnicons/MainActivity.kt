@@ -22,7 +22,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.createBitmap
 import androidx.core.graphics.drawable.DrawableCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import app.lawnchair.lawnicons.model.IconInfo
+import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.Lawnicons
 import app.lawnchair.lawnicons.ui.components.SetupEdgeToEdge
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
@@ -82,11 +82,12 @@ class MainActivity : ComponentActivity() {
         val primaryBackgroundColor = context.getColor(R.color.primaryBackground)
 
         val drawable: Drawable? =
-            ResourcesCompat.getDrawable(context.resources, iconInfo.id, theme)?.mutate()?.let {
-                DrawableCompat.wrap(
-                    it,
-                )
-            }
+            ResourcesCompat.getDrawable(context.resources, iconInfo.drawableId, theme)?.mutate()
+                ?.let {
+                    DrawableCompat.wrap(
+                        it,
+                    )
+                }
 
         if (drawable != null) {
             val targetBitmapSize = 192
@@ -127,7 +128,7 @@ class MainActivity : ComponentActivity() {
             } catch (e: Exception) {
                 Log.d("SetIntentResult", e.toString())
             }
-            val iconRes = Intent.ShortcutIconResource.fromContext(this, iconInfo.id)
+            val iconRes = Intent.ShortcutIconResource.fromContext(this, iconInfo.drawableId)
 
             if (BuildConfig.DEBUG) {
                 Log.d(

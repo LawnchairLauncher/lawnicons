@@ -1,4 +1,8 @@
-<!-- Title example: "+1 icon, +2 links, +3 icon updates"
+<!-- Title example: "+1 icon, +2 links, +3 icon updates".
+     +1 icon = +1 brand new icon (related links aren't considered).
+     +2 links = +2 missing app components for existing icons.
+     +3 icon updates = redesign of 3 existing icons.
+     In other cases, choose something else to avoid confusion.
      Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
 
 ## Description

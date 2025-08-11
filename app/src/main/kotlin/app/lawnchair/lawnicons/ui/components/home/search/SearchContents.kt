@@ -35,9 +35,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.SearchMode
-import app.lawnchair.lawnicons.model.getFirstLabelAndComponent
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.data.model.SearchMode
+import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
 
@@ -195,7 +195,11 @@ private fun IconInfoListItem(
     ) {
         ListItem(
             headlineContent = { Text(iconInfo.getFirstLabelAndComponent().label) },
-            supportingContent = { Text(iconInfo.getFirstLabelAndComponent().componentName) },
+            supportingContent = {
+                Text(
+                    iconInfo.getFirstLabelAndComponent().componentName.flattenToString(),
+                )
+            },
             leadingContent = {
                 Box(
                     contentAlignment = Alignment.Center,
@@ -205,7 +209,7 @@ private fun IconInfoListItem(
                         .size(48.dp),
                 ) {
                     Icon(
-                        painter = painterResource(id = iconInfo.id),
+                        painter = painterResource(id = iconInfo.drawableId),
                         contentDescription = null,
                         modifier = Modifier.fillMaxSize(0.6f),
                     )
