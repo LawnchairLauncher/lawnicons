@@ -11,6 +11,8 @@
     <string name="search_bar_icon_picker">Επιλέξτε ένα εικονίδιο</string>
     <!-- Search tooltip -->
     <string name="search">Αναζήτηση</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Εκκαθάριση</string>
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">%s δεν βρέθηκε</string>
     <!-- About page -->
@@ -32,7 +34,7 @@
     <string name="view_on_github">Προβολή στο GitHub</string>
     <!-- Share button on icon info popup -->
     <string name="share">Κοινή χρήση λεπτομερειών</string>
-    <!-- Contribution -->
+    <!-- Contributions -->
     <string name="contribution_core">Πυρήνας εφαρμογής</string>
     <string name="contribution_icons">Εικονίδια</string>
     <string name="contribution_infra">Υποδομή</string>
@@ -67,7 +69,24 @@
     <string name="icon_requests_suspended">Τα αιτήματα για εικονίδια έχουν ανασταλεί. Επισκεφθείτε μας στο GitHub αν θέλετε να συνεισφέρετε εικονίδια.</string>
     <string name="snackbar_request_too_large">Αντιγράφηκαν λεπτομέρειες αιτήματος εικονιδίου στο πρόχειρο. Για να τα ζητήσετε, υποβάλετε τα στοιχεία στη φόρμα.</string>
     <string name="snackbar_use_fallback_link">Άνοιγμα φόρμας</string>
-    <string name="clear">Εκκαθάριση</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Missing icons</string>
+    <string name="clear_all">Clear selection</string>
+    <string name="select_all">Επιλογή όλων</string>
+    <string name="request_icons_button">Request</string>
+    <string name="show_options_sheet">Show options sheet</string>
+    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="icon_request_mail_hint">Mail a request file to </string>
+    <string name="share_file">Share file</string>
+    <string name="save_file">Save file</string>
+    <string name="copy_components">Copy app components</string>
+    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_no_app_available">No app to handle this action</string>
+    <!-- New icons screen -->
     <string name="new_icons_in_version">Νέα εικονίδια στο v%1$s</string>
     <string name="new_icons">Νέα εικονίδια (%1$s)</string>
 </resources>
