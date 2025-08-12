@@ -4222,9 +4222,6 @@
   <item component="ComponentInfo{de.dwins.financeguru/de.dwins.financeguru.SplashActivity}" drawable="finanzguru" name="Finanzguru" />
   <item component="ComponentInfo{com.finch.finch/com.finch.finch.MainActivity}" drawable="finch" name="Finch" />
   <item component="ComponentInfo{com.nutspace.trangjan.findeasy/com.nutspace.nutapp.ui.WelcomeActivity}" drawable="vernet" name="Find Easy" />
-  <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.LicenseActivity}" drawable="find_my_device" name="Find My Device" />
-  <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.activities.MainActivity}" drawable="find_my_device" name="Find Hub" />
-  <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.MainActivity}" drawable="find_my_device" name="Find My Device" />
   <item component="ComponentInfo{de.nulide.findmydevice/de.nulide.findmydevice.MainActivity}" drawable="find_my_device_fmd" name="Find My Device (FMD)" />
   <item component="ComponentInfo{de.nulide.findmydevice/de.nulide.findmydevice.ui.MainActivity}" drawable="find_my_device_fmd" name="Find My Device (FMD)" />
   <item component="ComponentInfo{org.findmykids.app/org.findmykids.app.activityes.launcher.LauncherActivity}" drawable="findmykids" name="Findmykids" />
@@ -5370,6 +5367,9 @@
   <item component="ComponentInfo{com.google.android.apps.kids.familylinkhelper/com.google.android.apps.kids.familylinkhelper.home.ParentalControlsLauncher}" drawable="google_family_link_parental_controls" name="Google Family Link parental controls" />
   <item component="ComponentInfo{com.google.android.apps.kids.familylinkhelper/com.google.android.apps.kids.familylinkhelper.trampoline.TrampolineActivity}" drawable="google_family_link_parental_controls" name="Google Family Link parental controls" />
   <item component="ComponentInfo{com.google.android.apps.tycho/com.google.android.apps.tycho.AccountDetailsActivity}" drawable="google_fi" name="Google Fi" />
+  <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.LicenseActivity}" drawable="google_find_hub" name="Google Find Hub" />
+  <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.activities.MainActivity}" drawable="google_find_hub" name="Google Find Hub" />
+  <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.MainActivity}" drawable="google_find_hub" name="Google Find Hub" />
   <item component="ComponentInfo{com.google.android.apps.fitness/com.google.android.apps.fitness.welcome.WelcomeActivity}" drawable="google_fit" name="Google Fit" />
   <item component="ComponentInfo{com.google.android.apps.photosgo/com.google.android.apps.photosgo.home.HomeActivity}" drawable="google_gallery" name="Google Gallery" />
   <item component="ComponentInfo{com.google.android.apps.bard/com.google.android.apps.bard.shellapp.BardEntryPointActivity}" drawable="google_gemini" name="Google Gemini" />
@@ -7242,7 +7242,6 @@
   <item component="ComponentInfo{com.martinmimigames.littlemusicplayer/com.martinmimigames.littlemusicplayer.Launcher}" drawable="mi_music" name="Little Music Player" />
   <item component="ComponentInfo{com.playdigious.littlenightmare/com.epicgames.ue4.SplashActivity}" drawable="little_nightmares" name="Little Nightmares" />
   <item component="ComponentInfo{com.livemcq.livemcq/com.livemcq.livemcq.MainActivity}" drawable="live_mcq" name="Live MCQ" />
-  <item component="ComponentInfo{com.google.audio.hearing.visualization.accessibility.scribe/com.google.audio.hearing.visualization.accessibility.dolphin.DolphinLauncherActivity}" drawable="sound_notifications" name="Sound Notifications" />
   <item component="ComponentInfo{com.google.audio.hearing.visualization.accessibility.scribe/com.google.audio.hearing.visualization.accessibility.scribe.MainActivity}" drawable="live_transcribe" name="Live Transcribe" />
   <item component="ComponentInfo{com.google.audio.hearing.visualization.accessibility.scribe/com.google.audio.hearing.visualization.accessibility.scribe.LauncherActivity}" drawable="live_transcribe" name="Live Transcribe" />
   <item component="ComponentInfo{com.graytsar.livewallpaper/com.graytsar.livewallpaper.ReibuActivity}" drawable="generic_player" name="Live Wallpaper" />
@@ -10110,7 +10109,6 @@
   <item component="ComponentInfo{rk.android.app.pixelsearch/rk.android.app.pixelsearch.activities.HomeActivity}" drawable="pixel_search" name="Pixel Search" />
   <item component="ComponentInfo{com.studios.pixelstation/com.studios.pixelstation.MainActivity}" drawable="pixel_station" name="Pixel Station" />
   <item component="ComponentInfo{com.PixelStudio/com.unity3d.player.UnityPlayerActivity}" drawable="pixel_studio" name="Pixel Studio" />
-  <item component="ComponentInfo{com.google.android.apps.pixel.health/com.google.android.apps.pixel.health.thermometer.ThermometerHomeActivity}" drawable="pixel_thermometer" name="Thermometer" />
   <item component="ComponentInfo{com.google.android.apps.tips/com.google.android.apps.tips.TipsMain}" drawable="pixel_tips" name="Pixel Tips" />
   <item component="ComponentInfo{it.folgore95.pixeltuner/it.folgore95.pixeltuner.MainActivity}" drawable="pixel_tuner" name="Pixel Tuner" />
   <item component="ComponentInfo{dev.wacko1805.pixel.wallpapers/dev.jahir.frames.app.MainActivity}" drawable="pixel_walls" name="Pixel Walls" />
@@ -12558,6 +12556,7 @@
   <item component="ComponentInfo{com.gamebasic.decibel/com.gamebasic.decibel.DecibelActivi}" drawable="sound_meter" name="Sound Meter" />
   <item component="ComponentInfo{com.gamebasic.decibel/com.gamebasic.decibel.DecibelActi}" drawable="sound_meter" name="Sound Meter" />
   <item component="ComponentInfo{com.codeclickers.soundmeter/com.codeclickers.soundmeter.MainActivity}" drawable="generic_recorder" name="Sound Meter" />
+  <item component="ComponentInfo{com.google.audio.hearing.visualization.accessibility.scribe/com.google.audio.hearing.visualization.accessibility.dolphin.DolphinLauncherActivity}" drawable="sound_notifications" name="Sound Notifications" />
   <item component="ComponentInfo{com.transsion.soundrecorder/com.transsion.soundrecorder.SoundRecorder}" drawable="generic_recorder" name="Sound Recorder" />
   <item component="ComponentInfo{com.ape.soundrecorder/com.ape.soundrecorder.SoundRecorder}" drawable="generic_voice_recorder" name="Sound Recorder" />
   <item component="ComponentInfo{com.rocketsauce83.musicsearch/com.rocketsauce83.musicsearch.MainActivity}" drawable="sound_search" name="Sound Search" />
@@ -13585,6 +13584,7 @@
   <item component="ComponentInfo{com.sysops.thenx/com.sysops.thenx.parts.routing.RoutingActivity}" drawable="thenx" name="Thenx" />
   <item component="ComponentInfo{com.sysops.thenx/com.sysops.thenx.parts.splash.SplashActivity}" drawable="thenx" name="Thenx" />
   <item component="ComponentInfo{com.tmvno.thepay/com.tmvno.thepay.MainActivity}" drawable="thepay" name="thePAY" />
+  <item component="ComponentInfo{com.google.android.apps.pixel.health/com.google.android.apps.pixel.health.thermometer.ThermometerHomeActivity}" drawable="pixel_thermometer" name="Thermometer" />
   <item component="ComponentInfo{de.sleak.thingcounter/de.sleak.thingcounter.activity.CounterListActivity}" drawable="thing_counter" name="Thing Counter" />
   <item component="ComponentInfo{com.chris.tholotis/com.chris.tholotis.MainActivity}" drawable="tholotis" name="Tholotis" />
   <item component="ComponentInfo{org.chromium.thorium/com.google.android.apps.chrome.Main}" drawable="google_chrome" name="Thorium" />
