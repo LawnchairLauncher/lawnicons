@@ -1464,6 +1464,9 @@
   <item component="ComponentInfo{com.microsoft.bing/com.microsoft.clients.bing.activities.SplashActivity}" drawable="bing" name="Bing" />
   <item component="ComponentInfo{com.microsoft.bing/com.microsoft.clients.bing}" drawable="bing" name="Bing" />
   <item component="ComponentInfo{com.microsoft.bing/com.microsoft.sapphire.app.main.SapphireMainActivity}" drawable="bing" name="Bing" />
+  <item component="ComponentInfo{com.microsoft.mobileexperiences.bing/com.microsoft.clients.bing.app.MainActivity}" drawable="bing" name="Bing" />
+  <item component="ComponentInfo{com.microsoft.bingintl/com.microsoft.sapphire.app.main.SapphireMainActivity}" drawable="bing" name="Bing International" />
+  <item component="ComponentInfo{com.microsoft.android.bingplaces/md5414ae3c27ff7131caef7ef9b90ad5e5b.MainActivity}" drawable="bing" name="Bing places for business" />
   <item component="ComponentInfo{pro.bingbon.app/pro.bingintl.ui.activity.MainActivity}" drawable="bingx" name="BingX" />
   <item component="ComponentInfo{com.biopassport.rkzu/com.biopassport.rkzu.MainActivity}" drawable="biopassport" name="Biopassport" />
   <item component="ComponentInfo{com.turkcell.bip/com.turkcell.bip.ui.main.BipActivity}" drawable="bip" name="BiP" />
@@ -6022,6 +6025,7 @@
   <item component="ComponentInfo{com.huawei.wallet/com.huawei.wallet.view.MainActivity}" drawable="huawei_wallet" name="Huawei Wallet" />
   <item component="ComponentInfo{com.huawei.android.totemweather/com.huawei.android.totemweather.WeatherHome}" drawable="huawei_weather" name="Huawei Weather" />
   <item component="ComponentInfo{com.huawei.android.totemweatherapp/com.huawei.android.totemweatherapp.WeatherHome}" drawable="huawei_weather" name="Huawei Weather" />
+  <item component="ComponentInfo{com.microsoft.hub_keyboard/com.microsoft.hub_keyboard.activity.SettingsShellActivity}" drawable="generic_keyboard" name="Hub Keyboard" />
   <item component="ComponentInfo{com.hudaapp.android/com.hudaapp.android.screens.MainActivity}" drawable="huda" name="Huda" />
   <item component="ComponentInfo{com.superthomaslab.hueessentials/com.superthomaslab.hueessentials.MainActivity}" drawable="hue_essentials" name="Hue Essentials" />
   <item component="ComponentInfo{com.alliancelaundry.app.huebsch/com.alliancelaundry.app.activities.SplashActivity}" drawable="huebsch" name="Huebsch" />
@@ -7466,6 +7470,7 @@
   <item component="ComponentInfo{org.malwarebytes.antimalware/org.malwarebytes.antimalware.common.activity.PreScreeningActivity}" drawable="malwarebytes" name="Malwarebytes" />
   <item component="ComponentInfo{org.aospstudio.appsmanage/com.aospstudio.shortcuts.MainActivity}" drawable="manage_apps_shortcut" name="Manage Apps Shortcut" />
   <item component="ComponentInfo{co.faria.mobilemanagebac/co.faria.mobilemanagebac.MainActivity}" drawable="managebac" name="ManageBac" />
+  <item component="ComponentInfo{com.microsoft.launcher.enterprise/com.microsoft.launcher.homescreen.EntryActivity}" drawable="microsoft_launcher" name="Managed Home Screen" />
   <item component="ComponentInfo{com.mandao.user/com.mandao.user.ui.MainActivity}" drawable="mandao" name="Mandao" />
   <item component="ComponentInfo{com.dogs.nine/com.dogs.nine.view.launcher.ActivityLauncher}" drawable="manga_dogs" name="Manga Dogs" />
   <item component="ComponentInfo{jp.co.shueisha.mangaplus/jp.co.shueisha.mangaplus.activity.StartActivity}" drawable="manga_plus" name="MANGA Plus" />
@@ -7894,6 +7899,7 @@
   <item component="ComponentInfo{com.azure.authenticator/com.azure.authenticator.ui.LaunchActivity}" drawable="microsoft_authenticator" name="Microsoft Authenticator" />
   <item component="ComponentInfo{com.azure.authenticator/com.azure.authenticator.ui.MainActivity}" drawable="microsoft_authenticator" name="Microsoft Authenticator" />
   <item component="ComponentInfo{com.microsoft.azure/crc6431cd41aa6ada328a.SplashScreenActivity}" drawable="microsoft_azure" name="Microsoft Azure" />
+  <item component="ComponentInfo{com.microsoft.bingwebmastertools.twa/com.microsoft.bingwebmastertools.twa.LauncherActivity}" drawable="bing" name="Microsoft Bing Webmaster Tools" />
   <item component="ComponentInfo{com.microsoft.copilot/com.microsoft.copilotn.MainActivity}" drawable="microsoft_copilot" name="Microsoft Copilot" />
   <item component="ComponentInfo{com.microsoft.copilot/com.google.android.archive.ReactivateActivity}" drawable="microsoft_copilot" name="Microsoft Copilot" />
   <item component="ComponentInfo{com.microsoft.copilot/com.microsoft.sapphire.app.main.SapphireMainActivity}" drawable="microsoft_copilot" name="Microsoft Copilot" />
@@ -7912,8 +7918,10 @@
   <item component="ComponentInfo{com.microsoft.emmx.dev/com.microsoft.ruby.Main}" drawable="microsoft_edge_dev" name="Microsoft Edge Dev" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.apphost.LaunchActivity}" drawable="microsoft_excel" name="Microsoft Excel" />
   <item component="ComponentInfo{com.microsoft.office.excel/com.microsoft.office.excel.excelMainActivity}" drawable="microsoft_excel" name="Microsoft Excel" />
+  <item component="ComponentInfo{com.microsoft.hardwareexp/com.unity3d.player.UnityPlayerActivity}" drawable="windows" name="Microsoft Hardware Experience" />
   <item component="ComponentInfo{com.microsoft.launcher/com.microsoft.launcher.EntryActivity}" drawable="microsoft_launcher" name="Microsoft Launcher" />
   <item component="ComponentInfo{com.microsoft.launcher/com.microsoft.launcher.Launcher}" drawable="microsoft_launcher" name="Microsoft Launcher" />
+  <item component="ComponentInfo{com.microsoft.launcher.zan/com.microsoft.launcher.Launcher}" drawable="microsoft_launcher" name="Microsoft Launcher" />
   <item component="ComponentInfo{com.microsoft.office.officelens/com.microsoft.office.apphost.LaunchActivity}" drawable="microsoft_lens" name="Microsoft Lens" />
   <item component="ComponentInfo{com.microsoft.office.officelens/com.microsoft.office.officelens.MainActivity}" drawable="microsoft_lens" name="Microsoft Lens" />
   <item component="ComponentInfo{com.microsoft.appmanager/com.microsoft.appmanager.oem.setting.OemSettingsActivity}" drawable="microsoft_link_to_windows" name="Microsoft Link to Windows" />
@@ -7927,6 +7935,9 @@
   <item component="ComponentInfo{com.microsoft.amp.apps.bingnews/com.microsoft.sapphire.app.main.SplashActivity}" drawable="microsoft_msn" name="Microsoft MSN" />
   <item component="ComponentInfo{com.microsoft.amp.apps.bingnews/com.microsoft.sapphire.app.activities.SplashActivity}" drawable="microsoft_msn" name="Microsoft MSN" />
   <item component="ComponentInfo{com.microsoft.amp.apps.bingnews/com.microsoft.sapphire.app.main.SapphireMainActivity}" drawable="microsoft_msn" name="Microsoft MSN" />
+  <item component="ComponentInfo{msn.android.cr/msn.android.SplashScreen}" drawable="microsoft_msn" name="Microsoft MSN World" />
+  <item component="ComponentInfo{msn.android.id/msn.android.SplashScreen}" drawable="microsoft_msn" name="Microsoft MSN World" />
+  <item component="ComponentInfo{msn.android.mx/msn.android.SplashScreen}" drawable="microsoft_msn" name="Microsoft MSN World" />
   <item component="ComponentInfo{com.microsoft.skydrive/com.microsoft.skydrive.MainActivity}" drawable="microsoft_onedrive" name="Microsoft OneDrive" />
   <item component="ComponentInfo{com.microsoft.skydrive/com.microsoft.skydrive.photos.PhotosLauncherActivity}" drawable="microsoft_onedrive" name="Microsoft OneDrive" />
   <item component="ComponentInfo{com.microsoft.office.onenote/com.microsoft.office.onenote.ui.ONMLauncherActivity}" drawable="microsoft_onenote" name="Microsoft OneNote" />
@@ -9991,6 +10002,7 @@
   <item component="ComponentInfo{com.photopills.android.photopills/com.photopills.android.photopills.SplashActivity}" drawable="photopills" name="PhotoPills" />
   <item component="ComponentInfo{com.photoroom.app/com.google.android.archive.ReactivateActivity}" drawable="photoroom" name="Photoroom" />
   <item component="ComponentInfo{com.photoroom.app/com.photoroom.application.LaunchActivity}" drawable="photoroom" name="Photoroom" />
+  <item component="ComponentInfo{com.microsoft.PhotosCompanion/md5b5b858fe62a02ce0e2eaf09bebdb581a.SplashActivity}" drawable="generic_gallery" name="Photos Companion" />
   <item component="ComponentInfo{com.google.android.apps.photos.scanner/com.google.android.apps.photos.scanner.home.HomeActivity}" drawable="photoscan" name="PhotoScan" />
   <item component="ComponentInfo{com.google.android.apps.photos.scanner/com.google.android.apps.photo.scanner.home.HomeActivity}" drawable="photoscan" name="PhotoScan" />
   <item component="ComponentInfo{com.adobe.lens.android/com.adobe.photocam.ui.viewfinder.LauncherActivity}" drawable="photoshop_camera" name="Photoshop Camera" />
@@ -11188,6 +11200,7 @@
   <item component="ComponentInfo{pro.mtv.sai/pro.mtv.sai.ui.activities.MainActivity}" drawable="sai_pro" name="SAI Pro" />
   <item component="ComponentInfo{com.sainsburys.ssa/com.sainsburys.ssa.presentation.views.main.MainActivity}" drawable="sainsburys" name="Sainsbury's" />
   <item component="ComponentInfo{com.anafthdev.saku/com.anafthdev.saku.runtime.MainActivity}" drawable="sudoku" name="Saku" />
+  <item component="ComponentInfo{com.linkedin.android.salesnavigator/com.linkedin.android.salesnavigator.ui.login.LoginActivity}" drawable="compass_synapsetech" name="Sales Navigator" />
   <item component="ComponentInfo{com.salesforce.chatter/com.salesforce.chatter.Chatter}" drawable="salesforce" name="Salesforce" />
   <item component="ComponentInfo{com.salt.music/com.salt.music.ui.MainActivity}" drawable="salt_player" name="Salt Player" />
   <item component="ComponentInfo{com.litebyte.samhelper/com.litebyte.samhelper.SamHelper}" drawable="sam_helper" name="Sam Helper" />
@@ -12291,6 +12304,7 @@
   <item component="ComponentInfo{com.flightradar24.skycards/com.flightradar24.skycards.MainActivity}" drawable="skycards" name="SkyCards" />
   <item component="ComponentInfo{com.skycash.beta/com.norbsoft.android.ease.activities.SplashScreenActivity}" drawable="skycash" name="SkyCash" />
   <item component="ComponentInfo{skyline.emu/emu.skyline.MainActivity}" drawable="skyline" name="Skyline" />
+  <item component="ComponentInfo{com.microsoft.office.lync15/com.microsoft.office.sfb.common.ui.splash.EntryPoint}" drawable="skype" name="Skype for Business" />
   <item component="ComponentInfo{net.skyscanner.android.main/net.skyscanner.android.activity.SearchActivity}" drawable="skyscanner" name="Skyscanner" />
   <item component="ComponentInfo{net.skyscanner.android.main/net.skyscanner.app.presentation.globalnav.activity.GlobalNavActivity}" drawable="skyscanner" name="Skyscanner" />
   <item component="ComponentInfo{net.skyscanner.android.main/net.skyscanner.app.presentation.globalnav.activity.HomeActivity}" drawable="skyscanner" name="Skyscanner" />
@@ -13673,6 +13687,7 @@
   <item component="ComponentInfo{digital.rbi.timhortons/digital.rbi.timhortons.presentation.launch.LaunchActivity}" drawable="tim_hortons" name="Tim Hortons" />
   <item component="ComponentInfo{digital.rbi.timhortons/digital.rbi.timhortons.MainActivity}" drawable="tim_hortons" name="Tim Hortons" />
   <item component="ComponentInfo{it.telecomitalia.centoottantasette/it.telecomitalia.centoottantasette.StartClient187}" drawable="bell_wi_fi" name="TIM Modem" />
+  <item component="ComponentInfo{com.microsoft.psatime/md5be7421b330c97a13969acfa959ab0eb7.MainActivity}" drawable="clock" name="Time Capture Concept App A1" />
   <item component="ComponentInfo{com.amandafarrell.timeprogressbars/com.amandafarrell.timeprogressbars.MainActivity}" drawable="clock" name="Time Progress Bars" />
   <item component="ComponentInfo{com.maforn.timedshutdown/com.maforn.timedshutdown.MainActivity}" drawable="generic_power" name="Timed Shutdown" />
   <item component="ComponentInfo{com.apposter.watchmaker/com.apposter.watchmaker.SplashActivity}" drawable="timeflik_watch_face" name="TIMEFLIK Watch Face" />
