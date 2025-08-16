@@ -423,6 +423,7 @@
   <item component="ComponentInfo{pl.aliorbank.aib/pl.alior.aib.main.splash.SplashActivity}" drawable="alior" name="Alior" />
   <item component="ComponentInfo{pl.aliorbank.aib/pl.alior.aib.legacy.main.splash.SplashActivity}" drawable="alior" name="Alior" />
   <item component="ComponentInfo{pl.aliorbank.aib/com.efigence.mobile.aib.splash.SplashActivity}" drawable="alior" name="Alior" />
+  <item component="ComponentInfo{pl.aliorbank.nbpro/com.mobile.banking.core.ui.prelogin.SplashScreenActivity}" drawable="alior" name="Alior Business" />
   <item component="ComponentInfo{com.eg.android.AlipayGphone/com.alipay.android.client.WelcomeUse}" drawable="alipay" name="Alipay" />
   <item component="ComponentInfo{com.eg.android.AlipayGphone/com.eg.android.AlipayGphone.AlipayLogin}" drawable="alipay" name="Alipay" />
   <item component="ComponentInfo{hk.alipay.wallet/com.eg.android.AlipayGphone.AlipayLogin}" drawable="alipay" name="AlipayHK" />
@@ -2580,6 +2581,7 @@
   <item component="ComponentInfo{jp.co.airfront.android.a2chMate/jp.syoboi.a2chMate.activity.HomeActivity}" drawable="chmate" name="ChMate" />
   <item component="ComponentInfo{com.chollometro/com.pepper.apps.android.presentation.MainActivity}" drawable="pepper" name="Chollometro" />
   <item component="ComponentInfo{com.chollometro/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="pepper" name="Chollometro" />
+  <item component="ComponentInfo{com.chollometro/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="pepper" name="Chollometro" />
   <item component="ComponentInfo{com.uravgcode.chooser/com.uravgcode.chooser.MainActivity}" drawable="chooser" name="Chooser" />
   <item component="ComponentInfo{net.chordify.chordify/net.chordify.chordify.presentation.activities.navigation.NavigationActivity}" drawable="chordify" name="Chordify" />
   <item component="ComponentInfo{com.ilixa.chroma/com.ilixa.chroma.ChromaActivity}" drawable="chroma_lab" name="Chroma Lab" />
@@ -3136,6 +3138,7 @@
   <item component="ComponentInfo{com.playdigious.deadcells.mobile/com.playdigious.deadcells.mobile.DeadCellsLoading}" drawable="dead_cells" name="Dead Cells" />
   <item component="ComponentInfo{com.codedead.deadhash/com.codedead.deadhash.gui.MainActivity}" drawable="deadhash" name="DeadHash" />
   <item component="ComponentInfo{com.dealabs.apps.android/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="dealabs" name="Dealabs" />
+  <item component="ComponentInfo{com.dealabs.apps.android/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="dealabs" name="Dealabs" />
   <item component="ComponentInfo{com.dealabs.apps.android/com.dealabs.apps.android.app.activity.MainActivity}" drawable="dealabs" name="Dealabs" />
   <item component="ComponentInfo{com.dealabs.apps.android/com.pepper.apps.android.app.activity.MainActivity}" drawable="dealabs" name="Dealabs" />
   <item component="ComponentInfo{com.dealabs.apps.android/com.pepper.apps.android.presentation.MainActivity}" drawable="dealabs" name="Dealabs" />
@@ -8543,6 +8546,7 @@
   <item component="ComponentInfo{ge.beeline.odp/ge.beeline.odp.activities.SplashScreenActivity}" drawable="mycellfie" name="MyCellfie" />
   <item component="ComponentInfo{epic.mychart.android/epic.mychart.android.library.prelogin.SplashActivity}" drawable="mychart" name="MyChart" />
   <item component="ComponentInfo{com.tippingcanoe.mydealz/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="mydealz" name="mydealz" />
+  <item component="ComponentInfo{com.tippingcanoe.mydealz/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="mydealz" name="mydealz" />
   <item component="ComponentInfo{com.tippingcanoe.mydealz/com.pepper.apps.android.app.activity.MainActivity}" drawable="mydealz" name="mydealz" />
   <item component="ComponentInfo{com.tippingcanoe.mydealz/com.pepper.apps.android.presentation.MainActivity}" drawable="mydealz" name="mydealz" />
   <item component="ComponentInfo{com.tippingcanoe.mydealz/com.pepper.apps.android.presentation.MainActivityV2}" drawable="mydealz" name="mydealz" />
@@ -9774,11 +9778,18 @@
   <item component="ComponentInfo{softax.pekao.powerpay/com.pekao.peopay.presentation.MainActivity}" drawable="peopay" name="PeoPay" />
   <item component="ComponentInfo{pl.pekao.pekaosa.peopaykids/com.pekao.peokids.presentation.main.view.MainActivity}" drawable="peopay" name="PeoPay KIDS" />
   <item component="ComponentInfo{ru.pepper/com.desidime.app.tour.SplashScreenActivity}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{com.tippingcanoe.peppernl/com.pepper.apps.android.presentation.MainActivity}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{com.tippingcanoe.peppernl/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{com.tippingcanoe.peppernl/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{com.tippingcanoe.pepperpl/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{com.tippingcanoe.pepperpl/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{com.pepperdeals/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{com.pepperdeals/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{ru.pepper/com.pepper.apps.android.presentation.MainActivityV2}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{ru.pepper/com.pepper.apps.android.presentation.MainActivity}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{ru.pepper/com.pepper.apps.android.app.activity.MainActivity}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{se.pepperdeals/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="pepper" name="Pepper" />
+  <item component="ComponentInfo{se.pepperdeals/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{com.tippingcanoe.pepperpl/com.pepper.apps.android.app.activity.MainActivity}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{com.tippingcanoe.pepperpl/com.pepper.apps.android.presentation.MainActivity}" drawable="pepper" name="Pepper" />
   <item component="ComponentInfo{com.tippingcanoe.peppernl/com.pepper.apps.android.presentation.MainActivityGoldIcon}" drawable="pepper" name="Pepper" />
