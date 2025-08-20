@@ -40,7 +40,6 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 > The design guidelines are also available in Figma, you can practice there.  
 > [View in Figma](https://www.figma.com/community/file/1227718471680779613)
 
-
 ### Approach
 
 The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
@@ -53,6 +52,10 @@ Tips
 - Prioritize quality.
 
 [Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
+
+### TL;DR
+
+Open your icon image in Figma and apply the guidelines point by point. This is the best way to learn and ensure a suitable icon design.
 
 ### Fundamentals
 
