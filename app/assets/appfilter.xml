@@ -38,6 +38,7 @@
   <item drawableIgnore="true" component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.transsion.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" drawable="themed_icon_calendar_31" name="네이버 캘린더 ~~ Naver Calendar" />
   <!-- Lawnicons -->
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MainActivity}" drawable="mono" name="#mono" />
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MonoInstallerActivity}" drawable="mono" name="#mono" />
@@ -10600,8 +10601,10 @@
   <item component="ComponentInfo{au.com.qantas.qstreaming/au.com.qantas.qstreaming.runway.home.activity.HomeActivity}" drawable="samsung_video_player" name="Qantas Entertainment" />
   <item component="ComponentInfo{au.com.qantas.qstreaming/au.com.qantas.qstreaming.home.presentation.SplashActivity}" drawable="samsung_video_player" name="Qantas Entertainment" />
   <item component="ComponentInfo{io.github.qauxv/io.github.qauxv.activity.ConfigV2ActivityAlias}" drawable="qauxiliary" name="QAuxiliary" />
+  <item component="ComponentInfo{com.lgallardo.qbittorrentclient/com.lgallardo.qbittorrentclient.MainActivity}" drawable="qbittorrent_remote" name="qBController" />
   <item component="ComponentInfo{dev.bartuzen.qbitcontroller/dev.bartuzen.qbitcontroller.ui.main.MainActivity}" drawable="qbitcontroller" name="qBitController" />
   <item component="ComponentInfo{dev.bartuzen.qbitcontroller/dev.bartuzen.qbitcontroller.MainActivity}" drawable="qbitcontroller" name="qBitController" />
+  <item component="ComponentInfo{com.lgallardo.qbittorrentclientpro/com.lgallardo.qbittorrentclient.MainActivity}" drawable="qbittorrent_remote" name="qBittorrent Client Pro" />
   <item component="ComponentInfo{dev.yashgarg.qbit/dev.yashgarg.qbit.MainActivity}" drawable="qbittorrent_manager" name="qBittorrent Manager" />
   <item component="ComponentInfo{me.fengmlo.qbRemoteFree/me.fengmlo.qb_remote.MainActivity}" drawable="qbittorrent_remote" name="qBittorrent Remote" />
   <item component="ComponentInfo{me.fengmlo.qbRemote/me.fengmlo.qb_remote.MainActivity}" drawable="qbittorrent_remote" name="qBittorrent Remote" />
@@ -15351,6 +15354,7 @@
   <item component="ComponentInfo{com.yahoo.mobile.client.android.mail/com.yahoo.mobile.client.android.mail.activity.MainActivity}" drawable="yahoo_mail" name="Yahoo Mail" />
   <item component="ComponentInfo{com.yahoo.mobile.client.android.weather/com.yahoo.mobile.client.android.weather.ui.WeatherMainActivity}" drawable="yahoo_weather" name="Yahoo Weather" />
   <item component="ComponentInfo{jp.co.yahoo.android.yjtop/jp.co.yahoo.android.yjtop.YJTopActivity}" drawable="yahoo_japan" name="Yahoo! JAPAN" />
+  <item component="ComponentInfo{jp.co.yahoo.android.ymshortcutman/jp.co.yahoo.android.ymshortcutman.MainActivity}" drawable="yahoo_japan" name="Yahoo! JAPAN ショートカット ~~ Yahoo! JAPAN Shortcut" />
   <item component="ComponentInfo{jp.co.yahoo.android.news/jp.co.yahoo.android.news.activity.SplashActivity}" drawable="yahoo_news" name="Yahoo!ニュース ~~ Yahoo! News" />
   <item component="ComponentInfo{jp.co.yahoo.android.weather.type1/jp.co.yahoo.android.weather.type1.WeatherDetail}" drawable="yahoo_weather_japan" name="Yahoo天気 ~~ Yahoo Weather" />
   <item component="ComponentInfo{com.yandex.yango/ru.yandex.taxi.activity.MainActivity}" drawable="yango" name="Yango" />
@@ -16221,6 +16225,7 @@
   <item component="ComponentInfo{com.kurogame.mingchao/com.kurogame.mingchao.KrSdkSplashActivity}" drawable="wuthering_waves" name="鸣潮 ~~ Wuthering Waves" />
   <item component="ComponentInfo{com.kurogame.mingchao.bilibili/com.kurogame.mingchao.KrSdkSplashActivity}" drawable="wuthering_waves" name="鸣潮 ~~ Wuthering Waves" />
   <item component="ComponentInfo{com.nhn.android.search/com.nhn.android.search.ui.pages.SearchHomePage}" drawable="naver" name="네이버 ~~ NAVER" />
+  <item component="ComponentInfo{com.nhn.android.webtoon/com.naver.webtoon.splash.SplashActivity}" drawable="webtoon" name="네이버 웹툰 ~~ Naver Webtoon" />
   <item component="ComponentInfo{net.daum.android.mail/net.daum.android.mail.StartActivity}" drawable="sony_email" name="다음 메일 ~~ Daum Mail" />
   <item component="ComponentInfo{kr.haoplay.game.and.reverse/com.ssgame.mobile.overseas.frame.activity.AppStartUpActivity}" drawable="reverse_1999" name="리버스: 1999 ~~ Reverse: 1999" />
   <item component="ComponentInfo{com.iloen.melon/com.iloen.melon.MusicBrowserActivity}" drawable="melon" name="멜론 ~~ Melon" />
