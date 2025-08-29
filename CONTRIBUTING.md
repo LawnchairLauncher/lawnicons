@@ -59,6 +59,8 @@ Open your icon image in Figma and apply the guidelines point by point. This is t
 
 ### Fundamentals
 
+View on YouTube
+
 **1 Canvas**  
 
 ![](docs/images/fundamentals-1-canvas.png)
