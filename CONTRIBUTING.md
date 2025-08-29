@@ -59,7 +59,7 @@ Open your icon image in Figma and apply the guidelines point by point. This is t
 
 ### Fundamentals
 
-View on YouTube
+[View on YouTube](https://youtu.be/XO-5IwowonQ)
 
 **1 Canvas**  
 
