@@ -57,7 +57,7 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 Each month, our core contributor will add as many new icons as others.
 
-[Lawnicons guidelines](CONTRIBUTING.md) • [Supported by icon contributors](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22supported+by+contributors%22)
+[Lawnicons guidelines](CONTRIBUTING.md) • [Supported by icon contributors](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22supported%22)
 
 ## Requesting icons
 
