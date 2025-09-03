@@ -38,7 +38,7 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 > [!TIP]
 > The design guidelines are also available in Figma, you can practice there.  
-> [View in Figma](https://www.figma.com/community/file/1227718471680779613)
+> [View in Figma](https://www.figma.com/community/file/1544976260626797886)
 
 ### Approach
 
