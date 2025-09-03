@@ -73,7 +73,7 @@ Open your icon image in Figma and apply the guidelines point by point. This is t
 
 `160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`.  
 
-Please note that weight and position of the stroke affect the icon size in Figma.  
+Note: Stroke weight and position affect icon size in Figma.  
 
 **3 Square icons**  
 
@@ -81,7 +81,7 @@ Please note that weight and position of the stroke affect the icon size in Figma
 
 `154 × 154 px`. These are icons with `50%` or more of the edges running along the square.  
 
-Please note that weight and position of the stroke affect the icon size in Figma.  
+Note: Stroke weight and position affect icon size in Figma.  
 
 **4 Color**  
 
