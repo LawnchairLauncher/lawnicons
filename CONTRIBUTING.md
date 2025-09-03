@@ -89,22 +89,21 @@ All lines must be non-transparent black color: `#000000`.
 
 ![](docs/images/fundamentals-5-stroke-weights.png)
 
-Core weight: `12 px`  
-Rare cases: `14 px`, `10 px`, `8 px`  
-Fine details: `6 px` 
-
-The stroke weight should be kept at `12 px`, except in rare cases. If an icon is too minimal or dense, you'll need other weights: `14 px` for the most minimal, and `8 px` for the densest. For fine details, you can use `6 px`.
+Core stroke weight: `12 px`  
+Minimal icons: `14 px`  
+Dense icons: `10 px`  
+Ellipses, rectangles and fine details: `10 px`, `8 px`, `6 px`  
 
 Tips
 - No margin of error.
 - Don’t use a fill.
 - Remember to adjust the size of icons when you change the stroke weights. 
 
-**6 Start and end caps, joints**  
+**6 Caps and joints**  
 
-![](docs/images/fundamentals-6-start-and-end-caps-joints.png)
+![](docs/images/fundamentals-6-caps-and-joints.png)
 
-Start and end caps, as well as joints, should be rounded.  
+Caps and joints should be rounded.  
 
 **7 Corner radius**  
 
