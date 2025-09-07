@@ -1,17 +1,27 @@
 docs:
-  - "*.md"
-  - .github/PULL_REQUEST_TEMPLATE/*.md
-  - .github/pull_request_template.md
-  - docs/**
+- changed-files:
+  - any-glob-to-any-file:
+    - "*.md"
+    - .github/PULL_REQUEST_TEMPLATE/*.md
+    - .github/pull_request_template.md
+    - docs/**
 
 icons:
-  - svgs/*
-  - app/assets/appfilter.xml
+- changed-files:
+  - any-glob-to-any-file:
+    - svgs/*
+    - app/assets/appfilter.xml
 
 code:
-  - any: ['app/**/*']
-    all: ['!app/assets/appfilter.xml', '!app/src/main/res/*/strings.xml']
+- any:
+  - changed-files:
+    - any-glob-to-any-file: ['app/**/*']
+- all:
+  - changed-files:
+    - any-glob-to-any-file: ['!app/assets/appfilter.xml', '!app/src/main/res/*/strings.xml']
 
 locale:
-  - app/src/main/res/*/strings.xml
+- changed-files:
+  - any-glob-to-any-file:
+    - app/src/main/res/*/strings.xml
   
