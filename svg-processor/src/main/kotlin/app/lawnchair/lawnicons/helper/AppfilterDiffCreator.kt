@@ -53,8 +53,7 @@ object AppfilterDiffCreator {
         val filteredElements = currentAppFilterItems
             .filterNot { previousDrawables.contains(it.attributeValue(DRAWABLE)) }
 
-        val outputDir = File(resDir).parentFile
-        val outputFile = File(outputDir, OUTPUT_FILE)
+        val outputFile = File(resDir, OUTPUT_FILE)
 
         val iconsDocument = DefaultDocument().apply { addElement(RESOURCES) }
 
