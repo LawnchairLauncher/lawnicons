@@ -121,7 +121,7 @@
   <item component="ComponentInfo{ru.x5.omni/ru.x5.omni.presentation.root.RootActivity}" drawable="_5_post" name="5 POST" />
   <item component="ComponentInfo{com.kiarygames.tinydoors/com.unity3d.player.UnityPlayerActivity}" drawable="_50_tiny_room_escape" name="50 Tiny Room Escape" />
   <item component="ComponentInfo{com.fivehundredpx.viewer/com.fivehundredpx.viewer.RootActivity}" drawable="_500px" name="500px" />
-  <item component="ComponentInfo{dbx.taiwantaxi/.v9.login.LoginActivity}" drawable="_55688" name="55688 台灣大車隊 ~~ 55688 Taiwan Taxi" />
+  <item component="ComponentInfo{dbx.taiwantaxi/.v9.login.LoginActivity}" drawable="_55688" name="55688" />
   <item component="ComponentInfo{com.secure56.app/com.android56.app.splash.SplashActivity}" drawable="_56_secure" name="56 Secure" />
   <item component="ComponentInfo{com.ifreegroup.moesim/com.ifreegroup.moesim.MainActivity}" drawable="_5ber_esim" name="5ber.eSIM" />
   <item component="ComponentInfo{com.hunteralex.fivegonly/com.hunteralex.fivegonly.MainActivity}" drawable="_5g_only" name="5G Only" />
@@ -5398,6 +5398,7 @@
   <item component="ComponentInfo{com.google.android.apps.healthdata/com.google.android.apps.healthdata.LauncherActivity}" drawable="google_health_connect" name="Google Health Connect" />
   <item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.archive.ReactivateActivity}" drawable="google_home" name="Google Home" />
   <item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.apps.chromecast.app.DiscoveryActivity}" drawable="google_home" name="Google Home" />
+  <item component="ComponentInfo{com.google.android.apps.pixel.aurelius/.app.TeaspoonActivity}" drawable="google_journal" name="Google Journal" />
   <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.AnimatingListDetailsEditActivity}" drawable="google_keep" name="Google Keep" />
   <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.Br}" drawable="google_keep" name="Google Keep" />
   <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.BrowseActivity}" drawable="google_keep" name="Google Keep" />
@@ -6595,7 +6596,6 @@
   <item component="ComponentInfo{net.cozic.joplin/net.cozic.joplin.MainActivity}" drawable="joplin" name="Joplin" />
   <item component="ComponentInfo{com.eterno.shortvideos/com.eterno.shortvideos.views.splash.activities.SplashActivity}" drawable="josh" name="Josh" />
   <item component="ComponentInfo{io.limeware.tidynote/com.example.notepad.MainActivity}" drawable="easy_notes" name="Jotly" />
-  <item component="ComponentInfo{com.google.android.apps.pixel.aurelius/.app.TeaspoonActivity}" drawable="journal" name="Journal" />
   <item component="ComponentInfo{com.journey.app/com.journey.app.SplashActivity}" drawable="journey" name="Journey" />
   <item component="ComponentInfo{ca.journie.app/ca.journie.dev.MainActivity}" drawable="journie_rewards" name="Journie Rewards" />
   <item component="ComponentInfo{com.wishop.dev.jow/com.mobile.MainActivity}" drawable="jow" name="Jow" />
@@ -8787,8 +8787,8 @@
   <item component="ComponentInfo{com.ga.loyalty.android.nectar.activities/com.newnectar.client.sainsburys.main.LaunchActivity}" drawable="nectar" name="Nectar" />
   <item component="ComponentInfo{com.ea.game.nfs14_row/com.ea.game.nfs14_row.NFSActivity}" drawable="need_for_speed_no_limits" name="Need for Speed No Limits" />
   <item component="ComponentInfo{app.nekko.to/app.nekko.to.SplashscreenActivity}" drawable="neko_app" name="Neko App" />
-  <item component="ComponentInfo{jp.co.hit_point.nekoatsume/.GActivity}" drawable="nekoatsume" name="ねこあつめ ~~ Neko Atsume" />
-  <item component="ComponentInfo{jp.co.hit_point.nekoatsume2/com.unity3d.player.UnityPlayerActivity}" drawable="nekoatsume2" name="ねこあつめ2 ~~ Neko Atsume 2" />
+  <item component="ComponentInfo{jp.co.hit_point.nekoatsume/.GActivity}" drawable="neko_atsume" name="Neko Atsume" />
+  <item component="ComponentInfo{jp.co.hit_point.nekoatsume2/com.unity3d.player.UnityPlayerActivity}" drawable="neko_atsume_2" name="Neko Atsume 2" />
   <item component="ComponentInfo{moe.nb4a/io.nekohasekai.sagernet.ui.MainActivity}" drawable="nekobox" name="NekoBox" />
   <item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.AquaIcon}" drawable="nekogram" name="Nekogram" />
   <item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.CloudIcon}" drawable="nekogram" name="Nekogram" />
@@ -10615,7 +10615,7 @@
   <item component="ComponentInfo{com.azefsw.purchasedapps/com.azefsw.purchasedapps.ui.startup.StartupActivity}" drawable="purchased_apps" name="Purchased Apps" />
   <item component="ComponentInfo{free.tube.premium.advanced.tuber/free.tube.premium.advanced.tuber.main.MainActivity}" drawable="pure_tuber" name="Pure Tuber" />
   <item component="ComponentInfo{pure.lite.browser/com.vs.browser.MainActivity}" drawable="pure_web_browser" name="Pure Web Browser" />
-  <item component="ComponentInfo{com.drakeet.purewriter/.WriterActivity}" drawable="purewriter" name="纯纯写作 ~~ Pure Writer" />
+  <item component="ComponentInfo{com.drakeet.purewriter/.WriterActivity}" drawable="pure_writer" name="Pure Writer" />
   <item component="ComponentInfo{tv.orange/tv.twitch.android.app.core.LandingActivity}" drawable="purple_tv" name="PurpleTV" />
   <item component="ComponentInfo{com.pushbullet.android/com.pushbullet.android.ui.LaunchActivity}" drawable="pushbullet" name="Pushbullet" />
   <item component="ComponentInfo{com.net.pvr/com.net.pvr.ui.splash.SplashActivity}" drawable="pvr_cinemas" name="PVR Cinemas" />
@@ -13033,7 +13033,7 @@
   <item component="ComponentInfo{com.d8aspring.surveyon/com.d8aspring.mobile.SplashActivity}" drawable="surveyon" name="surveyon" />
   <item component="ComponentInfo{org.ligi.survivalmanual/org.ligi.survivalmanual.ui.MainActivity}" drawable="survival_manual" name="Survival Manual" />
   <item component="ComponentInfo{com.candyrufusgames.survivalcraft/md51bf51510d2c85d1124ccf5e3fc41736e.EngineActivity}" drawable="survivalcraft" name="Survivalcraft" />
-  <item component="ComponentInfo{com.candyrufusgames.survivalcraft2/crc64da6839f08fe39125.EngineActivity}" drawable="survivalcraft2" name="Survivalcraft 2" />
+  <item component="ComponentInfo{com.candyrufusgames.survivalcraft2/crc64da6839f08fe39125.EngineActivity}" drawable="survivalcraft_2" name="Survivalcraft 2" />
   <item component="ComponentInfo{com.destructo.sushi_mal/com.destructo.sushi.ui.auth.LoginActivity}" drawable="sushi" name="Sushi" />
   <item component="ComponentInfo{org.suyu.suyu_emu/org.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu" name="Suyu" />
   <item component="ComponentInfo{dev.suyu.suyu_emu.relWithDebInfo/dev.suyu.suyu_emu.ui.main.MainActivity}" drawable="suyu_dev" name="Suyu Debug" />
