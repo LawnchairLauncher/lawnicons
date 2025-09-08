@@ -214,72 +214,26 @@ Tips
 
 The main app name should be in its native language. It can be found in app stores or primary sources.
 
-Non-English apps require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
+Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
 
 Tips
 - Add localized names if available.
 - Transliterate non-English names when there are no localized ones.
+- Separate app names using `~~`. First, the main app name, then the additional one.
 - Delete things that aren't part of an app name.
 - Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+- Take a look at examples.
 
 [Thousands of examples](app/assets/appfilter.xml)
 
-```
-Do
-<item component="..." drawable="doviz" name="Döviz" />
-<item component="..." drawable="gps_status_and_toolbox" name="GPS Status &amp; Toolbox" />
-<item component="..." drawable="playstation" name="PlayStation" />
-<item component="..." drawable="eromodo" name="Vágyaid ~~ Eromodo" />
-
-Don't
-<item component="..." drawable="doviz" name="Döviz ~~ Doviz" />
-<item component="..." drawable="gps_status_and_toolbox" name="GPS Status & Toolbox" />
-<item component="..." drawable="playstation" name="PlayStation App" />
-<item component="..." drawable="eromodo" name="Eromodo" />
-```
-
-Separate app names using `~~`. First, the main app name, then the additional one.
-
-```
-Do • Considering the origin of the Hulu app
-<item component="..." drawable="hulu" name="Hulu ~~ フールー" />
-
-Don't
-<item component="..." drawable="hulu" name="フールー ~~ Hulu" />
-```
-
 **Icon name (drawable)**  
 
-Repeat the app name if possible. Use `a–z`, `0–9`, and `_` for spaces.  
+Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit at the beginning of an icon name.
 
 Tips
-- When multiple apps are linked to `1` icon, choose the most popular app name for it.
+- When multiple apps are linked to the same icon, choose the most popular app name for it.
 - Replace non-English letters with English letters.
-
-```
-Do
-<item component="..." drawable="a_and_w" name="A&amp;W" />
-<item component="..." drawable="blade_player" name="Blade Player" />
-<item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
-<item component="..." drawable="yahoo_news" name="Yahoo!ニュース ~~ Yahoo! News" />
-
-Don't
-<item component="..." drawable="aw" name="A&amp;W" />
-<item component="..." drawable="bladeplayer" name="Blade Player" />
-<item component="..." drawable="länsförsäkringar" name="Länsförsäkringar" />
-<item component="..." drawable="yahoo!_news" name="Yahoo!ニュース ~~ Yahoo! News" />
-```
-
-Insert `_` before a digit at the beginning of an icon name.
-
-```
-Do
-<item component="..." drawable="_9gag" name="9GAG" />
-
-Don't
-<item component="..." drawable="9gag" name="9GAG" />
-<item component="..." drawable="ninegag" name="9GAG" />
-```
+- Take a look at examples.
 
 ## Icon contribution tools
 
