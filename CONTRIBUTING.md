@@ -210,9 +210,13 @@ Tips
 
 ### Naming
 
+Start with examples, maybe there is a suitable one for you.  
+
+[Thousands of examples](app/assets/appfilter.xml)
+
 **App name**  
 
-The main app name should be in its native language. It can be found in app stores or primary sources.
+The main app name should be in its main language. It can be found in app stores or primary sources.
 
 Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
 
@@ -222,9 +226,6 @@ Tips
 - Separate app names using `~~`. First, the main app name, then the additional one.
 - Delete things that aren't part of an app name.
 - Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
-- Take a look at examples.
-
-[Thousands of examples](app/assets/appfilter.xml)
 
 **Icon name (drawable)**  
 
@@ -233,7 +234,6 @@ Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before
 Tips
 - When multiple apps are linked to the same icon, choose the most popular app name for it.
 - Replace non-English letters with English letters.
-- Take a look at examples.
 
 ## Icon contribution tools
 
