@@ -11,7 +11,7 @@
             groupName: 'Kotlin and KSP',
             matchPackageNames: [
                 'com.google.devtools.ksp{/,}**',
-                '/org.jetbrains.kotlin.*/',
+                'org.jetbrains.kotlin:kotlin{/,}**'
             ],
         },
         {
