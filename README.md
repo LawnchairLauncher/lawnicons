@@ -55,8 +55,6 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 Whether you want to work on icons or solve development issues, please refer to our guidelines. 
 
-Each month, our core contributor will add as many new icons as others.
-
 [Lawnicons guidelines](CONTRIBUTING.md) • [Supported by icon contributors](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22match%22)
 
 ## Requesting icons
