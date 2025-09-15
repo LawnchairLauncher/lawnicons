@@ -10,7 +10,6 @@ plugins {
     id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
     id("app.cash.licensee")
-    id("org.gradle.android.cache-fix")
 }
 
 val buildCommit = providers.exec {
