@@ -15,10 +15,10 @@ icons:
 code:
 - any:
   - changed-files:
-    - any-glob-to-any-file: ['app/**/*']
-- all:
-  - changed-files:
-    - any-glob-to-any-file: ['!app/assets/appfilter.xml', '!app/src/main/res/*/strings.xml']
+    - any-glob-to-any-file:
+      - 'app/**/*'
+      - '!app/assets/appfilter.xml'
+      - '!app/src/main/res/*/strings.xml'
 
 locale:
 - changed-files:
