@@ -45,17 +45,19 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
 
 Tips
+- Make no more than 5 icons at a time, as long as your PRs require rework.
+- Prioritize quality.
 - Use the Lawnicons style, rather than trying to reproduce the original exactly.
 - Practice on easy-to-make icons to understand the whole process.
 - See how other contributors have made pull requests (PRs).
-- Make no more than 5 icons at a time, as long as your PRs require rework.
-- Prioritize quality.
 
-[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png) • [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
+[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
-### TL;DR
+### Best way to learn the design guidelines
 
-Open your icon image in Figma and apply the guidelines point by point. This is the best way to learn and ensure a suitable icon design.
+Open your icon image in Figma and apply the guidelines point by point. For mindfulness, focus on the common issues.  
+
+[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
 
 ### Fundamentals
 
