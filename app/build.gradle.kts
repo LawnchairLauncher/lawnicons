@@ -142,7 +142,7 @@ dependencies {
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.graphics:graphics-shapes:1.0.1")
     implementation("androidx.navigation:navigation-compose:2.9.4")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.3")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 
