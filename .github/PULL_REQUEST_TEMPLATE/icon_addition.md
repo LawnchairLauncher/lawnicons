@@ -5,9 +5,6 @@
      In other cases, choose something else to avoid confusion.
      Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
 
-## Description
-<!-- Please provide a short summary of your pull request. -->
-
 ## Icons
 <!-- Please specify in the sections below which apps and packages you have worked on.
      Unnecessary sections can be deleted. -->
