@@ -13,12 +13,13 @@ icons:
     - app/assets/appfilter.xml
 
 code:
-- any:
-  - changed-files:
-    - any-glob-to-any-file: ['app/**/*']
 - all:
   - changed-files:
-    - any-glob-to-any-file: ['!app/assets/appfilter.xml', '!app/src/main/res/*/strings.xml']
+      - any-glob-to-any-file: 'app/**/*'
+  - changed-files:
+      - all-globs-to-any-file:
+          - '!app/assets/appfilter.xml'
+          - '!app/src/main/res/*/strings.xml'
 
 locale:
 - changed-files:
