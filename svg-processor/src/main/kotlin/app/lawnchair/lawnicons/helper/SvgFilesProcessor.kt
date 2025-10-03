@@ -112,25 +112,28 @@ object SvgFilesProcessor {
         )
         val drawableName: String = FilenameUtils.getBaseName(xmlPath)
         val resPath: String = FilenameUtils.getFullPath(xmlPath)
+
+        // build a <layer-list> instead of <adaptive-icon>
         val document = DocumentHelper.createDocument()
-        val root = document.addElement("adaptive-icon")
+        val root = document.addElement("layer-list")
             .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
-        root.addElement("background")
-            .addAttribute("android:drawable", bgColor)
-        root.addElement("foreground").addElement("layer-list").addElement("item")
-            .addElement("inset")
-            .addAttribute("android:inset", "32%")
+
+        // circular background (solid oval)
+        val bgItem = root.addElement("item")
+        val shape = bgItem.addElement("shape")
+            .addAttribute("android:shape", "oval")
+        shape.addElement("solid")
+            .addAttribute("android:color", bgColor)
+
+        // inset foreground drawable (adaptive scaling)
+        val fgItem = root.addElement("item")
+        val inset = fgItem.addElement("inset")
+            .addAttribute("android:inset", "24%") // same as original adaptive-icon
             .addAttribute(
                 "android:drawable",
                 "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
             )
-        root.addElement("monochrome").addElement("layer-list").addElement("item")
-            .addElement("inset")
-            .addAttribute("android:inset", "28%")
-            .addAttribute(
-                "android:drawable",
-                "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
-            )
+
         XmlUtil.writeDocumentToFile(document, "$resPath$drawableName.xml")
     }
 
