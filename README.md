@@ -55,10 +55,10 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 Whether you want to work on icons or solve development issues, please refer to our guidelines. 
 
-[Lawnicons guidelines](CONTRIBUTING.md) • [Supported by icon contributors](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22match%22)
+[Lawnicons guidelines](CONTRIBUTING.md)
 
 ## Requesting icons
 
 Icon requests are suspended. The collected requests await icon contributors.
 
-[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Get icons faster](https://github.com/LawnchairLauncher/lawnicons/issues/2973)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
