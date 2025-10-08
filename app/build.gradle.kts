@@ -125,6 +125,7 @@ licensee {
     allow(SpdxId.MIT)
 
     bundleAndroidAsset = true
+    androidAssetReportPath = "licenses.json"
 }
 
 dependencies {
