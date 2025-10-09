@@ -21,7 +21,7 @@ class OssLibraryRepositoryImpl @Inject constructor(private val application: Appl
     private val coroutineScope = MainScope()
 
     override val ossLibraries: StateFlow<List<OssLibrary>> = flow {
-        val jsonString = application.resources.assets.open("app/cash/licensee/artifacts.json")
+        val jsonString = application.resources.assets.open("licenses.json")
             .bufferedReader().use { it.readText() }
         val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
             .asSequence()
