@@ -57,6 +57,12 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 [Lawnicons guidelines](CONTRIBUTING.md)
 
+## Supporting
+
+Keep Lawnicons thriving by supporting our core contributors. The Lawnchair team handles maintenance, while [@x9136](https://github.com/x9136) creates new icons.
+
+[Lawnchair on Open Collective](https://opencollective.com/lawnchair) • [Support new icon creation](http://dalink.to/x9136)
+
 ## Requesting icons
 
 Icon requests are suspended. The collected requests await icon contributors.
