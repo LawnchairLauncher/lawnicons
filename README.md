@@ -65,6 +65,6 @@ Keep Lawnicons thriving by supporting our core contributors. The Lawnchair team 
 
 ## Requesting icons
 
-Icon requests are suspended. The collected requests await icon contributors.
+Icon requests are suspended. We are fulfilling the collected requests.
 
 [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
