@@ -65,6 +65,6 @@ Keep Lawnicons thriving by supporting our core contributors! The Lawnchair team 
 
 ## Requesting icons
 
-Open Lawnicons 2.15+ → Tap "Request icons" → Select icons → Tap "Request" → Send a request file to our email.
+Open Lawnicons 2.15+ → Tap "Request icons" → Select icons → Tap "Request" → Mail a request file to us.
 
 [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
