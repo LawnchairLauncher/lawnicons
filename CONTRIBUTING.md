@@ -98,7 +98,7 @@ All lines must be non-transparent black color: `#000000`.
 Core stroke weight: `12 px`  
 Minimal icons: `14 px`  
 Dense icons: `10 px`  
-Ellipses, rectangles and fine details: `10 px`, `8 px`, `6 px`  
+Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`  
 
 Tips
 - No margin of error.
@@ -123,21 +123,17 @@ Use `6–32 px` for `90°` angles. Refer to the original icon to select a value 
 
 ![](docs/images/quality-1-consistency.png)
 
-All icons should be outlined.
-
-If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
+All shapes should be outlined.
 
 **2 Visual balance**  
 
 ![](docs/images/quality-2-visual-balance.png)
 
-Sharp contrast occurs when there is a drastic change in a stroke weight without a smooth transition. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
+Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
 Tips
-- Avoid large differences between adjacent lines.
 - Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
-- Apply a `14 px` stroke for minimal icons.
-- Reduce the main stroke weight depending on an icon density.  
+- Change the main stroke weight depending on an icon density.  
 
 **3 Black spots**  
 
@@ -168,7 +164,7 @@ Tips
 
 ![](docs/images/quality-5-alignment.png)
 
-Icons should be centered, but shape-aware. For some icons, it’s not enough to focus on equal distances from the canvas borders, because they may look misaligned due to their shape. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
+Icons should be centered, but shape-aware. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
 
 **6 Text icons**  
 
