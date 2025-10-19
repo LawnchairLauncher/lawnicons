@@ -48,10 +48,22 @@ object AppfilterDiffCreator {
             .map {
                 it.attribute(DRAWABLE).value
             }
+
+        val filteredSvgs = currentAppFilterItems
+            // step 1: filter svgs from the previous version
+            .filterNot { previousDrawables.contains(it.attributeValue(DRAWABLE)) }
+
+        val filteredComponents = previousAppFilterItems
+            .map {
+                getPackageName(it.attribute(COMPONENT).value)
+            }
             .toSet()
 
-        val filteredElements = currentAppFilterItems
-            .filterNot { previousDrawables.contains(it.attributeValue(DRAWABLE)) }
+        val filteredElements = filteredSvgs
+            // step 2: filter component names that exist from the previous version
+            .filterNot { items ->
+                filteredComponents.contains(getPackageName(items.attributeValue(COMPONENT)))
+            }
 
         val outputFile = File(resDir, OUTPUT_FILE)
 
@@ -78,4 +90,10 @@ object AppfilterDiffCreator {
     private fun File.asXMLDocument(): Document {
         return SAXReader().apply { encoding = Charsets.UTF_8.name() }.read(this.inputStream())
     }
+}
+
+private fun getPackageName(componentString: String): String {
+    val componentInfoPrefixLength = "ComponentInfo{".length
+    val component = componentString.substring(componentInfoPrefixLength, componentString.length - 1)
+    return component.split("/").first()
 }
