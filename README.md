@@ -67,4 +67,4 @@ Your support powers our efforts: the Lawnchair team's ongoing maintenance and th
 
 Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
 
-[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Get icons faster](https://github.com/LawnchairLauncher/lawnicons/issues/2973)
