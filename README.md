@@ -55,7 +55,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 Whether you want to work on icons or solve development issues, please refer to our guidelines. 
 
-[Lawnicons guidelines](CONTRIBUTING.md) • [Icons for icons](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22icons+for+icons%22+) • [Discord](https://discord.gg/3x8qNWxgGZ)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Lawnicons guidelines](CONTRIBUTING.md) • [Icons for icons](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22icons+for+icons%22+) • [Discord](https://discord.gg/3x8qNWxgGZ)
 
 ## Supporting
 
@@ -67,8 +67,6 @@ Whether you want to work on icons or solve development issues, please refer to o
 ## Requesting icons
 
 Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
-
-[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
 #### Get icons faster
 
