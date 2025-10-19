@@ -18,6 +18,7 @@ package app.lawnchair.lawnicons.data.repository.iconrequest
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.drawable.AdaptiveIconDrawable
 import android.util.Log
 import android.util.Xml
 import androidx.core.graphics.drawable.toBitmap
@@ -72,7 +73,12 @@ internal suspend fun bundleIconRequestsToZip(
                         val entry = ZipEntry(fileName)
                         zos.putNextEntry(entry)
 
-                        val bitmap = iconInfo.drawable.toBitmap()
+                        val bitmap = if (iconInfo.drawable is AdaptiveIconDrawable) {
+                            AdaptiveIconBitmap.toBitmap(iconInfo.drawable)
+                        } else {
+                            iconInfo.drawable.toBitmap()
+                        }
+
                         val pngByteArray = bitmap.toByteArray()
                         zos.write(pngByteArray)
                         zos.closeEntry()
