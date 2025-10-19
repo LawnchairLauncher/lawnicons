@@ -59,7 +59,8 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 ## Supporting
 
-Your support powers our efforts: the Lawnchair team's ongoing maintenance and the creation of community-requested icons by [@x9136](https://github.com/x9136).
+> [!IMPORTANT]
+> Your support powers our efforts: the Lawnchair team's ongoing maintenance and the creation of community-requested icons by [@x9136](https://github.com/x9136).
 
 [Support Lawnchair team](https://opencollective.com/lawnchair) • [Support requested icon creation](http://dalink.to/x9136)
 
@@ -67,4 +68,14 @@ Your support powers our efforts: the Lawnchair team's ongoing maintenance and th
 
 Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
 
-[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Get icons faster](https://github.com/LawnchairLauncher/lawnicons/issues/2973)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+
+#### Get icons faster
+
+Unpopular icons can take years to appear. If you need one earlier, here's how.
+- Study our guidelines and contribute missing icons.
+- Receive 1 icon out of turn for 2 rebranding reports.
+- Fix bugs and resolve issues. Reward scale with issue impact and complexity, so it's better to discuss it first.
+
+[Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=icon_redesign.yml) • [Contributing code guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-code)
+
