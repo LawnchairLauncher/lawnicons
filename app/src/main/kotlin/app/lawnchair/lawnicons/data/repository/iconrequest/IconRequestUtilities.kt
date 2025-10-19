@@ -74,7 +74,16 @@ internal suspend fun bundleIconRequestsToZip(
                         zos.putNextEntry(entry)
 
                         val bitmap = if (iconInfo.drawable is AdaptiveIconDrawable) {
-                            AdaptiveIconBitmap.toBitmap(iconInfo.drawable)
+                            try {
+                                AdaptiveIconBitmap.toBitmap(iconInfo.drawable)
+                            } catch (e: Exception) {
+                                Log.e(
+                                    TAG,
+                                    "Failed to convert adaptive icon to bitmap for ${iconInfo.label}, using fallback",
+                                    e,
+                                )
+                                iconInfo.drawable.toBitmap()
+                            }
                         } else {
                             iconInfo.drawable.toBitmap()
                         }
