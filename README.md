@@ -55,16 +55,25 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 Whether you want to work on icons or solve development issues, please refer to our guidelines. 
 
-[Lawnicons guidelines](CONTRIBUTING.md)
+[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Lawnicons guidelines](CONTRIBUTING.md) • [Icons for icons](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3A%22icons+for+icons%22+) • [Discord](https://discord.gg/3x8qNWxgGZ)
 
 ## Supporting
 
-Keep Lawnicons thriving by supporting our core contributors. The Lawnchair team handles maintenance, while [@x9136](https://github.com/x9136) creates new icons.
+> [!IMPORTANT]
+> Your support powers our efforts: the Lawnchair team's ongoing maintenance and the creation of community-requested icons by [@x9136](https://github.com/x9136).
 
-[Lawnchair on Open Collective](https://opencollective.com/lawnchair) • [Support new icon creation](http://dalink.to/x9136)
+[Support Lawnchair team](https://opencollective.com/lawnchair) • [Support requested icon creation](http://dalink.to/x9136)
 
 ## Requesting icons
 
-Icon requests are suspended. We are fulfilling the collected requests.
+Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
 
-[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+#### Get icons faster
+
+Unpopular icons can take years to appear. If you need one earlier, here's how.
+- Study our guidelines and contribute missing icons.
+- Receive 1 icon out of turn for 2 rebranding reports.
+- Fix bugs and resolve issues. Reward scale with issue impact and complexity, so it's better to discuss it first.
+
+[Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=icon_redesign.yml) • [Contributing code guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-code)
+

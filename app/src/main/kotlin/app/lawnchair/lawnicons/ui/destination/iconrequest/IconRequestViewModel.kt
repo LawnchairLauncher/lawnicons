@@ -71,7 +71,7 @@ class IconRequestViewModel @Inject constructor(
             if (!currentList.remove(icon)) {
                 currentList.add(icon)
             }
-            currentList
+            currentList.sortedBy { systemIconInfo -> systemIconInfo.label }
         }
     }
 
