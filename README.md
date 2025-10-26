@@ -67,13 +67,3 @@ Whether you want to work on icons or solve development issues, please refer to o
 ## Requesting icons
 
 Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
-
-#### Get icons faster
-
-Unpopular icons can take years to appear. If you need one earlier, here's how.
-- Study our guidelines and contribute missing icons.
-- Receive 1 icon out of turn for 2 rebranding reports.
-- Fix bugs and resolve issues. Reward scale with issue impact and complexity, so it's better to discuss it first.
-
-[Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=icon_redesign.yml) • [Contributing code guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-code)
-
