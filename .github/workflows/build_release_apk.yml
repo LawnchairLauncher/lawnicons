@@ -39,7 +39,7 @@ jobs:
       - name: Build release APK
         run: ./gradlew clean app:assembleRelease
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Release APK
           path: app/build/outputs/apk/app/release/*.apk
@@ -61,7 +61,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install gitpython requests
       - name: Download artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Release APK
           path: artifacts/release-apk
