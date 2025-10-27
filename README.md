@@ -60,9 +60,9 @@ Whether you want to work on icons or solve development issues, please refer to o
 ## Supporting
 
 > [!IMPORTANT]
-> Your support powers our efforts: the Lawnchair team's ongoing maintenance and the creation of community-requested icons by [@x9136](https://github.com/x9136).
+> Sustain Lawnicons by backing the Lawnchair team.
 
-[Support Lawnchair team](https://opencollective.com/lawnchair) • [Support requested icon creation](http://dalink.to/x9136)
+[Support Lawnchair team](https://opencollective.com/lawnchair)
 
 ## Requesting icons
 
