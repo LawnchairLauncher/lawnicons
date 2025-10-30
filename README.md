@@ -67,3 +67,5 @@ Whether you want to work on icons or solve development issues, please refer to o
 ## Requesting icons
 
 Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
+
+The intended fulfiller of your icon request is you.
