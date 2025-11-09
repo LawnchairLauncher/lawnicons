@@ -59,7 +59,7 @@ fun NewIconsCard(
                 .padding(start = 12.dp),
         ) {
             Icon(
-                painterResource(R.drawable.new_releases),
+                painterResource(R.drawable.ic_new_releases),
                 contentDescription = null,
             )
             Spacer(

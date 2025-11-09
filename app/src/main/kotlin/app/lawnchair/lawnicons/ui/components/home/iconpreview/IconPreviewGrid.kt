@@ -227,7 +227,7 @@ fun AppBarListItem(
             ) {
                 if (!LocalInspectionMode.current) {
                     Image(
-                        painter = painterResource(R.drawable.lawnicons_logo),
+                        painter = painterResource(R.drawable.ic_lawnicons),
                         contentDescription = stringResource(id = R.string.app_name),
                         modifier = Modifier
                             .size(36.dp)

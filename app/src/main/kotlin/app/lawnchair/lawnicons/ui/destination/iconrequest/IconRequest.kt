@@ -30,10 +30,6 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.KeyboardArrowDown
-import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -207,7 +203,7 @@ fun IconRequest(
                     },
                     startIcon = {
                         Icon(
-                            imageVector = Icons.Rounded.Email,
+                            painter = painterResource(R.drawable.ic_mail),
                             contentDescription = null,
                         )
                     },
@@ -257,7 +253,7 @@ private fun IconRequestButton(
                     enabled = enabled,
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.icon_request_app),
+                        painter = painterResource(R.drawable.ic_icon_request),
                         modifier = Modifier.size(SplitButtonDefaults.LeadingIconSize),
                         contentDescription = null,
                     )
@@ -289,7 +285,7 @@ private fun IconRequestButton(
                             label = "Trailing icon rotation",
                         )
                     Icon(
-                        Icons.Rounded.KeyboardArrowDown,
+                        painterResource(R.drawable.ic_keyboard_arrow_down),
                         modifier =
                         Modifier
                             .size(SplitButtonDefaults.TrailingIconSize)
@@ -310,7 +306,7 @@ private fun IconRequestButton(
                         title = stringResource(R.string.share_file),
                         onClick = onShareFile,
                         icon = {
-                            Icon(Icons.Rounded.Share, contentDescription = null)
+                            Icon(painterResource(R.drawable.ic_share), contentDescription = null)
                         },
                     ),
                     MenuItemRow(
@@ -318,7 +314,7 @@ private fun IconRequestButton(
                         onClick = onSaveFile,
                         icon = {
                             Icon(
-                                painterResource(R.drawable.save_app_component),
+                                painterResource(R.drawable.ic_save),
                                 contentDescription = null,
                             )
                         },
@@ -328,7 +324,7 @@ private fun IconRequestButton(
                         onClick = onCopyComponents,
                         icon = {
                             Icon(
-                                painterResource(R.drawable.copy_to_clipboard),
+                                painterResource(R.drawable.ic_copy),
                                 contentDescription = null,
                             )
                         },

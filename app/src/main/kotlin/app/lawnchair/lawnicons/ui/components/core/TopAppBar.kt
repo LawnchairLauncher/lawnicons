@@ -1,8 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.core
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.LargeFlexibleTopAppBar
@@ -14,7 +12,9 @@ import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
@@ -66,8 +66,8 @@ private fun SmallTopAppBarPreview() {
         TopAppBar(
             navigationIcon = {
                 NavigationIconButton(
+                    painter = painterResource(R.drawable.ic_back),
                     onClick = {},
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                     size = 40.dp,
                     modifier = Modifier.padding(horizontal = 4.dp),
                 )
@@ -87,8 +87,8 @@ private fun LargeTopAppBarPreview() {
         TopAppBar(
             navigationIcon = {
                 NavigationIconButton(
+                    painter = painterResource(R.drawable.ic_back),
                     onClick = {},
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                     size = 40.dp,
                     modifier = Modifier.padding(horizontal = 4.dp),
                 )

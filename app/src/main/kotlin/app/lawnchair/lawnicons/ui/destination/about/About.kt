@@ -28,8 +28,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -114,10 +112,14 @@ private fun About(
                         ),
                 ) {
                     if (LocalInspectionMode.current) {
-                        Icon(Icons.Rounded.Star, contentDescription = null, modifier = Modifier.size(72.dp))
+                        Icon(
+                            painterResource(R.drawable.ic_check),
+                            contentDescription = null,
+                            modifier = Modifier.size(72.dp),
+                        )
                     } else {
                         Image(
-                            painter = painterResource(R.drawable.lawnicons_logo),
+                            painter = painterResource(R.drawable.ic_lawnicons),
                             contentDescription = stringResource(id = R.string.app_name),
                             modifier = Modifier
                                 .size(72.dp),

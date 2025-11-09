@@ -20,10 +20,6 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.clearText
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
-import androidx.compose.material.icons.rounded.Close
-import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.ExpandedDockedSearchBar
 import androidx.compose.material3.ExpandedFullScreenSearchBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -34,6 +30,7 @@ import androidx.compose.material3.SearchBarValue
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
@@ -69,11 +66,11 @@ fun SearchBarInputField(
         leadingIcon = {
             if (searchBarState.targetValue == SearchBarValue.Expanded) {
                 NavigationIconButton(
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
+                    painter = painterResource(R.drawable.ic_back),
                     onClick = onBack,
                 )
             } else {
-                Icon(Icons.Rounded.Search, contentDescription = null)
+                Icon(painterResource(R.drawable.ic_search), contentDescription = null)
             }
         },
         trailingIcon = {
@@ -83,7 +80,7 @@ fun SearchBarInputField(
                 } else {
                     NavigationIconButton(
                         onClick = { textFieldState.clearText() },
-                        imageVector = Icons.Rounded.Close,
+                        painter = painterResource(R.drawable.ic_close),
                     )
                 }
             }
