@@ -17,10 +17,8 @@
 package app.lawnchair.lawnicons.ui.destination.about
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
@@ -48,12 +46,10 @@ import androidx.navigation.compose.composable
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
-import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.CardHeader
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import kotlinx.serialization.Serializable
 
@@ -140,25 +136,6 @@ private fun About(
                     )
                 }
             }
-            item {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 16.dp),
-                    horizontalArrangement = Arrangement.SpaceEvenly,
-                ) {
-                    externalLinks.forEach {
-                        IconLink(
-                            iconResId = it.iconResId,
-                            label = stringResource(id = it.name),
-                            url = it.url,
-                        )
-                    }
-                }
-            }
-            item(contentType = ColumnTypes.SPACER) {
-                Spacer(Modifier.height(16.dp))
-            }
             item(contentType = ColumnTypes.HEADER) {
                 CardHeader(stringResource(id = R.string.core_contributors))
             }
@@ -228,19 +205,6 @@ private fun About(
         }
     }
 }
-
-private val externalLinks = listOf(
-    ExternalLink(
-        iconResId = R.drawable.github_foreground,
-        name = R.string.github,
-        url = Constants.GITHUB,
-    ),
-    ExternalLink(
-        iconResId = R.drawable.feedback_icon,
-        name = R.string.send_feedback,
-        url = Constants.FEEDBACK_FORM,
-    ),
-)
 
 private val coreContributors = listOf(
     Contributor(

@@ -61,6 +61,22 @@ fun BoxScope.HomeBottomToolbar(
         },
         content = {
             SimpleTooltipBox(
+                label = stringResource(id = R.string.discord),
+            ) {
+                IconButton(
+                    onClick = {
+                        context.visitUrl(Constants.DISCORD)
+                    },
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_discord),
+                        contentDescription = stringResource(id = R.string.github),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
+
+            SimpleTooltipBox(
                 label = stringResource(id = R.string.github),
             ) {
                 IconButton(
@@ -69,7 +85,7 @@ fun BoxScope.HomeBottomToolbar(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.github_foreground),
+                        painter = painterResource(id = R.drawable.ic_github),
                         contentDescription = stringResource(id = R.string.github),
                         modifier = Modifier.requiredSize(24.dp),
                     )
