@@ -18,11 +18,12 @@
     <!-- About page -->
     <string name="about">Over</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">Pictogram aanvraagformulier</string>
     <!-- Send feedback form link -->
-    <string name="send_feedback">Send feedback</string>
+    <string name="send_feedback">Feedback sturen</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Bijdragen</string>
@@ -66,26 +67,26 @@
     <string name="copied_text">Tekst gekopieerd</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Ontbrekende pictogrammen op onderste balk aanvragen</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
+    <string name="icon_requests_suspended">Pictogramverzoeken zijn opgeschort. Bezoek ons op GitHub als u pictogrammen wilt bijdragen.</string>
     <string name="snackbar_request_too_large">Gegevens voor pictogramaanvraag gekopieerd naar klembord. Plak de gegevens in het aanvraagformulier.</string>
     <string name="snackbar_use_fallback_link">Formulier openen</string>
     <!-- Missing icons screen -->
-    <string name="missing_icons">Missing icons</string>
-    <string name="clear_all">Clear selection</string>
+    <string name="missing_icons">Ontbrekende pictogrammen</string>
+    <string name="clear_all">Selectie wissen</string>
     <string name="select_all">Alles selecteren</string>
-    <string name="request_icons_button">Request</string>
-    <string name="show_options_sheet">Show options sheet</string>
-    <string name="toggle_button_expanded">Expanded</string>
-    <string name="toggle_button_collapsed">Collapsed</string>
-    <string name="toggle_button_content_description">Toggle button</string>
-    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
-    <string name="share_file">Share file</string>
-    <string name="save_file">Save file</string>
-    <string name="copy_components">Copy app components</string>
-    <string name="toast_file_saved_successful">Successfully saved file</string>
-    <string name="toast_file_save_error">Error saving file</string>
-    <string name="toast_file_zip_error">Could not create request file</string>
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="request_icons_button">Aanvragen</string>
+    <string name="show_options_sheet">Optieblad weergeven</string>
+    <string name="toggle_button_expanded">Uitgebreid</string>
+    <string name="toggle_button_collapsed">Ingeklapt</string>
+    <string name="toggle_button_content_description">Aan/uit-knop</string>
+    <string name="icon_request_mail_hint">Mail een verzoekbestand naar\u0020</string>
+    <string name="share_file">Bestand delen</string>
+    <string name="save_file">Bestand opslaan</string>
+    <string name="copy_components">App-onderdelen kopiëren</string>
+    <string name="toast_file_saved_successful">Bestand met succes opgeslagen</string>
+    <string name="toast_file_save_error">Fout bij opslaan bestand</string>
+    <string name="toast_file_zip_error">Kan het aanvraagbestand niet aanmaken</string>
+    <string name="toast_no_app_available">Geen app om deze actie af te handelen</string>
     <!-- New icons screen -->
     <string name="new_icons_in_version">Nieuwe pictogrammen in v%1$s</string>
     <string name="new_icons">Nieuwe pictogrammen (%1$s)</string>

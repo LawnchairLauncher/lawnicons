@@ -128,19 +128,18 @@ licensee {
 
 dependencies {
     implementation("androidx.core:core-ktx:1.17.0")
-    implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation("androidx.core:core-splashscreen:1.2.0")
     implementation("androidx.activity:activity-compose:1.11.0")
-    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
+    implementation(platform("androidx.compose:compose-bom:2025.11.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.ui:ui-util")
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
-    implementation("androidx.compose.material:material-icons-core-android")
-    implementation("androidx.compose.material3:material3:1.4.0-alpha18")
+    implementation("androidx.compose.material3:material3:1.5.0-alpha08")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.graphics:graphics-shapes:1.1.0")
-    implementation("androidx.navigation:navigation-compose:2.9.5")
+    implementation("androidx.navigation:navigation-compose:2.9.6")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")

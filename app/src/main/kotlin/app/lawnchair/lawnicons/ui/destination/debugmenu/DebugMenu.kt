@@ -148,7 +148,7 @@ fun DebugMenu(
                             },
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.copy_to_clipboard),
+                                painter = painterResource(R.drawable.ic_copy),
                                 contentDescription = null,
                             )
                         }
@@ -186,7 +186,7 @@ fun DebugMenu(
                             },
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.copy_to_clipboard),
+                                painter = painterResource(R.drawable.ic_copy),
                                 contentDescription = null,
                             )
                         }

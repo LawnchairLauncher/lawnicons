@@ -2,15 +2,15 @@ package app.lawnchair.lawnicons.ui.components
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Star
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -50,7 +50,7 @@ fun ContributorRow(
         onClick = onClick,
         startIcon = {
             if (LocalInspectionMode.current) {
-                Icon(Icons.Rounded.Star, contentDescription = null)
+                Icon(painterResource(R.drawable.ic_check), contentDescription = null)
             } else {
                 AsyncImage(
                     contentDescription = name,

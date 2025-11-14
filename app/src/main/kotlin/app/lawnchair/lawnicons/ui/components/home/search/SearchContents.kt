@@ -19,8 +19,6 @@ import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -66,7 +64,7 @@ fun SearchContents(
                 leadingIcon = {
                     AnimatedVisibility(searchMode == SearchMode.LABEL) {
                         Icon(
-                            imageVector = Icons.Rounded.Check,
+                            painter = painterResource(R.drawable.ic_check),
                             contentDescription = null,
                         )
                     }
@@ -83,7 +81,7 @@ fun SearchContents(
                 leadingIcon = {
                     AnimatedVisibility(searchMode == SearchMode.COMPONENT) {
                         Icon(
-                            imageVector = Icons.Rounded.Check,
+                            painter = painterResource(R.drawable.ic_check),
                             contentDescription = null,
                         )
                     }
@@ -100,7 +98,7 @@ fun SearchContents(
                 leadingIcon = {
                     AnimatedVisibility(searchMode == SearchMode.DRAWABLE) {
                         Icon(
-                            imageVector = Icons.Rounded.Check,
+                            painter = painterResource(R.drawable.ic_check),
                             contentDescription = null,
                         )
                     }

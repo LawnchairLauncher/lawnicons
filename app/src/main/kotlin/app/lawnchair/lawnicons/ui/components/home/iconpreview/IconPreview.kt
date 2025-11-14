@@ -23,11 +23,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Call
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -45,6 +40,7 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -121,10 +117,10 @@ fun IconPreview(
     ) {
         if (LocalInspectionMode.current) {
             val icon = when (iconInfo.drawableId) {
-                1 -> Icons.Rounded.Email
-                2 -> Icons.Rounded.Search
-                3 -> Icons.Rounded.Call
-                else -> Icons.Rounded.Warning
+                1 -> painterResource(R.drawable.ic_check)
+                2 -> painterResource(R.drawable.ic_close)
+                3 -> painterResource(R.drawable.ic_search)
+                else -> painterResource(R.drawable.ic_back)
             }
             Icon(
                 icon,

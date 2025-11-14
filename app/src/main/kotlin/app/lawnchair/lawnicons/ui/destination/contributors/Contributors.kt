@@ -156,7 +156,7 @@ private fun ContributorList(
                         contentAlignment = Alignment.Center,
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.github_foreground),
+                            painter = painterResource(R.drawable.ic_github),
                             contentDescription = null,
                             modifier = Modifier
                                 .size(24.dp),
