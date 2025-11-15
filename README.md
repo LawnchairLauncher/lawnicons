@@ -68,4 +68,4 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons.
 
-Our contributors design their own icons, but everyone can participate in our Discord giveaway to get a few icons earlier.
+The intended fulfiller of your icon request is you, but everyone can participate in our Discord giveaway to get a few icons earlier.
