@@ -22,15 +22,6 @@ body:
        To verify your developer status, please provide a public link to your application (GitHub, Google Play, etc).
 
   - type: textarea
-    id: icon
-    validations:
-      required: true
-    attributes:
-      label: Icon image
-      description: |
-        A high-quality image of the current icon will simplify the process.
-
-  - type: textarea
     id: components
     validations:
       required: true
@@ -38,3 +29,12 @@ body:
       label: Components
       description: |
         Please specify which app components the icon should be linked with (package/activity).
+
+  - type: textarea
+    id: icon
+    validations:
+      required: true
+    attributes:
+      label: Icon image
+      description: |
+        A high-quality image of the current icon will simplify the process.
