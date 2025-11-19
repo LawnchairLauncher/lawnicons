@@ -12,7 +12,7 @@ plugins {
     id("com.google.devtools.ksp") version "2.3.2" apply false
     id("com.google.dagger.hilt.android") version "2.57.2" apply false
     id("app.cash.licensee") version "1.14.1" apply false
-    id("com.diffplug.spotless") version "8.0.0" apply false
+    id("com.diffplug.spotless") version "8.1.0" apply false
 }
 
 allprojects {
