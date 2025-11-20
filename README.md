@@ -62,14 +62,18 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 Whether you want to work on icons or solve development issues, please refer to our guidelines. 
 
-[Lawnicons guidelines](CONTRIBUTING.md) • [Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing) • [Discord](https://discord.gg/3x8qNWxgGZ)
+[Lawnicons guidelines](CONTRIBUTING.md) • [Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
 ## Requesting icons
 
 `Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons`
 
-The intended fulfiller of your icon request is you, but everyone can participate in our Discord giveaway to get a few icons earlier. Android developers can request an icon for their app through issues (10,000 unique users are required).
+The intended fulfiller of your icon request is you. Android devs can request support for their app via issues.
 
-[Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
+> [!TIP]
+> Join our Discord giveaway to get a few icons earlier.
+
+[Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml) • [#lawnicons-giveaways](https://discord.com/channels/803299970169700402/1436369447899107473)
+
 
 
