@@ -60,7 +60,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-Whether you want to work on icons or solve development issues, please refer to our guidelines. 
+Whether you want to work on icons or solve development issues, please refer to our guidelines. Stop at contributing 5 icons at a time to avoid unnecessary work.
 
 [Lawnicons guidelines](CONTRIBUTING.md) • [Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
 
