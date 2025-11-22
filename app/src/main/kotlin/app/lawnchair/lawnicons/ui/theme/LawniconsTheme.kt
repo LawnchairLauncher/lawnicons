@@ -253,6 +253,7 @@ fun LawniconsTheme(
         }
 
         darkTheme -> darkScheme
+
         else -> lightScheme
     }
 

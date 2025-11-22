@@ -24,9 +24,9 @@ allprojects {
         }
         kotlin {
             target("src/**/*.kt")
-            ktlint().customRuleSets(
+            ktlint("1.8.0").customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.4.27",
+                    "io.nlopez.compose.rules:ktlint:0.4.28",
                 ),
             ).editorConfigOverride(
                 mapOf(
@@ -37,7 +37,7 @@ allprojects {
             )
         }
         kotlinGradle {
-            ktlint()
+            ktlint("1.8.0")
         }
     }
 
