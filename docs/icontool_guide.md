@@ -3,7 +3,7 @@
 
 For Mac/Linux users, you can simply type `./icontool` to run the program. Otherwise, you must run `python3 ./icontool.py`.
 
-[View on YouTube](https://youtu.be/EAvYelOK5Nw?t=266)
+[View on YouTube](https://youtu.be/UXic1zy-CiQ?t=98) 
 
 ## Summary of usage
 ```console
