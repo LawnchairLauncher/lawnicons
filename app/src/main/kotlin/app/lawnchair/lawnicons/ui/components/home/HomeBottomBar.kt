@@ -5,8 +5,6 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.requiredSize
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
@@ -53,13 +51,29 @@ fun BoxScope.HomeBottomToolbar(
                     onClick = onExpandSearch,
                 ) {
                     Icon(
-                        imageVector = Icons.Rounded.Search,
+                        painter = painterResource(R.drawable.ic_search),
                         contentDescription = stringResource(id = R.string.search),
                     )
                 }
             }
         },
         content = {
+            SimpleTooltipBox(
+                label = stringResource(id = R.string.discord),
+            ) {
+                IconButton(
+                    onClick = {
+                        context.visitUrl(Constants.DISCORD)
+                    },
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_discord),
+                        contentDescription = stringResource(id = R.string.github),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
+
             SimpleTooltipBox(
                 label = stringResource(id = R.string.github),
             ) {
@@ -69,7 +83,7 @@ fun BoxScope.HomeBottomToolbar(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.github_foreground),
+                        painter = painterResource(id = R.drawable.ic_github),
                         contentDescription = stringResource(id = R.string.github),
                         modifier = Modifier.requiredSize(24.dp),
                     )
@@ -89,7 +103,7 @@ fun BoxScope.HomeBottomToolbar(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.icon_request_app),
+                        painter = painterResource(id = R.drawable.ic_icon_request),
                         contentDescription = stringResource(id = R.string.request_icons),
                         modifier = Modifier.requiredSize(24.dp),
                     )

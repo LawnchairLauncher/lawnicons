@@ -30,10 +30,6 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.KeyboardArrowDown
-import androidx.compose.material.icons.rounded.Share
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Checkbox
@@ -56,6 +52,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
@@ -72,7 +69,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
@@ -83,6 +80,7 @@ import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.util.Constants
 import coil.compose.AsyncImage
+import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -205,7 +203,7 @@ fun IconRequest(
                     },
                     startIcon = {
                         Icon(
-                            imageVector = Icons.Rounded.Email,
+                            painter = painterResource(R.drawable.ic_mail),
                             contentDescription = null,
                         )
                     },
@@ -255,7 +253,7 @@ private fun IconRequestButton(
                     enabled = enabled,
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.icon_request_app),
+                        painter = painterResource(R.drawable.ic_icon_request),
                         modifier = Modifier.size(SplitButtonDefaults.LeadingIconSize),
                         contentDescription = null,
                     )
@@ -287,7 +285,7 @@ private fun IconRequestButton(
                             label = "Trailing icon rotation",
                         )
                     Icon(
-                        Icons.Rounded.KeyboardArrowDown,
+                        painterResource(R.drawable.ic_keyboard_arrow_down),
                         modifier =
                         Modifier
                             .size(SplitButtonDefaults.TrailingIconSize)
@@ -308,7 +306,7 @@ private fun IconRequestButton(
                         title = stringResource(R.string.share_file),
                         onClick = onShareFile,
                         icon = {
-                            Icon(Icons.Rounded.Share, contentDescription = null)
+                            Icon(painterResource(R.drawable.ic_share), contentDescription = null)
                         },
                     ),
                     MenuItemRow(
@@ -316,7 +314,7 @@ private fun IconRequestButton(
                         onClick = onSaveFile,
                         icon = {
                             Icon(
-                                painterResource(R.drawable.save_app_component),
+                                painterResource(R.drawable.ic_save),
                                 contentDescription = null,
                             )
                         },
@@ -326,7 +324,7 @@ private fun IconRequestButton(
                         onClick = onCopyComponents,
                         icon = {
                             Icon(
-                                painterResource(R.drawable.copy_to_clipboard),
+                                painterResource(R.drawable.ic_copy),
                                 contentDescription = null,
                             )
                         },
@@ -374,6 +372,7 @@ fun ResponsiveMenu(
         val sheetState = rememberModalBottomSheetState(
             skipPartiallyExpanded = true,
         )
+        val coroutineScope = rememberCoroutineScope()
         ModalBottomSheet(
             onDismissRequest = onDismissRequest,
             sheetState = sheetState,
@@ -383,7 +382,12 @@ fun ResponsiveMenu(
                 items(menuItems) {
                     SimpleListRow(
                         label = it.title,
-                        onClick = it.onClick,
+                        onClick = {
+                            it.onClick()
+                            coroutineScope.launch {
+                                sheetState.hide()
+                            }
+                        },
                         startIcon = it.icon,
                     )
                 }

@@ -63,85 +63,81 @@ Open your icon image in Figma and apply the guidelines point by point. For mindf
 
 [View on YouTube](https://youtu.be/XO-5IwowonQ)
 
-**1 Canvas**  
+#### 1 Canvas
 
-![](docs/images/fundamentals-1-canvas.png)
+<img src="docs/images/fundamentals-1-canvas.png" alt="1 Canvas" height="200" />
 
 `192 × 192 px`. Use the correct canvas size to create a safe zone around icons.  
 
-**2 Abstract icons**  
+#### 2 Abstract icons
 
-![](docs/images/fundamentals-2-abstract-icons.png)
+<img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
 `160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`.  
 
 Note: Stroke weight and position affect icon size in Figma.  
 
-**3 Square icons**  
+#### 3 Square icons
 
-![](docs/images/fundamentals-3-square-icons.png)
+<img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
 `154 × 154 px`. These are icons with `50%` or more of the edges running along the square.  
 
 Note: Stroke weight and position affect icon size in Figma.  
 
-**4 Color**  
+#### 4 Color
 
-![](docs/images/fundamentals-4-color.png)
+<img src="docs/images/fundamentals-4-color.png" alt="4 Color" height="200" />
 
 All lines must be non-transparent black color: `#000000`.  
 
-**5 Stroke weights**  
+#### 5 Stroke weights
 
-![](docs/images/fundamentals-5-stroke-weights.png)
+<img src="docs/images/fundamentals-5-stroke-weights.png" alt="5 Stroke weights" height="200" />
 
 Core stroke weight: `12 px`  
 Minimal icons: `14 px`  
 Dense icons: `10 px`  
-Ellipses, rectangles and fine details: `10 px`, `8 px`, `6 px`  
+Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`  
 
 Tips
 - No margin of error.
 - Don’t use a fill.
 - Remember to adjust the size of icons when you change the stroke weights. 
 
-**6 Caps and joints**  
+#### 6 Caps and joints
 
-![](docs/images/fundamentals-6-caps-and-joints.png)
+<img src="docs/images/fundamentals-6-caps-and-joints.png" alt="6 Caps and joints" height="200" />
 
 Caps and joints should be rounded.  
 
-**7 Corner radius**  
+#### 7 Corner radius
 
-![](docs/images/fundamentals-7-corner-radius.png)
+<img src="docs/images/fundamentals-7-corner-radius.png" alt="7 Corner radius" height="200" />
 
 Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
 
 ### Quality
 
-**1 Consistency**  
+#### 1 Consistency
 
-![](docs/images/quality-1-consistency.png)
+<img src="docs/images/quality-1-consistency.png" alt="*1 Consistency" height="200" />
 
-All icons should be outlined.
+All shapes should be outlined.
 
-If necessary, you can use small shapes that mimic a fill but are made with a stroke. For instance, `8 × 8 px` ellipses with a `8 px` stroke. Ensure that any elements don’t overwhelm the overall icon design and align with the outlined style.  
+#### 2 Visual balance
 
-**2 Visual balance**  
+<img src="docs/images/quality-2-visual-balance.png" alt="2 Visual balance" height="200" />
 
-![](docs/images/quality-2-visual-balance.png)
-
-Sharp contrast occurs when there is a drastic change in a stroke weight without a smooth transition. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
+Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
 Tips
-- Avoid large differences between adjacent lines.
 - Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
-- Apply a `14 px` stroke for minimal icons.
-- Reduce the main stroke weight depending on an icon density.  
+- Change the main stroke weight depending on an icon density.  
 
-**3 Black spots**  
+#### 3 Black spots
 
-![](docs/images/quality-3-black-spots.png)
+<img src="docs/images/quality-3-black-spots.png" alt="3 Black spots" height="200" />
 
 Avoid black spots as much as possible.
 
@@ -150,9 +146,9 @@ Tips
 - Reduce stroke weights.
 - Simplify or redraw.  
 
-**4 Excessive density**  
+#### 4 Excessive density
 
-![](docs/images/quality-4-excessive-density.png)
+<img src="docs/images/quality-4-excessive-density.png" alt="4 Excessive density" height="200" />
 
 Keep at least `8 px` between lines.
 
@@ -164,23 +160,23 @@ Tips
 - Enlarge original icons to make the main features easier to draw.
 - Simplify or redraw.
 
-**5 Alignment**  
+#### 5 Alignment
 
-![](docs/images/quality-5-alignment.png)
+<img src="docs/images/quality-5-alignment.png" alt="5 Alignment" height="200" />
 
-Icons should be centered, but shape-aware. For some icons, it’s not enough to focus on equal distances from the canvas borders, because they may look misaligned due to their shape. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
+Icons should be centered, but shape-aware. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
 
-**6 Text icons**  
+#### 6 Text icons
 
-![](docs/images/quality-6-text-icons.png)
+<img src="docs/images/quality-6-text-icons.png" alt="6 Text icons" height="200" />
 
 Text longer than `3` letters in `1` line usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
-**7 Complex icons**  
+#### 7 Complex icons
 
-![](docs/images/quality-7-complex-icons.png)
+<img src="docs/images/quality-7-complex-icons.png" alt="7 Complex icons" height="200" />
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
@@ -192,15 +188,15 @@ Sources for creating a recognizable icon
 - Essence of an app or a game.
 - Combination of recognizable features and your own ideas.  
 
-**8 Minimal icons**  
+#### 8 Minimal icons
 
-![](docs/images/quality-8-minimal-icons.png)
+<img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
 
 Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
 
-**9 Version badges**  
+#### 9 Version badges
 
-![](docs/images/quality-9-version-badges.png)
+<img src="docs/images/quality-9-version-badges.png" alt="9 Version badges" height="200" />
 
 Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
 
@@ -336,7 +332,7 @@ Tips
 - Add missing app components to icons that are identical to the originals.
 - Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[View on YouTube](https://youtu.be/EAvYelOK5Nw) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [View on YouTube](https://youtu.be/UXic1zy-CiQ) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 

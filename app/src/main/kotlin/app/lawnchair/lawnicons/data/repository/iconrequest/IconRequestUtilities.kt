@@ -18,6 +18,7 @@ package app.lawnchair.lawnicons.data.repository.iconrequest
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.drawable.AdaptiveIconDrawable
 import android.util.Log
 import android.util.Xml
 import androidx.core.graphics.drawable.toBitmap
@@ -44,6 +45,7 @@ internal suspend fun bundleIconRequestsToZip(
         return null
     }
 
+    val uniqueIconInfoList = createUniqueIconInfoList(iconRequestList)
     val outputDir = context.cacheDir
     val outputFile = File(outputDir, zipFileName)
     var listFile: File? = null
@@ -62,17 +64,33 @@ internal suspend fun bundleIconRequestsToZip(
                 Log.d(TAG, "Successfully created list file at ${listFile!!.absolutePath}")
 
                 FileWriter(appfilterFile).use { writer ->
-                    iconRequestList.toAppFilterXML(writer)
+                    uniqueIconInfoList.toAppFilterXML(writer)
                 }
                 Log.d(TAG, "Successfully created appfilter file at ${appfilterFile!!.absolutePath}")
 
                 ZipOutputStream(FileOutputStream(outputFile)).use { zos ->
-                    iconRequestList.forEach { iconInfo ->
-                        val fileName = "${normalizeFileName(iconInfo.label)}.png"
+                    uniqueIconInfoList.forEach { uniqueInfo ->
+                        val (iconInfo, drawableName) = uniqueInfo
+                        val fileName = "$drawableName.png"
+
                         val entry = ZipEntry(fileName)
                         zos.putNextEntry(entry)
 
-                        val bitmap = iconInfo.drawable.toBitmap()
+                        val bitmap = if (iconInfo.drawable is AdaptiveIconDrawable) {
+                            try {
+                                AdaptiveIconBitmap.toBitmap(iconInfo.drawable)
+                            } catch (e: Exception) {
+                                Log.e(
+                                    TAG,
+                                    "Failed to convert adaptive icon to bitmap for ${iconInfo.label}, using fallback",
+                                    e,
+                                )
+                                iconInfo.drawable.toBitmap()
+                            }
+                        } else {
+                            iconInfo.drawable.toBitmap()
+                        }
+
                         val pngByteArray = bitmap.toByteArray()
                         zos.write(pngByteArray)
                         zos.closeEntry()
@@ -119,7 +137,7 @@ private fun addFileToZip(zos: ZipOutputStream, file: File, name: String) {
  * 2. Removes diacritics (marks) to approximate ASCII characters.
  * 3. Replaces spaces with underscores.
  * 4. Converts the string to lowercase.
- * 5. Removes any remaining non-alphanumeric characters (except underscores).
+ * 5. Replaces any remaining non-alphanumeric characters with underscores.
  * 6. If the resulting string is blank, it returns a default filename "unnamed_icon".
  *
  * @param label The input string to normalize.
@@ -129,9 +147,10 @@ private fun normalizeFileName(label: String): String {
     val nfdNormalizedString = Normalizer.normalize(label, Normalizer.Form.NFD)
     val asciiApproximation = Regex("\\p{Mn}+").replace(nfdNormalizedString, "")
 
-    var normalized = asciiApproximation.replace(" ", "_")
-    normalized = normalized.lowercase()
-    normalized = Regex("[^a-z0-9_]").replace(normalized, "")
+    val normalized = asciiApproximation
+        .lowercase()
+        .replace(Regex("[^a-z0-9_]"), "_")
+        .trim('_')
 
     if (normalized.isBlank()) {
         return "unnamed_icon"
@@ -151,7 +170,7 @@ private fun Bitmap.toByteArray(): ByteArray {
  *
  * @return An XML string representing the appfilter items within a <resources> tag.
  */
-private fun List<SystemIconInfo>.toAppFilterXML(writer: Writer) {
+private fun List<UniqueIconInfo>.toAppFilterXML(writer: Writer) {
     val serializer: XmlSerializer = Xml.newSerializer()
 
     serializer.setOutput(writer)
@@ -166,9 +185,8 @@ private fun List<SystemIconInfo>.toAppFilterXML(writer: Writer) {
 
     serializer.startTag(null, "resources")
 
-    this.forEach { iconInfo ->
+    this.forEach { (iconInfo, drawableName) ->
         val componentNameString = iconInfo.componentName.flattenToString()
-        val drawableName = normalizeFileName(iconInfo.label)
 
         serializer.startTag(null, "item")
         serializer.attribute(null, "component", "ComponentInfo{$componentNameString}")
@@ -180,6 +198,23 @@ private fun List<SystemIconInfo>.toAppFilterXML(writer: Writer) {
     serializer.endTag(null, "resources")
     serializer.endDocument()
 }
+
+private fun createUniqueIconInfoList(iconRequestList: List<SystemIconInfo>): List<UniqueIconInfo> {
+    val usedFileNames = mutableMapOf<String, Int>()
+
+    return iconRequestList.map { iconInfo ->
+        val baseName = normalizeFileName(iconInfo.label)
+        val count = usedFileNames.getOrDefault(baseName, 0)
+        val drawableName = if (count > 0) "${baseName}_$count" else baseName
+        usedFileNames[baseName] = count + 1
+        UniqueIconInfo(iconInfo, drawableName)
+    }
+}
+
+private data class UniqueIconInfo(
+    val iconInfo: SystemIconInfo,
+    val drawableName: String,
+)
 
 fun formatIconRequestList(iconRequestList: List<SystemIconInfo>): String = iconRequestList
     .joinToString(separator = "\n\n") { "${it.label}\n${it.componentName.flattenToString()}" }

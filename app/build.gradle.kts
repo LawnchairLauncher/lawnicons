@@ -22,7 +22,7 @@ val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEm
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.14.1"
+val version = "2.16.0"
 val versionDisplayName = version + if (!isReleaseBuild) " $devReleaseName" else ""
 
 android {
@@ -33,7 +33,7 @@ android {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
         targetSdk = compileSdk
-        versionCode = 20
+        versionCode = 23
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
@@ -113,9 +113,7 @@ android {
 
 composeCompiler {
     stabilityConfigurationFiles.addAll(
-        listOf(
-            layout.projectDirectory.file("compose_compiler_config.conf"),
-        ),
+        layout.projectDirectory.file("compose_compiler_config.conf"),
     )
     reportsDestination = layout.buildDirectory.dir("compose_build_reports")
 }
@@ -130,20 +128,19 @@ licensee {
 
 dependencies {
     implementation("androidx.core:core-ktx:1.17.0")
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.activity:activity-compose:1.11.0")
-    implementation(platform("androidx.compose:compose-bom:2025.09.00"))
+    implementation("androidx.core:core-splashscreen:1.2.0")
+    implementation("androidx.activity:activity-compose:1.12.0")
+    implementation(platform("androidx.compose:compose-bom:2025.11.01"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.ui:ui-util")
     debugImplementation("androidx.compose.ui:ui-tooling")
     implementation("androidx.compose.animation:animation")
-    implementation("androidx.compose.material:material-icons-core-android")
-    implementation("androidx.compose.material3:material3:1.4.0-alpha18")
+    implementation("androidx.compose.material3:material3:1.5.0-alpha09")
     implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.graphics:graphics-shapes:1.0.1")
-    implementation("androidx.navigation:navigation-compose:2.9.5")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
+    implementation("androidx.graphics:graphics-shapes:1.1.0")
+    implementation("androidx.navigation:navigation-compose:2.9.6")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
 
@@ -155,7 +152,7 @@ dependencies {
     val retrofitVersion = "3.0.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation("com.squareup.retrofit2:converter-kotlinx-serialization:$retrofitVersion")
-    implementation("com.squareup.okhttp3:okhttp:5.2.0")
+    implementation("com.squareup.okhttp3:okhttp:5.3.2")
 
     implementation("io.coil-kt:coil-compose:2.7.0")
     implementation("com.github.nanihadesuka:LazyColumnScrollbar:2.2.0")

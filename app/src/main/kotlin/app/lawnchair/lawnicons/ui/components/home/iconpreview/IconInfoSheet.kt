@@ -32,11 +32,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.selection.SelectionContainer
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Call
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -113,10 +108,10 @@ fun IconInfoSheet(
                 ) {
                     if (LocalInspectionMode.current) {
                         val icon = when (iconInfo.drawableId) {
-                            1 -> Icons.Rounded.Email
-                            2 -> Icons.Rounded.Search
-                            3 -> Icons.Rounded.Call
-                            else -> Icons.Rounded.Warning
+                            1 -> painterResource(R.drawable.ic_check)
+                            2 -> painterResource(R.drawable.ic_close)
+                            3 -> painterResource(R.drawable.ic_search)
+                            else -> painterResource(R.drawable.ic_back)
                         }
                         Icon(
                             icon,
@@ -140,7 +135,7 @@ fun IconInfoSheet(
                     horizontalArrangement = Arrangement.Center,
                 ) {
                     IconLink(
-                        iconResId = R.drawable.github_foreground,
+                        iconResId = R.drawable.ic_github,
                         label = stringResource(id = R.string.view_on_github),
                         url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
                     )

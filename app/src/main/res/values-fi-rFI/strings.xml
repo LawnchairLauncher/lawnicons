@@ -3,7 +3,7 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Versio: %s</string>
+    <string name="version_x">Versio %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
@@ -18,6 +18,7 @@
     <!-- About page -->
     <string name="about">Tietoja</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">Kuvaketoiveiden lomake</string>
@@ -78,7 +79,7 @@
     <string name="toggle_button_expanded">Laajennettu</string>
     <string name="toggle_button_collapsed">Supistettu</string>
     <string name="toggle_button_content_description">Vaihtokytkin</string>
-    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
+    <string name="icon_request_mail_hint">Lähetä pyyntötiedosto osoitteeseen \u0020</string>
     <string name="share_file">Jaa tiedosto</string>
     <string name="save_file">Tallenna tiedosto</string>
     <string name="copy_components">Kopioi sovelluksen komponentit</string>

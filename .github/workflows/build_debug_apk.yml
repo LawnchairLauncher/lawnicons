@@ -13,7 +13,7 @@ jobs:
     outputs:
       skip_steps: ${{ steps.filter.outputs.workflows && !steps.nofilter.outputs.workflows }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - name: Check for ignored paths
@@ -53,7 +53,7 @@ jobs:
     if: needs.check-paths.outputs.skip_steps != 'true'
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - uses: actions/setup-java@v5
@@ -76,7 +76,7 @@ jobs:
       - name: Build debug APK
         run: ./gradlew app:assembleDebug
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: Debug APK
           path: app/build/outputs/apk/app/debug/*.apk
@@ -86,7 +86,7 @@ jobs:
     needs: check-paths
     if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
       - uses: actions/setup-java@v5
@@ -101,7 +101,7 @@ jobs:
     needs: [ build-debug-apk, check-style, check-paths ]
     if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           submodules: true
           fetch-depth: 0
@@ -114,7 +114,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install gitpython requests
       - name: Download artifact
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: Debug APK
           path: artifacts/debug-apk
@@ -135,8 +135,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/download-artifact@v5
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v6
         with:
           name: Debug APK
           path: artifacts/debug-apk

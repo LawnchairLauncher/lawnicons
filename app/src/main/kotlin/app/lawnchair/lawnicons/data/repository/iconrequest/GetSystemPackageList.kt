@@ -21,6 +21,9 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.content.pm.ResolveInfo
+import android.content.res.Resources
+import android.graphics.drawable.Drawable
+import android.util.Log
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 
 fun Context.getPackagesList(): List<ResolveInfo> {
@@ -41,7 +44,7 @@ fun Context.getSystemIconInfo(): List<SystemIconInfo> {
             val component = "$riPkg/${activityInfo.name}"
 
             val name = loadLabel(packageManager).toString()
-            val drawable = loadIcon(packageManager)
+            val drawable = getHighResIcon(packageManager) ?: loadIcon(packageManager)
 
             SystemIconInfo(
                 drawable = drawable,
@@ -51,3 +54,22 @@ fun Context.getSystemIconInfo(): List<SystemIconInfo> {
         }
     }
 }
+
+fun ResolveInfo.getHighResIcon(packageManager: PackageManager): Drawable? {
+    return try {
+        val componentName =
+            ComponentName(activityInfo.packageName, activityInfo.name)
+        if (iconResource != 0) {
+            return packageManager.getResourcesForActivity(componentName).getDrawable(
+                iconResource,
+                null,
+            )
+        }
+        null
+    } catch (e: Resources.NotFoundException) {
+        Log.d(TAG, "$e")
+        null
+    }
+}
+
+private const val TAG = "IconRequestUtilities"
