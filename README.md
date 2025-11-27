@@ -66,14 +66,6 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 ## Requesting icons
 
-`Open Lawnicons 2.15+ → Tap "Request icons" → Select and request icons`
+`Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-The intended fulfiller of your icon request is you. Android devs can request support for their app via issues.
-
-> [!TIP]
-> Join our Discord giveaway to get a few icons earlier.
-
-[Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml) • [#lawnicons-giveaways](https://discord.com/channels/803299970169700402/1436369447899107473)
-
-
-
+Android devs can request support for their app via related issue.
