@@ -4418,6 +4418,7 @@
   <item component="ComponentInfo{de.buhl.finanzblick/de.buhl.finanzblick.ui.MainActivity}" drawable="finanzblick" name="finanzblick" />
   <item component="ComponentInfo{de.finanzen.net/de.finanzen.net.loading.LoadingActivity}" drawable="finanzen_net" name="finanzen.net" />
   <item component="ComponentInfo{de.gratisbroker.android.mobileapp/de.gratisbroker.android.mobileapp.MainActivity}" drawable="finanzen_net_zero_aktien" name="finanzen.net zero Aktien" />
+  <item component="ComponentInfo{de.finanzfluss.copilot/de.finanzfluss.copilot.MainActivity}" drawable="finanzfluss" name="Finanzfluss" />
   <item component="ComponentInfo{de.dwins.financeguru/de.dwins.financeguru.SplashActivity}" drawable="finanzguru" name="Finanzguru" />
   <item component="ComponentInfo{com.finch.finch/com.finch.finch.MainActivity}" drawable="finch" name="Finch" />
   <item component="ComponentInfo{com.nutspace.trangjan.findeasy/com.nutspace.nutapp.ui.WelcomeActivity}" drawable="vernet" name="Find Easy" />
@@ -5122,9 +5123,9 @@
   <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.camera_activity1}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/com.android.medialist.PlayListActivity}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/com.freeme.gallery.app.GalleryNewActivity}" drawable="generic_gallery" name="Gallery" />
-  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.feature_node.presentation.main.MainActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.feature_node.presentation.main.MainActivity}" drawable="dot_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/com.android.camera.VideoCamera}" drawable="generic_gallery" name="Gallery" />
-  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.MainActivity}" drawable="generic_gallery" name="Gallery" />
+  <item component="ComponentInfo{com.dot.gallery/com.dot.gallery.MainActivity}" drawable="dot_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/.app.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/.app.Gallery}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/com.acer.muse.app.GalleryActivity}" drawable="generic_gallery" name="Gallery" />
@@ -7709,6 +7710,7 @@
   <item component="ComponentInfo{com.android.shell/org.lsposed.manager.ui.activity.MainActivity}" drawable="lspatch_lsposed" name="LSPosed" />
   <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.MainActivity}" drawable="lte_cleaner" name="LTE Cleaner" />
   <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.controllers.MainActivity}" drawable="lte_cleaner" name="LTE Cleaner" />
+  <item component="ComponentInfo{io.mdp43140.ltecleaner/io.mdp43140.ltecleaner.MainActivity}" drawable="mdp43140_lte_cleaner" name="LTE Cleaner" />
   <item component="ComponentInfo{net.simplyadvanced.ltediscovery/com2020.ltediscovery.ui.LtedMainActivity}" drawable="lte_discovery" name="LTE Discovery" />
   <item component="ComponentInfo{rs.ltt.android/rs.ltt.android.ui.activity.MainActivity}" drawable="generic_email" name="Ltt.rs" />
   <item component="ComponentInfo{com.lucidchart.android.chart/com.lucidchart.android.chart.MainActivity}" drawable="lucidchart" name="Lucidchart" />
@@ -9271,6 +9273,8 @@
   <item component="ComponentInfo{com.valuephone.vpnetto/de.netto.b2c.activity.FragmentActivity}" drawable="netto" name="Netto" />
   <item component="ComponentInfo{net.techet.netanalyzerlite.an/net.techet.netanalyzerlite.an.activity.MainActivity}" drawable="network_analyzer" name="Network Analyzer" />
   <item component="ComponentInfo{net.techet.netanalyzer.an/net.techet.netanalyzer.an.activity.MainActivity}" drawable="network_analyzer_pro" name="Network Analyzer Pro" />
+  <item component="ComponentInfo{com.wilysis.cellinfo/com.wilysis.cellinfo.Arxikh}" drawable="network_cell_info" name="Network Cell Info" />
+  <item component="ComponentInfo{com.wilysis.cellinfolite/com.wilysis.cellinfo.Arxikh}" drawable="network_cell_info_lite" name="Network Cell Info Lite" />
   <item component="ComponentInfo{com.paget96.netspeedindicator/com.paget96.netspeedindicator.activities.SplashScreen}" drawable="network_speed" name="Network Speed" />
   <item component="ComponentInfo{com.evozi.network/com.evozi.network.view.MainActivity}" drawable="network_speed_speed_meter" name="Network Speed — Speed Meter" />
   <item component="ComponentInfo{com.telefonica.netzclub.csc/com.telefonica.netzclub.csc.activity.SplashActivity}" drawable="netzclub" name="netzclub" />
@@ -10890,6 +10894,7 @@
   <item component="ComponentInfo{com.poshmark.app/com.poshmark.ui.MainActivity}" drawable="poshmark" name="Poshmark" />
   <item component="ComponentInfo{io.trewartha.positional/io.trewartha.positional.ui.MainActivity}" drawable="auto_change_wallpaper" name="Positional" />
   <item component="ComponentInfo{io.trewartha.positional/io.trewartha.positional.MainActivity}" drawable="auto_change_wallpaper" name="Positional" />
+  <item component="ComponentInfo{at.post.app/at.post.app.SplashActivity}" drawable="post_at" name="Post" />
   <item component="ComponentInfo{de.dhl.paket/de.dhl.packet.MainActivity}" drawable="dhl" name="Post &amp; DHL" />
   <item component="ComponentInfo{de.dhl.paket/de.dhl.packet.MigrationScreenActivity}" drawable="dhl" name="Post &amp; DHL" />
   <item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.base.MainActivity}" drawable="dhl" name="Post &amp; DHL" />
@@ -12062,6 +12067,7 @@
   <item component="ComponentInfo{recorder.screenrecorder.videoeditor/com.recorder.screenrecorder.home.splash.pre.PreSplashActivity}" drawable="screen_recorder" name="Screen Recorder" />
   <item component="ComponentInfo{screenrecorder.recorder.editor/com.xvideostudio.videoeditor.mvvm.ui.activity.RecorderSplashActivity}" drawable="adv_screen_recorder" name="Screen Recorder" />
   <item component="ComponentInfo{de.markusfisch.android.screentime/de.markusfisch.android.screentime.activity.MainActivity}" drawable="screen_time" name="Screen Time" />
+  <item component="ComponentInfo{com.atharok.screentime/com.atharok.screentime.presentation.activities.MainActivity}" drawable="atharok_screen_time" name="Screen Time" />
   <item component="ComponentInfo{com.burockgames.timeclocker/com.burockgames.timeclocker.main.MainActivity}" drawable="screen_time_stayfree" name="Screen Time StayFree" />
   <item component="ComponentInfo{com.burockgames.timeclocker/com.burockgames.timeclocker.activityAliasDefault}" drawable="screen_time_stayfree" name="Screen Time StayFree" />
   <item component="ComponentInfo{com.orpheusdroid.screenrecorder/com.orpheusdroid.screenrecorder.MainActivity}" drawable="screencam" name="ScreenCam" />
@@ -16372,6 +16378,7 @@
   <item component="ComponentInfo{hu.mentok.eletmento/com.medicalit.zachranka.Launcher}" drawable="eletmento" name="ÉletMentő" />
   <item component="ComponentInfo{is.island.app/is.island.app.MainActivity}" drawable="island_is" name="Ísland.is" />
   <item component="ComponentInfo{com.applidium.vianavigo/com.applidium.vianavigo.views.MainVianavigo}" drawable="ile_de_france" name="Île-de-France" />
+  <item component="ComponentInfo{de.hafas.android.oebb/de.hafas.main.HafasApp}" drawable="oebb_scotty" name="ÖBB Scotty" />
   <item component="ComponentInfo{at.oebb.ts/at.oebb.ts.SplashActivity}" drawable="obb_tickets" name="ÖBB Tickets" />
   <item component="ComponentInfo{at.oebb.ts/at.oebb.ts.features.splash.SplashActivity}" drawable="obb_tickets" name="ÖBB Tickets" />
   <item component="ComponentInfo{tr.gov.osym.ais.android/tr.gov.osym.ais.android.presentation.ui.activities.ActivitySplash}" drawable="osym" name="ÖSYM" />
