@@ -245,7 +245,7 @@ private val coreContributors = listOf(
         descriptionRes = R.string.contribution_icons,
     ),
     Contributor(
-        name = "Goooler",
+        name = "Zongle Wang",
         username = "Goooler",
         photoUrl = "https://avatars.githubusercontent.com/u/10363352",
         socialUrl = "https://github.com/Goooler",
