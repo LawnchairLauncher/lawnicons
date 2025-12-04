@@ -93,7 +93,7 @@ private fun Acknowledgements(
                         last = index == libraries.lastIndex,
                         divider = index != libraries.lastIndex,
                         onClick = {
-                            context.visitUrl(it.spdxLicenses.first().url)
+                            context.visitUrl(it.scm.url)
                         },
                     )
                 }

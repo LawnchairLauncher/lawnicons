@@ -26,6 +26,7 @@ class OssLibraryRepositoryImpl @Inject constructor(private val application: Appl
         val ossLibraries = kotlinxJson.decodeFromString<List<OssLibrary>>(jsonString)
             .asSequence()
             .distinctBy { "${it.groupId}:${it.artifactId}" }
+            .distinctBy { it.name } // In case of duplicate names with different groupId:artifactId.
             .sortedBy { it.name }
             .toList()
         emit(ossLibraries)
