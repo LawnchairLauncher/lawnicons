@@ -8,11 +8,17 @@ data class OssLibrary(
     val artifactId: String,
     val version: String,
     val name: String,
+    val scm: Scm,
     val spdxLicenses: List<License>,
 ) {
     @Serializable
     data class License(
         val name: String,
+    )
+
+    @Serializable
+    data class Scm(
+        // Project URL.
         val url: String,
     )
 }
