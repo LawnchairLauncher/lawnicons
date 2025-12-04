@@ -68,4 +68,4 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Android devs can request support for their app via a related issue.
+Icon requests are time-limited. A 1-week icon request period opens at every thousand-icon milestone. Android devs can request support for their app via a related issue.
