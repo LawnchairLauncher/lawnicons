@@ -15,6 +15,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.PlainTooltip
 import androidx.compose.material3.Text
+import androidx.compose.material3.TooltipAnchorPosition
 import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults.rememberTooltipPositionProvider
 import androidx.compose.material3.rememberTooltipState
@@ -137,7 +138,7 @@ private fun SimpleTooltipBox(
     content: @Composable (() -> Unit),
 ) {
     TooltipBox(
-        positionProvider = rememberTooltipPositionProvider(),
+        positionProvider = rememberTooltipPositionProvider(TooltipAnchorPosition.Above, 4.dp),
         tooltip = {
             PlainTooltip {
                 Text(label)
