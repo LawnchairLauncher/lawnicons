@@ -7,6 +7,17 @@
         'dependencies',
     ],
     packageRules: [
+        // Enable auto-merge for minor/patch updates.
+        {
+            matchUpdateTypes: [
+                'minor',
+                'patch',
+            ],
+            automerge: true,
+            matchPackageNames: [
+                '/.*/',
+            ],
+        },
         {
             groupName: 'Kotlin',
             matchPackageNames: [
