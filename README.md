@@ -56,7 +56,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 > [!IMPORTANT]
 > Sustain Lawnicons by backing the Lawnchair team.
 
-[Support Lawnchair team](https://opencollective.com/lawnchair)
+[Support Lawnchair team](https://opencollective.com/lawnchair) • [#lawnicons-giveaways](https://discord.com/channels/803299970169700402/1436369447899107473)
 
 ## Contributing
 
