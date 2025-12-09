@@ -70,7 +70,7 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 A 1-week icon request period opens at every thousand-icon milestone. Requests inform demand but don't drive contributions. Our community creates icons according to their own priorities.
 
-![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons/svgs?type=file&style=flat-square&label=Icons (svgs))
+![GitHub repo file or directory count (in path)](https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons/svgs?type=file&style=flat&color=3B8AFF&label=Icons)
 
 ## Ongoing initiatives
 
