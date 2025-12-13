@@ -61,7 +61,8 @@ Open your icon image in Figma and apply the guidelines point by point. For mindf
 
 ### Fundamentals
 
-[View on YouTube](https://youtu.be/XO-5IwowonQ)
+> [!TIP]
+> [View on YouTube](https://youtu.be/XO-5IwowonQ)
 
 #### 1 Canvas
 
@@ -325,6 +326,9 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 ## Adding icons and missing app components to Lawnicons
 
+> [!TIP]
+> [View on YouTube](https://youtu.be/UXic1zy-CiQ)
+
 You need to link SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
 Tips
@@ -332,7 +336,7 @@ Tips
 - Add missing app components to icons that are identical to the originals.
 - Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [View on YouTube](https://youtu.be/UXic1zy-CiQ) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 
