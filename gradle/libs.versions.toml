@@ -40,9 +40,9 @@ commons-io = "commons-io:commons-io:2.21.0"
 android-application = { id = "com.android.application", version = "8.13.2" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-ksp = { id = "com.google.devtools.ksp", version = "2.3.3" }
+ksp = "com.google.devtools.ksp:2.3.3"
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-licensee = { id = "app.cash.licensee", version = "1.14.1" }
-spotless = { id = "com.diffplug.spotless", version = "8.1.0" }
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm" }
+licensee = "app.cash.licensee:1.14.1"
+spotless = "com.diffplug.spotless:8.1.0"
