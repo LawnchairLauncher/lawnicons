@@ -76,8 +76,6 @@ A 1-week icon request period opens at every thousand-icon milestone. Requests in
 
 ## Ongoing initiatives
 
-**Icons for icons**. By adding one icon, you add two.
-
 **Discord giveaways**. The winners receive a priority request for several icons.
 
 **Icon requests for devs**. Android devs can request support for their app via a related issue.
