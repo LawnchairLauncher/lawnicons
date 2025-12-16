@@ -68,7 +68,6 @@ class ContributorsViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-
             runCatching {
                 repository.getTopContributors()
             }.onSuccess { list ->
