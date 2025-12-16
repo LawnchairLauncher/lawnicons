@@ -68,7 +68,6 @@ class ContributorsViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            viewModelState.update { it.copy(isRefreshing = true) }
 
             runCatching {
                 repository.getTopContributors()
