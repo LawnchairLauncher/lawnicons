@@ -85,24 +85,16 @@ class HomeViewModelImpl @Inject constructor(
 
     init {
         viewModelScope.launch {
-            val result = runCatching {
+            runCatching {
                 iconRequestRepository.getEnabledState()
-            }
-
-            iconRequestsEnabled = when {
-                result.isSuccess -> {
-                    result.getOrThrow()
-                }
-
-                else -> {
-                    // Disable icon requests, as we can't access the internet
-                    Log.e(
-                        "LawniconsViewModel",
-                        "Failed to load icon request settings",
-                        result.exceptionOrNull(),
-                    )
-                    false
-                }
+            }.onSuccess {
+                iconRequestsEnabled = it
+            }.onFailure {
+                Log.e(
+                    "LawniconsViewModel",
+                    "Failed to load icon request settings",
+                    it,
+                )
             }
         }
     }

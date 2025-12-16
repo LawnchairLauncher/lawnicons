@@ -42,12 +42,12 @@ sealed interface ContributorsUiState {
 
 private data class ContributorsViewModelState(
     val isRefreshing: Boolean,
-    val contributors: List<GitHubContributor>? = null,
+    val contributors: List<GitHubContributor> = emptyList(),
     val hasError: Boolean = false,
 ) {
     fun toUiState(): ContributorsUiState = when {
         hasError -> ContributorsUiState.Error
-        contributors != null -> ContributorsUiState.Success(contributors)
+        contributors.isNotEmpty() -> ContributorsUiState.Success(contributors)
         else -> ContributorsUiState.Loading
     }
 }
@@ -67,31 +67,30 @@ class ContributorsViewModel @Inject constructor(
         )
 
     init {
-        viewModelState.update { it.copy(isRefreshing = true) }
-
         viewModelScope.launch {
-            val result = runCatching {
+            viewModelState.update { it.copy(isRefreshing = true) }
+
+            runCatching {
                 repository.getTopContributors()
-            }
-            viewModelState.update {
-                when {
-                    result.isSuccess -> it.copy(
+            }.onSuccess { list ->
+                viewModelState.update {
+                    it.copy(
                         isRefreshing = false,
-                        contributors = result.getOrThrow(),
+                        contributors = list,
                         hasError = false,
                     )
-
-                    else -> {
-                        Log.e(
-                            "ContributorsViewModel",
-                            "Failed to load contributors",
-                            result.exceptionOrNull(),
-                        )
-                        it.copy(
-                            isRefreshing = false,
-                            hasError = true,
-                        )
-                    }
+                }
+            }.onFailure { t ->
+                Log.e(
+                    "ContributorsViewModel",
+                    "Failed to load contributors",
+                    t,
+                )
+                viewModelState.update {
+                    it.copy(
+                        isRefreshing = false,
+                        hasError = true,
+                    )
                 }
             }
         }
