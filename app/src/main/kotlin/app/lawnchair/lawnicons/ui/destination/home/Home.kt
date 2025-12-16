@@ -46,8 +46,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
@@ -63,9 +63,9 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object Home
+data object Home : NavKey
 
-fun NavGraphBuilder.homeDestination(
+fun EntryProviderScope<NavKey>.homeDestination(
     isExpandedScreen: Boolean,
     isIconPicker: Boolean,
     onNavigateToAbout: () -> Unit,
@@ -74,7 +74,7 @@ fun NavGraphBuilder.homeDestination(
     onNavigateToDebugMenu: () -> Unit,
     onSendResult: (IconInfo) -> Unit,
 ) {
-    composable<Home> {
+    entry<Home> {
         Home(
             onNavigateToAbout = onNavigateToAbout,
             onNavigateToNewIcons = onNavigateToNewIcons,

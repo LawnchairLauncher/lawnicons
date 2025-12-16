@@ -37,8 +37,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.data.model.splitByComponentName
@@ -49,13 +49,13 @@ import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object DebugMenu
+data object DebugMenu : NavKey
 
-fun NavGraphBuilder.debugMenuDestination(
+fun EntryProviderScope<NavKey>.debugMenuDestination(
     onBack: () -> Unit,
     isExpandedScreen: Boolean = false,
 ) {
-    composable<DebugMenu> {
+    entry<DebugMenu> {
         DebugMenu(
             onBack = onBack,
             isExpandedScreen = isExpandedScreen,

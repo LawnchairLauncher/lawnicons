@@ -39,8 +39,8 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -59,15 +59,15 @@ enum class ColumnTypes {
 }
 
 @Serializable
-data object About
+data object About : NavKey
 
-fun NavGraphBuilder.aboutDestination(
+fun EntryProviderScope<NavKey>.aboutDestination(
     onBack: () -> Unit,
     onNavigateToContributors: () -> Unit,
     onNavigateToAcknowledgements: () -> Unit,
     isExpandedScreen: Boolean,
 ) {
-    composable<About> {
+    entry<About> {
         About(
             onBack = onBack,
             onNavigateToContributors = onNavigateToContributors,

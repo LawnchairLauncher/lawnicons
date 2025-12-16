@@ -25,8 +25,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
@@ -34,13 +34,13 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPad
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object NewIcons
+data object NewIcons : NavKey
 
-fun NavGraphBuilder.newIconsDestination(
+fun EntryProviderScope<NavKey>.newIconsDestination(
     isExpandedScreen: Boolean,
     onBack: () -> Unit,
 ) {
-    composable<NewIcons> {
+    entry<NewIcons> {
         NewIcons(
             onBack = onBack,
             isExpandedScreen = isExpandedScreen,

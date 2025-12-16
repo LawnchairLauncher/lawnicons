@@ -43,8 +43,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -58,13 +58,13 @@ import app.lawnchair.lawnicons.ui.util.visitUrl
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object Contributors
+data object Contributors : NavKey
 
-fun NavGraphBuilder.contributorsDestination(
+fun EntryProviderScope<NavKey>.contributorsDestination(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
 ) {
-    composable<Contributors> {
+    entry<Contributors> {
         Contributors(
             onBack = onBack,
             isExpandedScreen = isExpandedScreen,

@@ -139,7 +139,9 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.5.0-alpha10")
     implementation("androidx.compose.material3:material3-window-size-class")
     implementation("androidx.graphics:graphics-shapes:1.1.0")
-    implementation("androidx.navigation:navigation-compose:2.9.6")
+    implementation("androidx.navigation3:navigation3-ui:1.0.0")
+    implementation("androidx.navigation3:navigation3-runtime:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-navigation3:2.10.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
@@ -147,7 +149,7 @@ dependencies {
     val hiltVersion = "2.57.2"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     ksp("com.google.dagger:hilt-compiler:$hiltVersion")
-    implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel-compose:1.3.0")
 
     val retrofitVersion = "3.0.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")

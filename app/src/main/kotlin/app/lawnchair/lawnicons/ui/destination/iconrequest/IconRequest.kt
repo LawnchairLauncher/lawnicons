@@ -71,8 +71,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
@@ -84,13 +84,13 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object IconRequest
+data object IconRequest : NavKey
 
-fun NavGraphBuilder.iconRequestDestination(
+fun EntryProviderScope<NavKey>.iconRequestDestination(
     isExpandedScreen: Boolean,
     onBack: () -> Unit,
 ) {
-    composable<IconRequest> {
+    entry<IconRequest> {
         IconRequest(
             onBack = onBack,
             isExpandedScreen = isExpandedScreen,
