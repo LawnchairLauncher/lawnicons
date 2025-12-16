@@ -17,7 +17,7 @@ val svgDir = rootDir.resolve("svgs")
 val resDir = rootDir.resolve("app/src/runtime/res")
 val assetsDir = rootDir.resolve("app/assets")
 
-tasks.run.configure {
+tasks.run {
     // Configure the inputs and outputs for this task, avoid unnecessary re-runs.
     inputs.dir(svgDir)
     inputs.dir(assetsDir)
