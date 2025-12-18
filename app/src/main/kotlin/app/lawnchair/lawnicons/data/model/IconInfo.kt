@@ -1,5 +1,11 @@
 package app.lawnchair.lawnicons.data.model
 
+import androidx.compose.ui.graphics.vector.ImageVector
+import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.Check
+import app.lawnchair.lawnicons.ui.theme.icon.Close
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.Search
 import kotlinx.serialization.Serializable
 
 /**
@@ -15,7 +21,14 @@ data class IconInfo(
     val drawableName: String,
     override val componentNames: List<LabelAndComponent>,
     val drawableId: Int,
-) : BaseIconInfo
+) : BaseIconInfo {
+    val fallbackImage: ImageVector get() = when (drawableId) {
+        1 -> LawnIcons.Check
+        2 -> LawnIcons.Close
+        3 -> LawnIcons.Search
+        else -> LawnIcons.Back
+    }
+}
 
 /**
  * Merges a list of [IconInfo] objects, grouping them by their `drawableName` and

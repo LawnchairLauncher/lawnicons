@@ -38,6 +38,8 @@ import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
+import app.lawnchair.lawnicons.ui.theme.icon.Check
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 
 @Composable
 fun SearchContents(
@@ -64,7 +66,7 @@ fun SearchContents(
                 leadingIcon = {
                     AnimatedVisibility(searchMode == SearchMode.LABEL) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_check),
+                            imageVector = LawnIcons.Check,
                             contentDescription = null,
                         )
                     }
@@ -81,7 +83,7 @@ fun SearchContents(
                 leadingIcon = {
                     AnimatedVisibility(searchMode == SearchMode.COMPONENT) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_check),
+                            imageVector = LawnIcons.Check,
                             contentDescription = null,
                         )
                     }
@@ -98,7 +100,7 @@ fun SearchContents(
                 leadingIcon = {
                     AnimatedVisibility(searchMode == SearchMode.DRAWABLE) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_check),
+                            imageVector = LawnIcons.Check,
                             contentDescription = null,
                         )
                     }

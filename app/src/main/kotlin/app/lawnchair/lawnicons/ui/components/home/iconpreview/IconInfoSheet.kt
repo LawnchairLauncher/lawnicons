@@ -54,6 +54,9 @@ import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.icon.Github
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.ShareIcon
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -107,14 +110,8 @@ fun IconInfoSheet(
                     horizontalArrangement = Arrangement.Center,
                 ) {
                     if (LocalInspectionMode.current) {
-                        val icon = when (iconInfo.drawableId) {
-                            1 -> painterResource(R.drawable.ic_check)
-                            2 -> painterResource(R.drawable.ic_close)
-                            3 -> painterResource(R.drawable.ic_search)
-                            else -> painterResource(R.drawable.ic_back)
-                        }
                         Icon(
-                            icon,
+                            iconInfo.fallbackImage,
                             contentDescription = iconInfo.drawableName,
                             modifier = Modifier.size(250.dp),
                             tint = MaterialTheme.colorScheme.onBackground,
@@ -135,13 +132,13 @@ fun IconInfoSheet(
                     horizontalArrangement = Arrangement.Center,
                 ) {
                     IconLink(
-                        iconResId = R.drawable.ic_github,
+                        imageVector = LawnIcons.Github,
                         label = stringResource(id = R.string.view_on_github),
                         url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
                     )
                     Spacer(Modifier.width(16.dp))
                     IconLink(
-                        iconResId = R.drawable.share_icon,
+                        imageVector = LawnIcons.ShareIcon,
                         label = stringResource(id = R.string.share),
                         onClick = {
                             val intent = Intent().apply {

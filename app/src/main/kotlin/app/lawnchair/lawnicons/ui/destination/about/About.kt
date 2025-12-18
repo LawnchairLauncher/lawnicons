@@ -36,7 +36,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation3.runtime.EntryProviderScope
@@ -48,6 +47,9 @@ import app.lawnchair.lawnicons.ui.components.core.CardHeader
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.icon.Check
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.Lawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import kotlinx.serialization.Serializable
 
@@ -113,13 +115,13 @@ private fun About(
                 ) {
                     if (LocalInspectionMode.current) {
                         Icon(
-                            painterResource(R.drawable.ic_check),
+                            imageVector = LawnIcons.Check,
                             contentDescription = null,
                             modifier = Modifier.size(72.dp),
                         )
                     } else {
                         Image(
-                            painter = painterResource(R.drawable.ic_lawnicons),
+                            imageVector = LawnIcons.Lawnicons,
                             contentDescription = stringResource(id = R.string.app_name),
                             modifier = Modifier
                                 .size(72.dp),

@@ -8,11 +8,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.icon.Check
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
@@ -50,7 +50,7 @@ fun ContributorRow(
         onClick = onClick,
         startIcon = {
             if (LocalInspectionMode.current) {
-                Icon(painterResource(R.drawable.ic_check), contentDescription = null)
+                Icon(imageVector = LawnIcons.Check, contentDescription = null)
             } else {
                 AsyncImage(
                     contentDescription = name,

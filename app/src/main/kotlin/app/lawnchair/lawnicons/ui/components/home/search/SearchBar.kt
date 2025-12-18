@@ -30,10 +30,13 @@ import androidx.compose.material3.SearchBarValue
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
+import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.Close
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.Search
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -66,11 +69,11 @@ fun SearchBarInputField(
         leadingIcon = {
             if (searchBarState.targetValue == SearchBarValue.Expanded) {
                 NavigationIconButton(
-                    painter = painterResource(R.drawable.ic_back),
+                    imageVector = LawnIcons.Back,
                     onClick = onBack,
                 )
             } else {
-                Icon(painterResource(R.drawable.ic_search), contentDescription = null)
+                Icon(LawnIcons.Search, contentDescription = null)
             }
         },
         trailingIcon = {
@@ -80,7 +83,7 @@ fun SearchBarInputField(
                 } else {
                     NavigationIconButton(
                         onClick = { textFieldState.clearText() },
-                        painter = painterResource(R.drawable.ic_close),
+                        imageVector = LawnIcons.Close,
                     )
                 }
             }
