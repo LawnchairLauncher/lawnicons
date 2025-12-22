@@ -64,7 +64,7 @@ Whether you want to work on icons or solve development issues, please refer to o
 
 > [!TIP]
 > [Icon request dashoard](https://lawnicons-requests.vercel.app/)  
-> The dashboard is in beta. Report issues in GitHub.
+> The dashboard is in beta. Report issues on GitHub.
 
 [Lawnicons guidelines](CONTRIBUTING.md) • [Icon contribution sheet](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing)
 
