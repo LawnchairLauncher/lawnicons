@@ -4,7 +4,7 @@ Please fix all common issues and ensure Lawnicons builds correctly. Reviews happ
 
 #### Review stages
 1. **Viability check**. For beginners. This reduces effort spent on abandoned PRs.
-2. **Review**. The review batch size ranges from 5 to 50 icons, depending on the number of common issues found.
+2. **Review**. The review batch size ranges from 5 to 10 icons, depending on the number of common issues found.
 
 [Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines)
 
