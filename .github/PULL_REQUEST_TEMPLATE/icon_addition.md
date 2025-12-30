@@ -10,16 +10,14 @@
      Unnecessary sections can be deleted. -->
 
 ### Added
-<!--  Apps for which you add icons. -->
+<!-- Apps for which you add icons. 
+     For design updates use the same template but with the "Updated" name. -->
+App name (`com.package.app`)  
 App name (`com.package.app`)  
 App name (`com.package.app`)  
 
 ### Linked
-<!--  New app components for existing icons. -->
+<!-- New app components for existing icons. -->
 App name (`com.package.app` → `drawable.svg`)  
 App name (`com.package.app` → `drawable.svg`)  
-
-### Updated
-<!--  Outdated icons that you've updated. -->
-App name (`com.package.app`)  
-App name (`com.package.app`)  
+App name (`com.package.app` → `drawable.svg`)  
