@@ -60,11 +60,11 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-Whether you want to work on icons or solve development issues, please refer to our guidelines. Add no more than 5 icons at a time to avoid unnecessary rework.
+Whether you want to work on icons or solve development issues, please refer to our guidelines. Add no more than 5 icons at a time to avoid unnecessary rework. 
 
-> [!TIP]
-> [Icon request dashboard](https://lawnicons-requests.vercel.app/)  
-> The dashboard is in beta. Report issues on GitHub.
+<a href="https://lawnicons-requests.vercel.app/">
+    <img alt="Icon requests dashboard (beta)" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=111318&label=Icon+requests+dashboard+%28beta%29">
+</a>
 
 [Lawnicons guidelines](CONTRIBUTING.md) • [Icon contribution sheet](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing)
 
