@@ -60,7 +60,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 
-Whether you want to work on icons or solve development issues, please refer to our guidelines. Stop at contributing 5 icons at a time to avoid unnecessary work.
+Whether you want to work on icons or solve development issues, please refer to our guidelines. Add no more than 5 icons at a time to avoid unnecessary rework.
 
 > [!TIP]
 > [Icon request dashboard](https://lawnicons-requests.vercel.app/)  
@@ -82,6 +82,6 @@ A 1-week icon request period opens at every thousand-icon milestone. Requests in
 
 **Discord giveaways**. The winners receive a priority request for several icons.
 
-**Icon requests for devs**. Android devs can request support for their app via a related issue.
+**Icon requests for devs**. Android devs can request support for their app via issues.
 
-[#lawnicons-giveaways](https://discord.com/channels/803299970169700402/1436369447899107473)
+[#lawnicons-giveaways](https://discord.com/channels/803299970169700402/1436369447899107473) • [Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
