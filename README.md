@@ -65,7 +65,7 @@ Whether you want to work on icons or solve development issues, please refer to o
 [Icon request dashboard (beta)](https://lawnicons-requests.vercel.app/) • [Lawnicons guidelines](CONTRIBUTING.md) • [Icon contribution sheet](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing)
 
 <a href="https://github.com/LawnchairLauncher/lawnicons-requests-dashboard/tree/main/src/extracted_png">
-    <img alt="Requests with images" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=FFDE3B&label=Requests+%28%7E%29">
+    <img alt="Requests with images" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=111318&label=Requests+%28%7E%29">
 </a>  
 
 ## Requesting icons
