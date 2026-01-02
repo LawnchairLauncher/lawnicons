@@ -59,29 +59,26 @@ Lawnicons on the Play Store will install as a different app from other sources.
 [Support Lawnchair team](https://opencollective.com/lawnchair)
 
 ## Contributing
+<div align="left">
+    <a href="CONTRIBUTING.md">
+        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-555555?logo=mdbook&logoColor=ffffff">
+    </a>
+    <a href="https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs">
+        <img alt="Total icons" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons/svgs?type=file&style=flat&color=3B8AFF&label=Icons">
+    </a>
+    <a href="https://lawnicons-requests.vercel.app/">
+        <img alt="Request dashboard (beta)" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=212121&label=Request+dashboard+%28beta%29">
+    </a>
+</div> 
 
-Whether you want to work on icons or solve development issues, please refer to our guidelines. Add no more than 5 icons at a time to avoid unnecessary rework. 
+### Icons
+You can add the missing icons if they are of high quality. To help with requests, please prioritize popular, widely-installed (5M+) icons. Following the guidelines is essensial. Add no more than 5 icons at a time to avoid unnecessary rework.
 
-<a href="https://lawnicons-requests.vercel.app/">
-    <img alt="Icon requests dashboard (beta)" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=111318&label=Icon+requests+dashboard+%28beta%29">
-</a>
+### Development
+You can help with issues. Please refer to our guidelines.
 
-[Lawnicons guidelines](CONTRIBUTING.md) • [Icon contribution sheet](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing)
-
-## Requesting icons
+### Requests
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
 A 1-week icon request period opens at every thousand-icon milestone. Requests inform demand but don't drive contributions. Our community creates icons according to their own priorities.
-
-<a href="https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs">
-    <img alt="Total icons" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons/svgs?type=file&style=flat&color=3B8AFF&label=Icons">
-</a>   
-
-## Ongoing initiatives
-
-**Discord giveaways**. The winners receive a priority request for several icons.
-
-**Icon requests for devs**. Android devs can request support for their app via issues.
-
-[#lawnicons-giveaways](https://discord.com/channels/803299970169700402/1436369447899107473) • [Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
