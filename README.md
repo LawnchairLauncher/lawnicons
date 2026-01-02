@@ -72,7 +72,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Icons
-You can add the missing icons if they are of high quality. To help with requests, please prioritize popular, widely-installed (5M+) icons. Following the guidelines is essensial. Add no more than 5 icons at a time to avoid unnecessary rework.
+You can add the missing icons if they are of high quality. To help with requests, please prioritize popular, widely-installed (5M+) apps. Following the guidelines is essensial. Add no more than 5 icons at a time to avoid unnecessary rework.
 
 ### Development
 You can help with issues. Please refer to our guidelines.
