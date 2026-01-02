@@ -22,7 +22,7 @@ The main tasks are to maintain Lawnicons and interaction with launchers, fix bug
 
 You can contribute your icons, fulfill icon requests, add missing app components, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
 
-[Requested icons](https://docs.google.com/spreadsheets/d/1AXc9EDXA6udZeGROtB5nuABjM33VluGY_V24tIzHaKc/edit?usp=sharing)
+[Icon requests dashboard](https://lawnicons-requests.vercel.app/)
 
 ## Contributing code
 
