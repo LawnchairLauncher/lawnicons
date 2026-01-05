@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm")
+    alias(libs.plugins.kotlin.jvm)
     application
 }
 
@@ -8,16 +8,16 @@ application {
 }
 
 dependencies {
-    implementation("com.android.tools:sdk-common:31.13.2")
-    implementation("org.dom4j:dom4j:2.2.0")
-    implementation("commons-io:commons-io:2.21.0")
+    implementation(libs.android.tools.sdk.common)
+    implementation(libs.dom4j)
+    implementation(libs.commons.io)
 }
 
 val svgDir = rootDir.resolve("svgs")
 val resDir = rootDir.resolve("app/src/runtime/res")
 val assetsDir = rootDir.resolve("app/assets")
 
-tasks.run.configure {
+tasks.run {
     // Configure the inputs and outputs for this task, avoid unnecessary re-runs.
     inputs.dir(svgDir)
     inputs.dir(assetsDir)

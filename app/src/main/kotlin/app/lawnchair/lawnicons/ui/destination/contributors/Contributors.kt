@@ -38,13 +38,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
@@ -52,19 +51,21 @@ import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
 import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.icon.Github
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object Contributors
+data object Contributors : NavKey
 
-fun NavGraphBuilder.contributorsDestination(
+fun EntryProviderScope<NavKey>.contributorsDestination(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
 ) {
-    composable<Contributors> {
+    entry<Contributors> {
         Contributors(
             onBack = onBack,
             isExpandedScreen = isExpandedScreen,
@@ -156,7 +157,7 @@ private fun ContributorList(
                         contentAlignment = Alignment.Center,
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_github),
+                            imageVector = LawnIcons.Github,
                             contentDescription = null,
                             modifier = Modifier
                                 .size(24.dp),

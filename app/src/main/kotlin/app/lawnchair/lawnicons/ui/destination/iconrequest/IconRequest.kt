@@ -58,7 +58,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
@@ -71,26 +70,33 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.compose.composable
+import androidx.navigation3.runtime.EntryProviderScope
+import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.icon.Copy
+import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
+import app.lawnchair.lawnicons.ui.theme.icon.KeyboardArrowDown
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.Mail
+import app.lawnchair.lawnicons.ui.theme.icon.Save
+import app.lawnchair.lawnicons.ui.theme.icon.Share
 import app.lawnchair.lawnicons.ui.util.Constants
 import coil.compose.AsyncImage
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object IconRequest
+data object IconRequest : NavKey
 
-fun NavGraphBuilder.iconRequestDestination(
+fun EntryProviderScope<NavKey>.iconRequestDestination(
     isExpandedScreen: Boolean,
     onBack: () -> Unit,
 ) {
-    composable<IconRequest> {
+    entry<IconRequest> {
         IconRequest(
             onBack = onBack,
             isExpandedScreen = isExpandedScreen,
@@ -203,7 +209,7 @@ fun IconRequest(
                     },
                     startIcon = {
                         Icon(
-                            painter = painterResource(R.drawable.ic_mail),
+                            imageVector = LawnIcons.Mail,
                             contentDescription = null,
                         )
                     },
@@ -253,7 +259,7 @@ private fun IconRequestButton(
                     enabled = enabled,
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_icon_request),
+                        imageVector = LawnIcons.IconRequest,
                         modifier = Modifier.size(SplitButtonDefaults.LeadingIconSize),
                         contentDescription = null,
                     )
@@ -285,7 +291,7 @@ private fun IconRequestButton(
                             label = "Trailing icon rotation",
                         )
                     Icon(
-                        painterResource(R.drawable.ic_keyboard_arrow_down),
+                        imageVector = LawnIcons.KeyboardArrowDown,
                         modifier =
                         Modifier
                             .size(SplitButtonDefaults.TrailingIconSize)
@@ -306,7 +312,7 @@ private fun IconRequestButton(
                         title = stringResource(R.string.share_file),
                         onClick = onShareFile,
                         icon = {
-                            Icon(painterResource(R.drawable.ic_share), contentDescription = null)
+                            Icon(imageVector = LawnIcons.Share, contentDescription = null)
                         },
                     ),
                     MenuItemRow(
@@ -314,7 +320,7 @@ private fun IconRequestButton(
                         onClick = onSaveFile,
                         icon = {
                             Icon(
-                                painterResource(R.drawable.ic_save),
+                                imageVector = LawnIcons.Save,
                                 contentDescription = null,
                             )
                         },
@@ -324,7 +330,7 @@ private fun IconRequestButton(
                         onClick = onCopyComponents,
                         icon = {
                             Icon(
-                                painterResource(R.drawable.ic_copy),
+                                imageVector = LawnIcons.Copy,
                                 contentDescription = null,
                             )
                         },

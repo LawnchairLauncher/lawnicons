@@ -19,21 +19,9 @@
             ],
         },
         {
-            groupName: 'Kotlin',
-            matchPackageNames: [
-                'org.jetbrains.kotlin:kotlin{/,}**'
-            ],
-        },
-        {
             groupName: 'AGP',
             matchPackageNames: [
                 '/com.android.*/',
-            ],
-        },
-        {
-            groupName: 'Hilt',
-            matchPackageNames: [
-                'com.google.dagger{/,}**',
             ],
         },
     ],
