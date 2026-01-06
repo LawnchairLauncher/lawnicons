@@ -20,7 +20,7 @@ The main tasks are to maintain Lawnicons and interaction with launchers, fix bug
 
 **Icons**  
 
-You can contribute your icons, fulfill icon requests, add missing app components, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
+You can contribute your icons, fulfill icon requests, add missing app IDs, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
 
 [Icon requests dashboard](https://lawnicons-requests.vercel.app/)
 
@@ -248,28 +248,28 @@ You can use it to create a local copy of your repository on GitHub and upload al
 
 [GitHub Desktop](https://github.com/apps/desktop)
 
-### App components search tool
+### App ID search tool
 
-You can use it to find app components. If you fulfill icon requests from our table, all the app components are there.
+You can use it to find app IDs. If you fulfill icon requests from our table, all the app IDs are there.
 
-[How to find app components](#how-to-find-app-components)
+[How to find app IDs](#how-to-find-app-ids)
 
 ### Other tools
 
 **File explorer**. It will help you copy icons to a local copy of your repository.
 
-**Text editor**. It will help you to link icons and app components in `appfilter.xml`. This is how icon packs work.
+**Text editor**. It will help you to link icons and app IDs in `appfilter.xml`. This is how icon packs work.
 
 **Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons.
 
-## How to find app components
+## How to find app IDs
 
-An app component is a record consisting of a package and an activity, separated by `/`. App components allow you to link icons and apps. 
+An app ID is a record consisting of a package and an activity, separated by `/`. App IDs allow you to link icons and apps. 
 
 Sample (Lawnicons)  
 Package: `app.lawnchair.lawnicons`  
 Activity: `app.lawnchair.lawnicons.MainActivity`  
-App component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
+App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
 **Lawnicons**  
 
@@ -277,7 +277,7 @@ This method is suitable if you are interested in installed apps that aren't supp
 1. Install and open Lawnicons.
 2. Long press our logo.
 3. Swipe down.
-4. Copy missing app components to clipboard.
+4. Copy missing app IDs to clipboard.
 5. Save it wherever it's convenient.
 
 [Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
@@ -286,8 +286,8 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 1. Download and launch Icon Request.
 2. Tap one of the options:
-- UPDATE EXISTING — to copy app components.
-- REQUEST NEW — to save icon images and app components. This option is better if you are creating icons.
+- UPDATE EXISTING — to copy app IDs.
+- REQUEST NEW — to save icon images and app IDs. This option is better if you are creating icons.
 3. Use the Icon Request toolbar to select apps.
 4. Copy, save or share.
 
@@ -324,27 +324,27 @@ This method is suitable if you are interested in installed apps that aren't supp
   ```
   ![](docs/images/contributing-image-3.png)
 
-## Adding icons and missing app components to Lawnicons
+## Adding icons and missing app IDss to Lawnicons
 
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
 
-You need to link SVGs and app components correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
+You need to link SVGs and app IDs correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
 Tips
 - Avoid name conflicts.
-- Add missing app components to icons that are identical to the originals.
-- Make sure your icons or missing app components haven't been added earlier: search the `appfilter.xml` and check PRs.
+- Add missing app IDs to icons that are identical to the originals.
+- Make sure your icons or missing app IDs haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [How to find app components](#how-to-find-app-components) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [How to find app IDs](#how-to-find-app-ids) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
 ### Manual process
 
-Let's imagine that you have an icon in SVG format, an app name and an app component.  
+Let's imagine that you have an icon in SVG format, an app name and an app ID.  
 
 Icon: `lawnicons.svg`  
 App name: `Lawnicons`  
-App component: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
+App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
 
 1. Fork the Lawnicons repository.
 2. Clone the fork via GitHub Desktop.
@@ -357,7 +357,7 @@ Do
 <item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
 
 Template
-<item component="ComponentInfo{APP_COMPONENT}" drawable="ICON_NAME" name="APP_NAME" />
+<item component="ComponentInfo{APP_ID}" drawable="ICON_NAME" name="APP_NAME" />
 ```
 
 6. Save changes and push it to your fork via GitHub Desktop.
@@ -373,6 +373,6 @@ A commit history appears after your PR is merged. Please keep your repository up
 
 ### icontool.py
 
-This tool will help you if you regularly contribute icons or missing app components.
+This tool will help you if you regularly contribute icons or missing app IDs.
 
 [icontool.py guide](/docs/icontool_guide.md)
