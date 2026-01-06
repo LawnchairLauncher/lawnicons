@@ -324,7 +324,7 @@ This method is suitable if you are interested in installed apps that aren't supp
   ```
   ![](docs/images/contributing-image-3.png)
 
-## Adding icons and missing app IDss to Lawnicons
+## Adding icons and missing app IDs to Lawnicons
 
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
