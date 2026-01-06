@@ -8,7 +8,7 @@ body:
       label: Icons
       description: |
         **Before you start**  
-        Please note that we only consider icon design changes. If it remains the same, you will probably find it useful to know [how to link apps and icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-components-to-lawnicons).  
+        Please note that we only consider icon design changes. If it remains the same, you will probably find it useful to know [how to link apps and icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons).  
         
         **How to find the current icon and app name**  
         Search the [appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). For instance, you found "...**drawable="ladb" name="ADB Shell" />**". The icon is [ladb](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/ladb.svg) and the app name is **ADB Shell**.  
