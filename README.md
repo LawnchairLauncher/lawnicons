@@ -66,9 +66,9 @@ Lawnicons on the Play Store will install as a different app from other sources.
     <a href="https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs">
         <img alt="Total icons" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons/svgs?type=file&style=flat&color=3F9E00&label=Icons">
     </a>
-    <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Request dashboard (beta)" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=94009E&label=Request+dashboard+%28beta%29">
-    </a>
+   <!-- <a href="https://lawnicons-requests.vercel.app/">
+       <img alt="Request dashboard (beta)" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=94009E&label=Request+dashboard+%28beta%29">
+    </a> --> 
 </div> 
 
 ### Icons
