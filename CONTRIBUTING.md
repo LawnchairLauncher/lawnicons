@@ -102,7 +102,7 @@ Tips
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-Determine before you start. The exact values are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
+Determine before you start. The exact values are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
 Tips
 - Follow the blue guides. 
@@ -116,7 +116,7 @@ Tips
 
 Determine before you start. These are icons with 50% or more of the edges running along the square.
 
-The exact values are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+The exact values are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
 Tips
 - Follow the golden guides. 
@@ -189,7 +189,8 @@ Tips
 
 <img src="docs/images/quality-4-excessive-density.png" alt="4 Excessive density" height="200" />
 
-Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing. It’s better to make the distance a little more.
+Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.
+It’s better to make the distance a little more.
 
 Tips
 - Move lines further apart.
