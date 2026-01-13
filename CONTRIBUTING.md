@@ -102,7 +102,7 @@ Tips
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-Determine the size before you start. The exact sizes are determined by the stroke's position, weight, and the graphic editor used.  
+Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used.  
 For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
 Tips
@@ -115,7 +115,7 @@ Tips
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
-Determine the size before you start. These are icons with `50%` or more of the edges running along the square. The exact sizes are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+Determine the square icon size before you start. These are icons with `50%` or more of the edges running along the square. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
 Tips
 - Follow the golden guides. 
