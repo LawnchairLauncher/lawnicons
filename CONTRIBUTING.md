@@ -40,6 +40,8 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 > The design guidelines are also available in Figma, you can practice there.  
 > [View in Figma](https://www.figma.com/community/file/1544976260626797886)
 
+[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
+
 ### Approach
 
 The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
@@ -53,11 +55,37 @@ Tips
 
 [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
-### Best way to learn the design guidelines
+### Naming
 
-Open your icon image in Figma and apply the guidelines point by point. For mindfulness, focus on the common issues.  
+TL;DR
+```
+_2048.svg | 2048
+lawnicons.svg | Lawnicons
+habitacao_caixa.svg | Habitação Caixa
+beijing_card.svg | 北京一卡通 ~~ Beijing Card
+a_and_w.svg | A&amp;W
+```
 
-[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
+**App name**  
+
+The main app name should be in its main language. It can be found in app stores or primary sources.
+
+Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
+
+Tips
+- Add localized names if available.
+- Transliterate non-English names when there are no localized ones.
+- Separate app names using `~~`. First, the main app name, then the additional one.
+- Delete things that aren't part of an app name.
+- Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+
+**Icon name (drawable)**  
+
+Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit at the beginning of an icon name.
+
+Tips
+- When multiple apps are linked to the same icon, choose the most popular app name for it.
+- Replace non-English letters with English letters.
 
 ### Fundamentals
 
@@ -74,17 +102,27 @@ Open your icon image in Figma and apply the guidelines point by point. For mindf
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-`160 × 160 px`. The long side of an abstract icon should be `160 px`, but the other side could be smaller. In the case of curved boundaries, the margin of error is `<0.1 px`.  
+Determine before you start. The exact values are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
-Note: Stroke weight and position affect icon size in Figma.  
+Tips
+- Follow the blue guides. 
+- Use existing icons as an example.
+- Aim for pixel-perfect.
+- The margin of error is `<0.1 px`.
 
 #### 3 Square icons
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
-`154 × 154 px`. These are icons with `50%` or more of the edges running along the square.  
+Determine before you start. These are icons with 50% or more of the edges running along the square.
 
-Note: Stroke weight and position affect icon size in Figma.  
+The exact values are determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+
+Tips
+- Follow the golden guides. 
+- Use existing icons as an example.
+- Aim for pixel-perfect.
+- The margin of error is `<0.1 px`.
 
 #### 4 Color
 
@@ -151,7 +189,7 @@ Tips
 
 <img src="docs/images/quality-4-excessive-density.png" alt="4 Excessive density" height="200" />
 
-Keep at least `8 px` between lines.
+Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing. It’s better to make the distance a little more.
 
 Tips
 - Move lines further apart.
@@ -206,33 +244,6 @@ Tips
 - The default location for the badge is the lower right corner, but a lot depends on the icon shape.
 - Avoid shifting icons for the sake of the badge.
 - Create an issue if there aren’t enough version badges.
-
-### Naming
-
-Start with examples, maybe there is a suitable one for you.  
-
-[Thousands of examples](app/assets/appfilter.xml)
-
-**App name**  
-
-The main app name should be in its main language. It can be found in app stores or primary sources.
-
-Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
-
-Tips
-- Add localized names if available.
-- Transliterate non-English names when there are no localized ones.
-- Separate app names using `~~`. First, the main app name, then the additional one.
-- Delete things that aren't part of an app name.
-- Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
-
-**Icon name (drawable)**  
-
-Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit at the beginning of an icon name.
-
-Tips
-- When multiple apps are linked to the same icon, choose the most popular app name for it.
-- Replace non-English letters with English letters.
 
 ## Icon contribution tools
 
