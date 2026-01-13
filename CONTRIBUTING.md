@@ -57,7 +57,7 @@ Tips
 
 ### Naming
 
-TL;DR
+**TL;DR**
 ```
 _2048.svg | 2048
 lawnicons.svg | Lawnicons
