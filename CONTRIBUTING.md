@@ -102,8 +102,7 @@ Tips
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used.  
-For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
+Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
 Tips
 - Follow the blue guides. 
