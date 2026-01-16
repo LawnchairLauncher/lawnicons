@@ -1,22 +1,22 @@
 [versions]
 agp = "8.13.2"
-kotlin = "2.2.21"
+kotlin = "2.3.0"
 androidx-nav3 = "1.0.0"
 androidx-lifecycle = "2.10.0"
-hilt = "2.57.2"
+hilt = "2.58"
 retrofit = "3.0.0"
 
 [libraries]
 androidx-core-ktx = "androidx.core:core-ktx:1.17.0"
 androidx-core-splashscreen = "androidx.core:core-splashscreen:1.2.0"
 androidx-activity-compose = "androidx.activity:activity-compose:1.12.2"
-androidx-compose-bom = "androidx.compose:compose-bom:2025.12.01"
+androidx-compose-bom = "androidx.compose:compose-bom:2026.01.00"
 androidx-compose-ui = { module = "androidx.compose.ui:ui" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-animation = { module = "androidx.compose.animation:animation" }
-androidx-compose-material3 = "androidx.compose.material3:material3:1.5.0-alpha11"
+androidx-compose-material3 = "androidx.compose.material3:material3:1.5.0-alpha12"
 androidx-compose-material3-windowsizeclass = { module = "androidx.compose.material3:material3-window-size-class" }
 androidx-graphics-shapes = "androidx.graphics:graphics-shapes:1.1.0"
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "androidx-nav3" }

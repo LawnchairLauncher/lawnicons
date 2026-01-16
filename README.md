@@ -61,18 +61,19 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Contributing
 <div align="left">
     <a href="CONTRIBUTING.md">
-        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=mdbook&logoColor=ffffff">
+        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff">
     </a>
     <a href="https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs">
         <img alt="Total icons" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons/svgs?type=file&style=flat&color=3F9E00&label=Icons">
     </a>
     <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Request dashboard (beta)" src="https://img.shields.io/github/directory-file-count/LawnchairLauncher/lawnicons-requests-dashboard/src/extracted_png?type=file&style=flat&color=94009E&label=Request+dashboard+%28beta%29">
+        <img alt="Icon requests" src="https://img.shields.io/badge/Icon%20requests-94009E?logo=vercel&logoColor=ffffff">
     </a>
 </div> 
 
 ### Icons
-You can add the missing icons if they are of high quality. To help with requests, please prioritize popular, widely-installed (5M+) apps. Following the guidelines is essensial. Add no more than 5 icons at a time to avoid unnecessary rework.
+You can add the missing icons if they are of high quality. Following the Lawnicons design guidelines is essensial. Add no more than 5 icons at a time to avoid unnecessary rework. To help with requests, please prioritize popular, widely-installed (5M+) apps.
+
 > [!NOTE]
 > Each icon approved and merged on the first try fulfills [a simple community request](https://lawnicons-requests.vercel.app/?filters=easy).
  
