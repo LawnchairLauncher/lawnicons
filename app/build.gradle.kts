@@ -1,5 +1,4 @@
 import app.cash.licensee.SpdxId
-import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.util.Properties
 
 plugins {
@@ -78,7 +77,7 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        res.setSrcDirs(listOf("src/runtime/res"))
+        res.directories.add("src/runtime/res")
     }
 
     buildFeatures {
