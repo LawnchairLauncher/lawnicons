@@ -97,13 +97,6 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        outputs.all {
-            (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
-        }
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
