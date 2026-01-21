@@ -103,7 +103,7 @@ android {
 }
 
 androidComponents {
-    onVariants(selector().withBuildType("release")) { variant ->
+    onVariants { variant ->
         variant.outputs.forEach { output ->
             // TODO: https://github.com/android/gradle-recipes/blob/cbe7c7dea2a3f5b1764756f24bf453d1235c80e2/listenToArtifacts/README.md
             with(output as com.android.build.api.variant.impl.VariantOutputImpl) {
