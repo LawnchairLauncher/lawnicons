@@ -68,7 +68,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
@@ -86,6 +85,7 @@ import app.lawnchair.lawnicons.ui.theme.icon.Save
 import app.lawnchair.lawnicons.ui.theme.icon.Share
 import app.lawnchair.lawnicons.ui.util.Constants
 import coil.compose.AsyncImage
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
@@ -109,7 +109,7 @@ fun EntryProviderScope<NavKey>.iconRequestDestination(
 fun IconRequest(
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
-    viewModel: IconRequestViewModel = hiltViewModel(),
+    viewModel: IconRequestViewModel = metroViewModel(),
     onBack: () -> Unit,
 ) {
     val context = LocalContext.current

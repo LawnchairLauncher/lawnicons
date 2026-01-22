@@ -44,7 +44,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
@@ -59,6 +58,7 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 
@@ -99,7 +99,7 @@ private fun Home(
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
-    lawniconsViewModel: HomeViewModel = hiltViewModel<HomeViewModelImpl>(),
+    lawniconsViewModel: HomeViewModel = metroViewModel<HomeViewModelImpl>(),
 ) {
     with(lawniconsViewModel) {
         val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()

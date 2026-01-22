@@ -17,10 +17,13 @@
 package app.lawnchair.lawnicons.data.repository
 
 import android.app.Application
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
-import javax.inject.Inject
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -32,7 +35,10 @@ interface NewIconsRepository {
     val newIconsInfoModel: StateFlow<IconInfoModel>
 }
 
-class NewIconsRepositoryImpl @Inject constructor(application: Application) : NewIconsRepository {
+@SingleIn(LawniconsScope::class)
+@ContributesBinding(LawniconsScope::class)
+@Inject
+class NewIconsRepositoryImpl(application: Application) : NewIconsRepository {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 

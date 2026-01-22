@@ -1,7 +1,10 @@
 package app.lawnchair.lawnicons
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import dev.zacsweers.metro.createGraphFactory
 
-@HiltAndroidApp
-class LawniconsApplication : Application()
+class LawniconsApplication : Application() {
+    val lawniconsGraph by lazy {
+        createGraphFactory<LawniconsGraph.Factory>().create(this)
+    }
+}

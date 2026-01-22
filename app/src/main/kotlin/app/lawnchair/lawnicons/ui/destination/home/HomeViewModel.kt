@@ -23,6 +23,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SearchMode
@@ -32,8 +33,10 @@ import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import app.lawnchair.lawnicons.ui.util.SampleData
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.binding
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -59,8 +62,10 @@ interface HomeViewModel {
     fun clearSearch()
 }
 
-@HiltViewModel
-class HomeViewModelImpl @Inject constructor(
+@Inject
+@ViewModelKey(HomeViewModelImpl::class)
+@ContributesIntoMap(LawniconsScope::class, binding = binding<ViewModel>())
+class HomeViewModelImpl(
     private val iconRepository: IconRepository,
     private val newIconsRepository: NewIconsRepository,
     private val iconRequestRepository: IconRequestRepository,

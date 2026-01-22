@@ -18,13 +18,16 @@ package app.lawnchair.lawnicons.data.repository.iconrequest
 
 import android.app.Application
 import android.util.Log
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 import java.io.File
-import javax.inject.Inject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -40,7 +43,10 @@ interface IconRequestRepository {
     suspend fun createIconRequestZip(currentIconRequests: List<SystemIconInfo>?): File?
 }
 
-class IconRequestRepositoryImpl @Inject constructor(
+@SingleIn(LawniconsScope::class)
+@ContributesBinding(LawniconsScope::class)
+@Inject
+class IconRequestRepositoryImpl constructor(
     val application: Application,
     private val api: IconRequestSettingsAPI,
 ) : IconRequestRepository {

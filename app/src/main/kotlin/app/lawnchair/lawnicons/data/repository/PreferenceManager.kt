@@ -4,6 +4,9 @@ import android.content.SharedPreferences
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.produceState
+import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 
 /**
  * A class that abstracts the functionality of SharedPreferences
@@ -75,6 +78,8 @@ abstract class BasePreferenceManager(
     }
 }
 
+@Inject
+@SingleIn(LawniconsScope::class)
 class PreferenceManager(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {

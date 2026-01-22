@@ -34,7 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
@@ -46,6 +45,7 @@ import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.icon.Copy
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -68,7 +68,7 @@ fun EntryProviderScope<NavKey>.debugMenuDestination(
 fun DebugMenu(
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: DebugMenuViewModel = hiltViewModel(),
+    viewModel: DebugMenuViewModel = metroViewModel(),
     isExpandedScreen: Boolean = false,
 ) {
     val iconInfoModel by viewModel.iconInfoModel.collectAsStateWithLifecycle()
