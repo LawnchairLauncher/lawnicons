@@ -2988,7 +2988,7 @@
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Blue}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Amber}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{org.lineageos.aperture/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{org.codeaurora.snapcam/com.android.camera.VideoCamera}" drawable="generic_camera" name="Camera" />
+  <item component="ComponentInfo{org.codeaurora.snapcam/com.android.camera.VideoCamera}" drawable="generic_camera" name="Gcam" />
   <item component="ComponentInfo{com.google.android.GoogleCamera3/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.google.android.GoogleCameraLMC88/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.agc.gcam88/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
@@ -5536,6 +5536,7 @@
   <item component="ComponentInfo{com.qianyan.eudic/com.eusoft.dict.activity.SplashActivity}" drawable="eudic" name="Eudic" />
   <item component="ComponentInfo{com.eusoft.eudic/com.eusoft.dict.activity.SplashActivity}" drawable="eudic" name="Eudic" />
   <item component="ComponentInfo{com.oceanwing.battery.cam/com.oceanwing.battery.feature_main.mega_splash.SplashActivity}" drawable="eufy" name="eufy" />
+  <item component="ComponentInfo{com.elf.eurekaforbes/com.elf.eurekaforbes.MainActivity}" drawable="euclidea" name="Eureka Forbes" />
   <item component="ComponentInfo{com.eufylife.smarthome/com.oceanwing.eufyhome.main.WelcomeActivity}" drawable="eufy_clean" name="eufy Clean" />
   <item component="ComponentInfo{com.oceanwing.battery.cam/com.oceanwing.battery.cam.main.SplashActivity}" drawable="eufy_security" name="eufy Security" />
   <item component="ComponentInfo{com.oceanwing.smarthome/com.oceanwing.eufylife.ui.activity.WelcomeActivity}" drawable="eufylife" name="EufyLife" />
@@ -10282,6 +10283,7 @@
   <item component="ComponentInfo{in.gov.uidai.mAadhaarPlus/in.gov.uidai.mAadhaarPlus.ui.activity.SplashScreenActivity}" drawable="maadhaar" name="mAadhaar" />
   <item component="ComponentInfo{in.gov.uidai.mAadhaarPlus/in.gov.uidai.mAadhaarPlus.MainActivity}" drawable="maadhaar" name="mAadhaar" />
   <item component="ComponentInfo{in.maccaron/in.maccaron.MainActivity}" drawable="maccaron" name="Maccaron" />
+  <item component="ComponentInfo{in.gov.uidai.facerd/in.gov.uidai.core.CoreActivity}" drawable="maadhaar" name="AadhaarFaceRd" />
   <item component="ComponentInfo{cl.bci.sismo.mach/cl.bci.sismo.mach.machapp.splash.SplashActivity}" drawable="mach" name="MACH" />
   <item component="ComponentInfo{com.kokteyl.mackolik/com.perform.livescores.presentation.views.activities.SplashActivity}" drawable="mackolik" name="Mackolik" />
   <item component="ComponentInfo{com.kokteyl.mackolik/com.perform.livescores.default}" drawable="mackolik" name="Mackolik" />
@@ -11534,7 +11536,7 @@
   <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Dark_3}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.revanced.manager.MainActivity}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Dark_1}" drawable="morphe" name="Morphe" />
-  <item component="ComponentInfo{app.morphe.android.youtube/app.morphe.android.youtube.morphe_dark_2}" drawable="morphe" name="Morphe" />
+  <item component="ComponentInfo{app.morphe.android.youtube/app.morphe.android.youtube.morphe_dark_2}" drawable="morphe" name="youtube" />
   <item component="ComponentInfo{app.morphe.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="google_photos" name="Morphe Google Photos" />
   <item component="ComponentInfo{com.morphpatches.app/com.webtoapp.ui.shell.ShellActivity}" drawable="morphe" name="Morphe Patches" />
   <item component="ComponentInfo{rocks.poopjournal.morse/rocks.poopjournal.morse.MainActivity}" drawable="morse" name="Morse" />
@@ -21296,29 +21298,29 @@
   <item component="ComponentInfo{yt.morphe.noname.exe/yt.morphe.noname.exe.morphe_black_2}" drawable="morphe" name="YouTube Morphe" />
   <item component="ComponentInfo{app.morphe.android.youtube/app.morphe.android.youtube.morphe_original_3}" drawable="youtube" name="YouTube Morphe" />
   <item component="ComponentInfo{com.morphe.youtube.music/com.morphe.youtube.music.morphe_original_1}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.archive.ReactivateActivity}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{com.google.android.music/com.google.android.music.tombstone.LauncherActivity}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{com.google.android.music/com.android.music.activitymanagement.TopLevelActivity}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{anddea.yrf.tube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_1}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_4}" drawable="morphe" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_1}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_1}" drawable="morphe" name="YouTube Music" />
-  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_4}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_2}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{com.android.youtube.music.premium/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="generic_player_pro" name="YouTube Music" />
-  <item component="ComponentInfo{com.android.youtube.music.premium/com.android.youtube.music.premium.morphe_original_1}" drawable="generic_player_pro" name="YouTube Music" />
-  <item component="ComponentInfo{ytm.morphe.noname.exe/ytm.morphe.noname.exe.morphe_original_1}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_custom_5}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_light_1}" drawable="morphe" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_5}" drawable="generic_player" name="YouTube Music" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_2}" drawable="generic_player" name="YouTube Music Morphe" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_2}" drawable="morphe" name="YouTube Music Morphe" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_3}" drawable="morphe" name="YouTube Music Morphe" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_3}" drawable="generic_player" name="YouTube Music Morphe" />
-  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_dark_5}" drawable="morphe" name="YouTube Music Morphe" />
+  <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.archive.ReactivateActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{com.google.android.music/com.google.android.music.tombstone.LauncherActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{com.google.android.music/com.android.music.activitymanagement.TopLevelActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{anddea.yrf.tube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_1}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_4}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_1}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_1}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_4}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_2}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{com.android.youtube.music.premium/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{com.android.youtube.music.premium/com.android.youtube.music.premium.morphe_original_1}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{ytm.morphe.noname.exe/ytm.morphe.noname.exe.morphe_original_1}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_custom_5}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_light_1}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_5}" drawable="vanced_youtube_music" name="YouTube Music" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_2}" drawable="vanced_youtube_music" name="YouTube Music Morphe" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_2}" drawable="vanced_youtube_music" name="YouTube Music Morphe" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_black_3}" drawable="vanced_youtube_music" name="YouTube Music Morphe" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_original_3}" drawable="vanced_youtube_music" name="YouTube Music Morphe" />
+  <item component="ComponentInfo{app.morphe.android.apps.youtube.music/app.morphe.android.apps.youtube.music.morphe_dark_5}" drawable="vanced_youtube_music" name="YouTube Music Morphe" />
   <item component="ComponentInfo{anddea.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
   <item component="ComponentInfo{app.revanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
   <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
@@ -22483,4 +22485,15 @@
   <item component="ComponentInfo{com.hyundaicard.appcard/com.hyundaicard.appcard.app.intro.LoadingForNormalActivity}" drawable="hyundai_card" name="현대카드 ~~ Hyundai Card" />
   <item component="ComponentInfo{com.nttdocomo.android.dmenu2/com.nttdocomo.android.docomo_market.ui.StartupActivity}" drawable="d_menu" name="ｄメニュー ~~ d menu" />
   <item component="ComponentInfo{space.takashima.keypo/org.mozc.android.inputmethod.japanese.LauncherActivity}" drawable="generic_keyboard" name="ﾀｸﾄ ｷｰﾎﾞｰﾄﾞ ~~ Takt keyboard" />
+  <item component="ComponentInfo{com.vishnu.whatsappcleaner/com.vishnu.whatsappcleaner.MainActivity}" drawable="chatlaunch_for_whatsapp" name="WhatsApp Cleaner" />
+  <item component="ComponentInfo{yeah.deepsan.dhbvn/yeah.deepsan.dhbvn.mApp.mActivity.SplashActivity}" drawable="electron" name="DHBVN" />
+  <item component="ComponentInfo{com.cricfy.tv/com.android.vending.tv.activities.MainActivity}" drawable="microsoft_stream" name="CricFy" />
+  <item component="ComponentInfo{com.android.launcher/.Launcher}" drawable="neo_launcher" name="System Launcher" />
+  <item component="ComponentInfo{com.oplus.aimemory/com.oplus.aimemory.MainActivity}" drawable="chat_ai" name="Mind Space" />
+  <item component="ComponentInfo{in.mobility.bharatTaxi/com.mobility.movingtech.MainActivity}" drawable="taxi_coop" name="Bharat Taxi" />
+  <item component="ComponentInfo{com.buyhatke.assistant/com.buyhatke.assistant.views.activities.MainActivity}" drawable="bam" name="Buyhatke" />
+  <item component="ComponentInfo{com.indusind.indie/com.indusind.indie.MainActivity}" drawable="indmoney" name="INDIE" />
+  <item component="ComponentInfo{com.sportzx.live/com.sportzx.live.MainActivity}" drawable="sportstats" name="SportzX" />
+  <item component="ComponentInfo{com.paperknife.app/com.paperknife.app.MainActivity}" drawable="pdf_converter" name="PaperKnife" />
+  <item component="ComponentInfo{dev.allofus.starlight/dev.allofus.starlight.StarlightActivity}" drawable="starhub" name="Starlight" />
 </resources>
