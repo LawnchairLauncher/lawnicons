@@ -34,7 +34,6 @@ import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import app.lawnchair.lawnicons.ui.util.SampleData
 import dev.zacsweers.metro.ContributesIntoMap
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.binding
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -62,7 +61,6 @@ interface HomeViewModel {
     fun clearSearch()
 }
 
-@Inject
 @ViewModelKey(HomeViewModelImpl::class)
 @ContributesIntoMap(LawniconsScope::class, binding = binding<ViewModel>())
 class HomeViewModelImpl(

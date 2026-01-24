@@ -23,10 +23,8 @@ import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import dev.zacsweers.metro.ContributesIntoMap
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@Inject
 @ViewModelKey(DebugMenuViewModel::class)
 @ContributesIntoMap(LawniconsScope::class)
 class DebugMenuViewModel(

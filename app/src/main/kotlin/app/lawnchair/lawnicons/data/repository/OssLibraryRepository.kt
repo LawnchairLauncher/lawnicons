@@ -5,7 +5,6 @@ import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.kotlinxJson
 import app.lawnchair.lawnicons.data.model.OssLibrary
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
@@ -21,7 +20,6 @@ interface OssLibraryRepository {
 
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
-@Inject
 class OssLibraryRepositoryImpl constructor(private val application: Application) : OssLibraryRepository {
 
     private val coroutineScope = MainScope()

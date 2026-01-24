@@ -25,7 +25,6 @@ import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.IconRequestData
 import app.lawnchair.lawnicons.ui.util.Constants
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
 interface IconRequestHandler {
@@ -34,7 +33,6 @@ interface IconRequestHandler {
 
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
-@Inject
 class ArcticonsDashboardHandler constructor() : IconRequestHandler {
     override fun execute(context: Context, requestData: IconRequestData) {
         val authority = "${context.packageName}.fileprovider"

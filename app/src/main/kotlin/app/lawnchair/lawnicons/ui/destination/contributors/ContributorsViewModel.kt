@@ -23,7 +23,6 @@ import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.data.repository.GitHubContributorsRepository
 import dev.zacsweers.metro.ContributesIntoMap
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -54,7 +53,6 @@ private data class ContributorsViewModelState(
     }
 }
 
-@Inject
 @ViewModelKey(ContributorsViewModel::class)
 @ContributesIntoMap(LawniconsScope::class)
 class ContributorsViewModel(

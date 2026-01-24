@@ -25,7 +25,6 @@ import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import java.io.File
 import kotlinx.coroutines.CoroutineScope
@@ -45,7 +44,6 @@ interface IconRequestRepository {
 
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
-@Inject
 class IconRequestRepositoryImpl constructor(
     val application: Application,
     private val api: IconRequestSettingsAPI,

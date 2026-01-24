@@ -19,7 +19,6 @@ package app.lawnchair.lawnicons.di
 import androidx.lifecycle.ViewModel
 import app.lawnchair.lawnicons.LawniconsScope
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.Provider
 import dev.zacsweers.metro.SingleIn
 import dev.zacsweers.metrox.viewmodel.ManualViewModelAssistedFactory
@@ -27,7 +26,6 @@ import dev.zacsweers.metrox.viewmodel.MetroViewModelFactory
 import dev.zacsweers.metrox.viewmodel.ViewModelAssistedFactory
 import kotlin.reflect.KClass
 
-@Inject
 @ContributesBinding(LawniconsScope::class)
 @SingleIn(LawniconsScope::class)
 class MetroViewModelFactoryImpl(
