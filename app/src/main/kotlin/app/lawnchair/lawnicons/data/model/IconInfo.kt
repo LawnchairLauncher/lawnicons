@@ -1,7 +1,7 @@
 package app.lawnchair.lawnicons.data.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
-import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.ArrowBack
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.Close
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
@@ -26,7 +26,7 @@ data class IconInfo(
         1 -> LawnIcons.Check
         2 -> LawnIcons.Close
         3 -> LawnIcons.Search
-        else -> LawnIcons.Back
+        else -> LawnIcons.ArrowBack
     }
 }
 

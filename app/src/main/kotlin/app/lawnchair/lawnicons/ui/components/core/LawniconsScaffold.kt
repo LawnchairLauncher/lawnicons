@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
-import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.ArrowBack
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
@@ -45,7 +45,7 @@ fun LawniconsScaffold(
                 title = title,
                 navigationIcon = {
                     NavigationIconButton(
-                        imageVector = LawnIcons.Back,
+                        imageVector = LawnIcons.ArrowBack,
                         onClick = onBack,
                         modifier = Modifier.padding(horizontal = 4.dp),
                     )

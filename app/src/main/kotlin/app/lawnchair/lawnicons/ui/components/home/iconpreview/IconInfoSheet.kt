@@ -56,7 +56,7 @@ import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
-import app.lawnchair.lawnicons.ui.theme.icon.ShareIcon
+import app.lawnchair.lawnicons.ui.theme.icon.Share
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -138,7 +138,7 @@ fun IconInfoSheet(
                     )
                     Spacer(Modifier.width(16.dp))
                     IconLink(
-                        imageVector = LawnIcons.ShareIcon,
+                        imageVector = LawnIcons.Share,
                         label = stringResource(id = R.string.share),
                         onClick = {
                             val intent = Intent().apply {

@@ -140,6 +140,7 @@ dependencies {
     implementation(libs.androidx.compose.animation)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.windowsizeclass)
+    implementation(libs.androidx.compose.material.icons)
     implementation(libs.androidx.graphics.shapes)
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.androidx.navigation3.runtime)

@@ -33,7 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
-import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.ArrowBack
 import app.lawnchair.lawnicons.ui.theme.icon.Close
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.Search
@@ -69,7 +69,7 @@ fun SearchBarInputField(
         leadingIcon = {
             if (searchBarState.targetValue == SearchBarValue.Expanded) {
                 NavigationIconButton(
-                    imageVector = LawnIcons.Back,
+                    imageVector = LawnIcons.ArrowBack,
                     onClick = onBack,
                 )
             } else {
