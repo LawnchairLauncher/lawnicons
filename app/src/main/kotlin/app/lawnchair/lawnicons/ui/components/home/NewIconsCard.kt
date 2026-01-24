@@ -17,6 +17,7 @@
 package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItemDefaults
@@ -53,7 +54,8 @@ fun NewIconsCard(
             containerColor = adaptiveSurfaceContainerColor,
         ),
         modifier = modifier
-            .padding(horizontal = 8.dp),
+            .padding(horizontal = 8.dp)
+            .widthIn(max = 400.dp),
         content = {
             ListRowLabel(
                 label = stringResource(

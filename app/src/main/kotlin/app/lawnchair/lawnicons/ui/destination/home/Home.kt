@@ -20,11 +20,15 @@ import android.annotation.SuppressLint
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarExitDirection
@@ -50,6 +54,7 @@ import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.ui.components.home.AnnouncementCard
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.NewIconsCard
@@ -177,6 +182,22 @@ private fun Home(
                                     span = { GridItemSpan(maxLineSpan) },
                                 ) {
                                     NewIconsCard(onNavigateToNewIcons)
+                                }
+                            }
+                            if (announcements.isNotEmpty()) {
+                                item(
+                                    span = { GridItemSpan(maxLineSpan) },
+                                ) {
+                                    Row(
+                                        horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                        modifier = Modifier
+                                            .padding(horizontal = 8.dp, vertical = 8.dp)
+                                            .horizontalScroll(rememberScrollState()),
+                                    ) {
+                                        announcements.forEach {
+                                            AnnouncementCard(it)
+                                        }
+                                    }
                                 }
                             }
                         }

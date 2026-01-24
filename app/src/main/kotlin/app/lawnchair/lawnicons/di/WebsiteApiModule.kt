@@ -17,8 +17,10 @@
 package app.lawnchair.lawnicons.di
 
 import app.lawnchair.lawnicons.LawniconsScope
+import app.lawnchair.lawnicons.data.api.AnnouncementsAPI
 import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
 import app.lawnchair.lawnicons.data.kotlinxJson
+import app.lawnchair.lawnicons.ui.util.Constants
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
@@ -34,7 +36,17 @@ interface WebsiteApiModule {
     @SingleIn(LawniconsScope::class)
     fun providesWebsiteIconRequestApi(): IconRequestSettingsAPI {
         return Retrofit.Builder()
-            .baseUrl("https://lawnchair.app/")
+            .baseUrl(Constants.WEBSITE)
+            .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
+            .build()
+            .create()
+    }
+
+    @Provides
+    @SingleIn(LawniconsScope::class)
+    fun providesWebsiteAnnouncementsApi(): AnnouncementsAPI {
+        return Retrofit.Builder()
+            .baseUrl(Constants.WEBSITE)
             .addConverterFactory(kotlinxJson.asConverterFactory("application/json".toMediaType()))
             .build()
             .create()
