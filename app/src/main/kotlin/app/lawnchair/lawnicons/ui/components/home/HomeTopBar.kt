@@ -43,7 +43,7 @@ import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
-import app.lawnchair.lawnicons.ui.theme.icon.AboutIcon
+import app.lawnchair.lawnicons.ui.theme.icon.About
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -78,7 +78,7 @@ fun HomeTopBar(
                                 onClick = onNavigate,
                             ) {
                                 Icon(
-                                    imageVector = LawnIcons.AboutIcon,
+                                    imageVector = LawnIcons.About,
                                     contentDescription = null,
                                     tint = MaterialTheme.colorScheme.onSurfaceVariant,
                                     modifier = Modifier
