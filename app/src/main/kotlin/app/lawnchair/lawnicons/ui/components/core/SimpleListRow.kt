@@ -62,13 +62,13 @@ fun SimpleListRow(
                 ListRowLabel(label)
             },
             supportingContent =
-                if (description != null) {
-                    {
-                        ListRowDescription(description)
-                    }
-                } else {
-                    null
-                },
+            if (description != null) {
+                {
+                    ListRowDescription(description)
+                }
+            } else {
+                null
+            },
             leadingContent = startIcon,
             trailingContent = endIcon,
             colors = ListItemDefaults.segmentedColors(

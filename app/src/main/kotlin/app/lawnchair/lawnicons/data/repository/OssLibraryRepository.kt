@@ -22,8 +22,7 @@ interface OssLibraryRepository {
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
 @Inject
-class OssLibraryRepositoryImpl constructor(private val application: Application) :
-    OssLibraryRepository {
+class OssLibraryRepositoryImpl constructor(private val application: Application) : OssLibraryRepository {
 
     private val coroutineScope = MainScope()
 
