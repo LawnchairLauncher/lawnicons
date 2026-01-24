@@ -40,7 +40,6 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-ksp = "com.google.devtools.ksp:2.3.4"
 licensee = "app.cash.licensee:1.14.1"
 spotless = "com.diffplug.spotless:8.2.0"
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
