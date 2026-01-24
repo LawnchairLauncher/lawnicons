@@ -22,7 +22,6 @@ import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.model.SearchInfo
 import app.lawnchair.lawnicons.data.model.SearchMode
 import dev.zacsweers.metro.ContributesBinding
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -42,7 +41,6 @@ interface IconRepository {
 
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
-@Inject
 class IconRepositoryImpl(application: Application) : IconRepository {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)

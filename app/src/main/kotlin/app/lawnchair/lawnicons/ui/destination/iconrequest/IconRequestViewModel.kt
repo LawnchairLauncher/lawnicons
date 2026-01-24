@@ -33,7 +33,6 @@ import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.formatIconRequestList
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
 import dev.zacsweers.metro.ContributesIntoMap
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import java.io.File
 import java.io.FileOutputStream
@@ -48,7 +47,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-@Inject
 @ViewModelKey(IconRequestViewModel::class)
 @ContributesIntoMap(LawniconsScope::class)
 class IconRequestViewModel(

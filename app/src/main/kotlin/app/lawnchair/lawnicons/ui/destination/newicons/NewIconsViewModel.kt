@@ -20,10 +20,8 @@ import androidx.lifecycle.ViewModel
 import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import dev.zacsweers.metro.ContributesIntoMap
-import dev.zacsweers.metro.Inject
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@Inject
 @ViewModelKey(NewIconsViewModel::class)
 @ContributesIntoMap(LawniconsScope::class)
 class NewIconsViewModel(
