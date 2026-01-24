@@ -29,23 +29,8 @@ fun SimpleListRow(
     endIcon: (@Composable () -> Unit)? = null,
     divider: Boolean = true,
     background: Boolean = false,
-    first: Boolean = false,
-    last: Boolean = false,
+    shapes: ListItemShapes = ListRowDefaults.singleItemShapes,
     onClick: (() -> Unit)? = null,
-    shapes: ListItemShapes = ListItemDefaults.segmentedShapes(
-        index = if (divider) {
-            (
-                when {
-                    first -> 0
-                    last -> 2
-                    else -> 1
-                }
-                )
-        } else {
-            1
-        },
-        count = 3,
-    ),
 ) {
     Column(modifier) {
         SegmentedListItem(
@@ -76,9 +61,7 @@ fun SimpleListRow(
             ),
         )
         if (divider) {
-            if (!last) {
-                Spacer(Modifier.height(ListItemDefaults.SegmentedGap))
-            }
+            Spacer(Modifier.height(ListItemDefaults.SegmentedGap))
         }
     }
 }
@@ -114,8 +97,6 @@ private fun SimpleListRowPreview() {
             description = "Example description",
             divider = false,
             background = true,
-            first = false,
-            last = false,
         )
     }
 }

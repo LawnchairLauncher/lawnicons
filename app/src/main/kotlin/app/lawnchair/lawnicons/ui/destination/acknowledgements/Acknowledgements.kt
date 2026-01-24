@@ -91,13 +91,12 @@ private fun Acknowledgements(
                     SimpleListRow(
                         label = it.name,
                         description = it.spdxLicenses.first().name,
+                        divider = index != libraries.lastIndex,
                         background = true,
                         shapes = ListItemDefaults.segmentedShapes(index, libraries.size),
-                        divider = index != libraries.lastIndex,
-                        onClick = {
-                            context.visitUrl(it.scm.url)
-                        },
-                    )
+                    ) {
+                        context.visitUrl(it.scm.url)
+                    }
                 }
             }
         }

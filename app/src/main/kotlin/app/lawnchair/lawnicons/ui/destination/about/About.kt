@@ -49,7 +49,6 @@ import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
-import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Check
@@ -165,10 +164,9 @@ private fun About(
             }
             item(contentType = ColumnTypes.NAVIGATION_ITEM) {
                 SimpleListRow(
-                    onClick = onNavigateToContributors,
                     label = stringResource(id = R.string.see_all_contributors),
                     background = true,
-                    shapes = ListRowDefaults.singleItemShapes,
+                    onClick = onNavigateToContributors,
                 )
             }
             item(contentType = ColumnTypes.SPACER) {
@@ -196,10 +194,9 @@ private fun About(
             }
             item(contentType = ColumnTypes.NAVIGATION_ITEM) {
                 SimpleListRow(
-                    onClick = onNavigateToAcknowledgements,
                     label = stringResource(id = R.string.acknowledgements),
                     background = true,
-                    shapes = ListRowDefaults.singleItemShapes,
+                    onClick = onNavigateToAcknowledgements,
                 )
             }
         }
