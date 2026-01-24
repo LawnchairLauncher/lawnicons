@@ -170,8 +170,6 @@ fun IconInfoSheet(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     },
-                    divider = false,
-                    enforceHeight = false,
                 )
             }
             item {
@@ -250,8 +248,6 @@ private fun IconInfoListRow(
                     }
                 }
             },
-            divider = false,
-            enforceHeight = false,
         )
         Spacer(Modifier.height(16.dp))
     }

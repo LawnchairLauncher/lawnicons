@@ -28,7 +28,6 @@ import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.ButtonDefaults
@@ -39,6 +38,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FlexibleBottomAppBar
 import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItem
+import androidx.compose.material3.ListItemDefaults
+import androidx.compose.material3.ListItemShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
@@ -62,11 +64,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
@@ -74,16 +72,15 @@ import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
-import app.lawnchair.lawnicons.ui.components.core.ListRow
+import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
 import app.lawnchair.lawnicons.ui.theme.icon.Copy
 import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
 import app.lawnchair.lawnicons.ui.theme.icon.KeyboardArrowDown
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
-import app.lawnchair.lawnicons.ui.theme.icon.Mail
 import app.lawnchair.lawnicons.ui.theme.icon.Save
 import app.lawnchair.lawnicons.ui.theme.icon.Share
-import app.lawnchair.lawnicons.ui.util.Constants
 import coil.compose.AsyncImage
 import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.coroutines.launch
@@ -190,33 +187,6 @@ fun IconRequest(
             contentPadding = paddingValues,
         ) {
             item {
-                ListRow(
-                    label = {
-                        Text(
-                            text = buildAnnotatedString {
-                                append(stringResource(R.string.icon_request_mail_hint))
-                                withStyle(
-                                    SpanStyle(
-                                        fontWeight = FontWeight.Bold,
-                                    ),
-                                ) {
-                                    append(Constants.ICON_REQUEST_EMAIL)
-                                }
-                            },
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        )
-                    },
-                    startIcon = {
-                        Icon(
-                            imageVector = LawnIcons.Mail,
-                            contentDescription = null,
-                        )
-                    },
-                    background = true,
-                    first = true,
-                    last = true,
-                )
                 Spacer(Modifier.height(8.dp))
             }
             itemsIndexed(availableIcons) { index, systemIconInfo ->
@@ -226,9 +196,10 @@ fun IconRequest(
                     onCheckedChange = {
                         viewModel.toggleSelection(systemIconInfo)
                     },
-                    first = index == 0,
-                    last = index == availableIcons.lastIndex,
-                    divider = index != availableIcons.lastIndex,
+                    shapes = ListItemDefaults.segmentedShapes(
+                        index = index,
+                        availableIcons.size,
+                    ),
                 )
             }
         }
@@ -350,7 +321,7 @@ data class MenuItemRow(
     val icon: @Composable () -> Unit,
 )
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun ResponsiveMenu(
     menuItems: List<MenuItemRow>,
@@ -385,7 +356,7 @@ fun ResponsiveMenu(
             modifier = modifier,
         ) {
             LazyColumn {
-                items(menuItems) {
+                itemsIndexed(menuItems) { index, it ->
                     SimpleListRow(
                         label = it.title,
                         onClick = {
@@ -395,6 +366,7 @@ fun ResponsiveMenu(
                             }
                         },
                         startIcon = it.icon,
+                        shapes = ListItemDefaults.segmentedShapes(index, menuItems.size),
                     )
                 }
             }
@@ -402,26 +374,29 @@ fun ResponsiveMenu(
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun IconRequestRow(
     systemIconInfo: SystemIconInfo,
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
+    shapes: ListItemShapes,
     modifier: Modifier = Modifier,
-    first: Boolean = false,
-    last: Boolean = false,
-    divider: Boolean = true,
 ) {
-    ListRow(
-        label = {
-            Text(
-                text = systemIconInfo.label,
-                maxLines = 1,
-                style = MaterialTheme.typography.bodyLarge,
-                overflow = TextOverflow.Ellipsis,
-            )
+    ListItem(
+        selected = checked,
+        onClick = {
+            onCheckedChange(!checked)
         },
-        description = {
+        colors = ListItemDefaults.colors(
+            selectedContainerColor = adaptiveSurfaceColor,
+        ),
+        modifier = modifier,
+        shapes = shapes,
+        content = {
+            ListRowLabel(systemIconInfo.label)
+        },
+        supportingContent = {
             Text(
                 text = systemIconInfo.componentName.flattenToString(),
                 maxLines = 1,
@@ -430,26 +405,18 @@ fun IconRequestRow(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         },
-        modifier = modifier,
-        startIcon = {
+        leadingContent = {
             AsyncImage(
                 model = systemIconInfo.drawable,
                 contentDescription = null,
                 modifier = Modifier.requiredSize(48.dp),
             )
         },
-        endIcon = {
+        trailingContent = {
             Checkbox(
                 checked = checked,
                 onCheckedChange = onCheckedChange,
             )
         },
-        onClick = {
-            onCheckedChange(!checked)
-        },
-        background = true,
-        first = first,
-        last = last,
-        divider = divider,
     )
 }

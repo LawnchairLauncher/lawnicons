@@ -19,6 +19,7 @@ package app.lawnchair.lawnicons.ui.destination.contributors
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.calculateEndPadding
@@ -28,7 +29,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -47,8 +50,9 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
-import app.lawnchair.lawnicons.ui.components.ExternalLinkRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
+import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
+import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
@@ -130,6 +134,7 @@ fun Contributors(
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun ContributorList(
     contributors: List<GitHubContributor>,
@@ -141,13 +146,13 @@ private fun ContributorList(
         contentPadding = contentPadding,
     ) {
         item {
-            ExternalLinkRow(
-                name = stringResource(R.string.view_on_github),
-                background = true,
-                first = true,
-                last = true,
-                divider = false,
-                url = CONTRIBUTOR_URL,
+            val context = LocalContext.current
+
+            SimpleListRow(
+                label = stringResource(R.string.view_on_github),
+                onClick = {
+                    context.visitUrl(CONTRIBUTOR_URL)
+                },
                 startIcon = {
                     Box(
                         modifier = Modifier
@@ -164,25 +169,26 @@ private fun ContributorList(
                         )
                     }
                 },
+                background = true,
+                shapes = ListRowDefaults.singleItemShapes,
             )
         }
         item {
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(8.dp))
         }
         itemsIndexed(contributors) { index, it ->
             ContributorRow(
                 name = it.login,
                 photoUrl = it.avatarUrl,
                 profileUrl = it.htmlUrl,
-                background = true,
-                first = index == 0,
-                last = index == contributors.lastIndex,
+                shapes = ListItemDefaults.segmentedShapes(index, contributors.size),
                 divider = index != contributors.lastIndex,
             )
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun ContributorListPlaceholder(
     modifier: Modifier = Modifier,
@@ -195,21 +201,21 @@ private fun ContributorListPlaceholder(
         userScrollEnabled = false,
     ) {
         item {
-            ContributorRowPlaceholder(
-                first = true,
-                last = true,
-                divider = false,
-            )
+            ContributorRowPlaceholder()
         }
         item {
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(8.dp))
         }
         items(itemCount) {
-            ContributorRowPlaceholder(
-                first = it == 0,
-                last = it == itemCount - 1,
-                divider = it < itemCount - 1,
-            )
+            Column {
+                ContributorRowPlaceholder(
+                    shapes = ListItemDefaults.segmentedShapes(
+                        index = it,
+                        itemCount,
+                    ),
+                )
+                Spacer(Modifier.height(ListItemDefaults.SegmentedGap))
+            }
         }
     }
 }

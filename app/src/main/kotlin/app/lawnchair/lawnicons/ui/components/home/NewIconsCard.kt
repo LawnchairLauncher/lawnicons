@@ -16,72 +16,59 @@
 
 package app.lawnchair.lawnicons.ui.components.home
 
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SegmentedListItem
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.NewReleases
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun NewIconsCard(
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    Surface(
-        color = MaterialTheme.colorScheme.surfaceContainer,
-        shape = MaterialTheme.shapes.extraLarge,
+    SegmentedListItem(
+        onClick = onClick,
+        shapes = ListItemDefaults.shapes(
+            shape = MaterialTheme.shapes.extraLarge,
+            pressedShape = MaterialTheme.shapes.large,
+            focusedShape = MaterialTheme.shapes.large,
+        ),
+        colors = ListItemDefaults.colors(
+            containerColor = adaptiveSurfaceContainerColor,
+        ),
         modifier = modifier
-            .padding(horizontal = 8.dp)
-            .padding(bottom = 12.dp)
-            .fillMaxWidth(),
-    ) {
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier
-                .clickable { onClick() }
-                .padding(start = 12.dp),
-        ) {
+            .padding(horizontal = 8.dp),
+        content = {
+            ListRowLabel(
+                label = stringResource(
+                    R.string.new_icons_in_version,
+                    BuildConfig.VERSION_NAME,
+                ),
+            )
+        },
+        leadingContent = {
             Icon(
                 imageVector = LawnIcons.NewReleases,
                 contentDescription = null,
             )
-            Spacer(
-                modifier = Modifier
-                    .height(48.dp)
-                    .width(8.dp),
-            )
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-            ) {
-                Text(
-                    text = stringResource(
-                        R.string.new_icons_in_version,
-                        BuildConfig.VERSION_NAME,
-                    ),
-                    style = MaterialTheme.typography.titleSmall,
-                    modifier = Modifier.fillMaxHeight(),
-                )
-            }
-        }
-    }
+        },
+    )
 }
 
 @PreviewLawnicons

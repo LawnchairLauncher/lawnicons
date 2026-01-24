@@ -2,13 +2,16 @@ package app.lawnchair.lawnicons.ui.components
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
+import androidx.compose.material3.ListItemShapes
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.unit.dp
+import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Check
@@ -18,18 +21,17 @@ import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun ContributorRow(
     name: String,
     photoUrl: String,
+    shapes: ListItemShapes,
     modifier: Modifier = Modifier,
     profileUrl: String? = null,
     socialUrl: String? = null,
     description: String? = null,
     divider: Boolean = true,
-    background: Boolean = false,
-    first: Boolean = false,
-    last: Boolean = false,
 ) {
     val context = LocalContext.current
     val url = profileUrl ?: socialUrl
@@ -41,9 +43,8 @@ fun ContributorRow(
 
     SimpleListRow(
         modifier = modifier,
-        background = background,
-        first = first,
-        last = last,
+        background = true,
+        shapes = shapes,
         divider = divider,
         label = name,
         description = description,
@@ -67,6 +68,7 @@ fun ContributorRow(
     )
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @PreviewLawnicons
 @Composable
 private fun ContributorRowPreview() {
@@ -75,6 +77,7 @@ private fun ContributorRowPreview() {
             name = "User",
             photoUrl = "https://lawnchair.app/images/lawnchair.png",
             description = "The Lawnchair Logo",
+            shapes = ListRowDefaults.singleItemShapes,
         )
     }
 }

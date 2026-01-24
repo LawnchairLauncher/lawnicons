@@ -22,6 +22,8 @@ import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.ListItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -54,6 +56,7 @@ fun EntryProviderScope<NavKey>.acknowledgementsDestination(
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun Acknowledgements(
     onBack: () -> Unit,
@@ -88,9 +91,8 @@ private fun Acknowledgements(
                     SimpleListRow(
                         label = it.name,
                         description = it.spdxLicenses.first().name,
-                        first = index == 0,
                         background = true,
-                        last = index == libraries.lastIndex,
+                        shapes = ListItemDefaults.segmentedShapes(index, libraries.size),
                         divider = index != libraries.lastIndex,
                         onClick = {
                             context.visitUrl(it.scm.url)
