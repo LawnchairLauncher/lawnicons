@@ -1,10 +1,9 @@
 Thanks for your contribution!
 
-Please fix all common issues and ensure Lawnicons builds correctly. Reviews happen 1—2 times a month, occasionally more.
-
-#### Review stages
-1. **Viability check**. For beginners. This reduces effort spent on abandoned PRs.
-2. **Review**. The review batch size ranges from 5 to 10 icons, depending on the number of common issues found.
+- Please fix all common issues and ensure Lawnicons builds correctly.
+- For PRs with more than 5 new icons, please limit your submission to 5.
+- First-timers receive a brief review to confirm commitment.
+- Reviews happen 1—2 times a month, occasionally more.
 
 [Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines)
 
