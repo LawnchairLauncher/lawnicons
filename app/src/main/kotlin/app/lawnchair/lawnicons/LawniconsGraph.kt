@@ -17,10 +17,7 @@
 package app.lawnchair.lawnicons
 
 import android.app.Application
-import android.content.Context
 import app.lawnchair.lawnicons.di.MetroViewModelFactoryImpl
-import dev.zacsweers.metro.Binds
-import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.DependencyGraph
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.Scope
@@ -38,11 +35,5 @@ interface LawniconsGraph : ViewModelGraph {
     @DependencyGraph.Factory
     fun interface Factory {
         fun create(@Provides app: Application): LawniconsGraph
-    }
-
-    @ContributesTo(LawniconsScope::class)
-    interface ContextBindings {
-        @Binds
-        fun bindContext(app: Application): Context
     }
 }
