@@ -156,6 +156,7 @@ dependencies {
     implementation(libs.okhttp)
 
     implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
     implementation(libs.lazycolumn.scrollbar)
     implementation(libs.material.motion.compose.core)
 }

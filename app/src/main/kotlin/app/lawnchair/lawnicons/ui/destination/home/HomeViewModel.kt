@@ -24,14 +24,17 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.lawnchair.lawnicons.LawniconsScope
+import app.lawnchair.lawnicons.data.model.Announcement
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.data.repository.DummySharedPreferences
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import app.lawnchair.lawnicons.data.repository.PreferenceManager
+import app.lawnchair.lawnicons.data.repository.home.AnnouncementsRepository
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
+import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.SampleData
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.binding
@@ -50,6 +53,7 @@ interface HomeViewModel {
     val preferenceManager: PreferenceManager
 
     var iconRequestsEnabled: Boolean
+    var announcements: List<Announcement>
 
     var expandSearch: Boolean
 
@@ -67,6 +71,7 @@ class HomeViewModelImpl(
     private val iconRepository: IconRepository,
     private val newIconsRepository: NewIconsRepository,
     private val iconRequestRepository: IconRequestRepository,
+    private val announcementsRepository: AnnouncementsRepository,
     override val preferenceManager: PreferenceManager,
 ) : ViewModel(),
     HomeViewModel {
@@ -76,6 +81,7 @@ class HomeViewModelImpl(
     override val newIconsInfoModel = newIconsRepository.newIconsInfoModel
 
     override var iconRequestsEnabled = false
+    override var announcements = listOf<Announcement>()
 
     override var expandSearch by mutableStateOf(false)
 
@@ -96,6 +102,19 @@ class HomeViewModelImpl(
                 Log.e(
                     "LawniconsViewModel",
                     "Failed to load icon request settings",
+                    it,
+                )
+            }
+        }
+        viewModelScope.launch {
+            runCatching {
+                announcementsRepository.getAnnouncements()
+            }.onSuccess {
+                announcements = it
+            }.onFailure {
+                Log.e(
+                    "LawniconsViewModel",
+                    "Failed to load announcements",
                     it,
                 )
             }
@@ -133,6 +152,14 @@ class DummyLawniconsViewModel : HomeViewModel {
     override val preferenceManager = PreferenceManager(DummySharedPreferences())
 
     override var iconRequestsEnabled = true
+    override var announcements = listOf(
+        Announcement(
+            title = "Announcement 1",
+            description = "This is the first announcement",
+            icon = "ic_award",
+            url = Constants.WEBSITE,
+        ),
+    )
 
     override var expandSearch by mutableStateOf(false)
 

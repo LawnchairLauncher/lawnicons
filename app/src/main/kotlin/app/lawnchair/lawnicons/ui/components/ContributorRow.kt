@@ -42,13 +42,9 @@ fun ContributorRow(
     }
 
     SimpleListRow(
-        modifier = modifier,
-        background = true,
-        shapes = shapes,
-        divider = divider,
         label = name,
+        modifier = modifier,
         description = description,
-        onClick = onClick,
         startIcon = {
             if (LocalInspectionMode.current) {
                 Icon(imageVector = LawnIcons.Check, contentDescription = null)
@@ -65,6 +61,10 @@ fun ContributorRow(
                 )
             }
         },
+        divider = divider,
+        background = true,
+        shapes = shapes,
+        onClick = onClick,
     )
 }
 

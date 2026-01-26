@@ -51,7 +51,6 @@ import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
-import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Github
@@ -150,9 +149,6 @@ private fun ContributorList(
 
             SimpleListRow(
                 label = stringResource(R.string.view_on_github),
-                onClick = {
-                    context.visitUrl(CONTRIBUTOR_URL)
-                },
                 startIcon = {
                     Box(
                         modifier = Modifier
@@ -170,8 +166,9 @@ private fun ContributorList(
                     }
                 },
                 background = true,
-                shapes = ListRowDefaults.singleItemShapes,
-            )
+            ) {
+                context.visitUrl(CONTRIBUTOR_URL)
+            }
         }
         item {
             Spacer(modifier = Modifier.height(8.dp))

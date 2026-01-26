@@ -359,15 +359,14 @@ fun ResponsiveMenu(
                 itemsIndexed(menuItems) { index, it ->
                     SimpleListRow(
                         label = it.title,
-                        onClick = {
-                            it.onClick()
-                            coroutineScope.launch {
-                                sheetState.hide()
-                            }
-                        },
                         startIcon = it.icon,
                         shapes = ListItemDefaults.segmentedShapes(index, menuItems.size),
-                    )
+                    ) {
+                        it.onClick()
+                        coroutineScope.launch {
+                            sheetState.hide()
+                        }
+                    }
                 }
             }
         }

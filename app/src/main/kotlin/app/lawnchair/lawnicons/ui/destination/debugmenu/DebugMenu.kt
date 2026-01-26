@@ -113,12 +113,11 @@ fun DebugMenu(
                 SimpleListRow(
                     label = it.label,
                     description = it.value.toString(),
-                    onClick = {
-                        context.copyTextToClipboard("${it.label}: ${it.value}")
-                    },
                     background = true,
                     shapes = ListItemDefaults.segmentedShapes(index, debugList.size),
-                )
+                ) {
+                    context.copyTextToClipboard("${it.label}: ${it.value}")
+                }
             }
             item {
                 Spacer(Modifier.height(4.dp))

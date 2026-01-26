@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItemDefaults
@@ -38,9 +39,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation3.runtime.EntryProviderScope
@@ -49,9 +50,9 @@ import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
-import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.icon.AppIcon
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -125,10 +126,11 @@ private fun About(
                         )
                     } else {
                         Image(
-                            painter = painterResource(R.drawable.ic_lawnicons),
+                            imageVector = LawnIcons.AppIcon,
                             contentDescription = stringResource(id = R.string.app_name),
                             modifier = Modifier
-                                .size(72.dp),
+                                .size(72.dp)
+                                .clip(CircleShape),
                         )
                     }
                     Text(
@@ -165,10 +167,9 @@ private fun About(
             }
             item(contentType = ColumnTypes.NAVIGATION_ITEM) {
                 SimpleListRow(
-                    onClick = onNavigateToContributors,
                     label = stringResource(id = R.string.see_all_contributors),
                     background = true,
-                    shapes = ListRowDefaults.singleItemShapes,
+                    onClick = onNavigateToContributors,
                 )
             }
             item(contentType = ColumnTypes.SPACER) {
@@ -196,10 +197,9 @@ private fun About(
             }
             item(contentType = ColumnTypes.NAVIGATION_ITEM) {
                 SimpleListRow(
-                    onClick = onNavigateToAcknowledgements,
                     label = stringResource(id = R.string.acknowledgements),
                     background = true,
-                    shapes = ListRowDefaults.singleItemShapes,
+                    onClick = onNavigateToAcknowledgements,
                 )
             }
         }
