@@ -23,7 +23,7 @@ import dev.zacsweers.metro.SingleIn
 
 @SingleIn(LawniconsScope::class)
 @Inject
-class AnnouncementsRepository constructor(
+class AnnouncementsRepository(
     private val api: AnnouncementsAPI,
 ) {
     suspend fun getAnnouncements() = api.getAnnouncements().announcements

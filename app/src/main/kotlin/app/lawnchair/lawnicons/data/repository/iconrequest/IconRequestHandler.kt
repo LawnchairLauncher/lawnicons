@@ -33,7 +33,7 @@ interface IconRequestHandler {
 
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
-class ArcticonsDashboardHandler constructor() : IconRequestHandler {
+class ArcticonsDashboardHandler : IconRequestHandler {
     override fun execute(context: Context, requestData: IconRequestData) {
         val authority = "${context.packageName}.fileprovider"
         val uri = FileProvider.getUriForFile(context, authority, requestData.zipFile)

@@ -44,7 +44,7 @@ interface IconRequestRepository {
 
 @SingleIn(LawniconsScope::class)
 @ContributesBinding(LawniconsScope::class)
-class IconRequestRepositoryImpl constructor(
+class IconRequestRepositoryImpl(
     val application: Application,
     private val api: IconRequestSettingsAPI,
 ) : IconRequestRepository {

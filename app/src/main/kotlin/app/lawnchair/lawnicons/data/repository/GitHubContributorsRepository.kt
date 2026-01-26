@@ -28,7 +28,7 @@ val coreContributorIds = listOf(
 
 @SingleIn(LawniconsScope::class)
 @Inject
-class GitHubContributorsRepository constructor(
+class GitHubContributorsRepository(
     private val api: GitHubContributorsAPI,
 ) {
     suspend fun getTopContributors() = api.getContributors()
