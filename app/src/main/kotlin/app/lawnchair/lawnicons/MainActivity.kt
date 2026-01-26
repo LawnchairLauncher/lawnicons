@@ -27,11 +27,9 @@ import app.lawnchair.lawnicons.ui.Lawnicons
 import app.lawnchair.lawnicons.ui.components.SetupEdgeToEdge
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Constants
-import dev.zacsweers.metro.Inject
 
 @ExperimentalFoundationApi
 @ExperimentalMaterial3Api
-@Inject
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
