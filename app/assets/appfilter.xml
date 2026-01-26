@@ -3106,6 +3106,7 @@
   <item component="ComponentInfo{com.nothing.cmf.watch/com.watchmanager.MainActivity}" drawable="cmf_watch" name="CMF Watch" />
   <item component="ComponentInfo{com.rbi.cmisign.prod/com.kobil.MainActivity}" drawable="raiffeisen_bank" name="CMI Sign" />
   <item component="ComponentInfo{com.cnn.mobile.android.phone/com.cnn.mobile.android.phone.features.splash.SplashActivity}" drawable="cnn" name="CNN" />
+  <item component="ComponentInfo{com.cnn.indonesia/com.cnn.indonesia.feature.activity.ActivitySplash}" drawable="cnn" name="CNN" />
   <item component="ComponentInfo{uk.co.coop.app/uk.co.coop.app.ui.screens.routing.RoutingActivity}" drawable="co_op" name="Co-op" />
   <item component="ComponentInfo{us.sol.CobbCountyPublicLibrary/solus.Libraries.MainActivity}" drawable="cobb_county_public_library" name="Cobb County Public Library" />
   <item component="ComponentInfo{perkfinance.cobee/perkfinance.cobee.MainActivity}" drawable="cobee" name="Cobee" />
@@ -3537,6 +3538,8 @@
   <item component="ComponentInfo{com.playdigious.deadcells.mobile/com.playdigious.deadcells.mobile.DeadCellsLoading}" drawable="dead_cells" name="Dead Cells" />
   <item component="ComponentInfo{com.netflix.NGP.DeadCellsReturnToCastlevania/com.playdigious.deadcells.mobile.DeadCellsLoading}" drawable="dead_cells" name="Dead Cells" />
   <item component="ComponentInfo{com.tencent.tmgp.bilibili.deadcells.mobile/com.bilibili.deadcells.mobile.SplashActivity}" drawable="dead_cells" name="Dead Cells" />
+  <item component="ComponentInfo{com.netflix.NGP.DeadCellsReturnToCastlevania/com.fiveplay.mod.RMS.Recovery}" drawable="dead_cells" name="Dead Cells" />
+  <item component="ComponentInfo{com.playdigious.deadcells.epic/com.playdigious.deadcells.mobile.DeadCells}" drawable="dead_cells" name="Dead Cells" />
   <item component="ComponentInfo{com.codedead.deadhash/com.codedead.deadhash.gui.MainActivity}" drawable="deadhash" name="DeadHash" />
   <item component="ComponentInfo{com.dealabs.apps.android/com.pepper.apps.android.presentation.MainActivityDarkIcon}" drawable="dealabs" name="Dealabs" />
   <item component="ComponentInfo{com.dealabs.apps.android/com.pepper.apps.android.presentation.MainActivityLightIcon}" drawable="dealabs" name="Dealabs" />
@@ -4417,6 +4420,7 @@
   <item component="ComponentInfo{io.ente.auth.independent/io.ente.auth.MainActivity}" drawable="ente_auth" name="Ente Auth" />
   <item component="ComponentInfo{io.ente.auth/io.ente.auth.MainActivity}" drawable="ente_auth" name="Ente Auth" />
   <item component="ComponentInfo{io.ente.auth.independent/io.ente.auth.independent.IconDefault}" drawable="ente_auth" name="Ente Auth" />
+  <item component="ComponentInfo{io.ente.auth/io.ente.auth.IconDefault}" drawable="ente_auth" name="Ente Auth" />
   <item component="ComponentInfo{io.ente.locker/io.ente.locker.MainActivity}" drawable="ente_locker" name="Ente Locker" />
   <item component="ComponentInfo{io.ente.photos.independent/io.ente.photos.MainActivity}" drawable="ente_photos" name="Ente Photos" />
   <item component="ComponentInfo{io.ente.photos.fdroid/io.ente.photos.MainActivity}" drawable="ente_photos" name="Ente Photos" />
@@ -12580,7 +12584,6 @@
   <item component="ComponentInfo{com.retroarch.aarch64/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch Plus" />
   <item component="ComponentInfo{com.thomsonreuters.reuters/com.thomsonreuters.reuters.MainActivity}" drawable="reuters" name="Reuters" />
   <item component="ComponentInfo{anddea.yrf.tube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="Revanced Advanced" />
-  <item component="ComponentInfo{anddea.yrf.tube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="Revanced Advanced" />
   <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="ReVanced Extended" />
   <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
   <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
@@ -14664,8 +14667,8 @@
   <item component="ComponentInfo{com.zeeron.sudoku.puzzle/com.godot.game.GodotApp}" drawable="generic_sudoku" name="Sudoku" />
   <item component="ComponentInfo{de.dlyt.yanndroid.sudoku/de.dlyt.yanndroid.sudoku.SplashActivity}" drawable="generic_sudoku" name="Sudoku" />
   <item component="ComponentInfo{com.puzzle.games.math.brain.sudoku/com.google.firebase.MessagingUnityPlayerActivity}" drawable="generic_sudoku" name="Sudoku" />
-  <item component="ComponentInfo{de.dlyt.yanndroid.sudoku/de.dlyt.yanndroid.sudoku.SplashActivity}" drawable="generic_sudoku" name="Sudoku" />
   <item component="ComponentInfo{org.secuso.privacyfriendlysudoku/org.secuso.privacyfriendlysudoku.ui.SplashActivity}" drawable="generic_sudoku" name="Sudoku (PFA)" />
+  <item component="ComponentInfo{com.staplegames.sudokuClassicGP/com.staplegames.sudokuClassicGP.MainActivity}" drawable="generic_sudoku" name="Sudoku by Staple Games" />
   <item component="ComponentInfo{com.gamovation.sudoku/com.unity3d.player.UnityPlayerActivity}" drawable="generic_sudoku" name="Sudoku Game" />
   <item component="ComponentInfo{com.mathbrain.sudoku/org.cocos2dx.javascript.AppActivity}" drawable="generic_sudoku" name="Sudoku Master!" />
   <item component="ComponentInfo{ee.dustland.android.dustlandsudoku/ee.dustland.android.dustlandsudoku.NativeActivity}" drawable="generic_sudoku" name="Sudoku — The Clean One" />
@@ -15555,6 +15558,7 @@
   <item component="ComponentInfo{com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity}" drawable="titanium_backup" name="Titanium Backup" />
   <item component="ComponentInfo{ar.tvplayer.tv/ar.tvplayer.tv.ui.MainActivity}" drawable="tivimate" name="TiviMate" />
   <item component="ComponentInfo{ar.tvplayer.tv/ar.tvplayer.tv.settings.ui.general.RestoreBackupActivity}" drawable="tivimate" name="TiviMate" />
+  <item component="ComponentInfo{ar.tvplayer.companion/ar.tvplayer.companion.ui.MainActivity}" drawable="tivimate" name="TiviMate Companion" />
   <item component="ComponentInfo{id.tix.android/id.tix.android.splash.view.SplashActivity}" drawable="tix_id" name="TIX ID" />
   <item component="ComponentInfo{de.tk.tkapp/de.tk.tkapp.StartActivity}" drawable="tk" name="TK" />
   <item component="ComponentInfo{de.tk.tkapp/de.tk.tkapp.start.StartActivity}" drawable="tk" name="TK" />
@@ -16468,6 +16472,7 @@
   <item component="ComponentInfo{com.snowcorp.vita/com.snow.stuckyi.presentation.splash.SplashActivity}" drawable="vita" name="VITA" />
   <item component="ComponentInfo{com.vitastudio.mahjong/com.meevii.vitastudio.VitaDelegateActivity}" drawable="generic_mahjong" name="Vita Mahjong" />
   <item component="ComponentInfo{org.vita3k.emulator/org.vita3k.emulator.Emulator}" drawable="vita3k" name="Vita3K" />
+  <item component="ComponentInfo{org.vita3k.emulator.ikhoeyZX/org.vita3k.emulator.Emulator}" drawable="vita3k" name="Vita3K ZX" />
   <item component="ComponentInfo{app.vitune.android/app.vitune.android.MainActivity}" drawable="vitune" name="ViTune" />
   <item component="ComponentInfo{app.vitune.android.nightly/app.vitune.android.MainActivity}" drawable="vitune_nightly" name="ViTune Nightly" />
   <item component="ComponentInfo{com.viu.phone/com.viu.phone.ui.activity.WelcomeActivity}" drawable="viu" name="Viu" />
@@ -16587,6 +16592,7 @@
   <item component="ComponentInfo{netroken.android.persistfree/netroken.android.persistlib.presentation.common.MainActivity}" drawable="volume_control" name="Volume Control" />
   <item component="ComponentInfo{com.iprototypes.volume/com.iprototypes.volume.main}" drawable="volume_booster_goodev" name="Volume Control" />
   <item component="ComponentInfo{leedroiddevelopments.volumepanel/leedroiddevelopments.volumepanel.VolumePanelMain}" drawable="volume_control_panel" name="Volume Control Panel" />
+  <item component="ComponentInfo{moe.chensi.volume/moe.chensi.volume.MainActivity}" drawable="generic_shell" name="Volume Manager" />
   <item component="ComponentInfo{com.tombayley.volumepanel/com.tombayley.volumepanel.app.ui.home.MainActivity}" drawable="volume_styles" name="Volume Styles" />
   <item component="ComponentInfo{boostvolume.soundbooster.soundamplifier.loudspeaker.increasevolume.soundenhancer.volumebooster/boostvolume.soundbooster.soundamplifier.loudspeaker.increasevolume.soundenhancer.volumebooster.MainActivity}" drawable="volume_plus" name="Volume+" />
   <item component="ComponentInfo{app.maslanka.volumee/app.maslanka.volumee.ui.SplashActivity}" drawable="volumee" name="Volumee" />
@@ -17423,8 +17429,8 @@
   <item component="ComponentInfo{com.gbox.com.google.android.youtube/com.gbox.app.LaunchAppActivity}" drawable="youtube" name="Youtube" />
   <item component="ComponentInfo{anddea.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube" />
-  <item component="ComponentInfo{anddea.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube" />
-  <item component="ComponentInfo{com.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube" />
+  <item component="ComponentInfo{com.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" name="YouTube" />
+  <item component="ComponentInfo{com.rvx.android.youtube/com.rvx.android.youtube.revanced_original_1}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{ma.wanam.youtubeadaway/ma.wanam.youtubeadaway.SettingsActivity}" drawable="youtube_adaway" name="YouTube AdAway" />
   <item component="ComponentInfo{com.google.android.apps.youtube.producer/com.google.android.apps.youtube.producer.application.MainActivity}" drawable="youtube_create" name="YouTube Create" />
   <item component="ComponentInfo{com.google.android.youtube.tv/com.google.android.apps.youtube.tv.activity.ShellActivity}" drawable="youtube" name="YouTube for Android TV" />
@@ -17443,11 +17449,8 @@
   <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
   <item component="ComponentInfo{com.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
   <item component="ComponentInfo{com.android.youtube.premium/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_premium" name="YouTube Premium" />
-  <item component="ComponentInfo{com.android.youtube.premium/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_premium" name="YouTube Premium" />
   <item component="ComponentInfo{com.google.android.youtube.pro/com.google.android.youtube.pro.MainActivity}" drawable="youtube" name="Youtube Pro" />
   <item component="ComponentInfo{com.gold.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube Pro" />
-  <item component="ComponentInfo{com.gold.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube Pro" />
-  <item component="ComponentInfo{anddea.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_revanced" name="Youtube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="youtube_revanced" name="YouTube ReVanced" />
@@ -17467,7 +17470,6 @@
   <item component="ComponentInfo{app.revanced.android.youtube/app.revanced.android.youtube.revanced_scaled_2}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/app.revanced.android.youtube.revanced_scaled_3}" drawable="youtube_revanced" name="YouTube ReVanced" />
   <item component="ComponentInfo{app.revanced.android.youtube/app.revanced.android.youtube.revanced_scaled_4}" drawable="youtube_revanced" name="YouTube ReVanced" />
-  <item component="ComponentInfo{com.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="Youtube Revanced Extended" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
@@ -17867,6 +17869,7 @@
   <item component="ComponentInfo{ua.privatbank.ap24/ua.privatbank.ap24.beta.SplashActivity}" drawable="privat24" name="Приват24 ~~ Privat24" />
   <item component="ComponentInfo{ua.privatbank.ap24/ua.privatbank.ap24v6.MainActivity}" drawable="privat24" name="Приват24 ~~ Privat24" />
   <item component="ComponentInfo{ua.privatbank.ap24/ua.privatbank.ap24v6.main.FlutterMainActivity}" drawable="privat24" name="Приват24 ~~ Privat24" />
+  <item component="ComponentInfo{ua.privatbank.ap24/ua.privatbank.ap24v6.LauncherAliasDefault}" drawable="privat24" name="Приват24 ~~ Privat24" />
   <item component="ComponentInfo{by.st.priormobile/by.priorbank.authentication.splash.SplashActivity}" drawable="priorbank" name="Приорбанк ~~ Priorbank" />
   <item component="ComponentInfo{ru.pyaterochka.app.browser/ru.pyaterochka.app.launch.Launcher_New_Year}" drawable="pyaterochka" name="Пятёрочка ~~ Pyaterochka" />
   <item component="ComponentInfo{ru.pyaterochka.app.browser/ru.pyaterochka.app.launch.Launcher}" drawable="pyaterochka" name="Пятёрочка ~~ Pyaterochka" />
