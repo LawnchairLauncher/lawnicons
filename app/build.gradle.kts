@@ -13,14 +13,17 @@ val buildCommit = providers.exec {
     commandLine("git", "rev-parse", "--short=7", "HEAD")
 }.standardOutput.asText.map { it.trim() }
 
-val ciBuild = providers.environmentVariable("CI").isPresent
+val ciBuild = providers.environmentVariable("CI")
 val ciRef = providers.environmentVariable("GITHUB_REF")
 val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER")
-val isReleaseBuild = ciBuild && ciRef.orNull?.contains("main") == true
-val devReleaseName = if (ciBuild) ciRunNumber.map { "(Dev #$it)" } else buildCommit.map { "($it)" }
 
 val version = "2.16.0"
-val versionDisplayName = devReleaseName.map { version + if (!isReleaseBuild) " $it" else "" }
+val versionDisplayName = ciBuild.zip(ciRef, ciRunNumber, buildCommit) { ci, ref, runNum, commit ->
+    val isCI = ci.isNotEmpty()
+    val isRelease = isCI && ref.contains("main")
+    val devName = if (isCI) "(Dev #$runNum)" else "($commit)"
+    version + if (!isRelease) " $devName" else ""
+}
 
 android {
     compileSdk = 36
