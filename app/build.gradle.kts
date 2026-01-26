@@ -11,16 +11,16 @@ plugins {
 
 val buildCommit = providers.exec {
     commandLine("git", "rev-parse", "--short=7", "HEAD")
-}.standardOutput.asText.get().trim()
+}.standardOutput.asText.map { it.trim() }
 
 val ciBuild = providers.environmentVariable("CI").isPresent
-val ciRef = providers.environmentVariable("GITHUB_REF").orNull.orEmpty()
-val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEmpty()
-val isReleaseBuild = ciBuild && ciRef.contains("main")
-val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
+val ciRef = providers.environmentVariable("GITHUB_REF")
+val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER")
+val isReleaseBuild = ciBuild && ciRef.orNull?.contains("main") == true
+val devReleaseName = if (ciBuild) ciRunNumber.map { "(Dev #$it)" } else buildCommit.map { "($it)" }
 
 val version = "2.16.0"
-val versionDisplayName = version + if (!isReleaseBuild) " $devReleaseName" else ""
+val versionDisplayName = devReleaseName.map { version + if (!isReleaseBuild) " $it" else "" }
 
 android {
     compileSdk = 36
