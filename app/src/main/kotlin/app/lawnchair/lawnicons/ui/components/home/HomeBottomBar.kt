@@ -25,7 +25,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.ui.theme.icon.AboutIcon
+import app.lawnchair.lawnicons.ui.theme.icon.About
 import app.lawnchair.lawnicons.ui.theme.icon.Discord
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
@@ -121,7 +121,7 @@ fun BoxScope.HomeBottomToolbar(
             ) {
                 IconButton(onClick = onNavigateToAbout) {
                     Icon(
-                        imageVector = LawnIcons.AboutIcon,
+                        imageVector = LawnIcons.About,
                         contentDescription = stringResource(id = R.string.about),
                         modifier = Modifier.requiredSize(24.dp),
                     )

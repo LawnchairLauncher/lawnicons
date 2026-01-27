@@ -68,8 +68,8 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.theme.icon.AppIcon
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
-import app.lawnchair.lawnicons.ui.theme.icon.Lawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
@@ -228,7 +228,7 @@ fun AppBarListItem(
             ) {
                 if (!LocalInspectionMode.current) {
                     Image(
-                        imageVector = LawnIcons.Lawnicons,
+                        imageVector = LawnIcons.AppIcon,
                         contentDescription = stringResource(id = R.string.app_name),
                         modifier = Modifier
                             .size(36.dp)

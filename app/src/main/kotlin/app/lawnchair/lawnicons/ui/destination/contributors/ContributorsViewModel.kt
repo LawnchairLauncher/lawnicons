@@ -19,10 +19,11 @@ package app.lawnchair.lawnicons.ui.destination.contributors
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.data.repository.GitHubContributorsRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -52,8 +53,9 @@ private data class ContributorsViewModelState(
     }
 }
 
-@HiltViewModel
-class ContributorsViewModel @Inject constructor(
+@ViewModelKey(ContributorsViewModel::class)
+@ContributesIntoMap(LawniconsScope::class)
+class ContributorsViewModel(
     private val repository: GitHubContributorsRepository,
 ) : ViewModel() {
 

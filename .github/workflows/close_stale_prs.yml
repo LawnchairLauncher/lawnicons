@@ -11,9 +11,9 @@ jobs:
     steps:
       - uses: actions/stale@v10
         with:
-          stale-pr-message: This PR is now marked as stale due to 1 month of inactivity. Please apply the suggested changes or comment to keep it active. Otherwise, it will be closed in 3 days.
+          stale-pr-message: This PR is now marked as stale due to 2 weeks of inactivity. Please apply the suggested changes or comment to keep it active. Otherwise, it will be closed in 3 days.
           close-pr-message: Closed due to inactivity.
-          days-before-pr-stale: 30
+          days-before-pr-stale: 14
           days-before-pr-close: 3
           days-before-issue-stale: -1
           exempt-draft-pr: true

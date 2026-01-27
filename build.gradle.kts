@@ -5,12 +5,9 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(libs.plugins.android.application) apply false
-    alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.kotlin.serialization) apply false
-    alias(libs.plugins.ksp) apply false
-    alias(libs.plugins.hilt.android) apply false
     alias(libs.plugins.licensee) apply false
     alias(libs.plugins.spotless) apply false
 }
@@ -26,7 +23,7 @@ allprojects {
             target("src/**/*.kt")
             ktlint("1.8.0").customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.5.3",
+                    "io.nlopez.compose.rules:ktlint:0.5.6",
                 ),
             ).editorConfigOverride(
                 mapOf(
