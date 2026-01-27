@@ -87,4 +87,4 @@ You can help with issues. Please refer to our guidelines.
 A 1-week icon request period opens at every thousand-icon milestone. Requests inform demand but don't drive contributions. Our community creates icons according to their own priorities.
 
 > [!TIP]
-> Shorten the wait for simple icons [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
+> Support creation of simple, community-requested icons [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
