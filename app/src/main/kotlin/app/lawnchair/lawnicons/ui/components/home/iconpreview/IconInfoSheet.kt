@@ -134,7 +134,7 @@ fun IconInfoSheet(
                     IconLink(
                         imageVector = LawnIcons.Github,
                         label = stringResource(id = R.string.view_on_github),
-                        url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
+                        url = "${Constants.GITHUB}?file=svgs/$githubName.svg",
                     )
                     Spacer(Modifier.width(16.dp))
                     IconLink(
