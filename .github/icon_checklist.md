@@ -7,4 +7,14 @@ Thanks for your contribution!
 
 [Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines)
 
+```
+Naming TL;DR
+_2048.svg | 2048
+lawnicons.svg | Lawnicons
+habitacao_caixa.svg | Habitação Caixa
+beijing_card.svg | 北京一卡通 ~~ Beijing Card
+a_and_w.svg | A&amp;W
+```
+
 ![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)
+
