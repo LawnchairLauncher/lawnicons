@@ -84,7 +84,7 @@ You can help with issues. Please refer to our guidelines.
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-A 1-week icon request period opens at every thousand-icon milestone. Requests inform demand but don't drive contributions. Our community creates icons according to their own priorities.
+Time-limited icon requests open at every thousand-icon milestone.
 
 > [!TIP]
 > Support creation of simple, community-requested icons [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
