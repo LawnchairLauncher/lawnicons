@@ -80,11 +80,11 @@ You can add the missing icons if they are of high quality. No more than 5 icons 
 ### Development
 You can help with issues. Please refer to our guidelines.
 
-### Requests
+### Icon requests
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
 Time-limited icon requests open at every thousand-icon milestone.
 
 > [!TIP]
-> Support creation of simple, community-requested icons [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
+> Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
