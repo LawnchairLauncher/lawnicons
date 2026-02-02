@@ -36,6 +36,10 @@ android-tools-sdk-common = "com.android.tools:sdk-common:32.0.0"
 dom4j = "org.dom4j:dom4j:2.2.0"
 commons-io = "commons-io:commons-io:2.21.0"
 
+# Dummy to get renovate updates, the version is used in rootProject build.gradle with spotless.
+ktlint = "com.pinterest.ktlint:ktlint-cli:1.8.0"
+composeRules = "io.nlopez.compose.rules:ktlint:0.5.6"
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
