@@ -9,10 +9,10 @@
     <img alt="GitHub License" src="https://img.shields.io/github/license/LawnchairLauncher/Lawnicons?logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0ndXRmLTgnPz48c3ZnIHdpZHRoPSc4MDBweCcgaGVpZ2h0PSc4MDBweCcgdmlld0JveD0nMCAwIDI0IDI0JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxwYXRoIGQ9J00xOSAzSDlWM0M3LjExNDM4IDMgNi4xNzE1NyAzIDUuNTg1NzkgMy41ODU3OUM1IDQuMTcxNTcgNSA1LjExNDM4IDUgN1YxMC41VjE3JyBzdHJva2U9JyNGRkZGRkYnIHN0cm9rZS13aWR0aD0nMicgc3Ryb2tlLWxpbmVjYXA9J3JvdW5kJyBzdHJva2UtbGluZWpvaW49J3JvdW5kJy8+PHBhdGggZD0nTTE0IDE3VjE5QzE0IDIwLjEwNDYgMTQuODk1NCAyMSAxNiAyMVYyMUMxNy4xMDQ2IDIxIDE4IDIwLjEwNDYgMTggMTlWOVY0LjVDMTggMy42NzE1NyAxOC42NzE2IDMgMTkuNSAzVjNDMjAuMzI4NCAzIDIxIDMuNjcxNTcgMjEgNC41VjQuNUMyMSA1LjMyODQzIDIwLjMyODQgNiAxOS41IDZIMTguNScgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J00xNiAyMUg1QzMuODk1NDMgMjEgMyAyMC4xMDQ2IDMgMTlWMTlDMyAxNy44OTU0IDMuODk1NDMgMTcgNSAxN0gxNCcgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjxwYXRoIGQ9J005IDdIMTQnIHN0cm9rZT0nI0ZGRkZGRicgc3Ryb2tlLXdpZHRoPScyJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnLz48cGF0aCBkPSdNOSAxMUgxNCcgc3Ryb2tlPScjRkZGRkZGJyBzdHJva2Utd2lkdGg9JzInIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPjwvc3ZnPg==&color=43444B">
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_debug_apk.yml">
-    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_debug_apk.yml?branch=develop&label=Build%20Debug%20APK&logo=github&color=3F9E00">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_debug_apk.yml?branch=develop&label=Debug%20APK&logo=github&color=3F9E00">
   </a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml">
-    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_release_apk.yml?label=Build%20Release%20APK&logo=github&color=3F9E00">
+    <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_release_apk.yml?label=Release%20APK&logo=github&color=3F9E00">
   </a>
   <a href="https://discord.gg/3x8qNWxgGZ">
     <img alt="Discord" src="https://img.shields.io/discord/803299970169700402?logo=discord&logoColor=white&label=Discord&color=5165f6">
@@ -69,6 +69,9 @@ Lawnicons on the Play Store will install as a different app from other sources.
     <a href="https://lawnicons-requests.vercel.app/">
         <img alt="Icon requests" src="https://img.shields.io/badge/Icon%20requests-94009E?logo=vercel&logoColor=ffffff">
     </a>
+    <a href="https://lawnchair.crowdin.com/lawnicons">
+        <img alt="Lawnicons on Crowdin" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff">
+    </a>        
 </div> 
 
 ### Icons
