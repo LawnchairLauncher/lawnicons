@@ -87,7 +87,7 @@ You can help with issues. Please refer to our guidelines.
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Icon requests open for a limited time with every new release.
+Icon requests open for a limited time with every new Lawnicons release.
 
 > [!TIP]
 > Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
