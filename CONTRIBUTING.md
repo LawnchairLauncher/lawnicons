@@ -188,7 +188,7 @@ Tips
 <img src="docs/images/quality-4-excessive-density.png" alt="4 Excessive density" height="200" />
 
 Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.  
-It’s better to make the distance a little more.
+It’s better to make the distance a little more, especially in closed shapes.
 
 Tips
 - Move lines further apart.
