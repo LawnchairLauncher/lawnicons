@@ -23,7 +23,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
@@ -31,6 +30,7 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -54,7 +54,7 @@ private fun NewIcons(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
-    newIconsViewModel: NewIconsViewModel = hiltViewModel(),
+    newIconsViewModel: NewIconsViewModel = metroViewModel(),
 ) {
     val iconInfoModel by newIconsViewModel.newIconsInfoModel.collectAsStateWithLifecycle()
 

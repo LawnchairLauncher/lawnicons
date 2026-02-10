@@ -134,7 +134,7 @@ fun IconInfoSheet(
                     IconLink(
                         imageVector = LawnIcons.Github,
                         label = stringResource(id = R.string.view_on_github),
-                        url = "${Constants.GITHUB}/blob/develop/svgs/$githubName.svg",
+                        url = "${Constants.GITHUB}?file=svgs/$githubName.svg",
                     )
                     Spacer(Modifier.width(16.dp))
                     IconLink(
@@ -170,8 +170,6 @@ fun IconInfoSheet(
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
                     },
-                    divider = false,
-                    enforceHeight = false,
                 )
             }
             item {
@@ -250,8 +248,6 @@ private fun IconInfoListRow(
                     }
                 }
             },
-            divider = false,
-            enforceHeight = false,
         )
         Spacer(Modifier.height(16.dp))
     }

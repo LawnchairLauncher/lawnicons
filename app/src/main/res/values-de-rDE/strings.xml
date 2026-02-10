@@ -53,10 +53,10 @@
     <string name="name">Name</string>
     <!-- Drawable prefix -->
     <string name="drawable">Drawable</string>
-    <!-- Package prefix -->
-    <string name="component">Name der Komponente</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Zugewiesene Komponenten</string>
+    <string name="mapped_components">Mapped IDs</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Wenn das Symbol aufgrund eines Neu-Brandings veraltet ist, eröffne ein Issue auf GitHub.</string>
     <!-- Chevron a11y description -->
@@ -71,21 +71,21 @@
     <string name="snackbar_request_too_large">Details der Symbolanfrage in die Zwischenablage kopiert. Um sie anzufragen, übertrage die Details in das Formular.</string>
     <string name="snackbar_use_fallback_link">Formular öffnen</string>
     <!-- Missing icons screen -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Fehlende Symbole</string>
     <string name="clear_all">Clear selection</string>
     <string name="select_all">Alle auswählen</string>
     <string name="request_icons_button">Request</string>
-    <string name="show_options_sheet">Show options sheet</string>
-    <string name="toggle_button_expanded">Expanded</string>
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="show_options_sheet">Zeige options Blatt</string>
+    <string name="toggle_button_expanded">Erweitert</string>
+    <string name="toggle_button_collapsed">Minimiert</string>
     <string name="toggle_button_content_description">Toggle button</string>
     <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
-    <string name="share_file">Share file</string>
-    <string name="save_file">Save file</string>
-    <string name="copy_components">Copy app components</string>
-    <string name="toast_file_saved_successful">Successfully saved file</string>
-    <string name="toast_file_save_error">Error saving file</string>
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="share_file">Teile Datei</string>
+    <string name="save_file">Speichere Datei</string>
+    <string name="copy_components">Copy app IDs</string>
+    <string name="toast_file_saved_successful">Datei erfolgreich gespeichert</string>
+    <string name="toast_file_save_error">Fehler Dateispeicherung</string>
+    <string name="toast_file_zip_error">Erfragte Datei konnte nicht erstellt werden</string>
     <string name="toast_no_app_available">No app to handle this action</string>
     <!-- New icons screen -->
     <string name="new_icons_in_version">Neue Symbole in v%1$s</string>

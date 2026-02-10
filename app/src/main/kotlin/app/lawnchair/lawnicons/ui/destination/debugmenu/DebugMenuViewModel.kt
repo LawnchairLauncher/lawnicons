@@ -17,15 +17,17 @@
 package app.lawnchair.lawnicons.ui.destination.debugmenu
 
 import androidx.lifecycle.ViewModel
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@HiltViewModel
-class DebugMenuViewModel @Inject constructor(
+@ViewModelKey(DebugMenuViewModel::class)
+@ContributesIntoMap(LawniconsScope::class)
+class DebugMenuViewModel(
     iconRepository: IconRepository,
     newIconsRepository: NewIconsRepository,
     iconRequestRepository: IconRequestRepository,

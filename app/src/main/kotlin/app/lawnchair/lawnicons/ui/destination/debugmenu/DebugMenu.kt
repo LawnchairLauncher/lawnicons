@@ -16,25 +16,31 @@
 
 package app.lawnchair.lawnicons.ui.destination.debugmenu
 
-import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.ListItem
+import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
@@ -42,10 +48,14 @@ import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.data.model.splitByComponentName
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.ListRow
+import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
+import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.theme.icon.Copy
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -64,11 +74,12 @@ fun EntryProviderScope<NavKey>.debugMenuDestination(
 }
 
 // screen to view statistics and other internal info
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun DebugMenu(
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: DebugMenuViewModel = hiltViewModel(),
+    viewModel: DebugMenuViewModel = metroViewModel(),
     isExpandedScreen: Boolean = false,
 ) {
     val iconInfoModel by viewModel.iconInfoModel.collectAsStateWithLifecycle()
@@ -79,10 +90,10 @@ fun DebugMenu(
     val prefs = viewModel.preferenceManager
 
     val debugList = listOf(
-        ListItem("Icon count", iconInfoModel.iconCount),
-        ListItem("New icons count", newIconsModel.iconCount),
-        ListItem("Component count", iconInfoModel.iconInfo.splitByComponentName().size),
-        ListItem("Icon request count", iconRequestList?.iconCount ?: 0),
+        ListItemContent("Icon count", iconInfoModel.iconCount),
+        ListItemContent("New icons count", newIconsModel.iconCount),
+        ListItemContent("Component count", iconInfoModel.iconInfo.splitByComponentName().size),
+        ListItemContent("Icon request count", iconRequestList?.iconCount ?: 0),
     )
 
     val prefsList = listOf(
@@ -102,56 +113,48 @@ fun DebugMenu(
                 SimpleListRow(
                     label = it.label,
                     description = it.value.toString(),
-                    onClick = {
-                        context.copyTextToClipboard("${it.label}: ${it.value}")
-                    },
                     background = true,
-                    first = index == 0,
-                    last = index == debugList.lastIndex,
-                )
+                    shapes = ListItemDefaults.segmentedShapes(index, debugList.size),
+                ) {
+                    context.copyTextToClipboard("${it.label}: ${it.value}")
+                }
             }
             item {
                 Spacer(Modifier.height(4.dp))
             }
             itemsIndexed(prefsList) { index, pref ->
-                val interactionSource = remember { MutableInteractionSource() }
-                SimpleListRow(
-                    label = pref.key,
-                    endIcon = {
+                ListItem(
+                    checked = pref.asState().value,
+                    onCheckedChange = pref::set,
+                    content = {
+                        ListRowLabel(pref.key)
+                    },
+                    colors = ListItemDefaults.colors(
+                        containerColor = adaptiveSurfaceContainerColor,
+                    ),
+                    modifier = Modifier.padding(horizontal = ListRowDefaults.basePadding),
+                    trailingContent = {
                         Switch(
                             checked = pref.asState().value,
                             onCheckedChange = pref::set,
-                            interactionSource = interactionSource,
+                            interactionSource = null,
                         )
                     },
-                    onClick = pref::toggle,
-                    background = true,
-                    first = index == 0,
-                    last = index == prefsList.lastIndex,
+                    shapes = ListItemDefaults.segmentedShapes(
+                        index,
+                        prefsList.size,
+                        ListRowDefaults.singleItemShapes,
+                    ),
                 )
             }
             item {
                 Spacer(Modifier.height(4.dp))
             }
             item {
-                ListRow(
-                    label = {
-                        Text(
-                            text = "Unthemed icons",
-                            style = MaterialTheme.typography.headlineSmall,
-                        )
-                    },
-                    endIcon = {
-                        IconButton(
-                            onClick = {
-                                context.copyTextToClipboard(iconRequestList?.list.toString())
-                            },
-                        ) {
-                            Icon(
-                                imageVector = LawnIcons.Copy,
-                                contentDescription = null,
-                            )
-                        }
+                ListHeader(
+                    "Unthemed icons",
+                    {
+                        context.copyTextToClipboard(iconRequestList?.list.toString())
                     },
                 )
             }
@@ -163,33 +166,18 @@ fun DebugMenu(
                             fontFamily = FontFamily.Monospace,
                         )
                     },
-                    enforceHeight = false,
                 )
             }
             item {
                 Spacer(Modifier.height(8.dp))
             }
             item {
-                ListRow(
-                    label = {
-                        Text(
-                            text = "New icons list",
-                            style = MaterialTheme.typography.headlineSmall,
+                ListHeader(
+                    "New icons list",
+                    {
+                        context.copyTextToClipboard(
+                            newIconsModel.iconInfo.splitByComponentName().toString(),
                         )
-                    },
-                    endIcon = {
-                        IconButton(
-                            onClick = {
-                                context.copyTextToClipboard(
-                                    newIconsModel.iconInfo.splitByComponentName().toString(),
-                                )
-                            },
-                        ) {
-                            Icon(
-                                imageVector = LawnIcons.Copy,
-                                contentDescription = null,
-                            )
-                        }
                     },
                 )
             }
@@ -203,14 +191,45 @@ fun DebugMenu(
                             fontFamily = FontFamily.Monospace,
                         )
                     },
-                    enforceHeight = false,
                 )
             }
         }
     }
 }
 
-data class ListItem(
+@Composable
+private fun ListHeader(
+    label: String,
+    onCopy: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = modifier
+            .fillMaxSize()
+            .padding(horizontal = 16.dp),
+    ) {
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            Text(
+                label,
+                style = MaterialTheme.typography.headlineSmall,
+            )
+        }
+        Spacer(modifier = Modifier.weight(0.05f))
+        IconButton(
+            onClick = onCopy,
+        ) {
+            Icon(
+                imageVector = LawnIcons.Copy,
+                contentDescription = null,
+            )
+        }
+    }
+}
+
+data class ListItemContent(
     val label: String,
     val value: Int,
 )

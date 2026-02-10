@@ -1,7 +1,9 @@
 package app.lawnchair.lawnicons.data.repository
 
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.api.GitHubContributorsAPI
-import javax.inject.Inject
+import dev.zacsweers.metro.Inject
+import dev.zacsweers.metro.SingleIn
 
 val coreContributorIds = listOf(
     // Remove Patryk from contributors list, as per https://t.me/lawnchairci/1557
@@ -24,7 +26,9 @@ val coreContributorIds = listOf(
     49114212,
 )
 
-class GitHubContributorsRepository @Inject constructor(
+@SingleIn(LawniconsScope::class)
+@Inject
+class GitHubContributorsRepository(
     private val api: GitHubContributorsAPI,
 ) {
     suspend fun getTopContributors() = api.getContributors()
