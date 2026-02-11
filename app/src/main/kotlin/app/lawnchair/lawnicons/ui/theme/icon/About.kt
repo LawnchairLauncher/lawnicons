@@ -6,7 +6,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.unit.dp
 
-val LawnIcons.AboutIcon: ImageVector
+val LawnIcons.About: ImageVector
     get() {
         if (_AboutIcon != null) {
             return _AboutIcon!!

@@ -27,17 +27,18 @@ import app.lawnchair.lawnicons.ui.Lawnicons
 import app.lawnchair.lawnicons.ui.components.SetupEdgeToEdge
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.Constants
-import dagger.hilt.android.AndroidEntryPoint
 
 @ExperimentalFoundationApi
 @ExperimentalMaterial3Api
-@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val app = application as LawniconsApplication
+        val metroVmf = app.lawniconsGraph.viewModelFactory
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             @Suppress("DEPRECATION")
@@ -59,6 +60,7 @@ class MainActivity : ComponentActivity() {
                             )
 
                 Lawnicons(
+                    metroVmf = metroVmf,
                     isExpandedScreen = isExpandedScreen,
                     onSendResult = { iconInfo ->
                         setIntentResult(context, iconInfo)

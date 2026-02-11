@@ -24,6 +24,7 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconRequestData
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
@@ -31,10 +32,10 @@ import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestHandler
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.formatIconRequestList
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
-import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import java.io.File
 import java.io.FileOutputStream
-import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -46,8 +47,9 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-@HiltViewModel
-class IconRequestViewModel @Inject constructor(
+@ViewModelKey(IconRequestViewModel::class)
+@ContributesIntoMap(LawniconsScope::class)
+class IconRequestViewModel(
     private val iconRequestRepository: IconRequestRepository,
     private val requestHandler: IconRequestHandler,
 ) : ViewModel() {

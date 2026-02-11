@@ -22,6 +22,8 @@ import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.ListItemDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -29,7 +31,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
@@ -37,6 +38,7 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.util.visitUrl
+import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -54,12 +56,13 @@ fun EntryProviderScope<NavKey>.acknowledgementsDestination(
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun Acknowledgements(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
-    acknowledgementsViewModel: AcknowledgementsViewModel = hiltViewModel(),
+    acknowledgementsViewModel: AcknowledgementsViewModel = metroViewModel(),
 ) {
     val context = LocalContext.current
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsStateWithLifecycle()
@@ -88,14 +91,12 @@ private fun Acknowledgements(
                     SimpleListRow(
                         label = it.name,
                         description = it.spdxLicenses.first().name,
-                        first = index == 0,
-                        background = true,
-                        last = index == libraries.lastIndex,
                         divider = index != libraries.lastIndex,
-                        onClick = {
-                            context.visitUrl(it.scm.url)
-                        },
-                    )
+                        background = true,
+                        shapes = ListItemDefaults.segmentedShapes(index, libraries.size),
+                    ) {
+                        context.visitUrl(it.scm.url)
+                    }
                 }
             }
         }

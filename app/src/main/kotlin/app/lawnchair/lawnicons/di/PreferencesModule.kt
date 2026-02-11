@@ -16,29 +16,22 @@
 
 package app.lawnchair.lawnicons.di
 
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import app.lawnchair.lawnicons.data.repository.PreferenceManager
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.components.SingletonComponent
-import javax.inject.Singleton
+import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.ContributesTo
+import dev.zacsweers.metro.Provides
+import dev.zacsweers.metro.SingleIn
 
-@Module
-@InstallIn(SingletonComponent::class)
-object PreferencesModule {
+@ContributesTo(LawniconsScope::class)
+interface PreferencesModule {
 
     @Provides
-    @Singleton
-    fun provideSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
-        return context.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
-    }
-
-    @Provides
-    @Singleton
-    fun providePreferenceManager(sharedPreferences: SharedPreferences): PreferenceManager {
-        return PreferenceManager(sharedPreferences)
+    @SingleIn(LawniconsScope::class)
+    fun provideSharedPreferences(app: Application): SharedPreferences {
+        // Note: We request 'Application' because we bound it in the Graph Factory earlier.
+        // Application is a Context.
+        return app.getSharedPreferences("app_prefs", Context.MODE_PRIVATE)
     }
 }

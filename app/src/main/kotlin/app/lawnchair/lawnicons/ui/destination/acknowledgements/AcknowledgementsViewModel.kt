@@ -17,12 +17,14 @@
 package app.lawnchair.lawnicons.ui.destination.acknowledgements
 
 import androidx.lifecycle.ViewModel
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.repository.OssLibraryRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
+import dev.zacsweers.metro.ContributesIntoMap
+import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@HiltViewModel
-class AcknowledgementsViewModel @Inject constructor(
+@ViewModelKey(AcknowledgementsViewModel::class)
+@ContributesIntoMap(LawniconsScope::class)
+class AcknowledgementsViewModel(
     ossLibraryRepository: OssLibraryRepository,
 ) : ViewModel() {
 

@@ -22,13 +22,13 @@ body:
        To verify your developer status, please provide a public link to your application (GitHub, Google Play, etc).
 
   - type: textarea
-    id: components
+    id: ids
     validations:
       required: true
     attributes:
-      label: Components
+      label: IDs
       description: |
-        Please specify which app components the icon should be linked with (package/activity).
+        Please specify which app IDs the icon should be linked with.
 
   - type: textarea
     id: icon
