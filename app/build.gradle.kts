@@ -1,15 +1,12 @@
 import app.cash.licensee.SpdxId
-import com.android.build.gradle.internal.api.ApkVariantOutputImpl
 import java.util.Properties
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt.android)
     alias(libs.plugins.licensee)
+    alias(libs.plugins.metro)
 }
 
 val buildCommit = providers.exec {
@@ -79,7 +76,7 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        res.setSrcDirs(listOf("src/runtime/res"))
+        res.directories.add("src/runtime/res")
     }
 
     buildFeatures {
@@ -98,16 +95,21 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        outputs.all {
-            (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
-        }
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+androidComponents {
+    onVariants { variant ->
+        variant.outputs.forEach { output ->
+            // TODO: https://github.com/android/gradle-recipes/blob/cbe7c7dea2a3f5b1764756f24bf453d1235c80e2/listenToArtifacts/README.md
+            with(output as com.android.build.api.variant.impl.VariantOutputImpl) {
+                val newApkName = "Lawnicons ${versionName.get()} v${versionCode.get()}_${variant.buildType}.apk"
+                outputFileName = newApkName
+            }
+        }
     }
 }
 
@@ -146,15 +148,14 @@ dependencies {
 
     implementation(libs.kotlinx.serialization.json)
 
-    implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.lifecycle.viewmodel.compose)
+    implementation(libs.metrox.viewmodel.compose)
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.kotlinx.serialization)
     implementation(libs.okhttp)
 
     implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
     implementation(libs.lazycolumn.scrollbar)
     implementation(libs.material.motion.compose.core)
 }

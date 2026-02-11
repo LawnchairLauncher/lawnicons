@@ -1,9 +1,11 @@
 package app.lawnchair.lawnicons.data.repository
 
 import android.app.Application
+import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.kotlinxJson
 import app.lawnchair.lawnicons.data.model.OssLibrary
-import javax.inject.Inject
+import dev.zacsweers.metro.ContributesBinding
+import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -16,7 +18,9 @@ interface OssLibraryRepository {
     val ossLibraries: StateFlow<List<OssLibrary>>
 }
 
-class OssLibraryRepositoryImpl @Inject constructor(private val application: Application) : OssLibraryRepository {
+@SingleIn(LawniconsScope::class)
+@ContributesBinding(LawniconsScope::class)
+class OssLibraryRepositoryImpl(private val application: Application) : OssLibraryRepository {
 
     private val coroutineScope = MainScope()
 

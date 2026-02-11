@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
-import app.lawnchair.lawnicons.ui.theme.icon.Lawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.visitUrl
 
@@ -105,7 +104,7 @@ private fun FancyButtonLinkPreview() {
     LawniconsTheme {
         Surface {
             IconLink(
-                imageVector = LawnIcons.Lawnicons,
+                imageVector = LawnIcons.Check,
                 label = "Example",
                 url = "https://example.com",
             )

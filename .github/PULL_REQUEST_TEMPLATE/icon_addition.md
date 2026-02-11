@@ -1,6 +1,6 @@
 <!-- Title example: "+1 icon, +2 links, +3 icon updates".
      +1 icon = +1 brand new icon (related links aren't considered).
-     +2 links = +2 missing app components for existing icons.
+     +2 links = +2 missing app IDs for existing icons.
      +3 icon updates = redesign of 3 existing icons.
      In other cases, choose something else to avoid confusion.
      Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
@@ -10,16 +10,14 @@
      Unnecessary sections can be deleted. -->
 
 ### Added
-<!--  Apps for which you add icons. -->
+<!-- Apps for which you add icons. 
+     For design updates use the same template but with the "Updated" name. -->
+App name (`com.package.app`)  
 App name (`com.package.app`)  
 App name (`com.package.app`)  
 
 ### Linked
-<!--  New app components for existing icons. -->
+<!-- New app packages for existing icons. -->
 App name (`com.package.app` → `drawable.svg`)  
 App name (`com.package.app` → `drawable.svg`)  
-
-### Updated
-<!--  Outdated icons that you've updated. -->
-App name (`com.package.app`)  
-App name (`com.package.app`)  
+App name (`com.package.app` → `drawable.svg`)  
