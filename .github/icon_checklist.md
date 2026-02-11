@@ -1,7 +1,7 @@
 Thanks for your contribution!
 
 - Please fix all common issues and ensure Lawnicons builds correctly.
-- Please submit up to 5 icons per PR. After a review with 3+ perfect icons, you can submit up to 10 icons.
+- Please submit up to 5 icons per PR. After a review with 4+ perfect icons, you can submit up to 10 icons.
 - You'll get a review within 2 weeks.
 - First-timers receive a brief review to confirm commitment.  
 
