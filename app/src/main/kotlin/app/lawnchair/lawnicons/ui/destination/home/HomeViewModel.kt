@@ -80,8 +80,16 @@ class HomeViewModelImpl(
     override val iconRequestModel = iconRequestRepository.iconRequestList
     override val newIconsInfoModel = newIconsRepository.newIconsInfoModel
 
-    override var iconRequestsEnabled = false
-    override var announcements = listOf<Announcement>()
+    override var iconRequestsEnabled = iconRequestRepository.iconRequestList
+        .map { it?.list.isNullOrEmpty() }
+        .stateIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(5000),
+            initialValue = false,
+        )
+
+    private val _announcements = MutableStateFlow<List<Announcement>>(emptyList())
+    override val announcements = _announcements.asStateFlow()
 
     override var expandSearch by mutableStateOf(false)
 
@@ -95,22 +103,11 @@ class HomeViewModelImpl(
     init {
         viewModelScope.launch {
             runCatching {
-                iconRequestRepository.getEnabledState()
+                announcementsRepository.getAnnouncements().filter {
+                    it.location == AnnouncementLocation.Home
+                }
             }.onSuccess {
-                iconRequestsEnabled = it
-            }.onFailure {
-                Log.e(
-                    "LawniconsViewModel",
-                    "Failed to load icon request settings",
-                    it,
-                )
-            }
-        }
-        viewModelScope.launch {
-            runCatching {
-                announcementsRepository.getAnnouncements()
-            }.onSuccess {
-                announcements = it
+                _announcements.value = it
             }.onFailure {
                 Log.e(
                     "LawniconsViewModel",
@@ -151,15 +148,18 @@ class DummyLawniconsViewModel : HomeViewModel {
 
     override val preferenceManager = PreferenceManager(DummySharedPreferences())
 
-    override var iconRequestsEnabled = true
-    override var announcements = listOf(
-        Announcement(
-            title = "Announcement 1",
-            description = "This is the first announcement",
-            icon = "ic_award",
-            url = Constants.WEBSITE,
+    override var iconRequestsEnabled = MutableStateFlow(true).asStateFlow()
+    override val announcements = MutableStateFlow(
+        listOf(
+            Announcement(
+                title = "Announcement 1",
+                description = "This is the first announcement",
+                icon = "ic_award",
+                url = Constants.WEBSITE,
+                location = AnnouncementLocation.Home,
+            ),
         ),
-    )
+    ).asStateFlow()
 
     override var expandSearch by mutableStateOf(false)
 
