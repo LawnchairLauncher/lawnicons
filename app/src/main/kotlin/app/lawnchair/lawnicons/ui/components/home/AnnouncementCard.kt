@@ -44,7 +44,6 @@ import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults.basePadding
 import app.lawnchair.lawnicons.ui.components.core.ListRowDescription
 import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.components.core.rememberAnimatedShape
-import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
@@ -90,7 +89,7 @@ fun AnnouncementCard(
     Surface(
         modifier = modifier,
         shape = shape,
-        color = adaptiveSurfaceContainerColor,
+        color = MaterialTheme.colorScheme.surfaceContainer,
         onClick = {
             context.visitUrl(url)
         },

@@ -32,7 +32,6 @@ import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
-import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.NewReleases
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -51,7 +50,7 @@ fun NewIconsCard(
             focusedShape = MaterialTheme.shapes.large,
         ),
         colors = ListItemDefaults.colors(
-            containerColor = adaptiveSurfaceContainerColor,
+            containerColor = MaterialTheme.colorScheme.surfaceContainer,
         ),
         modifier = modifier
             .padding(horizontal = 8.dp)
