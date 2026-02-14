@@ -106,8 +106,9 @@ private fun Home(
     with(lawniconsViewModel) {
         val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()
         val searchedIconInfoModel by searchedIconInfoModel.collectAsStateWithLifecycle()
-        val iconRequestModel by iconRequestModel.collectAsStateWithLifecycle()
         val newIconsInfoModel by newIconsInfoModel.collectAsStateWithLifecycle()
+        val hasIconRequests by this.hasIconRequests.collectAsStateWithLifecycle()
+
         val context = LocalContext.current
 
         val announcements by announcements.collectAsStateWithLifecycle()
@@ -192,22 +193,19 @@ private fun Home(
                         }
 
                         val coroutineScope = rememberCoroutineScope()
-                        val iconRequestCount = iconRequestModel?.iconCount ?: 0
-                        val iconRequestsSuspendedString =
-                            stringResource(R.string.icon_requests_suspended)
+                        val string = stringResource(R.string.icon_requests_furfilled)
 
                         HomeBottomToolbar(
                             context = context,
                             scrollBehavior = scrollBehavior,
-                            showIconRequests =
-                            (iconRequestsEnabled && iconRequestCount > 0) || preferenceManager.forceEnableIconRequest.asState().value,
+                            showIconRequests = hasIconRequests,
                             onNavigateToAbout = onNavigateToAbout,
                             onNavigateToIconRequest = onNavigateToIconRequest,
                             onIconRequestUnavailable = {
                                 coroutineScope.launch {
                                     val result = snackbarHostState
                                         .showSnackbar(
-                                            message = iconRequestsSuspendedString,
+                                            message = string,
                                             duration = SnackbarDuration.Short,
                                         )
                                     if (result == SnackbarResult.Dismissed) {

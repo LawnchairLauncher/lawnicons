@@ -23,12 +23,14 @@ import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
+import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 import java.io.File
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -37,8 +39,9 @@ import kotlinx.coroutines.withContext
 
 interface IconRequestRepository {
     val iconRequestList: StateFlow<IconRequestModel?>
-    suspend fun getEnabledState(): Boolean
+    val isEnabled: StateFlow<Boolean>
 
+    suspend fun refresh()
     suspend fun createIconRequestZip(currentIconRequests: List<SystemIconInfo>?): File?
 }
 
@@ -47,27 +50,46 @@ interface IconRequestRepository {
 class IconRequestRepositoryImpl(
     val application: Application,
     private val api: IconRequestSettingsAPI,
+    private val preferenceManager: PreferenceManager,
 ) : IconRequestRepository {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
     private val _iconRequestList = MutableStateFlow<IconRequestModel?>(null)
     override val iconRequestList = _iconRequestList.asStateFlow()
 
-    override suspend fun getEnabledState() = api.getIconRequestSettings().enabled
+    private val _isEnabled = MutableStateFlow(false)
+    override val isEnabled = _isEnabled.asStateFlow()
 
     init {
         coroutineScope.launch {
-            val iconList = application.getIconInfo()
-                .sortedBy { it.label.lowercase() }
-
-            val systemPackageList = application.getSystemIconInfo()
-                .sortedBy { it.label.lowercase() }
-
-            getIconRequestList(iconList, systemPackageList)
+            refresh()
         }
     }
 
-    private suspend fun getIconRequestList(
+    override suspend fun refresh() {
+        withContext(Dispatchers.IO) {
+            val enabledDeferred = async {
+                val apiEnabled = try {
+                    api.getIconRequestSettings().enabled
+                } catch (_: Exception) {
+                    false
+                }
+                val forceEnabled = preferenceManager.forceEnableIconRequest.get()
+                apiEnabled || forceEnabled
+            }
+
+            val iconList = application.getIconInfo()
+                .sortedBy { it.label.lowercase() }
+            val systemPackageList = application.getSystemIconInfo()
+                .sortedBy { it.label.lowercase() }
+
+            _isEnabled.value = enabledDeferred.await()
+
+            updateIconRequestList(iconList, systemPackageList)
+        }
+    }
+
+    private suspend fun updateIconRequestList(
         lawniconsIconList: List<IconInfo>,
         systemPackageList: List<SystemIconInfo>,
     ) = withContext(Dispatchers.Default) {
@@ -92,6 +114,6 @@ class IconRequestRepositoryImpl(
             Log.d("IconRequestRepo", "No icon requests to bundle.")
             return null
         }
-        return bundleIconRequestsToZip(application, currentIconRequests)
+        return IconRequestBundler.createIconRequestZip(application, currentIconRequests)
     }
 }

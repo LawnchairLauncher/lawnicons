@@ -26,8 +26,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.data.model.Announcement
+import app.lawnchair.lawnicons.data.model.AnnouncementLocation
 import app.lawnchair.lawnicons.data.model.IconRequestData
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
+import app.lawnchair.lawnicons.data.repository.home.AnnouncementsRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestHandler
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.formatIconRequestList
@@ -51,6 +54,7 @@ import kotlinx.coroutines.withContext
 @ContributesIntoMap(LawniconsScope::class)
 class IconRequestViewModel(
     private val iconRequestRepository: IconRequestRepository,
+    private val announcementsRepository: AnnouncementsRepository,
     private val requestHandler: IconRequestHandler,
 ) : ViewModel() {
     val availableIcons = iconRequestRepository.iconRequestList
@@ -60,6 +64,29 @@ class IconRequestViewModel(
             started = SharingStarted.WhileSubscribed(5000),
             initialValue = emptyList(),
         )
+
+    val isEnabled = iconRequestRepository.isEnabled
+
+    private val _announcements = MutableStateFlow<List<Announcement>>(emptyList())
+    val announcements = _announcements.asStateFlow()
+
+    init {
+        viewModelScope.launch {
+            runCatching {
+                announcementsRepository.getAnnouncements().filter {
+                    it.location == AnnouncementLocation.IconRequest
+                }
+            }.onSuccess {
+                _announcements.value = it
+            }.onFailure {
+                Log.e(
+                    "IconRequestViewModel",
+                    "Failed to load announcements",
+                    it,
+                )
+            }
+        }
+    }
 
     private val _selectedIcons = MutableStateFlow<List<SystemIconInfo>>(emptyList())
     val selectedIcons: StateFlow<List<SystemIconInfo>> = _selectedIcons.asStateFlow()

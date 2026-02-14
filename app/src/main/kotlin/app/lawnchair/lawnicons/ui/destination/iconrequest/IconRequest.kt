@@ -23,11 +23,14 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.requiredSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.BottomAppBarDefaults
 import androidx.compose.material3.ButtonDefaults
@@ -40,12 +43,13 @@ import androidx.compose.material3.FlexibleBottomAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.ListItemDefaults
-import androidx.compose.material3.ListItemShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.SplitButtonDefaults
 import androidx.compose.material3.SplitButtonLayout
 import androidx.compose.material3.Text
@@ -71,10 +75,13 @@ import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.SystemIconInfo
+import app.lawnchair.lawnicons.ui.components.AnnouncementDefaults
+import app.lawnchair.lawnicons.ui.components.AnnouncementList
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.theme.icon.Copy
 import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
 import app.lawnchair.lawnicons.ui.theme.icon.KeyboardArrowDown
@@ -110,6 +117,10 @@ fun IconRequest(
     onBack: () -> Unit,
 ) {
     val context = LocalContext.current
+
+    val isEnabled by viewModel.isEnabled.collectAsStateWithLifecycle()
+
+    val announcements by viewModel.announcements.collectAsStateWithLifecycle()
 
     val availableIcons by viewModel.availableIcons.collectAsStateWithLifecycle()
     val isSavingInProgress by viewModel.isSavingInProgress.collectAsStateWithLifecycle()
@@ -159,11 +170,27 @@ fun IconRequest(
                     )
                 }
 
+                val coroutineScope = rememberCoroutineScope()
+                val string = stringResource(R.string.icon_requests_suspended)
+
                 IconRequestButton(
                     enabled = selectedIconsCount > 0 && !isSavingInProgress,
                     isExpandedScreen = isExpandedScreen,
                     onRequest = {
-                        viewModel.requestIcons(context)
+                        if (isEnabled) {
+                            viewModel.requestIcons(context)
+                        } else {
+                            coroutineScope.launch {
+                                val result = snackbarHostState
+                                    .showSnackbar(
+                                        message = string,
+                                        duration = SnackbarDuration.Short,
+                                    )
+                                if (result == SnackbarResult.Dismissed) {
+                                    snackbarHostState.currentSnackbarData?.dismiss()
+                                }
+                            }
+                        }
                     },
                     onShareFile = {
                         viewModel.shareFile(context)
@@ -186,20 +213,29 @@ fun IconRequest(
         LazyColumn(
             contentPadding = paddingValues,
         ) {
-            item {
-                Spacer(Modifier.height(8.dp))
+            if (announcements.isNotEmpty()) {
+                item {
+                    AnnouncementList(
+                        announcements,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 8.dp),
+                        colors = AnnouncementDefaults.colors(
+                            containerColor = adaptiveSurfaceContainerColor,
+                        ),
+                    )
+                }
             }
-            itemsIndexed(availableIcons) { index, systemIconInfo ->
+            item {
+                Spacer(Modifier.height(4.dp))
+            }
+            items(availableIcons) { systemIconInfo ->
                 IconRequestRow(
                     systemIconInfo = systemIconInfo,
                     checked = systemIconInfo in selectedIcons,
                     onCheckedChange = {
                         viewModel.toggleSelection(systemIconInfo)
                     },
-                    shapes = ListItemDefaults.segmentedShapes(
-                        index = index,
-                        availableIcons.size,
-                    ),
                 )
             }
         }
@@ -379,7 +415,6 @@ fun IconRequestRow(
     systemIconInfo: SystemIconInfo,
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
-    shapes: ListItemShapes,
     modifier: Modifier = Modifier,
 ) {
     ListItem(
@@ -388,10 +423,10 @@ fun IconRequestRow(
             onCheckedChange(!checked)
         },
         colors = ListItemDefaults.colors(
+            containerColor = adaptiveSurfaceColor,
             selectedContainerColor = adaptiveSurfaceColor,
         ),
         modifier = modifier,
-        shapes = shapes,
         content = {
             ListRowLabel(systemIconInfo.label)
         },
