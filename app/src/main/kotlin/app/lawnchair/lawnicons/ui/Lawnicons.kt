@@ -6,6 +6,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
@@ -31,6 +32,13 @@ import dev.zacsweers.metrox.viewmodel.MetroViewModelFactory
 import soup.compose.material.motion.animation.materialSharedAxisX
 import soup.compose.material.motion.animation.rememberSlideDistance
 
+data class LawniconsActions(
+    val isIconPicker: Boolean = false,
+    val onSendResult: (IconInfo) -> Unit = {},
+)
+
+val LocalLawniconsActions = staticCompositionLocalOf { LawniconsActions() }
+
 @Composable
 fun Lawnicons(
     metroVmf: MetroViewModelFactory,
@@ -39,7 +47,10 @@ fun Lawnicons(
     modifier: Modifier = Modifier,
     isIconPicker: Boolean = false,
 ) {
-    CompositionLocalProvider(LocalMetroViewModelFactory provides metroVmf) {
+    CompositionLocalProvider(
+        LocalMetroViewModelFactory provides metroVmf,
+        LocalLawniconsActions provides LawniconsActions(isIconPicker, onSendResult),
+    ) {
         val navigationState = rememberNavigationState(
             startRoute = Home,
             topLevelRoutes = setOf(Home, About, NewIcons, IconRequest, DebugMenu),
@@ -55,8 +66,6 @@ fun Lawnicons(
                 onNavigateToIconRequest = { navigator.navigate(IconRequest) },
                 onNavigateToDebugMenu = { navigator.navigate(DebugMenu) },
                 isExpandedScreen = isExpandedScreen,
-                isIconPicker = isIconPicker,
-                onSendResult = onSendResult,
             )
             debugMenuDestination(
                 isExpandedScreen = isExpandedScreen,

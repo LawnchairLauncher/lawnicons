@@ -48,8 +48,8 @@ import kotlinx.coroutines.launch
 interface HomeViewModel {
     val iconInfoModel: StateFlow<IconInfoModel>
     val searchedIconInfoModel: StateFlow<IconInfoModel>
-    val newIconsInfoModel: StateFlow<IconInfoModel>
 
+    val hasNewIcons: StateFlow<Boolean>
     var hasIconRequests: StateFlow<Boolean>
     val announcements: StateFlow<List<Announcement>>
 
@@ -74,7 +74,14 @@ class HomeViewModelImpl(
     HomeViewModel {
     override val iconInfoModel = iconRepository.iconInfoModel
     override val searchedIconInfoModel = iconRepository.searchedIconInfoModel
-    override val newIconsInfoModel = newIconsRepository.newIconsInfoModel
+
+    override val hasNewIcons = newIconsRepository.newIconsInfoModel.map {
+        it.iconCount > 0
+    }.stateIn(
+        scope = viewModelScope,
+        started = SharingStarted.WhileSubscribed(5000),
+        initialValue = false,
+    )
 
     override var hasIconRequests = iconRequestRepository.iconRequestList
         .map { !it?.list.isNullOrEmpty() }
@@ -139,8 +146,8 @@ class DummyLawniconsViewModel : HomeViewModel {
 
     override val iconInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
     override val searchedIconInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
-    override val newIconsInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
 
+    override val hasNewIcons = MutableStateFlow(true).asStateFlow()
     override var hasIconRequests = MutableStateFlow(true).asStateFlow()
     override val announcements = MutableStateFlow(
         listOf(

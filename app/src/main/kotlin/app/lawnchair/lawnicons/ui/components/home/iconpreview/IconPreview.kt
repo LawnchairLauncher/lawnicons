@@ -41,6 +41,7 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.ui.LocalLawniconsActions
 import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -56,18 +57,17 @@ val ColorScheme.iconColor: Color
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
-    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
-    isIconPicker: Boolean = false,
 ) {
+    val actions = LocalLawniconsActions.current
     val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
     IconPreview(
         iconInfo = iconInfo,
-        onSendResult = onSendResult,
+        onSendResult = actions.onSendResult,
         modifier = modifier,
         iconBackground = iconBackground,
-        isIconPicker = isIconPicker,
+        isIconPicker = actions.isIconPicker,
         showSheet = isIconInfoShown.value,
         onToggleSheet = { isIconInfoShown.value = it },
     )

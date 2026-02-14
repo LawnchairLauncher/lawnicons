@@ -19,90 +19,63 @@ package app.lawnchair.lawnicons.ui.components.home
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBarValue
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopSearchBar
-import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.rememberUpdatedState
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
-import app.lawnchair.lawnicons.data.model.SearchMode
+import app.lawnchair.lawnicons.ui.LocalLawniconsActions
 import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
-import app.lawnchair.lawnicons.ui.theme.icon.About
-import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.components.home.search.SearchState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeTopBar(
-    textFieldState: TextFieldState,
-    mode: SearchMode,
-    onModeChange: (SearchMode) -> Unit,
-    onBack: () -> Unit,
-    onNavigate: () -> Unit,
-    expandSearch: Boolean,
-    isExpandedScreen: Boolean,
-    isIconPicker: Boolean,
-    onSendResult: (IconInfo) -> Unit,
+    searchState: SearchState,
     iconInfoModel: IconInfoModel?,
+    isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
 ) {
+    val actions = LocalLawniconsActions.current
+
     Box(modifier) {
         iconInfoModel?.let {
-            val searchBarState = rememberSearchBarState()
-            val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
-
             val inputField = @Composable {
                 SearchBarInputField(
-                    searchBarState = searchBarState,
-                    textFieldState = textFieldState,
-                    iconCount = iconInfoModel.iconCount,
-                    isIconPicker = isIconPicker,
-                    navigateContent = {
-                        if (isExpandedScreen) {
-                            IconButton(
-                                onClick = onNavigate,
-                            ) {
-                                Icon(
-                                    imageVector = LawnIcons.About,
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    modifier = Modifier
-                                        .size(24.dp),
-                                )
-                            }
-                        }
+                    state = searchState,
+                    placeholder = {
+                        Text(
+                            stringResource(
+                                id = if (actions.isIconPicker) {
+                                    R.string.search_bar_icon_picker
+                                } else {
+                                    R.string.search_bar_hint
+                                },
+                                iconInfoModel.iconCount,
+                            ),
+                        )
                     },
-                    onBack = onBack,
-                    onSearch = {
-                        if (textFieldState.text.isNotEmpty()) {
-                            isIconInfoShown.value = true
-                        }
+                    onBack = {
+                        searchState.setExpanded(false)
                     },
                 )
             }
 
             val offset = (-120).dp
             val offsetState =
-                animateDpAsState(if (searchBarState.currentValue == SearchBarValue.Expanded) 0.dp else offset)
+                animateDpAsState(if (searchState.searchBarState.currentValue == SearchBarValue.Expanded) 0.dp else offset)
 
             TopSearchBar(
                 inputField = inputField,
-                state = searchBarState,
+                state = searchState.searchBarState,
                 modifier = Modifier.then(
                     if (isExpandedScreen) {
                         Modifier.offset {
@@ -116,34 +89,14 @@ fun HomeTopBar(
 
             ResponsiveSearchBarContents(
                 isExpandedScreen = isExpandedScreen,
-                state = searchBarState,
+                state = searchState.searchBarState,
                 inputField = inputField,
             ) {
                 SearchContents(
-                    searchTerm = textFieldState.text.toString(),
-                    searchMode = mode,
-                    onModeChange = onModeChange,
+                    state = searchState,
                     iconInfo = iconInfoModel.iconInfo,
-                    isIconPicker = isIconPicker,
-                    onSendResult = onSendResult,
-                    showSheet = isIconInfoShown.value,
-                    onToggleSheet = { isIconInfoShown.value = it },
+                    onSendResult = actions.onSendResult,
                 )
-            }
-
-            LaunchedEffect(expandSearch) {
-                if (expandSearch) {
-                    searchBarState.animateToExpanded()
-                } else {
-                    searchBarState.animateToCollapsed()
-                }
-            }
-
-            val latestOnBack by rememberUpdatedState(onBack)
-            LaunchedEffect(searchBarState.currentValue) {
-                if (searchBarState.currentValue == SearchBarValue.Collapsed) {
-                    latestOnBack()
-                }
             }
         }
     }

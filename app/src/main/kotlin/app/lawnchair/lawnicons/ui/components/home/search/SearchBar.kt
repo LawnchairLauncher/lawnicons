@@ -18,7 +18,6 @@ package app.lawnchair.lawnicons.ui.components.home.search
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.foundation.text.input.clearText
 import androidx.compose.material3.ExpandedDockedSearchBar
 import androidx.compose.material3.ExpandedFullScreenSearchBar
@@ -27,11 +26,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.SearchBarState
 import androidx.compose.material3.SearchBarValue
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.icon.Back
 import app.lawnchair.lawnicons.ui.theme.icon.Close
@@ -41,33 +37,18 @@ import app.lawnchair.lawnicons.ui.theme.icon.Search
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchBarInputField(
-    searchBarState: SearchBarState,
-    textFieldState: TextFieldState,
-    iconCount: Int,
-    isIconPicker: Boolean,
-    navigateContent: @Composable () -> Unit,
+    state: SearchState,
+    placeholder: @Composable () -> Unit,
     onBack: () -> Unit,
-    onSearch: (String) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     SearchBarDefaults.InputField(
-        textFieldState = textFieldState,
-        searchBarState = searchBarState,
-        onSearch = onSearch,
-        placeholder = {
-            Text(
-                stringResource(
-                    id = if (isIconPicker) {
-                        R.string.search_bar_icon_picker
-                    } else {
-                        R.string.search_bar_hint
-                    },
-                    iconCount,
-                ),
-            )
-        },
+        textFieldState = state.textFieldState,
+        searchBarState = state.searchBarState,
+        onSearch = { state.isSheetVisible = true },
+        placeholder = placeholder,
         leadingIcon = {
-            if (searchBarState.targetValue == SearchBarValue.Expanded) {
+            if (state.searchBarState.targetValue == SearchBarValue.Expanded) {
                 NavigationIconButton(
                     imageVector = LawnIcons.Back,
                     onClick = onBack,
@@ -77,12 +58,10 @@ fun SearchBarInputField(
             }
         },
         trailingIcon = {
-            Crossfade(textFieldState.text.isEmpty(), label = "") {
+            Crossfade(state.textFieldState.text.isNotEmpty(), label = "") {
                 if (it) {
-                    navigateContent()
-                } else {
                     NavigationIconButton(
-                        onClick = { textFieldState.clearText() },
+                        onClick = { state.textFieldState.clearText() },
                         imageVector = LawnIcons.Close,
                     )
                 }

@@ -86,11 +86,9 @@ object IconPreviewGridPaddings {
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
     iconInfo: List<IconInfo>,
-    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     containerModifier: Modifier = Modifier.applyGridInsets(),
     horizontalPadding: Dp = IconPreviewGridPaddings.Default,
-    isIconPicker: Boolean = false,
     gridState: LazyGridState = rememberLazyGridState(),
     startContent: (LazyGridScope.() -> Unit) = {},
 ) {
@@ -131,8 +129,6 @@ fun IconPreviewGrid(
                         modifier = Modifier
                             .scale(scale),
                         iconInfo = iconInfo,
-                        isIconPicker = isIconPicker,
-                        onSendResult = onSendResult,
                     )
                 }
             }
@@ -256,10 +252,8 @@ private fun IconGridPreview() {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
-                onSendResult = {},
                 modifier = Modifier,
                 horizontalPadding = IconPreviewGridPaddings.Default,
-                isIconPicker = false,
             )
         }
     }
@@ -273,10 +267,8 @@ private fun IconGridExpandedPreview() {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
-                onSendResult = {},
                 modifier = Modifier,
                 horizontalPadding = IconPreviewGridPaddings.Expanded,
-                isIconPicker = false,
             )
         }
     }

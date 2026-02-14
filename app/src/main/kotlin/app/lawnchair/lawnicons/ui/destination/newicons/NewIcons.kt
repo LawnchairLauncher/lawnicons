@@ -67,7 +67,6 @@ private fun NewIcons(
     ) { paddingValues ->
         IconPreviewGrid(
             iconInfo = iconInfoModel.iconInfo,
-            onSendResult = {},
             containerModifier = Modifier.padding(paddingValues),
             horizontalPadding = if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default,
         )
