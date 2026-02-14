@@ -33,7 +33,6 @@ class SearchState(
     val searchBarState: SearchBarState,
     val mode: SearchMode,
     private val onModeChange: (SearchMode) -> Unit,
-    private val onExpandChanged: (Boolean) -> Unit,
 ) {
     var isSheetVisible by mutableStateOf(false)
 
@@ -41,10 +40,6 @@ class SearchState(
 
     fun setMode(newMode: SearchMode) {
         onModeChange(newMode)
-    }
-
-    fun setExpanded(expanded: Boolean) {
-        onExpandChanged(expanded)
     }
 }
 
@@ -55,7 +50,6 @@ fun rememberSearchState(
     searchBarState: SearchBarState = rememberSearchBarState(),
     mode: SearchMode = SearchMode.LABEL,
     onModeChange: (SearchMode) -> Unit = {},
-    onExpandChange: (Boolean) -> Unit = {},
 ): SearchState {
     return remember(textFieldState, searchBarState, mode) {
         SearchState(
@@ -63,7 +57,6 @@ fun rememberSearchState(
             searchBarState = searchBarState,
             mode = mode,
             onModeChange = onModeChange,
-            onExpandChanged = onExpandChange,
         )
     }
 }

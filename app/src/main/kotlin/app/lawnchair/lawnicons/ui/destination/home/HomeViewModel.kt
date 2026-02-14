@@ -53,8 +53,6 @@ interface HomeViewModel {
     var hasIconRequests: StateFlow<Boolean>
     val announcements: StateFlow<List<Announcement>>
 
-    var expandSearch: Boolean
-
     val searchMode: SearchMode
     val searchTermTextState: TextFieldState
 
@@ -93,8 +91,6 @@ class HomeViewModelImpl(
 
     private val _announcements = MutableStateFlow<List<Announcement>>(emptyList())
     override val announcements = _announcements.asStateFlow()
-
-    override var expandSearch by mutableStateOf(false)
 
     private var _searchMode by mutableStateOf(SearchMode.LABEL)
 
@@ -160,8 +156,6 @@ class DummyLawniconsViewModel : HomeViewModel {
             ),
         ),
     ).asStateFlow()
-
-    override var expandSearch by mutableStateOf(false)
 
     override val searchTermTextState = TextFieldState()
 

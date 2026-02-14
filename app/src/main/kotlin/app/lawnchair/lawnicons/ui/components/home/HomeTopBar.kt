@@ -18,15 +18,19 @@ package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.AppBarWithSearch
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SearchBarValue
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopSearchBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
@@ -35,6 +39,7 @@ import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarCont
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchState
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -45,8 +50,23 @@ fun HomeTopBar(
     modifier: Modifier = Modifier,
 ) {
     val actions = LocalLawniconsActions.current
+    val coroutineScope = rememberCoroutineScope()
 
-    Box(modifier) {
+    val targetOffsetY = if (searchState.searchBarState.targetValue == SearchBarValue.Expanded) {
+        0
+    } else {
+        (-100)
+    }.dp
+
+    val offsetY by animateDpAsState(
+        targetValue = targetOffsetY,
+        label = "SearchBarOffsetYAnimation",
+    )
+
+    Box(
+        contentAlignment = Alignment.TopCenter,
+        modifier = modifier.fillMaxWidth(),
+    ) {
         iconInfoModel?.let {
             val inputField = @Composable {
                 SearchBarInputField(
@@ -64,27 +84,20 @@ fun HomeTopBar(
                         )
                     },
                     onBack = {
-                        searchState.setExpanded(false)
+                        coroutineScope.launch {
+                            searchState.searchBarState.animateToCollapsed()
+                        }
                     },
                 )
             }
 
-            val offset = (-120).dp
-            val offsetState =
-                animateDpAsState(if (searchState.searchBarState.currentValue == SearchBarValue.Expanded) 0.dp else offset)
-
-            TopSearchBar(
-                inputField = inputField,
+            AppBarWithSearch(
                 state = searchState.searchBarState,
-                modifier = Modifier.then(
-                    if (isExpandedScreen) {
-                        Modifier.offset {
-                            IntOffset(0, offsetState.value.roundToPx())
-                        }
-                    } else {
-                        Modifier.offset(y = offset)
-                    },
-                ),
+                inputField = inputField,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 8.dp)
+                    .offset(y = offsetY),
             )
 
             ResponsiveSearchBarContents(

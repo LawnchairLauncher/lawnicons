@@ -119,7 +119,6 @@ private fun Home(
             textFieldState = searchTermTextState,
             mode = searchMode,
             onModeChange = ::changeMode,
-            onExpandChange = { expandSearch = it },
         )
 
         val scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
@@ -222,20 +221,16 @@ private fun Home(
                                     }
                                 }
                             },
-                            onExpandSearch = { expandSearch = true },
+                            onExpandSearch = {
+                                coroutineScope.launch {
+                                    searchState.searchBarState.animateToExpanded()
+                                }
+                            },
                         )
                     }
                 }
             } else {
                 PlaceholderUI(horizontalPadding = horizontalPadding)
-            }
-        }
-
-        LaunchedEffect(expandSearch) {
-            if (expandSearch) {
-                searchState.searchBarState.animateToExpanded()
-            } else {
-                searchState.searchBarState.animateToCollapsed()
             }
         }
 
