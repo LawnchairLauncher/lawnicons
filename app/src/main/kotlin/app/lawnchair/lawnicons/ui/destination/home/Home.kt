@@ -34,6 +34,8 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.SnackbarResult
 import androidx.compose.material3.Surface
+import androidx.compose.material3.SwipeToDismissBox
+import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -124,6 +126,8 @@ private fun Home(
             FloatingToolbarExitDirection.Bottom,
         )
 
+        val coroutineScope = rememberCoroutineScope()
+
         val horizontalPadding =
             if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default
 
@@ -152,10 +156,20 @@ private fun Home(
                                     if (isVisible) 0f else with(density) { FloatingToolbarDefaults.ContainerSize.toPx() }
                             }
 
-                            Snackbar(
-                                it,
-                                modifier = offsetModifier,
-                            )
+                            SwipeToDismissBox(
+                                state = rememberSwipeToDismissBoxState(),
+                                backgroundContent = {},
+                                onDismiss = {
+                                    coroutineScope.launch {
+                                        snackbarHostState.currentSnackbarData?.dismiss()
+                                    }
+                                },
+                            ) {
+                                Snackbar(
+                                    it,
+                                    modifier = offsetModifier,
+                                )
+                            }
                         }
                     },
                     modifier = Modifier.nestedScroll(scrollBehavior),
@@ -189,7 +203,6 @@ private fun Home(
                             }
                         }
 
-                        val coroutineScope = rememberCoroutineScope()
                         val string = stringResource(R.string.icon_requests_furfilled)
 
                         HomeBottomToolbar(
