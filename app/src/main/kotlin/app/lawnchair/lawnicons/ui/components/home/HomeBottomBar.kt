@@ -30,6 +30,7 @@ import app.lawnchair.lawnicons.ui.theme.icon.Discord
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.OpenCollective
 import app.lawnchair.lawnicons.ui.theme.icon.Search
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.visitUrl
@@ -91,6 +92,22 @@ fun BoxScope.HomeBottomToolbar(
                 ) {
                     Icon(
                         imageVector = LawnIcons.Github,
+                        contentDescription = stringResource(id = R.string.github),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
+
+            SimpleTooltipBox(
+                label = stringResource(id = R.string.open_collective),
+            ) {
+                IconButton(
+                    onClick = {
+                        context.visitUrl(Constants.OPEN_COLLECTIVE)
+                    },
+                ) {
+                    Icon(
+                        imageVector = LawnIcons.OpenCollective,
                         contentDescription = stringResource(id = R.string.github),
                         modifier = Modifier.requiredSize(24.dp),
                     )
