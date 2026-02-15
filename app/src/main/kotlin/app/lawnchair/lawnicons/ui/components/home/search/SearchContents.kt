@@ -25,6 +25,8 @@ import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -46,7 +48,6 @@ import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 fun SearchContents(
     state: SearchState,
     iconInfo: List<IconInfo>,
-    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -71,16 +72,16 @@ fun SearchContents(
                     showSheet = state.isSheetVisible,
                     onToggleSheet = { state.isSheetVisible = it },
                     isIconPicker = actions.isIconPicker,
-                    onSendResult = onSendResult,
+                    onSendResult = actions.onSendResult,
                 )
 
                 else -> IconGrid(
                     iconInfo = iconInfo,
                     searchTerm = state.searchTerm,
-                    isIconPicker = actions.isIconPicker,
-                    onSendResult = onSendResult,
                     showSheet = state.isSheetVisible,
                     onToggleSheet = { state.isSheetVisible = it },
+                    isIconPicker = actions.isIconPicker,
+                    onSendResult = actions.onSendResult,
                 )
             }
         }
@@ -106,10 +107,10 @@ private fun EmptyState(searchTerm: String) {
 private fun IconGrid(
     iconInfo: List<IconInfo>,
     searchTerm: String,
-    isIconPicker: Boolean,
-    onSendResult: (IconInfo) -> Unit,
     showSheet: Boolean,
     onToggleSheet: (Boolean) -> Unit,
+    isIconPicker: Boolean,
+    onSendResult: (IconInfo) -> Unit,
 ) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(minSize = 80.dp),
@@ -122,18 +123,21 @@ private fun IconGrid(
             if (index == 0 && searchTerm != "") {
                 IconPreview(
                     iconInfo = it,
-                    isIconPicker = isIconPicker,
-                    onSendResult = onSendResult,
                     iconBackground = MaterialTheme.colorScheme.surface,
                     showSheet = showSheet,
                     onToggleSheet = onToggleSheet,
-                )
-            } else {
-                IconPreview(
-                    iconInfo = it,
                     isIconPicker = isIconPicker,
                     onSendResult = onSendResult,
+                )
+            } else {
+                val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+                IconPreview(
+                    iconInfo = it,
                     iconBackground = MaterialTheme.colorScheme.surfaceContainerLow,
+                    showSheet = isIconInfoShown.value,
+                    onToggleSheet = { isIconInfoShown.value = it },
+                    isIconPicker = isIconPicker,
+                    onSendResult = onSendResult,
                 )
             }
         }

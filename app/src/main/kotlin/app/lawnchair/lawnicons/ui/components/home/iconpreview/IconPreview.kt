@@ -30,8 +30,6 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -59,17 +57,18 @@ fun IconPreview(
     iconInfo: IconInfo,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
+    showSheet: Boolean = false,
+    onToggleSheet: (Boolean) -> Unit = {},
 ) {
     val actions = LocalLawniconsActions.current
-    val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
     IconPreview(
         iconInfo = iconInfo,
         onSendResult = actions.onSendResult,
         modifier = modifier,
         iconBackground = iconBackground,
         isIconPicker = actions.isIconPicker,
-        showSheet = isIconInfoShown.value,
-        onToggleSheet = { isIconInfoShown.value = it },
+        showSheet = showSheet,
+        onToggleSheet = onToggleSheet,
     )
 }
 
