@@ -18,9 +18,12 @@ package app.lawnchair.lawnicons.ui.components.home
 
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material3.AppBarWithSearch
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SearchBarValue
@@ -52,11 +55,13 @@ fun HomeTopBar(
     val actions = LocalLawniconsActions.current
     val coroutineScope = rememberCoroutineScope()
 
+    val statusBarHeight = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+
     val targetOffsetY = if (searchState.searchBarState.targetValue == SearchBarValue.Expanded) {
-        0
+        0.dp
     } else {
-        (-100)
-    }.dp
+        -(statusBarHeight + 100.dp)
+    }
 
     val offsetY by animateDpAsState(
         targetValue = targetOffsetY,
@@ -108,7 +113,6 @@ fun HomeTopBar(
                 SearchContents(
                     state = searchState,
                     iconInfo = iconInfoModel.iconInfo,
-                    onSendResult = actions.onSendResult,
                 )
             }
         }
