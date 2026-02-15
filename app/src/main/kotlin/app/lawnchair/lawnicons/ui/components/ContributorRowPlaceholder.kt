@@ -18,9 +18,9 @@ import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
 import app.lawnchair.lawnicons.ui.components.core.placeholder.PlaceholderHighlight
 import app.lawnchair.lawnicons.ui.components.core.placeholder.fade
 import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -68,7 +68,7 @@ fun ContributorRowPlaceholder(
 @PreviewLawnicons
 @Composable
 private fun ContributorRowPlaceholderPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         ContributorRowPlaceholder()
     }
 }

@@ -35,8 +35,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.data.model.OssLibrary
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
@@ -56,7 +60,6 @@ fun EntryProviderScope<NavKey>.acknowledgementsDestination(
     }
 }
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 private fun Acknowledgements(
     onBack: () -> Unit,
@@ -67,6 +70,26 @@ private fun Acknowledgements(
     val context = LocalContext.current
     val ossLibraries by acknowledgementsViewModel.ossLibraries.collectAsStateWithLifecycle()
 
+    AcknowledgementsScreen(
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
+        ossLibraries = ossLibraries,
+        onVisitUrl = {
+            context.visitUrl(it)
+        },
+        modifier = modifier,
+    )
+}
+
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun AcknowledgementsScreen(
+    onBack: () -> Unit,
+    isExpandedScreen: Boolean,
+    ossLibraries: List<OssLibrary>,
+    onVisitUrl: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
     LawniconsScaffold(
         modifier = modifier,
         title = stringResource(id = R.string.acknowledgements),
@@ -95,10 +118,36 @@ private fun Acknowledgements(
                         background = true,
                         shapes = ListItemDefaults.segmentedShapes(index, libraries.size),
                     ) {
-                        context.visitUrl(it.scm.url)
+                        onVisitUrl(it.scm.url)
                     }
                 }
             }
         }
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun AcknowledgementsScreenPreview() {
+    PreviewProviders {
+        AcknowledgementsScreen(
+            onBack = {},
+            isExpandedScreen = false,
+            ossLibraries = SampleData.ossLibraries,
+            onVisitUrl = {},
+        )
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun AcknowledgementsScreenPreviewExpanded() {
+    PreviewProviders {
+        AcknowledgementsScreen(
+            onBack = {},
+            isExpandedScreen = true,
+            ossLibraries = SampleData.ossLibraries,
+            onVisitUrl = {},
+        )
     }
 }

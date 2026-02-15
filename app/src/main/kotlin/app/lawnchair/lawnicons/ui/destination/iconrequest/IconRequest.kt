@@ -113,7 +113,7 @@ fun EntryProviderScope<NavKey>.iconRequestDestination(
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
 @Composable
-fun IconRequest(
+private fun IconRequest(
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
     viewModel: IconRequestViewModel = metroViewModel(),

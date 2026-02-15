@@ -51,11 +51,11 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.AppIcon
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import kotlinx.serialization.Serializable
 
 enum class ColumnTypes {
@@ -279,7 +279,7 @@ private val specialThanks = listOf(
 @PreviewLawnicons
 @Composable
 private fun AboutPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         About(
             {},
             {},
@@ -292,7 +292,7 @@ private fun AboutPreview() {
 @PreviewLawnicons
 @Composable
 private fun AboutPreviewExpanded() {
-    LawniconsTheme {
+    PreviewProviders {
         About(
             {},
             {},

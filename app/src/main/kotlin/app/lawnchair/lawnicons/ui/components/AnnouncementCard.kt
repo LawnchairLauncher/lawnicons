@@ -48,6 +48,8 @@ import app.lawnchair.lawnicons.ui.components.core.ListRowDescription
 import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
 import app.lawnchair.lawnicons.ui.components.core.rememberAnimatedShape
 import app.lawnchair.lawnicons.ui.util.Constants
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -182,5 +184,18 @@ fun AnnouncementCard(
                 ListRowDescription(description)
             }
         }
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun AnnouncementCardPreview() {
+    PreviewProviders {
+        AnnouncementCard(
+            label = "Example",
+            description = "Example description",
+            icon = "https://example.com/icon.svg",
+            url = "https://example.com",
+        )
     }
 }

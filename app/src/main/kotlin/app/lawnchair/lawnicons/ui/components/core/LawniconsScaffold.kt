@@ -15,11 +15,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
 import app.lawnchair.lawnicons.ui.theme.icon.Back
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -80,7 +80,7 @@ fun LawniconsScaffold(
 @PreviewLawnicons
 @Composable
 private fun LawniconsScaffoldPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         LawniconsScaffold(
             title = "Example small bar",
             onBack = { },
@@ -99,7 +99,7 @@ private fun LawniconsScaffoldPreview() {
 @PreviewLawnicons
 @Composable
 private fun LawniconsScaffoldExpandedPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         LawniconsScaffold(
             title = "Example small bar",
             onBack = { },

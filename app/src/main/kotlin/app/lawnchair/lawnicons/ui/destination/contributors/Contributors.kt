@@ -52,11 +52,11 @@ import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.ContributorRowPlaceholder
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
@@ -244,7 +244,7 @@ private fun ContributorsScreenPreview() {
         ),
     )
 
-    LawniconsTheme {
+    PreviewProviders {
         Contributors(
             ContributorsUiState.Success(contributors),
             {},
@@ -256,7 +256,7 @@ private fun ContributorsScreenPreview() {
 @PreviewLawnicons
 @Composable
 private fun ContributorsScreenLoadingPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Contributors(
             ContributorsUiState.Loading,
             {},
@@ -278,7 +278,7 @@ private fun ContributorListPreview() {
         ),
     )
 
-    LawniconsTheme {
+    PreviewProviders {
         ContributorList(contributors)
     }
 }
@@ -286,7 +286,7 @@ private fun ContributorListPreview() {
 @PreviewLawnicons
 @Composable
 private fun ContributorListPlaceholderPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         ContributorListPlaceholder()
     }
 }

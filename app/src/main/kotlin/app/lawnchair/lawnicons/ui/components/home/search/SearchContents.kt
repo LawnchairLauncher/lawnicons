@@ -7,6 +7,7 @@ import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,17 +20,24 @@ import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.ExpandedDockedSearchBar
+import androidx.compose.material3.ExpandedFullScreenSearchBar
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.SearchBarState
+import androidx.compose.material3.SearchBarValue
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -43,6 +51,35 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconInfoSheet
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreview
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun ResponsiveSearchBarContents(
+    isExpandedScreen: Boolean,
+    state: SearchBarState,
+    inputField: @Composable () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable ColumnScope.() -> Unit,
+) {
+    if (isExpandedScreen) {
+        ExpandedDockedSearchBar(
+            state = state,
+            inputField = inputField,
+            modifier = modifier,
+            content = content,
+        )
+    } else {
+        ExpandedFullScreenSearchBar(
+            state = state,
+            inputField = inputField,
+            modifier = modifier,
+            content = content,
+        )
+    }
+}
 
 @Composable
 fun SearchContents(
@@ -145,6 +182,74 @@ private fun IconGrid(
 }
 
 @Composable
+private fun IconInfoListItem(
+    iconInfo: IconInfo?,
+    showSheet: Boolean,
+    onToggleSheet: (Boolean) -> Unit,
+    isIconPicker: Boolean = false,
+    onSendResult: (IconInfo) -> Unit = {},
+) {
+    if (iconInfo == null) return
+
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(PaddingValues(16.dp)),
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+    ) {
+        ListItem(
+            headlineContent = { Text(iconInfo.getFirstLabelAndComponent().label) },
+            supportingContent = {
+                Text(
+                    iconInfo.getFirstLabelAndComponent().componentName.flattenToString(),
+                )
+            },
+            leadingContent = {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier
+                        .padding(all = 8.dp)
+                        .clip(shape = CircleShape)
+                        .size(48.dp),
+                ) {
+                    if (LocalInspectionMode.current) {
+                        Icon(
+                            iconInfo.fallbackImage,
+                            contentDescription = null,
+                            modifier = Modifier.fillMaxSize(0.6f),
+                        )
+                    } else {
+                        Icon(
+                            painter = painterResource(id = iconInfo.drawableId),
+                            contentDescription = null,
+                            modifier = Modifier.fillMaxSize(0.6f),
+                        )
+                    }
+                }
+            },
+            modifier = Modifier
+                .clip(RoundedCornerShape(16.dp))
+                .clickable(
+                    onClick = {
+                        if (isIconPicker) {
+                            onSendResult(iconInfo)
+                        } else {
+                            onToggleSheet(true)
+                        }
+                    },
+                ),
+        )
+        AnimatedVisibility(showSheet) {
+            IconInfoSheet(
+                iconInfo = iconInfo,
+            ) {
+                onToggleSheet(it)
+            }
+        }
+    }
+}
+
+@Composable
 private fun SearchModeSelector(
     currentMode: SearchMode,
     onModeChange: (SearchMode) -> Unit,
@@ -210,62 +315,82 @@ private fun SearchModeSelector(
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@PreviewLawnicons
 @Composable
-private fun IconInfoListItem(
-    iconInfo: IconInfo?,
-    showSheet: Boolean,
-    onToggleSheet: (Boolean) -> Unit,
-    isIconPicker: Boolean = false,
-    onSendResult: (IconInfo) -> Unit = {},
-) {
-    if (iconInfo == null) return
+private fun SearchBarContentsPreview() {
+    PreviewProviders {
+        val searchState = rememberSearchState(
+            searchBarState = rememberSearchBarState(
+                SearchBarValue.Expanded,
+            ),
+        )
 
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(PaddingValues(16.dp)),
-        verticalArrangement = Arrangement.spacedBy(4.dp),
-    ) {
-        ListItem(
-            headlineContent = { Text(iconInfo.getFirstLabelAndComponent().label) },
-            supportingContent = {
-                Text(
-                    iconInfo.getFirstLabelAndComponent().componentName.flattenToString(),
+        ResponsiveSearchBarContents(
+            isExpandedScreen = false,
+            state = searchState.searchBarState,
+            inputField = {
+                SearchBarInputField(
+                    searchState,
+                    {
+                        Text("Example placeholder")
+                    },
+                    {},
                 )
             },
-            leadingContent = {
-                Box(
-                    contentAlignment = Alignment.Center,
-                    modifier = Modifier
-                        .padding(all = 8.dp)
-                        .clip(shape = CircleShape)
-                        .size(48.dp),
-                ) {
-                    Icon(
-                        painter = painterResource(id = iconInfo.drawableId),
-                        contentDescription = null,
-                        modifier = Modifier.fillMaxSize(0.6f),
-                    )
-                }
-            },
-            modifier = Modifier
-                .clip(RoundedCornerShape(16.dp))
-                .clickable(
-                    onClick = {
-                        if (isIconPicker) {
-                            onSendResult(iconInfo)
-                        } else {
-                            onToggleSheet(true)
-                        }
-                    },
-                ),
-        )
-        AnimatedVisibility(showSheet) {
-            IconInfoSheet(
-                iconInfo = iconInfo,
-            ) {
-                onToggleSheet(it)
-            }
+        ) {
+            SearchContents(
+                state = searchState,
+                iconInfo = SampleData.iconInfoList,
+            )
         }
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun EmptyStatePreview() {
+    PreviewProviders {
+        EmptyState("Query")
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun IconGridPreview() {
+    PreviewProviders {
+        IconGrid(
+            SampleData.iconInfoList,
+            searchTerm = "Query",
+            showSheet = false,
+            onToggleSheet = {},
+            isIconPicker = false,
+            onSendResult = {},
+        )
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun IconInfoListItemPreview() {
+    PreviewProviders {
+        IconInfoListItem(
+            iconInfo = SampleData.iconInfoSample,
+            showSheet = false,
+            onToggleSheet = {},
+            isIconPicker = false,
+            onSendResult = {},
+        )
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun SearchModeSelectorPreview() {
+    PreviewProviders {
+        SearchModeSelector(
+            SearchMode.LABEL,
+            {},
+        )
     }
 }

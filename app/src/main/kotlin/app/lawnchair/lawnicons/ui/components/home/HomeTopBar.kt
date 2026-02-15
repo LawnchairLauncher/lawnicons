@@ -25,9 +25,11 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.material3.AppBarWithSearch
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SearchBarValue
 import androidx.compose.material3.Text
+import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
@@ -42,6 +44,10 @@ import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarCont
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchState
+import app.lawnchair.lawnicons.ui.components.home.search.rememberSearchState
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -115,6 +121,39 @@ fun HomeTopBar(
                     iconInfo = iconInfoModel.iconInfo,
                 )
             }
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@PreviewLawnicons
+@Composable
+private fun HomeTopBarPreview() {
+    PreviewProviders {
+        val scope = rememberCoroutineScope()
+        val searchState = rememberSearchState(
+            searchBarState = rememberSearchBarState(
+                SearchBarValue.Expanded,
+            ),
+        )
+
+        HomeTopBar(
+            searchState = searchState,
+            iconInfoModel = IconInfoModel(
+                iconInfo = SampleData.iconInfoList,
+                iconCount = SampleData.iconInfoList.size,
+            ),
+            isExpandedScreen = false,
+        )
+
+        Button(
+            onClick = {
+                scope.launch {
+                    searchState.searchBarState.animateToExpanded()
+                }
+            },
+        ) {
+            Text("Toggle search bar")
         }
     }
 }

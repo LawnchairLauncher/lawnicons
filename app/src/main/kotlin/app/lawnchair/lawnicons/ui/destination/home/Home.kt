@@ -16,17 +16,21 @@
 
 package app.lawnchair.lawnicons.ui.destination.home
 
-import android.annotation.SuppressLint
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.text.input.TextFieldState
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarExitDirection
+import androidx.compose.material3.FloatingToolbarScrollBehavior
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarDuration
@@ -45,11 +49,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.data.model.IconInfoModel
+import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.AnnouncementList
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomToolbar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
@@ -59,8 +66,9 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.AppBarListItem
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.components.home.search.rememberSearchState
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
 import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -87,12 +95,6 @@ fun EntryProviderScope<NavKey>.homeDestination(
     }
 }
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@OptIn(
-    ExperimentalFoundationApi::class,
-    ExperimentalMaterial3ExpressiveApi::class,
-    ExperimentalMaterial3Api::class,
-)
 @Composable
 private fun Home(
     onNavigateToAbout: () -> Unit,
@@ -103,156 +105,250 @@ private fun Home(
     modifier: Modifier = Modifier,
     lawniconsViewModel: HomeViewModel = metroViewModel<HomeViewModelImpl>(),
 ) {
-    with(lawniconsViewModel) {
-        val iconInfoModel by iconInfoModel.collectAsStateWithLifecycle()
-        val searchedIconInfoModel by searchedIconInfoModel.collectAsStateWithLifecycle()
+    val uiState by lawniconsViewModel.uiState.collectAsStateWithLifecycle()
+    val searchTermTextState = lawniconsViewModel.searchTermTextState
 
-        val announcements by announcements.collectAsStateWithLifecycle()
+    val navigateActions = HomeNavigateActions(
+        toAbout = onNavigateToAbout,
+        toNewIcons = onNavigateToNewIcons,
+        toIconRequest = onNavigateToIconRequest,
+        toDebugMenu = onNavigateToDebugMenu,
+    )
 
-        val hasNewIcons by hasNewIcons.collectAsStateWithLifecycle()
-        val hasIconRequests by this.hasIconRequests.collectAsStateWithLifecycle()
+    val actions = HomeActions(
+        searchIcons = lawniconsViewModel::searchIcons,
+        changeMode = lawniconsViewModel::changeMode,
+    )
 
-        val lazyGridState = rememberLazyGridState()
-        val snackbarHostState = remember { SnackbarHostState() }
+    HomeScreen(
+        uiState = uiState,
+        searchTermTextState = searchTermTextState,
+        navigateActions = navigateActions,
+        actions = actions,
+        isExpandedScreen = isExpandedScreen,
+        modifier = modifier,
+    )
+}
 
-        val searchState = rememberSearchState(
-            textFieldState = searchTermTextState,
-            mode = searchMode,
-            onModeChange = ::changeMode,
-        )
+@OptIn(
+    ExperimentalMaterial3Api::class,
+    ExperimentalMaterial3ExpressiveApi::class,
+    ExperimentalFoundationApi::class,
+)
+@Composable
+private fun HomeScreen(
+    uiState: HomeUiState,
+    searchTermTextState: TextFieldState,
+    navigateActions: HomeNavigateActions,
+    actions: HomeActions,
+    isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
+) {
+    val horizontalPadding =
+        if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default
 
-        val scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
-            FloatingToolbarExitDirection.Bottom,
-        )
+    Crossfade(
+        modifier = modifier,
+        targetState = uiState,
+        label = "",
+    ) { uiState ->
+        if (uiState is HomeUiState.Success) {
+            val searchState = rememberSearchState(
+                textFieldState = searchTermTextState,
+                mode = uiState.searchMode,
+                onModeChange = actions.changeMode,
+            )
 
-        val coroutineScope = rememberCoroutineScope()
+            val lazyGridState = rememberLazyGridState()
+            val snackbarHostState = remember { SnackbarHostState() }
 
-        val horizontalPadding =
-            if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default
+            val scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
+                FloatingToolbarExitDirection.Bottom,
+            )
 
-        Crossfade(
-            modifier = modifier,
-            targetState = iconInfoModel.iconCount > 0,
-            label = "",
-        ) { visible ->
-            if (visible) {
-                Scaffold(
-                    topBar = {
-                        HomeTopBar(
-                            searchState = searchState,
-                            isExpandedScreen = isExpandedScreen,
-                            iconInfoModel = searchedIconInfoModel,
-                        )
-                    },
-                    snackbarHost = {
-                        SnackbarHost(
-                            hostState = snackbarHostState,
-                        ) {
-                            val density = LocalDensity.current
-                            val offsetModifier = Modifier.graphicsLayer {
-                                val isVisible = scrollBehavior.state.offset == 0F
-                                translationY =
-                                    if (isVisible) 0f else with(density) { FloatingToolbarDefaults.ContainerSize.toPx() }
-                            }
+            val coroutineScope = rememberCoroutineScope()
+            val layoutDirection = LocalLayoutDirection.current
 
-                            SwipeToDismissBox(
-                                state = rememberSwipeToDismissBoxState(),
-                                backgroundContent = {},
-                                onDismiss = {
-                                    coroutineScope.launch {
-                                        snackbarHostState.currentSnackbarData?.dismiss()
-                                    }
-                                },
-                            ) {
-                                Snackbar(
-                                    it,
-                                    modifier = offsetModifier,
-                                )
-                            }
-                        }
-                    },
-                    modifier = Modifier.nestedScroll(scrollBehavior),
+            Scaffold(
+                topBar = {
+                    HomeTopBar(
+                        searchState = searchState,
+                        isExpandedScreen = isExpandedScreen,
+                        iconInfoModel = uiState.searchedIconInfoModel,
+                    )
+                },
+                snackbarHost = {
+                    HomeSnackBar(
+                        scrollBehavior = scrollBehavior,
+                        snackbarHostState = snackbarHostState,
+                    )
+                },
+                modifier = Modifier.nestedScroll(scrollBehavior),
+            ) { contentPadding ->
+                Box(
+                    Modifier.padding(
+                        start = contentPadding.calculateStartPadding(layoutDirection),
+                        end = contentPadding.calculateEndPadding(layoutDirection),
+                    ),
                 ) {
-                    Box {
-                        IconPreviewGrid(
-                            iconInfo = iconInfoModel.iconInfo,
-                            horizontalPadding = horizontalPadding,
-                            gridState = lazyGridState,
+                    IconPreviewGrid(
+                        iconInfo = uiState.iconInfoModel.iconInfo,
+                        horizontalPadding = horizontalPadding,
+                        gridState = lazyGridState,
+                    ) {
+                        item(
+                            span = { GridItemSpan(maxLineSpan) },
                         ) {
+                            AppBarListItem(
+                                onLongClick = navigateActions.toDebugMenu,
+                            )
+                        }
+                        if (uiState.hasNewIcons) {
                             item(
                                 span = { GridItemSpan(maxLineSpan) },
                             ) {
-                                AppBarListItem(
-                                    onLongClick = onNavigateToDebugMenu,
-                                )
-                            }
-                            if (hasNewIcons) {
-                                item(
-                                    span = { GridItemSpan(maxLineSpan) },
-                                ) {
-                                    NewIconsCard(onNavigateToNewIcons)
-                                }
-                            }
-                            if (announcements.isNotEmpty()) {
-                                item(
-                                    span = { GridItemSpan(maxLineSpan) },
-                                ) {
-                                    AnnouncementList(announcements)
-                                }
+                                NewIconsCard(navigateActions.toNewIcons)
                             }
                         }
-
-                        val string = stringResource(R.string.icon_requests_furfilled)
-
-                        HomeBottomToolbar(
-                            scrollBehavior = scrollBehavior,
-                            showIconRequests = hasIconRequests,
-                            onNavigateToAbout = onNavigateToAbout,
-                            onNavigateToIconRequest = onNavigateToIconRequest,
-                            onIconRequestUnavailable = {
-                                coroutineScope.launch {
-                                    val result = snackbarHostState
-                                        .showSnackbar(
-                                            message = string,
-                                            duration = SnackbarDuration.Short,
-                                        )
-                                    if (result == SnackbarResult.Dismissed) {
-                                        snackbarHostState.currentSnackbarData?.dismiss()
-                                    }
-                                }
-                            },
-                            onExpandSearch = {
-                                coroutineScope.launch {
-                                    searchState.searchBarState.animateToExpanded()
-                                }
-                            },
-                        )
+                        if (uiState.announcements.isNotEmpty()) {
+                            item(
+                                span = { GridItemSpan(maxLineSpan) },
+                            ) {
+                                AnnouncementList(uiState.announcements)
+                            }
+                        }
                     }
-                }
-            } else {
-                PlaceholderUI(horizontalPadding = horizontalPadding)
-            }
-        }
 
-        LaunchedEffect(searchTermTextState.text) {
-            delay(300)
-            searchIcons(searchTermTextState.text.toString())
+                    val string = stringResource(R.string.icon_requests_furfilled)
+
+                    HomeBottomToolbar(
+                        scrollBehavior = scrollBehavior,
+                        showIconRequests = uiState.hasIconRequests,
+                        onNavigateToAbout = navigateActions.toAbout,
+                        onNavigateToIconRequest = navigateActions.toIconRequest,
+                        onIconRequestUnavailable = {
+                            coroutineScope.launch {
+                                val result = snackbarHostState
+                                    .showSnackbar(
+                                        message = string,
+                                        duration = SnackbarDuration.Short,
+                                    )
+                                if (result == SnackbarResult.Dismissed) {
+                                    snackbarHostState.currentSnackbarData?.dismiss()
+                                }
+                            }
+                        },
+                        onExpandSearch = {
+                            coroutineScope.launch {
+                                searchState.searchBarState.animateToExpanded()
+                            }
+                        },
+                    )
+                }
+            }
+
+            LaunchedEffect(searchTermTextState.text) {
+                delay(300)
+                actions.searchIcons(searchTermTextState.text.toString())
+            }
+        } else {
+            PlaceholderUI(horizontalPadding = horizontalPadding)
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun HomeSnackBar(
+    scrollBehavior: FloatingToolbarScrollBehavior,
+    snackbarHostState: SnackbarHostState,
+    modifier: Modifier = Modifier,
+) {
+    SnackbarHost(
+        hostState = snackbarHostState,
+        modifier = modifier,
+    ) {
+        val coroutineScope = rememberCoroutineScope()
+
+        val density = LocalDensity.current
+        val offsetModifier = Modifier.graphicsLayer {
+            val isVisible = scrollBehavior.state.offset == 0F
+            translationY =
+                if (isVisible) 0f else with(density) { FloatingToolbarDefaults.ContainerSize.toPx() }
+        }
+
+        SwipeToDismissBox(
+            state = rememberSwipeToDismissBoxState(),
+            backgroundContent = {},
+            onDismiss = {
+                coroutineScope.launch {
+                    snackbarHostState.currentSnackbarData?.dismiss()
+                }
+            },
+        ) {
+            Snackbar(
+                it,
+                modifier = offsetModifier,
+            )
+        }
+    }
+}
+
+private data class HomeNavigateActions(
+    val toAbout: () -> Unit,
+    val toNewIcons: () -> Unit,
+    val toIconRequest: () -> Unit,
+    val toDebugMenu: () -> Unit,
+)
+
+private data class HomeActions(
+    val searchIcons: (String) -> Unit,
+    val changeMode: (SearchMode) -> Unit,
+)
+
 @PreviewLawnicons
 @Composable
-private fun HomePreview() {
-    LawniconsTheme {
+private fun HomeScreenPreview() {
+    PreviewProviders {
         Surface(Modifier.fillMaxSize()) {
-            Home(
-                onNavigateToAbout = {},
-                onNavigateToNewIcons = {},
-                onNavigateToIconRequest = {},
-                onNavigateToDebugMenu = {},
-                isExpandedScreen = true,
-                lawniconsViewModel = DummyLawniconsViewModel(),
+            val searchTermTextState = remember { TextFieldState() }
+
+            val navigateActions = remember {
+                HomeNavigateActions(
+                    toAbout = {},
+                    toNewIcons = {},
+                    toIconRequest = {},
+                    toDebugMenu = {},
+                )
+            }
+
+            val actions = remember {
+                HomeActions(
+                    searchIcons = {},
+                    changeMode = {},
+                )
+            }
+
+            val model = IconInfoModel(
+                iconInfo = SampleData.iconInfoList,
+                iconCount = SampleData.iconInfoList.size,
+            )
+
+            val uiState = HomeUiState.Success(
+                iconInfoModel = model,
+                searchedIconInfoModel = model,
+                searchMode = SearchMode.LABEL,
+                hasNewIcons = true,
+                hasIconRequests = true,
+                announcements = SampleData.announcements,
+            )
+
+            HomeScreen(
+                uiState = uiState,
+                searchTermTextState = searchTermTextState,
+                navigateActions = navigateActions,
+                actions = actions,
+                isExpandedScreen = false,
             )
         }
     }

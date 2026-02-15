@@ -16,11 +16,9 @@
 
 package app.lawnchair.lawnicons.ui.destination.debugmenu
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -44,8 +42,13 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
+import app.lawnchair.lawnicons.data.model.IconInfoModel
+import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.getFirstLabelAndComponent
 import app.lawnchair.lawnicons.data.model.splitByComponentName
+import app.lawnchair.lawnicons.data.repository.BasePreferenceManager
+import app.lawnchair.lawnicons.data.repository.DummySharedPreferences
+import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.ListRow
 import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
@@ -54,6 +57,9 @@ import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.theme.icon.Copy
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
 import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
@@ -74,7 +80,6 @@ fun EntryProviderScope<NavKey>.debugMenuDestination(
 }
 
 // screen to view statistics and other internal info
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun DebugMenu(
     onBack: () -> Unit,
@@ -96,10 +101,36 @@ fun DebugMenu(
         ListItemContent("Icon request count", iconRequestList?.iconCount ?: 0),
     )
 
-    val prefsList = listOf(
+    val boolPrefs = listOf(
         prefs.forceEnableIconRequest,
     )
 
+    DebugMenuScreen(
+        newIconsModel = newIconsModel,
+        iconRequestList = iconRequestList,
+        debugList = debugList,
+        boolPrefs = boolPrefs,
+        onCopy = {
+            context.copyTextToClipboard(it)
+        },
+        isExpandedScreen = isExpandedScreen,
+        onBack = onBack,
+        modifier = modifier,
+    )
+}
+
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@Composable
+private fun DebugMenuScreen(
+    newIconsModel: IconInfoModel,
+    iconRequestList: IconRequestModel?,
+    debugList: List<ListItemContent>,
+    boolPrefs: List<BasePreferenceManager.BoolPref>,
+    onCopy: (String) -> Unit,
+    isExpandedScreen: Boolean,
+    onBack: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     LawniconsScaffold(
         title = "Debug menu",
         onBack = onBack,
@@ -116,13 +147,13 @@ fun DebugMenu(
                     background = true,
                     shapes = ListItemDefaults.segmentedShapes(index, debugList.size),
                 ) {
-                    context.copyTextToClipboard("${it.label}: ${it.value}")
+                    onCopy("${it.label}: ${it.value}")
                 }
             }
             item {
                 Spacer(Modifier.height(4.dp))
             }
-            itemsIndexed(prefsList) { index, pref ->
+            itemsIndexed(boolPrefs) { index, pref ->
                 ListItem(
                     checked = pref.asState().value,
                     onCheckedChange = pref::set,
@@ -142,7 +173,7 @@ fun DebugMenu(
                     },
                     shapes = ListItemDefaults.segmentedShapes(
                         index,
-                        prefsList.size,
+                        boolPrefs.size,
                         ListRowDefaults.singleItemShapes,
                     ),
                 )
@@ -154,7 +185,7 @@ fun DebugMenu(
                 ListHeader(
                     "Unthemed icons",
                     {
-                        context.copyTextToClipboard(iconRequestList?.list.toString())
+                        onCopy(iconRequestList?.list.toString())
                     },
                 )
             }
@@ -175,7 +206,7 @@ fun DebugMenu(
                 ListHeader(
                     "New icons list",
                     {
-                        context.copyTextToClipboard(
+                        onCopy(
                             newIconsModel.iconInfo.splitByComponentName().toString(),
                         )
                     },
@@ -197,6 +228,11 @@ fun DebugMenu(
     }
 }
 
+data class ListItemContent(
+    val label: String,
+    val value: Int,
+)
+
 @Composable
 private fun ListHeader(
     label: String,
@@ -209,14 +245,10 @@ private fun ListHeader(
             .fillMaxSize()
             .padding(horizontal = 16.dp),
     ) {
-        Column(
-            modifier = Modifier.fillMaxWidth(),
-        ) {
-            Text(
-                label,
-                style = MaterialTheme.typography.headlineSmall,
-            )
-        }
+        Text(
+            label,
+            style = MaterialTheme.typography.headlineSmall,
+        )
         Spacer(modifier = Modifier.weight(0.05f))
         IconButton(
             onClick = onCopy,
@@ -229,7 +261,29 @@ private fun ListHeader(
     }
 }
 
-data class ListItemContent(
-    val label: String,
-    val value: Int,
-)
+@PreviewLawnicons
+@Composable
+private fun DebugMenuScreenPreview() {
+    PreviewProviders {
+        val prefs = PreferenceManager(DummySharedPreferences())
+
+        DebugMenuScreen(
+            newIconsModel = IconInfoModel(
+                iconInfo = SampleData.iconInfoList,
+            ),
+            iconRequestList = IconRequestModel(
+                list = SampleData.iconRequestList,
+                iconCount = 1,
+            ),
+            debugList = listOf(
+                ListItemContent("Icon count", 100),
+            ),
+            boolPrefs = listOf(
+                prefs.forceEnableIconRequest,
+            ),
+            onCopy = {},
+            isExpandedScreen = true,
+            onBack = {},
+        )
+    }
+}

@@ -17,15 +17,13 @@
 package app.lawnchair.lawnicons.ui.components.home.search
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.text.input.clearText
-import androidx.compose.material3.ExpandedDockedSearchBar
-import androidx.compose.material3.ExpandedFullScreenSearchBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.SearchBarDefaults
-import androidx.compose.material3.SearchBarState
 import androidx.compose.material3.SearchBarValue
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
@@ -33,6 +31,8 @@ import app.lawnchair.lawnicons.ui.theme.icon.Back
 import app.lawnchair.lawnicons.ui.theme.icon.Close
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.Search
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -72,27 +72,18 @@ fun SearchBarInputField(
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
+@PreviewLawnicons
 @Composable
-fun ResponsiveSearchBarContents(
-    isExpandedScreen: Boolean,
-    state: SearchBarState,
-    inputField: @Composable () -> Unit,
-    modifier: Modifier = Modifier,
-    content: @Composable ColumnScope.() -> Unit,
-) {
-    if (isExpandedScreen) {
-        ExpandedDockedSearchBar(
-            state = state,
-            inputField = inputField,
-            modifier = modifier,
-            content = content,
-        )
-    } else {
-        ExpandedFullScreenSearchBar(
-            state = state,
-            inputField = inputField,
-            modifier = modifier,
-            content = content,
-        )
+private fun SearchbarInputFieldPreview() {
+    PreviewProviders {
+        Surface {
+            SearchBarInputField(
+                rememberSearchState(),
+                placeholder = {
+                    Text("Example placeholder")
+                },
+                onBack = { },
+            )
+        }
     }
 }

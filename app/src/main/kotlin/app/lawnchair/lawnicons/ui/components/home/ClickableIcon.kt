@@ -14,10 +14,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Close
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @Composable
 fun NavigationIconButton(
@@ -45,7 +45,7 @@ fun NavigationIconButton(
 @PreviewLawnicons
 @Composable
 private fun NavigationIconButtonPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         NavigationIconButton(
             imageVector = LawnIcons.Close,
             size = 52.dp,

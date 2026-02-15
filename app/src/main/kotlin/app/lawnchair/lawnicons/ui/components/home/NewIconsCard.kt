@@ -31,10 +31,10 @@ import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.core.ListRowLabel
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.NewReleases
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -75,7 +75,7 @@ fun NewIconsCard(
 @PreviewLawnicons
 @Composable
 private fun NewIconsCardPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Surface {
             NewIconsCard({})
         }

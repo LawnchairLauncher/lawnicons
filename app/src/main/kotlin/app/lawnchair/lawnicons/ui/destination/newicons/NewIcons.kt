@@ -17,19 +17,27 @@
 package app.lawnchair.lawnicons.ui.destination.newicons
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.calculateEndPadding
+import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation3.runtime.EntryProviderScope
 import androidx.navigation3.runtime.NavKey
 import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
 import dev.zacsweers.metrox.viewmodel.metroViewModel
 import kotlinx.serialization.Serializable
 
@@ -48,7 +56,6 @@ fun EntryProviderScope<NavKey>.newIconsDestination(
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun NewIcons(
     onBack: () -> Unit,
@@ -57,6 +64,24 @@ private fun NewIcons(
     newIconsViewModel: NewIconsViewModel = metroViewModel(),
 ) {
     val iconInfoModel by newIconsViewModel.newIconsInfoModel.collectAsStateWithLifecycle()
+
+    NewIconsScreen(
+        iconInfoModel = iconInfoModel,
+        onBack = onBack,
+        isExpandedScreen = isExpandedScreen,
+        modifier = modifier,
+    )
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+fun NewIconsScreen(
+    iconInfoModel: IconInfoModel,
+    onBack: () -> Unit,
+    isExpandedScreen: Boolean,
+    modifier: Modifier = Modifier,
+) {
+    val layoutDirection = LocalLayoutDirection.current
 
     LawniconsScaffold(
         modifier = modifier,
@@ -67,8 +92,37 @@ private fun NewIcons(
     ) { paddingValues ->
         IconPreviewGrid(
             iconInfo = iconInfoModel.iconInfo,
-            containerModifier = Modifier.padding(paddingValues),
+            containerModifier = Modifier.padding(
+                paddingValues.calculateStartPadding(layoutDirection),
+                paddingValues.calculateTopPadding(),
+                paddingValues.calculateEndPadding(layoutDirection),
+                0.dp,
+            ),
             horizontalPadding = if (isExpandedScreen) IconPreviewGridPaddings.Expanded else IconPreviewGridPaddings.Default,
+        )
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun NewIconsScreenPreview() {
+    PreviewProviders {
+        NewIconsScreen(
+            iconInfoModel = IconInfoModel(SampleData.iconInfoList, SampleData.iconInfoList.size),
+            onBack = {},
+            isExpandedScreen = false,
+        )
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun NewIconsScreenPreviewExpanded() {
+    PreviewProviders {
+        NewIconsScreen(
+            iconInfoModel = IconInfoModel(SampleData.iconInfoList, SampleData.iconInfoList.size),
+            onBack = {},
+            isExpandedScreen = true,
         )
     }
 }

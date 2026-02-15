@@ -68,10 +68,10 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.AppIcon
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import my.nanihadesuka.compose.InternalLazyVerticalGridScrollbar
@@ -252,7 +252,7 @@ fun AppBarListItem(
 @PreviewLawnicons
 @Composable
 private fun IconGridPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
@@ -267,7 +267,7 @@ private fun IconGridPreview() {
 @PreviewLawnicons
 @Composable
 private fun IconGridExpandedPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,

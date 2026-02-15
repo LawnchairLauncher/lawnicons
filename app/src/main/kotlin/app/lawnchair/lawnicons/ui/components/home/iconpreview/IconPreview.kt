@@ -40,8 +40,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.LocalLawniconsActions
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 import kotlin.math.ln
 
@@ -149,7 +149,7 @@ fun IconPreview(
 @PreviewLawnicons
 @Composable
 private fun IconPreviewComposablePreview() {
-    LawniconsTheme {
+    PreviewProviders {
         IconPreview(
             iconInfo = SampleData.iconInfoSample,
             {},

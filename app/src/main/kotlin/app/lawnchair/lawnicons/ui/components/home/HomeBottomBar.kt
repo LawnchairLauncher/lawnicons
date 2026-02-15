@@ -1,5 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
@@ -8,6 +9,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarDefaults.ScreenOffset
+import androidx.compose.material3.FloatingToolbarExitDirection
 import androidx.compose.material3.FloatingToolbarScrollBehavior
 import androidx.compose.material3.HorizontalFloatingToolbar
 import androidx.compose.material3.Icon
@@ -33,6 +35,8 @@ import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.OpenCollective
 import app.lawnchair.lawnicons.ui.theme.icon.Search
 import app.lawnchair.lawnicons.ui.util.Constants
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.visitUrl
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -171,5 +175,40 @@ private fun SimpleTooltipBox(
         modifier = modifier,
     ) {
         content()
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun SimpleTooltipBoxPreview() {
+    PreviewProviders {
+        SimpleTooltipBox(
+            label = "Example",
+        ) {
+            Icon(
+                LawnIcons.About,
+                contentDescription = null,
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@PreviewLawnicons
+@Composable
+private fun HomeBottomToolbarPreview() {
+    PreviewProviders {
+        Box {
+            HomeBottomToolbar(
+                showIconRequests = true,
+                onNavigateToAbout = {},
+                onNavigateToIconRequest = {},
+                onIconRequestUnavailable = {},
+                onExpandSearch = {},
+                scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
+                    FloatingToolbarExitDirection.Bottom,
+                ),
+            )
+        }
     }
 }
