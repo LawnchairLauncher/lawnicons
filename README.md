@@ -72,7 +72,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Icons
-You can add the missing icons if they are of high quality. No more than 5 icons per pull request. Following the Lawnicons design guidelines is essensial. To help with icon requests, please prioritize popular, widely-installed (5M+) apps.
+You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. To help with icon requests, please prioritize popular apps with 5M+ installations.
 
 > [!NOTE]
 > Each icon approved and merged on the first try fulfills [a simple community request](https://lawnicons-requests.vercel.app/?filters=easy).
