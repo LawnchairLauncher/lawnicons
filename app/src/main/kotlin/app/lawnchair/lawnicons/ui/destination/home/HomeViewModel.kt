@@ -31,7 +31,6 @@ import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.binding
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -44,16 +43,17 @@ sealed interface HomeUiState {
     data object Loading : HomeUiState
     data class Success(
         val iconInfoModel: IconInfoModel,
-        val searchedIconInfoModel: IconInfoModel,
         val announcements: List<Announcement>,
         val hasNewIcons: Boolean,
         val hasIconRequests: Boolean,
-        val searchMode: SearchMode,
     ) : HomeUiState
 }
 
 interface HomeViewModel {
     val uiState: StateFlow<HomeUiState>
+
+    val searchResults: StateFlow<IconInfoModel>
+    val searchMode: StateFlow<SearchMode>
     val searchTermTextState: TextFieldState
 
     fun searchIcons(query: String)
@@ -71,7 +71,12 @@ class HomeViewModelImpl(
 ) : ViewModel(),
     HomeViewModel {
 
-    private val searchMode = MutableStateFlow(SearchMode.LABEL)
+    private val _searchMode = MutableStateFlow(SearchMode.LABEL)
+    override val searchMode = _searchMode.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        SearchMode.LABEL,
+    )
 
     private val announcementsFlow = flow {
         val result = runCatching {
@@ -85,22 +90,18 @@ class HomeViewModelImpl(
 
     override val uiState: StateFlow<HomeUiState> = combine(
         iconRepository.iconInfoModel,
-        iconRepository.searchedIconInfoModel,
         newIconsRepository.newIconsInfoModel,
         iconRequestRepository.iconRequestList,
         announcementsFlow,
-        searchMode,
-    ) { iconInfo, searched, newIcons, requests, announcements, mode ->
+    ) { iconInfo, newIcons, requests, announcements ->
         if (iconInfo.iconInfo.isEmpty()) {
             HomeUiState.Loading
         } else {
             HomeUiState.Success(
                 iconInfoModel = iconInfo,
-                searchedIconInfoModel = searched,
                 announcements = announcements,
                 hasNewIcons = newIcons.iconCount > 0,
                 hasIconRequests = !requests?.list.isNullOrEmpty(),
-                searchMode = mode,
             )
         }
     }.stateIn(
@@ -109,16 +110,24 @@ class HomeViewModelImpl(
         HomeUiState.Loading,
     )
 
+    override val searchResults: StateFlow<IconInfoModel> = iconRepository
+        .searchedIconInfoModel
+        .stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5000),
+            IconInfoModel(emptyList(), 0),
+        )
+
     override fun searchIcons(query: String) {
         viewModelScope.launch {
-            iconRepository.search(searchMode.value, searchTermTextState.text.toString())
+            iconRepository.search(_searchMode.value, searchTermTextState.text.toString())
         }
     }
 
     override fun changeMode(mode: SearchMode) {
-        searchMode.value = mode
+        _searchMode.value = mode
         viewModelScope.launch {
-            iconRepository.search(searchMode.value, searchTermTextState.text.toString())
+            iconRepository.search(_searchMode.value, searchTermTextState.text.toString())
         }
     }
 
@@ -127,24 +136,4 @@ class HomeViewModelImpl(
             iconRepository.clearSearch()
         }
     }
-}
-
-private fun <T1, T2, T3, T4, T5, T6, R> combine(
-    flow: Flow<T1>,
-    flow2: Flow<T2>,
-    flow3: Flow<T3>,
-    flow4: Flow<T4>,
-    flow5: Flow<T5>,
-    flow6: Flow<T6>,
-    transform: suspend (T1, T2, T3, T4, T5, T6) -> R,
-): Flow<R> = combine(flow, flow2, flow3, flow4, flow5, flow6) { args: Array<*> ->
-    @Suppress("UNCHECKED_CAST")
-    transform(
-        args[0] as T1,
-        args[1] as T2,
-        args[2] as T3,
-        args[3] as T4,
-        args[4] as T5,
-        args[5] as T6,
-    )
 }

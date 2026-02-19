@@ -106,23 +106,36 @@ private fun Home(
     lawniconsViewModel: HomeViewModel = metroViewModel<HomeViewModelImpl>(),
 ) {
     val uiState by lawniconsViewModel.uiState.collectAsStateWithLifecycle()
+
+    val searchMode by lawniconsViewModel.searchMode.collectAsStateWithLifecycle()
+    val searchResults by lawniconsViewModel.searchResults.collectAsStateWithLifecycle()
     val searchTermTextState = lawniconsViewModel.searchTermTextState
 
-    val navigateActions = HomeNavigateActions(
-        toAbout = onNavigateToAbout,
-        toNewIcons = onNavigateToNewIcons,
-        toIconRequest = onNavigateToIconRequest,
-        toDebugMenu = onNavigateToDebugMenu,
+    val searchUiState = HomeSearchUiState(
+        searchResults = searchResults,
+        textFieldState = searchTermTextState,
+        mode = searchMode,
     )
 
-    val actions = HomeActions(
-        searchIcons = lawniconsViewModel::searchIcons,
-        changeMode = lawniconsViewModel::changeMode,
-    )
+    val navigateActions = remember {
+        HomeNavigateActions(
+            toAbout = onNavigateToAbout,
+            toNewIcons = onNavigateToNewIcons,
+            toIconRequest = onNavigateToIconRequest,
+            toDebugMenu = onNavigateToDebugMenu,
+        )
+    }
+
+    val actions = remember {
+        HomeActions(
+            searchIcons = lawniconsViewModel::searchIcons,
+            changeMode = lawniconsViewModel::changeMode,
+        )
+    }
 
     HomeScreen(
         uiState = uiState,
-        searchTermTextState = searchTermTextState,
+        homeSearchUiState = searchUiState,
         navigateActions = navigateActions,
         actions = actions,
         isExpandedScreen = isExpandedScreen,
@@ -138,7 +151,7 @@ private fun Home(
 @Composable
 private fun HomeScreen(
     uiState: HomeUiState,
-    searchTermTextState: TextFieldState,
+    homeSearchUiState: HomeSearchUiState,
     navigateActions: HomeNavigateActions,
     actions: HomeActions,
     isExpandedScreen: Boolean,
@@ -154,8 +167,8 @@ private fun HomeScreen(
     ) { uiState ->
         if (uiState is HomeUiState.Success) {
             val searchState = rememberSearchState(
-                textFieldState = searchTermTextState,
-                mode = uiState.searchMode,
+                textFieldState = homeSearchUiState.textFieldState,
+                mode = homeSearchUiState.mode,
                 onModeChange = actions.changeMode,
             )
 
@@ -174,7 +187,7 @@ private fun HomeScreen(
                     HomeTopBar(
                         searchState = searchState,
                         isExpandedScreen = isExpandedScreen,
-                        iconInfoModel = uiState.searchedIconInfoModel,
+                        iconInfoModel = homeSearchUiState.searchResults,
                     )
                 },
                 snackbarHost = {
@@ -247,9 +260,9 @@ private fun HomeScreen(
                 }
             }
 
-            LaunchedEffect(searchTermTextState.text) {
+            LaunchedEffect(homeSearchUiState.textFieldState.text) {
                 delay(300)
-                actions.searchIcons(searchTermTextState.text.toString())
+                actions.searchIcons(homeSearchUiState.textFieldState.text.toString())
             }
         } else {
             PlaceholderUI(horizontalPadding = horizontalPadding)
@@ -294,6 +307,12 @@ private fun HomeSnackBar(
     }
 }
 
+private data class HomeSearchUiState(
+    val searchResults: IconInfoModel,
+    val textFieldState: TextFieldState,
+    val mode: SearchMode,
+)
+
 private data class HomeNavigateActions(
     val toAbout: () -> Unit,
     val toNewIcons: () -> Unit,
@@ -334,10 +353,14 @@ private fun HomeScreenPreview() {
                 iconCount = SampleData.iconInfoList.size,
             )
 
+            val searchState = HomeSearchUiState(
+                searchResults = model,
+                textFieldState = searchTermTextState,
+                mode = SearchMode.LABEL,
+            )
+
             val uiState = HomeUiState.Success(
                 iconInfoModel = model,
-                searchedIconInfoModel = model,
-                searchMode = SearchMode.LABEL,
                 hasNewIcons = true,
                 hasIconRequests = true,
                 announcements = SampleData.announcements,
@@ -345,7 +368,7 @@ private fun HomeScreenPreview() {
 
             HomeScreen(
                 uiState = uiState,
-                searchTermTextState = searchTermTextState,
+                homeSearchUiState = searchState,
                 navigateActions = navigateActions,
                 actions = actions,
                 isExpandedScreen = false,

@@ -16,6 +16,7 @@
 
 package app.lawnchair.lawnicons.ui.components.home
 
+import android.widget.Toast
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.WindowInsets
@@ -31,10 +32,14 @@ import androidx.compose.material3.SearchBarValue
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.movableContentOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
@@ -78,8 +83,8 @@ fun HomeTopBar(
         contentAlignment = Alignment.TopCenter,
         modifier = modifier.fillMaxWidth(),
     ) {
-        iconInfoModel?.let {
-            val inputField = @Composable {
+        val inputField = remember {
+            movableContentOf {
                 SearchBarInputField(
                     state = searchState,
                     placeholder = {
@@ -90,7 +95,7 @@ fun HomeTopBar(
                                 } else {
                                     R.string.search_bar_hint
                                 },
-                                iconInfoModel.iconCount,
+                                iconInfoModel?.iconCount ?: 0,
                             ),
                         )
                     },
@@ -100,25 +105,34 @@ fun HomeTopBar(
                         }
                     },
                 )
+
+                val context = LocalContext.current
+                SideEffect {
+                    coroutineScope.launch {
+                        Toast.makeText(context, "Recomposed", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
+        }
 
-            AppBarWithSearch(
-                state = searchState.searchBarState,
-                inputField = inputField,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 8.dp)
-                    .offset(y = offsetY),
-            )
+        AppBarWithSearch(
+            state = searchState.searchBarState,
+            inputField = inputField,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp)
+                .offset(y = offsetY),
+        )
 
-            ResponsiveSearchBarContents(
-                isExpandedScreen = isExpandedScreen,
-                state = searchState.searchBarState,
-                inputField = inputField,
-            ) {
+        ResponsiveSearchBarContents(
+            isExpandedScreen = isExpandedScreen,
+            state = searchState.searchBarState,
+            inputField = inputField,
+        ) {
+            iconInfoModel?.let {
                 SearchContents(
                     state = searchState,
-                    iconInfo = iconInfoModel.iconInfo,
+                    iconInfo = it.iconInfo,
                 )
             }
         }
