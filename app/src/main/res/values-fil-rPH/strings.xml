@@ -12,7 +12,7 @@
     <!-- Search tooltip -->
     <string name="search">Maghanap</string>
     <!-- Clear accessibility action -->
-    <string name="clear">Clear</string>
+    <string name="clear">I-clear</string>
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">Walang nahanap na mga icon</string>
     <!-- About page -->
@@ -24,7 +24,7 @@
     <!-- Icon Request form link -->
     <string name="request_form">Form sa paghiling ng icons</string>
     <!-- Send feedback form link -->
-    <string name="send_feedback">Send feedback</string>
+    <string name="send_feedback">Magpadala ng feedback</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Mga nag-aambag</string>
@@ -39,7 +39,7 @@
     <!-- Contributions -->
     <string name="contribution_core">Core app</string>
     <string name="contribution_icons">Mga Icon</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Imprastraktura</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Espesyal na pagsasalamat</string>
@@ -57,7 +57,7 @@
     <!-- Component -->
     <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Naka-map na mga ID</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Kung ang icon ay luma na dahil sa rebranding, gumawa ng isyu sa GitHub.</string>
     <!-- Chevron a11y description -->
@@ -67,29 +67,29 @@
     <string name="copy_to_clipboard">Kopyahin sa clipboard</string>
     <string name="copied_text">Kinopya ang teksto</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="snackbar_request_icons_hint">Hilingin ang mga hindi supportadong icons sa baba</string>
+    <string name="icon_requests_furfilled">Sinusuportahan ng app ang lahat ng icons. I-report ang mga pagbabago sa GitHub.</string>
+    <string name="icon_requests_suspended">Bukas ang icon requests sa limitadong panahon kasabay ng bagong release ng Lawnicons.</string>
     <string name="snackbar_request_too_large">Nakopya na ang mga detalye tungkol sa ihihiling na icons sa clipboard. Upang hilingin ang mga ito, isumite ang mga detalye sa form.</string>
     <string name="snackbar_use_fallback_link">Buksan ang form</string>
     <!-- Missing icons screen -->
-    <string name="missing_icons">Missing icons</string>
-    <string name="clear_all">Clear selection</string>
-    <string name="select_all">Select all</string>
-    <string name="request_icons_button">Request</string>
-    <string name="show_options_sheet">Show options sheet</string>
-    <string name="toggle_button_expanded">Expanded</string>
-    <string name="toggle_button_collapsed">Collapsed</string>
-    <string name="toggle_button_content_description">Toggle button</string>
-    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
-    <string name="share_file">Share file</string>
-    <string name="save_file">Save file</string>
-    <string name="copy_components">Copy app IDs</string>
-    <string name="toast_file_saved_successful">Successfully saved file</string>
-    <string name="toast_file_save_error">Error saving file</string>
-    <string name="toast_file_zip_error">Could not create request file</string>
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="missing_icons">Mga icon na hindi suportado</string>
+    <string name="clear_all">I-clear ang napili</string>
+    <string name="select_all">Piliin lahat</string>
+    <string name="request_icons_button">Hilingin</string>
+    <string name="show_options_sheet">Ipakita ang options sheet</string>
+    <string name="toggle_button_expanded">Naka-expand</string>
+    <string name="toggle_button_collapsed">Naka-collapse</string>
+    <string name="toggle_button_content_description">Buksan ang menu</string>
+    <string name="icon_request_mail_hint">Ipadala ang request file kay\u0020</string>
+    <string name="share_file">Ibahagi ang file</string>
+    <string name="save_file">I-save ang file</string>
+    <string name="copy_components">Kopyahin ang app IDs</string>
+    <string name="toast_file_saved_successful">Na-save ang file</string>
+    <string name="toast_file_save_error">Hindi ma-save ang file</string>
+    <string name="toast_file_zip_error">Hindi magawa ang request file</string>
+    <string name="toast_no_app_available">Walang nakitang app na mangangasiwa sa pagkilos na ito</string>
     <!-- New icons screen -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons_in_version">Bagong icons sa v%1$s</string>
+    <string name="new_icons">Bagong icons (%1$s)</string>
 </resources>

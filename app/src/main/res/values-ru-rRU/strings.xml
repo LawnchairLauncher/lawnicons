@@ -57,7 +57,7 @@
     <!-- Component -->
     <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Привязанные ID</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Если иконка устарела из-за проведенного ребрендинга, создайте проблему на GitHub.</string>
     <!-- Chevron a11y description -->
@@ -68,26 +68,26 @@
     <string name="copied_text">Текст скопирован</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Запросите недостающие иконки в нижней панели</string>
-    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_furfilled">Все иконки добавлены. О ребрендингах сообщайте на GitHub.</string>
+    <string name="icon_requests_suspended">С каждым релизом Lawnicons ненадолго открывается приём запросов на иконки.</string>
     <string name="snackbar_request_too_large">Подробности запроса иконки были скопированы в буфер обмена. Для отправки запроса, отправьте данные через форму.</string>
     <string name="snackbar_use_fallback_link">Открыть форму</string>
     <!-- Missing icons screen -->
-    <string name="missing_icons">Missing icons</string>
-    <string name="clear_all">Clear selection</string>
+    <string name="missing_icons">Отсутствующие значки</string>
+    <string name="clear_all">Сбросить выбор</string>
     <string name="select_all">Выбрать все пункты</string>
-    <string name="request_icons_button">Request</string>
+    <string name="request_icons_button">Запросить</string>
     <string name="show_options_sheet">Show options sheet</string>
     <string name="toggle_button_expanded">Expanded</string>
     <string name="toggle_button_collapsed">Collapsed</string>
     <string name="toggle_button_content_description">Toggle button</string>
     <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
-    <string name="share_file">Share file</string>
-    <string name="save_file">Save file</string>
-    <string name="copy_components">Copy app IDs</string>
-    <string name="toast_file_saved_successful">Successfully saved file</string>
-    <string name="toast_file_save_error">Error saving file</string>
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="share_file">Поделиться файлом</string>
+    <string name="save_file">Сохранить файл</string>
+    <string name="copy_components">Скопировать ID приложений</string>
+    <string name="toast_file_saved_successful">Файл сохранен</string>
+    <string name="toast_file_save_error">Ошибка при сохранении файла</string>
+    <string name="toast_file_zip_error">Не удается создать файл запроса</string>
     <string name="toast_no_app_available">No app to handle this action</string>
     <!-- New icons screen -->
     <string name="new_icons_in_version">Новые иконки в v%1$s</string>
