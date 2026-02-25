@@ -11,14 +11,20 @@
     <string name="search_bar_icon_picker">Wybierz ikonkę</string>
     <!-- Search tooltip -->
     <string name="search">Szukaj</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Wyczyść</string>
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">Nie znaleziono ikon</string>
     <!-- About page -->
     <string name="about">O aplikacji</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">Formularz Zgłoszeniowy Ikony</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">Send feedback</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Współautorzy</string>
@@ -30,7 +36,7 @@
     <string name="view_on_github">Zobacz na GitHub</string>
     <!-- Share button on icon info popup -->
     <string name="share">Udostępnij szczegóły</string>
-    <!-- Contribution -->
+    <!-- Contributions -->
     <string name="contribution_core">Aplikacja bazowa</string>
     <string name="contribution_icons">Ikony</string>
     <string name="contribution_infra">Infrastruktura</string>
@@ -48,10 +54,10 @@
     <string name="name">Nazwa</string>
     <!-- Drawable prefix -->
     <string name="drawable">Element graficzny</string>
-    <!-- Package prefix -->
-    <string name="component">Nazwa komponentu</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Pakiet</string>
+    <string name="mapped_components">Mapped IDs</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Jeśli ikona jest przestarzała z powodu rebrandingu, utwórz problem na GitHub.</string>
     <!-- Chevron a11y description -->
@@ -62,10 +68,28 @@
     <string name="copied_text">Skopiowano tekst</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Zażądaj brakujących ikon z paska dolnego</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
+    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
     <string name="snackbar_request_too_large">Skopiowano szczegóły żądania ikon do schowka. Aby o nie poprosić, prześlij szczegóły do formularza.</string>
     <string name="snackbar_use_fallback_link">Otwórz formularz</string>
-    <string name="clear">Wyczyść</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Missing icons</string>
+    <string name="clear_all">Clear selection</string>
+    <string name="select_all">Wybierz wszystko</string>
+    <string name="request_icons_button">Request</string>
+    <string name="show_options_sheet">Show options sheet</string>
+    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
+    <string name="share_file">Share file</string>
+    <string name="save_file">Save file</string>
+    <string name="copy_components">Copy app IDs</string>
+    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_no_app_available">No app to handle this action</string>
+    <!-- New icons screen -->
     <string name="new_icons_in_version">Nowe ikony w v%1$s</string>
     <string name="new_icons">Nowe ikony (%1$s)</string>
 </resources>

@@ -11,14 +11,20 @@
     <string name="search_bar_icon_picker">Seleziona un\'icona</string>
     <!-- Search tooltip -->
     <string name="search">Ricerca</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Cancella</string>
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">Nessun risultato per ‘%s’</string>
     <!-- About page -->
     <string name="about">Informazioni</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">Modulo di richiesta icone</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">Invia feedback</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Contributori</string>
@@ -30,7 +36,7 @@
     <string name="view_on_github">Visualizza su GitHub</string>
     <!-- Share button on icon info popup -->
     <string name="share">Condividi i dettagli</string>
-    <!-- Contribution -->
+    <!-- Contributions -->
     <string name="contribution_core">Core dell\'app</string>
     <string name="contribution_icons">Icone</string>
     <string name="contribution_infra">Infrastruttura</string>
@@ -48,10 +54,10 @@
     <string name="name">Nome</string>
     <!-- Drawable prefix -->
     <string name="drawable">Disegnabile</string>
-    <!-- Package prefix -->
-    <string name="component">Nome del componente</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Componenti mappati</string>
+    <string name="mapped_components">ID mappati</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Se l\'icona è obsoleta a causa di un rebranding, crea un\'issue su GitHub.</string>
     <!-- Chevron a11y description -->
@@ -62,10 +68,28 @@
     <string name="copied_text">Testo copiato</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Richiedi icone mancanti dalla barra inferiore</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
+    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
     <string name="snackbar_request_too_large">Dettagli della richiesta delle icone copiati negli appunti. Per richiederle, inviali nel modulo.</string>
     <string name="snackbar_use_fallback_link">Apri il modulo</string>
-    <string name="clear">Cancella</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Icone mancanti</string>
+    <string name="clear_all">Cancella selezione</string>
+    <string name="select_all">Seleziona tutto</string>
+    <string name="request_icons_button">Richiedi</string>
+    <string name="show_options_sheet">Mostra foglio opzioni</string>
+    <string name="toggle_button_expanded">Espanso</string>
+    <string name="toggle_button_collapsed">Compresso</string>
+    <string name="toggle_button_content_description">Attiva/Disattiva pulsante</string>
+    <string name="icon_request_mail_hint">Invia un file di richiesta a\u0020</string>
+    <string name="share_file">Condividi file</string>
+    <string name="save_file">Salva file</string>
+    <string name="copy_components">Copia ID delle app</string>
+    <string name="toast_file_saved_successful">File salvato con successo</string>
+    <string name="toast_file_save_error">Errore nel salvataggio del file</string>
+    <string name="toast_file_zip_error">Impossibile creare il file di richiesta</string>
+    <string name="toast_no_app_available">Nessuna app per gestire questa azione</string>
+    <!-- New icons screen -->
     <string name="new_icons_in_version">Nuove icone in v%1$s</string>
     <string name="new_icons">Nuove icone (%1$s)</string>
 </resources>

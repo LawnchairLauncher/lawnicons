@@ -8,17 +8,23 @@
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
     <string name="search_bar_hint">Telusuri melalui %d Ikon</string>
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Pilih sebuah ikon</string>
     <!-- Search tooltip -->
     <string name="search">Cari</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Bersihkan</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">Tidak menemukan ikon</string>
+    <string name="no_items_found">%s tidak ditemukan</string>
     <!-- About page -->
     <string name="about">Tentang</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
-    <string name="request_form">Permintaan Ikon Dari</string>
+    <string name="request_form">Formulir permintaan ikon</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">Kirim masukan</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Kontributor</string>
@@ -29,43 +35,61 @@
     <!-- View on GitHub link -->
     <string name="view_on_github">Lihat di Github</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
-    <!-- Contribution -->
-    <string name="contribution_core">Core app</string>
+    <string name="share">Bagikan detail</string>
+    <!-- Contributions -->
+    <string name="contribution_core">Inti aplikasi</string>
     <string name="contribution_icons">Ikon</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktur</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
     <string name="special_thanks">Terima kasih Khusus</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Untuk inspirasi ikon aplikasi.</string>
+    <string name="special_thanks_icon">Untuk inspirasi ikon aplikasi</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Untuk memberi nama aplikasi.</string>
+    <string name="special_thanks_name">Untuk memberi nama aplikasi</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">Ucapan terima kasih</string>
     <!-- Icon Information Popup window -->
     <!-- Name -->
-    <string name="name">Name</string>
+    <string name="name">Nama</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
-    <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="drawable">Dapat digambar</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Paket nama</string>
+    <string name="mapped_components">Mapped IDs</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Jika ikon sudah usang karena rebranding, buatlah masalah di GitHub.</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">Ubah visibilitas konten</string>
     <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="copied_text">Copied text</string>
+    <string name="request_icons">Minta ikon</string>
+    <string name="copy_to_clipboard">Salin ke papan klip</string>
+    <string name="copied_text">Teks yang disalin</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
-    <string name="clear">Bersihkan</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="snackbar_request_icons_hint">Minta ikon yang hilang dari bilah bawah</string>
+    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="snackbar_request_too_large">Detail permintaan ikon disalin ke papan klip. Untuk memintanya, kirimkan detailnya ke dalam formulir.</string>
+    <string name="snackbar_use_fallback_link">Buka formulir</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Ikon hilang</string>
+    <string name="clear_all">Bersihkan pilihan</string>
+    <string name="select_all">Pilih semua</string>
+    <string name="request_icons_button">Minta</string>
+    <string name="show_options_sheet">Tampilkan lembar opsi</string>
+    <string name="toggle_button_expanded">Diperluas</string>
+    <string name="toggle_button_collapsed">Runtuh</string>
+    <string name="toggle_button_content_description">Tombol alih</string>
+    <string name="icon_request_mail_hint">Kirimkan file permintaan ke\u0020</string>
+    <string name="share_file">Bagikan berkas</string>
+    <string name="save_file">Simpan berkas</string>
+    <string name="copy_components">Copy app IDs</string>
+    <string name="toast_file_saved_successful">Berhasil menyimpan berkas</string>
+    <string name="toast_file_save_error">Gagal menyimpan berkas</string>
+    <string name="toast_file_zip_error">Tidak dapat membuat file permintaan</string>
+    <string name="toast_no_app_available">Tidak ada aplikasi yang tersedia</string>
+    <!-- New icons screen -->
+    <string name="new_icons_in_version">Ikon baru di v%1$s</string>
+    <string name="new_icons">Ikon-ikon baru (%1$s)</string>
 </resources>

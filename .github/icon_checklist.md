@@ -1,7 +1,20 @@
 Thanks for your contribution!
 
-We hope that you followed the Lawnicons guidelines and made sure that Lawnicons is built correctly. Please fix common issues from the list below if there are any in your icons. Reviews are based on this list, so if any issues remain, we'll point out the numbers.
+- Please fix all common issues and ensure Lawnicons builds correctly.
+- Please submit up to 5 icons per PR. After a review with 4+ perfect icons, you can submit up to 10 icons.
+- You'll get a review within 2 weeks.
+- First-timers receive a brief review to confirm commitment.  
 
-[Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md)
+[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines)
+
+```
+Naming TL;DR
+_2048.svg | 2048
+lawnicons.svg | Lawnicons
+habitacao_caixa.svg | Habitação Caixa
+beijing_card.svg | 北京一卡通 ~~ Beijing Card
+a_and_w.svg | A&amp;W
+```
 
 ![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)
+

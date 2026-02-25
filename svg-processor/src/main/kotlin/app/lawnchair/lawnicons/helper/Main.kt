@@ -17,10 +17,9 @@
 package app.lawnchair.lawnicons.helper
 
 fun main(args: Array<String>) {
-    val (svgDir, resDir, customTag, assetsDir) = args
+    val (svgDir, resDir, assetsDir) = args
     val appFilterFile = "$assetsDir/appfilter.xml"
-    val iconConfigFile = "$resDir/xml/icon_config.xml"
-    val previousAppFilterFile = "$resDir/xml/appfilter_previous.xml"
+    val previousAppFilterFile = "$assetsDir/appfilter_previous.xml"
 
     // Convert svg to drawable in runtime
     SvgFilesProcessor.process(svgDir, "$resDir/drawable")
@@ -30,10 +29,6 @@ fun main(args: Array<String>) {
     ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir)
     println("ConfigProcessor task completed")
 
-    AppfilterDiffCreator.createAppfilterDiff(resDir, customTag, appFilterFile, previousAppFilterFile)
+    AppfilterDiffCreator.createAppfilterDiff(resDir, appFilterFile, previousAppFilterFile)
     println("Appfilter diff task completed")
-
-    // copy appfilter.xml to icon_config.xml
-    XmlUtil.writeDocumentToFile(XmlUtil.getDocument(appFilterFile), iconConfigFile)
-    println("Copied appfilter.xml to icon_config.xml")
 }

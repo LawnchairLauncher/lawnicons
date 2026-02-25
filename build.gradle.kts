@@ -1,19 +1,15 @@
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.diffplug.spotless.extra.wtp.EclipseWtpFormatterStep
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("com.android.application") version "8.10.1" apply false
-    id("org.jetbrains.kotlin.android") version "2.1.21" apply false
-    id("org.jetbrains.kotlin.plugin.compose") version "2.1.21"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.21" apply false
-    id("com.google.devtools.ksp") version "2.1.21-2.0.1" apply false
-    id("com.google.dagger.hilt.android") version "2.56.2" apply false
-    id("app.cash.licensee") version "1.13.0" apply false
-    id("com.diffplug.spotless") version "7.0.3" apply false
-    id("org.gradle.android.cache-fix") version "3.0.1" apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.licensee) apply false
+    alias(libs.plugins.spotless) apply false
 }
 
 allprojects {
@@ -25,9 +21,9 @@ allprojects {
         }
         kotlin {
             target("src/**/*.kt")
-            ktlint().customRuleSets(
+            ktlint(libs.ktlint.get().version).customRuleSets(
                 listOf(
-                    "io.nlopez.compose.rules:ktlint:0.4.22",
+                    libs.composeRules.get().toString(),
                 ),
             ).editorConfigOverride(
                 mapOf(
@@ -38,7 +34,7 @@ allprojects {
             )
         }
         kotlinGradle {
-            ktlint()
+            ktlint(libs.ktlint.get().version)
         }
     }
 

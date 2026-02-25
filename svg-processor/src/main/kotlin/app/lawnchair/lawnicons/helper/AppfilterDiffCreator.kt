@@ -17,131 +17,83 @@
 package app.lawnchair.lawnicons.helper
 
 import java.io.File
+import java.io.FileWriter
+import org.dom4j.Document
+import org.dom4j.io.OutputFormat
+import org.dom4j.io.SAXReader
+import org.dom4j.io.XMLWriter
+import org.dom4j.tree.DefaultDocument
 
 object AppfilterDiffCreator {
     private const val OUTPUT_FILE = "/xml/appfilter_diff.xml"
 
-    private fun writePreviousRelease(
-        previousAppFilterFile: String,
-        customTag: String = "",
-    ) {
-        try {
-            runGitCommand(listOf("fetch", "--tags"))
-        } catch (_: Exception) {
-            // assume that we have fetched the tags already
-        }
-
-        var lines = listOf<String>()
-
-        try {
-            val tags = runGitCommand(listOf("tag", "--sort=-creatordate"))
-            val latestTag =
-                customTag.ifEmpty {
-                    tags.firstOrNull { it != "nightly" } ?: {
-                        // fallback to `main` branch
-                        val fallbackTags = runGitCommand(listOf("show", "main"))
-
-                        fallbackTags.firstOrNull() ?: throw RuntimeException("No tags found")
-                    }
-                }
-
-            // use relative file path, as `git show` does not work with absolute paths
-            lines = runGitCommand(listOf("show", "$latestTag:app/assets/appfilter.xml"))
-        } catch (e: Exception) {
-            println(e)
-        }
-
-        val outputFile = File(previousAppFilterFile)
-        outputFile.writeText(lines.joinToString(separator = "\n"))
-    }
-
-    private fun runGitCommand(
-        args: List<String>,
-    ): List<String> {
-        return try {
-            val command = listOf("git") + args
-
-            val process = ProcessBuilder(command)
-                .redirectErrorStream(true)
-                .start()
-
-            val result = process.inputStream.bufferedReader().readLines()
-            if (process.waitFor() != 0) {
-                throw RuntimeException("Failed to execute $command: $result")
-            }
-            println("Task `git $args` completed")
-
-            result
-        } catch (e: Exception) {
-            println(e)
-            listOf()
-        }
-    }
-
-    private fun readFileContents(filePath: String): List<String> {
-        return File(filePath).readLines().filterNot { it.trim().startsWith("<?xml") || it.trim().startsWith("<resources") }
-    }
-
-    private fun getLineDiff(
-        mainLines: List<String>,
-        developLines: List<String>,
-    ): List<String> {
-        val drawablesInMain = mainLines.mapNotNull { extractDrawableItem(it) }.toSet()
-
-        return developLines.filter { item ->
-            val drawable = extractDrawableItem(item)
-            drawable != null && drawable !in drawablesInMain
-        }.filterNot { it.trim().startsWith("<?xml") || it.trim().startsWith("<resources") }
-    }
-
-    private fun extractDrawableItem(item: String): String? {
-        val regex = """drawable="([^"]+)"""".toRegex()
-        return regex.find(item)?.groups?.get(1)?.value
-    }
-
-    private fun writeDiffToFile(
-        diff: List<String>,
-        resDir: String,
-    ) {
-        val outputFile = File(resDir + OUTPUT_FILE)
-        val schema = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-
-        // Filter out any lines that could conflict with the XML structureAdd commentMore actions
-        val filteredDiff = diff.filterNot {
-            it.trim().startsWith("<?xml") || it.trim().startsWith("<resources>") || it.trim().startsWith("</resources>")
-        }
-
-        // Handle empty diff case
-        if (filteredDiff.isEmpty()) {
-            outputFile.writeText("$schema\n<resources />")
-            return
-        }
-
-        val xmlContent = buildString {
-            appendLine(schema)
-            appendLine("<resources>")
-            filteredDiff.forEach { line ->
-                appendLine("    $line")
-            }
-            appendLine("</resources>")
-        }
-
-        outputFile.writeText(xmlContent)
-    }
+    private const val RESOURCES = "resources"
+    private const val ITEM = "item"
+    private const val DRAWABLE = "drawable"
+    private const val COMPONENT = "component"
+    private const val NAME = "name"
 
     fun createAppfilterDiff(
         resDir: String,
-        customTag: String,
-        appFilterFile: String,
+        currentAppFilterFile: String,
         previousAppFilterFile: String,
     ) {
-        writePreviousRelease(previousAppFilterFile, customTag)
+        val currentAppFilterDocument = File(currentAppFilterFile).asXMLDocument()
+        val previousAppFilterDocument = File(previousAppFilterFile).asXMLDocument()
 
-        val diff = getLineDiff(
-            readFileContents(previousAppFilterFile),
-            readFileContents(appFilterFile),
-        )
+        val currentAppFilterItems = currentAppFilterDocument.rootElement.elements(ITEM)
+        val previousAppFilterItems = previousAppFilterDocument.rootElement.elements(ITEM)
 
-        writeDiffToFile(diff, resDir)
+        val previousDrawables = previousAppFilterItems
+            .map {
+                it.attribute(DRAWABLE).value
+            }
+
+        val filteredSvgs = currentAppFilterItems
+            // step 1: filter svgs from the previous version
+            .filterNot { previousDrawables.contains(it.attributeValue(DRAWABLE)) }
+
+        val filteredComponents = previousAppFilterItems
+            .map {
+                getPackageName(it.attribute(COMPONENT).value)
+            }
+            .toSet()
+
+        val filteredElements = filteredSvgs
+            // step 2: filter component names that exist from the previous version
+            .filterNot { items ->
+                filteredComponents.contains(getPackageName(items.attributeValue(COMPONENT)))
+            }
+
+        val outputFile = File(resDir, OUTPUT_FILE)
+
+        val iconsDocument = DefaultDocument().apply { addElement(RESOURCES) }
+
+        filteredElements.forEach {
+            iconsDocument.rootElement.addElement(ITEM)
+                .apply {
+                    addAttribute(DRAWABLE, it.attributeValue(DRAWABLE))
+                    addAttribute(COMPONENT, it.attributeValue(COMPONENT))
+                    addAttribute(NAME, it.attributeValue(NAME))
+                }
+        }
+
+        outputFile.parentFile.mkdirs()
+        FileWriter(outputFile).use { fw ->
+            XMLWriter(fw, OutputFormat.createPrettyPrint()).apply {
+                write(iconsDocument)
+                close()
+            }
+        }
     }
+
+    private fun File.asXMLDocument(): Document {
+        return SAXReader().apply { encoding = Charsets.UTF_8.name() }.read(this.inputStream())
+    }
+}
+
+private fun getPackageName(componentString: String): String {
+    val componentInfoPrefixLength = "ComponentInfo{".length
+    val component = componentString.substring(componentInfoPrefixLength, componentString.length - 1)
+    return component.split("/").first()
 }

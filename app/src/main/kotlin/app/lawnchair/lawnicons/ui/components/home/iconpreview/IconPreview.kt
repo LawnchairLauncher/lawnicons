@@ -23,11 +23,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Call
-import androidx.compose.material.icons.rounded.Email
-import androidx.compose.material.icons.rounded.Search
-import androidx.compose.material.icons.rounded.Warning
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
@@ -35,8 +30,6 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -45,9 +38,10 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.ui.LocalLawniconsActions
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 import kotlin.math.ln
 
@@ -61,20 +55,20 @@ val ColorScheme.iconColor: Color
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
-    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
-    isIconPicker: Boolean = false,
+    showSheet: Boolean = false,
+    onToggleSheet: (Boolean) -> Unit = {},
 ) {
-    val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+    val actions = LocalLawniconsActions.current
     IconPreview(
         iconInfo = iconInfo,
-        onSendResult = onSendResult,
+        onSendResult = actions.onSendResult,
         modifier = modifier,
         iconBackground = iconBackground,
-        isIconPicker = isIconPicker,
-        showSheet = isIconInfoShown.value,
-        onToggleSheet = { isIconInfoShown.value = it },
+        isIconPicker = actions.isIconPicker,
+        showSheet = showSheet,
+        onToggleSheet = onToggleSheet,
     )
 }
 
@@ -120,14 +114,8 @@ fun IconPreview(
             ),
     ) {
         if (LocalInspectionMode.current) {
-            val icon = when (iconInfo.id) {
-                1 -> Icons.Rounded.Email
-                2 -> Icons.Rounded.Search
-                3 -> Icons.Rounded.Call
-                else -> Icons.Rounded.Warning
-            }
             Icon(
-                icon,
+                iconInfo.fallbackImage,
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(0.6f),
                 tint = if (showSheet) {
@@ -138,7 +126,7 @@ fun IconPreview(
             )
         } else {
             Icon(
-                painter = painterResource(iconInfo.id),
+                painter = painterResource(iconInfo.drawableId),
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(0.6f),
                 tint = if (showSheet) {
@@ -161,7 +149,7 @@ fun IconPreview(
 @PreviewLawnicons
 @Composable
 private fun IconPreviewComposablePreview() {
-    LawniconsTheme {
+    PreviewProviders {
         IconPreview(
             iconInfo = SampleData.iconInfoSample,
             {},

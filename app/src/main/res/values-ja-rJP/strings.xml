@@ -3,22 +3,28 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">バージョン %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">%dアイコンから検索</string>
     <string name="search_bar_icon_picker">アイコンを選択する</string>
     <!-- Search tooltip -->
     <string name="search">検索</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">消去</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">%sが見つかりません</string>
     <!-- About page -->
     <string name="about">このアプリについて</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">アイコンリクエストフォーム</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">フィードバックを送信</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">寄付者</string>
@@ -29,43 +35,61 @@
     <!-- View on GitHub link -->
     <string name="view_on_github">Githubで見る</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
-    <!-- Contribution -->
-    <string name="contribution_core">Core app</string>
+    <string name="share">詳細を共有</string>
+    <!-- Contributions -->
+    <string name="contribution_core">コアアプリ</string>
     <string name="contribution_icons">アイコン</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">インフラストラクチャ</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">スペシャルサンクス</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">アプリアイコンの考案者</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">アプリの名付け親</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">オープンソースライセンス</string>
     <!-- Icon Information Popup window -->
     <!-- Name -->
-    <string name="name">Name</string>
+    <string name="name">名前</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
-    <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="drawable">描画可能</string>
+    <!-- Component -->
+    <string name="component">アプリID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">マップされたID</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">アイコンが再設計により古くなっている場合は、GitHubでIssueを作成してください。</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">コンテンツの表示を切り替える</string>
     <!-- Request icons button -->
     <string name="request_icons">アイコンをリクエストする</string>
     <string name="copy_to_clipboard">クリップボードにコピーする</string>
     <string name="copied_text">テキストをコピーしました</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
-    <string name="clear">消去</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="snackbar_request_icons_hint">下部バーから不足しているアイコンをリクエストする</string>
+    <string name="icon_requests_furfilled">すべてのアイコンがサポートされています。GitHubのIssueを経由して再設計を報告します。</string>
+    <string name="icon_requests_suspended">アイコンリクエストは、すべての新しいLawniconsリリースで限られた時間のために開きます。</string>
+    <string name="snackbar_request_too_large">アイコンリクエストの詳細をクリップボードにコピーしました。リクエストするには、詳細をフォームに送信してください。</string>
+    <string name="snackbar_use_fallback_link">フォームを開く</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">不足しているアイコン</string>
+    <string name="clear_all">選択をクリア</string>
+    <string name="select_all">すべて選択</string>
+    <string name="request_icons_button">リクエスト</string>
+    <string name="show_options_sheet">オプションシートを表示</string>
+    <string name="toggle_button_expanded">展開済み</string>
+    <string name="toggle_button_collapsed">折りたたむ</string>
+    <string name="toggle_button_content_description">切り替えボタン</string>
+    <string name="icon_request_mail_hint">リクエストファイルを\u0020に送信する</string>
+    <string name="share_file">ファイルを共有</string>
+    <string name="save_file">ファイルを保存</string>
+    <string name="copy_components">アプリIDをコピー</string>
+    <string name="toast_file_saved_successful">ファイルを正常に保存しました</string>
+    <string name="toast_file_save_error">ファイルの保存に失敗しました</string>
+    <string name="toast_file_zip_error">リクエストファイルを作成できませんでした</string>
+    <string name="toast_no_app_available">このアクションを処理するアプリがありません</string>
+    <!-- New icons screen -->
+    <string name="new_icons_in_version">v%1$s の新しいアイコン</string>
+    <string name="new_icons">新しいアイコン (%1$s)</string>
 </resources>

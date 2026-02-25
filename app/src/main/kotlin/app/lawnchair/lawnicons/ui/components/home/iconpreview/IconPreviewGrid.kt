@@ -30,6 +30,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.displayCutoutPadding
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBars
@@ -38,7 +39,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyGridScope
 import androidx.compose.foundation.lazy.grid.LazyGridState
@@ -56,59 +56,40 @@ import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.repository.preferenceManager
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.data.model.IconInfo
+import app.lawnchair.lawnicons.ui.theme.icon.AppIcon
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 import my.nanihadesuka.compose.InternalLazyVerticalGridScrollbar
 import my.nanihadesuka.compose.ScrollbarSelectionMode
 import my.nanihadesuka.compose.ScrollbarSettings
 
-data class IconPreviewGridPadding(
-    val topPadding: Dp,
-    val bottomPadding: Dp,
-    val horizontalPadding: Dp,
-) {
-
-    companion object {
-        val Defaults = IconPreviewGridPadding(
-            topPadding = 0.dp,
-            bottomPadding = 0.dp,
-            horizontalPadding = 8.dp,
-        )
-
-        val ExpandedSize = IconPreviewGridPadding(
-            topPadding = 72.dp,
-            bottomPadding = 0.dp,
-            horizontalPadding = 32.dp,
-        )
-    }
+object IconPreviewGridPaddings {
+    val Default = 8.dp
+    val Expanded = 32.dp
 }
 
 @Composable
 @ExperimentalFoundationApi
 fun IconPreviewGrid(
     iconInfo: List<IconInfo>,
-    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
-    containerModifier: Modifier = Modifier
-        .applyGridInsets(),
-    contentPadding: IconPreviewGridPadding = IconPreviewGridPadding.Defaults,
-    isIconPicker: Boolean = false,
+    containerModifier: Modifier = Modifier.applyGridInsets(),
+    horizontalPadding: Dp = IconPreviewGridPaddings.Default,
     gridState: LazyGridState = rememberLazyGridState(),
     startContent: (LazyGridScope.() -> Unit) = {},
 ) {
@@ -122,15 +103,13 @@ fun IconPreviewGrid(
         modifier = modifier.fillMaxWidth(),
     ) {
         Box(
-            modifier = containerModifier
-                .padding(bottom = contentPadding.bottomPadding),
+            modifier = containerModifier,
         ) {
             LazyVerticalGrid(
                 columns = GridCells.Adaptive(minSize = 80.dp),
                 contentPadding = WindowInsets.navigationBars.toPaddingValues(
-                    additionalStart = contentPadding.horizontalPadding,
-                    additionalTop = contentPadding.topPadding,
-                    additionalEnd = contentPadding.horizontalPadding,
+                    additionalStart = horizontalPadding,
+                    additionalEnd = horizontalPadding,
                 ),
                 state = gridState,
             ) {
@@ -147,12 +126,13 @@ fun IconPreviewGrid(
                         },
                         label = "",
                     )
+                    val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
                     IconPreview(
+                        iconInfo = iconInfo,
                         modifier = Modifier
                             .scale(scale),
-                        iconInfo = iconInfo,
-                        isIconPicker = isIconPicker,
-                        onSendResult = onSendResult,
+                        showSheet = isIconInfoShown.value,
+                        onToggleSheet = { isIconInfoShown.value = it },
                     )
                 }
             }
@@ -160,15 +140,13 @@ fun IconPreviewGrid(
                 gridState,
                 { thumbSelected = it },
                 letter,
-                contentPadding.topPadding,
             )
         }
     }
 }
 
 private fun Modifier.applyGridInsets() = this
-    .widthIn(max = 640.dp)
-    .fillMaxWidth()
+    .displayCutoutPadding()
     .statusBarsPadding()
 
 @Composable
@@ -176,18 +154,20 @@ private fun ScrollbarLayout(
     gridState: LazyGridState,
     onSelectedChange: (Boolean) -> Unit,
     currentLetter: String,
-    topPadding: Dp = 0.dp,
 ) {
     Box(
         contentAlignment = Alignment.CenterEnd,
-        modifier = Modifier.padding(top = topPadding),
+        modifier = Modifier
+            .padding(
+                bottom = WindowInsets.navigationBars.toPaddingValues().calculateBottomPadding(),
+            ),
     ) {
         Spacer(
             Modifier
                 .fillMaxHeight()
                 .width(8.dp)
-                .background(MaterialTheme.colorScheme.surfaceContainer)
-                .clip(CircleShape),
+                .clip(CircleShape)
+                .background(MaterialTheme.colorScheme.surfaceContainer),
         )
         InternalLazyVerticalGridScrollbar(
             modifier = Modifier.offset(7.dp),
@@ -234,11 +214,12 @@ private fun ScrollbarIndicator(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppBarListItem(modifier: Modifier = Modifier) {
-    val context = LocalContext.current
-    val prefs = preferenceManager(context)
+fun AppBarListItem(
+    onLongClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
     CenterAlignedTopAppBar(
         modifier = modifier,
         title = {
@@ -247,16 +228,14 @@ fun AppBarListItem(modifier: Modifier = Modifier) {
             ) {
                 if (!LocalInspectionMode.current) {
                     Image(
-                        painter = painterResource(R.drawable.lawnicons_logo),
+                        imageVector = LawnIcons.AppIcon,
                         contentDescription = stringResource(id = R.string.app_name),
                         modifier = Modifier
                             .size(36.dp)
                             .clip(CircleShape)
                             .combinedClickable(
                                 onClick = {},
-                                onLongClick = {
-                                    prefs.showDebugMenu.toggle()
-                                },
+                                onLongClick = onLongClick,
                             ),
                     )
                 }
@@ -273,14 +252,12 @@ fun AppBarListItem(modifier: Modifier = Modifier) {
 @PreviewLawnicons
 @Composable
 private fun IconGridPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
-                onSendResult = {},
                 modifier = Modifier,
-                contentPadding = IconPreviewGridPadding.Defaults,
-                isIconPicker = false,
+                horizontalPadding = IconPreviewGridPaddings.Default,
             )
         }
     }
@@ -290,14 +267,12 @@ private fun IconGridPreview() {
 @PreviewLawnicons
 @Composable
 private fun IconGridExpandedPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Surface {
             IconPreviewGrid(
                 iconInfo = SampleData.iconInfoList,
-                onSendResult = {},
                 modifier = Modifier,
-                contentPadding = IconPreviewGridPadding.ExpandedSize,
-                isIconPicker = false,
+                horizontalPadding = IconPreviewGridPaddings.Expanded,
             )
         }
     }

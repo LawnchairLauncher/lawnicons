@@ -5,8 +5,6 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -17,9 +15,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
+import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -29,6 +29,8 @@ fun LawniconsScaffold(
     onBack: () -> Unit,
     isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
+    bottomBar: @Composable () -> Unit = {},
+    snackbarHost: @Composable () -> Unit = {},
     containerColor: Color = adaptiveSurfaceColor,
     content: @Composable (PaddingValues) -> Unit,
 ) {
@@ -43,9 +45,8 @@ fun LawniconsScaffold(
                 title = title,
                 navigationIcon = {
                     NavigationIconButton(
+                        imageVector = LawnIcons.Back,
                         onClick = onBack,
-                        imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                        size = 40.dp,
                         modifier = Modifier.padding(horizontal = 4.dp),
                     )
                 },
@@ -53,6 +54,8 @@ fun LawniconsScaffold(
                 containerColor = containerColor,
             )
         },
+        bottomBar = bottomBar,
+        snackbarHost = snackbarHost,
         containerColor = containerColor,
     ) {
         Box(
@@ -77,7 +80,7 @@ fun LawniconsScaffold(
 @PreviewLawnicons
 @Composable
 private fun LawniconsScaffoldPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         LawniconsScaffold(
             title = "Example small bar",
             onBack = { },
@@ -96,7 +99,7 @@ private fun LawniconsScaffoldPreview() {
 @PreviewLawnicons
 @Composable
 private fun LawniconsScaffoldExpandedPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         LawniconsScaffold(
             title = "Example small bar",
             onBack = { },

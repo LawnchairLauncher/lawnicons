@@ -16,126 +16,158 @@
 
 package app.lawnchair.lawnicons.ui.components.home
 
+import android.widget.Toast
+import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.text.input.TextFieldState
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBars
+import androidx.compose.material3.AppBarWithSearch
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBarValue
-import androidx.compose.material3.TopSearchBar
+import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.rememberUpdatedState
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.movableContentOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
-import app.lawnchair.lawnicons.model.IconInfo
-import app.lawnchair.lawnicons.model.IconInfoModel
-import app.lawnchair.lawnicons.model.SearchMode
+import app.lawnchair.lawnicons.data.model.IconInfoModel
+import app.lawnchair.lawnicons.ui.LocalLawniconsActions
 import app.lawnchair.lawnicons.ui.components.home.search.ResponsiveSearchBarContents
 import app.lawnchair.lawnicons.ui.components.home.search.SearchBarInputField
 import app.lawnchair.lawnicons.ui.components.home.search.SearchContents
-import app.lawnchair.lawnicons.ui.util.thenIf
+import app.lawnchair.lawnicons.ui.components.home.search.SearchState
+import app.lawnchair.lawnicons.ui.components.home.search.rememberSearchState
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
+import app.lawnchair.lawnicons.ui.util.SampleData
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeTopBar(
-    textFieldState: TextFieldState,
-    mode: SearchMode,
-    onModeChange: (SearchMode) -> Unit,
-    onBack: () -> Unit,
-    onNavigate: () -> Unit,
-    expandSearch: Boolean,
-    isExpandedScreen: Boolean,
-    isIconPicker: Boolean,
-    onSendResult: (IconInfo) -> Unit,
+    searchState: SearchState,
     iconInfoModel: IconInfoModel?,
+    isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
 ) {
-    Box(modifier) {
-        iconInfoModel?.let {
-            val searchBarState = rememberSearchBarState()
-            val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+    val actions = LocalLawniconsActions.current
+    val coroutineScope = rememberCoroutineScope()
 
-            val inputField = @Composable {
+    val statusBarHeight = WindowInsets.statusBars.asPaddingValues().calculateTopPadding()
+
+    val targetOffsetY = if (searchState.searchBarState.targetValue == SearchBarValue.Expanded) {
+        0.dp
+    } else {
+        -(statusBarHeight + 100.dp)
+    }
+
+    val offsetY by animateDpAsState(
+        targetValue = targetOffsetY,
+        label = "SearchBarOffsetYAnimation",
+    )
+
+    Box(
+        contentAlignment = Alignment.TopCenter,
+        modifier = modifier.fillMaxWidth(),
+    ) {
+        val inputField = remember {
+            movableContentOf {
                 SearchBarInputField(
-                    searchBarState = searchBarState,
-                    textFieldState = textFieldState,
-                    iconCount = iconInfoModel.iconCount,
-                    isIconPicker = isIconPicker,
-                    navigateContent = {
-                        if (isExpandedScreen) {
-                            IconButton(
-                                onClick = onNavigate,
-                            ) {
-                                Icon(
-                                    imageVector = ImageVector.vectorResource(id = R.drawable.about_icon),
-                                    contentDescription = null,
-                                    tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                                    modifier = Modifier
-                                        .size(24.dp),
-                                )
-                            }
-                        }
+                    state = searchState,
+                    placeholder = {
+                        Text(
+                            stringResource(
+                                id = if (actions.isIconPicker) {
+                                    R.string.search_bar_icon_picker
+                                } else {
+                                    R.string.search_bar_hint
+                                },
+                                iconInfoModel?.iconCount ?: 0,
+                            ),
+                        )
                     },
-                    onBack = onBack,
-                    onSearch = {
-                        if (textFieldState.text.isNotEmpty()) {
-                            isIconInfoShown.value = true
+                    onBack = {
+                        coroutineScope.launch {
+                            searchState.searchBarState.animateToCollapsed()
                         }
                     },
                 )
+
+                val context = LocalContext.current
+                SideEffect {
+                    coroutineScope.launch {
+                        Toast.makeText(context, "Recomposed", Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
+        }
 
-            TopSearchBar(
-                inputField = inputField,
-                state = searchBarState,
-                modifier = Modifier.thenIf(!isExpandedScreen) {
-                    // Hide the search bar on compact devices, as we already have a search icon in the toolbar
-                    Modifier.offset(y = (-120).dp)
-                },
-            )
+        AppBarWithSearch(
+            state = searchState.searchBarState,
+            inputField = inputField,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 8.dp)
+                .offset(y = offsetY),
+        )
 
-            ResponsiveSearchBarContents(
-                isExpandedScreen = isExpandedScreen,
-                state = searchBarState,
-                inputField = inputField,
-            ) {
+        ResponsiveSearchBarContents(
+            isExpandedScreen = isExpandedScreen,
+            state = searchState.searchBarState,
+            inputField = inputField,
+        ) {
+            iconInfoModel?.let {
                 SearchContents(
-                    searchTerm = textFieldState.text.toString(),
-                    searchMode = mode,
-                    onModeChange = onModeChange,
-                    iconInfo = iconInfoModel.iconInfo,
-                    isIconPicker = isIconPicker,
-                    onSendResult = onSendResult,
-                    showSheet = isIconInfoShown.value,
-                    onToggleSheet = { isIconInfoShown.value = it },
+                    state = searchState,
+                    iconInfo = it.iconInfo,
                 )
             }
+        }
+    }
+}
 
-            LaunchedEffect(expandSearch) {
-                if (expandSearch) {
-                    searchBarState.animateToExpanded()
-                } else {
-                    searchBarState.animateToCollapsed()
-                }
-            }
+@OptIn(ExperimentalMaterial3Api::class)
+@PreviewLawnicons
+@Composable
+private fun HomeTopBarPreview() {
+    PreviewProviders {
+        val scope = rememberCoroutineScope()
+        val searchState = rememberSearchState(
+            searchBarState = rememberSearchBarState(
+                SearchBarValue.Expanded,
+            ),
+        )
 
-            val latestOnBack by rememberUpdatedState(onBack)
-            LaunchedEffect(searchBarState.currentValue) {
-                if (searchBarState.currentValue == SearchBarValue.Collapsed) {
-                    latestOnBack()
+        HomeTopBar(
+            searchState = searchState,
+            iconInfoModel = IconInfoModel(
+                iconInfo = SampleData.iconInfoList,
+                iconCount = SampleData.iconInfoList.size,
+            ),
+            isExpandedScreen = false,
+        )
+
+        Button(
+            onClick = {
+                scope.launch {
+                    searchState.searchBarState.animateToExpanded()
                 }
-            }
+            },
+        ) {
+            Text("Toggle search bar")
         }
     }
 }

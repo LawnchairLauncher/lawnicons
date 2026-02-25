@@ -11,14 +11,20 @@
     <string name="search_bar_icon_picker">Bir simge seçin</string>
     <!-- Search tooltip -->
     <string name="search">Ara</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Geçmişi temizle</string>
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">%s bulunamadı</string>
     <!-- About page -->
     <string name="about">Hakkında</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">Simge istek formu</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">Geri bildirim yolla</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Katkıda bulunanlar</string>
@@ -30,7 +36,7 @@
     <string name="view_on_github">GitHub\'da görüntüle</string>
     <!-- Share button on icon info popup -->
     <string name="share">Detayları paylaş</string>
-    <!-- Contribution -->
+    <!-- Contributions -->
     <string name="contribution_core">Çekirdek uygulama</string>
     <string name="contribution_icons">Resimleyici</string>
     <string name="contribution_infra">Altyapı</string>
@@ -48,10 +54,10 @@
     <string name="name">İsim</string>
     <!-- Drawable prefix -->
     <string name="drawable">Çizilebilir</string>
-    <!-- Package prefix -->
-    <string name="component">Bileşen adı</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">Mapped IDs</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Simge, marka yenileme nedeniyle güncelliğini yitirmişse GitHub\'da bir issue oluşturun.</string>
     <!-- Chevron a11y description -->
@@ -62,10 +68,28 @@
     <string name="copied_text">Kopyalanmış metin</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Alt çubuktan eksik ikonları isteyin</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
+    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
     <string name="snackbar_request_too_large">Simge isteği ayrıntıları panoya kopyalandı. İsteği göndermek için ayrıntıları forma girin.</string>
     <string name="snackbar_use_fallback_link">Formu aç</string>
-    <string name="clear">Geçmişi temizle</string>
-    <string name="new_icons_in_version">V%1$sdaki yeni simgeler</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Eksik simgeler</string>
+    <string name="clear_all">Seçimi temizle</string>
+    <string name="select_all">Tümünü seç</string>
+    <string name="request_icons_button">Talep et</string>
+    <string name="show_options_sheet">Seçenekler menüsünü göster</string>
+    <string name="toggle_button_expanded">Genişletilmiş</string>
+    <string name="toggle_button_collapsed">Daraltılmış</string>
+    <string name="toggle_button_content_description">Aç/Kapa düğmesi</string>
+    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
+    <string name="share_file">Dosyayı paylaş</string>
+    <string name="save_file">Dosyayı kaydet</string>
+    <string name="copy_components">Copy app IDs</string>
+    <string name="toast_file_saved_successful">Dosya başarıyla kaydedildi</string>
+    <string name="toast_file_save_error">Dosya kaydetme hatası</string>
+    <string name="toast_file_zip_error">İstek dosyası oluşturulamadı</string>
+    <string name="toast_no_app_available">Bu işlemi gerçekleştirecek uygulama yok</string>
+    <!-- New icons screen -->
+    <string name="new_icons_in_version">v%1$s\'daki yeni simgeler</string>
     <string name="new_icons">Yeni simgeler (%1$s)</string>
 </resources>

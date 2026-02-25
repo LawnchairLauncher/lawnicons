@@ -3,69 +3,93 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">Versio %s</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_hint">Hae yli %d kuvaketta</string>
+    <string name="search_bar_icon_picker">Valitse kuvake</string>
     <!-- Search tooltip -->
     <string name="search">Hae</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Tyhjennä</string>
     <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">Kuvaketta %s ei löytynyt</string>
     <!-- About page -->
     <string name="about">Tietoja</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
-    <string name="request_form">Icon request form</string>
+    <string name="request_form">Kuvaketoiveiden lomake</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">Lähetä palautetta</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Kehittäjät</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Tärkeimmät kehittäjät</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Katso kaikki kehittäjät</string>
     <!-- View on GitHub link -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Katso GitHubissa</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
-    <!-- Contribution -->
-    <string name="contribution_core">Core app</string>
+    <string name="share">Jaa yksityiskohdat</string>
+    <!-- Contributions -->
+    <string name="contribution_core">Sovelluksen ydin</string>
     <string name="contribution_icons">Kuvakkeet</string>
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktuuri</string>
     <!-- Special Thanks section of About page -->
     <!-- Special Thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Erityiskiitokset</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Sovelluskuvakkeen inspiraatio</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Sovelluksen nimeäminen</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Avoimen lähdekoodin lisenssit</string>
     <!-- Icon Information Popup window -->
     <!-- Name -->
-    <string name="name">Name</string>
+    <string name="name">Nimi</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Drawable</string>
-    <!-- Package prefix -->
-    <string name="component">Component name</string>
+    <string name="drawable">Piirrettävä</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped components</string>
+    <string name="mapped_components">Mapped IDs</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Jos kuvake on vanhentunut uudistuksen vuoksi, luo ongelma Gihubissa.</string>
     <!-- Chevron a11y description -->
-    <string name="toggle_visibility_of_contents">Toggle visibility of contents</string>
+    <string name="toggle_visibility_of_contents">Muokkaa sisällön näkyvyyttä</string>
     <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copy_to_clipboard">Copy to clipboard</string>
-    <string name="copied_text">Copied text</string>
+    <string name="request_icons">Toivo kuvakkeita</string>
+    <string name="copy_to_clipboard">Kopioi leikepöydälle</string>
+    <string name="copied_text">Kopioitu teksti</string>
     <!-- Snackbar content -->
-    <string name="snackbar_request_icons_hint">Request missing icons from the bottom bar</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
-    <string name="snackbar_request_too_large">Copied icon request details to clipboard. To request them, submit the details into the form.</string>
-    <string name="snackbar_use_fallback_link">Open form</string>
-    <string name="clear">Clear</string>
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="snackbar_request_icons_hint">Toivo puuttuvia kuvakkeita alapalkista</string>
+    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="snackbar_request_too_large">Kopioitu kuvaketoivomuksen tiedot leikepöydälle. Toivoaksesi niitä, täytä tiedot lomakkeeseen.</string>
+    <string name="snackbar_use_fallback_link">Avaa lomake</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Puuttuvat kuvakkeet</string>
+    <string name="clear_all">Tyhjennä valinta</string>
+    <string name="select_all">Valitse kaikki</string>
+    <string name="request_icons_button">Toivo</string>
+    <string name="show_options_sheet">Näytä vaihtoehtojen taulukko</string>
+    <string name="toggle_button_expanded">Laajennettu</string>
+    <string name="toggle_button_collapsed">Supistettu</string>
+    <string name="toggle_button_content_description">Vaihtokytkin</string>
+    <string name="icon_request_mail_hint">Lähetä pyyntötiedosto osoitteeseen \u0020</string>
+    <string name="share_file">Jaa tiedosto</string>
+    <string name="save_file">Tallenna tiedosto</string>
+    <string name="copy_components">Copy app IDs</string>
+    <string name="toast_file_saved_successful">Tiedosto tallennettu onnistuneesti</string>
+    <string name="toast_file_save_error">Virhe tiedostoa tallentaessa</string>
+    <string name="toast_file_zip_error">Ei pystytty luomaan pyyntötiedostoa</string>
+    <string name="toast_no_app_available">Mikään sovellus ei pysty suorittamaan tätä toimintoa</string>
+    <!-- New icons screen -->
+    <string name="new_icons_in_version">Uudet kuvakkeet versiossa %1$s</string>
+    <string name="new_icons">Uudet kuvakkeet (%1$s)</string>
 </resources>

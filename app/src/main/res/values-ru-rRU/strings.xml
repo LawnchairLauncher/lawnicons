@@ -11,14 +11,20 @@
     <string name="search_bar_icon_picker">Выберите иконку</string>
     <!-- Search tooltip -->
     <string name="search">Поиск</string>
+    <!-- Clear accessibility action -->
+    <string name="clear">Очистить</string>
     <!-- Text shown when there are no search results-->
     <string name="no_items_found">Иконки %s не найдено</string>
     <!-- About page -->
     <string name="about">О программе</string>
     <!-- External Links -->
+    <!-- Discord link -->
     <!-- GitHub repository link-->
+    <!-- Open Collective repository link-->
     <!-- Icon Request form link -->
     <string name="request_form">Форма запроса иконки</string>
+    <!-- Send feedback form link -->
+    <string name="send_feedback">Send feedback</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Участники</string>
@@ -30,7 +36,7 @@
     <string name="view_on_github">Посмотреть на GitHub</string>
     <!-- Share button on icon info popup -->
     <string name="share">Поделиться</string>
-    <!-- Contribution -->
+    <!-- Contributions -->
     <string name="contribution_core">Основное приложение</string>
     <string name="contribution_icons">Иконки</string>
     <string name="contribution_infra">Инфраструктура</string>
@@ -48,10 +54,10 @@
     <string name="name">Имя</string>
     <!-- Drawable prefix -->
     <string name="drawable">Изображение</string>
-    <!-- Package prefix -->
-    <string name="component">Название компонента</string>
+    <!-- Component -->
+    <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Связанные компоненты</string>
+    <string name="mapped_components">Привязанные ID</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">Если иконка устарела из-за проведенного ребрендинга, создайте проблему на GitHub.</string>
     <!-- Chevron a11y description -->
@@ -62,10 +68,28 @@
     <string name="copied_text">Текст скопирован</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Запросите недостающие иконки в нижней панели</string>
-    <string name="icon_requests_suspended">Icon requests are suspended. Visit us on GitHub if you want to contribute icons.</string>
+    <string name="icon_requests_furfilled">Все иконки добавлены. О ребрендингах сообщайте на GitHub.</string>
+    <string name="icon_requests_suspended">С каждым релизом Lawnicons ненадолго открывается приём запросов на иконки.</string>
     <string name="snackbar_request_too_large">Подробности запроса иконки были скопированы в буфер обмена. Для отправки запроса, отправьте данные через форму.</string>
     <string name="snackbar_use_fallback_link">Открыть форму</string>
-    <string name="clear">Очистить</string>
+    <!-- Missing icons screen -->
+    <string name="missing_icons">Отсутствующие значки</string>
+    <string name="clear_all">Сбросить выбор</string>
+    <string name="select_all">Выбрать все пункты</string>
+    <string name="request_icons_button">Запросить</string>
+    <string name="show_options_sheet">Show options sheet</string>
+    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
+    <string name="share_file">Поделиться файлом</string>
+    <string name="save_file">Сохранить файл</string>
+    <string name="copy_components">Скопировать ID приложений</string>
+    <string name="toast_file_saved_successful">Файл сохранен</string>
+    <string name="toast_file_save_error">Ошибка при сохранении файла</string>
+    <string name="toast_file_zip_error">Не удается создать файл запроса</string>
+    <string name="toast_no_app_available">No app to handle this action</string>
+    <!-- New icons screen -->
     <string name="new_icons_in_version">Новые иконки в v%1$s</string>
     <string name="new_icons">Новые иконки (%1$s)</string>
 </resources>
