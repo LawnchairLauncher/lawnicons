@@ -1,6 +1,6 @@
 name: Report outdated icons
 description: Request changing an icon if its design is outdated.
-labels: ["icon design"]
+labels: ["design update"]
 body:
   - type: textarea
     id: outdated-icon-list
