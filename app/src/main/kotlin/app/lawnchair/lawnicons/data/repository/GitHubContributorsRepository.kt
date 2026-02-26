@@ -24,9 +24,9 @@ val coreContributorIds = listOf(
     10363352,
     // Grabstertv
     49114212,
-    // Bot
+    // Copilot
     198982749,
-    // Bot
+    // Copilot
     175728472,
 )
 
