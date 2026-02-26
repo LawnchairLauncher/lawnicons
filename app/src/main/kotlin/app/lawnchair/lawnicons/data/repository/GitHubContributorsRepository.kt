@@ -24,6 +24,10 @@ val coreContributorIds = listOf(
     10363352,
     // Grabstertv
     49114212,
+    // Copilot
+    198982749,
+    // Copilot
+    175728472,
 )
 
 @SingleIn(LawniconsScope::class)
