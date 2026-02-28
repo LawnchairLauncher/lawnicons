@@ -42,6 +42,14 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 [Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
 
+### TL;DR
+
+1. Study the Lawnicons design guidelines in practice (for example, in Figma) and create a suitable icon (*.svg).
+2. Learn how to find the app ID that you will need to link with the created icon.
+3. Learn how to fork the Lawnicons repository and make a local copy for yourself, where you will add the created icon.
+4. Add the created icon and the app ID to your local copy and push the changes to your fork on GitHub.
+5. Create a pull request to the Lawnicons repository and wait for a review.
+
 ### Approach
 
 The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
