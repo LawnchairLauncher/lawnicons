@@ -4312,6 +4312,7 @@
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.SeasonalLauncher1}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.UnhingedSickLauncher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.UnhingedCryLauncher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.FixedRetentionChallengeLauncher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakFrozenLauncher1Siren}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakFrozenLauncher2ExclamationMarks}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver1Launcher}" drawable="duolingo" name="Duolingo" />
@@ -4332,10 +4333,12 @@
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherAlarmClock}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3AlarmClock}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher4AlarmClock}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherEyes}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3Eyes}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherEmojiQuestionMark}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher2EmojiQuestionMark}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher4EmojiQuestionMark}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherHourglass}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3Hourglass}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher6ExclamationMarksPrefix}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.rstgames.durak/com.rstgames.durak.StartActivity}" drawable="durak_online" name="Durak Online" />
@@ -12411,6 +12414,8 @@
   <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" drawable="proton_calendar" name="Proton Calendar" />
   <item component="ComponentInfo{me.proton.android.drive/me.proton.android.drive.ui.MainActivity}" drawable="proton_drive" name="Proton Drive" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingCalculator}" drawable="generic_calculator_minus_multi_plus_equal" name="Proton Mail" />
+  <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingNotes}" drawable="proton_discreet_notes" name="Proton Mail" />
+  <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingWeather}" drawable="huawei_weather" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.MainActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.activities.SplashActivity}" drawable="proton_mail" name="Proton Mail" />
@@ -12419,7 +12424,9 @@
   <item component="ComponentInfo{proton.android.pass.fdroid/proton.android.pass.ui.MainActivity}" drawable="proton_pass" name="Proton Pass" />
   <item component="ComponentInfo{proton.android.pass/proton.android.pass.ui.MainActivity}" drawable="proton_pass" name="Proton Pass" />
   <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingCalculator}" drawable="generic_calculator_minus_multi_plus_equal" name="Proton VPN" />
-  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingRetro}" drawable="proton_vpn" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingNotes}" drawable="proton_discreet_notes" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingWeather}" drawable="huawei_weather" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingRetro}" drawable="proton_vpn_retro" name="Proton VPN" />
   <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingDark}" drawable="proton_vpn" name="Proton VPN" />
   <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingActivity}" drawable="proton_vpn" name="Proton VPN" />
   <item component="ComponentInfo{ch.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="proton_vpn" name="Proton VPN" />
