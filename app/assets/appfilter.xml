@@ -4056,6 +4056,7 @@
   <item component="ComponentInfo{mobi.mgeek.TunnyBrowser/mobi.mgeek.TunnyBrowser.SplashActivity}" drawable="dolphin_browser" name="Dolphin Browser" />
   <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.DolphinEmulator}" drawable="dolphin_emulator" name="Dolphin Emulator" />
   <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphin_emulator" name="Dolphin Emulator" />
+  <item component="ComponentInfo{org.dolphinemu.mmjr/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphin_emulator" name="Dolphin MMJR2" />
   <item component="ComponentInfo{org.domestika/org.domestika.splash.presentation.activities.SplashActivity}" drawable="domestika" name="Domestika" />
   <item component="ComponentInfo{se.dominossweden.app/com.google.android.archive.ReactivateActivity}" drawable="dominos_pizza" name="Domino's Pizza" />
   <item component="ComponentInfo{zena.dominos/zena.dominos.MainActivity}" drawable="dominos_pizza" name="Domino's Pizza" />
@@ -4341,18 +4342,38 @@
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.LaunchActivity}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.LoginActivity}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSocietyLauncher}" drawable="duolingo" name="Duolingo" />
-  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher}" drawable="duolingo" name="Duolingo" />
-  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver2Launcher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.SeasonalLauncher1}" drawable="duolingo" name="Duolingo" />
-  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver1Launcher}" drawable="duolingo" name="Duolingo" />
-  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver4Launcher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.UnhingedSickLauncher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.UnhingedCryLauncher}" drawable="duolingo" name="Duolingo" />
-  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher6ExclamationMarksPrefix}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.FixedRetentionChallengeLauncher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakFrozenLauncher1Siren}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakFrozenLauncher2ExclamationMarks}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver1Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver2Launcher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver3Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver4Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver5Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver6Launcher}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver7Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver8Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.PreStreakSaver9Launcher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher2Siren}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3Siren}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher7Siren}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherInterrobang}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher5Interrobang}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherAlarmClock}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3AlarmClock}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher4AlarmClock}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherEyes}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3Eyes}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherEmojiQuestionMark}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher2EmojiQuestionMark}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher4EmojiQuestionMark}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncherHourglass}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher3Hourglass}" drawable="duolingo" name="Duolingo" />
+  <item component="ComponentInfo{com.duolingo/com.duolingo.app.StreakSaverLauncher6ExclamationMarksPrefix}" drawable="duolingo" name="Duolingo" />
   <item component="ComponentInfo{com.rstgames.durak/com.rstgames.durak.StartActivity}" drawable="durak_online" name="Durak Online" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.dutch_oss/com.anysoftkeyboard.languagepack.dutch_oss.MainActivity}" drawable="anysoftkeyboard" name="Dutch for AnySoftKeyboard" />
   <item component="ComponentInfo{org.yausername.dvd/org.yausername.dvd.ui.MainActivity}" drawable="dvd" name="dvd" />
@@ -4427,6 +4448,7 @@
   <item component="ComponentInfo{com.easybrain.nonogram/com.easybrain.template.SplashActivity}" drawable="easybrain" name="Easybrain" />
   <item component="ComponentInfo{com.fintopia.idnEasycash.google/com.lingyue.easycash.activity.launch.EasyCashLaunchActivity}" drawable="easycash" name="Easycash" />
   <item component="ComponentInfo{com.video.editor.greattalent/com.media.editor.splash.GuideActivity}" drawable="easycut" name="EasyCut" />
+  <item component="ComponentInfo{im.angry.easyeuicc/im.angry.openeuicc.ui.UnprivilegedMainActivity}" drawable="pixel_ims" name="EasyEUICC" />
   <item component="ComponentInfo{com.mttnow.droid.easyjet/com.easyjet.travel.android.MainActivity}" drawable="easyjet" name="easyJet" />
   <item component="ComponentInfo{com.mttnow.droid.easyjet/com.mttnow.droid.easyjet.ui.home.SplashActivity}" drawable="easyjet" name="easyJet" />
   <item component="ComponentInfo{pk.com.telenor.phoenix/pk.com.telenor.phoenix.views.home.SplashActivity}" drawable="easypaisa" name="Easypaisa" />
@@ -9906,6 +9928,7 @@
   <item component="ComponentInfo{bin.mt.plus.canary/bin.mt.plus.MainDarkIcon}" drawable="mt_manager_canary" name="MT Manager Canary" />
   <item component="ComponentInfo{bin.mt.plus.canary/bin.mt.plus.MainLightIcon}" drawable="mt_manager_canary" name="MT Manager Canary" />
   <item component="ComponentInfo{bin.mt.plus.canary/bin.mt.plus.MainNoBgIcon}" drawable="mt_manager_canary" name="MT Manager Canary" />
+  <item component="ComponentInfo{com.mediatek.gnss.nonframeworklbs/com.mediatek.gnss.nonframeworklbs.MainActivity}" drawable="generic_shell" name="MTK Non-Framework LBS" />
   <item component="ComponentInfo{com.consumerug/com.comviva.webaxn.ui.WebAxnActivity}" drawable="mtn_momo" name="MTN MoMo" />
   <item component="ComponentInfo{br.com.muambator.android/br.com.muambator.android.ui.activity.ListPackageActivity}" drawable="muambator" name="Muambator" />
   <item component="ComponentInfo{com.jellyworkz.mubert/com.jellyworkz.mubert.presentation.SplashActivity}" drawable="mubert" name="Mubert" />
@@ -10541,6 +10564,7 @@
   <item component="ComponentInfo{org.schabi.newpipe/org.schabi.newpipe.VideoItemListActivity}" drawable="newpipe" name="NewPipe" />
   <item component="ComponentInfo{org.schabi.newpipelegacy/org.schabi.newpipelegacy.MainActivity}" drawable="newpipe" name="NewPipe Legacy" />
   <item component="ComponentInfo{org.schabi.newpipe.nightly/org.schabi.newpipe.MainActivity}" drawable="newpipe_nightly" name="NewPipe Nightly" />
+  <item component="ComponentInfo{org.schabi.newpipe.refactor.nightly/org.schabi.newpipe.MainActivity}" drawable="newpipe_nightly" name="NewPipe refactor.nightly" />
   <item component="ComponentInfo{com.javulticat.newpipe/org.schabi.newpipe.MainActivity}" drawable="newpipe" name="NewPipe SponsorBlock" />
   <item component="ComponentInfo{io.github.takusan23.newradiosupporter/io.github.takusan23.newradiosupporter.MainActivity}" drawable="newradiosupporter" name="NewRadioSupporter" />
   <item component="ComponentInfo{co.appreactor.news/common.AppActivity}" drawable="news" name="News" />
@@ -12272,6 +12296,7 @@
   <item component="ComponentInfo{com.yugongkeji.podstool/com.shufeng.podstool.view.splash.SplashActivity}" drawable="podsbattery" name="PodsBattery" />
   <item component="ComponentInfo{com.podverse.fdroid/com.podverse.fdroid.MainActivity}" drawable="podverse" name="Podverse" />
   <item component="ComponentInfo{com.poe.android/com.poe.MainActivity}" drawable="poe" name="Poe" />
+  <item component="ComponentInfo{net.kdt.pojavlaunch.firefly/net.kdt.pojavlaunch.TestStorageActivity}" drawable="hmcl_pe" name="Pojav Glow Worm" />
   <item component="ComponentInfo{net.kdt.pojavlaunch/com.google.android.archive.ReactivateActivity}" drawable="hmcl_pe" name="PojavLauncher" />
   <item component="ComponentInfo{net.kdt.pojavlaunch.debug/net.kdt.pojavlaunch.TestStorageActivity}" drawable="hmcl_pe" name="PojavLauncher" />
   <item component="ComponentInfo{net.kdt.pojavlaunch/net.kdt.pojavlaunch.PojavLoginActivity}" drawable="hmcl_pe" name="PojavLauncher" />
@@ -12490,6 +12515,9 @@
   <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" drawable="proton_calendar" name="Proton Calendar" />
   <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" drawable="proton_calendar" name="Proton Calendar" />
   <item component="ComponentInfo{me.proton.android.drive/me.proton.android.drive.ui.MainActivity}" drawable="proton_drive" name="Proton Drive" />
+  <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingCalculator}" drawable="generic_calculator_minus_multi_plus_equal" name="Proton Mail" />
+  <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingNotes}" drawable="proton_discreet_notes" name="Proton Mail" />
+  <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingWeather}" drawable="huawei_weather" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.MainActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.RoutingActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.activities.SplashActivity}" drawable="proton_mail" name="Proton Mail" />
@@ -12497,11 +12525,13 @@
   <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.ui.MailboxActivity}" drawable="proton_mail" name="Proton Mail" />
   <item component="ComponentInfo{proton.android.pass.fdroid/proton.android.pass.ui.MainActivity}" drawable="proton_pass" name="Proton Pass" />
   <item component="ComponentInfo{proton.android.pass/proton.android.pass.ui.MainActivity}" drawable="proton_pass" name="Proton Pass" />
-  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingRetro}" drawable="proton_vpn" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingCalculator}" drawable="generic_calculator_minus_multi_plus_equal" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingNotes}" drawable="proton_discreet_notes" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingWeather}" drawable="huawei_weather" name="Proton VPN" />
+  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingRetro}" drawable="proton_vpn_retro" name="Proton VPN" />
   <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingDark}" drawable="proton_vpn" name="Proton VPN" />
   <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingActivity}" drawable="proton_vpn" name="Proton VPN" />
   <item component="ComponentInfo{ch.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="proton_vpn" name="Proton VPN" />
-  <item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingNotes}" drawable="proton_vpn" name="Proton VPN" />
   <item component="ComponentInfo{me.proton.wallet.android/me.proton.wallet.android.activity.MainActivity}" drawable="proton_wallet" name="Proton Wallet" />
   <item component="ComponentInfo{ru.protonmod.next/ch.protonvpn.android.RoutingActivity}" drawable="proton_vpn" name="ProtonMOD-Next" />
   <item component="ComponentInfo{com.propel.ebenefits/com.propel.ebenefits.MainActivity}" drawable="providers" name="Providers" />
