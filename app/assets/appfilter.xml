@@ -10470,8 +10470,8 @@
   <item component="ComponentInfo{pt.card4b.navegante/pt.card4b.navegante.ui.MainActivity}" drawable="navegante" name="navegante" />
   <item component="ComponentInfo{jp.naver.lineantivirus.android/jp.naver.lineantivirus.android.ui.main.activity.lv_ServiceUseTermsActivity}" drawable="naver_antivirus" name="NAVER Antivirus" />
   <item component="ComponentInfo{com.nhn.android.naverdic/com.nhn.android.naverdic.WelcomeActivity}" drawable="naver_dictionary" name="NAVER Dictionary" />
-  <item component="ComponentInfo{com.nhn.android.nmap/com.naver.map.LaunchActivity}" drawable="naver_map" name="NAVER Map" />
-  <item component="ComponentInfo{com.nhn.android.nmap/com.nhn.android.nmap.ui.mappages.MapBasicPage}" drawable="naver_map" name="NAVER Map" />
+  <item component="ComponentInfo{com.nhn.android.nmap/com.naver.map.LaunchActivity}" drawable="naver_maps" name="NAVER Maps" />
+  <item component="ComponentInfo{com.nhn.android.nmap/com.nhn.android.nmap.ui.mappages.MapBasicPage}" drawable="naver_maps" name="NAVER Maps" />
   <item component="ComponentInfo{com.naver.labs.translator/com.naver.labs.translator.LauncherDark}" drawable="naver_papago" name="Naver Papago" />
   <item component="ComponentInfo{com.naver.labs.translator/com.naver.labs.translator.ui.main.SplashActivity}" drawable="naver_papago" name="Naver Papago" />
   <item component="ComponentInfo{com.naver.labs.translator/com.naver.labs.translator.LauncherDefault}" drawable="naver_papago" name="Naver Papago" />
@@ -12048,6 +12048,7 @@
   <item component="ComponentInfo{aculix.pinload.app/aculix.pinload.app.ui.MainActivity}" drawable="pinload" name="Pinload" />
   <item component="ComponentInfo{rk.android.app.pinnedshortcuts/rk.android.app.pinnedshortcuts.activities.launch.LaunchActivity}" drawable="pinned_shortcuts" name="Pinned Shortcuts" />
   <item component="ComponentInfo{dev.sasikanth.pinnit/dev.sasikanth.pinnit.SplashActivity}" drawable="pinnit" name="Pinnit" />
+  <item component="ComponentInfo{dev.sasikanth.pinnit2/dev.sasikanth.pinnit.MainActivity}" drawable="pinnit" name="Pinnit" />
   <item component="ComponentInfo{com.mediocre.pinout/com.mediocre.pinout.MainActivity}" drawable="pinout" name="Pinout" />
   <item component="ComponentInfo{com.mediocre.pinout/com.mediocre.pinout.Main}" drawable="pinout" name="PinOut" />
   <item component="ComponentInfo{pin.pinterest.video.downloader.forpinterest.pinsaver/com.atlasv.android.downloader.scaffold.ui.feature.splash.SplashActivity}" drawable="download_progress_plus_plus" name="PinSaver" />
@@ -17352,6 +17353,7 @@
   <item component="ComponentInfo{de.fiducia.smartphone.android.securego.vr/de.fiducia.smartphone.android.securego.vr.launcher_ceee54dfff0adb568a4fc408d93b5740bb0a7f0a142c39b76958ef71fd7a5c5e}" drawable="vr_securego" name="VR SecureGo" />
   <item component="ComponentInfo{de.fiduciagad.securego.vr/de.fiduciagad.securego.MainActivity}" drawable="vr_securego_plus" name="VR SecureGo plus" />
   <item component="ComponentInfo{com.vrchat.mobile.playstore/com.vrchat.app.MainActivity}" drawable="vrchat" name="VRChat" />
+  <item component="ComponentInfo{com.vrchat.mobile.playstore/com.vrchat.app.ui.activities.MainActivity}" drawable="vrchat" name="VRChat" />
   <item component="ComponentInfo{com.riftcat.vridge2/com.riftcat.vridge.MainActivity}" drawable="vridge" name="VRidge" />
   <item component="ComponentInfo{com.riftcat.vridge2/com.riftcat.vridge.DiagnosticEntry}" drawable="vridge" name="VRidge" />
   <item component="ComponentInfo{de.hafas.android.vrn/de.hafas.main.HafasApp}" drawable="myvrn" name="VRN Ticket" />
@@ -17606,6 +17608,8 @@
   <item component="ComponentInfo{gr.cosmote.whatsup/gr.cosmote.whatsup.activities.SplashScreenActivity}" drawable="whats_up" name="WHAT'S UP" />
   <item component="ComponentInfo{com.what3words.android/com.what3words.android.ui.splash.SplashActivity}" drawable="what3words" name="what3words" />
   <item component="ComponentInfo{com.what3words.android/com.what3words.android.ui.main.MainActivity}" drawable="what3words" name="what3words" />
+  <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.StartingScreenActivity}" drawable="whatauto" name="Whatauto" />
+  <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.HomeActivity}" drawable="whatauto" name="Whatauto" />
   <item component="ComponentInfo{com.whatnot_mobile/com.whatnot.MainActivity}" drawable="whatnot" name="Whatnot" />
   <item component="ComponentInfo{in.whatsaga.whatsapplongerstatus/in.whatsaga.whatsapplongerstatus.activities.StartupActivity}" drawable="whatsaga" name="WhatSaga" />
   <item component="ComponentInfo{com.whatsapp/com.whatsapp.Icon0}" drawable="whatsapp" name="WhatsApp" />
@@ -17742,8 +17746,6 @@
   <item component="ComponentInfo{io.kuenzler.whatsappwebtogo/io.kuenzler.whatsappwebtogo.MainActivity}" drawable="whatsapp_web_to_go" name="WhatsApp Web To Go" />
   <item component="ComponentInfo{io.kuenzler.whatsappwebtogo/io.kuenzler.whatsappwebtogo.WebviewActivity}" drawable="whatsapp_web_to_go" name="WhatsApp Web To Go" />
   <item component="ComponentInfo{com.vishnu.whatsappcleaner/com.vishnu.whatsappcleaner.MainActivity}" drawable="whatsappcleaner" name="WhatsAppCleaner" />
-  <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.StartingScreenActivity}" drawable="whatsauto" name="WhatsAuto" />
-  <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.HomeActivity}" drawable="whatsauto" name="WhatsAuto" />
   <item component="ComponentInfo{com.simplified.wsstatussaver/com.simplified.wsstatussaver.activities.StatusesActivity}" drawable="whatsave" name="WhatSave" />
   <item component="ComponentInfo{com.gmail.anubhavdas54.whatsdeleted/com.gmail.anubhavdas54.whatsdeleted.MainActivity}" drawable="generic_trash_can" name="WhatsDeleted" />
   <item component="ComponentInfo{com.whereismytrain.android/com.whereismytrain.view.activities.MainPagerActivity}" drawable="where_is_my_train" name="Where is my Train" />
@@ -18547,6 +18549,7 @@
   <item component="ComponentInfo{ru.getpharma.eapteka/ru.getpharma.eapteka.splashscreen.SplashActivity}" drawable="eapteka" name="ЕАПТЕКА ~~ Eapteka" />
   <item component="ComponentInfo{ru.getpharma.eapteka/ru.getpharma.eapteka.DefaultIcon}" drawable="eapteka" name="ЕАПТЕКА ~~ Eapteka" />
   <item component="ComponentInfo{ru.getpharma.eapteka/ru.getpharma.eapteka.application.EaptekaSingleActivity}" drawable="eapteka" name="ЕАПТЕКА ~~ Eapteka" />
+  <item component="ComponentInfo{ru.getpharma.eapteka/ru.getpharma.eapteka.application.EaptekaComposeSingleActivity}" drawable="eapteka" name="ЕАПТЕКА ~~ Eapteka" />
   <item component="ComponentInfo{com.edadeal.android/com.edadeal.android.ui.main.MainActivity}" drawable="edadeal" name="Едадил ~~ Edadeal" />
   <item component="ComponentInfo{com.programmisty.emiasapp/com.programmisty.emiasapp.MainActivity}" drawable="emias_info" name="ЕМИАС.ИНФО ~~ EMIAS.INFO" />
   <item component="ComponentInfo{com.programmisty.emiasapp/ru.solitclouds.android.emiasinfo.SplashScreenActivity}" drawable="emias_info" name="ЕМИАС.ИНФО ~~ EMIAS.INFO" />
