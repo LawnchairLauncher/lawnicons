@@ -59,20 +59,20 @@ Lawnicons on the Play Store will install as a different app from other sources.
         <img alt="Lawnicons localization on Crowdin" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
+### Development
+You can help with issues. Please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help).
+
 ### Icons
 You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. To help with icon requests, please prioritize popular apps with 5M+ installations.
 
 > [!NOTE]
 > Each icon approved and merged on the first try fulfills [a simple community request](https://lawnicons-requests.vercel.app/?filters=easy).
- 
-### Development
-You can help with issues. Please refer to our guidelines.
 
 ### Icon requests
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-We recommend creating icons yourself, given that monthly requests outnumber new icons by dozens of times.
+Due to our large request queue, requests can take years—or never be fulfilled—since our community only creates icons they personally need, and in small batches. However, if you contribute icons by following the Lawnicons guidelines, they could appear within a month.
 
 > [!TIP]
 > Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
