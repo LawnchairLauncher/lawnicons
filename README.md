@@ -27,17 +27,13 @@ Try Lawnicons on the latest version of Lawnchair. You can enable themed icons by
 
 <p align="left">
   <a href="https://play.google.com/store/apps/details?id=app.lawnchair.lawnicons.play">
-    <img src="docs/images/badge-google-play.png" alt="Get it on Google Play" height="60" />
-  </a>
+    <img src="docs/images/badge-google-play.png" alt="Get it on Google Play" height="60" /></a>
   <a href="https://apt.izzysoft.de/fdroid/index/apk/app.lawnchair.lawnicons">
-    <img src="docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="60" />
-  </a>
+    <img src="docs/images/badge-izzyondroid.png" alt="Get it on IzzyOnDroid" height="60" /></a>
   <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/LawnchairLauncher/lawnicons">
-    <img src="docs/images/badge-obtainium.png" alt="Get it on Obtainium" height="60" />
-  </a>
+    <img src="docs/images/badge-obtainium.png" alt="Get it on Obtainium" height="60" /></a>
   <a href="https://github.com/LawnchairLauncher/lawnicons/releases/latest">
-    <img src="docs/images/badge-github.png" alt="Get it on GitHub" height="60" />
-  </a>
+    <img src="docs/images/badge-github.png" alt="Get it on GitHub" height="60" /></a>
 </p>
 
 Lawnicons on the Play Store will install as a different app from other sources.
