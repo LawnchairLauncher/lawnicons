@@ -52,14 +52,11 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Contributing
 <div align="left">
     <a href="CONTRIBUTING.md">
-        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff">
-    </a>
+        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
     <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Icon requests" src="https://img.shields.io/badge/Icon%20requests-94009E?logo=vercel&logoColor=ffffff">
-    </a>
+        <img alt="Icon requests" src="https://img.shields.io/badge/Icon%20requests-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="https://lawnchair.crowdin.com/lawnicons">
-        <img alt="Lawnicons localization on Crowdin" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff">
-    </a>        
+        <img alt="Lawnicons localization on Crowdin" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
 ### Icons
