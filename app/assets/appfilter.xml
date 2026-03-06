@@ -2781,8 +2781,8 @@
   <item component="ComponentInfo{au.com.carsales/au.com.carsales.globalapp.SplashActivity}" drawable="carsales" name="carsales" />
   <item component="ComponentInfo{br.gov.dataprev.carteiradigital/br.gov.dataprev.carteiradigital.MainActivity}" drawable="carteira_de_trabalho_digital" name="Carteira de Trabalho Digital" />
   <item component="ComponentInfo{br.gov.serpro.cnhe/br.gov.serpro.cnhe.MainActivity}" drawable="carteira_digital_de_transito" name="Carteira Digital de Transito" />
-  <item component="ComponentInfo{com.round_tower.app.android.wallpaper.cartogram/com.round_tower.cartogram.feature.splash.SplashActivity}" drawable="maps" name="Cartogram" />
-  <item component="ComponentInfo{com.round_tower.app.android.wallpaper.cartogram/com.round_tower.cartogram.feature.main.MainActivity}" drawable="maps" name="Cartogram" />
+  <item component="ComponentInfo{com.round_tower.app.android.wallpaper.cartogram/com.round_tower.cartogram.feature.splash.SplashActivity}" drawable="cartogram" name="Cartogram" />
+  <item component="ComponentInfo{com.round_tower.app.android.wallpaper.cartogram/com.round_tower.cartogram.feature.main.MainActivity}" drawable="cartogram" name="Cartogram" />
   <item component="ComponentInfo{br.com.mobits.cartolafc/com.globo.cartolafc.splash.SplashActivity}" drawable="cartola" name="Cartola" />
   <item component="ComponentInfo{pt.continente.ContinenteTelemovel/pt.continente.ContinenteTelemovel.MainActivity}" drawable="cartao_continente" name="Cartão Continente" />
   <item component="ComponentInfo{br.gov.caixa.cartoes/br.gov.caixa.cartoes.activities.SplashActivity_}" drawable="cartoes_caixa" name="Cartões CAIXA" />
@@ -6464,18 +6464,18 @@
   <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.homescreenwidget.WidgetIntentResolverActivity}" drawable="google_keep" name="Google Keep" />
   <item component="ComponentInfo{com.google.android.apps.kids.home/com.google.android.apps.kids.home.accountsetup.AccountSignInActivity}" drawable="google_kids_space" name="Google Kids Space" />
   <item component="ComponentInfo{com.google.ar.lens/com.google.vr.apps.ornament.app.lens.LensLauncherActivity}" drawable="google_lens" name="Google Lens" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.android.internal.app.ResolverActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.DestinationActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.NavigationActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.SearchActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.SettingsActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.LatitudeActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.PlacesActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.TrafficHubActivity}" drawable="maps" name="Google Maps" />
-  <item component="ComponentInfo{com.google.android.apps.mapslite/com.google.androidbrowserhelper.trusted.LauncherActivity}" drawable="maps" name="Google Maps Go" />
-  <item component="ComponentInfo{com.google.android.apps.mapslite/com.google.maps.lite.twa.MapsLiteTwaLauncherActivity}" drawable="maps" name="Google Maps Go" />
-  <item component="ComponentInfo{com.google.android.apps.mapslite/org.chromium.webapk.shell_apk.MainActivity}" drawable="maps" name="Google Maps Go" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.android.internal.app.ResolverActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.DestinationActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.NavigationActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.SearchActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.driveabout.app.SettingsActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.LatitudeActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.PlacesActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.TrafficHubActivity}" drawable="google_maps" name="Google Maps" />
+  <item component="ComponentInfo{com.google.android.apps.mapslite/com.google.androidbrowserhelper.trusted.LauncherActivity}" drawable="google_maps" name="Google Maps Go" />
+  <item component="ComponentInfo{com.google.android.apps.mapslite/com.google.maps.lite.twa.MapsLiteTwaLauncherActivity}" drawable="google_maps" name="Google Maps Go" />
+  <item component="ComponentInfo{com.google.android.apps.mapslite/org.chromium.webapk.shell_apk.MainActivity}" drawable="google_maps" name="Google Maps Go" />
   <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.archive.ReactivateActivity}" drawable="google_meet" name="Google Meet" />
   <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivity}" drawable="google_meet" name="Google Meet" />
   <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivitySecondLauncher}" drawable="google_meet" name="Google Meet" />
