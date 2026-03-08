@@ -21,7 +21,7 @@ Lawnicons is an icon pack developed by the Lawnchair team and supported by our c
 
 Try Lawnicons on the latest version of Lawnchair. You can enable themed icons by going to `Home Settings → General → Icon Style` and choosing the desired option.
 
-[Try Lawnchair](https://play.google.com/store/apps/details?id=app.lawnchair.play)
+[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
 
 ## Download
 
