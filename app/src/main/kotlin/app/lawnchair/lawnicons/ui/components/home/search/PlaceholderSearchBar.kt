@@ -17,8 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @Composable
 fun PlaceholderSearchBar(
@@ -56,7 +56,7 @@ fun PlaceholderSearchBar(
 @PreviewLawnicons
 @Composable
 private fun PlaceholderSearchBarPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         PlaceholderSearchBar()
     }
 }

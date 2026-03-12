@@ -16,48 +16,44 @@
 
 package app.lawnchair.lawnicons.ui.destination.home
 
-import android.util.Log
 import androidx.compose.foundation.text.input.TextFieldState
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.Announcement
+import app.lawnchair.lawnicons.data.model.AnnouncementLocation
 import app.lawnchair.lawnicons.data.model.IconInfoModel
-import app.lawnchair.lawnicons.data.model.IconRequestModel
 import app.lawnchair.lawnicons.data.model.SearchMode
-import app.lawnchair.lawnicons.data.repository.DummySharedPreferences
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
-import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.AnnouncementsRepository
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
-import app.lawnchair.lawnicons.ui.util.Constants
-import app.lawnchair.lawnicons.ui.util.SampleData
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.binding
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
+sealed interface HomeUiState {
+    data object Loading : HomeUiState
+    data class Success(
+        val iconInfoModel: IconInfoModel,
+        val announcements: List<Announcement>,
+        val hasNewIcons: Boolean,
+        val hasIconRequests: Boolean,
+    ) : HomeUiState
+}
+
 interface HomeViewModel {
-    val iconInfoModel: StateFlow<IconInfoModel>
-    val searchedIconInfoModel: StateFlow<IconInfoModel>
-    val iconRequestModel: StateFlow<IconRequestModel?>
-    val newIconsInfoModel: StateFlow<IconInfoModel>
+    val uiState: StateFlow<HomeUiState>
 
-    val preferenceManager: PreferenceManager
-
-    var iconRequestsEnabled: Boolean
-    var announcements: List<Announcement>
-
-    var expandSearch: Boolean
-
-    val searchMode: SearchMode
+    val searchResults: StateFlow<IconInfoModel>
+    val searchMode: StateFlow<SearchMode>
     val searchTermTextState: TextFieldState
 
     fun searchIcons(query: String)
@@ -72,65 +68,66 @@ class HomeViewModelImpl(
     private val newIconsRepository: NewIconsRepository,
     private val iconRequestRepository: IconRequestRepository,
     private val announcementsRepository: AnnouncementsRepository,
-    override val preferenceManager: PreferenceManager,
 ) : ViewModel(),
     HomeViewModel {
-    override val iconInfoModel = iconRepository.iconInfoModel
-    override val searchedIconInfoModel = iconRepository.searchedIconInfoModel
-    override val iconRequestModel = iconRequestRepository.iconRequestList
-    override val newIconsInfoModel = newIconsRepository.newIconsInfoModel
 
-    override var iconRequestsEnabled = false
-    override var announcements = listOf<Announcement>()
+    private val _searchMode = MutableStateFlow(SearchMode.LABEL)
+    override val searchMode = _searchMode.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        SearchMode.LABEL,
+    )
 
-    override var expandSearch by mutableStateOf(false)
-
-    private var _searchMode by mutableStateOf(SearchMode.LABEL)
-
-    override val searchMode: SearchMode
-        get() = _searchMode
+    private val announcementsFlow = flow {
+        val result = runCatching {
+            announcementsRepository.getAnnouncements()
+                .filter { it.location == AnnouncementLocation.Home }
+        }.getOrDefault(emptyList())
+        emit(result)
+    }
 
     override val searchTermTextState = TextFieldState()
 
-    init {
-        viewModelScope.launch {
-            runCatching {
-                iconRequestRepository.getEnabledState()
-            }.onSuccess {
-                iconRequestsEnabled = it
-            }.onFailure {
-                Log.e(
-                    "LawniconsViewModel",
-                    "Failed to load icon request settings",
-                    it,
-                )
-            }
+    override val uiState: StateFlow<HomeUiState> = combine(
+        iconRepository.iconInfoModel,
+        newIconsRepository.newIconsInfoModel,
+        iconRequestRepository.iconRequestList,
+        announcementsFlow,
+    ) { iconInfo, newIcons, requests, announcements ->
+        if (iconInfo.iconInfo.isEmpty()) {
+            HomeUiState.Loading
+        } else {
+            HomeUiState.Success(
+                iconInfoModel = iconInfo,
+                announcements = announcements,
+                hasNewIcons = newIcons.iconCount > 0,
+                hasIconRequests = !requests?.list.isNullOrEmpty(),
+            )
         }
-        viewModelScope.launch {
-            runCatching {
-                announcementsRepository.getAnnouncements()
-            }.onSuccess {
-                announcements = it
-            }.onFailure {
-                Log.e(
-                    "LawniconsViewModel",
-                    "Failed to load announcements",
-                    it,
-                )
-            }
-        }
-    }
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5_000),
+        HomeUiState.Loading,
+    )
+
+    override val searchResults: StateFlow<IconInfoModel> = iconRepository
+        .searchedIconInfoModel
+        .stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5000),
+            IconInfoModel(emptyList(), 0),
+        )
 
     override fun searchIcons(query: String) {
         viewModelScope.launch {
-            iconRepository.search(searchMode, searchTermTextState.text.toString())
+            iconRepository.search(_searchMode.value, searchTermTextState.text.toString())
         }
     }
 
     override fun changeMode(mode: SearchMode) {
-        _searchMode = mode
+        _searchMode.value = mode
         viewModelScope.launch {
-            iconRepository.search(searchMode, searchTermTextState.text.toString())
+            iconRepository.search(_searchMode.value, searchTermTextState.text.toString())
         }
     }
 
@@ -139,37 +136,4 @@ class HomeViewModelImpl(
             iconRepository.clearSearch()
         }
     }
-}
-
-class DummyLawniconsViewModel : HomeViewModel {
-    private val list = SampleData.iconInfoList
-
-    override val iconInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
-    override val searchedIconInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
-    override val iconRequestModel = MutableStateFlow(IconRequestModel(list = listOf(), iconCount = 0)).asStateFlow()
-    override val newIconsInfoModel = MutableStateFlow(IconInfoModel(iconInfo = list, iconCount = list.size)).asStateFlow()
-
-    override val preferenceManager = PreferenceManager(DummySharedPreferences())
-
-    override var iconRequestsEnabled = true
-    override var announcements = listOf(
-        Announcement(
-            title = "Announcement 1",
-            description = "This is the first announcement",
-            icon = "ic_award",
-            url = Constants.WEBSITE,
-        ),
-    )
-
-    override var expandSearch by mutableStateOf(false)
-
-    override val searchTermTextState = TextFieldState()
-
-    override val searchMode = SearchMode.LABEL
-
-    override fun searchIcons(query: String) {}
-
-    override fun changeMode(mode: SearchMode) {}
-
-    override fun clearSearch() {}
 }

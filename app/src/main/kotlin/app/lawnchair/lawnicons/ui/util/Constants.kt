@@ -5,6 +5,7 @@ object Constants {
     const val WEBSITE = "https://lawnchair.app/"
     const val GITHUB = WEBSITE + "lawnicons/"
     const val DISCORD = WEBSITE + "discord/"
+    const val OPEN_COLLECTIVE = WEBSITE + "open-collective/"
 
     const val ICON_PICKER_INTENT_ACTION = "com.novalauncher.THEME"
 }

@@ -16,11 +16,21 @@
 
 package app.lawnchair.lawnicons.data.model
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
+enum class AnnouncementLocation {
+    @SerialName("home")
+    Home,
+
+    @SerialName("iconrequest")
+    IconRequest,
+}
+
+@Serializable
 data class Announcements(
-    val version: Int = 1,
+    val version: Int = 2,
     val announcements: List<Announcement>,
 )
 
@@ -30,4 +40,5 @@ data class Announcement(
     val description: String,
     val icon: String,
     val url: String,
+    val location: AnnouncementLocation,
 )

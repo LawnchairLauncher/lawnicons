@@ -18,8 +18,11 @@ package app.lawnchair.lawnicons.data.api
 
 import app.lawnchair.lawnicons.data.model.Announcements
 import retrofit2.http.GET
+import retrofit2.http.Header
 
 interface AnnouncementsAPI {
     @GET("lawnicons/announcements.json")
-    suspend fun getAnnouncements(): Announcements
+    suspend fun getAnnouncements(
+        @Header("Cache-Control") cacheControl: String = "public, max-age=0, max-stale=604800",
+    ): Announcements
 }

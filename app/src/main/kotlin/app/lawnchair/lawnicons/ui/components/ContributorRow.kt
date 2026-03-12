@@ -13,10 +13,10 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
@@ -72,7 +72,7 @@ fun ContributorRow(
 @PreviewLawnicons
 @Composable
 private fun ContributorRowPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         ContributorRow(
             name = "User",
             photoUrl = "https://lawnchair.app/images/lawnchair.png",

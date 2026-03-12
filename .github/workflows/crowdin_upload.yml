@@ -6,6 +6,7 @@ on:
       - 'develop'
     paths:
       - app/src/main/res # Trigger only when there are changes in the res directory.
+      - fastlane/metadata/android/en-US # Trigger when Fastlane source metadata changes.
   workflow_dispatch:
 
 jobs:

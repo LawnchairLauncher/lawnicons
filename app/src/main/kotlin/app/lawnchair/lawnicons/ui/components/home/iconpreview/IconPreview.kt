@@ -30,8 +30,6 @@ import androidx.compose.material3.MaterialShapes
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.toShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -41,8 +39,9 @@ import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.data.model.IconInfo
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.LocalLawniconsActions
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 import kotlin.math.ln
 
@@ -56,20 +55,20 @@ val ColorScheme.iconColor: Color
 @Composable
 fun IconPreview(
     iconInfo: IconInfo,
-    onSendResult: (IconInfo) -> Unit,
     modifier: Modifier = Modifier,
     iconBackground: Color? = null,
-    isIconPicker: Boolean = false,
+    showSheet: Boolean = false,
+    onToggleSheet: (Boolean) -> Unit = {},
 ) {
-    val isIconInfoShown = rememberSaveable { mutableStateOf(false) }
+    val actions = LocalLawniconsActions.current
     IconPreview(
         iconInfo = iconInfo,
-        onSendResult = onSendResult,
+        onSendResult = actions.onSendResult,
         modifier = modifier,
         iconBackground = iconBackground,
-        isIconPicker = isIconPicker,
-        showSheet = isIconInfoShown.value,
-        onToggleSheet = { isIconInfoShown.value = it },
+        isIconPicker = actions.isIconPicker,
+        showSheet = showSheet,
+        onToggleSheet = onToggleSheet,
     )
 }
 
@@ -150,7 +149,7 @@ fun IconPreview(
 @PreviewLawnicons
 @Composable
 private fun IconPreviewComposablePreview() {
-    LawniconsTheme {
+    PreviewProviders {
         IconPreview(
             iconInfo = SampleData.iconInfoSample,
             {},

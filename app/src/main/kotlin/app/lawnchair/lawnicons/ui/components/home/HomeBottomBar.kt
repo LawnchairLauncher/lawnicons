@@ -1,6 +1,6 @@
 package app.lawnchair.lawnicons.ui.components.home
 
-import android.content.Context
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.offset
@@ -9,6 +9,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FloatingToolbarDefaults
 import androidx.compose.material3.FloatingToolbarDefaults.ScreenOffset
+import androidx.compose.material3.FloatingToolbarExitDirection
 import androidx.compose.material3.FloatingToolbarScrollBehavior
 import androidx.compose.material3.HorizontalFloatingToolbar
 import androidx.compose.material3.Icon
@@ -22,6 +23,7 @@ import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
@@ -30,14 +32,16 @@ import app.lawnchair.lawnicons.ui.theme.icon.Discord
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
+import app.lawnchair.lawnicons.ui.theme.icon.OpenCollective
 import app.lawnchair.lawnicons.ui.theme.icon.Search
 import app.lawnchair.lawnicons.ui.util.Constants
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.visitUrl
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun BoxScope.HomeBottomToolbar(
-    context: Context,
     showIconRequests: Boolean,
     onNavigateToAbout: () -> Unit,
     onNavigateToIconRequest: () -> Unit,
@@ -46,6 +50,8 @@ fun BoxScope.HomeBottomToolbar(
     scrollBehavior: FloatingToolbarScrollBehavior,
     modifier: Modifier = Modifier,
 ) {
+    val context = LocalContext.current
+
     HorizontalFloatingToolbar(
         expanded = true,
         scrollBehavior = scrollBehavior,
@@ -90,6 +96,22 @@ fun BoxScope.HomeBottomToolbar(
                 ) {
                     Icon(
                         imageVector = LawnIcons.Github,
+                        contentDescription = stringResource(id = R.string.github),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
+
+            SimpleTooltipBox(
+                label = stringResource(id = R.string.open_collective),
+            ) {
+                IconButton(
+                    onClick = {
+                        context.visitUrl(Constants.OPEN_COLLECTIVE)
+                    },
+                ) {
+                    Icon(
+                        imageVector = LawnIcons.OpenCollective,
                         contentDescription = stringResource(id = R.string.github),
                         modifier = Modifier.requiredSize(24.dp),
                     )
@@ -153,5 +175,40 @@ private fun SimpleTooltipBox(
         modifier = modifier,
     ) {
         content()
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun SimpleTooltipBoxPreview() {
+    PreviewProviders {
+        SimpleTooltipBox(
+            label = "Example",
+        ) {
+            Icon(
+                LawnIcons.About,
+                contentDescription = null,
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3ExpressiveApi::class)
+@PreviewLawnicons
+@Composable
+private fun HomeBottomToolbarPreview() {
+    PreviewProviders {
+        Box {
+            HomeBottomToolbar(
+                showIconRequests = true,
+                onNavigateToAbout = {},
+                onNavigateToIconRequest = {},
+                onIconRequestUnavailable = {},
+                onExpandSearch = {},
+                scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
+                    FloatingToolbarExitDirection.Bottom,
+                ),
+            )
+        }
     }
 }

@@ -48,6 +48,9 @@ object ConfigProcessor {
             // Write AppFilter to resource directory
             XmlUtil.writeDocumentToFile(appFilterDocument, "$it/xml/appfilter.xml")
             println("Created appfilter.xml")
+            // Write icon_config.xml for Motorola launcher support
+            XmlUtil.writeDocumentToFile(appFilterDocument, "$it/xml/icon_config.xml")
+            println("Created icon_config.xml")
         }
     }
 

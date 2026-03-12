@@ -48,6 +48,8 @@ import app.lawnchair.lawnicons.ui.components.core.placeholder.placeholder
 import app.lawnchair.lawnicons.ui.components.core.placeholder.shimmer
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.iconColor
+import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.toPaddingValues
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -136,5 +138,13 @@ fun PlaceholderUI(
                 ) {}
             }
         }
+    }
+}
+
+@PreviewLawnicons
+@Composable
+private fun PlaceholderUIPreview() {
+    PreviewProviders {
+        PlaceholderUI()
     }
 }

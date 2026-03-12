@@ -14,9 +14,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceContainerColor
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -91,7 +91,7 @@ fun ListRowDescription(description: String, modifier: Modifier = Modifier) {
 @PreviewLawnicons
 @Composable
 private fun SimpleListRowPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         SimpleListRow(
             label = "Example",
             description = "Example description",

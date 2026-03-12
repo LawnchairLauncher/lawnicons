@@ -51,11 +51,11 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.components.ContributorRow
 import app.lawnchair.lawnicons.ui.components.core.LawniconsScaffold
 import app.lawnchair.lawnicons.ui.components.core.SimpleListRow
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.AppIcon
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import kotlinx.serialization.Serializable
 
 enum class ColumnTypes {
@@ -218,44 +218,44 @@ private fun ListHeader(label: String, modifier: Modifier = Modifier) {
 
 private val coreContributors = listOf(
     Contributor(
+        id = 8080853,
         name = "Suphon T.",
         username = "paphonb",
-        photoUrl = "https://avatars.githubusercontent.com/u/8080853",
         socialUrl = "https://x.com/paphonb",
         descriptionRes = R.string.contribution_core,
     ),
     Contributor(
+        id = 70206496,
         name = "SuperDragonXD",
         username = "SuperDragonXD",
-        photoUrl = "https://avatars.githubusercontent.com/u/70206496",
         socialUrl = "https://github.com/SuperDragonXD",
         descriptionRes = R.string.contribution_core,
     ),
     Contributor(
+        id = 100310118,
         name = "Patryk Radziszewski",
         username = "Chefski",
-        photoUrl = "https://avatars.githubusercontent.com/u/100310118",
         socialUrl = "https://github.com/Chefski",
         descriptionRes = R.string.contribution_icons,
     ),
     Contributor(
+        id = 60105060,
         name = "Gleb",
         username = "x9136",
-        photoUrl = "https://avatars.githubusercontent.com/u/60105060",
         socialUrl = "https://github.com/x9136",
         descriptionRes = R.string.contribution_icons,
     ),
     Contributor(
+        id = 49114212,
         name = "Grabster",
         username = "Grabstertv",
-        photoUrl = "https://avatars.githubusercontent.com/u/49114212",
         socialUrl = "https://x.com/grabstertv",
         descriptionRes = R.string.contribution_icons,
     ),
     Contributor(
+        id = 10363352,
         name = "Zongle Wang",
         username = "Goooler",
-        photoUrl = "https://avatars.githubusercontent.com/u/10363352",
         socialUrl = "https://github.com/Goooler",
         descriptionRes = R.string.contribution_infra,
     ),
@@ -263,23 +263,31 @@ private val coreContributors = listOf(
 
 private val specialThanks = listOf(
     Contributor(
+        id = 52837599,
         name = "Eatos",
-        photoUrl = "https://avatars.githubusercontent.com/u/52837599",
         socialUrl = "https://x.com/eatosapps",
         descriptionRes = R.string.special_thanks_icon,
     ),
     Contributor(
+        id = 29402532,
         name = "Rik Koedoot",
-        photoUrl = "https://avatars.githubusercontent.com/u/29402532",
         username = "rikkoedoot",
         descriptionRes = R.string.special_thanks_name,
     ),
 )
 
+val coreContributorIds = coreContributors.map { it.id } + listOf(
+    29139614, // Remove Patryk from contributors list, as per https://t.me/lawnchairci/1557
+    56888459, // Renovate bot
+    41898282, // GitHub Actions bot
+    198982749, // Copilot bot
+    175728472, // Copilot bot
+)
+
 @PreviewLawnicons
 @Composable
 private fun AboutPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         About(
             {},
             {},
@@ -292,7 +300,7 @@ private fun AboutPreview() {
 @PreviewLawnicons
 @Composable
 private fun AboutPreviewExpanded() {
-    LawniconsTheme {
+    PreviewProviders {
         About(
             {},
             {},

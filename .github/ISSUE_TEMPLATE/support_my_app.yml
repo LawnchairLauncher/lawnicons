@@ -1,5 +1,5 @@
 name: Support my app
-description: For apps with 10,000+ users.
+description: For apps with 1,000+ users.
 title: "App name: "
 labels: ["dev request"]
 
@@ -9,7 +9,7 @@ body:
     attributes:
       label: Prerequisities
       options:
-        - label: The app is trusted by 10,000+ unique users.
+        - label: The app is trusted by 1,000+ unique users.
           required: true
 
   - type: input

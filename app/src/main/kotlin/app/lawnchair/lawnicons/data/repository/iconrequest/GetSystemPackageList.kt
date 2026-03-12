@@ -72,4 +72,4 @@ fun ResolveInfo.getHighResIcon(packageManager: PackageManager): Drawable? {
     }
 }
 
-private const val TAG = "IconRequestUtilities"
+private const val TAG = "GetSystemPackageList"

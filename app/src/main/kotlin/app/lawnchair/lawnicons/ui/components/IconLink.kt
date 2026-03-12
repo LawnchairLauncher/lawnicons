@@ -23,10 +23,10 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Check
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.visitUrl
 
 @Composable
@@ -101,7 +101,7 @@ fun IconLink(
 @PreviewLawnicons
 @Composable
 private fun FancyButtonLinkPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         Surface {
             IconLink(
                 imageVector = LawnIcons.Check,

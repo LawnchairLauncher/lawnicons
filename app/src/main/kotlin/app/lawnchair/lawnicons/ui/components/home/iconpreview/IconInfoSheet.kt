@@ -53,12 +53,12 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.ui.components.IconLink
 import app.lawnchair.lawnicons.ui.components.core.ListRow
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.ShareIcon
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -257,7 +257,7 @@ private fun IconInfoListRow(
 @Composable
 private fun IconInfoPopupPreview() {
     val showPopup = remember { mutableStateOf(true) }
-    LawniconsTheme {
+    PreviewProviders {
         IconInfoSheet(
             iconInfo = SampleData.iconInfoSample,
         ) {
