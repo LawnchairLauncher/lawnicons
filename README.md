@@ -60,7 +60,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Development
-You can help with issues. Please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help). Also, if your app needs an icon in Lawnicons, you can create an issue.
+You can help with issues, please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help). Also, if your app needs an icon in Lawnicons, you can create an issue.
 
 [Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
 
@@ -74,7 +74,7 @@ You may add missing icons if they are of high quality, with no more than 5 icons
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Due to our large request queue, requests can take years—or never be fulfilled—since our community only creates icons they personally need, and in small batches. However, if you contribute icons by following the Lawnicons guidelines, they could appear within a month.
+Due to our large request queue, requests can take years—or never be fulfilled—since our community only creates icons they personally need, and in small batches. However, if you learn the Lawnicons guidelines and contribute icons yourself, they could appear within a month.
 
 > [!TIP]
 > Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
