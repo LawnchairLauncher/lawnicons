@@ -20,12 +20,10 @@ import android.app.Application
 import app.lawnchair.lawnicons.di.MetroViewModelFactoryImpl
 import dev.zacsweers.metro.DependencyGraph
 import dev.zacsweers.metro.Provides
-import dev.zacsweers.metro.Scope
 import dev.zacsweers.metro.SingleIn
 import dev.zacsweers.metrox.viewmodel.ViewModelGraph
 
-@Scope
-annotation class LawniconsScope
+abstract class LawniconsScope private constructor()
 
 @SingleIn(LawniconsScope::class)
 @DependencyGraph(LawniconsScope::class)
