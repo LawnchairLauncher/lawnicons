@@ -74,7 +74,7 @@ You may add missing icons if they are of high quality, with no more than 5 icons
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Due to our large request queue, requests can take years—or never be fulfilled—since our community only creates icons they personally need, and in small batches. However, if you learn the Lawnicons guidelines and contribute icons yourself, they could appear within a month.
+About 5% of the most popular requests are fulfilled each year by our community. But if you learn the Lawnicons guidelines and contribute icons yourself, your icons can be added within a month.
 
 > [!TIP]
 > Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
