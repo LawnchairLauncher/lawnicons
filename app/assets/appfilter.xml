@@ -2551,7 +2551,6 @@
   <item component="ComponentInfo{org.derpfest.flash/org.lineageos.aperture.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.samsung.android.scan3d/com.vibhorsrv.shamim.cameraids.MainActivity}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.samsung.android.scan3d/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.MirrorCameraActivity}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.ontim.camera2/com.ontim.camera2.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.mediatek.hz.camera/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.samsung.agc.gcam84/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
@@ -2664,9 +2663,6 @@
   <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraMain}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.lge.camera/com.lge.camera.CamLoading}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.lge.camera/com.lge.camera.SecureCameraApp}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.motorola.camera2/com.motorola.camera.Camera}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.motorola.cameraone/com.motorola.camera.Camera}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.ngcam.camera/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.oneplus.camera/com.oneplus.camera.MainActivity}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.oneplus.camera/com.oneplus.camera.OPCameraActivity}" drawable="generic_camera" name="Camera" />
@@ -10074,6 +10070,10 @@
   <item component="ComponentInfo{com.motorola.moto/com.motorola.assist.ui.screens.MainActivity}" drawable="moto" name="Moto" />
   <item component="ComponentInfo{com.motorola.audiofx/com.motorola.motoaudio.ui.LauncherActivity}" drawable="moto_audio_effects" name="Moto Audio Effects" />
   <item component="ComponentInfo{com.motorola.audiofx/com.motorola.motoaudio.ui.welcome.WelcomeActivity}" drawable="moto_audio_effects" name="Moto Audio Effects" />
+  <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.MirrorCameraActivity}" drawable="generic_camera" name="Moto Camera" />
+  <item component="ComponentInfo{com.motorola.camera2/com.motorola.camera.Camera}" drawable="generic_camera" name="Moto Camera" />
+  <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="generic_camera" name="Moto Camera" />
+  <item component="ComponentInfo{com.motorola.cameraone/com.motorola.camera.Camera}" drawable="generic_camera" name="Moto Camera" />
   <item component="ComponentInfo{com.motorola.camera5/com.motorola.camera.Camera}" drawable="generic_camera" name="Moto Camera" />
   <item component="ComponentInfo{com.motorola.camera5/com.motorola.camera.MirrorCameraActivity}" drawable="generic_camera" name="Moto Camera" />
   <item component="ComponentInfo{com.motorola.email/com.android.email.activity.Welcome}" drawable="generic_email" name="Moto Email" />
