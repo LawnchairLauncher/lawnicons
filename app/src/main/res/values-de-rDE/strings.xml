@@ -53,13 +53,13 @@
     <!-- Name -->
     <string name="name">Name</string>
     <!-- Drawable prefix -->
-    <string name="drawable">Grafik-Ressource</string>
+    <string name="drawable">Grafikressource</string>
     <!-- Component -->
     <string name="component">ID</string>
     <!-- Mapped components -->
     <string name="mapped_components">Zugeordnete IDs</string>
     <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">Wenn das Symbol aufgrund eines Neu-Brandings veraltet ist, eröffne ein Issue auf GitHub.</string>
+    <string name="icon_info_outdated_warning">Wenn das Symbol aufgrund eines Rebranding veraltet ist, bitte ein Issue auf GitHub eröffnen.</string>
     <!-- Chevron a11y description -->
     <string name="toggle_visibility_of_contents">Inhalte ein-/ausblenden</string>
     <!-- Request icons button -->
@@ -68,22 +68,22 @@
     <string name="copied_text">Text kopiert</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">Fehlende Symbole von der unteren Leiste anfordern</string>
-    <string name="icon_requests_furfilled">Alle Icons werden unterstützt. Melden Sie Rebrandings über GitHub-Issues.</string>
-    <string name="icon_requests_suspended">Mit jeder neuen Lawnicons Version werden Icon-Anfragen für eine kurze Zeit geöffnent.</string>
-    <string name="snackbar_request_too_large">Details der Symbolanfrage in die Zwischenablage kopiert. Um sie anzufragen, übertrage die Details in das Formular.</string>
+    <string name="icon_requests_furfilled">Alle Symbole werden unterstützt. Melden Sie Rebrandings über GitHub-Issues.</string>
+    <string name="icon_requests_suspended">Mit jeder neuen Lawnicons-Version werden Symbolanfragen für eine begrenzte Zeit geöffnet.</string>
+    <string name="snackbar_request_too_large">Details der Symbolanfrage in die Zwischenablage kopiert. Um sie anzufragen, die Details in das Formular übertragen.</string>
     <string name="snackbar_use_fallback_link">Formular öffnen</string>
     <!-- Missing icons screen -->
     <string name="missing_icons">Fehlende Symbole</string>
     <string name="clear_all">Auswahl löschen</string>
     <string name="select_all">Alle auswählen</string>
     <string name="request_icons_button">Anfragen</string>
-    <string name="show_options_sheet">Zeige Blatt mit Optionen</string>
+    <string name="show_options_sheet">Blatt mit Optionen anzeigen</string>
     <string name="toggle_button_expanded">Erweitert</string>
     <string name="toggle_button_collapsed">Minimiert</string>
     <string name="toggle_button_content_description">Umschalten</string>
     <string name="icon_request_mail_hint">Eine Anfrage-Datei an\u0020 senden</string>
-    <string name="share_file">Teile Datei</string>
-    <string name="save_file">Speichere Datei</string>
+    <string name="share_file">Datei teilen</string>
+    <string name="save_file">Datei speichern</string>
     <string name="copy_components">App-IDs kopieren</string>
     <string name="toast_file_saved_successful">Datei erfolgreich gespeichert</string>
     <string name="toast_file_save_error">Fehler Dateispeicherung</string>
