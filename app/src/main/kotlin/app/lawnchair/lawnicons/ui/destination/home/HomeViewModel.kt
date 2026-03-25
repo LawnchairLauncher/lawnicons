@@ -61,7 +61,7 @@ interface HomeViewModel {
     fun clearSearch()
 }
 
-@ViewModelKey(HomeViewModelImpl::class)
+@ViewModelKey
 @ContributesIntoMap(LawniconsScope::class, binding = binding<ViewModel>())
 class HomeViewModelImpl(
     private val iconRepository: IconRepository,

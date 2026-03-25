@@ -50,7 +50,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-@ViewModelKey(IconRequestViewModel::class)
+@ViewModelKey
 @ContributesIntoMap(LawniconsScope::class)
 class IconRequestViewModel(
     private val iconRequestRepository: IconRequestRepository,

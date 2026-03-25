@@ -25,7 +25,7 @@ import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@ViewModelKey(DebugMenuViewModel::class)
+@ViewModelKey
 @ContributesIntoMap(LawniconsScope::class)
 class DebugMenuViewModel(
     iconRepository: IconRepository,

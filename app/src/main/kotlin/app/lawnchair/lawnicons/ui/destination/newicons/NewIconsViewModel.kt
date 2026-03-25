@@ -22,7 +22,7 @@ import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@ViewModelKey(NewIconsViewModel::class)
+@ViewModelKey
 @ContributesIntoMap(LawniconsScope::class)
 class NewIconsViewModel(
     private val newIconsRepository: NewIconsRepository,

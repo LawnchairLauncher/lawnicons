@@ -53,7 +53,7 @@ private data class ContributorsViewModelState(
     }
 }
 
-@ViewModelKey(ContributorsViewModel::class)
+@ViewModelKey
 @ContributesIntoMap(LawniconsScope::class)
 class ContributorsViewModel(
     private val repository: GitHubContributorsRepository,
