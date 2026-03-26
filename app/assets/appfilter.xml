@@ -1246,6 +1246,7 @@
   <item component="ComponentInfo{com.avast.android.vpn/com.avast.android.vpn.app.wizard.WizardActivity}" drawable="avast_secureline" name="Avast SecureLine" />
   <item component="ComponentInfo{com.daaw.avee/com.daaw.avee.MainActivity}" drawable="avee_music_player" name="Avee Music Player" />
   <item component="ComponentInfo{com.daaw.avee/com.daaw.avee.SplashActivity}" drawable="avee_music_player" name="Avee Music Player" />
+  <item component="ComponentInfo{com.daaw.avee.classic/com.daaw.avee.MainActivity}" drawable="avee_music_player" name="Avee Music Player Classic" />
   <item component="ComponentInfo{com.daaw.avee.lite/com.daaw.avee.SplashActivity}" drawable="avee_music_player" name="Avee Music Player Lite" />
   <item component="ComponentInfo{ua.dolhanenko.avenezer/ua.dolhanenko.avenezer.presentation.splash.SplashActivity}" drawable="avenezer" name="AvenEzer" />
   <item component="ComponentInfo{deckers.thibault.aves/deckers.thibault.aves.MainActivity}" drawable="aves" name="Aves Gallery" />
@@ -8939,26 +8940,7 @@
   <item component="ComponentInfo{com.lucidspark.android.spark/com.lucidchart.android.chart.MainActivity}" drawable="lucidspark" name="Lucidspark" />
   <item component="ComponentInfo{com.duk.kerala.gst.luckybill/com.duk.kerala.gst.luckybill.ui.components.activities.StarterActivity}" drawable="lucky_bill" name="Lucky Bill" />
   <item component="ComponentInfo{com.dsquares.lucky/com.dsquares.lucky.screens.mainscreens.single.SingleLuckyActivity}" drawable="lucky_financial" name="Lucky Financial" />
-  <item component="ComponentInfo{ru.utybnmuy.opzuxkors/ru.utybnmuy.opzuxkors.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.sxbuIDfx.pFSOyagrF/ru.sxbuIDfx.pFSOyagrF.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.sxbuIDfx.pFSOyagrF/ru.sxbuIDfx.pFSOyagrF.MainActivity4}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.brezqvnq.iftbpisrx/ru.brezqvnq.iftbpisrx.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.fnzbxotx.xgkbrsdgf/ru.fnzbxotx.xgkbrsdgf.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.hmaphwrh.gazitdibb/ru.hmaphwrh.gazitdibb.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.imwondbo.liaqdxajh/ru.imwondbo.liaqdxajh.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.jdspserw.eyfbbupnb/ru.jdspserw.eyfbbupnb.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.nofaeshu.uhmnceuqk/ru.nofaeshu.uhmnceuqk.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.opuodhgf.stfibymgf/ru.opuodhgf.stfibymgf.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.roxagbsi.rpkgicvlg/ru.roxagbsi.rpkgicvlg.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.rujqkpeo.jwuncosht/ru.rujqkpeo.jwuncosht.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.sgqqtjvo.sbrfwkvix/ru.sgqqtjvo.sbrfwkvix.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.ucgujlja.tukrkazbj/ru.ucgujlja.tukrkazbj.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.wxmjpegg.ydtcfcawt/ru.wxmjpegg.ydtcfcawt.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.kmotajqf.ssvpcsuxy/ru.kmotajqf.ssvpcsuxy.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.rhirwknq.zmcleufuc/ru.rhirwknq.zmcleufuc.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.gwabukjl.lvwaltkjt/ru.gwabukjl.lvwaltkjt.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.ljtrmjvz.bvgxjjjrr/ru.ljtrmjvz.bvgxjjjrr.MainActivity10}" drawable="lucky_patcher" name="Lucky Patcher" />
-  <item component="ComponentInfo{ru.yzadcavk.ybvrpbanu/ru.yzadcavk.ybvrpbanu.MainActivity1}" drawable="lucky_patcher" name="Lucky Patcher" />
+  <item component="ComponentInfo{lucky_patcher.package/lucky_patcher.activity}" drawable="lucky_patcher" name="Lucky Patcher" />
   <item component="ComponentInfo{com.lucuflix.app/com.lucuflix.app.MainActivity}" drawable="lucuflix" name="Lucuflix" />
   <item component="ComponentInfo{io.yarsa.games.ludo/com.unity3d.player.UnityPlayerActivity}" drawable="ludo_king" name="Ludo" />
   <item component="ComponentInfo{com.ludo.king/com.unity3d.player.UnityPlayerActivity}" drawable="ludo_king" name="Ludo King" />
@@ -11599,7 +11581,7 @@
   <item component="ComponentInfo{com.heytap.mall/com.heytap.store.view.SplashActivity}" drawable="v_appstore" name="OPPO Store" />
   <item component="ComponentInfo{com.heytap.mall/com.heytap.mall.view.SplashApActivity}" drawable="v_appstore" name="OPPO Store" />
   <item component="ComponentInfo{com.oppo.store/com.oppo.store.SplashActivity}" drawable="oppo_store" name="OPPO Store" />
-  <item component="ComponentInfo{com.heytap.store/com.heytap.store.view.SplashActivity}" drawable="v_appstore" name="OPPO Store" />
+  <item component="ComponentInfo{com.heytap.store/com.heytap.store.view.SplashActivity}" drawable="oppo_store" name="OPPO Store" />
   <item component="ComponentInfo{com.heytap.yoli/com.heytap.yoli.icon_org}" drawable="oppo_video" name="OPPO Video" />
   <item component="ComponentInfo{com.wayfinder_patient_site.app/com.wayfinder_patient_site.app.MainActivity}" drawable="target" name="Oqea" />
   <item component="ComponentInfo{com.oracle.oci.console.ocimobile/com.oracle.oci.console.ocimobile.SplashActivity}" drawable="oracle_cloud_infrastructure" name="Oracle Cloud Infrastructure" />
@@ -15536,6 +15518,7 @@
   <item component="ComponentInfo{com.strava/com.strava.SplashActivity}" drawable="strava" name="Strava" />
   <item component="ComponentInfo{cz.strava.app.twa/cz.strava.app.twa.LauncherActivity}" drawable="strava_cz" name="Strava.cz" />
   <item component="ComponentInfo{com.nordicchoicehotels.breeze/com.nordicchoicehotels.breeze.splash.SplashActivity}" drawable="strawberry" name="Strawberry" />
+  <item component="ComponentInfo{app.streamcompanion/app.streamcompanion.MainActivity}" drawable="generic_player" name="Stream Companion" />
   <item component="ComponentInfo{com.streamlabs/com.streamlabs.live.ui.main.HomeActivity}" drawable="streamlabs" name="Streamlabs" />
   <item component="ComponentInfo{de.westnordost.streetcomplete/de.westnordost.streetcomplete.MainActivity}" drawable="streetcomplete" name="StreetComplete" />
   <item component="ComponentInfo{de.westnordost.streetcomplete/de.westnordost.streetcomplete.screens.MainActivity}" drawable="streetcomplete" name="StreetComplete" />
@@ -15852,6 +15835,7 @@
   <item component="ComponentInfo{com.sgiggle.production/com.sgiggle.production.TangoLauncher}" drawable="tango" name="Tango" />
   <item component="ComponentInfo{com.swarsystems.is/com.swarsystems.is.IS}" drawable="tanpura_droid" name="Tanpura Droid" />
   <item component="ComponentInfo{com.p1.mobile.putong/com.p1.mobile.putong.ui.splash.SplashProxyAct}" drawable="tantan" name="TanTan" />
+  <item component="ComponentInfo{com.gabm.screenrotationcontrol/com.gabm.tapandturn.ui.MainActivity}" drawable="generic_rotation" name="Tap 'n' Turn" />
   <item component="ComponentInfo{com.jctswbglsm.SwipeAway/com.google.firebase.MessagingUnityPlayerActivity}" drawable="tap_away" name="Tap Away" />
   <item component="ComponentInfo{com.scroll.scrolltop.backtotop/com.example.statusbar.activity.WelComeActivity}" drawable="tap_scroll" name="Tap Scroll" />
   <item component="ComponentInfo{com.hechenbros.taptobpm/com.hechenbros.taptobpm.MainActivity}" drawable="target" name="tap to bpm" />
@@ -17115,6 +17099,7 @@
   <item component="ComponentInfo{com.matteljv.uno/com.google.android.archive.ReactivateActivity}" drawable="uno" name="UNO!" />
   <item component="ComponentInfo{com.matteljv.uno/com.netease.uno.CustomOverrideActivity}" drawable="uno" name="UNO!" />
   <item component="ComponentInfo{com.dstukalov.watelegramstickers/com.dstukalov.watelegramstickers.StickerPacksActivity}" drawable="unofficial_telegram_stickers" name="Unofficial telegram stickers" />
+  <item component="ComponentInfo{amirz.smartunread/amirz.plugin.unread.settings.ConfigurationActivity}" drawable="notification_history" name="Unread" />
   <item component="ComponentInfo{com.unrollme/com.unrollme.MainActivity}" drawable="unroll_me" name="Unroll.Me" />
   <item component="ComponentInfo{io.horizontalsystems.bankwallet/io.horizontalsystems.bankwallet.LeoLauncherAlias}" drawable="unstoppable_wallet" name="Unstoppable Wallet" />
   <item component="ComponentInfo{io.horizontalsystems.bankwallet/io.horizontalsystems.bankwallet.MonoLauncherAlias}" drawable="unstoppable_wallet" name="Unstoppable Wallet" />
@@ -17757,6 +17742,7 @@
   <item component="ComponentInfo{com.koushikdutta.vysor/com.koushikdutta.vysor.StartActivity}" drawable="vysor" name="Vysor" />
   <item component="ComponentInfo{hu.vagyaid.mobil/hu.vagyaid.mobil.MainActivity}" drawable="eromodo" name="Vágyaid ~~ Eromodo" />
   <item component="ComponentInfo{sk.vub.mobile/sk.vub.mobile.VubMainActivity}" drawable="intesa" name="VÚB" />
+  <item component="ComponentInfo{sk.vub.banking/com.internationalvalueservices.digical.MainActivity}" drawable="intesa" name="VÚB Banking" />
   <item component="ComponentInfo{jp.co.ccc.Tsite/jp.co.ccc.tapps.SplashActivity}" drawable="v_point" name="Vポイント ~~ V Point" />
   <item component="ComponentInfo{com.wmods.wppenhacer/com.wmods.wppenhacer.activities.PermissionActivitycom.wmods.wppenhacer}" drawable="wa_enhancer" name="Wa Enhancer" />
   <item component="ComponentInfo{com.wmods.wppenhacer/com.wmods.wppenhacer.activities.PermissionActivity}" drawable="wa_enhancer" name="Wa Enhancer" />
@@ -18201,6 +18187,7 @@
   <item component="ComponentInfo{com.meitu.wink/com.stub.stub01.StartActivity}" drawable="wink_video_enhancing" name="Wink — Video Enhancing" />
   <item component="ComponentInfo{com.meitu.wink/com.meitu.wink.startup.StartupActivity}" drawable="wink_video_enhancing" name="Wink — Video Enhancing" />
   <item component="ComponentInfo{com.winlator/com.winlator.MainActivity}" drawable="winlator" name="Winlator" />
+  <item component="ComponentInfo{com.winlator.vanilla/com.winlator.cmod.MainActivity}" drawable="winlator" name="Winlator" />
   <item component="ComponentInfo{il.talent.winner/il.talent.winner.MainActivity}" drawable="winner" name="Winner" />
   <item component="ComponentInfo{com.LordHonor.Windows10Simulator/com.unity3d.player.UnityPlayerActivity}" drawable="wins_10_simulator" name="Wins 10 Simulator" />
   <item component="ComponentInfo{com.wire/com.waz.zclient.LaunchActivity}" drawable="wire" name="Wire" />
