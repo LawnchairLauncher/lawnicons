@@ -2387,6 +2387,7 @@
   <item component="ComponentInfo{studio14.application.caelus/com.candybar.dev.activities.SplashActivity}" drawable="caelus_icons" name="Caelus Icons" />
   <item component="ComponentInfo{studio14.application.caelus/com.one4studio.iconpack.MainActivity}" drawable="caelus_icons" name="Caelus Icons" />
   <item component="ComponentInfo{studio14.application.caeluswhite/com.one4studio.iconpack.MainActivity}" drawable="caelus_icons" name="Caelus White" />
+  <item component="ComponentInfo{studio14.application.caeluswhite/com.candybar.dev.activities.SplashActivity}" drawable="caelus_icons" name="Caelus White" />
   <item component="ComponentInfo{moe.zhs.caffeine/moe.zhs.caffeine.MainActivity}" drawable="caffeine" name="Caffeine" />
   <item component="ComponentInfo{moe.zhs.caffeine/moe.zhs.caffeine.SettingsActivity}" drawable="caffeine" name="Caffeine" />
   <item component="ComponentInfo{br.com.gabba.Caixa/br.gov.caixa.internetbankingmobile.ui.start.StartActivity}" drawable="caixa" name="CAIXA" />
@@ -6952,6 +6953,8 @@
   <item component="ComponentInfo{com.hbo.hbonow/com.hbo.hbonow.MainActivity}" drawable="hbo_max" name="HBO Max" />
   <item component="ComponentInfo{com.hbo.hbonow/com.hbo.hbonow.splash.SplashActivity}" drawable="hbo_max" name="HBO Max" />
   <item component="ComponentInfo{com.wbd.hbomax/com.wbd.fuse.appcore.FuseActivity}" drawable="hbo_max" name="HBO Max" />
+  <item component="ComponentInfo{com.wbd.stream/com.wbd.fuse.appcore.FuseActivity}" drawable="hbo_max" name="HBO Max" />
+  <item component="ComponentInfo{com.wbd.stream/com.wbd.stream.MainActivity}" drawable="hbo_max" name="HBO Max" />
   <item component="ComponentInfo{com.photo.android.camera/com.ijoysoft.cameratab.activity.SplashActivity}" drawable="hd_camera" name="HD Camera" />
   <item component="ComponentInfo{photo.android.hd.camera/com.android.camera.activity.SplashActivity}" drawable="samsung_ar_emoji_camera" name="HD Camera" />
   <item component="ComponentInfo{photo.hd.video.beauty.camera/com.ijoysoft.camerapro.activity.SplashActivity}" drawable="hd_camera" name="HD Camera" />
@@ -9163,7 +9166,6 @@
   <item component="ComponentInfo{com.marcus.android/com.marcus.us.app.ui.MainActivity}" drawable="marcus" name="Marcus" />
   <item component="ComponentInfo{sg.com.maribankmobile.digitalbank/com.shopee.bke.digitalbank.luncher.LauncherActivity}" drawable="maribank" name="MariBank" />
   <item component="ComponentInfo{sg.com.maribankmobile.digitalbank/com.shopee.bke.digitalbank.ui.MainActivity}" drawable="maribank" name="MariBank" />
-  <item component="ComponentInfo{online.hisubway.marindeck/io.kodular.shenyusoftware.MarinDeck.Screen1}" drawable="marindeck" name="MarinDeck" />
   <item component="ComponentInfo{com.marinetraffic.android/com.marinetraffic.android.AppEntry}" drawable="marinetraffic" name="MarineTraffic" />
   <item component="ComponentInfo{com.marinetraffic.android/com.marinetraffic.android.AIRAppEntry}" drawable="marinetraffic" name="MarineTraffic" />
   <item component="ComponentInfo{com.nintendo.zaka/com.nintendo.npf.sdk.internal.app.NintendoAccountActivity}" drawable="mario_kart_tour" name="Mario Kart Tour" />
@@ -9233,8 +9235,6 @@
   <item component="ComponentInfo{com.applications.max/com.react_native_app_in.MainActivity}" drawable="max_fashion" name="Max Fashion" />
   <item component="ComponentInfo{ru.oneme.app/one.me.android.MainActivity}" drawable="max_messenger" name="MAX Messenger" />
   <item component="ComponentInfo{maxcom.toolbox.screensplitter/maxcom.toolbox.screensplitter.activity.ScreenSplitterActivity}" drawable="max_screen_splitter" name="Max Screen Splitter" />
-  <item component="ComponentInfo{com.wbd.stream/com.wbd.fuse.appcore.FuseActivity}" drawable="max_stream_hbo" name="Max: Stream HBO" />
-  <item component="ComponentInfo{com.wbd.stream/com.wbd.stream.MainActivity}" drawable="max_stream_hbo" name="Max: Stream HBO" />
   <item component="ComponentInfo{com.taxsee.taxsee/com.taxsee.taxsee.AppIconGeoMarker}" drawable="maxim" name="maxim" />
   <item component="ComponentInfo{com.taxsee.taxsee/com.taxsee.base.ui.activities.SplashScreen}" drawable="maxim" name="maxim" />
   <item component="ComponentInfo{com.taxsee.taxsee/com.taxsee.taxsee.ui.activities.SplashScreen}" drawable="maxim" name="maxim" />
@@ -11699,10 +11699,6 @@
   <item component="ComponentInfo{ovo.id/ovo.id.loyalty.activity.LandingActivity}" drawable="ovo" name="OVO" />
   <item component="ComponentInfo{com.ovpnspider/com.ovpnspider.Welcome}" drawable="ovpnspider" name="OvpnSpider" />
   <item component="ComponentInfo{com.owletcare.owletcare/com.owletcare.owletcare.SplashActivity}" drawable="owlet" name="Owlet" />
-  <item component="ComponentInfo{it.owlgram.android/org.telegram.messenger.DefaultIcon}" drawable="owlgram" name="OwlGram" />
-  <item component="ComponentInfo{it.owlgram.android/org.telegram.messenger.OG_Icon_Alt_Default}" drawable="owlgram" name="OwlGram" />
-  <item component="ComponentInfo{it.owlgram.android/org.telegram.messenger.OG_Icon_Alt_Developer}" drawable="owlgram" name="OwlGram" />
-  <item component="ComponentInfo{it.owlgram.android/org.telegram.ui.LaunchActivity}" drawable="owlgram" name="OwlGram" />
   <item component="ComponentInfo{com.owncloud.android/com.owncloud.android.ui.activity.SplashActivity}" drawable="owncloud" name="ownCloud" />
   <item component="ComponentInfo{com.bintianqi.owndroid/com.bintianqi.owndroid.MainActivity}" drawable="netguard" name="OwnDroid" />
   <item component="ComponentInfo{org.owntracks.android/org.owntracks.android.ui.map.MapActivity}" drawable="owntracks" name="OwnTracks" />
@@ -12329,6 +12325,7 @@
   <item component="ComponentInfo{com.perol.asdpl.play.pixivez/com.perol.asdpl.pixivez.pure}" drawable="pixez" name="Pix-EzViewer" />
   <item component="ComponentInfo{com.pashapuma.pixp.iconpack/com.pashapuma.pixp.iconpack.activities.SplashActivity}" drawable="pix_pie_icons" name="Pix-Pie Icons" />
   <item component="ComponentInfo{io.mewtant.pixaiart/io.mewtant.pixaiart.splash.ui.SplashActivity}" drawable="pixai" name="PixAI" />
+  <item component="ComponentInfo{io.mewtant.pixaiart/io.mewtant.pixaiart.ui.splash.SplashActivity}" drawable="pixai" name="PixAI" />
   <item component="ComponentInfo{com.therealbluepandabear.pixapencil/com.therealbluepandabear.pixapencil.activities.main.MainActivity}" drawable="pixapencil" name="PixaPencil" />
   <item component="ComponentInfo{helectronsoft.com.live.wallpaper.pixel4d/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="pixel_4d" name="Pixel 4D" />
   <item component="ComponentInfo{helectronsoft.com.live.wallpaper.pixel4d/helectronsoft.com.live.wallpaper.pixel4d.SplashActivity}" drawable="pixel_4d" name="Pixel 4D" />
@@ -13096,7 +13093,6 @@
   <item component="ComponentInfo{se.rabble.android/se.rabble.android.MainActivity}" drawable="rabble" name="Rabble" />
   <item component="ComponentInfo{com.debank.rabbymobile/com.google.android.archive.ReactivateActivity}" drawable="rabby_wallet" name="Rabby Wallet" />
   <item component="ComponentInfo{com.debank.rabbymobile/com.debank.rabbymobile.MainActivity}" drawable="rabby_wallet" name="Rabby Wallet" />
-  <item component="ComponentInfo{nl.rabowallet/com.gieseckedevrient.convego.ui.MainActivity}" drawable="rabo_wallet" name="Rabo Wallet" />
   <item component="ComponentInfo{nl.rabomobiel/nl.rabobank.bankierenplus.URActivity}" drawable="rabobank" name="Rabobank" />
   <item component="ComponentInfo{nl.rabomobiel/nl.rabomobiel.SplashActivity}" drawable="rabobank" name="Rabobank" />
   <item component="ComponentInfo{nl.rabomobiel/nl.rabomobiel.SplashScreen}" drawable="rabobank" name="Rabobank" />
@@ -13428,8 +13424,7 @@
   <item component="ComponentInfo{com.retroarch/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch" />
   <item component="ComponentInfo{com.retroarch.aarch64/com.retroarch.browser.mainmenu.MainMenuActivity}" drawable="retroarch" name="RetroArch Plus" />
   <item component="ComponentInfo{com.thomsonreuters.reuters/com.thomsonreuters.reuters.MainActivity}" drawable="reuters" name="Reuters" />
-  <item component="ComponentInfo{anddea.yrf.tube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="Revanced Advanced" />
-  <item component="ComponentInfo{anddea.yrf.tube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="Revanced Advanced" />
+  <item component="ComponentInfo{anddea.yrf.tube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="Revanced Advanced" />
   <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="ReVanced Extended" />
   <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
   <item component="ComponentInfo{yt.rvx.noname.exe/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="ReVanced Extended" />
@@ -14412,7 +14407,6 @@
   <item component="ComponentInfo{com.jazz.jazzworld/com.jazz.jazzworld.presentation.ui.main.MainActivity}" drawable="simosa" name="SIMOSA" />
   <item component="ComponentInfo{com.simpl.android/com.simpl.android.MainActivity}" drawable="simpl" name="Simpl" />
   <item component="ComponentInfo{com.simpl.android/com.simpl.android.view.activity.WelcomeScreen}" drawable="simpl" name="Simpl" />
-  <item component="ComponentInfo{com.creativetrends.simple.app/com.creativetrends.simple.app.free.activities.SimpleLogin}" drawable="simple" name="Simple" />
   <item component="ComponentInfo{ar.com.basejuegos.simplealarm/ar.com.basejuegos.simplealarm.SimpleAlarm}" drawable="alarm_clock_for_heavy_sleepers" name="Simple Alarm Clock" />
   <item component="ComponentInfo{net.moemoe.tomorrow.myAnalogClock2/net.moemoe.tomorrow.myAnalogClock2.MainActivity}" drawable="desk_clock" name="Simple Analog Clock" />
   <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Red}" drawable="simple_calculator" name="Simple Calculator" />
@@ -14773,8 +14767,6 @@
   <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Red}" drawable="messages" name="Simple SMS Messenger" />
   <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Teal}" drawable="messages" name="Simple SMS Messenger" />
   <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Yellow}" drawable="messages" name="Simple SMS Messenger" />
-  <item component="ComponentInfo{com.creativetrends.simple.app/com.creativetrends.simple.app.free.shortcuts.Messages}" drawable="simple" name="Simple Social" />
-  <item component="ComponentInfo{com.creativetrends.simple.app/com.creativetrends.simple.app.free.shortcuts.Notifications}" drawable="simple" name="Simple Social" />
   <item component="ComponentInfo{de.tobiasbielefeld.solitaire/de.tobiasbielefeld.solitaire.ui.GameSelector}" drawable="simple_solitaire_collection" name="Simple Solitaire Collection" />
   <item component="ComponentInfo{com.maxistar.textpad/com.maxistar.textpad.activities.EditorActivity}" drawable="generic_notes" name="Simple Text Editor" />
   <item component="ComponentInfo{com.razeeman.util.simpletimetracker/com.example.util.simpletimetracker.ui.MainActivity}" drawable="simple_time_tracker" name="Simple Time Tracker" />
@@ -17551,6 +17543,7 @@
   <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.google.android.apps.chrome.Main}" drawable="vivaldi" name="Vivaldi Snapshot" />
   <item component="ComponentInfo{com.quvideo.xiaoying/com.quvideo.xiaoying.app.splash.SplashActivity}" drawable="vivavideo" name="VivaVideo" />
   <item component="ComponentInfo{com.vivi.vivimusic/com.music.vivi.MainActivityAlias}" drawable="vivi_music" name="VIVI Music" />
+  <item component="ComponentInfo{com.vivi.vivimusic/com.music.vivi.MainActivity}" drawable="vivi_music" name="VIVI Music" />
   <item component="ComponentInfo{vivid.money/vivid.money.feature_main_screen.MainActivity}" drawable="vivid" name="Vivid" />
   <item component="ComponentInfo{com.ivianuu.oneplusgestures/com.ivianuu.vivid.app.MainActivity}" drawable="vivid_navigation_gestures" name="Vivid Navigation Gestures" />
   <item component="ComponentInfo{com.ivianuu.oneplusgestures/com.ivianuu.oneplusgestures.ui.MainActivity}" drawable="vivid_navigation_gestures" name="Vivid Navigation Gestures" />
@@ -18389,7 +18382,6 @@
   <item component="ComponentInfo{cn.xender/cn.xender.ui.activity.SplashActivity}" drawable="xender" name="Xender" />
   <item component="ComponentInfo{xyz.deepdaikon.xeonjia/xyz.deepdaikon.xeonjia.MainActivity}" drawable="xeonjia" name="Xeonjia" />
   <item component="ComponentInfo{com.xfinity.digitalhome/com.xfinity.digitalhome.features.launch.splash.SplashActivity}" drawable="xfinity" name="Xfinity" />
-  <item component="ComponentInfo{com.xfun.wallet/com.xfun.wallet.MainActivity}" drawable="xfun_wallet" name="XFUN Wallet" />
   <item component="ComponentInfo{gallery.hidepictures.photovault.lockgallery/gallery.hidepictures.photovault.lockgallery.ss.activities.SplashActivity}" drawable="xgallery" name="XGallery" />
   <item component="ComponentInfo{com.lancens.wxdoorbell/com.lancens.wxdoorbell.view.GuideActivity}" drawable="xhome" name="Xhome" />
   <item component="ComponentInfo{m365.xiaodash.scooter/m365.xiaodash.scooter.ui.activity.MainActivity}" drawable="xiaodash" name="XiaoDash" />
@@ -18548,7 +18540,7 @@
   <item component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.HomePage}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.google.android.youtube/net.ogmods.youtube.OGDownloadManager1}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.gbox.com.google.android.youtube/com.gbox.app.LaunchAppActivity}" drawable="youtube" name="Youtube" />
-  <item component="ComponentInfo{anddea.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube" />
+  <item component="ComponentInfo{anddea.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" name="YouTube" />
   <item component="ComponentInfo{com.rvx.android.youtube/com.rvx.android.youtube.revanced_original_1}" drawable="youtube" name="YouTube" />
@@ -18582,7 +18574,7 @@
   <item component="ComponentInfo{app.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
   <item component="ComponentInfo{com.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music_revanced" name="YouTube Music ReVanced" />
   <item component="ComponentInfo{app.revanced.android.apps.youtube.music/app.revanced.android.apps.youtube.music.revanced_original_3}" drawable="generic_player" name="YouTube Music ReVanced" />
-  <item component="ComponentInfo{com.android.youtube.premium/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_premium" name="YouTube Premium" />
+  <item component="ComponentInfo{com.android.youtube.premium/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_premium" name="YouTube Premium" />
   <item component="ComponentInfo{com.google.android.youtube.pro/com.google.android.youtube.pro.MainActivity}" drawable="youtube" name="Youtube Pro" />
   <item component="ComponentInfo{com.gold.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube Pro" />
   <item component="ComponentInfo{app.revanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube_revanced" name="YouTube ReVanced" />
@@ -18607,7 +18599,7 @@
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
   <item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="revanced_extended" name="YouTube ReVanced Extended" />
-  <item component="ComponentInfo{app.rex.android.youtube/com.google.android.youtube.app.honeycomb.Shell}" drawable="revanced_extended" name="YouTube ReX" />
+  <item component="ComponentInfo{app.rex.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended" name="YouTube ReX" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.activities.SplashActivity}" drawable="youtube_studio" name="YouTube Studio" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.main.MainActivity}" drawable="youtube_studio" name="YouTube Studio" />
   <item component="ComponentInfo{com.google.android.apps.youtube.creator/.main.MainActivity}" drawable="youtube_studio" name="YouTube Studio" />
@@ -18615,7 +18607,7 @@
   <item component="ComponentInfo{com.google.android.apps.youtube.unplugged/com.google.android.apps.youtube.unplugged.features.main.MainActivity}" drawable="youtube_tv" name="YouTube TV" />
   <item component="ComponentInfo{com.google.android.apps.youtube.unplugged/com.google.android.apps.youtube.unplugged.startup.activity.SplashActivity}" drawable="youtube_tv" name="YouTube TV" />
   <item component="ComponentInfo{com.google.android.youtube.tvunplugged/com.google.android.apps.youtube.tvunplugged.activity.MainActivity}" drawable="youtube_tv" name="YouTube TV" />
-  <item component="ComponentInfo{com.android.youtube.valure/com.google.android.youtube.app.honeycomb.Shell}" drawable="youtube" name="YouTube Valure" />
+  <item component="ComponentInfo{com.android.youtube.valure/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" name="YouTube Valure" />
   <item component="ComponentInfo{com.biomes.vanced/com.biomes.vanced.main.MainActivity}" drawable="youtube_vanced" name="YouTube Vanced" />
   <item component="ComponentInfo{com.vanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_vanced" name="YouTube Vanced" />
   <item component="ComponentInfo{com.vanced.android.youtube/com.vanced.android.youtube.pmp}" drawable="youtube_vanced" name="YouTube Vanced" />
