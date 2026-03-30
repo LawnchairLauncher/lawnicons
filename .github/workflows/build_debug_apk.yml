@@ -17,7 +17,7 @@ jobs:
         with:
           submodules: true
       - name: Check for ignored paths
-        uses: dorny/paths-filter@v3
+        uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
@@ -32,7 +32,7 @@ jobs:
               - '.github/labeler.yml'
               - '.github/release.yml'
       - name: Check for non ignored paths
-        uses: dorny/paths-filter@v3
+        uses: dorny/paths-filter@v4
         id: nofilter
         with:
           filters: |
@@ -60,7 +60,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 21
-      - uses: gradle/actions/setup-gradle@v5
+      - uses: gradle/actions/setup-gradle@v6
         with:
           cache-encryption-key: Da25KUVSE5jbGds2zXmfXw==
       - name: Write sign info
@@ -93,7 +93,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: 21
-      - uses: gradle/actions/setup-gradle@v5
+      - uses: gradle/actions/setup-gradle@v6
       - run: ./gradlew spotlessCheck
 
   send-notifications:

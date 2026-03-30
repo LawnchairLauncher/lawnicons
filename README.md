@@ -21,7 +21,7 @@ Lawnicons is an icon pack developed by the Lawnchair team and supported by our c
 
 Try Lawnicons on the latest version of Lawnchair. You can enable themed icons by going to `Home Settings → General → Icon Style` and choosing the desired option.
 
-[Try Lawnchair](https://play.google.com/store/apps/details?id=app.lawnchair.play)
+[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
 
 ## Download
 
@@ -60,7 +60,9 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Development
-You can help with issues. Please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help).
+You can help with issues, please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help). Also, if your app needs an icon in Lawnicons, you can create an issue.
+
+[Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
 
 ### Icons
 You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. To help with icon requests, please prioritize popular apps with 5M+ installations.
@@ -72,7 +74,7 @@ You may add missing icons if they are of high quality, with no more than 5 icons
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Due to our large request queue, requests can take years—or never be fulfilled—since our community only creates icons they personally need, and in small batches. However, if you contribute icons by following the Lawnicons guidelines, they could appear within a month.
+People add new icons for two reasons: some enjoy creating random icons, while others don't want to wait years for the ones they need. The waiting time is in your hands — learn the Lawnicons guidelines and add icons yourself. The quality bar is high.
 
 > [!TIP]
 > Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).

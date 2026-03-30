@@ -57,7 +57,7 @@
     <!-- Component -->
     <string name="component">ID</string>
     <!-- Mapped components -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">捕获的 ID</string>
     <!-- Outdated icon info -->
     <string name="icon_info_outdated_warning">如果图标设计已更改，请在 GitHub 上提交 issue</string>
     <!-- Chevron a11y description -->
@@ -68,20 +68,20 @@
     <string name="copied_text">已复制文本</string>
     <!-- Snackbar content -->
     <string name="snackbar_request_icons_hint">从底栏请求缺失的图标</string>
-    <string name="icon_requests_furfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_furfilled">所有图标均受支持。通过 GitHub issues 报告品牌更新。</string>
+    <string name="icon_requests_suspended">每次发布新版Lawnicons时，图标申请通道将限时开放。</string>
     <string name="snackbar_request_too_large">图标申请详情已复制到剪贴板，请将这些详情填写到申请表单中以完成申请。</string>
     <string name="snackbar_use_fallback_link">打开表单</string>
     <!-- Missing icons screen -->
-    <string name="missing_icons">Missing icons</string>
-    <string name="clear_all">Clear selection</string>
+    <string name="missing_icons">缺少图标</string>
+    <string name="clear_all">清除选择</string>
     <string name="select_all">全选</string>
-    <string name="request_icons_button">Request</string>
-    <string name="show_options_sheet">Show options sheet</string>
-    <string name="toggle_button_expanded">Expanded</string>
-    <string name="toggle_button_collapsed">Collapsed</string>
-    <string name="toggle_button_content_description">Toggle button</string>
-    <string name="icon_request_mail_hint">Mail a request file to\u0020</string>
+    <string name="request_icons_button">请求</string>
+    <string name="show_options_sheet">显示选项表</string>
+    <string name="toggle_button_expanded">扩展</string>
+    <string name="toggle_button_collapsed">崩溃</string>
+    <string name="toggle_button_content_description">切换按钮</string>
+    <string name="icon_request_mail_hint">邮件发送请求文件至\u0020</string>
     <string name="share_file">Share file</string>
     <string name="save_file">Save file</string>
     <string name="copy_components">Copy app IDs</string>

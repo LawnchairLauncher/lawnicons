@@ -22,7 +22,7 @@ import app.lawnchair.lawnicons.data.repository.OssLibraryRepository
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
-@ViewModelKey(AcknowledgementsViewModel::class)
+@ViewModelKey
 @ContributesIntoMap(LawniconsScope::class)
 class AcknowledgementsViewModel(
     ossLibraryRepository: OssLibraryRepository,
