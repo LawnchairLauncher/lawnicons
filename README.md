@@ -68,7 +68,7 @@ You can help with issues, please refer to our guidelines. As a thank you, you ca
 You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. To help with icon requests, please prioritize popular apps with 5M+ installations.
 
 > [!NOTE]
-> Each icon approved and merged on the first try fulfills [a simple community request](https://lawnicons-requests.vercel.app/?filters=easy).
+> Each 5‑icon PR approved and merged on the first try fulfills [5 simple community requests](https://lawnicons-requests.vercel.app/?filters=easy).
 
 ### Icon requests
 
