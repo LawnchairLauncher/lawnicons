@@ -60,12 +60,12 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Development
-You can help with issues, please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help). Also, if your app needs an icon in Lawnicons, you can create an issue.
+You can help with issues, please refer to our guidelines. As a thank you, you could get a priority icon request (write us in Discord before you help).
 
 [Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
 
 ### Icons
-You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. To help with icon requests, please prioritize popular apps with 5M+ installations.
+You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines.
 
 > [!NOTE]
 > Each 5‑icon PR approved and merged on the first try fulfills [5 simple community requests](https://lawnicons-requests.vercel.app/?filters=easy).
