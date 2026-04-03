@@ -8003,6 +8003,7 @@
   <item component="ComponentInfo{in.jfs.jiofinance/in.jfs.jiofinance.presentation.activity.SplashActivity}" drawable="jiofinance" name="JioFinance" />
   <item component="ComponentInfo{com.jio.jiogames/com.jio.jiogamestore.NewMainActivity}" drawable="jiogames" name="JioGames" />
   <item component="ComponentInfo{com.hh.healthhub/com.jiohealthrn.RNMainActivity}" drawable="jiohealthhub" name="JioHealthHub" />
+  <item component="ComponentInfo{com.hh.healthhub/com.hh.healthhub.new_activity.activities.startup.StartUpActivity}" drawable="jiohealthhub" name="JioHealthHub" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.ui.activity.SplashActivity}" drawable="jiohome" name="JioHome" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.cleanarchitecture.common.screen.JioHomeLaunchActivity}" drawable="jiohome" name="JioHome" />
   <item component="ComponentInfo{com.jio.home/com.jio.home.cleanarchitecture.common.screen.SplashActivity}" drawable="jiohome" name="JioHome" />
@@ -13835,6 +13836,7 @@
   <item component="ComponentInfo{com.rfi.sams.android/com.walmart.glass.integration.splash.SplashActivity}" drawable="sams_club" name="Sam's Club" />
   <item component="ComponentInfo{air.SamsClubMexico/com.walmart.glass.integration.splash.SplashActivity}" drawable="sams_club" name="Sam's Club" />
   <item component="ComponentInfo{com.samsclub.scanandgobr/br.com.grupobig.MainActivity}" drawable="sams_club" name="Sam's Club" />
+  <item component="ComponentInfo{com.samsclub.scanandgobr/com.samsclub.scanandgobr.MainActivityBlackFriday}" drawable="sams_club" name="Sam's Club" />
   <item component="ComponentInfo{de.mlex.same/de.mlex.same.MainActivity}" drawable="app_launcher" name="Same" />
   <item component="ComponentInfo{com.sec.android.usb.audio/com.sec.android.usb.audio.ui.MainActivity}" drawable="samsung_anc_type_c" name="Samsung ANC Type-C" />
   <item component="ComponentInfo{com.samsung.android.spacear/com.samsung.android.spacear.scene.SceneListActivity}" drawable="samsung_ar_canvas" name="Samsung AR Canvas" />
@@ -16768,8 +16770,6 @@
   <item component="ComponentInfo{rocks.poopjournal.todont/rocks.poopjournal.todont.MainActivity}" drawable="to_dont" name="To Donʼt" />
   <item component="ComponentInfo{rocks.poopjournal.todont/rocks.poopjournal.todont.Splash_Screen}" drawable="to_dont" name="To Donʼt" />
   <item component="ComponentInfo{mobi.eup.jpnews/mobi.eup.jpnews.activity.MainActivity}" drawable="todaii" name="Todaii" />
-  <item component="ComponentInfo{com.yoshi.todark/com.example.dark_todo.MainActivity}" drawable="todark" name="ToDark" />
-  <item component="ComponentInfo{com.yoshi.todark/com.yoshi.todark.MainActivity}" drawable="todark" name="ToDark" />
   <item component="ComponentInfo{mobi.lockdown.weather/mobi.lockdown.weather.activity.MainActivity}" drawable="today_weather" name="Today Weather" />
   <item component="ComponentInfo{mobi.lockdown.weather/mobi.lockdown.weather.activity.SplashActivity}" drawable="today_weather" name="Today Weather" />
   <item component="ComponentInfo{youqu.android.todesk/youqu.android.todesk.activity.WelcomeActivity}" drawable="todesk" name="ToDesk" />
@@ -17799,8 +17799,8 @@
   <item component="ComponentInfo{com.vivo.agent/com.vivo.agent.desktop.view.activities.JoviHomeNewActivity}" drawable="vivo_jovi_voice" name="vivo Jovi Voice" />
   <item component="ComponentInfo{com.vivo.childrenmode/com.vivo.childrenmode.activity.ChildHomeActivity}" drawable="vivo_kids_mode" name="vivo Kids Mode" />
   <item component="ComponentInfo{com.android.bbk.lockscreen3/com.android.bbk.lockscreen3.LockScreenActivity}" drawable="vivo_lock" name="vivo Lock" />
-  <item component="ComponentInfo{com.vivo.notes/com.vivo.notes.Notes}" drawable="generic_notes" name="vivo Notes" />
-  <item component="ComponentInfo{com.vivo.notes/com.android.notes.Notes}" drawable="generic_notes" name="vivo Notes" />
+  <item component="ComponentInfo{com.vivo.notes/com.vivo.notes.Notes}" drawable="vivo_notes" name="vivo Notes" />
+  <item component="ComponentInfo{com.vivo.notes/com.android.notes.Notes}" drawable="vivo_notes" name="vivo Notes" />
   <item component="ComponentInfo{com.vivo.exhealth/com.vivo.health.main.activity.GuideActivity}" drawable="vivo_origin_health" name="vivo Origin Health" />
   <item component="ComponentInfo{br.com.m4u.recarga.vivo/br.com.m4u.recarga.vivo.MainActivity}" drawable="vivo" name="vivo Pay" />
   <item component="ComponentInfo{com.vivo.soundrecorder/com.android.activity.ReclistActivity}" drawable="generic_voice_recorder_waves" name="vivo Recorder" />
@@ -18982,6 +18982,8 @@
   <item component="ComponentInfo{net.mkg20001.zeronet/org.kivy.android.PythonActivity}" drawable="zeronet" name="ZeroNet" />
   <item component="ComponentInfo{net.kaaass.zerotierfix/net.kaaass.zerotierfix.ui.NetworkListActivity}" drawable="zerotier" name="Zerotier Fix" />
   <item component="ComponentInfo{com.zerotier.one/com.zerotier.one.ui.NetworkListActivity}" drawable="zerotier" name="ZeroTier One" />
+  <item component="ComponentInfo{com.yoshi.todark/com.example.dark_todo.MainActivity}" drawable="zest" name="Zest" />
+  <item component="ComponentInfo{com.yoshi.todark/com.yoshi.todark.MainActivity}" drawable="zest" name="Zest" />
   <item component="ComponentInfo{in.magnetapp/in.magnetapp.MainActivity}" drawable="zet" name="ZET" />
   <item component="ComponentInfo{com.zeus.app/rideatom.app.features.SecondActivity}" drawable="zeus" name="Zeus" />
   <item component="ComponentInfo{com.htetznaing.zfile/com.htetznaing.zfile.ui.MainActivity}" drawable="generic_files" name="zFile" />
@@ -19619,6 +19621,7 @@
   <item component="ComponentInfo{com.max.xiaoheihe/com.max.xiaoheihe.SplashActivity}" drawable="xiaoheihe" name="小黑盒 ~~ Xiaoheihe" />
   <item component="ComponentInfo{com.sspai.sspaiandroid/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="minority" name="少数派 ~~ Minority" />
   <item component="ComponentInfo{com.alwaysrotate/com.alwaysrotate.alwaysrotate}" drawable="generic_rotation" name="屏幕旋轉 ~~ Screen Rotation" />
+  <item component="ComponentInfo{cn.samsclub.app/cn.samsclub.app.ui.SplashActivity}" drawable="sams_club" name="山姆会员商店 ~~ Sam's Club" />
   <item component="ComponentInfo{com.lingnanpass/com.lingnanpass.GuideActivity}" drawable="lingnan_pass" name="岭南通 ~~ Lingnan Pass" />
   <item component="ComponentInfo{com.miHoYo.enterprise.NGHSoD/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩坏3 ~~ Honkai Impact 3rd" />
   <item component="ComponentInfo{com.miHoYo.bh3.bilibili/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="崩坏3 ~~ Honkai Impact 3rd" />
