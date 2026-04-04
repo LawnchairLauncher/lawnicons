@@ -1,0 +1,587 @@
+# WIP. Not pushed yet
+
+import sys
+import re
+import time
+import logging
+import argparse
+import json
+import xml.etree.ElementTree as ET
+from pathlib import Path
+from enum import Enum, auto
+from dataclasses import dataclass, field, asdict
+from concurrent.futures import ProcessPoolExecutor
+from abc import ABC, abstractmethod
+from enum import Enum, IntEnum
+from dataclasses import dataclass
+from typing import Callable, List, Dict, Optional, Any, Type
+
+try:
+    from svgelements import SVG, Path as SVGPath
+    HAS_SVGELEMENTS = True
+except ImportError:
+    HAS_SVGELEMENTS = False
+
+# --- Configuration ---
+logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+
+class Status(Enum):
+    PASS = "PASS"
+    WARN = "WARN"
+    FAIL = "FAIL"
+    REVIEW = "REVIEW"
+    EXEMPT = "EXEMPT"
+
+
+class Speed(IntEnum):
+    FAST = 1     # Regex / String only
+    MEDIUM = 2   # XML Tree
+    SLOW = 3     # svgelements / Geometry
+
+
+@dataclass
+class CheckContext:
+    filename: str
+    raw_content: str
+    xml_tree: Optional[ET.Element] = None
+    svg_doc: Optional[Any] = None
+
+
+RULES_REGISTRY: List[tuple[Callable, str, str]] = []
+
+
+def register_rule(rule_id: str, category: str = "Core"):
+    """Decorator to register a pure function rule."""
+    def decorator(func):
+        RULES_REGISTRY.append((func, rule_id, category))
+        return func
+    return decorator
+
+
+@dataclass(frozen=True)
+class CheckResult:
+    id: str
+    category: str
+    check_name: str
+    status: Status
+    message: str
+    duration_ms: float
+
+
+@dataclass
+class FileReport:
+    file_path: str
+    results: List[CheckResult] = field(default_factory=list)
+    error: Optional[str] = None
+
+    @property
+    def has_failure(self):
+        return any(r.status == Status.FAIL for r in self.results)
+
+
+# --- Plugin System ---
+PLUGIN_REGISTRY: Dict[Speed, List[tuple[Callable, str]]] = {
+    s: [] for s in Speed}
+
+
+def register_check(speed: Speed, check_id: str):
+    def decorator(func):
+        PLUGIN_REGISTRY[speed].append((func, check_id))
+        return func
+    return decorator
+
+# --- Rules Implementation ---
+
+# --- Core Rules ---
+
+@register_rule(rule_id="C01", category="Core")
+def rule_canvas_size(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Ensures canvas is exactly 192x192."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped canvas check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing, cannot verify canvas."
+    vb = ctx.xml_tree.get('viewBox', '').split()
+    w = ctx.xml_tree.get('width', '').strip('px ')
+    h = ctx.xml_tree.get('height', '').strip('px ')
+    if vb == ['0', '0', '192', '192'] or (w == '192' and h == '192'):
+        return Status.PASS, "Confirmed 192x192."
+    return Status.FAIL, f"Invalid canvas: viewBox={vb}, w={w}, h={h}"
+
+
+@register_rule(rule_id="C02", category="Core")
+def rule_placeholder_too_small(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: [Placeholder] Checks if icons are too small."""
+    return Status.PASS, "Placeholder: C02 Not Implemented (Requires Geometry)."
+
+
+@register_rule(rule_id="C03", category="Core")
+def rule_placeholder_outside_content(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: [Placeholder] Checks for elements outside the content area."""
+    return Status.PASS, "Placeholder: C03 Not Implemented (Requires Geometry)."
+
+
+@register_rule(rule_id="C04", category="Core")
+def rule_placeholder_square_size(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: [Placeholder] Checks size of square icons."""
+    return Status.PASS, "Placeholder: C04 Not Implemented (Requires Geometry)."
+
+
+@register_rule(rule_id="C05", category="Core")
+def rule_transparency(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Bans transparency and opacity effects."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped transparency check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing, cannot check transparency."
+    forbidden = ['opacity', 'fill-opacity',
+                 'stroke-opacity', 'stop-opacity', 'filter', 'style']
+    for el in ctx.xml_tree.iter():
+        for attr in forbidden:
+            val = el.get(attr)
+            if val:
+                if 'opacity' in attr and val in ['1', '1.0']:
+                    continue
+                if attr == 'style' and 'opacity:1' in val.replace(' ', ''):
+                    continue
+                tag = el.tag.split('}')[-1]
+                return Status.FAIL, f"Forbidden effect/transparency '{attr}' in <{tag}>"
+    return Status.PASS, "No transparency found."
+
+
+@register_rule(rule_id="C06", category="Core")
+def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Validates stroke weights (6,8,10,12,14px)."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped stroke weight check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing."
+
+    valid = {6.0, 8.0, 10.0, 12.0, 14.0}
+    strokes = []
+    for el in ctx.xml_tree.iter():
+        sw = el.get('stroke-width')
+        if sw:
+            try:
+                strokes.append(float(sw.replace('px', '').strip()))
+            except ValueError:
+                return Status.FAIL, f"Non-numeric stroke-width: {sw}"
+    if not strokes:
+        return Status.PASS, "No stroked elements."
+
+    unique_weights = set(strokes)
+    if not unique_weights.issubset(valid):
+        return Status.FAIL, f"Forbidden weights: {unique_weights - valid}"
+
+    if len(strokes) == 1:
+        weight = strokes[0]
+        if weight == 14.0:
+            return Status.REVIEW, "Minimal icon (14px): Confirm optical weight matches set."
+        if weight == 12.0:
+            return Status.REVIEW, "Minimal icon (12px): Confirm it doesn't look too thin."
+        return Status.REVIEW, f"Minimal icon using fine-detail weight ({weight}px)."
+
+    if any(w < 12.0 for w in unique_weights):
+        return Status.REVIEW, f"Fine details/dense icon detected: {unique_weights}"
+
+    return Status.PASS, f"Weights valid: {unique_weights}"
+
+
+@register_rule(rule_id="C07", category="Core")
+def rule_fill_color(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Checks fill state (expects 'none' or no stroke)."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped fill check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing."
+
+    for el in ctx.xml_tree.iter():
+        tag = el.tag.split('}')[-1]
+        if tag in ['g', 'defs', 'style', 'svg']:
+            continue
+        if not el.get('stroke'):
+            continue  # Skip elements without strokes
+
+        fill = el.get('fill')
+        if fill is None and 'fill:none' not in el.get('style', ''):
+            return Status.REVIEW, f"<{tag}> has implicit fill (renders black)."
+        if fill not in ['none', None]:
+            return Status.FAIL, f"<{tag}> has explicit fill '{fill}'. Expected 'none'."
+    return Status.PASS, "Fill states are compliant."
+
+
+@register_rule(rule_id="C08", category="Core")
+def rule_rounding_caps(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Validates 'round' stroke-linecap on open paths."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped cap check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing."
+
+    root_cap = ctx.xml_tree.get('stroke-linecap')
+    if root_cap == 'round':
+        return Status.PASS, "Root defines 'round' cap."
+
+    for el in ctx.xml_tree.iter():
+        tag = el.tag.split('}')[-1]
+        if not el.get('stroke'):
+            continue
+        if tag in ['rect', 'polygon']:
+            continue  # Closed shapes
+
+        is_open = True
+        if tag == 'path':
+            d = el.get('d', '').strip()
+            if not d or d.endswith('z') or d.endswith('Z'):
+                is_open = False
+            elif max_speed >= Speed.SLOW and HAS_SVGELEMENTS:
+                try:
+                    is_open = not SVGPath(d).closed  # type: ignore
+                except Exception:
+                    return Status.FAIL, "Unparseable path data."
+
+        if is_open and el.get('stroke-linecap') != 'round':
+            return Status.FAIL, f"Open <{tag}> lacks 'round' stroke-linecap."
+
+    return Status.PASS, "All open paths have round caps."
+
+
+@register_rule(rule_id="C09", category="Core")
+def rule_rounding_joints(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Validates 'round' stroke-linejoin."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped join check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing."
+
+    root_join = ctx.xml_tree.get('stroke-linejoin')
+    if root_join == 'round':
+        return Status.PASS, "Root defines 'round' join."
+
+    for el in ctx.xml_tree.iter():
+        tag = el.tag.split('}')[-1]
+        if not el.get('stroke') or tag in ['svg', 'g', 'defs']:
+            continue
+        if el.get('stroke-linejoin') != 'round':
+            return Status.FAIL, f"<{tag}> lacks 'round' stroke-linejoin."
+    return Status.PASS, "All path joints are round."
+
+
+@register_rule(rule_id="C10", category="Core")
+def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Core: Validates <rect> corner rounding (rx)."""
+    if max_speed < Speed.MEDIUM:
+        return Status.PASS, "Skipped rect rounding check."
+    if ctx.xml_tree is None:
+        return Status.FAIL, "XML missing."
+
+    ns = "{http://www.w3.org/2000/svg}"
+    for rect in ctx.xml_tree.iter(f'{ns}rect'):
+        try:
+            rx = rect.get('rx')
+            if rx is None:
+                return Status.FAIL, "Rect lacks rx attribute."
+            if not (6 <= float(rx) <= 32):
+                return Status.FAIL, f"Rect rx='{rx}' out of 6-32 range."
+        except (ValueError, TypeError):
+            return Status.FAIL, f"Rect has invalid rx: {rect.get('rx')}"
+    return Status.PASS, "All rects properly rounded."
+
+# --- Quality Rules ---
+
+@register_rule(rule_id="Q01", category="Quality")
+def rule_placeholder_adjacent_stroke_weight(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Quality: [Placeholder] Checks for large differences in adjacent stroke weights."""
+    return Status.PASS, "Placeholder: Q01 Not Implemented (Requires SLOW/Geometry)."
+
+
+@register_rule(rule_id="Q02", category="Quality")
+def rule_placeholder_black_spots(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Quality: [Placeholder] Detects unintentional black spots from overlapping paths."""
+    return Status.PASS, "Placeholder: Q02 Not Implemented (Requires SLOW/Geometry)."
+
+
+@register_rule(rule_id="Q03", category="Quality")
+def rule_placeholder_strokes_too_close(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Quality: [Placeholder] Checks for strokes that are too close to each other."""
+    return Status.PASS, "Placeholder: Q03 Not Implemented (Requires SLOW/Geometry)."
+
+
+@register_rule(rule_id="Q04", category="Quality")
+def rule_placeholder_visual_alignment(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Quality: [Placeholder] Checks for visual alignment instead of bounding-box alignment."""
+    return Status.PASS, "Placeholder: Q04 Not Implemented (Requires SLOW/Geometry)."
+
+# --- Output System (Modular) ---
+
+class OutputHandler(ABC):
+    """Base class for modular output formats."""
+
+    def __init__(self, dest: Any = sys.stdout, verbose: bool = False):
+        self.dest = dest
+        self.verbose = verbose
+        self.failed_count = 0
+
+    @abstractmethod
+    def start(self): pass
+
+    @abstractmethod
+    def process(self, report: FileReport): pass
+
+    @abstractmethod
+    def finish(self): pass
+
+class ConsoleOutput(OutputHandler):
+    COLORS = {
+        Status.PASS: "\033[92m",   # Green
+        Status.WARN: "\033[93m",   # Yellow
+        Status.FAIL: "\033[91m",   # Red
+        Status.REVIEW: "\033[95m",  # Magenta
+        Status.EXEMPT: "\033[90m",  # Grey
+    }
+    RESET = "\033[0m"
+
+    def process(self, report: FileReport):
+        # 1. Handle Catastrophic Errors
+        if report.error:
+            print(
+                f"{self.COLORS[Status.FAIL]}ERR{self.RESET} {report.file_path}: {report.error}")
+            self.failed_count += 1
+            return
+
+        # 2. Determine Visibility
+        # Actionable = anything that isn't a PASS
+        actionable_results = [
+            r for r in report.results if r.status not in (Status.PASS, Status.EXEMPT)]
+        has_failure = any(r.status == Status.FAIL for r in report.results)
+
+        if has_failure:
+            self.failed_count += 1
+
+        # Skip printing if not verbose and nothing is wrong
+        if not self.verbose and not actionable_results:
+            return
+
+        # 3. Printing Logic
+        print(f"\n{report.file_path}")
+        for r in report.results:
+            if not self.verbose and r.status == Status.PASS:
+                continue
+
+            color = self.COLORS.get(r.status, "")
+            timing = f" ({r.duration_ms:.2f}ms)" if self.verbose else ""
+            print(
+                f"  [{color}{r.status.name:6}{self.RESET}] [{r.category}: {r.id}] {r.message}{timing}")
+
+    def finish(self):
+        print(f"\nAnalysis complete. Failed files: {self.failed_count}")
+
+
+class JsonOutput(OutputHandler):
+    def start(self):
+        self.dest.write("[\n")
+        self.first = True
+
+    def process(self, report: FileReport):
+        # In non-verbose mode, skip files that passed everything perfectly
+        actionable = [r for r in report.results if r.status != Status.PASS]
+        if not self.verbose and not actionable and not report.error:
+            return
+
+        if not self.first:
+            self.dest.write(",\n")
+        self.first = False
+
+        if any(r.status == Status.FAIL for r in report.results):
+            self.failed_count += 1
+
+        data = asdict(report)
+        # Enums to strings for JSON
+        for r in data['results']:
+            r['status'] = r['status'].value
+
+        # Strip PASS results from JSON if not verbose to save disk/bandwidth on 8k files
+        if not self.verbose:
+            data['results'] = [r for r in data['results'] if r['status'] != "PASS"]
+
+        self.dest.write(json.dumps(data))
+
+    def finish(self):
+        self.dest.write("\n]\n")
+
+
+class CompactOutput(OutputHandler):
+    """
+    Minimalist output:
+    filename.svg: ID-01, ID-02
+    """
+
+    def start(self):
+        pass
+
+    def process(self, report: FileReport):
+        # Gather IDs of all results that are FAIL
+        failed_ids = [r.id for r in report.results if r.status == Status.FAIL]
+
+        if report.error:
+            # Handle catastrophic file errors (e.g. unreadable)
+            self.dest.write(
+                f"{report.file_path}: CRITICAL_ERROR ({report.error}) \n")
+            self.failed_count += 1
+        elif failed_ids:
+            # Sort IDs for consistent output
+            ids_str = ", ".join(sorted(set(failed_ids)))
+            self.dest.write(f"{report.file_path}: {ids_str} \n")
+            self.failed_count += 1
+
+    def finish(self):
+        # Summary sent to stderr to avoid polluting stdout if user pipes output
+        if self.failed_count > 0:
+            print(
+                f"\nFound {self.failed_count} files with failures.", file=sys.stderr)
+
+
+OUTPUT_FACTORIES: Dict[str, Type[OutputHandler]] = {
+    'text': ConsoleOutput,
+    'json': JsonOutput,
+    'compact': CompactOutput
+}
+
+# --- Worker Logic ---
+
+
+def analyze_file(filepath_str: str, max_speed: Speed, exceptions: Dict[str, List[str]]) -> FileReport:
+    path = Path(filepath_str)
+    report = FileReport(filepath_str)
+    filename = path.name
+
+    # 1. Load context
+    try:
+        raw = path.read_text(encoding='utf-8')
+    except Exception as e:
+        report.error = f"Read Error: {e}"
+        return report
+
+    ctx = CheckContext(filename=filename, raw_content=raw)
+
+    # Lazy Load parsing based on max_speed
+    if max_speed >= Speed.MEDIUM:
+        try:
+            ctx.xml_tree = ET.fromstring(raw)
+        except ET.ParseError:
+            pass  # Handled inside rules that require XML
+
+    if max_speed >= Speed.SLOW and HAS_SVGELEMENTS and ctx.xml_tree is not None:
+        try:
+            from io import BytesIO
+            ctx.svg_doc = SVG.parse(  # type: ignore
+                BytesIO(raw.encode('utf-8')))  # type: ignore
+        except Exception:
+            pass
+
+    # 2. Execute Rules sequentially
+    for rule_func, rule_id, category in RULES_REGISTRY:
+        t0 = time.perf_counter()
+
+        try:
+            status, msg = rule_func(ctx, max_speed)
+        except Exception as e:
+            status, msg = Status.FAIL, f"Rule Exception: {e}"
+
+        dt = (time.perf_counter() - t0) * 1000
+
+        # 3. Handle Exceptions / Exemptions natively
+        if status not in (Status.PASS, Status.WARN):
+            if filename in exceptions.get(rule_id, []):
+                status = Status.EXEMPT
+                msg = f"[EXEMPTED] {msg}"
+
+        report.results.append(CheckResult(
+            rule_id, category, rule_func.__name__, status, msg, dt))
+
+    return report
+
+# --- Main ---
+
+
+def main():
+    parser = argparse.ArgumentParser(description="SVG Linter & Optimizer")
+    parser.add_argument("input", help="SVG file or directory")
+    parser.add_argument("--verbose", action="store_true",
+                        help="Show all checks, including PASS")
+    parser.add_argument("--format", choices=OUTPUT_FACTORIES.keys(),
+                        default="text", help="Output format")
+    parser.add_argument(
+        "--output-file", help="Write output to file instead of stdout")
+    parser.add_argument(
+        "--speed", choices=["fast", "medium", "slow"], default="slow", help="Max check complexity")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Parallel processes")
+    parser.add_argument("--exceptions", default="exceptions.json",
+                        help="JSON file for allowlists")
+
+    args = parser.parse_args()
+
+    # Load Exceptions
+    exceptions = {}
+    exc_path = Path(args.exceptions)
+    if exc_path.exists():
+        try:
+            exceptions = json.loads(exc_path.read_text())
+            # Format: { "WGT-01": ["icon.svg", "icon2.svg"] }
+        except Exception as e:
+            print(f"Error loading exceptions: {e}")
+            sys.exit(1)
+
+    speed_map = {
+        "fast": Speed.FAST,
+        "medium": Speed.MEDIUM,
+        "slow": Speed.SLOW
+    }
+    max_speed = speed_map[args.speed]
+
+    input_path = Path(args.input)
+    if input_path.is_file():
+        files = [str(input_path)]
+    else:
+        files = [str(p) for p in input_path.rglob("*.svg")]
+
+    if not files:
+        print("No SVG files found.")
+        sys.exit(0)
+
+    out_stream = sys.stdout
+    if args.output_file:
+        out_stream = open(args.output_file, 'w')
+
+    handler = OUTPUT_FACTORIES[args.format](
+        out_stream, verbose=args.verbose)
+
+    handler.start()
+
+    # imap_unordered is crucial for large file counts: it yields results as they finish.
+    # We use a chunksize to reduce IPC overhead.
+    chunk_size = max(1, len(files) // (args.workers * 4))
+
+    with ProcessPoolExecutor(max_workers=args.workers) as executor:
+        # Pass max_speed to every worker
+        # We use a partial or a list comprehension approach
+        futures = executor.map(
+            analyze_file,
+            files, [max_speed]*len(files), [exceptions]*len(files),
+            chunksize=chunk_size
+        )
+
+        for report in futures:
+            handler.process(report)
+
+    handler.finish()
+
+    if args.output_file:
+        out_stream.close()
+
+
+if __name__ == "__main__":
+    main()

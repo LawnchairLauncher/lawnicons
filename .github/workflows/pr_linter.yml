@@ -1,0 +1,33 @@
+name: Icon Linter
+
+on:
+  pull_request:
+    paths:
+      - 'svgs/*.svg'
+      - 'app/assets/appfilter.xml'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Needed to compare with base branch
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install -r .github/scripts/requirements.txt
+
+      - name: Run Linter and Post Comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: python .github/scripts/bot_orchestrator.py
