@@ -24,7 +24,7 @@ import android.widget.Toast
 import androidx.core.content.FileProvider
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.Announcement
 import app.lawnchair.lawnicons.data.model.AnnouncementLocation
@@ -51,7 +51,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 @ViewModelKey
-@ContributesIntoMap(LawniconsScope::class)
+@ContributesIntoMap(AppScope::class)
 class IconRequestViewModel(
     private val iconRequestRepository: IconRequestRepository,
     private val announcementsRepository: AnnouncementsRepository,

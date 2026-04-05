@@ -18,15 +18,14 @@ package app.lawnchair.lawnicons
 
 import android.app.Application
 import app.lawnchair.lawnicons.di.MetroViewModelFactoryImpl
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.DependencyGraph
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
 import dev.zacsweers.metrox.viewmodel.ViewModelGraph
 
-abstract class LawniconsScope private constructor()
-
-@SingleIn(LawniconsScope::class)
-@DependencyGraph(LawniconsScope::class)
+@SingleIn(AppScope::class)
+@DependencyGraph(AppScope::class)
 interface LawniconsGraph : ViewModelGraph {
     val viewModelFactory: MetroViewModelFactoryImpl
 

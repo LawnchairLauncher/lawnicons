@@ -17,7 +17,7 @@
 package app.lawnchair.lawnicons.data.repository.home
 
 import android.app.Application
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.model.SearchInfo
 import app.lawnchair.lawnicons.data.model.SearchMode
@@ -39,8 +39,8 @@ interface IconRepository {
     fun clearSearch()
 }
 
-@SingleIn(LawniconsScope::class)
-@ContributesBinding(LawniconsScope::class)
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class)
 class IconRepositoryImpl(application: Application) : IconRepository {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)

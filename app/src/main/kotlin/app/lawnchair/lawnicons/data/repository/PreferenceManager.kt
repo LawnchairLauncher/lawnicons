@@ -4,7 +4,7 @@ import android.content.SharedPreferences
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.produceState
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
@@ -79,7 +79,7 @@ abstract class BasePreferenceManager(
 }
 
 @Inject
-@SingleIn(LawniconsScope::class)
+@SingleIn(AppScope::class)
 class PreferenceManager(
     prefs: SharedPreferences,
 ) : BasePreferenceManager(prefs) {

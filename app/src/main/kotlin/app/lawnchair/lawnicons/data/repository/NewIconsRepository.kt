@@ -17,7 +17,7 @@
 package app.lawnchair.lawnicons.data.repository
 
 import android.app.Application
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.repository.home.getIconInfo
@@ -34,8 +34,8 @@ interface NewIconsRepository {
     val newIconsInfoModel: StateFlow<IconInfoModel>
 }
 
-@SingleIn(LawniconsScope::class)
-@ContributesBinding(LawniconsScope::class)
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class)
 class NewIconsRepositoryImpl(application: Application) : NewIconsRepository {
 
     private val coroutineScope = CoroutineScope(Dispatchers.IO)

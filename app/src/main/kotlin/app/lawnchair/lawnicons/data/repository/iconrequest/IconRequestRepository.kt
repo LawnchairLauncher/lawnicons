@@ -18,7 +18,7 @@ package app.lawnchair.lawnicons.data.repository.iconrequest
 
 import android.app.Application
 import android.util.Log
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.model.IconRequestModel
@@ -45,8 +45,8 @@ interface IconRequestRepository {
     suspend fun createIconRequestZip(currentIconRequests: List<SystemIconInfo>?): File?
 }
 
-@SingleIn(LawniconsScope::class)
-@ContributesBinding(LawniconsScope::class)
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class)
 class IconRequestRepositoryImpl(
     val application: Application,
     private val api: IconRequestSettingsAPI,
