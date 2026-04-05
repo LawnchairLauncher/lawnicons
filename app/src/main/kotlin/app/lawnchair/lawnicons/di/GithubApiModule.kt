@@ -17,8 +17,8 @@
 package app.lawnchair.lawnicons.di
 
 import app.lawnchair.lawnicons.data.api.GitHubContributorsAPI
-import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.kotlinxJson
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn

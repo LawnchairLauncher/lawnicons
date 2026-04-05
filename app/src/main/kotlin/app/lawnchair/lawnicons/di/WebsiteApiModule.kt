@@ -18,10 +18,10 @@ package app.lawnchair.lawnicons.di
 
 import android.app.Application
 import app.lawnchair.lawnicons.data.api.AnnouncementsAPI
-import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.api.IconRequestSettingsAPI
 import app.lawnchair.lawnicons.data.kotlinxJson
 import app.lawnchair.lawnicons.ui.util.Constants
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn

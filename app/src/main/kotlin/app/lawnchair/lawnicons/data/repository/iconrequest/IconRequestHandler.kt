@@ -21,9 +21,9 @@ import android.content.Intent
 import android.os.Build
 import androidx.core.content.FileProvider
 import app.lawnchair.lawnicons.BuildConfig
-import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.model.IconRequestData
 import app.lawnchair.lawnicons.ui.util.Constants
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 

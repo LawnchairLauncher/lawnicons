@@ -17,11 +17,11 @@
 package app.lawnchair.lawnicons.ui.destination.debugmenu
 
 import androidx.lifecycle.ViewModel
-import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 

@@ -1,9 +1,9 @@
 package app.lawnchair.lawnicons.data.repository
 
 import android.app.Application
-import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.kotlinxJson
 import app.lawnchair.lawnicons.data.model.OssLibrary
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.Dispatchers

@@ -16,8 +16,8 @@
 
 package app.lawnchair.lawnicons.data.repository.home
 
-import dev.zacsweers.metro.AppScope
 import app.lawnchair.lawnicons.data.api.AnnouncementsAPI
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
