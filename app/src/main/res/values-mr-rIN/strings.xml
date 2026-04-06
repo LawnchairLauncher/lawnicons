@@ -4,25 +4,33 @@
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
     <string name="version_x">आवृत्ती %s</string>
+    <!-- Accessibility label for Back button -->
+    <string name="back">Back</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
     <string name="search_bar_hint">%d चिन्हांमधून शोधा</string>
+    <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">Pick an icon</string>
-    <!-- Search tooltip -->
+    <!-- Accessibility label for the search icon -->
     <string name="search">Search</string>
-    <!-- Clear accessibility action -->
+    <!-- Accessibility label for the clear search button -->
     <string name="clear">Clear</string>
-    <!-- Text shown when there are no search results-->
+    <!-- Text shown when there are no search results, with %s as the search query -->
     <string name="no_items_found">कोणतेही चिन्ह आढळले नाही</string>
-    <!-- About page -->
-    <string name="about">अॅप बद्दल</string>
-    <!-- External Links -->
+    <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
-    <!-- Icon Request form link -->
-    <!-- Send feedback form link -->
+    <!-- Label for the icon request action in the toolbar -->
+    <string name="request_icons">Request icons</string>
+    <!-- Snackbar content -->
+    <!-- When all icons are fulfilled -->
+    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <!-- When icon requests are turned off via the JSON in the website -->
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <!-- Label for the About screen and toolbar action -->
+    <string name="about">अॅप बद्दल</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">योगदानकर्ता</string>
@@ -30,16 +38,15 @@
     <string name="core_contributors">मुख्य योगदानकर्ता</string>
     <!-- Item that links to the Contributors page -->
     <string name="see_all_contributors">सर्व योगदानकर्ते पहा</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">गिटहब वर पहा</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
-    <!-- Contributions -->
+    <!-- Subtitles below users who contributed to the app -->
+    <!-- Label for core app code contributions -->
     <string name="contribution_core">Core app</string>
+    <!-- Label for icon contributions -->
     <string name="contribution_icons">चिन्हे</string>
+    <!-- Label for infrastructure contributions -->
     <string name="contribution_infra">Infrastructure</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
+    <!-- Special thanks section of About screen -->
+    <!-- Special thanks label -->
     <string name="special_thanks">विशेष धन्यवाद</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">अॅप चिन्ह प्रेरणा देण्यासाठी.</string>
@@ -47,41 +54,60 @@
     <string name="special_thanks_name">अॅपला नाव देण्यासाठी.</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">मंजूरी</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
+    <!-- Icon information popup sheet -->
+    <!-- Label for the icon name -->
     <string name="name">Name</string>
-    <!-- Drawable prefix -->
+    <!-- Label for the drawable resource name -->
     <string name="drawable">ड्रॉएबल</string>
-    <!-- Component -->
+    <!-- Label for the component ID -->
     <string name="component">ID</string>
-    <!-- Mapped components -->
+    <!-- Title for the section showing IDs mapped to an icon -->
     <string name="mapped_components">Mapped IDs</string>
-    <!-- Outdated icon info -->
+    <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
-    <!-- Chevron a11y description -->
-    <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copied_text">Copied text</string>
-    <!-- Snackbar content -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
-    <!-- Missing icons screen -->
+    <!-- Label for the action to view the icon's source on GitHub -->
+    <string name="view_on_github">गिटहब वर पहा</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Share details</string>
+    <!-- Title for the screen showing apps with missing icons -->
     <string name="missing_icons">Missing icons</string>
+    <!-- Leftmost button, to control selection of state -->
+    <!-- Button to clear the selection of icons -->
     <string name="clear_all">Clear selection</string>
+    <!-- Button to select all icons -->
     <string name="select_all">सर्व निवडा</string>
+    <!-- Split button -->
+    <!-- Button to request icons -->
     <string name="request_icons_button">Request</string>
+    <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Show options sheet</string>
+    <!-- Content description for the expanded state of a toggle button -->
     <string name="toggle_button_expanded">Expanded</string>
+    <!-- Content description for the collapsed state of a toggle button -->
     <string name="toggle_button_collapsed">Collapsed</string>
+    <!-- Content description for a toggle button -->
     <string name="toggle_button_content_description">Toggle button</string>
+    <!-- Dropdown items in split button -->
+    <!-- Option to share the icon request as a file -->
     <string name="share_file">Share file</string>
+    <!-- Option to save the icon request to a file -->
     <string name="save_file">Save file</string>
+    <!-- Option to copy the component IDs for the selected icons -->
     <string name="copy_components">Copy app IDs</string>
+    <!-- Toasts -->
+    <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Successfully saved file</string>
+    <!-- Toast shown when there is an error saving a file -->
     <string name="toast_file_save_error">Error saving file</string>
+    <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">Could not create request file</string>
+    <!-- Toast shown when no app is found to handle an action -->
     <string name="toast_no_app_available">No app to handle this action</string>
+    <!-- Toast message shown when text is copied to the clipboard -->
+    <string name="copied_text">Copied text</string>
     <!-- New icons screen -->
+    <!-- Title for the new icons screen, with %1$s as the version name -->
     <string name="new_icons_in_version">New icons in v%1$s</string>
+    <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">New icons (%1$s)</string>
 </resources>

@@ -4,25 +4,33 @@
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Версия %s</string>
+    <!-- Accessibility label for Back button -->
+    <string name="back">Назад</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
     <string name="search_bar_hint">Поиск среди %d иконок</string>
+    <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">Выберите иконку</string>
-    <!-- Search tooltip -->
+    <!-- Accessibility label for the search icon -->
     <string name="search">Поиск</string>
-    <!-- Clear accessibility action -->
+    <!-- Accessibility label for the clear search button -->
     <string name="clear">Очистить</string>
-    <!-- Text shown when there are no search results-->
+    <!-- Text shown when there are no search results, with %s as the search query -->
     <string name="no_items_found">Иконки %s не найдено</string>
-    <!-- About page -->
-    <string name="about">О программе</string>
-    <!-- External Links -->
+    <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
-    <!-- Icon Request form link -->
-    <!-- Send feedback form link -->
+    <!-- Label for the icon request action in the toolbar -->
+    <string name="request_icons">Запросить иконки</string>
+    <!-- Snackbar content -->
+    <!-- When all icons are fulfilled -->
+    <string name="icon_requests_fulfilled">Все иконки добавлены. О ребрендингах сообщайте на GitHub.</string>
+    <!-- When icon requests are turned off via the JSON in the website -->
+    <string name="icon_requests_suspended">С каждым релизом Lawnicons ненадолго открывается приём запросов на иконки.</string>
+    <!-- Label for the About screen and toolbar action -->
+    <string name="about">О программе</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Участники</string>
@@ -30,16 +38,15 @@
     <string name="core_contributors">Основные участники</string>
     <!-- Item that links to the Contributors page -->
     <string name="see_all_contributors">Посмотреть всех участников</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">Посмотреть на GitHub</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">Поделиться</string>
-    <!-- Contributions -->
+    <!-- Subtitles below users who contributed to the app -->
+    <!-- Label for core app code contributions -->
     <string name="contribution_core">Основное приложение</string>
+    <!-- Label for icon contributions -->
     <string name="contribution_icons">Иконки</string>
+    <!-- Label for infrastructure contributions -->
     <string name="contribution_infra">Инфраструктура</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
+    <!-- Special thanks section of About screen -->
+    <!-- Special thanks label -->
     <string name="special_thanks">Особая благодарность</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">За вдохновение для создания иконки приложения</string>
@@ -47,41 +54,60 @@
     <string name="special_thanks_name">За название для приложения</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">Лицензии проектов с открытым исходным кодом</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
+    <!-- Icon information popup sheet -->
+    <!-- Label for the icon name -->
     <string name="name">Имя</string>
-    <!-- Drawable prefix -->
+    <!-- Label for the drawable resource name -->
     <string name="drawable">Изображение</string>
-    <!-- Component -->
+    <!-- Label for the component ID -->
     <string name="component">ID</string>
-    <!-- Mapped components -->
+    <!-- Title for the section showing IDs mapped to an icon -->
     <string name="mapped_components">Привязанные ID</string>
-    <!-- Outdated icon info -->
+    <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">Если иконка устарела из-за проведенного ребрендинга, создайте проблему на GitHub.</string>
-    <!-- Chevron a11y description -->
-    <!-- Request icons button -->
-    <string name="request_icons">Запросить иконки</string>
-    <string name="copied_text">Текст скопирован</string>
-    <!-- Snackbar content -->
-    <string name="icon_requests_fulfilled">Все иконки добавлены. О ребрендингах сообщайте на GitHub.</string>
-    <string name="icon_requests_suspended">С каждым релизом Lawnicons ненадолго открывается приём запросов на иконки.</string>
-    <!-- Missing icons screen -->
+    <!-- Label for the action to view the icon's source on GitHub -->
+    <string name="view_on_github">Посмотреть на GitHub</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Поделиться</string>
+    <!-- Title for the screen showing apps with missing icons -->
     <string name="missing_icons">Отсутствующие значки</string>
+    <!-- Leftmost button, to control selection of state -->
+    <!-- Button to clear the selection of icons -->
     <string name="clear_all">Сбросить выбор</string>
+    <!-- Button to select all icons -->
     <string name="select_all">Выбрать все пункты</string>
+    <!-- Split button -->
+    <!-- Button to request icons -->
     <string name="request_icons_button">Запросить</string>
-    <string name="show_options_sheet">Show options sheet</string>
-    <string name="toggle_button_expanded">Expanded</string>
-    <string name="toggle_button_collapsed">Collapsed</string>
-    <string name="toggle_button_content_description">Toggle button</string>
+    <!-- Accessibility action to show the options sheet -->
+    <string name="show_options_sheet">Показать список вариантов</string>
+    <!-- Content description for the expanded state of a toggle button -->
+    <string name="toggle_button_expanded">Развернуто</string>
+    <!-- Content description for the collapsed state of a toggle button -->
+    <string name="toggle_button_collapsed">Свернуто</string>
+    <!-- Content description for a toggle button -->
+    <string name="toggle_button_content_description">Кнопка-переключатель</string>
+    <!-- Dropdown items in split button -->
+    <!-- Option to share the icon request as a file -->
     <string name="share_file">Поделиться файлом</string>
+    <!-- Option to save the icon request to a file -->
     <string name="save_file">Сохранить файл</string>
+    <!-- Option to copy the component IDs for the selected icons -->
     <string name="copy_components">Скопировать ID приложений</string>
+    <!-- Toasts -->
+    <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Файл сохранен</string>
+    <!-- Toast shown when there is an error saving a file -->
     <string name="toast_file_save_error">Ошибка при сохранении файла</string>
+    <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">Не удается создать файл запроса</string>
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <!-- Toast shown when no app is found to handle an action -->
+    <string name="toast_no_app_available">Нет приложений для этого действия</string>
+    <!-- Toast message shown when text is copied to the clipboard -->
+    <string name="copied_text">Текст скопирован</string>
     <!-- New icons screen -->
+    <!-- Title for the new icons screen, with %1$s as the version name -->
     <string name="new_icons_in_version">Новые иконки в v%1$s</string>
+    <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Новые иконки (%1$s)</string>
 </resources>

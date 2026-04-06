@@ -4,25 +4,33 @@
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Version %s</string>
+    <!-- Accessibility label for Back button -->
+    <string name="back">Back</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
     <string name="search_bar_hint">Durchsuche %d Symbole</string>
+    <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">Symbol auswählen</string>
-    <!-- Search tooltip -->
+    <!-- Accessibility label for the search icon -->
     <string name="search">Suchen</string>
-    <!-- Clear accessibility action -->
+    <!-- Accessibility label for the clear search button -->
     <string name="clear">Leeren</string>
-    <!-- Text shown when there are no search results-->
+    <!-- Text shown when there are no search results, with %s as the search query -->
     <string name="no_items_found">%s nicht gefunden</string>
-    <!-- About page -->
-    <string name="about">Über</string>
-    <!-- External Links -->
+    <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
-    <!-- Icon Request form link -->
-    <!-- Send feedback form link -->
+    <!-- Label for the icon request action in the toolbar -->
+    <string name="request_icons">Symbole anfragen</string>
+    <!-- Snackbar content -->
+    <!-- When all icons are fulfilled -->
+    <string name="icon_requests_fulfilled">Alle Symbole werden unterstützt. Melden Sie Rebrandings über GitHub-Issues.</string>
+    <!-- When icon requests are turned off via the JSON in the website -->
+    <string name="icon_requests_suspended">Mit jeder neuen Lawnicons-Version werden Symbolanfragen für eine begrenzte Zeit geöffnet.</string>
+    <!-- Label for the About screen and toolbar action -->
+    <string name="about">Über</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Mitwirkende</string>
@@ -30,16 +38,15 @@
     <string name="core_contributors">Hauptbeteiligte Mitwirkende</string>
     <!-- Item that links to the Contributors page -->
     <string name="see_all_contributors">Alle Mitwirkenden ansehen</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">Auf GitHub ansehen</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">Details teilen</string>
-    <!-- Contributions -->
+    <!-- Subtitles below users who contributed to the app -->
+    <!-- Label for core app code contributions -->
     <string name="contribution_core">Kern-App</string>
+    <!-- Label for icon contributions -->
     <string name="contribution_icons">Symbole</string>
+    <!-- Label for infrastructure contributions -->
     <string name="contribution_infra">Infrastruktur</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
+    <!-- Special thanks section of About screen -->
+    <!-- Special thanks label -->
     <string name="special_thanks">Besonderer Dank</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">Für die Inspiration des App-Symbols</string>
@@ -47,41 +54,60 @@
     <string name="special_thanks_name">Für den App-Namen</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">Open-Source-Lizenzen</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
+    <!-- Icon information popup sheet -->
+    <!-- Label for the icon name -->
     <string name="name">Name</string>
-    <!-- Drawable prefix -->
+    <!-- Label for the drawable resource name -->
     <string name="drawable">Grafikressource</string>
-    <!-- Component -->
+    <!-- Label for the component ID -->
     <string name="component">ID</string>
-    <!-- Mapped components -->
+    <!-- Title for the section showing IDs mapped to an icon -->
     <string name="mapped_components">Zugeordnete IDs</string>
-    <!-- Outdated icon info -->
+    <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">Wenn das Symbol aufgrund eines Rebranding veraltet ist, bitte ein Issue auf GitHub eröffnen.</string>
-    <!-- Chevron a11y description -->
-    <!-- Request icons button -->
-    <string name="request_icons">Symbole anfragen</string>
-    <string name="copied_text">Text kopiert</string>
-    <!-- Snackbar content -->
-    <string name="icon_requests_fulfilled">Alle Symbole werden unterstützt. Melden Sie Rebrandings über GitHub-Issues.</string>
-    <string name="icon_requests_suspended">Mit jeder neuen Lawnicons-Version werden Symbolanfragen für eine begrenzte Zeit geöffnet.</string>
-    <!-- Missing icons screen -->
+    <!-- Label for the action to view the icon's source on GitHub -->
+    <string name="view_on_github">Auf GitHub ansehen</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Details teilen</string>
+    <!-- Title for the screen showing apps with missing icons -->
     <string name="missing_icons">Fehlende Symbole</string>
+    <!-- Leftmost button, to control selection of state -->
+    <!-- Button to clear the selection of icons -->
     <string name="clear_all">Auswahl löschen</string>
+    <!-- Button to select all icons -->
     <string name="select_all">Alle auswählen</string>
+    <!-- Split button -->
+    <!-- Button to request icons -->
     <string name="request_icons_button">Anfragen</string>
+    <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Blatt mit Optionen anzeigen</string>
+    <!-- Content description for the expanded state of a toggle button -->
     <string name="toggle_button_expanded">Erweitert</string>
+    <!-- Content description for the collapsed state of a toggle button -->
     <string name="toggle_button_collapsed">Minimiert</string>
+    <!-- Content description for a toggle button -->
     <string name="toggle_button_content_description">Umschalten</string>
+    <!-- Dropdown items in split button -->
+    <!-- Option to share the icon request as a file -->
     <string name="share_file">Datei teilen</string>
+    <!-- Option to save the icon request to a file -->
     <string name="save_file">Datei speichern</string>
+    <!-- Option to copy the component IDs for the selected icons -->
     <string name="copy_components">App-IDs kopieren</string>
+    <!-- Toasts -->
+    <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Datei erfolgreich gespeichert</string>
+    <!-- Toast shown when there is an error saving a file -->
     <string name="toast_file_save_error">Fehler Dateispeicherung</string>
+    <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">Erfragte Datei konnte nicht erstellt werden</string>
+    <!-- Toast shown when no app is found to handle an action -->
     <string name="toast_no_app_available">Keine App zur Durchführung dieser Aktion</string>
+    <!-- Toast message shown when text is copied to the clipboard -->
+    <string name="copied_text">Text kopiert</string>
     <!-- New icons screen -->
+    <!-- Title for the new icons screen, with %1$s as the version name -->
     <string name="new_icons_in_version">Neue Symbole in v%1$s</string>
+    <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Neue Symbole (%1$s)</string>
 </resources>

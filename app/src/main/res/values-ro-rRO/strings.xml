@@ -3,85 +3,111 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">Versiune %s</string>
+    <!-- Accessibility label for Back button -->
+    <string name="back">Înapoi</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
-    <string name="search_bar_icon_picker">Pick an icon</string>
-    <!-- Search tooltip -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
+    <string name="search_bar_hint">Caută printre %d de pictograme</string>
+    <!-- Hint shown in the search bar when picking an icon for a specific app -->
+    <string name="search_bar_icon_picker">Alege o pictogramă</string>
+    <!-- Accessibility label for the search icon -->
     <string name="search">Caută</string>
-    <!-- Clear accessibility action -->
-    <string name="clear">Clear</string>
-    <!-- Text shown when there are no search results-->
-    <string name="no_items_found">%s not found</string>
-    <!-- About page -->
-    <string name="about">Despre</string>
-    <!-- External Links -->
+    <!-- Accessibility label for the clear search button -->
+    <string name="clear">Șterge</string>
+    <!-- Text shown when there are no search results, with %s as the search query -->
+    <string name="no_items_found">%s nu a fost găsit</string>
+    <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
-    <!-- Icon Request form link -->
-    <!-- Send feedback form link -->
+    <!-- Label for the icon request action in the toolbar -->
+    <string name="request_icons">Solicită pictograme</string>
+    <!-- Snackbar content -->
+    <!-- When all icons are fulfilled -->
+    <string name="icon_requests_fulfilled">Toate pictogramele sunt compatibile. Raportează schimbările de identitate vizuală prin rapoarte GitHub.</string>
+    <!-- When icon requests are turned off via the JSON in the website -->
+    <string name="icon_requests_suspended">Solicitările de pictograme sunt deschise pentru o perioadă limitată cu fiecare versiune nouă Lawnicons.</string>
+    <!-- Label for the About screen and toolbar action -->
+    <string name="about">Despre</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Contributori</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Contributori de bază</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">View on GitHub</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
-    <!-- Contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="see_all_contributors">Vezi toți contributorii</string>
+    <!-- Subtitles below users who contributed to the app -->
+    <!-- Label for core app code contributions -->
+    <string name="contribution_core">Aplicație de bază</string>
+    <!-- Label for icon contributions -->
     <string name="contribution_icons">Pictograme</string>
-    <string name="contribution_infra">Infrastructure</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <!-- Label for infrastructure contributions -->
+    <string name="contribution_infra">Infrastructură</string>
+    <!-- Special thanks section of About screen -->
+    <!-- Special thanks label -->
+    <string name="special_thanks">Mulțumiri speciale</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Pentru inspirarea pictogramei aplicației</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Pentru numele aplicației</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
-    <string name="name">Name</string>
-    <!-- Drawable prefix -->
+    <string name="acknowledgements">Licențe open-source</string>
+    <!-- Icon information popup sheet -->
+    <!-- Label for the icon name -->
+    <string name="name">Nume</string>
+    <!-- Label for the drawable resource name -->
     <string name="drawable">Drawable</string>
-    <!-- Component -->
+    <!-- Label for the component ID -->
     <string name="component">ID</string>
-    <!-- Mapped components -->
-    <string name="mapped_components">Mapped IDs</string>
-    <!-- Outdated icon info -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
-    <!-- Chevron a11y description -->
-    <!-- Request icons button -->
-    <string name="request_icons">Request icons</string>
-    <string name="copied_text">Copied text</string>
-    <!-- Snackbar content -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
-    <!-- Missing icons screen -->
-    <string name="missing_icons">Missing icons</string>
-    <string name="clear_all">Clear selection</string>
-    <string name="select_all">Select all</string>
-    <string name="request_icons_button">Request</string>
-    <string name="show_options_sheet">Show options sheet</string>
-    <string name="toggle_button_expanded">Expanded</string>
-    <string name="toggle_button_collapsed">Collapsed</string>
-    <string name="toggle_button_content_description">Toggle button</string>
-    <string name="share_file">Share file</string>
-    <string name="save_file">Save file</string>
-    <string name="copy_components">Copy app IDs</string>
-    <string name="toast_file_saved_successful">Successfully saved file</string>
-    <string name="toast_file_save_error">Error saving file</string>
-    <string name="toast_file_zip_error">Could not create request file</string>
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <!-- Title for the section showing IDs mapped to an icon -->
+    <string name="mapped_components">ID-uri asociate</string>
+    <!-- Outdated icon info warning -->
+    <string name="icon_info_outdated_warning">Dacă pictograma este veche din cauza unei schimbări de identitate vizuală, raportează-o pe GitHub.</string>
+    <!-- Label for the action to view the icon's source on GitHub -->
+    <string name="view_on_github">Vezi pe GitHub</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">Partajați detalii</string>
+    <!-- Title for the screen showing apps with missing icons -->
+    <string name="missing_icons">Pictograme lipsă</string>
+    <!-- Leftmost button, to control selection of state -->
+    <!-- Button to clear the selection of icons -->
+    <string name="clear_all">Șterge selecția</string>
+    <!-- Button to select all icons -->
+    <string name="select_all">Selectează toate</string>
+    <!-- Split button -->
+    <!-- Button to request icons -->
+    <string name="request_icons_button">Solicită</string>
+    <!-- Accessibility action to show the options sheet -->
+    <string name="show_options_sheet">Afișează fereastra de opțiuni</string>
+    <!-- Content description for the expanded state of a toggle button -->
+    <string name="toggle_button_expanded">Extins</string>
+    <!-- Content description for the collapsed state of a toggle button -->
+    <string name="toggle_button_collapsed">Închis</string>
+    <!-- Content description for a toggle button -->
+    <string name="toggle_button_content_description">Buton comutator</string>
+    <!-- Dropdown items in split button -->
+    <!-- Option to share the icon request as a file -->
+    <string name="share_file">Partajează fișier</string>
+    <!-- Option to save the icon request to a file -->
+    <string name="save_file">Salvează fișier</string>
+    <!-- Option to copy the component IDs for the selected icons -->
+    <string name="copy_components">Copiați ID-urile aplicațiilor</string>
+    <!-- Toasts -->
+    <!-- Toast shown when a file is successfully saved -->
+    <string name="toast_file_saved_successful">Fișier salvat cu succes</string>
+    <!-- Toast shown when there is an error saving a file -->
+    <string name="toast_file_save_error">Eroare salvare fișier</string>
+    <!-- Toast shown when there is an error creating a zip file -->
+    <string name="toast_file_zip_error">Fișierul de solicitare nu a putut fi creat</string>
+    <!-- Toast shown when no app is found to handle an action -->
+    <string name="toast_no_app_available">Nicio aplicație disponibilă pentru această acțiune</string>
+    <!-- Toast message shown when text is copied to the clipboard -->
+    <string name="copied_text">Text copiat</string>
     <!-- New icons screen -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
-    <string name="new_icons">New icons (%1$s)</string>
+    <!-- Title for the new icons screen, with %1$s as the version name -->
+    <string name="new_icons_in_version">Pictograme noi in v%1$s</string>
+    <!-- Label for the new icons section, with %1$s as the count of new icons -->
+    <string name="new_icons">Pictograme noi (%1$s)</string>
 </resources>

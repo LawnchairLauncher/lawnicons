@@ -4,25 +4,33 @@
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
     <string name="version_x">バージョン %s</string>
+    <!-- Accessibility label for Back button -->
+    <string name="back">Back</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
-    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be atleast 2 or more icons. -->
+    <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
     <string name="search_bar_hint">%dアイコンから検索</string>
+    <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">アイコンを選択する</string>
-    <!-- Search tooltip -->
+    <!-- Accessibility label for the search icon -->
     <string name="search">検索</string>
-    <!-- Clear accessibility action -->
+    <!-- Accessibility label for the clear search button -->
     <string name="clear">消去</string>
-    <!-- Text shown when there are no search results-->
+    <!-- Text shown when there are no search results, with %s as the search query -->
     <string name="no_items_found">%sが見つかりません</string>
-    <!-- About page -->
-    <string name="about">このアプリについて</string>
-    <!-- External Links -->
+    <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
-    <!-- Icon Request form link -->
-    <!-- Send feedback form link -->
+    <!-- Label for the icon request action in the toolbar -->
+    <string name="request_icons">アイコンをリクエストする</string>
+    <!-- Snackbar content -->
+    <!-- When all icons are fulfilled -->
+    <string name="icon_requests_fulfilled">すべてのアイコンがサポートされています。GitHubのIssueを経由して再設計を報告します。</string>
+    <!-- When icon requests are turned off via the JSON in the website -->
+    <string name="icon_requests_suspended">アイコンリクエストは、すべての新しいLawniconsリリースで限られた時間のために開きます。</string>
+    <!-- Label for the About screen and toolbar action -->
+    <string name="about">このアプリについて</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">寄付者</string>
@@ -30,16 +38,15 @@
     <string name="core_contributors">主要な寄付者</string>
     <!-- Item that links to the Contributors page -->
     <string name="see_all_contributors">全ての寄付者を見る</string>
-    <!-- View on GitHub link -->
-    <string name="view_on_github">Githubで見る</string>
-    <!-- Share button on icon info popup -->
-    <string name="share">詳細を共有</string>
-    <!-- Contributions -->
+    <!-- Subtitles below users who contributed to the app -->
+    <!-- Label for core app code contributions -->
     <string name="contribution_core">コアアプリ</string>
+    <!-- Label for icon contributions -->
     <string name="contribution_icons">アイコン</string>
+    <!-- Label for infrastructure contributions -->
     <string name="contribution_infra">インフラストラクチャ</string>
-    <!-- Special Thanks section of About page -->
-    <!-- Special Thanks label -->
+    <!-- Special thanks section of About screen -->
+    <!-- Special thanks label -->
     <string name="special_thanks">スペシャルサンクス</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">アプリアイコンの考案者</string>
@@ -47,41 +54,60 @@
     <string name="special_thanks_name">アプリの名付け親</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">オープンソースライセンス</string>
-    <!-- Icon Information Popup window -->
-    <!-- Name -->
+    <!-- Icon information popup sheet -->
+    <!-- Label for the icon name -->
     <string name="name">名前</string>
-    <!-- Drawable prefix -->
+    <!-- Label for the drawable resource name -->
     <string name="drawable">描画可能</string>
-    <!-- Component -->
+    <!-- Label for the component ID -->
     <string name="component">アプリID</string>
-    <!-- Mapped components -->
+    <!-- Title for the section showing IDs mapped to an icon -->
     <string name="mapped_components">マップされたID</string>
-    <!-- Outdated icon info -->
+    <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">アイコンが再設計により古くなっている場合は、GitHubでIssueを作成してください。</string>
-    <!-- Chevron a11y description -->
-    <!-- Request icons button -->
-    <string name="request_icons">アイコンをリクエストする</string>
-    <string name="copied_text">テキストをコピーしました</string>
-    <!-- Snackbar content -->
-    <string name="icon_requests_fulfilled">すべてのアイコンがサポートされています。GitHubのIssueを経由して再設計を報告します。</string>
-    <string name="icon_requests_suspended">アイコンリクエストは、すべての新しいLawniconsリリースで限られた時間のために開きます。</string>
-    <!-- Missing icons screen -->
+    <!-- Label for the action to view the icon's source on GitHub -->
+    <string name="view_on_github">Githubで見る</string>
+    <!-- Share button on icon info popup -->
+    <string name="share">詳細を共有</string>
+    <!-- Title for the screen showing apps with missing icons -->
     <string name="missing_icons">不足しているアイコン</string>
+    <!-- Leftmost button, to control selection of state -->
+    <!-- Button to clear the selection of icons -->
     <string name="clear_all">選択をクリア</string>
+    <!-- Button to select all icons -->
     <string name="select_all">すべて選択</string>
+    <!-- Split button -->
+    <!-- Button to request icons -->
     <string name="request_icons_button">リクエスト</string>
+    <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">オプションシートを表示</string>
+    <!-- Content description for the expanded state of a toggle button -->
     <string name="toggle_button_expanded">展開済み</string>
+    <!-- Content description for the collapsed state of a toggle button -->
     <string name="toggle_button_collapsed">折りたたむ</string>
+    <!-- Content description for a toggle button -->
     <string name="toggle_button_content_description">切り替えボタン</string>
+    <!-- Dropdown items in split button -->
+    <!-- Option to share the icon request as a file -->
     <string name="share_file">ファイルを共有</string>
+    <!-- Option to save the icon request to a file -->
     <string name="save_file">ファイルを保存</string>
+    <!-- Option to copy the component IDs for the selected icons -->
     <string name="copy_components">アプリIDをコピー</string>
+    <!-- Toasts -->
+    <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">ファイルを正常に保存しました</string>
+    <!-- Toast shown when there is an error saving a file -->
     <string name="toast_file_save_error">ファイルの保存に失敗しました</string>
+    <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">リクエストファイルを作成できませんでした</string>
+    <!-- Toast shown when no app is found to handle an action -->
     <string name="toast_no_app_available">このアクションを処理するアプリがありません</string>
+    <!-- Toast message shown when text is copied to the clipboard -->
+    <string name="copied_text">テキストをコピーしました</string>
     <!-- New icons screen -->
+    <!-- Title for the new icons screen, with %1$s as the version name -->
     <string name="new_icons_in_version">v%1$s の新しいアイコン</string>
+    <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">新しいアイコン (%1$s)</string>
 </resources>
