@@ -38,7 +38,7 @@ commons-io = "commons-io:commons-io:2.21.0"
 
 # Dummy to get renovate updates, the version is used in rootProject build.gradle with spotless.
 ktlint = "com.pinterest.ktlint:ktlint-cli:1.8.0"
-composeRules = "io.nlopez.compose.rules:ktlint:0.5.6"
+composeRules = "io.nlopez.compose.rules:ktlint:0.5.7"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
