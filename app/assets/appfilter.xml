@@ -6167,15 +6167,14 @@
   <item component="ComponentInfo{io.chaldeaprjkt.gamespace/.settings.SettingsActivity}" drawable="game_space" name="Game Space" />
   <item component="ComponentInfo{io.chaldeaprjkt.gamespace/io.chaldeaprjkt.gamespace.settings.SettingsActivity}" drawable="game_space" name="Game Space" />
   <item component="ComponentInfo{com.neoteric.gamespace/com.neoteric.gamespace.settings.SettingsActivity}" drawable="game_space" name="Game Space" />
-  <item component="ComponentInfo{com.android.gamebar/com.android.gamebar.GameBarLauncher}" drawable="xiaomi_game_center" name="GameBar" />
-  <item component="ComponentInfo{com.android.gamebar/com.android.gamebar.GameBarSettingsActivity}" drawable="xiaomi_game_center" name="GameBar" />
   <item component="ComponentInfo{app.gamedeck/app.gamedeck.MainActivity}" drawable="gamedeck" name="Gamedeck" />
   <item component="ComponentInfo{com.xiaoji.egggame/com.xj.app.DeepLinkRouterActivity}" drawable="gamehub" name="GameHub" />
   <item component="ComponentInfo{com.xiaoji.egggame/com.xj.app.SplashActivity}" drawable="gamehub" name="GameHub" />
   <item component="ComponentInfo{gamehub.lite/com.xj.app.DeepLinkRouterActivity}" drawable="gamehub" name="GameHub" />
   <item component="ComponentInfo{app.gamenative/app.gamenative.MainActivityAliasDefault}" drawable="gamenative" name="GameNative" />
-  <item component="ComponentInfo{ru.elron.gamepadtester/ru.elron.gamepadtester.ui.main.MainActivity}" drawable="gamepad_tester" name="Gamepad tester" />
-  <item component="ComponentInfo{gamepadtesterlite.saturday.chimera.com.gamepadtesterlite/gamepadtesterlite.saturday.chimera.com.gamepadtesterlite.controller.Home}" drawable="xiaomi_game_center" name="GamePad Tester Lite" />
+  <item component="ComponentInfo{com.chimera.saturday.evogamepadtester/com.chimera.saturday.evogamepadtester.controller.Home}" drawable="gamepad_tester" name="Gamepad Tester" />
+  <item component="ComponentInfo{ru.elron.gamepadtester/ru.elron.gamepadtester.ui.main.MainActivity}" drawable="gamepad_tester_by_elron" name="Gamepad tester by elron" />
+  <item component="ComponentInfo{gamepadtesterlite.saturday.chimera.com.gamepadtesterlite/gamepadtesterlite.saturday.chimera.com.gamepadtesterlite.controller.Home}" drawable="gamepad_tester_lite" name="GamePad Tester Lite" />
   <item component="ComponentInfo{co.tapcart.app.id_nGDFF1I9N0/co.tapcart.app.MainActivity}" drawable="gamer_supps" name="Gamer Supps" />
   <item component="ComponentInfo{com.game.reschange/com.game.reschange.MainActivity}" drawable="generic_shell" name="GameResChange" />
   <item component="ComponentInfo{com.oplus.games/com.oplus.assistant.activity.StartActivity}" drawable="generic_games" name="Games" />
@@ -7510,7 +7509,7 @@
   <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.FileExplorerTabActivity}" drawable="hyperos_file_manager" name="HyperOS File Manager" />
   <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.MainActivity}" drawable="hyperos_file_manager" name="HyperOS File Manager" />
   <item component="ComponentInfo{com.android.fileexplorer/com.android.fileexplorer.FileExplorerTabActivity}" drawable="generic_files" name="HyperOS Files" />
-  <item component="ComponentInfo{com.xiaomi.gamecenter/com.xiaomi.gamecenter.ui.MainTabActivity}" drawable="xiaomi_game_center" name="HyperOS Games" />
+  <item component="ComponentInfo{com.xiaomi.gamecenter/com.xiaomi.gamecenter.ui.MainTabActivity}" drawable="hyperos_games" name="HyperOS Games" />
   <item component="ComponentInfo{com.miui.screenrecorder/com.miui.screenrecorder.activity.ScreenRecorderHomeActivity}" drawable="hyperos_screen_recorder" name="HyperOS Screen Recorder" />
   <item component="ComponentInfo{com.miui.securitycenter/com.miui.securitycenter.MainActivity}" drawable="hyperos_security_manager" name="HyperOS Security Manager" />
   <item component="ComponentInfo{com.miui.securitycenter/com.miui.securityscan.MainActivity}" drawable="hyperos_security_manager" name="HyperOS Security Manager" />
@@ -18834,6 +18833,7 @@
   <item component="ComponentInfo{com.xiaomi.glgm/com.mig.play.Icon0}" drawable="xiaomi_game_center" name="Xiaomi Game Center" />
   <item component="ComponentInfo{com.xiaomi.glgm/com.xiaomi.glgm.home.ui.category}" drawable="xiaomi_game_center" name="Xiaomi Game Center" />
   <item component="ComponentInfo{com.xiaomi.glgm/com.xiaomi.glgm.home.ui.SplashActivity}" drawable="xiaomi_game_center" name="Xiaomi Game Center" />
+  <item component="ComponentInfo{com.xiaomi.glgm/com.mig.play.Icon1}" drawable="xiaomi_game_center" name="Xiaomi Game Center" />
   <item component="ComponentInfo{com.xiaomi.superhexa/com.superhexa.supervision.NavHostActivity}" drawable="xiaomi_glasses" name="Xiaomi Glasses" />
   <item component="ComponentInfo{com.tvremote.xiaomitvsmart/com.thomson9atvremote.MainActivity}" drawable="android_tv_remote_service" name="Xiaomi Mi Tv Remote" />
   <item component="ComponentInfo{xiaomi.mi.tv.remote.xiaomismarttvremote/xiaomi.mi.tv.remote.xiaomismarttvremote.control.activities.SplashActivity}" drawable="mi_remote" name="Xiaomi Mi TV Remote" />
