@@ -61,7 +61,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ### Localization
 > [!NOTE]
-> Until summer, you can receive a priority icon request as a reward for helping with localization.
+> Contribute to Lawnicons localization and earn a priority icon request.
   
 [Lawnicons localization issue](https://github.com/LawnchairLauncher/lawnicons/issues/3546)
 
