@@ -26,7 +26,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
+import androidx.compose.ui.res.stringResource
+import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.ui.components.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.icon.Back
 import app.lawnchair.lawnicons.ui.theme.icon.Close
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
@@ -50,8 +52,9 @@ fun SearchBarInputField(
         leadingIcon = {
             if (state.searchBarState.targetValue == SearchBarValue.Expanded) {
                 NavigationIconButton(
-                    imageVector = LawnIcons.Back,
+                    label = stringResource(R.string.back),
                     onClick = onBack,
+                    imageVector = LawnIcons.Back,
                 )
             } else {
                 Icon(LawnIcons.Search, contentDescription = null)
@@ -61,6 +64,7 @@ fun SearchBarInputField(
             Crossfade(state.textFieldState.text.isNotEmpty(), label = "") {
                 if (it) {
                     NavigationIconButton(
+                        label = stringResource(R.string.clear),
                         onClick = { state.textFieldState.clearText() },
                         imageVector = LawnIcons.Close,
                     )

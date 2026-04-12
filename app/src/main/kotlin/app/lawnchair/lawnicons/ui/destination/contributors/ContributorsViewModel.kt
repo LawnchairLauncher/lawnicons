@@ -19,9 +19,9 @@ package app.lawnchair.lawnicons.ui.destination.contributors
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.GitHubContributor
 import app.lawnchair.lawnicons.data.repository.GitHubContributorsRepository
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -53,8 +53,8 @@ private data class ContributorsViewModelState(
     }
 }
 
-@ViewModelKey(ContributorsViewModel::class)
-@ContributesIntoMap(LawniconsScope::class)
+@ViewModelKey
+@ContributesIntoMap(AppScope::class)
 class ContributorsViewModel(
     private val repository: GitHubContributorsRepository,
 ) : ViewModel() {

@@ -59,22 +59,24 @@ Lawnicons on the Play Store will install as a different app from other sources.
         <img alt="Lawnicons localization on Crowdin" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
-### Development
-You can help with issues, please refer to our guidelines. As a thank you, you can probably get a priority icon request (write us in Discord before you help). Also, if your app needs an icon in Lawnicons, you can create an issue.
+### Localization
+> [!NOTE]
+> Contribute to Lawnicons localization and earn a priority icon request.
+  
+[Lawnicons localization issue](https://github.com/LawnchairLauncher/lawnicons/issues/3546)
 
-[Support my app](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=support_my_app.yml)
+### Development
+You can help with issues, please refer to our guidelines. As a thank you, you can get a priority icon request (write to us before you help).
 
 ### Icons
-You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. To help with icon requests, please prioritize popular apps with 5M+ installations.
+You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. 
 
 > [!NOTE]
-> Each icon approved and merged on the first try fulfills [a simple community request](https://lawnicons-requests.vercel.app/?filters=easy).
+> Each 5‑icon PR approved and merged on the first try fulfills [5 simple community requests](https://lawnicons-requests.vercel.app/?filters=easy).
 
 ### Icon requests
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
-
-About 5% of the most popular requests are fulfilled each year by our community. But if you learn the Lawnicons guidelines and contribute icons yourself, your icons can be added within a month.
 
 > [!TIP]
 > Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).

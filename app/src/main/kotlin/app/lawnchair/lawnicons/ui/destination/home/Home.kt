@@ -232,7 +232,7 @@ private fun HomeScreen(
                         }
                     }
 
-                    val string = stringResource(R.string.icon_requests_furfilled)
+                    val string = stringResource(R.string.icon_requests_fulfilled)
 
                     HomeBottomToolbar(
                         scrollBehavior = scrollBehavior,
