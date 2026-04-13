@@ -17,13 +17,13 @@
 package app.lawnchair.lawnicons.ui.destination.newicons
 
 import androidx.lifecycle.ViewModel
-import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
 
 @ViewModelKey
-@ContributesIntoMap(LawniconsScope::class)
+@ContributesIntoMap(AppScope::class)
 class NewIconsViewModel(
     private val newIconsRepository: NewIconsRepository,
 ) : ViewModel() {

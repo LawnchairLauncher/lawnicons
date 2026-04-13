@@ -19,7 +19,6 @@ package app.lawnchair.lawnicons.ui.destination.home
 import androidx.compose.foundation.text.input.TextFieldState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.model.Announcement
 import app.lawnchair.lawnicons.data.model.AnnouncementLocation
 import app.lawnchair.lawnicons.data.model.IconInfoModel
@@ -28,6 +27,7 @@ import app.lawnchair.lawnicons.data.repository.NewIconsRepository
 import app.lawnchair.lawnicons.data.repository.home.AnnouncementsRepository
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesIntoMap
 import dev.zacsweers.metro.binding
 import dev.zacsweers.metrox.viewmodel.ViewModelKey
@@ -62,7 +62,7 @@ interface HomeViewModel {
 }
 
 @ViewModelKey
-@ContributesIntoMap(LawniconsScope::class, binding = binding<ViewModel>())
+@ContributesIntoMap(AppScope::class, binding = binding<ViewModel>())
 class HomeViewModelImpl(
     private val iconRepository: IconRepository,
     private val newIconsRepository: NewIconsRepository,

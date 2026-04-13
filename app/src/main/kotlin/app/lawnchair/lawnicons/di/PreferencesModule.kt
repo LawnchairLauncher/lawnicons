@@ -19,16 +19,16 @@ package app.lawnchair.lawnicons.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
 
-@ContributesTo(LawniconsScope::class)
+@ContributesTo(AppScope::class)
 interface PreferencesModule {
 
     @Provides
-    @SingleIn(LawniconsScope::class)
+    @SingleIn(AppScope::class)
     fun provideSharedPreferences(app: Application): SharedPreferences {
         // Note: We request 'Application' because we bound it in the Graph Factory earlier.
         // Application is a Context.

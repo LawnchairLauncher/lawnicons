@@ -13,8 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
+import app.lawnchair.lawnicons.R
+import app.lawnchair.lawnicons.ui.components.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
 import app.lawnchair.lawnicons.ui.theme.icon.Back
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
@@ -45,8 +47,9 @@ fun LawniconsScaffold(
                 title = title,
                 navigationIcon = {
                     NavigationIconButton(
-                        imageVector = LawnIcons.Back,
+                        label = stringResource(R.string.back),
                         onClick = onBack,
+                        imageVector = LawnIcons.Back,
                         modifier = Modifier.padding(horizontal = 4.dp),
                     )
                 },

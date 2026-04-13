@@ -16,9 +16,9 @@
 
 package app.lawnchair.lawnicons.di
 
-import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.api.GitHubContributorsAPI
 import app.lawnchair.lawnicons.data.kotlinxJson
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesTo
 import dev.zacsweers.metro.Provides
 import dev.zacsweers.metro.SingleIn
@@ -27,11 +27,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import retrofit2.create
 
-@ContributesTo(LawniconsScope::class)
+@ContributesTo(AppScope::class)
 interface GithubApiModule {
 
     @Provides
-    @SingleIn(LawniconsScope::class)
+    @SingleIn(AppScope::class)
     fun providesGitHubContributorsApi(): GitHubContributorsAPI {
         return Retrofit.Builder()
             .baseUrl("https://api.github.com/")
