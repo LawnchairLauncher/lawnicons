@@ -5,7 +5,7 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">버전 %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">뒤로</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
@@ -26,9 +26,9 @@
     <string name="request_icons">아이콘 요청</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">모든 아이콘이 지원됩니다. GitHub 문제를 통해 리브랜딩을 보고하십시오.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">아이콘 요청은 새로운 Lawnicons 릴리스마다 제한된 시간 동안 열립니다.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">더 보기</string>
     <!-- Contributors section of About page -->
@@ -47,11 +47,11 @@
     <string name="contribution_infra">인프라</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">감사한 분들</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">앱 아이콘에 영감을 주기 위해</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">앱의 이름을 짓기 위해</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">오픈 소스 라이선스</string>
     <!-- Icon information popup sheet -->
@@ -62,7 +62,7 @@
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">매핑된 ID</string>
     <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">앱 리브랜딩으로 아이콘이 바뀌었다면 GitHub에 이슈를 등록해 주세요.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
@@ -73,36 +73,36 @@
     <string name="missing_icons">Missing icons</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">클리어 선택</string>
     <!-- Button to select all icons -->
     <string name="select_all">모두 선택</string>
     <!-- Split button -->
     <!-- Button to request icons -->
-    <string name="request_icons_button">Request</string>
+    <string name="request_icons_button">요청</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">옵션 시트 보이기</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">확장된</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">무너짐</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">토글 버튼</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">파일 공유</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">파일 저장</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">앱 ID 복사</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">파일 저장 완료</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">파일 저장 오류</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">요청 파일을 생성할 수 없습니다</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">이 동작을 처리할 앱이 없음</string>
     <!-- Toast message shown when text is copied to the clipboard -->
     <string name="copied_text">텍스트를 복사했습니다.</string>
     <!-- New icons screen -->
