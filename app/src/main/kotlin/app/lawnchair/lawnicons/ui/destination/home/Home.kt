@@ -16,6 +16,7 @@
 
 package app.lawnchair.lawnicons.ui.destination.home
 
+import android.content.Intent
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
@@ -48,6 +49,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
@@ -66,6 +68,7 @@ import app.lawnchair.lawnicons.ui.components.home.iconpreview.AppBarListItem
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGrid
 import app.lawnchair.lawnicons.ui.components.home.iconpreview.IconPreviewGridPaddings
 import app.lawnchair.lawnicons.ui.components.home.search.rememberSearchState
+import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
@@ -233,6 +236,8 @@ private fun HomeScreen(
                     }
 
                     val string = stringResource(R.string.icon_requests_fulfilled)
+                    val lawnchairNotInstalled = stringResource(R.string.lawnchair_not_installed)
+                    val context = LocalContext.current
 
                     HomeBottomToolbar(
                         scrollBehavior = scrollBehavior,
@@ -248,6 +253,20 @@ private fun HomeScreen(
                                     )
                                 if (result == SnackbarResult.Dismissed) {
                                     snackbarHostState.currentSnackbarData?.dismiss()
+                                }
+                            }
+                        },
+                        onApplyToLawnchair = {
+                            val intent = Intent(Constants.LAWNCHAIR_APPLY_ICONS_ACTION)
+                                .putExtra("packageName", context.packageName)
+                            if (intent.resolveActivity(context.packageManager) != null) {
+                                context.startActivity(intent)
+                            } else {
+                                coroutineScope.launch {
+                                    snackbarHostState.showSnackbar(
+                                        message = lawnchairNotInstalled,
+                                        duration = SnackbarDuration.Short,
+                                    )
                                 }
                             }
                         },

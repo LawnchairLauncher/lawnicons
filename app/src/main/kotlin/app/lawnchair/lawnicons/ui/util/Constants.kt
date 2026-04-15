@@ -8,4 +8,5 @@ object Constants {
     const val OPEN_COLLECTIVE = WEBSITE + "open-collective/"
 
     const val ICON_PICKER_INTENT_ACTION = "com.novalauncher.THEME"
+    const val LAWNCHAIR_APPLY_ICONS_ACTION = "app.lawnchair.APPLY_ICONS"
 }

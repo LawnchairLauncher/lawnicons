@@ -168,6 +168,11 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent>
+        <!-- Lawnchair Apply Icons -->
+        <intent>
+            <action android:name="app.lawnchair.APPLY_ICONS" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent>
         <intent>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.HOME" />
