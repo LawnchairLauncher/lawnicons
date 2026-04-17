@@ -71,7 +71,7 @@ You're welcome to work on our issues. Contributors can get a priority icon reque
 [Lawnicons developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-It's required to follow the Lawnicons design guidelines. Accepted contributions include: new icons, missing app IDs, rebranding reports, and updates for outdated icons. 
+It's required to follow the Lawnicons design guidelines. Accepted contributions include: new icons capped at 5 per pull request, missing app IDs, rebranding reports, and updates for outdated icons. 
 
 [Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=icon_redesign.yml)
 
