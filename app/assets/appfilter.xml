@@ -3538,7 +3538,8 @@
   <item component="ComponentInfo{soft.aggressivecodings.cpdf/soft.aggressivecodings.cpdf.MainActivity}" drawable="compose_pdf_pro" name="Compose PDF Pro" />
   <item component="ComponentInfo{com.mocharealm.compound/com.mocharealm.compound.MainActivity}" drawable="compound" name="Compound" />
   <item component="ComponentInfo{com.mobso.photoreducer.lite/com.mobso.photoreducer.lite.MainActivity}" drawable="image_resizer_and_compressor" name="Compress image" />
-  <item component="ComponentInfo{com.psoffritti.compress.image/com.psoffritti.compress.image.ui.MainActivity}" drawable="image_resizer_and_compressor" name="Compress Image" />
+  <item component="ComponentInfo{com.psoffritti.compress.image/com.psoffritti.compress.image.ui.MainActivity}" drawable="compress_image" name="Compress Image" />
+  <item component="ComponentInfo{com.psoffritti.compress.image/com.min.n.MainActivity}" drawable="compress_image" name="Compress Image" />
   <item component="ComponentInfo{com.awesomedev.compress_pdf/com.awesomedev.compress_pdf.MainActivity}" drawable="generic_pdf_square" name="Compress PDF" />
   <item component="ComponentInfo{compress.joshattic.us/compress.joshattic.us.MainActivity}" drawable="compressor" name="Compressor" />
   <item component="ComponentInfo{app.comun.mobile/app.comun.mobile.MainActivity}" drawable="comun" name="Común" />
@@ -9483,8 +9484,9 @@
   <item component="ComponentInfo{com.mbta.mobileapp/com.mbta.mobileapp.MainActivity}" drawable="mbta_mticket" name="MBTA mTicket" />
   <item component="ComponentInfo{com.mbta.mobileapp/com.masabi.android.MetroClientActivity}" drawable="mbta_mticket" name="MBTA mTicket" />
   <item component="ComponentInfo{com.mbta.mobileapp/io.ionic.starter.MainActivity}" drawable="mbta_mticket" name="MBTA mTicket" />
-  <item component="ComponentInfo{com.whatsamb/com.whatsapp.Main5}" drawable="whatsapp" name="MBWhatsApp" />
-  <item component="ComponentInfo{com.whatsamb/com.whatsapp.Main2}" drawable="whatsapp" name="MBWhatsApp" />
+  <item component="ComponentInfo{com.whatsamb/com.whatsapp.Main5}" drawable="mbwhatsapp" name="MBWhatsApp" />
+  <item component="ComponentInfo{com.whatsamb/com.whatsapp.Main2}" drawable="mbwhatsapp" name="MBWhatsApp" />
+  <item component="ComponentInfo{com.whatsamb/com.whatsapp.Main0}" drawable="mbwhatsapp" name="MBWhatsApp" />
   <item component="ComponentInfo{com.wsandroid.suite/com.mcafee.app.LauncherDelegateActivity}" drawable="mcafee_security" name="McAfee Security" />
   <item component="ComponentInfo{com.wsandroid.suite/com.android.mcafee.ui.framework.BaseActivity}" drawable="mcafee_security" name="McAfee Security" />
   <item component="ComponentInfo{com.wsandroid.suite.samsung/com.android.mcafee.ui.framework.BaseActivity}" drawable="mcafee_security" name="McAfee Security" />
@@ -9907,6 +9909,7 @@
   <item component="ComponentInfo{com.microsoft.emmx/com.microsoft.ruby.Main4}" drawable="microsoft_edge" name="Microsoft Edge" />
   <item component="ComponentInfo{com.microsoft.emmx.beta/com.microsoft.ruby.Main}" drawable="microsoft_edge_beta" name="Microsoft Edge Beta" />
   <item component="ComponentInfo{com.microsoft.emmx.beta/com.microsoft.ruby.Main3}" drawable="microsoft_edge_beta" name="Microsoft Edge Beta" />
+  <item component="ComponentInfo{com.microsoft.emmx.beta/com.microsoft.ruby.Main1}" drawable="microsoft_edge_beta" name="Microsoft Edge Beta" />
   <item component="ComponentInfo{com.microsoft.emmx.canary/com.google.android.apps.chrome.Main}" drawable="microsoft_edge_canary" name="Microsoft Edge Canary" />
   <item component="ComponentInfo{com.microsoft.emmx.canary/com.microsoft.ruby.Main}" drawable="microsoft_edge_canary" name="Microsoft Edge Canary" />
   <item component="ComponentInfo{com.microsoft.emmx.canary/com.microsoft.ruby.Main3}" drawable="microsoft_edge_canary" name="Microsoft Edge Canary" />
@@ -16229,6 +16232,7 @@
   <item component="ComponentInfo{com.tmobile.tuesdays/com.telekom.tworld.dashboard.DashboardActivity}" drawable="t_mobile" name="T-Life" />
   <item component="ComponentInfo{com.tmobile.tuesdays/com.tmobile.tuesdays.MainActivity}" drawable="t_mobile" name="T-Life" />
   <item component="ComponentInfo{com.tmobile.tuesdays/com.telekom.tworld.dashboard.LauncherActivity}" drawable="t_mobile" name="T-Life" />
+  <item component="ComponentInfo{com.tmobile.tuesdays/com.tmobile.tmte.Launcher}" drawable="t_mobile" name="T-Life" />
   <item component="ComponentInfo{pl.tmobile.miboa/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="t_mobile" name="T-Mobile" />
   <item component="ComponentInfo{cz.tmobile.oneapp/com.telekom.oneapp.launcher.components.launcher.LauncherActivity}" drawable="t_mobile" name="T-Mobile" />
   <item component="ComponentInfo{com.tmobile.grsuapp/com.tmobile.grsuapp.MainActivity}" drawable="t_mobile_device_unlock" name="T-Mobile Device Unlock" />
