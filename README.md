@@ -54,7 +54,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
     <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Icon requests" src="https://img.shields.io/badge/Icon%20requests-94009E?logo=vercel&logoColor=ffffff"></a>
+        <img alt="Requested icons" src="https://img.shields.io/badge/Requested%20icons-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="https://lawnchair.crowdin.com/lawnicons">
         <img alt="Lawnicons localization on Crowdin" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
@@ -66,13 +66,14 @@ Lawnicons on the Play Store will install as a different app from other sources.
 [Lawnicons localization issue](https://github.com/LawnchairLauncher/lawnicons/issues/3546)
 
 ### Development
-You can help with issues, please refer to our guidelines. As a thank you, you can get a priority icon request (write to us before you help).
+You're welcome to work on our issues. Contributors can get a priority icon request—write to us before you help.
+
+[Lawnicons developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-You may add missing icons if they are of high quality, with no more than 5 icons per pull request. It's essential to follow the Lawnicons design guidelines. 
+It's required to follow the Lawnicons design guidelines. Accepted contributions include: new icons, missing app IDs, rebranding reports, and updates for outdated icons. 
 
-> [!NOTE]
-> Each 5‑icon PR approved and merged on the first try fulfills [5 simple community requests](https://lawnicons-requests.vercel.app/?filters=easy).
+[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=icon_redesign.yml)
 
 ### Icon requests
 
