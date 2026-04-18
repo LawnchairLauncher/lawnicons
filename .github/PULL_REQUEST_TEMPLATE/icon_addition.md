@@ -1,23 +1,23 @@
-# Description
-<!-- Please provide a short summary of your pull request. -->
+<!-- Title example: "+1 icon, +2 links, +3 icon updates".
+     +1 icon = +1 brand new icon (related links aren't considered).
+     +2 links = +2 missing app IDs for existing icons.
+     +3 icon updates = redesign of 3 existing icons.
+     In other cases, choose something else to avoid confusion.
+     Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
 
-## Icons addition information
-<!-- Please specify in the sections below which applications and packages you have worked on. Unnecessary sections can be deleted. -->
+## Icons
+<!-- Please specify in the sections below which apps and packages you have worked on.
+     Unnecessary sections can be deleted. -->
+
 ### Added
-<!--  Apps for which you add icons. -->
-App Name (`com.package.app`)
-App Name (`com.package.app`)
+<!-- Apps for which you add icons. 
+     For design updates use the same template but with the "Updated" name. -->
+App name (`com.package.app`)  
+App name (`com.package.app`)  
+App name (`com.package.app`)  
 
 ### Linked
-<!--  New links for apps that were already in Lawnicons. -->
-App Name (`com.package.app` → `drawable.svg`)
-App Name (`com.package.app` → `drawable.svg`)
-
-### Updated
-<!--  When replacing old icons with new ones. -->
-App Name (`com.package.app`)
-App Name (`com.package.app`)
-
-## Contributor's checklist
-- [ ] I followed [the Lawnicons guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) and will make changes if someone suggests. I will also make sure that Lawnicons builds correctly.
-<!-- If you think that everything is correct, then replace [ ] with [x] or click on the checkbox after creating the pull request. -->
+<!-- New app packages for existing icons. -->
+App name (`com.package.app` → `drawable.svg`)  
+App name (`com.package.app` → `drawable.svg`)  
+App name (`com.package.app` → `drawable.svg`)  

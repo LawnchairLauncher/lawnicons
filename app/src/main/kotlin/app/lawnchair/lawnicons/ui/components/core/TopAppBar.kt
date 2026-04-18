@@ -1,22 +1,26 @@
 package app.lawnchair.lawnicons.ui.components.core
 
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.LargeTopAppBar
+import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
+import androidx.compose.material3.LargeFlexibleTopAppBar
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.components.home.ClickableIcon
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
+import app.lawnchair.lawnicons.ui.components.NavigationIconButton
+import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
+import app.lawnchair.lawnicons.ui.theme.icon.Back
+import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun TopAppBar(
     navigationIcon: @Composable () -> Unit,
@@ -24,15 +28,22 @@ fun TopAppBar(
     title: String,
     modifier: Modifier = Modifier,
     isExpandedScreen: Boolean = false,
+    containerColor: Color = adaptiveSurfaceColor,
 ) {
+    val topAppBarColors = TopAppBarDefaults.topAppBarColors().copy(
+        containerColor = containerColor,
+        scrolledContainerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+    )
+
     if (!isExpandedScreen) {
-        LargeTopAppBar(
+        LargeFlexibleTopAppBar(
             modifier = modifier,
             scrollBehavior = scrollBehavior,
             navigationIcon = navigationIcon,
             title = {
                 Text(title)
             },
+            colors = topAppBarColors,
         )
     } else {
         TopAppBar(
@@ -42,6 +53,7 @@ fun TopAppBar(
             title = {
                 Text(title)
             },
+            colors = topAppBarColors,
         )
     }
 }
@@ -50,14 +62,15 @@ fun TopAppBar(
 @PreviewLawnicons
 @Composable
 private fun SmallTopAppBarPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         TopAppBar(
             navigationIcon = {
-                ClickableIcon(
+                NavigationIconButton(
+                    label = "Back",
                     onClick = {},
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                    size = 40.dp,
+                    imageVector = LawnIcons.Back,
                     modifier = Modifier.padding(horizontal = 4.dp),
+                    size = 40.dp,
                 )
             },
             scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
@@ -71,14 +84,15 @@ private fun SmallTopAppBarPreview() {
 @PreviewLawnicons
 @Composable
 private fun LargeTopAppBarPreview() {
-    LawniconsTheme {
+    PreviewProviders {
         TopAppBar(
             navigationIcon = {
-                ClickableIcon(
+                NavigationIconButton(
+                    label = "Back",
                     onClick = {},
-                    imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
-                    size = 40.dp,
+                    imageVector = LawnIcons.Back,
                     modifier = Modifier.padding(horizontal = 4.dp),
+                    size = 40.dp,
                 )
             },
             scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),

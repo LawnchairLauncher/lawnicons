@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -9,21 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lawnicons.SplashScreen"
         android:name=".LawniconsApplication"
-        android:enableOnBackInvokedCallback="true">
+        android:enableOnBackInvokedCallback="true"
+        tools:targetApi="33">
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.Lawnicons.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <!-- New Lawnchair Launcher -->
+            <!-- Lawnchair Launcher 14 -->
             <intent-filter>
                 <action android:name="app.lawnchair.icons.THEMED_ICON" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <!-- Legacy Lawnchair Launcher -->
+            <!-- Lawnchair Launcher Legacy -->
             <intent-filter>
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
                 <category android:name="ch.deletescape.lawnchair.PICK_ICON" />
@@ -40,6 +43,7 @@
                 <!-- Support Material3 theming as found in M3 Icon Pack standard-->
                 <category android:name="org.icontheme.CHANGES_WITH_MATERIAL_YOU_COLORS" />
                 <category android:name="org.icontheme.CHANGES_WITH_DARK_MODE" />
+                <category android:name="org.icontheme.FALLBACK_TO_THEMED_ICON" />
             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
@@ -126,9 +130,30 @@
                 <action android:name="com.vivid.launcher.theme" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+            <!-- Mail -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <data android:mimeType="*/*" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
     <queries>
+        <!-- Browser -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.APP_BROWSER" />
@@ -137,6 +162,19 @@
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.BROWSABLE" />
             <data android:scheme="https" />
+        </intent>
+        <!-- Icon Requesting -->
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.HOME" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.DEFAULT" />
         </intent>
     </queries>
 </manifest>

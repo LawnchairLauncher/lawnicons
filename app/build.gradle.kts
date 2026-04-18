@@ -1,19 +1,12 @@
-import app.cash.licensee.LicenseeTask
-import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.android.build.gradle.tasks.MergeResources
-import java.io.FileInputStream
-import java.util.Locale
+import app.cash.licensee.SpdxId
 import java.util.Properties
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
-    id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android")
-    id("app.cash.licensee")
-    id("org.gradle.android.cache-fix")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.licensee)
+    alias(libs.plugins.metro)
 }
 
 val buildCommit = providers.exec {
@@ -26,38 +19,37 @@ val ciRunNumber = providers.environmentVariable("GITHUB_RUN_NUMBER").orNull.orEm
 val isReleaseBuild = ciBuild && ciRef.contains("main")
 val devReleaseName = if (ciBuild) "(Dev #$ciRunNumber)" else "($buildCommit)"
 
-val version = "2.9.0"
-val versionDisplayName = "$version ${if (isReleaseBuild) "" else devReleaseName}"
+val version = "2.17.1"
+val versionDisplayName = version + if (!isReleaseBuild) " $devReleaseName" else ""
 
 android {
-    compileSdk = 34
+    compileSdk = 36
     namespace = "app.lawnchair.lawnicons"
 
     defaultConfig {
         applicationId = "app.lawnchair.lawnicons"
         minSdk = 26
-        targetSdk = 34
-        versionCode = 12
+        targetSdk = compileSdk
+        versionCode = 25
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
     }
 
-    val keystorePropertiesFile = rootProject.file("keystore.properties")
-    val releaseSigning = if (keystorePropertiesFile.exists()) {
+    androidResources {
+        generateLocaleConfig = true
+    }
+
+    val releaseSigning = try {
         val keystoreProperties = Properties()
-        keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+        keystoreProperties.load(rootProject.file("keystore.properties").inputStream())
         signingConfigs.create("release") {
             keyAlias = keystoreProperties["keyAlias"].toString()
             keyPassword = keystoreProperties["keyPassword"].toString()
             storeFile = rootProject.file(keystoreProperties["storeFile"].toString())
             storePassword = keystoreProperties["storePassword"].toString()
         }
-    } else {
+    } catch (ignored: Exception) {
         signingConfigs["debug"]
-    }
-
-    androidResources {
-        generateLocaleConfig = true
     }
 
     buildTypes {
@@ -66,6 +58,11 @@ android {
             isPseudoLocalesEnabled = true
         }
         release {
+            isMinifyEnabled = true
+            proguardFiles("proguard-rules.pro")
+        }
+        create("play") {
+            applicationIdSuffix = ".play"
             isMinifyEnabled = true
             proguardFiles("proguard-rules.pro")
         }
@@ -79,12 +76,11 @@ android {
         }
     }
     sourceSets.getByName("app") {
-        res.setSrcDirs(listOf("src/runtime/res"))
+        res.directories.add("src/runtime/res")
     }
 
     buildFeatures {
         buildConfig = true
-        compose = true
         resValues = true
     }
 
@@ -99,66 +95,71 @@ android {
         includeInBundle = false
     }
 
-    applicationVariants.all {
-        outputs.all {
-            (this as? ApkVariantOutputImpl)?.outputFileName =
-                "Lawnicons $versionName v${versionCode}_${buildType.name}.apk"
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+androidComponents {
+    onVariants { variant ->
+        variant.outputs.forEach { output ->
+            // TODO: https://github.com/android/gradle-recipes/blob/cbe7c7dea2a3f5b1764756f24bf453d1235c80e2/listenToArtifacts/README.md
+            with(output as com.android.build.api.variant.impl.VariantOutputImpl) {
+                val newApkName = "Lawnicons ${versionName.get()} v${versionCode.get()}_${variant.buildType}.apk"
+                outputFileName = newApkName
+            }
         }
     }
 }
 
-androidComponents.onVariants { variant ->
-    val capName = variant.name.replaceFirstChar { it.titlecase(Locale.ROOT) }
-    val licenseeTask = tasks.named<LicenseeTask>("licenseeAndroid$capName")
-    val copyArtifactsTask = tasks.register<Copy>("copy${capName}Artifacts") {
-        dependsOn(licenseeTask)
-        from(licenseeTask.map { it.jsonOutput })
-        // Copy artifacts.json to a new directory.
-        into(layout.buildDirectory.dir("generated/dependencyAssets/${variant.name}"))
-    }
-    variant.sources.assets?.addGeneratedSourceDirectory(licenseeTask) {
-        // Avoid using LicenseeTask::outputDir as it contains extra files that we don't need.
-        objects.directoryProperty().fileProvider(copyArtifactsTask.map { it.destinationDir })
-    }
-}
-
-// Process SVGs before every build.
-tasks.withType<MergeResources>().configureEach {
-    dependsOn(projects.svgProcessor.dependencyProject.tasks.named("run"))
+composeCompiler {
+    stabilityConfigurationFiles.addAll(
+        layout.projectDirectory.file("compose_compiler_config.conf"),
+    )
+    reportsDestination = layout.buildDirectory.dir("compose_build_reports")
 }
 
 licensee {
-    allow("Apache-2.0")
+    allow(SpdxId.Apache_20)
+    allow(SpdxId.MIT)
+
+    bundleAndroidAsset = true
+    androidAssetReportPath = "licenses.json"
 }
 
 dependencies {
-    val lifecycleVersion = "2.8.0"
-    val hiltVersion = "2.51.1"
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.util)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.compose.animation)
+    implementation(libs.androidx.compose.material3)
+    implementation(libs.androidx.compose.material3.windowsizeclass)
+    implementation(libs.androidx.graphics.shapes)
+    implementation(libs.androidx.navigation3.ui)
+    implementation(libs.androidx.navigation3.runtime)
+    implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
 
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.core:core-ktx:1.13.1")
-    implementation("androidx.activity:activity-compose:1.9.0")
-    implementation(platform("androidx.compose:compose-bom:2024.05.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.ui:ui-util")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    implementation("androidx.compose.animation:animation")
-    implementation("androidx.compose.material:material-icons-core-android:1.6.7")
-    implementation("androidx.compose.material3:material3:1.3.0-beta01")
-    implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.navigation:navigation-compose:2.8.0-beta01")
-    implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion")
-    implementation("io.github.fornewid:material-motion-compose-core:1.2.0")
-    implementation("com.google.dagger:hilt-android:$hiltVersion")
-    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-    implementation("io.coil-kt:coil-compose:2.6.0")
-    val retrofitVersion = "2.11.0"
-    implementation("com.squareup.retrofit2:retrofit:$retrofitVersion")
-    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:$retrofitVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
-    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.3.7")
+    implementation(libs.kotlinx.serialization.json)
+
+    implementation(libs.metrox.viewmodel.compose)
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.kotlinx.serialization)
+    implementation(libs.okhttp)
+
+    implementation(libs.coil.compose)
+    implementation(libs.coil.svg)
+    implementation(libs.lazycolumn.scrollbar)
+    implementation(libs.material.motion.compose.core)
+}
+
+tasks.preBuild {
+    dependsOn(project(projects.svgProcessor.path).tasks.named("run"))
 }

@@ -1,199 +1,397 @@
 # Lawnicons contributing guide
-Welcome to the Lawnicons contributing guide! This file will tell you what you need to know to contribute to Lawnicons.
 
-Before you start, please [fork](https://github.com/LawnchairLauncher/lawnicons/fork) the project and clone it to your machine. Afterwards, you can either contribute icons or code.
+Welcome to the Lawnicons contributing guide!
 
-## Contributing icons
-To contribute icons, you need an icon editor (e.g., Figma, Inkscape, etc), a file explorer, a text editor, and a terminal window.
+In case of unclear wording, ask us in our Discord. If you find errors or want to suggest improvements in the guide itself, create an issue.
 
-For additional information on designing icons and samples, see [the Lawnicons Figma repository](https://www.figma.com/community/file/1227718471680779613) made by [Grabstertv](https://github.com/Grabstertv).
+[Our Discord](https://discord.com/invite/3x8qNWxgGZ)
 
-Need help? [Join Lawnchair on Discord](https://discord.com/invite/3x8qNWxgGZ).
+## Involvement
 
-### TL;DR on icon design
-The canvas is `192×192px`. The content area for most icons is `160×160px`, meaning the long side of an icon should be `160px`. Square icons should be `154×154px`. No fill, the stroke width is `12px`. All shapes should be black `#000` with rounded ends and joins. Round 90° angles by `6-32px`. Avoid blackness, close distances between strokes, and drastic changes in stroke widths. Simplify details, but don't lose recognizability. Provide original and localized names, so the icons can be found.
+**Contributors**
 
-To avoid rework, save time and understand the limitations of the guidelines, it is worth reading reviews (e.g., [+8 icons, +1 link, +4 updates](https://github.com/LawnchairLauncher/lawnicons/pull/1865)) and creating 5-10 icons in the first contribution.
+The Lawnchair team is focused on development only. Our community (basically everyone who wants to) makes icons and sometimes touches the code too. 
 
-### Canvas & Sizes
+[Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors) • [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 
-![](docs/images/creating-icons-1-artboard.png)
+**Development**  
 
-#### Canvas
-The canvas size should be `192×192px` so that there is a safe zone around the icons to control consistency.
-#### Content area for all but square
-All but square icons must fit the `160×160px` content area size. Be careful with abstract icons: the long side should be `160px`, but the other side can be smaller. Remember to adjust the size of all icons when you change the base stroke thickness (`12px`).
-#### Content area for squares
-Square icons must fit the `154×154px` content area size. Icons that mostly fit in a square are considered square. If the icon is kinda square and kinda not, choose a size based on density: `154×154px` for dense icons, `160×160px` for the rest. Examples: [GitHub](docs/images/creating-icons-6-sample-icons.png) or [Figma](https://www.figma.com/file/YeHvAvz2g4vqqXGqgGLqRI/%F0%9F%AA%91-Lawnicons-Guidelines?type=design&node-id=307%3A282&mode=design&t=Bf94B5qZCVr9gV0b-1).
+The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
 
-### Foundation
+**Icons**  
 
-![](docs/images/creating-icons-2-foundation.png)
+You can contribute your icons, fulfill icon requests, add missing app IDs, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
 
-#### Color
-All shapes must have non-transparent black color `#000000`.
-#### Stroke widths
-The stroke should be kept at `12px` in most cases. If an icon is too minimal or dense, you'll need other widths: `14px` for the most minimal, and `8px` for the densest. For fine details, you can use `6px`. For more clarification, please refer to [the visual balance section](https://github.com/x9136/lawnicons/blob/addate/CONTRIBUTING.md#maintaining-visual-balance) down below.
-#### End caps
-All shapes must have rounded caps and joins.
-#### Corner radius
-Use `6—32px` for 90° angles. It is allowed to leave `0px` radius in cases when the others spoil the shape: for example, when a right angle is formed of short lines.
+[Icon requests dashboard](https://lawnicons-requests.vercel.app/)
 
-### Details
+## Contributing code
 
-![](docs/images/creating-icons-3-detail.png)
+Code-related contributions are welcome. Significant changes to the UI should be discussed in our Discord. Generally, we want to keep things clean and simple.
 
-When designing icons, it's important to strike a balance with the level of detail. While some icons can be highly detailed, it's acceptable to remove certain details as long as the icon remains recognizable and stays true to its original concept. In some cases, you may need to completely rethink the icon to achieve a minimalist design.
+Visit the Lawnicons developer wiki for developer information regarding Lawnicons.
 
-A great example of this is the Subway Surfers icon as seen in the example above. In Lawnicons, it was reimagined by using the graffiti-styled "S" from the game's logo instead of depicting the character, which would have required intricate shapes and varying stroke thicknesses.
+[Lawnicons developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
-![](docs/images/creating-icons-3-balance.png)
+## Contributing icons TL;DR
 
-In contrary, it's also important to avoid too few details, as they may not be easily recognizable. Take the Headspace icon, for instance, which consists only of a circle. This may pose a problem for users since Lawnicons are not colored, and a simple circle on its own is not easily identifiable. Whenever possible, incorporate additional details that align with the app's design language.
+1. Study the Lawnicons design guidelines in practice (for example, in Figma) and create a suitable icon (*.svg).
+2. Learn how to find the app ID that you will need to link with the created icon.
+3. Learn how to fork the Lawnicons repository and make a local copy for yourself, where you will add the created icon.
+4. Add the created icon and the app ID to your local copy and push the changes to your fork on GitHub.
+5. Create a pull request to the Lawnicons repository and wait for a review.
 
-In the Headspace example above, the circles usually have a face representing mood. By adding one of those faces to the circle, you can make the icon more recognizable.
 
-### Maintaining Consistency
+## Lawnicons design guidelines
 
-![](docs/images/creating-icons-4-outline.png)
+The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
-All icons must adhere to an outline (not filled) to maintain a consistent theme. However, fill can be used sparingly for small details that require minimal contrast or for elements that cannot be accurately recreated with an outline.
+> [!TIP]
+> The design guidelines are also available in Figma, you can practice there.  
+> [View in Figma](https://www.figma.com/community/file/1544976260626797886)
 
-The key is to ensure that any filled elements do not overwhelm the overall icon design and align with the outlined style to create a harmonious and coherent icon set.
+[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
 
-### Maintaining Visual Balance
+### Approach
 
-![](docs/images/creating-icons-4-maintaining-visual-balance.png)
+The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
 
-Sharp contrast occurs when there is a drastic change in stroke thickness without a smooth transition. For instance, using a `12px` stroke and suddenly decreasing it to `8px` creates an unbalanced visual effect in the final icon.
+Tips
+- Make no more than 5 icons at a time, as long as your PRs require rework.
+- Prioritize quality.
+- Use the Lawnicons style, rather than trying to reproduce the original exactly.
+- Practice on easy-to-make icons to understand the whole process.
+- See how other contributors have made pull requests (PRs).
 
-To avoid sharp contrast, you can follow either of these two methods:
+[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
-1. **Uniform Stroke:** Instead of jumping between stroke thicknesses, use the next immediate increment in width. For example, transition from *12px* to *10px*.
-2. **Gradual Transition:** Rather than making a large jump, introduce an intermediate thickness. By going from `12px` to `10px` and then to `8px` you create a gradual transition or gradation. This approach helps maintain visual balance in your icon design.
+### Naming
 
-## Naming
-To make it easier to find icons, you should keep the original names and supplement them with an English variant or transliteration. If you are adding a link to an existing icon, keep (or complement) the existing app and drawable names.
-### App name
-Should be the same as in Google Play, F-Droid or the official name. If the name in the source is too long, it's acceptable to remove the second part of the name without loss of recognition.
+**TL;DR**
 ```
-Wrong • Google Play name: "Zoom - One Platform to Connect"
-<item component="..." drawable="zoom" name="Zoom - One Platform to Connect" />
-```
-```
-Correct • Edited name: "Zoom"
-<item component="..." drawable="zoom" name="Zoom" />
-```
-Names are separated via `~~`. If the app name is localized, then the first name should be the one most commonly spoken by the people who will be searching for the icon (if in doubt, in English). 
-```
-Wrong
-<item component="..." drawable="hulu" name="フールー ~~ Hulu" />
-```
-```
-Correct
-<item component="..." drawable="hulu" name="Hulu ~~ フールー" />
-```
-If there are letters in the first `3` characters of the app name that aren't in English, then it's worth adding the name transliterated into English.
-```
-Wrong
-<item component="..." drawable="lansforsakringar" name="Länsförsäkringar" />
-```
-```
-Correct
-<item component="..." drawable="lansforsakringar" name="Länsförsäkringar ~~ Lansforsakringar" />
-```
-### Drawable
-Should be in English or transliterated from the original language. Should repeat the name of the app if possible.
-```
-Wrong
-<item component="..." drawable="meinvodafone" name="My Vodafone ~~ MeinVodafone" />
-```
-```
-Correct
-<item component="..." drawable="my_vodafone" name="My Vodafone ~~ MeinVodafone" />
-```
-If the app name starts with a digit, then the drawable should start with `_`.
-```
-Wrong
-<item component="..." drawable="ninegag" name="9GAG" />
-```
-```
-Correct
-<item component="..." drawable="_9gag" name="9GAG" />
+_2048.svg | 2048
+lawnicons.svg | Lawnicons
+habitacao_caixa.svg | Habitação Caixa
+beijing_card.svg | 北京一卡通 ~~ Beijing Card
+a_and_w.svg | A&amp;W
 ```
 
-## Adding an icon to Lawnicons
-Here's how to add an icon to Lawnicons:
+**App name**  
 
-### Prerequesties
-* Your icon in the SVG format, adhering to the [above guidelines](#contributing-icons). The filename must use snake case (e.g. `files_by_google.svg`).
-* The package and activity name of the app.
+The main app name should be in its main language. It can be found in app stores or primary sources.
 
-### Via `icontool.py`
-Please check the [icon tool guide](/docs/icontool_guide.md) for more information.
+Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
 
-### Via manual process
-1. Add the ready SVG to the `svgs` directory.
+Tips
+- Add localized names if available.
+- Transliterate non-English names when there are no localized ones.
+- Separate app names using `~~`. First, the main app name, then the additional one.
+- Delete things that aren't part of an app name.
+- Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
 
-1. Add a new line to `app/assets/appfilter.xml` (in alphabetical order, by the `name` attribute), and map the new icon to a package name and app's activity. For example:
+**Icon name (drawable)**  
 
-    ```xml
-      <item component="ComponentInfo{com.google.android.apps.nbu.files/com.google.android.apps.nbu.files.home.HomeActivity}" drawable="files_by_google" name="Files by Google"/>
-    ```
+Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit at the beginning of an icon name.
 
-    A general template is as follows:
+Tips
+- When multiple apps are linked to the same icon, choose the most popular app name for it.
+- Replace non-English letters with English letters.
 
-    ```xml
-    <item component="ComponentInfo{[PACKAGE_NAME]/[APP_ACIVITY_NAME]}" drawable="[DRAWABLE NAME]" name="[APP NAME]"/>
-    ```
+### Fundamentals
 
-1. Done! You're ready to open a pull request. Please set `develop` as the base branch.
+> [!TIP]
+> [View on YouTube](https://youtu.be/XO-5IwowonQ)
 
-## Finding the package and activity name of an app
-### Using `adb`
-1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed (see [this tutorial](https://www.xda-developers.com/install-adb-windows-macos-linux/) for more information) and open the app whose details you want to inspect, e.g. Telegram.
-1. Open a new Command Prompt or Terminal window and input `adb devices`.
-1. Finally, type the below-given command to get the information about the currently open application.
+#### 1 Canvas
 
-  **For Mac or Linux**:
+<img src="docs/images/fundamentals-1-canvas.png" alt="1 Canvas" height="200" />
+
+`192 × 192 px`. Use the correct canvas size to create a safe zone around icons.  
+
+#### 2 Abstract icons
+
+<img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
+
+Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
+
+Tips
+- Follow the blue guides. 
+- Use existing icons as an example.
+- Aim for pixel-perfect.
+- The margin of error is `<0.1 px`.
+
+#### 3 Square icons
+
+<img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
+
+Determine the square icon size before you start. These are icons with `50%` or more of the edges running along the square. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+
+Tips
+- Follow the golden guides. 
+- Use existing icons as an example.
+- Aim for pixel-perfect.
+- The margin of error is `<0.1 px`.
+
+#### 4 Color
+
+<img src="docs/images/fundamentals-4-color.png" alt="4 Color" height="200" />
+
+All lines must be non-transparent black color: `#000000`.  
+
+#### 5 Stroke weights
+
+<img src="docs/images/fundamentals-5-stroke-weights.png" alt="5 Stroke weights" height="200" />
+
+Core stroke weight: `12 px`  
+Minimal icons: `14 px`  
+Dense icons: `10 px`  
+Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`  
+
+Tips
+- No margin of error.
+- Don’t use a fill.
+- Remember to adjust the size of icons when you change the stroke weights. 
+
+#### 6 Caps and joints
+
+<img src="docs/images/fundamentals-6-caps-and-joints.png" alt="6 Caps and joints" height="200" />
+
+Caps and joints should be rounded.  
+
+#### 7 Corner radius
+
+<img src="docs/images/fundamentals-7-corner-radius.png" alt="7 Corner radius" height="200" />
+
+Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
+
+### Quality
+
+#### 1 Consistency
+
+<img src="docs/images/quality-1-consistency.png" alt="*1 Consistency" height="200" />
+
+All shapes should be outlined.
+
+#### 2 Visual balance
+
+<img src="docs/images/quality-2-visual-balance.png" alt="2 Visual balance" height="200" />
+
+Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
+
+Tips
+- Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
+- Change the main stroke weight depending on an icon density.  
+
+#### 3 Black spots
+
+<img src="docs/images/quality-3-black-spots.png" alt="3 Black spots" height="200" />
+
+Avoid black spots as much as possible.
+
+Tips
+- Trim lines.
+- Reduce stroke weights.
+- Simplify or redraw.  
+
+#### 4 Excessive density
+
+<img src="docs/images/quality-4-excessive-density.png" alt="4 Excessive density" height="200" />
+
+Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.  
+It’s better to make the distance a little more, especially in closed shapes.
+
+Tips
+- Move lines further apart.
+- Combine parallel lines into one.
+- Trim or extend lines.
+- Reduce stroke weights.
+- Enlarge original icons to make the main features easier to draw.
+- Simplify or redraw.
+
+#### 5 Alignment
+
+<img src="docs/images/quality-5-alignment.png" alt="5 Alignment" height="200" />
+
+Icons should be centered, but shape-aware. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
+
+#### 6 Text icons
+
+<img src="docs/images/quality-6-text-icons.png" alt="6 Text icons" height="200" />
+
+Text longer than `3` letters in `1` line usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+
+If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
+
+#### 7 Complex icons
+
+<img src="docs/images/quality-7-complex-icons.png" alt="7 Complex icons" height="200" />
+
+First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
+
+Sources for creating a recognizable icon
+- Branding guidelines.
+- UI or gameplay.
+- Website’s favicons.
+- In-app icons.
+- Essence of an app or a game.
+- Combination of recognizable features and your own ideas.  
+
+#### 8 Minimal icons
+
+<img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
+
+Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
+
+#### 9 Version badges
+
+<img src="docs/images/quality-9-version-badges.png" alt="9 Version badges" height="200" />
+
+Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
+
+Tips
+- Create a safe zone around the version badge by cutting lines (refer to the Excessive density section).
+- The default location for the badge is the lower right corner, but a lot depends on the icon shape.
+- Avoid shifting icons for the sake of the badge.
+- Create an issue if there aren’t enough version badges.
+
+## Icon contribution tools
+
+### Vector graphics editor
+
+To create icons, you need a vector graphics editor, which allows you to save icons in SVG format. Mobile vector editors won't work. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
+
+[Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260) 
+
+### GitHub Desktop
+
+You can use it to create a local copy of your repository on GitHub and upload all the changes. Before getting into your repository, the changes must appear in your local copy.
+
+[GitHub Desktop](https://github.com/apps/desktop)
+
+### App ID search tool
+
+You can use it to find app IDs. If you fulfill icon requests from our table, all the app IDs are there.
+
+[How to find app IDs](#how-to-find-app-ids)
+
+### Other tools
+
+**File explorer**. It will help you copy icons to a local copy of your repository.
+
+**Text editor**. It will help you to link icons and app IDs in `appfilter.xml`. This is how icon packs work.
+
+**Terminal (command line)**. It will add convenience if you regularly contribute dozens of icons.
+
+## How to find app IDs
+
+An app ID is a record consisting of a package and an activity, separated by `/`. App IDs allow you to link icons and apps. 
+
+Sample (Lawnicons)  
+Package: `app.lawnchair.lawnicons`  
+Activity: `app.lawnchair.lawnicons.MainActivity`  
+App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
+
+**Lawnicons**  
+
+This method is suitable if you are interested in installed apps that aren't supported in Lawnicons.
+1. Install and open Lawnicons.
+2. Long press our logo.
+3. Swipe down.
+4. Copy missing app IDs to clipboard.
+5. Save it wherever it's convenient.
+
+[Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
+
+**Icon Request**  
+
+1. Download and launch Icon Request.
+2. Tap one of the options:
+- UPDATE EXISTING — to copy app IDs.
+- REQUEST NEW — to save icon images and app IDs. This option is better if you are creating icons.
+3. Use the Icon Request toolbar to select apps.
+4. Copy, save or share.
+
+[Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases)
+
+**Icon Pusher**  
+
+1. Download and launch Icon Pusher.
+2. Select the icons you want to upload or select all by pressing the square in the top right.
+3. Submit the selected apps.
+4. View your submission on the Icon Pusher website.
+
+[Google Play](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher) • [Website](https://iconpusher.com/)
+
+**Android Debug Bridge (adb)**  
+
+1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed.
+2. Open the app whose details you want to inspect (e.g. Telegram).
+3. Open a new Command Prompt or Terminal window and input `adb devices`.
+4. Finally, type the below-given command to get the information about the currently open app.
+
+[How to install ADB](https://www.xda-developers.com/install-adb-windows-macos-linux/)
+
+  Mac or Linux
 
   ```console
   adb shell dumpsys window | grep 'mCurrentFocus'
   ```
 
-  **For Windows**:
+  Windows
 
   ```console
-  adb shell dumpsys window | find "mCurrentFocus"
+  adb shell dumpsys window | findstr "mCurrentFocus"
   ```
   ![](docs/images/contributing-image-3.png)
 
-  The part before the `/` character in the above image, i.e. `org.telegram.messenger`, is the package name (`[PACKAGE_NAME]`). The part after it, i.e. `org.telegram.messenger.DefaultIcon`, is the activity name (`[APP_ACIVITY_NAME]`).
+## Adding icons and missing app IDs to Lawnicons
 
-### Using 3rd-party apps
-#### IconRequest app
+> [!TIP]
+> [View on YouTube](https://youtu.be/UXic1zy-CiQ)
 
-1. Download IconRequest: [Google Play](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [GitHub](https://github.com/Kaiserdragon2/IconRequest/releases).
-2. Launch IconRequest and tap one of the options:
-- UPDATE EXISTING — to copy packages with activities. [How to request icons](https://kappa.lol/u_MBz), 22s video.
-- REQUEST NEW — to save icon images and packages with activities. This option is better if you are creating icons.
-3. Select the apps for which youʼd like to request or make icons.
-4. Copy, save or share.
+You need to link SVGs and app IDs correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
-#### Icon Pusher app
-1. Download the [Icon Pusher app](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher&hl=en&gl=US).
-2. Launch the app.
-3. Select the icon(s) you want to upload or select all by pressing the square in the top right. Then press "Send".
-4. View the packages with the activities for each app on the [Icon Pusher website](https://iconpusher.com/). Please make sure the `drawable="[DRAWABLE NAME]"` matches the icon SVG file name.
+Tips
+- Avoid name conflicts.
+- Add missing app IDs to icons that are identical to the originals.
+- Make sure your icons or missing app IDs haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-## Contributing code
-While adding icons is the main focus for most contributors, code-related contributions are welcome.
+[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [How to find app IDs](#how-to-find-app-ids) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
 
-To build Lawnicons, select the `appDebug` build variant.
+### Manual process
 
-Here are a few contribution tips:
-- [The `app` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/app) contains most of Lawnicons' core code, while [the `svg-processor` module](https://github.com/LawnchairLauncher/lawnicons/tree/develop/svg-processor) contains the code that converts the SVGs inside the `svgs` folder into Android Drawables. Generally, the `app` module is where you should make most of your contributions.
-- You can use either Java or, preferably, Kotlin.
-- Make sure your code is logical and well formatted. If using Kotlin, see ["Coding conventions"](https://kotlinlang.org/docs/coding-conventions.html) in the Kotlin documentation.
-- Set `develop` as the base branch for pull requests.
-- Significant changes to the UI should be discussed on our [Lawnchair's Telegram group chat](https://t.me/lawnchairci). Generally, we want to keep things clean and simple.
+Let's imagine that you have an icon in SVG format, an app name and an app ID.  
+
+Icon: `lawnicons.svg`  
+App name: `Lawnicons`  
+App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`
+
+1. Fork the Lawnicons repository.
+2. Clone the fork via GitHub Desktop.
+3. Open it with a file explorer. This is your local copy.
+4. Сopy `lawnicons.svg` to the `svgs/` folder. Note the icon name.
+5. Open `app/assets/appfilter.xml` and add a new line using the same template as the existing lines.
+
+```
+Do
+<item component="ComponentInfo{app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity}" drawable="lawnicons" name="Lawnicons" />
+
+Template
+<item component="ComponentInfo{APP_ID}" drawable="ICON_NAME" name="APP_NAME" />
+```
+
+6. Save changes and push it to your fork via GitHub Desktop.
+7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`. Describe your PR according to our templates.
+8. Make sure that the build went without errors and await a review (better to do a self-review).
+9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
+
+**Clean commit history**  
+
+A commit history appears after your PR is merged. Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag the commit history through all your PRs. There are two main ways to do this:
+- Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
+- Or delete your repository and start the contribution process from scratch.
+
+### icontool.py
+
+This tool will help you if you regularly contribute icons or missing app IDs.
+
+[icontool.py guide](/docs/icontool_guide.md)

@@ -17,12 +17,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
-import app.lawnchair.lawnicons.ui.theme.LawniconsTheme
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
+import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
 @Composable
 fun PlaceholderSearchBar(
-    isExpandedScreen: Boolean,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -38,9 +37,7 @@ fun PlaceholderSearchBar(
                 content = {},
                 contentAlignment = Alignment.TopCenter,
                 modifier = Modifier
-                    .then(
-                        if (isExpandedScreen) Modifier.width(360.dp) else Modifier,
-                    )
+                    .width(360.dp)
                     .zIndex(1f)
                     .statusBarsPadding()
                     .padding(top = 8.dp)
@@ -59,7 +56,7 @@ fun PlaceholderSearchBar(
 @PreviewLawnicons
 @Composable
 private fun PlaceholderSearchBarPreview() {
-    LawniconsTheme {
-        PlaceholderSearchBar(false)
+    PreviewProviders {
+        PlaceholderSearchBar()
     }
 }
