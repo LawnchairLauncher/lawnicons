@@ -5,7 +5,7 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Versione %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Indietro</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
@@ -26,9 +26,9 @@
     <string name="request_icons">Richiedi icone</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Tutte le icone sono supportate. Segnala eventuali cambiamenti su GitHub Issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Le richieste per nuove icone sono aperte per un tempo limitato a ogni nuovo rilascio di Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Informazioni</string>
     <!-- Contributors section of About page -->
