@@ -476,6 +476,7 @@
   <item component="ComponentInfo{de.eplus.mappecc.client.android.alditalk/de.eplus.mappecc.client.android.feature.splashscreen.SplashActivity}" drawable="aldi_talk" name="Aldi Talk" />
   <item component="ComponentInfo{de.eplus.mappecc.client.android.alditalk/de.eplus.mappecc.client.android.SplashActivity}" drawable="aldi_talk" name="Aldi Talk" />
   <item component="ComponentInfo{de.eplus.mappecc.client.android.alditalk/de.eplus.mappecc.client.android.ui.MainMenuActivity}" drawable="aldi_talk" name="Aldi Talk" />
+  <item component="ComponentInfo{com.kaanelloed.iconeration/com.kaanelloed.iconeration.MainActivity}" drawable="alembicons" name="Alembicons" />
   <item component="ComponentInfo{com.safelivealert.earthquake/com.safelivealert.earthquake.usecases.main.MainActivity}" drawable="alerta_sismica_mexico" name="Alerta Sísmica México" />
   <item component="ComponentInfo{ch.admin.babs.alertswiss/ch.admin.babs.alertswiss.MainActivity}" drawable="alertswiss" name="Alertswiss" />
   <item component="ComponentInfo{com.apps2you.alfa/com.apps2you.alfa.features.launch.RootActivity}" drawable="alfa_telecom" name="Alfa Telecom" />
@@ -733,8 +734,8 @@
   <item component="ComponentInfo{com.dokeraj.androtainer/com.dokeraj.androtainer.MainActiviy}" drawable="androtainer" name="AndroTainer" />
   <item component="ComponentInfo{com.androvid/com.androvid.videokit.home.HomeActivity}" drawable="androvid" name="AndroVid" />
   <item component="ComponentInfo{exe.bbllw8.anemo/exe.bbllw8.anemo.shell.LauncherActivity}" drawable="anemo" name="Anemo" />
-  <item component="ComponentInfo{org.angelauramc.amethyst.debug/net.kdt.pojavlaunch.TestStorageActivity}" drawable="angel_aura_amethyst_debug" name="Angel Aura Amethyst Debug" />
   <item component="ComponentInfo{org.angelauramc.amethyst/net.kdt.pojavlaunch.TestStorageActivity}" drawable="angel_aura_amethyst" name="Angel Aura Amethyst" />
+  <item component="ComponentInfo{org.angelauramc.amethyst.debug/net.kdt.pojavlaunch.TestStorageActivity}" drawable="angel_aura_amethyst_debug" name="Angel Aura Amethyst Debug" />
   <item component="ComponentInfo{com.msf.angelmobile/com.angelbroking.spark.splash.SplashActivity}" drawable="angel_one" name="Angel One" />
   <item component="ComponentInfo{com.msf.angelmobile/com.angelbroking.spark.common.MainActivity}" drawable="angel_one" name="Angel One" />
   <item component="ComponentInfo{com.anghami/com.anghami.activities.SplashActivity_}" drawable="anghami" name="Anghami" />
@@ -1841,8 +1842,6 @@
   <item component="ComponentInfo{com.x8bit.bitwarden.dev/com.x8bit.bitwarden.MainActivity}" drawable="bitwarden_dev" name="Bitwarden Dev" />
   <item component="ComponentInfo{io.biscoint.lite/io.flutter.embedding.android.FlutterFragmentActivity}" drawable="bitybank" name="Bitybank" />
   <item component="ComponentInfo{app.biubiuvpn.biubiuvpn/app.biubiuvpn.biubiuvpn.MainActivity}" drawable="biubiuvpn" name="biubiuvpn" />
-  <item component="ComponentInfo{com.samsung.android.bixby.agent/com.samsung.android.bixby.assistanthome.AssistantHomeLauncherActivity}" drawable="bixby_voice" name="Bixby Voice" />
-  <item component="ComponentInfo{com.samsung.android.bixby.agent/com.samsung.android.bixby.assistanthome.AssistantHomeMainActivity}" drawable="bixby_voice" name="Bixby Voice" />
   <item component="ComponentInfo{com.cimb.rtbmobile/com.cimbrtbmobile.PermissionActivity}" drawable="cimb" name="BizChannel@CIMB" />
   <item component="ComponentInfo{com.bKash.customerapp/com.bKash.customerapp.MainActivity}" drawable="bkash" name="bKash" />
   <item component="ComponentInfo{io.realcity.mobile.bkk/io.realcity.mobile.activities.MainActivity}" drawable="camera_fv_5" name="BKK FUTÁR" />
@@ -2634,11 +2633,8 @@
   <item component="ComponentInfo{com.motorola.odm.camera3/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.android.MGC_9_2_113/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{org.derpfest.flash/org.lineageos.aperture.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.android.scan3d/com.vibhorsrv.shamim.cameraids.MainActivity}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.android.scan3d/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.ontim.camera2/com.ontim.camera2.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.mediatek.hz.camera/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.agc.gcam84/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.hihonor.camera/com.hihonor.camera}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.google.android.apps.cameraslite/com.google.android.apps.cameralite.capture.CaptureActivity}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.android.MGC_8_8_224/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
@@ -2676,9 +2672,6 @@
   <item component="ComponentInfo{org.codeaurora.snapcam/com.android.camera.VideoCamera}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.google.android.GoogleCamera3/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.google.android.GoogleCameraLMC88/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.agc.gcam88/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.agc.gcam90/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.agc.gcam91/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.agc.gcam88/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.agc.gcam90/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.agc.gcam91/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
@@ -2789,7 +2782,6 @@
   <item component="ComponentInfo{com.fps.camera/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
   <item component="ComponentInfo{com.journeyui.camera/com.android.camera.CameraLauncher}" drawable="camera_fv_5" name="Camera" />
   <item component="ComponentInfo{com.evenwell.camera2/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Camera" />
-  <item component="ComponentInfo{com.samsung.android.app.cameraassistant/com.samsung.android.app.cameraassistant.MainActivity}" drawable="camera_assistant" name="Camera Assistant" />
   <item component="ComponentInfo{de.kromke.andreas.cameradatefolders/de.kromke.andreas.cameradatefolders.MainActivity}" drawable="camera_date_folders" name="Camera Date Folders" />
   <item component="ComponentInfo{com.flavionet.android.camera.pro/com.flavionet.android.camera.MainActivity}" drawable="camera_fv_5" name="Camera FV-5" />
   <item component="ComponentInfo{com.flavionet.android.camera.lite/com.flavionet.android.camera.MainActivity}" drawable="camera_fv_5_lite" name="Camera FV-5 Lite" />
@@ -3890,8 +3882,6 @@
   <item component="ComponentInfo{com.decathlon.app/com.google.android.archive.ReactivateActivity}" drawable="decathlon" name="Decathlon" />
   <item component="ComponentInfo{es.treebit.decisionroulette/com.unity3d.player.UnityPlayerActivity}" drawable="decision_roulette" name="Decision Roulette" />
   <item component="ComponentInfo{com.rivafarabi.deckboard.pro/com.rivafarabi.deckboard.pro.MainActivity}" drawable="deckboard_pro" name="Deckboard PRO" />
-  <item component="ComponentInfo{com.samsung.android.livestickers/com.samsung.android.livestickers.camera.ShortcutActivity}" drawable="deco_pic" name="DECO PIC" />
-  <item component="ComponentInfo{com.sec.android.app.camera.sticker/com.sec.android.app.camera.sticker.CameraActivity}" drawable="deco_pic" name="DECO PIC" />
   <item component="ComponentInfo{com.gm.decolar/com.despegar.whitelabel.home.ui.splash.SplashActivity}" drawable="decolar" name="Decolar" />
   <item component="ComponentInfo{com.deen/com.deen.MainActivity}" drawable="deen" name="Deen" />
   <item component="ComponentInfo{com.deepl.mobiletranslator/com.google.android.archive.ReactivateActivity}" drawable="deepl" name="DeepL" />
@@ -4161,7 +4151,6 @@
   <item component="ComponentInfo{com.disneyplus.ph/com.hotstar.MainActivity}" drawable="disney_plus" name="Disney+" />
   <item component="ComponentInfo{in.startv.hotstar.dplus/com.hotstar.MainActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
   <item component="ComponentInfo{in.startv.hotstar.dplus/in.startv.hotstar.rocky.launch.splash.SplashActivity}" drawable="disney_plus_hotstar" name="Disney+ Hotstar" />
-  <item component="ComponentInfo{com.samsung.android.displayassistant/com.samsung.android.displayassistant.presentation.ui.main.DisplayAssistantMainActivity}" drawable="display_assistant" name="Display Assistant" />
   <item component="ComponentInfo{com.application.zomato.district/com.application.zomato.gooutandroid.MainActivity}" drawable="district" name="District" />
   <item component="ComponentInfo{com.mydito/com.mydito.app_icon_6}" drawable="dito" name="DITO" />
   <item component="ComponentInfo{com.mydito/com.mydito.MainActivity}" drawable="dito" name="DITO" />
@@ -4694,7 +4683,6 @@
   <item component="ComponentInfo{com.daemon.ebookconverterpro/com.daemon.ebookconverter.MainActivity}" drawable="ebook_converter" name="Ebook Converter" />
   <item component="ComponentInfo{org.ebookdroid/org.ebookdroid.ui.MainActivity}" drawable="ebookdroid" name="EBookDroid" />
   <item component="ComponentInfo{com.reader.books/com.reader.books.gui.activities.MainActivity}" drawable="eboox" name="eBoox" />
-  <item component="ComponentInfo{com.samsung.android.shealthmonitor/com.samsung.android.shealthmonitor.MainActivity}" drawable="samsung_health_monitor" name="ECG Tile Link" />
   <item component="ComponentInfo{dev.brahmkshatriya.echo/dev.brahmkshatriya.echo.MainActivity}" drawable="echo" name="Echo" />
   <item component="ComponentInfo{iad1tya.echo.music/iad1tya.echo.music.MainActivityAlias}" drawable="echo_music" name="Echo Music" />
   <item component="ComponentInfo{iad1tya.echo.music/iad1tya.echo.music.MainActivity}" drawable="echo_music" name="Echo Music" />
@@ -6116,11 +6104,6 @@
   <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge" name="Gadgetbridge" />
   <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge.nightly/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge_nightly" name="Gadgetbridge Nightly" />
   <item component="ComponentInfo{com.trailbehind.android.gaiagps.pro/com.trailbehind.activities.MainActivity}" drawable="gaia_gps" name="Gaia GPS" />
-  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.Main}" drawable="galaxy_store" name="Galaxy Store" />
-  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity}" drawable="galaxy_store" name="Galaxy Store" />
-  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SKSamsungMainActivity}" drawable="galaxy_store" name="Galaxy Store" />
-  <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.WTLauncher}" drawable="galaxy_themes" name="Galaxy Themes" />
-  <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.Launcher}" drawable="galaxy_themes" name="Galaxy Themes" />
   <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.camera_activity1}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/com.android.medialist.PlayListActivity}" drawable="generic_gallery" name="Gallery" />
   <item component="ComponentInfo{com.android.gallery3d/com.freeme.gallery.app.GalleryNewActivity}" drawable="generic_gallery" name="Gallery" />
@@ -6173,8 +6156,6 @@
   <item component="ComponentInfo{com.g19mobile.gameboosterplus/com.g19mobile.gameboosterplus.SplashActivity}" drawable="game_booster" name="Game Booster" />
   <item component="ComponentInfo{com.g19mobile.gamebooster/com.fenixphoneboosterltd.gamebooster.SplashActivity}" drawable="game_booster" name="Game Booster" />
   <item component="ComponentInfo{com.g19mobile.gamebooster/com.g19mobile.gamebooster.SplashActivity}" drawable="game_booster" name="Game Booster" />
-  <item component="ComponentInfo{com.samsung.android.game.honeyplayplus/com.samsung.android.game.honeyplayplus.main.ui.LaunchActivity}" drawable="game_booster_plus" name="Game Booster +" />
-  <item component="ComponentInfo{com.samsung.android.game.honeyplayplus/com.samsung.android.game.honeyplayplus.ui.LaunchActivity}" drawable="game_booster_plus" name="Game Booster +" />
   <item component="ComponentInfo{com.nearme.gamecenter/com.nearme.gamecenter.DefaultAlias}" drawable="game_center" name="Game Center" />
   <item component="ComponentInfo{com.nearme.gamecenter/com.nearme.gamecenter.DynamicAliasTwo}" drawable="game_center" name="Game Center" />
   <item component="ComponentInfo{com.nearme.gamecenter/com.nearme.gamecenter.ui.activity.SplashActivity}" drawable="game_center" name="Game Center" />
@@ -6246,9 +6227,14 @@
   <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.Icon0}" drawable="whatsapp" name="GBWhatsApp" />
   <item component="ComponentInfo{com.universe.messenger/com.universe.messenger.Icon0}" drawable="whatsapp" name="GBWhatsApp" />
   <item component="ComponentInfo{com.universe.messenger/com.universe.messenger.Icon2}" drawable="whatsapp" name="GBWhatsApp" />
-  <item component="ComponentInfo{com.samsung.agc.gcam92/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Gcam" />
-  <item component="ComponentInfo{arn.android.gcam/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Gcam" />
-  <item component="ComponentInfo{com.agc.gcam85/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Gcam" />
+  <item component="ComponentInfo{com.samsung.android.scan3d/com.vibhorsrv.shamim.cameraids.MainActivity}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{com.samsung.agc.gcam84/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{com.samsung.agc.gcam88/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{com.samsung.agc.gcam90/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{com.samsung.agc.gcam91/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{com.samsung.agc.gcam92/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{arn.android.gcam/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
+  <item component="ComponentInfo{com.agc.gcam85/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam" />
   <item component="ComponentInfo{com.android.MGC_9_7_047/com.android.camera.CameraLauncher}" drawable="generic_camera" name="GCam MGC" />
   <item component="ComponentInfo{com.granturismo.gcamator/com.granturismo.gcamatorv5.MainActivity}" drawable="gcamator" name="GCamator" />
   <item component="ComponentInfo{com.globe.gcash.android/com.google.android.archive.ReactivateActivity}" drawable="gcash" name="GCash" />
@@ -7599,7 +7585,6 @@
   <item component="ComponentInfo{ginlemon.iconpackstudio.exporter/ginlemon.iconpackstudio.exporter.MainActivity}" drawable="icon_pack_studio_exporter" name="Icon Pack Studio Exporter" />
   <item component="ComponentInfo{dev.southpaw.iconpusher/dev.southpaw.iconpusher.AppListerActivity}" drawable="icon_pusher" name="Icon Pusher" />
   <item component="ComponentInfo{de.kaiserdragon.iconrequest/de.kaiserdragon.iconrequest.MainActivity}" drawable="icon_request" name="Icon Request" />
-  <item component="ComponentInfo{com.kaanelloed.iconeration/com.kaanelloed.iconeration.MainActivity}" drawable="iconeration" name="Iconeration" />
   <item component="ComponentInfo{com.drdisagree.iconify/com.drdisagree.iconify.SplashActivityThemed}" drawable="iconify" name="Iconify" />
   <item component="ComponentInfo{com.drdisagree.iconify/com.drdisagree.iconify.SplashActivityRetro}" drawable="iconify" name="Iconify" />
   <item component="ComponentInfo{com.drdisagree.iconify/com.drdisagree.iconify.SplashActivity}" drawable="iconify" name="Iconify" />
@@ -9689,7 +9674,6 @@
   <item component="ComponentInfo{com.merriamwebster.premium/com.merriamwebster.dictionary.activity.dictionary.DictionaryActivity}" drawable="merriam_webster_dictionary_premium" name="Merriam-Webster Dictionary Premium" />
   <item component="ComponentInfo{com.geeksville.mesh/com.geeksville.mesh.MainActivity}" drawable="meshtastic" name="Meshtastic" />
   <item component="ComponentInfo{com.verizon.messaging.vzmsgs/com.verizon.mms.ui.activity.Provisioning}" drawable="garmin_messenger" name="Message+" />
-  <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.ConversationListActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.transsion.smartmessage/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{foundation.e.message/com.moez.QKSMS.feature.main.MainActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.messaging/com.android.mms.ui.ConversationList}" drawable="messages" name="Messages" />
@@ -9731,8 +9715,6 @@
   <item component="ComponentInfo{com.android.mms/.ui.BootActivity}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.android.mms/.ui.MmsTabActivity}" drawable="messages" name="Messages" />
-  <item component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer}" drawable="messages" name="Messages" />
-  <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.ConversationList}" drawable="messages" name="Messages" />
   <item component="ComponentInfo{com.facebook.mlite/com.facebook.lite.MainActivity}" drawable="messenger" name="Messenger" />
   <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="messenger" name="Messenger" />
   <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.share.view.ShareActivity}" drawable="messenger" name="Messenger" />
@@ -13427,8 +13409,6 @@
   <item component="ComponentInfo{it.sourcenetitalia.quickdevicecontrols/it.sourcenetitalia.quickdevicecontrols.MainActivity}" drawable="generic_grid_3x3" name="Quick Device Controls" />
   <item component="ComponentInfo{io.quickdraft.obsidian/io.quickdraft.obsidian.MainActivity}" drawable="quick_draft" name="Quick Draft" />
   <item component="ComponentInfo{com.tomer.draw/com.tomer.draw.gallery.MainActivity}" drawable="another_notes" name="Quick Draw Everywhere" />
-  <item component="ComponentInfo{com.samsung.android.ruler/com.android.camera.CameraLauncher}" drawable="quick_measure" name="Quick Measure" />
-  <item component="ComponentInfo{com.samsung.android.ruler/com.samsung.android.ruler.main.rulerPreviewActivity}" drawable="quick_measure" name="Quick Measure" />
   <item component="ComponentInfo{quick.nnkhire.quickpercentage/quick.nnkhire.quickpercentage.MainActivity}" drawable="quick_percentage_calculator" name="Quick Percentage Calculator" />
   <item component="ComponentInfo{com.tk.quicksearch/com.tk.quicksearch.app.MainActivity}" drawable="quick_search" name="Quick Search" />
   <item component="ComponentInfo{com.tk.quicksearch/com.tk.quicksearch.MainActivity}" drawable="quick_search" name="Quick Search" />
@@ -14101,10 +14081,14 @@
   <item component="ComponentInfo{com.samsung.android.statsd/com.samsung.android.statsd.home.HomeActivity}" drawable="samsung_battery_guardian" name="Samsung Battery Guardian" />
   <item component="ComponentInfo{com.samsung.android.visionintelligence/com.samsung.android.visionintelligence.app.DummyActivity}" drawable="samsung_bixby_vision" name="Samsung Bixby Vision" />
   <item component="ComponentInfo{com.samsung.android.visionintelligence/com.samsung.android.visionintelligence.main.DummyActivity}" drawable="samsung_bixby_vision" name="Samsung Bixby Vision" />
+  <item component="ComponentInfo{com.samsung.android.bixby.agent/com.samsung.android.bixby.assistanthome.AssistantHomeLauncherActivity}" drawable="samsung_bixby_voice" name="Samsung Bixby Voice" />
+  <item component="ComponentInfo{com.samsung.android.bixby.agent/com.samsung.android.bixby.assistanthome.AssistantHomeMainActivity}" drawable="samsung_bixby_voice" name="Samsung Bixby Voice" />
   <item component="ComponentInfo{com.samsung.android.scryptowallet/com.samsung.android.scryptowallet.views.EntryActivity}" drawable="samsung_blockchain_wallet" name="Samsung Blockchain Wallet" />
   <item component="ComponentInfo{com.samsung.android.scryptowallet/com.samsung.android.scryptowallet.views.SplashActivity}" drawable="samsung_blockchain_wallet" name="Samsung Blockchain Wallet" />
   <item component="ComponentInfo{com.sec.android.app.popupcalculator/.Calculator}" drawable="generic_calculator_minus_multi_plus_equal" name="Samsung Calculator" />
   <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator}" drawable="generic_calculator_minus_multi_plus_equal" name="Samsung Calculator" />
+  <item component="ComponentInfo{com.samsung.android.scan3d/com.android.camera.CameraLauncher}" drawable="generic_camera" name="Samsung Camera" />
+  <item component="ComponentInfo{com.samsung.android.app.cameraassistant/com.samsung.android.app.cameraassistant.MainActivity}" drawable="samsung_camera_assistant" name="Samsung Camera Assistant" />
   <item component="ComponentInfo{com.samsung.android.scloud/com.samsung.android.scloud.app.ui.splash.SplashActivity}" drawable="samsung_cloud_for_wear_os" name="Samsung Cloud for Wear OS" />
   <item component="ComponentInfo{com.samsung.android.scloud/com.samsung.android.scloud.app.ui.splash.launcher}" drawable="samsung_cloud_for_wear_os" name="Samsung Cloud for Wear OS" />
   <item component="ComponentInfo{com.samsung.android.contacts/com.android.dialer.DialtactsActivity}" drawable="samsung_contacts" name="Samsung Contacts" />
@@ -14113,10 +14097,13 @@
   <item component="ComponentInfo{com.samsung.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="samsung_contacts" name="Samsung Contacts" />
   <item component="ComponentInfo{com.samsung.android.homemode/com.samsung.android.homemode.ui.activity.main.HomeModeIconActivity}" drawable="samsung_daily_board" name="Samsung Daily Board" />
   <item component="ComponentInfo{com.samsung.android.globalroaming/com.samsung.android.globalroaming.activity.StartingActivity}" drawable="samsung_data_store" name="Samsung Data Store" />
+  <item component="ComponentInfo{com.samsung.android.livestickers/com.samsung.android.livestickers.camera.ShortcutActivity}" drawable="samsung_deco_pic" name="Samsung Deco Pic" />
+  <item component="ComponentInfo{com.sec.android.app.camera.sticker/com.sec.android.app.camera.sticker.CameraActivity}" drawable="samsung_deco_pic" name="Samsung Deco Pic" />
   <item component="ComponentInfo{com.samsung.android.lool/com.samsung.android.sm.ui.DefaultActivity}" drawable="samsung_device_care" name="Samsung Device Care" />
   <item component="ComponentInfo{com.samsung.android.lool/com.samsung.android.sm.score.ui.ScoreBoardActivity}" drawable="samsung_device_care" name="Samsung Device Care" />
   <item component="ComponentInfo{com.samsung.android.lool/com.samsung.android.sm.ui.scoreboard.ScoreBoardActivity}" drawable="samsung_device_care" name="Samsung Device Care" />
   <item component="ComponentInfo{com.samsung.android.forest/com.samsung.android.forest.launcher.LauncherActivity}" drawable="samsung_digital_wellbeing" name="Samsung Digital Wellbeing" />
+  <item component="ComponentInfo{com.samsung.android.displayassistant/com.samsung.android.displayassistant.presentation.ui.main.DisplayAssistantMainActivity}" drawable="samsung_display_assistant" name="Samsung Display Assistant" />
   <item component="ComponentInfo{com.samsung.dropship_client/com.samsung.dropship_client.MainActivity}" drawable="samsung_dropship" name="Samsung Dropship" />
   <item component="ComponentInfo{com.samsung.android.edgelightingeffectunit/com.samsung.android.edgelightingeffectunit.activity.EdgeLightingUnitActivity}" drawable="samsung_edgelighting" name="Samsung EdgeLighting" />
   <item component="ComponentInfo{com.samsung.android.app.edgetouch/com.samsung.android.app.edgetouch.ui.activity.MainActivity}" drawable="samsung_edgetouch" name="Samsung EdgeTouch" />
@@ -14131,11 +14118,18 @@
   <item component="ComponentInfo{com.foodient.whisk/com.foodient.whisk.entry.AppActivity}" drawable="samsung_food" name="Samsung Food" />
   <item component="ComponentInfo{com.samsung.android.imageenhancer/com.samsung.android.imageenhancer.MainActivity}" drawable="samsung_galaxy_enhance_x" name="Samsung Galaxy Enhance-X" />
   <item component="ComponentInfo{com.samsung.android.imageenhancer/com.samsung.android.imageenhancer.presentation.activities.MainActivity}" drawable="samsung_galaxy_enhance_x" name="Samsung Galaxy Enhance-X" />
+  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.Main}" drawable="samsung_galaxy_store" name="Samsung Galaxy Store" />
+  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SamsungAppsMainActivity}" drawable="samsung_galaxy_store" name="Samsung Galaxy Store" />
+  <item component="ComponentInfo{com.sec.android.app.samsungapps/com.sec.android.app.samsungapps.SKSamsungMainActivity}" drawable="samsung_galaxy_store" name="Samsung Galaxy Store" />
+  <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.WTLauncher}" drawable="samsung_galaxy_themes" name="Samsung Galaxy Themes" />
+  <item component="ComponentInfo{com.samsung.android.themestore/com.samsung.android.themestore.activity.Launcher}" drawable="samsung_galaxy_themes" name="Samsung Galaxy Themes" />
   <item component="ComponentInfo{com.sec.android.gallery3d/.app.GalleryOpaqueActivity}" drawable="generic_gallery" name="Samsung Gallery" />
   <item component="ComponentInfo{com.sec.android.gallery3d/com.samsung.android.gallery.app.activity.GalleryActivity}" drawable="generic_gallery" name="Samsung Gallery" />
   <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryActivity}" drawable="generic_gallery" name="Samsung Gallery" />
   <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.Gallery}" drawable="generic_gallery" name="Samsung Gallery" />
   <item component="ComponentInfo{com.sec.android.gallery3d/com.sec.android.gallery3d.app.GalleryOpaqueActivity}" drawable="generic_gallery" name="Samsung Gallery" />
+  <item component="ComponentInfo{com.samsung.android.game.honeyplayplus/com.samsung.android.game.honeyplayplus.main.ui.LaunchActivity}" drawable="samsung_game_booster_plus" name="Samsung Game Booster +" />
+  <item component="ComponentInfo{com.samsung.android.game.honeyplayplus/com.samsung.android.game.honeyplayplus.ui.LaunchActivity}" drawable="samsung_game_booster_plus" name="Samsung Game Booster +" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.app.MainActivity}" drawable="samsung_game_launcher" name="Samsung Game Launcher" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivityCN}" drawable="samsung_game_launcher" name="Samsung Game Launcher" />
   <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivity}" drawable="samsung_game_launcher" name="Samsung Game Launcher" />
@@ -14150,6 +14144,7 @@
   <item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}" drawable="samsung_health" name="Samsung Health" />
   <item component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.RootActivity}" drawable="samsung_health" name="Samsung Health" />
   <item component="ComponentInfo{com.sec.android.app.shealth/com.sec.android.app.shealth.SplashScreenActivity}" drawable="samsung_health" name="Samsung Health" />
+  <item component="ComponentInfo{com.samsung.android.shealthmonitor/com.samsung.android.shealthmonitor.MainActivity}" drawable="samsung_health_monitor" name="Samsung Health Monitor" />
   <item component="ComponentInfo{com.samsung.android.shealthmonitors/com.samsung.android.shealthmonitor.ui.activity.MainActivity}" drawable="samsung_health_monitor" name="Samsung Health Monitor" />
   <item component="ComponentInfo{com.samsung.android.shealthmonitor/com.samsung.android.shealthmonitor.ui.activity.MainActivity}" drawable="samsung_health_monitor" name="Samsung Health Monitor" />
   <item component="ComponentInfo{xda.dante.shm.mod.companion/xda.dante.shm.mod.companion.MainActivity}" drawable="samsung_health_monitor_shm_mod" name="Samsung Health Monitor (SHM MOD)" />
@@ -14178,6 +14173,9 @@
   <item component="ComponentInfo{com.samsung.android.voc/com.samsung.android.voc.app.LauncherActivity}" drawable="samsung_members" name="Samsung Members" />
   <item component="ComponentInfo{com.samsung.android.voc/com.samsung.android.voc.LauncherActivity}" drawable="samsung_members" name="Samsung Members" />
   <item component="ComponentInfo{com.samsung.android.app.memo/com.samsung.android.app.memo.Main}" drawable="generic_notes" name="Samsung Memo" />
+  <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.ConversationListActivity}" drawable="samsung_messages" name="Samsung Messages" />
+  <item component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer}" drawable="samsung_messages" name="Samsung Messages" />
+  <item component="ComponentInfo{com.samsung.android.messaging/com.samsung.android.messaging.ui.ConversationList}" drawable="samsung_messages" name="Samsung Messages" />
   <item component="ComponentInfo{com.sec.print.mobileprint/com.sec.print.mobileprint.ui.IntroActivity}" drawable="generic_printer" name="Samsung Mobile Print" />
   <item component="ComponentInfo{com.sec.print.mobileprint/com.sec.print.mobileprint.ui.LaunchScreenActivity}" drawable="generic_printer" name="Samsung Mobile Print" />
   <item component="ComponentInfo{com.samsung.android.app.routines/com.samsung.android.app.routines.settings.RoutineLaunchActivity}" drawable="samsung_modes_and_routines" name="Samsung Modes and Routines" />
@@ -14221,6 +14219,8 @@
   <item component="ComponentInfo{com.sec.app.samsungprintservice/com.sec.mobileprint.printservice.plugin.ui.launcher.view.LauncherActivity}" drawable="generic_printer" name="Samsung Print Service Plugin" />
   <item component="ComponentInfo{com.samsung.android.privateshare/com.samsung.android.privacy.view.MainActivity.launcher}" drawable="samsung_private_share" name="Samsung Private Share" />
   <item component="ComponentInfo{com.samsung.android.privateshare/com.samsung.android.privacy.view.MainActivity}" drawable="samsung_private_share" name="Samsung Private Share" />
+  <item component="ComponentInfo{com.samsung.android.ruler/com.android.camera.CameraLauncher}" drawable="samsung_quick_measure" name="Samsung Quick Measure" />
+  <item component="ComponentInfo{com.samsung.android.ruler/com.samsung.android.ruler.main.rulerPreviewActivity}" drawable="samsung_quick_measure" name="Samsung Quick Measure" />
   <item component="ComponentInfo{com.samsung.android.app.sharelive/com.samsung.android.app.sharelive.presentation.main.MainActivity}" drawable="samsung_quick_share" name="Samsung Quick Share" />
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity}" drawable="generic_fm_radio" name="Samsung Radio" />
   <item component="ComponentInfo{com.samsung.android.app.reminder/com.samsung.android.app.reminder.ui.LaunchMainActivity}" drawable="samsung_reminder" name="Samsung Reminder" />
