@@ -1,22 +1,22 @@
 [versions]
 agp = "9.2.0"
-kotlin = "2.3.20"
-androidx-nav3 = "1.1.0"
+kotlin = "2.3.21"
+androidx-nav3 = "1.1.1"
 androidx-lifecycle = "2.10.0"
 retrofit = "3.0.0"
-metro = "1.0.0-RC2"
+metro = "1.0.0-RC3"
 
 [libraries]
 androidx-core-ktx = "androidx.core:core-ktx:1.18.0"
 androidx-core-splashscreen = "androidx.core:core-splashscreen:1.2.0"
 androidx-activity-compose = "androidx.activity:activity-compose:1.13.0"
-androidx-compose-bom = "androidx.compose:compose-bom:2026.03.01"
+androidx-compose-bom = "androidx.compose:compose-bom:2026.04.01"
 androidx-compose-ui = { module = "androidx.compose.ui:ui" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util" }
 androidx-compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-animation = { module = "androidx.compose.animation:animation" }
-androidx-compose-material3 = "androidx.compose.material3:material3:1.5.0-alpha17"
+androidx-compose-material3 = "androidx.compose.material3:material3:1.5.0-alpha18"
 androidx-compose-material3-windowsizeclass = { module = "androidx.compose.material3:material3-window-size-class" }
 androidx-graphics-shapes = "androidx.graphics:graphics-shapes:1.1.0"
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "androidx-nav3" }
@@ -34,7 +34,7 @@ material-motion-compose-core = "io.github.fornewid:material-motion-compose-core:
 metrox-viewmodel-compose = { module = "dev.zacsweers.metro:metrox-viewmodel-compose", version.ref = "metro" }
 android-tools-sdk-common = "com.android.tools:sdk-common:32.2.0"
 dom4j = "org.dom4j:dom4j:2.2.0"
-commons-io = "commons-io:commons-io:2.21.0"
+commons-io = "commons-io:commons-io:2.22.0"
 
 # Dummy to get renovate updates, the version is used in rootProject build.gradle with spotless.
 ktlint = "com.pinterest.ktlint:ktlint-cli:1.8.0"
