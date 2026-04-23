@@ -34,7 +34,7 @@ material-motion-compose-core = "io.github.fornewid:material-motion-compose-core:
 metrox-viewmodel-compose = { module = "dev.zacsweers.metro:metrox-viewmodel-compose", version.ref = "metro" }
 android-tools-sdk-common = "com.android.tools:sdk-common:32.2.0"
 dom4j = "org.dom4j:dom4j:2.2.0"
-commons-io = "commons-io:commons-io:2.21.0"
+commons-io = "commons-io:commons-io:2.22.0"
 
 # Dummy to get renovate updates, the version is used in rootProject build.gradle with spotless.
 ktlint = "com.pinterest.ktlint:ktlint-cli:1.8.0"
