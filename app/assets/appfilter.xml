@@ -655,6 +655,7 @@
   <item component="ComponentInfo{in.amazon.mShop.android.shopping/com.google.android.archive.ReactivateActivity}" drawable="amazon_shopping" name="Amazon Shopping" />
   <item component="ComponentInfo{com.amazon.weather/com.amazon.weather.WeatherTabletActivity}" drawable="yahoo_weather_japan" name="Amazon Weather" />
   <item component="ComponentInfo{com.kieronquinn.app.ambientmusicmod/com.kieronquinn.app.ambientmusicmod.ui.activities.MainActivity}" drawable="ambient_music_mod" name="Ambient Music Mod" />
+  <item component="ComponentInfo{com.amc.cinemas.ksa/com.influx.amc.ui.splash.MainActivity}" drawable="amc_theatres" name="AMC Cinemas" />
   <item component="ComponentInfo{com.amc/com.amc.mobileapp.MainActivity}" drawable="amc_theatres" name="AMC Theatres" />
   <item component="ComponentInfo{media6.app.amenic/media6.app.amenic.Main}" drawable="amenic" name="Amenic" />
   <item component="ComponentInfo{com.aa.android/com.aa.android.view.SplashActivity}" drawable="american_airlines" name="American Airlines" />
@@ -5014,6 +5015,7 @@
   <item component="ComponentInfo{exa.free.saux/exa.free.saux.MainUI}" drawable="guerrilla_mail" name="EXA System App Remover" />
   <item component="ComponentInfo{com.none.tom.exiferaser/com.none.tom.exiferaser.ExifEraserActivity}" drawable="exif_eraser" name="Exif Eraser" />
   <item component="ComponentInfo{com.exness.android.pa/com.exness.features.entry.impl.presentation.EntryActivity}" drawable="exness" name="Exness" />
+  <item component="ComponentInfo{com.exness.android.go/com.exness.features.entry.impl.presentation.EntryActivity}" drawable="exness" name="Exness Go" />
   <item component="ComponentInfo{com.exnova/com.iqoption.launcher.LauncherActivity}" drawable="exnova" name="Exnova" />
   <item component="ComponentInfo{exodusmovement.exodus/exodusmovement.exodus.MainActivity}" drawable="exodus" name="Exodus" />
   <item component="ComponentInfo{org.eu.exodus_privacy.exodusprivacy/org.eu.exodus_privacy.exodusprivacy.MainActivity}" drawable="exodus_privacy" name="Exodus Privacy" />
@@ -10889,6 +10891,9 @@
   <item component="ComponentInfo{com.raha.app.mymoney.free/com.raha.app.mymoney.ui.activity.SplashActivity}" drawable="mymoney" name="MyMoney" />
   <item component="ComponentInfo{com.raha.app.mymoney.pro/com.raha.app.mymoney.ui.activity.SplashActivity}" drawable="wallet" name="MyMoney Pro" />
   <item component="ComponentInfo{ng.mtn.nextgen/ng.mtn.nextgen.MainActivity}" drawable="mymtn" name="myMTN" />
+  <item component="ComponentInfo{com.mtn.mtncmr3/com.mtn.mtncmr3.MainActivity}" drawable="mymtn" name="myMTN" />
+  <item component="ComponentInfo{com.mtngh.mymtn/com.mtngh.mymtn.MainActivity}" drawable="mymtn" name="myMTN" />
+  <item component="ComponentInfo{com.mtnzm.mymtn/com.mtnzm.mymtn.MainActivity}" drawable="mymtn" name="myMTN" />
   <item component="ComponentInfo{com.app.mymuse/com.app.mymuse.presentation.splash.SplashActivity}" drawable="mymuse_sync" name="MyMuse Sync" />
   <item component="ComponentInfo{jp.go.cas.mpa/jp.go.cas.mpa.presentation.view.eventcontrol.EventControlActivity}" drawable="mynaportal" name="Mynaportal" />
   <item component="ComponentInfo{com.starry.myne/com.starry.myne.MainActivity}" drawable="myne" name="Myne" />
@@ -11178,6 +11183,8 @@
   <item component="ComponentInfo{com.NetmedsMarketplace.Netmeds/com.netmedsmarketplace.netmeds.screens.splash.SplashActivity}" drawable="netmeds" name="Netmeds" />
   <item component="ComponentInfo{com.NetmedsMarketplace.Netmeds/com.netmedsmarketplace.netmeds.screens.activity.MainActivity}" drawable="netmeds" name="Netmeds" />
   <item component="ComponentInfo{app.netmirror.netmirrornew/app.netmirror.netmirrornew.MainActivity}" drawable="netmirror" name="NetMirror" />
+  <item component="ComponentInfo{app.netmirror.netmirror/app.netmirror.netmirror.MainActivity}" drawable="netmirror" name="NetMirror" />
+  <item component="ComponentInfo{app.netmirror.newtv/app.netmirror.newtv.MainActivity}" drawable="netmirror" name="NetMirror" />
   <item component="ComponentInfo{cz.mroczis.netmonster/cz.mroczis.kotlin.presentation.main.MainActivity}" drawable="netmonster" name="NetMonster" />
   <item component="ComponentInfo{app.netpractice.app/app.netpractice.app.MainActivity}" drawable="netpractice" name="NetPractice" />
   <item component="ComponentInfo{com.edumobile3/com.edumobile3.MainActivity}" drawable="netschool" name="NetSchool" />
@@ -11506,6 +11513,7 @@
   <item component="ComponentInfo{nl.uitzendinggemist/nl.uitzendinggemist.mobile.presentation.activities.StartupActivity}" drawable="npo_start" name="NPO Start" />
   <item component="ComponentInfo{nl.uitzendinggemist/nl.uitzendinggemist.mobile.presentation.activities.main.MainActivity}" drawable="npo_start" name="NPO Start" />
   <item component="ComponentInfo{nps.nps/nps.nps.SplashScreen}" drawable="nps" name="NPS" />
+  <item component="ComponentInfo{nps.nps/nps.nps.MainActivity}" drawable="nps" name="NPS" />
   <item component="ComponentInfo{no.nordicsemi.android.mcp/com.google.android.archive.ReactivateActivity}" drawable="nrf_connect" name="nRF Connect" />
   <item component="ComponentInfo{no.nordicsemi.android.mcp/no.nordicsemi.android.mcp.DeviceListActivity}" drawable="nrf_connect" name="nRF Connect" />
   <item component="ComponentInfo{no.nordicsemi.android.mcp/no.nordicsemi.android.mcp.MainActivity}" drawable="nrf_connect" name="nRF Connect" />
@@ -18064,6 +18072,7 @@
   <item component="ComponentInfo{com.kmp.video/com.kmplayer.SplashActivity}" drawable="video_player_kmp" name="Video Player KMP" />
   <item component="ComponentInfo{com.video.butterflyplayer/com.video.butterflyplayer.activities.starter.StartingActivity}" drawable="generic_player" name="Video Player Subtitle Support" />
   <item component="ComponentInfo{com.video_converter.video_compressor/com.video_converter.video_compressor.screens.splashScreen.SplashScreenActivity}" drawable="video_size_compressor" name="Video Size Compressor" />
+  <item component="ComponentInfo{com.video_converter.video_compressor/com.video_converter.video_compressor.screens.main.MainActivity}" drawable="video_size_compressor" name="Video Size Compressor" />
   <item component="ComponentInfo{io.github.videosplitterapp/io.github.videosplitterapp.main.MainActivity}" drawable="video_splitter" name="Video Splitter" />
   <item component="ComponentInfo{com.emote.youtube_summarizer/com.emote.youtube_summarizer.MainActivity}" drawable="video_summarizer" name="Video Summarizer" />
   <item component="ComponentInfo{mp3videoconverter.videotomp3.videotomp3converter/com.inshot.videotomp3.SplashActivity}" drawable="video_to_mp3" name="Video to MP3" />
