@@ -83,6 +83,3 @@ Icon requests become available on the Lawnicons release day and stay open for a 
 
 > [!NOTE]
 > Open an issue if you know of an icon pack that contains the Lawnicons icon, but Lawnicons doesn't contain that pack's icon yet.
-
-> [!TIP]
-> Fund community requests [on Open Collective](https://opencollective.com/lawnchair/projects/lawnicons).
