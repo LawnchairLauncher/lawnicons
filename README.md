@@ -79,7 +79,7 @@ It's required to follow the Lawnicons design guidelines. Accepted contributions 
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Icon requests open on release day and stay open for a short while. That said, anyone can become a contributor and add icons. It takes some learning, but it's doable.
+Icon requests become available on the Lawnicons release day and stay open for a short while. That said, anyone can become a contributor and add icons. It takes some learning, but it's doable.
 
 > [!NOTE]
 > Open an issue if you know of an icon pack that contains the Lawnicons icon, but Lawnicons doesn't contain that pack's icon yet.
