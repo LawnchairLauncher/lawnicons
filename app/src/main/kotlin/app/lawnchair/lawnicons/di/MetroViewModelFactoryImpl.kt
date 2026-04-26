@@ -17,7 +17,7 @@
 package app.lawnchair.lawnicons.di
 
 import androidx.lifecycle.ViewModel
-import app.lawnchair.lawnicons.LawniconsScope
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Provider
 import dev.zacsweers.metro.SingleIn
@@ -26,8 +26,8 @@ import dev.zacsweers.metrox.viewmodel.MetroViewModelFactory
 import dev.zacsweers.metrox.viewmodel.ViewModelAssistedFactory
 import kotlin.reflect.KClass
 
-@ContributesBinding(LawniconsScope::class)
-@SingleIn(LawniconsScope::class)
+@ContributesBinding(AppScope::class)
+@SingleIn(AppScope::class)
 class MetroViewModelFactoryImpl(
     // These maps are autopopulated by Metro based on @ContributesIntoMap
     override val viewModelProviders: Map<KClass<out ViewModel>, Provider<ViewModel>>,

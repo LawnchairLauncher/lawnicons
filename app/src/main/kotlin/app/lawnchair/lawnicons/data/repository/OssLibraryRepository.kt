@@ -1,9 +1,9 @@
 package app.lawnchair.lawnicons.data.repository
 
 import android.app.Application
-import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.kotlinxJson
 import app.lawnchair.lawnicons.data.model.OssLibrary
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.SingleIn
 import kotlinx.coroutines.Dispatchers
@@ -18,8 +18,8 @@ interface OssLibraryRepository {
     val ossLibraries: StateFlow<List<OssLibrary>>
 }
 
-@SingleIn(LawniconsScope::class)
-@ContributesBinding(LawniconsScope::class)
+@SingleIn(AppScope::class)
+@ContributesBinding(AppScope::class)
 class OssLibraryRepositoryImpl(private val application: Application) : OssLibraryRepository {
 
     private val coroutineScope = MainScope()

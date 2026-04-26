@@ -16,12 +16,12 @@
 
 package app.lawnchair.lawnicons.data.repository.home
 
-import app.lawnchair.lawnicons.LawniconsScope
 import app.lawnchair.lawnicons.data.api.AnnouncementsAPI
+import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
 
-@SingleIn(LawniconsScope::class)
+@SingleIn(AppScope::class)
 @Inject
 class AnnouncementsRepository(
     private val api: AnnouncementsAPI,

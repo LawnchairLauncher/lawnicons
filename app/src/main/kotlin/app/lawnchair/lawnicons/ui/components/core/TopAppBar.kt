@@ -13,7 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import app.lawnchair.lawnicons.ui.components.home.NavigationIconButton
+import app.lawnchair.lawnicons.ui.components.NavigationIconButton
 import app.lawnchair.lawnicons.ui.theme.adaptiveSurfaceColor
 import app.lawnchair.lawnicons.ui.theme.icon.Back
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
@@ -66,10 +66,11 @@ private fun SmallTopAppBarPreview() {
         TopAppBar(
             navigationIcon = {
                 NavigationIconButton(
-                    imageVector = LawnIcons.Back,
+                    label = "Back",
                     onClick = {},
-                    size = 40.dp,
+                    imageVector = LawnIcons.Back,
                     modifier = Modifier.padding(horizontal = 4.dp),
+                    size = 40.dp,
                 )
             },
             scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(),
@@ -87,10 +88,11 @@ private fun LargeTopAppBarPreview() {
         TopAppBar(
             navigationIcon = {
                 NavigationIconButton(
-                    imageVector = LawnIcons.Back,
+                    label = "Back",
                     onClick = {},
-                    size = 40.dp,
+                    imageVector = LawnIcons.Back,
                     modifier = Modifier.padding(horizontal = 4.dp),
+                    size = 40.dp,
                 )
             },
             scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior(),
