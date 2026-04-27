@@ -5,7 +5,7 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Wersja %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Wstecz</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
@@ -23,12 +23,12 @@
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Zażądaj ikon</string>
+    <string name="request_icons">Poproś o ikony</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Wszystkie ikony są obsługiwane. Zgłoś rebranding za pośrednictwem GitHuba.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Prośby o ikony są otwarte przez określony czas z każdym nowym wydaniem Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">O aplikacji</string>
     <!-- Contributors section of About page -->
@@ -62,47 +62,47 @@
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Zmapowane ID</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">Jeśli ikona jest przestarzała z powodu rebrandingu, utwórz problem na GitHub.</string>
+    <string name="icon_info_outdated_warning">Jeśli ikona jest przestarzała z powodu rebrandingu, utwórz problem na GitHubie.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">Zobacz na GitHub</string>
+    <string name="view_on_github">Zobacz na GitHubie</string>
     <!-- Share button on icon info popup -->
     <string name="share">Udostępnij szczegóły</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Brakujące ikony</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">Odznacz wszystkie</string>
     <!-- Button to select all icons -->
     <string name="select_all">Wybierz wszystko</string>
     <!-- Split button -->
     <!-- Button to request icons -->
-    <string name="request_icons_button">Request</string>
+    <string name="request_icons_button">Poproś</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Pokaż opcje</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Rozwinięty</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">Zwinięty</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">Przełącznik</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">Udostępnij plik</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">Zapisz plik</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Skopiuj ID aplikacji</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">Zapisano plik</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">Błąd zapisywania pliku</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">Nie udało się utworzyć żądania</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">Brak aplikacji do obsługi tej czynności</string>
     <!-- Toast message shown when text is copied to the clipboard -->
     <string name="copied_text">Skopiowano tekst</string>
     <!-- New icons screen -->
