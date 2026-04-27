@@ -60,8 +60,8 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Localization
-> [!NOTE]
-> Contribute to Lawnicons localization and earn a priority icon request.
+
+Contribute to Lawnicons localization and earn a priority icon request.
   
 [Lawnicons localization issue](https://github.com/LawnchairLauncher/lawnicons/issues/3546)
 
@@ -80,6 +80,3 @@ It's required to follow the Lawnicons design guidelines. Accepted contributions 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
 Icon requests become available on the Lawnicons release day and stay open for a short while. That said, anyone can become a contributor and add icons. It takes some learning, but it's doable.
-
-> [!NOTE]
-> Open an issue if you know of an icon pack that contains the Lawnicons icon, but Lawnicons doesn't contain that pack's icon yet.
