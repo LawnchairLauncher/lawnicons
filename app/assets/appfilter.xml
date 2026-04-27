@@ -1993,7 +1993,7 @@
   <item component="ComponentInfo{com.rammigsoftware.bluecoins/com.rammigsoftware.bluecoins.MainActivity}" drawable="bluecoins" name="Bluecoins" />
   <item component="ComponentInfo{com.rammigsoftware.bluecoins/com.rammigsoftware.bluecoins.ui.activities.main.MainActivity}" drawable="bluecoins" name="Bluecoins" />
   <item component="ComponentInfo{com.rammigsoftware.bluecoins/com.rammigsoftware.bluecoins.ui.activities.StartActivity}" drawable="bluecoins" name="Bluecoins" />
-  <item component="ComponentInfo{com.bluecord/com.discord.app.AppActivity}" drawable="discord" name="Bluecord" />
+  <item component="ComponentInfo{com.bluecord/com.discord.app.AppActivity$Main}" drawable="discord" name="Bluecord" />
   <item component="ComponentInfo{com.bluecord/com.discord.app.AppActivity}" drawable="discord" name="Bluecord" />
   <item component="ComponentInfo{com.soft.blued/com.soft.blued.icon0}" drawable="blued" name="Blued" />
   <item component="ComponentInfo{com.danlan.xiaolan/com.soft.blued.icon0}" drawable="blued" name="Blued" />
@@ -4075,6 +4075,7 @@
   <item component="ComponentInfo{cc.dict.dictcc/cc.dict.dictcc.DictCcActivity}" drawable="dict_cc" name="dict.cc" />
   <item component="ComponentInfo{cc.dict.dictcc/cc.dict.dictcc.MainActivity}" drawable="dict_cc" name="dict.cc" />
   <item component="ComponentInfo{cc.dict.dictccplus/cc.dict.dictccplus.MainActivity}" drawable="dict_cc" name="dict.cc+" />
+  <item component="ComponentInfo{livio.dictionary/livio.dictionary.DictionaryView}" drawable="dictionary" name="Dictionary" />
   <item component="ComponentInfo{com.diotek.sec.lookup.dictionary/com.diotek.sec.lookup.dictionary.AppActivity}" drawable="dictionary_for_samsung" name="Dictionary for Samsung" />
   <item component="ComponentInfo{com.dictionary/com.dictionary.Splash}" drawable="dictionary_com" name="Dictionary.com" />
   <item component="ComponentInfo{com.dictionary/com.dictionary.MainActivity}" drawable="dictionary_com" name="Dictionary.com" />
@@ -4897,14 +4898,6 @@
   <item component="ComponentInfo{no.SpareBank1.MobileOTP/no.SpareBank1.MobileOTP.launcher_83b5da896f4bdf2c8cbf1644208b522b86d55ef4bcc11c294d37242072f10638}" drawable="one_time_password_otp" name="Engangskode ~~ One time password (OTP)" />
   <item component="ComponentInfo{com.appspot.orium_blog.crossword.eng/com.dev_orium.android.crossword.SplashActivity}" drawable="crosswords" name="English Crossword Puzzle" />
   <item component="ComponentInfo{livio.pack.lang.en_US/livio.pack.lang.en_US.DictionaryView}" drawable="english_dictionary" name="English Dictionary" />
-  <item component="ComponentInfo{livio.pack.lang.fr_FR/livio.pack.lang.fr_FR.DictionaryView}" drawable="french_dictionary" name="French Dictionary" />
-  <item component="ComponentInfo{livio.pack.lang.de_DE/livio.pack.lang.de_DE.DictionaryView}" drawable="german_dictionary" name="German Dictionary" />
-  <item component="ComponentInfo{livio.pack.lang.it_IT/livio.pack.lang.it_IT.DictionaryView}" drawable="italian_dictionary" name="Italian Dictionary" />
-  <item component="ComponentInfo{livio.pack.lang.pt_BR/livio.pack.lang.pt_BR.DictionaryView}" drawable="portuguese_dictionary" name="Portuguese Dictionary" />
-  <item component="ComponentInfo{livio.pack.lang.ru_RU/livio.pack.lang.ru_RU.DictionaryView}" drawable="russian_dictionary" name="Russian Dictionary" />
-  <item component="ComponentInfo{livio.pack.lang.es_ES/livio.pack.lang.es_ES.DictionaryView}" drawable="spanish_dictionary" name="Spanish Dictionary" />
-  <item component="ComponentInfo{livio.dictionary/livio.dictionary.DictionaryView}" drawable="dictionary" name="Dictionary" />
-  <item component="ComponentInfo{javalc6.thesaurus/javalc6.thesaurus.ThesaurusView}" drawable="thesaurus" name="Thesaurus" />
   <item component="ComponentInfo{english.grammar.test.app/english.grammar.test.app.MainActivity}" drawable="english_grammar_test" name="English Grammar Test" />
   <item component="ComponentInfo{klye.plugin.en/klye.plugin.en.MainActivity}" drawable="english_keyboard_plugin" name="English Keyboard Plugin" />
   <item component="ComponentInfo{Syamu.Dictionary.Sarada/syamu.Dictionary.Sarada.MainActivity}" drawable="english_malayalam_dictionary" name="English Malayalam Dictionary" />
@@ -5036,6 +5029,8 @@
   <item component="ComponentInfo{com.woolworths.rewards/au.com.woolworths.rewards.Launcher}" drawable="everyday_rewards" name="Everyday Rewards" />
   <item component="ComponentInfo{de.jepfa.personaltasklogger/de.jepfa.personaltasklogger.MainActivity}" drawable="google_tasks" name="Everyday Tasks" />
   <item component="ComponentInfo{com.jndapp.material.widgets.pack/com.jndapp.material.widgets.pack.MainActivity}" drawable="everything_material_widgets" name="Everything Material Widgets" />
+  <item component="ComponentInfo{com.nothing.icon.pro/com.nothing.icon.pro.MainActivity}" drawable="nothing_icons" name="Everything Pro Icons" />
+  <item component="ComponentInfo{kalp.motoport.nothingpro/kalp.motoport.nothingpro.MainActivity}" drawable="nothing_icons" name="Everything Pro Moto Icons" />
   <item component="ComponentInfo{com.jndapp.nothing.widgets.pack/com.jndapp.nothing.widgets.pack.MainActivity}" drawable="everything_widgets" name="Everything Widgets" />
   <item component="ComponentInfo{com.evilinsult/com.evilinsult.activities.MainActivity}" drawable="evil_insult_generator" name="Evil Insult Generator" />
   <item component="ComponentInfo{br.com.evino.android/br.com.evino.android.LoginSplashActivity}" drawable="evino" name="Evino" />
@@ -6126,6 +6121,7 @@
   <item component="ComponentInfo{uk.co.freeview.android/uk.co.freeview.android.features.registration.splash.SplashActivity}" drawable="freeview" name="Freeview" />
   <item component="ComponentInfo{f.f.freezer/f.f.freezer.MainActivity}" drawable="deezer" name="Freezer" />
   <item component="ComponentInfo{nep.timeline.freezer/nep.timeline.freezer.MainActivity}" drawable="airfrozen" name="Freezer" />
+  <item component="ComponentInfo{livio.pack.lang.fr_FR/livio.pack.lang.fr_FR.DictionaryView}" drawable="french_dictionary" name="French Dictionary" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.french/com.anysoftkeyboard.languagepack.french.MainActivity}" drawable="anysoftkeyboard" name="French for AnySoftKeyboard" />
   <item component="ComponentInfo{com.jujinkim.frequaw/com.jujinkim.frequaw.ui.MainActivity}" drawable="frequaw" name="Frequaw" />
   <item component="ComponentInfo{com.luxdelux.frequencygenerator/com.luxdelux.frequencygenerator.activity.LauncherActivity}" drawable="frequency_generator" name="Frequency Generator" />
@@ -6451,6 +6447,7 @@
   <item component="ComponentInfo{hr.erstebank.george/at.beeone.george.splashscreen.SplashScreenVariantDefault}" drawable="george" name="George" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.georgian/com.anysoftkeyboard.languagepack.georgian.MainActivity}" drawable="anysoftkeyboard" name="Georgian for AnySoftKeyboard" />
   <item component="ComponentInfo{io.geph.android/io.geph.android.MainActivity}" drawable="geph" name="Geph" />
+  <item component="ComponentInfo{livio.pack.lang.de_DE/livio.pack.lang.de_DE.DictionaryView}" drawable="german_dictionary" name="German Dictionary" />
   <item component="ComponentInfo{de.verbformen.app/de.verbformen.app.MainActivity}" drawable="german_dictionary_for_learners" name="German Dictionary for Learners" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.german/com.anysoftkeyboard.languagepack.german.MainActivity}" drawable="anysoftkeyboard" name="German for AnySoftKeyboard" />
   <item component="ComponentInfo{com.lexsuperior.app/com.lexsuperior.app.MainActivity}" drawable="gesetze_io" name="gesetze.io" />
@@ -8124,6 +8121,7 @@
   <item component="ComponentInfo{com.intesasanpaolo.isybank.mobile/com.intesasanpaolo.isybank.mobile.presentation.MainActivity}" drawable="isybank" name="isybank" />
   <item component="ComponentInfo{com.intesasanpaolo.isybank.mobile/com.digitalmodularbanking.dmbpfm.presentation.activity.GestioneSpeseMainActivity}" drawable="isybank" name="isybank" />
   <item component="ComponentInfo{iTunes.Sync.Android/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="apple_music" name="iSyncr" />
+  <item component="ComponentInfo{livio.pack.lang.it_IT/livio.pack.lang.it_IT.DictionaryView}" drawable="italian_dictionary" name="Italian Dictionary" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.italian/com.anysoftkeyboard.languagepack.italian.MainActivity}" drawable="anysoftkeyboard" name="Italian for AnySoftKeyboard" />
   <item component="ComponentInfo{com.uy.itau.appitauuypf/com.uy.itau.appitauuypf.splash.view.RoutingActivity}" drawable="itau" name="Itau" />
   <item component="ComponentInfo{com.ld.itax_pro_android/com.ld.itax_pro_android.MainActivity}" drawable="itax" name="iTAX" />
@@ -9091,6 +9089,7 @@
   <item component="ComponentInfo{com.getliner.liner/com.getliner.liner.MainActivity}" drawable="liner" name="Liner" />
   <item component="ComponentInfo{com.jndapp.linex.black.iconpack/com.jndapp.linex.black.iconpack.MainActivity}" drawable="linex_black_icons" name="LineX Black Icons" />
   <item component="ComponentInfo{com.jndapp.line.x.iconpack/com.jndapp.line.x.iconpack.MainActivity}" drawable="linex_icons" name="LineX Icons" />
+  <item component="ComponentInfo{com.moto.linexicons/com.moto.linexicons.ui.activity.MainActivity}" drawable="linex_icons" name="LineX Moto Port Icons" />
   <item component="ComponentInfo{com.jndapp.linex.white.iconpack/com.jndapp.linex.white.iconpack.MainActivity}" drawable="linex_white_icons" name="LineX White Icons" />
   <item component="ComponentInfo{jp.naver.linemanga.android/jp.naver.linemanga.android.LineMangaMainActivity}" drawable="line_manga" name="LINEマンガ ~~ LINE Manga" />
   <item component="ComponentInfo{com.lingodeer/com.lingo.lingoskill.ui.base.SplashActivity}" drawable="lingodeer" name="LingoDeer" />
@@ -10377,6 +10376,7 @@
   <item component="ComponentInfo{com.monclubsportif.monclubsportif/com.rnmonclubsportif.MainActivity}" drawable="monclubsportif" name="MonClubSportif" />
   <item component="ComponentInfo{com.monclubsportif.monclubsportif/com.monclubsportif.monclubsportif.MainActivity}" drawable="monclubsportif" name="MonClubSportif" />
   <item component="ComponentInfo{com.monday.monday/com.dapulse.dapulse.refactor.starter.context.StarterActivity}" drawable="monday_com" name="monday.com" />
+  <item component="ComponentInfo{de.moooon.acrylicons/de.moooon.acrylicons.MainActivity}" drawable="mondstern_acrylic_icons" name="Mondstern Acrylic Icons" />
   <item component="ComponentInfo{io.wookey.wallet.monero/io.wookey.wallet.SplashActivity}" drawable="monero_wallet" name="Monero Wallet" />
   <item component="ComponentInfo{com.monero.app/com.monero.app.MainActivity}" drawable="monero_com_by_cake_wallet" name="Monero.com by Cake Wallet" />
   <item component="ComponentInfo{com.monero.app/com.cakewallet.cake_wallet.MainActivity}" drawable="monero_com_by_cake_wallet" name="Monero.com by Cake Wallet" />
@@ -10526,6 +10526,7 @@
   <item component="ComponentInfo{com.motorola.ccc.notification/com.motorola.engageapp.ui.CardsActivity}" drawable="moto_notifications" name="Moto Notifications" />
   <item component="ComponentInfo{com.motorola.ccc.notification/com.motorola.engageapp.ui.EngageActivity}" drawable="moto_notifications" name="Moto Notifications" />
   <item component="ComponentInfo{com.motorola.ccc.notification/com.motorola.engageapp.ui.HelloYouActivity}" drawable="moto_notifications" name="Moto Notifications" />
+  <item component="ComponentInfo{com.motorola.oemconfig.rel/com.motorola.oemconfig.rel.activities.MainActivity}" drawable="moto_oemconfig" name="Moto OEMConfig" />
   <item component="ComponentInfo{com.motorola.audiorecorder/com.motorola.audiorecorder.ui.main.MainActivity}" drawable="generic_voice_recorder_waves" name="Moto Recorder" />
   <item component="ComponentInfo{com.motorola.securityhub/com.motorola.securityhub.ui.view.MainActivity}" drawable="moto_secure" name="Moto Secure" />
   <item component="ComponentInfo{com.motorola.securevault/com.motorola.securevault.MainActivityLauncher}" drawable="moto_secure_folder" name="Moto Secure folder" />
@@ -10539,6 +10540,7 @@
   <item component="ComponentInfo{com.motorola.systemui.desk/com.motorola.taskbar.bar.ExternalModeChooserActivity}" drawable="moto" name="Moto Tutorial" />
   <item component="ComponentInfo{com.motorola.om/com.motorola.om.presentation.LauncherActivity}" drawable="moto_unplugged" name="Moto Unplugged" />
   <item component="ComponentInfo{com.motorola.visualvoicemail/com.motorola.visualvoicemail.ui.VvmMainActivity}" drawable="generic_voicemail" name="Moto Voicemail" />
+  <item component="ComponentInfo{com.motorola.watch/com.motorola.watch.ui.activity.LandingPageActivity}" drawable="moto_watch" name="Moto Watch" />
   <item component="ComponentInfo{ca.cebrands.motowatch/ca.cebrands.motowatch.qa.MainActivity}" drawable="moto_watch_100" name="Moto Watch 100" />
   <item component="ComponentInfo{com.motorola.timeweatherwidget/com.motorola.commandcenter.MainActivity}" drawable="moto_widget" name="Moto Widget" />
   <item component="ComponentInfo{com.swishme.moto/com.swish.app.Launcher}" drawable="motohub" name="MotoHub" />
@@ -11500,7 +11502,6 @@
   <item component="ComponentInfo{com.nothing.camera/com.nothing.camera.activity.CameraActivity}" drawable="nothing_camera" name="Nothing Camera" />
   <item component="ComponentInfo{com.nothing.ntessentialspace/com.nothing.ntessentialspace.MainActivity}" drawable="nothing_essential_space" name="Nothing Essential Space" />
   <item component="ComponentInfo{com.nothing.gallery/com.nothing.gallery.activity.EntryActivity}" drawable="nothing_gallery" name="Nothing Gallery" />
-  <item component="ComponentInfo{com.nothing.icon.pro/com.nothing.icon.pro.MainActivity}" drawable="nothing_icons" name="Nothing Icons" />
   <item component="ComponentInfo{com.nothing.icon.free/com.nothing.icon.free.MainActivity}" drawable="nothing_icons" name="Nothing Icons" />
   <item component="ComponentInfo{com.arunk140.inputmethod.latin/org.futo.inputmethod.latin.uix.settings.SettingsActivity}" drawable="nothing_keyboard" name="Nothing Keyboard" />
   <item component="ComponentInfo{com.nothing.launcher/com.nothing.launcher.NothingLauncher}" drawable="nothing_launcher" name="Nothing Launcher" />
@@ -11949,7 +11950,7 @@
   <item component="ComponentInfo{com.eatos.onepro/com.eatos.onepro.MainActivity}" drawable="onepro_8_icons" name="OnePro 8 Icons" />
   <item component="ComponentInfo{com.eatos.onedarkpro/com.eatos.onedarkpro.MainActivity}" drawable="onepro_dark_icons" name="OnePro Dark Icons" />
   <item component="ComponentInfo{com.eatos.oneyoupro/com.eatos.oneyoupro.activities.MainActivity}" drawable="onepro_you_icons" name="OnePro You Icons" />
-  <item component="ComponentInfo{kalp.motoport.oneproyou/kalp.motoport.oneproyou.MainActivity}" drawable="onepro_you_icons" name="OnePro You Moto Port Icons" />
+  <item component="ComponentInfo{kalp.motoport.oneproyou/kalp.motoport.oneproyou.MainActivity}" drawable="onepro_you_icons" name="OnePro You Moto Icons" />
   <item component="ComponentInfo{tech.fplabs.score/tech.fplabs.score.MainActivity}" drawable="onescore" name="OneScore" />
   <item component="ComponentInfo{com.swciitg.onestop2/com.swciitg.onestop2.MainActivity}" drawable="onestop" name="OneStop" />
   <item component="ComponentInfo{com.ttxapps.onesyncv2/com.ttxapps.sync.app.MainActivity}" drawable="onesync" name="OneSync" />
@@ -13211,6 +13212,7 @@
   <item component="ComponentInfo{com.stealthcopter.portdroid/com.stealthcopter.portdroid.activities.StartActivity}" drawable="portdroid" name="PortDroid" />
   <item component="ComponentInfo{br.com.portoseguro.experienciacliente.mundoporto/br.com.portoseguro.superapp.ui.splash.SplashActivity}" drawable="porto" name="Porto" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.portuguese/com.anysoftkeyboard.languagepack.portuguese.MainActivity}" drawable="anysoftkeyboard" name="Portugese for AnySoftKeyboard" />
+  <item component="ComponentInfo{livio.pack.lang.pt_BR/livio.pack.lang.pt_BR.DictionaryView}" drawable="portuguese_dictionary" name="Portuguese Dictionary" />
   <item component="ComponentInfo{cz.gov.portal.v2.obcan/cz.gov.portal.v2.obcan.MainActivity}" drawable="portal_obcana" name="Portál občana" />
   <item component="ComponentInfo{com.poshmark.app/com.poshmark.ui.MainActivity}" drawable="poshmark" name="Poshmark" />
   <item component="ComponentInfo{io.trewartha.positional/io.trewartha.positional.ui.MainActivity}" drawable="auto_change_wallpaper" name="Positional" />
@@ -14202,6 +14204,7 @@
   <item component="ComponentInfo{brownmonster.app.game.rushrally3demo/brownmonster.app.game.rushrally3.RushRally3Activity}" drawable="rush_rally_3_demo" name="Rush Rally 3 Demo" />
   <item component="ComponentInfo{brownmonster.app.game.rushrallyremastereddemo/brownmonster.app.game.rushrallyremastered.RushRallyRemasteredActivity}" drawable="rush_rally_origins_demo" name="Rush Rally Origins Demo" />
   <item component="ComponentInfo{org.dianqk.ruslin/org.dianqk.ruslin.MainActivity}" drawable="ruslin_notes" name="Ruslin Notes" />
+  <item component="ComponentInfo{livio.pack.lang.ru_RU/livio.pack.lang.ru_RU.DictionaryView}" drawable="russian_dictionary" name="Russian Dictionary" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.russian2/com.anysoftkeyboard.languagepack.russian2.MainActivity}" drawable="anysoftkeyboard" name="Russian for AnySoftKeyboard" />
   <item component="ComponentInfo{com.carriez.flutter_hbb/com.carriez.flutter_hbb.MainActivity}" drawable="rustdesk" name="RustDesk" />
   <item component="ComponentInfo{ru.vk.store/ru.vk.store.app.MainActivity}" drawable="rustore" name="RuStore" />
@@ -15918,6 +15921,7 @@
   <item component="ComponentInfo{com.StefMorojna.SpaceflightSimulator/com.teamcuriosity.addons.ExtendedUnityActivity}" drawable="spaceflight_simulator" name="Spaceflight Simulator" />
   <item component="ComponentInfo{com.spacehey.app/com.example.spacehey.MainActivity}" drawable="spacehey" name="SpaceHey" />
   <item component="ComponentInfo{spam.blocker/spam.blocker.ui.main.MainActivity}" drawable="spamblocker" name="SpamBlocker" />
+  <item component="ComponentInfo{livio.pack.lang.es_ES/livio.pack.lang.es_ES.DictionaryView}" drawable="spanish_dictionary" name="Spanish Dictionary" />
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.spain/com.anysoftkeyboard.languagepack.spain.MainActivity}" drawable="anysoftkeyboard" name="Spanish for AnySoftKeyboard" />
   <item component="ComponentInfo{com.spanishdict.spanishdict/com.spanishdict.spanishdict.MainActivity}" drawable="spanishdictionary" name="SpanishDictionary" />
   <item component="ComponentInfo{com.spanishdict.spanishdict/com.spanishdict.spanishdict.feature.HomeActivity}" drawable="spanishdictionary" name="SpanishDictionary" />
@@ -17122,6 +17126,7 @@
   <item component="ComponentInfo{info.flowersoft.theotown.theotown/info.flowersoft.theotown.theotown.MainActivity}" drawable="theotown" name="TheoTown" />
   <item component="ComponentInfo{com.tmvno.thepay/com.tmvno.thepay.MainActivity}" drawable="thepay" name="thePAY" />
   <item component="ComponentInfo{com.google.android.apps.pixel.health/com.google.android.apps.pixel.health.thermometer.ThermometerHomeActivity}" drawable="thermometer" name="Thermometer" />
+  <item component="ComponentInfo{javalc6.thesaurus/javalc6.thesaurus.ThesaurusView}" drawable="thesaurus" name="Thesaurus" />
   <item component="ComponentInfo{me.versteege.thingcounter/me.versteege.thingcounter.activity.MainActivity}" drawable="thing_count" name="Thing Count" />
   <item component="ComponentInfo{de.sleak.thingcounter/de.sleak.thingcounter.activity.CounterListActivity}" drawable="thing_counter" name="Thing Counter" />
   <item component="ComponentInfo{com.tf.thinkdroid.viewer.global/com.tf.thinkdroid.manager.StartActivity}" drawable="thinkfree_office_viewer" name="Thinkfree Office viewer" />
