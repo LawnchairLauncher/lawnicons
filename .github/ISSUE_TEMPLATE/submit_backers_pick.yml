@@ -5,6 +5,11 @@ labels: ["backer"]
 
 body:
 
+  - type: markdown
+    attributes:
+      value: |
+        An option for backers to highlight icons on our icon request dashboard. It doesn't guarantee fulfillment, but it raises the priority of the requested icons among thousands of others.
+        
   - type: input
     id: oc_profile_link
     validations:
