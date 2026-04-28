@@ -1,0 +1,24 @@
+name: Submit backer's pick
+description: For Open Collective backers.
+title: ""
+labels: ["backer"]
+
+body:
+
+  - type: input
+    id: oc_profile_link
+    validations:
+      required: true
+    attributes:
+      label: Open Collective profile link
+      description: |
+        To verify your backer status, please add your GitHub account to your Open Collective profile: your avatar in the top right → Settings (Info) → Social Links → Add GitHub link → Save.
+
+  - type: upload
+    id: icon_request_file
+    validations:
+      required: true
+    attributes:
+      label: Icon request file
+      description: |
+        Create an icon request file: Open Lawnicons → Tap "Request icons" → Select icons → Save file.
