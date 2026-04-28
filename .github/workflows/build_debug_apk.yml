@@ -11,7 +11,7 @@ jobs:
   check-paths:
     runs-on: ubuntu-latest
     outputs:
-      skip_steps: ${{ steps.filter.outputs.workflows && !steps.nofilter.outputs.workflows }}
+      skip_steps: ${{ steps.filter.outputs.workflows == 'false' }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -22,30 +22,13 @@ jobs:
         with:
           filters: |
             workflows:
-              - '**.md'
-              - 'LICENSE'
-              - '.idea/**'
-              - 'docs/**'
-              - '.github/ISSUE_TEMPLATE/**'
-              - '.gitignore'
-              - '.gitattributes'
-              - '.github/labeler.yml'
-              - '.github/release.yml'
-      - name: Check for non ignored paths
-        uses: dorny/paths-filter@v4
-        id: nofilter
-        with:
-          filters: |
-            workflows:
               - '!**.md'
               - '!LICENSE'
               - '!.idea/**'
               - '!docs/**'
-              - '!.github/ISSUE_TEMPLATE/**'
+              - '!.github/**'
               - '!.gitignore'
               - '!.gitattributes'
-              - '!.github/labeler.yml'
-              - '!.github/release.yml'
 
   build-debug-apk:
     runs-on: ubuntu-latest
