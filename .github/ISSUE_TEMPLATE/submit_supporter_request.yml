@@ -1,6 +1,6 @@
-name: Submit backer's pick
+name: Submit supporter request
 description: For Open Collective backers and GitHub sponsors.
-labels: ["pick"]
+labels: ["support"]
 
 body:
 - type: markdown
@@ -25,7 +25,8 @@ body:
     label: Open Collective profile link (if applicable)
     placeholder: "https://opencollective.com/your-profile"
     description: |
-      To verify your backer status on Open Collective, please add your GitHub account to your Open Collective profile: click avatar in the top right → Settings (Info) → Social Links → Add GitHub link → Save.
+      To verify your backer status on Open Collective, please add your GitHub account to your Open Collective profile:
+      click avatar in the top right → Settings (Info) → Social Links → Add GitHub link → Save.
   validations:
     required: false
 
