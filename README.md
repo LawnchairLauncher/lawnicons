@@ -45,9 +45,9 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Supporting
 
 > [!IMPORTANT]
-> Sustain Lawnicons by backing the Lawnchair team. Your support helps us maintain Lawnicons, add new icons, and review PRs. If you're a backer, don't forget to submit your icon request for higher priority.
+> Sustain Lawnicons by backing the Lawnchair team. Your support helps us maintain Lawnicons, add new icons, and review PRs. If you're a backer or a sponsor, don't forget to submit your icon request for higher priority.
 
-[Support Lawnchair team](https://opencollective.com/lawnchair) • [Submit backer's pick](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_backers_pick.yml)
+[Support on Open Collective](https://opencollective.com/lawnchair) • [Sponsor on GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ## Contributing
 <div align="left">
