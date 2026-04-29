@@ -4,10 +4,10 @@ labels: ["pick"]
 
 body:
 
-  - type: markdown
-    attributes:
-      value: |
-        An option for backers and sponsors to highlight icons on our icon request dashboard. It doesn't guarantee fulfillment, but it raises the priority of the requested icons among thousands of others.
+- type: markdown
+  attributes:
+    value: |
+      An option for backers and sponsors to highlight icons on our icon request dashboard. It doesn't guarantee fulfillment, but it raises the priority of the requested icons among thousands of others.
 
 - type: dropdown
   id: sponsorship_platform
@@ -30,16 +30,6 @@ body:
   validations:
     required: false
 
-  - type: input
-    id: oc_profile_link
-    validations:
-      required: true
-    attributes:
-      label: Open Collective or GitHub profile
-
-      description: |
-        If you're a GitHub-only sponsor, enter "GitHub" in this input field. We will check that you're listed in the Lawnchair sponsor list.
-        
   - type: upload
     id: icon_request_file
     validations:
