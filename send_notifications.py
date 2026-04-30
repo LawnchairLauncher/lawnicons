@@ -116,8 +116,13 @@ if len(commits) != 0:
     send_message_to_ci_channel(message=telegram_message)
     send_message_to_builds_channel(message=discord_message)
 
-    with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
-        send_document_to_ci_channel(document=apk)
-
-    with open(f'{artifact_directory}/{os.listdir(artifact_directory)[0]}', 'rb') as apk:
-         send_document_to_builds_channel(document=apk)
+    if artifact_directory and os.path.isdir(artifact_directory):
+        try:
+            files = os.listdir(artifact_directory)
+            if files:
+                with open(f'{artifact_directory}/{files[0]}', 'rb') as apk:
+                    send_document_to_ci_channel(document=apk)
+                with open(f'{artifact_directory}/{files[0]}', 'rb') as apk:
+                    send_document_to_builds_channel(document=apk)
+        except Exception as e:
+            print(f"Failed to send APK: {e}")
