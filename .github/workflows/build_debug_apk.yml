@@ -17,21 +17,22 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
-      - name: Check for ignored paths
+      - name: Check for changes in source files
         uses: dorny/paths-filter@v4
         id: filter
         with:
-          base: ${{ github.event_name == 'push' && github.event.before || github.event.pull_request.base.sha }}
           filters: |
             workflows:
-              - '!**.md'
-              - '!LICENSE'
-              - '!.idea/**'
-              - '!docs/**'
-              - '!.github/**'
-              - '!.gitignore'
-              - '!.gitattributes'
-
+              - 'app/**'
+              - 'gradle/**'
+              - 'gradle.properties'
+              - 'build.gradle.kts'
+              - 'settings.gradle.kts'
+              - 'gradlew'
+              - 'gradlew.bat'
+              - 'svg-processor/**'
+              - 'svgs/**'
+              
   build-debug-apk:
     runs-on: ubuntu-latest
     needs: check-paths
