@@ -116,7 +116,7 @@ jobs:
   nightly-release:
     runs-on: ubuntu-latest
     if: github.event.repository.fork == false && github.event_name == 'push' && needs.check-paths.outputs.skip_steps != 'true'
-    needs: build-debug-apk
+    needs: [ build-debug-apk, check-paths ]
     permissions:
       contents: write
     steps:
