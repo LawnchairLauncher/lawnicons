@@ -1,0 +1,41 @@
+name: Submit supporter request
+description: For Open Collective backers and GitHub sponsors.
+labels: ["supported"]
+
+body:
+- type: markdown
+  attributes:
+    value: |
+      An option for backers and sponsors to highlight icons on our icon request dashboard. It doesn't guarantee fulfillment, but it raises the priority of the requested icons among thousands of others.
+
+- type: dropdown
+  id: sponsorship_platform
+  attributes:
+    label: Sponsorship platform
+    options:
+      - Open Collective
+      - GitHub
+    default: 0
+  validations:
+    required: true
+
+- type: input
+  id: open_collective_profile_link
+  attributes:
+    label: Open Collective profile link (if applicable)
+    placeholder: "https://opencollective.com/your-profile"
+    description: |
+      To verify your backer status on Open Collective, please add your GitHub account to your Open Collective profile:  
+      click avatar in the top right → Settings (Info) → Social Links → Add GitHub link → Save.
+  validations:
+    required: false
+
+- type: upload
+  id: icon_request_file
+  attributes:
+    label: Icon request file
+    description: |
+      Create an icon request file:  
+      Open Lawnicons → Tap "Request icons" → Select icons → Share or save file.
+  validations:
+    required: true

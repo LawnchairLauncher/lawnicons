@@ -5,7 +5,7 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Έκδοση %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Πίσω</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
@@ -26,9 +26,9 @@
     <string name="request_icons">Αίτηση εικονιδίων</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Υποστηρίζονται όλα τα εικονίδια. Αναφέρετε αλλαγές επωνυμιών μέσω ζητημάτων του GitHub.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Οι αιτήσεις εικονιδίων ανοίγουν για περιορισμένο χρονικό διάστημα με κάθε νέα έκδοση του Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Πληροφορίες</string>
     <!-- Contributors section of About page -->
@@ -62,7 +62,7 @@
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Αντιστοιχισμένα ID</string>
     <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">Αν το εικονίδιο είναι ξεπερασμένο λόγω επανασχεδιασμού από τον προγραμματιστή του, δημιουργήστε ένα νέο ζήτημα στο GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
@@ -93,7 +93,7 @@
     <!-- Option to save the icon request to a file -->
     <string name="save_file">Αποθήκευση αρχείου</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Αντιγραφή ID εφαρμογής</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Το αρχείο αποθηκεύτηκε με επιτυχία</string>

@@ -1,0 +1,37 @@
+name: Report outdated and low-quality icons
+description: Request to change an icon if its design is outdated or quality is low.
+labels: ["design and qa"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        #### Before you start
+        If an existing icon isn't applying automatically, [create a pull request instead](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons).
+
+        #### Outdated icons
+        When an app's design changes, but Lawnicons still shows the old icon.  
+
+        ```
+        X (formerly Twitter)  
+        Now: https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg  
+        New: https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png  
+        ```
+        
+        #### Low-quality icons
+        Icons don't follow [the Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) or are inconsistent with other icons.  
+
+        ```
+        https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg
+        Wrong color.
+        ```
+        
+        #### How to find the current icon and app name  
+        Search [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). In the line `drawable="..." name="..."`: `drawable` — icon name, `name` — app name.
+
+  - type: textarea
+    id: outdated-or-low-quality-icon-list
+    attributes:
+      label: Icons
+      placeholder: Outdated or low-quality icons
+    validations:
+      required: true

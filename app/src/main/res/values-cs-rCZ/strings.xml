@@ -5,109 +5,109 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Verze %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Zpět</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">Vyhledat ikonu mezi %d ikon</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Vyberte ikonu</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Vyhledávání</string>
     <!-- Accessibility label for the clear search button -->
-    <string name="clear">Clear</string>
+    <string name="clear">Vyčistit</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">%s nebyla nalezena</string>
     <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">Požádat o ikonu</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Všechny ikony jsou podporovaný. Nahlašte rebrandingy skrz GitHub issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Požadavky na ikony jsou otevřené na omezenou dobu s každým novým vydáním Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">O aplikaci</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Hlavní přispěvatelé</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Hlavní</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Zobrazit všechny přispěvatelé</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Hlavní aplikace</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">Ikony</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktura</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Speciální díky</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Za inspirování ikony aplikace</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Za pojmenování aplikace</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Open-source licence</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Name</string>
+    <string name="name">Jméno</string>
     <!-- Label for the drawable resource name -->
     <string name="drawable">Drawable</string>
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Mapovaná IDs</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Jestli je ikona zastaralá kvůli rebrandingu, nahlašte to na GitHub issues.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Zobrazit v GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">Sdílet detaily</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Chybějící ikony</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">Zrušit výběr</string>
     <!-- Button to select all icons -->
     <string name="select_all">Vybrat vše</string>
     <!-- Split button -->
     <!-- Button to request icons -->
-    <string name="request_icons_button">Request</string>
+    <string name="request_icons_button">Požádat</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Zobrazit seznam možností</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Rozšířeno</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">Sbalený</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">přepínací tlačítko</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">Sdílet soubor</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">Uložit soubor</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Kopírovat IDs aplikace</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">Soubor byl úspěšně uložen</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">Vyskytla se chyba při ukládání souboru</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">Nebylo možné vytvořit soubor se žádostí</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">Nebyla nalezena žádná aplikace pro provedení této akce</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Copied text</string>
+    <string name="copied_text">Kopírovaný text</string>
     <!-- New icons screen -->
     <!-- Title for the new icons screen, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">Nový ikony ve v%1$s</string>
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">New icons (%1$s)</string>
+    <string name="new_icons">Nový ikony (%1$s)</string>
 </resources>

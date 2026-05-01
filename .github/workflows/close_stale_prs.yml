@@ -17,4 +17,4 @@ jobs:
           days-before-issue-stale: -1
           exempt-draft-pr: true
           operations-per-run: 500
-          labels-to-add-when-unstale: unstale
+          labels-to-remove-when-unstale: stale
