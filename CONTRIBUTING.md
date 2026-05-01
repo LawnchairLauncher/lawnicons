@@ -166,20 +166,11 @@ All shapes should be outlined.
 
 Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
-Tips
-- Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
-- Change the main stroke weight depending on an icon density.  
-
 #### 3 Black spots
 
 <img src="docs/images/quality-3-black-spots.png" alt="3 Black spots" height="200" />
 
 Avoid black spots as much as possible.
-
-Tips
-- Trim lines.
-- Reduce stroke weights.
-- Simplify or redraw.  
 
 #### 4 Excessive density
 
@@ -188,13 +179,7 @@ Tips
 Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.  
 It’s better to make the distance a little more, especially in closed shapes.
 
-Tips
-- Move lines further apart.
-- Combine parallel lines into one.
-- Trim or extend lines.
-- Reduce stroke weights.
-- Enlarge original icons to make the main features easier to draw.
-- Simplify or redraw.
+Tips: move lines further apart or combine into one, enlarge original icons to make the main features easier to draw.
 
 #### 5 Alignment
 
@@ -216,31 +201,21 @@ If you want to keep only a text, then it should be of high quality and occupy at
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
-Sources for creating a recognizable icon
-- Branding guidelines.
-- UI or gameplay.
-- Website’s favicons.
-- In-app icons.
-- Essence of an app or a game.
-- Combination of recognizable features and your own ideas.  
+Recognition sources: branding guidelines, UI or gameplay, website favicons, in-app icons, essence of an app or game, and a combination of recognizable features with your own ideas.
 
 #### 8 Minimal icons
 
 <img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
 
-Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
+Where it helps, add distinctive features to minimal icons to aid recognition.
 
 #### 9 Version badges
 
 <img src="docs/images/quality-9-version-badges.png" alt="9 Version badges" height="200" />
 
-Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
+Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds or paid apps with a free one available. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
 
-Tips
-- Create a safe zone around the version badge by cutting lines (refer to the Excessive density section).
-- The default location for the badge is the lower right corner, but a lot depends on the icon shape.
-- Avoid shifting icons for the sake of the badge.
-- Create an issue if there aren’t enough version badges.
+Tips: cut lines around the badge, place it in the lower right corner when possible, and don't shift icons for it.
 
 ## Icon contribution tools
 
