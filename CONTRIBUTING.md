@@ -97,7 +97,7 @@ Repeat the app name, using `a–z`, `0–9`, and `_` for spaces. Insert `_` befo
 
 Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
-Tips: follow the blue guides, use existing icons as an example, aim for pixel-perfect.
+Tips: follow the blue guides, use existing icons as an example, and aim for pixel-perfect.
 
 #### 3 Square icons
 
@@ -163,7 +163,7 @@ Avoid black spots as much as possible.
 Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.  
 It’s better to make the distance a little more, especially in closed shapes.
 
-Tips: move lines further apart or combine into one, enlarge original icons to make the main features easier to draw.
+Tips: move lines further apart or combine into one, and enlarge original icons to make the main features easier to draw.
 
 #### 5 Alignment
 
