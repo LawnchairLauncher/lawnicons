@@ -53,14 +53,9 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 ### Approach
 
-The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
+Please read these guidelines carefully to minimize rework. The goal is to create high-quality icons that represent their apps, even if it means redesigning from scratch.
 
-Tips
-- Make no more than 5 icons at a time, as long as your PRs require rework.
-- Prioritize quality.
-- Use the Lawnicons style, rather than trying to reproduce the original exactly.
-- Practice on easy-to-make icons to understand the whole process.
-- See how other contributors have made pull requests (PRs).
+Tips: prioritize quality over exact reproduction and practice on simple icons first.
 
 [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
@@ -77,24 +72,13 @@ a_and_w.svg | A&amp;W
 
 **App name**  
 
-The main app name should be in its main language. It can be found in app stores or primary sources.
+The app name should be in its primary language, sourced from app stores. For non-English names, add a localized or transliterated English version, separated by ~~ (main name first). If the name is mostly English letters, no second name is needed.
 
-Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
-
-Tips
-- Add localized names if available.
-- Transliterate non-English names when there are no localized ones.
-- Separate app names using `~~`. First, the main app name, then the additional one.
-- Delete things that aren't part of an app name.
-- Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+Delete things that aren't part of an app name, and use HTML character references for special symbols (for example, &amp; instead of &).
 
 **Icon name (drawable)**  
 
-Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit at the beginning of an icon name.
-
-Tips
-- When multiple apps are linked to the same icon, choose the most popular app name for it.
-- Replace non-English letters with English letters.
+Repeat the app name, using `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit if the icon name starts with one. For multiple apps sharing one icon, use the most popular name.
 
 ### Fundamentals
 
@@ -191,7 +175,7 @@ Icons should be centered, but shape-aware. Align them to the optical center as�
 
 <img src="docs/images/quality-6-text-icons.png" alt="6 Text icons" height="200" />
 
-Text longer than `3` letters in `1` line usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
