@@ -113,11 +113,7 @@ Tips
 
 Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
-Tips
-- Follow the blue guides. 
-- Use existing icons as an example.
-- Aim for pixel-perfect.
-- The margin of error is `<0.1 px`.
+Tips: follow the blue guides, use existing icons as an example, aim for pixel-perfect.
 
 #### 3 Square icons
 
@@ -125,11 +121,7 @@ Tips
 
 Determine the square icon size before you start. These are icons with `50%` or more of the edges running along the square. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
-Tips
-- Follow the golden guides. 
-- Use existing icons as an example.
-- Aim for pixel-perfect.
-- The margin of error is `<0.1 px`.
+Tips: follow the golden guides, use existing icons as an example, aim for pixel-perfect.
 
 #### 4 Color
 
@@ -146,10 +138,7 @@ Minimal icons: `14 px`
 Dense icons: `10 px`  
 Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`  
 
-Tips
-- No margin of error.
-- Don’t use a fill.
-- Remember to adjust the size of icons when you change the stroke weights. 
+Exact values only, no fill.
 
 #### 6 Caps and joints
 
@@ -161,7 +150,7 @@ Caps and joints should be rounded.
 
 <img src="docs/images/fundamentals-7-corner-radius.png" alt="7 Corner radius" height="200" />
 
-Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
+Use no less than `6 px` for `90°` angles. Refer to the original icon to select a value. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
 
 ### Quality
 
