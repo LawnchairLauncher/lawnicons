@@ -84,7 +84,7 @@ jobs:
 
   send-notifications:
     runs-on: ubuntu-latest
-    needs: check-paths
+    needs: [ build-debug-apk, check-style, check-paths ]
     if: always() && needs.check-paths.result == 'success'
     steps:
       - uses: actions/checkout@v6
@@ -100,7 +100,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install gitpython requests
       - name: Download artifact
-        if: needs.check-paths.outputs.skip_steps != 'true'
+        if: needs.build-debug-apk.result == 'success'
         uses: actions/download-artifact@v8
         with:
           name: Debug APK
