@@ -72,7 +72,7 @@ a_and_w.svg | A&amp;W
 
 **App name**  
 
-The app name should be in its primary language, sourced from app stores. For non-English names, add a localized or transliterated English version, separated by ~~ (main name first). If the name is mostly English letters, no second name is needed.
+The app name should be in its primary language, sourced from app stores. For non-English names, add a localized or transliterated English version, separated by `~~` (main name first). If the name is mostly English letters, no second name is needed.
 
 Delete things that aren't part of an app name, and use HTML character references for special symbols (for example, &amp; instead of &).
 
@@ -191,7 +191,7 @@ Recognition sources: branding guidelines, UI or gameplay, website favicons, in-a
 
 <img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
 
-Where it helps, add distinctive features to minimal icons to aid recognition.
+Some minimal icons need distinctive features to aid recognition.
 
 #### 9 Version badges
 
