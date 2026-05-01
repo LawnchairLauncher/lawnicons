@@ -10,17 +10,17 @@ In case of unclear wording, ask us in our Discord. If you find errors or want to
 
 **Contributors**
 
-The Lawnchair team is focused on development only. Our community (basically everyone who wants to) makes icons and sometimes touches the code too. 
+The Lawnchair team is focused on development only. Our community makes icons and sometimes touches the code too. Anyone can become a contributor — it takes some learning, but it's doable.
 
 [Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors) • [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 
 **Development**  
 
-The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
+The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate processes. Please see our issues for more details.
 
 **Icons**  
 
-You can contribute your icons, fulfill icon requests, add missing app IDs, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
+You can contribute icons, fulfill icon requests, add missing app IDs, refine existing icons, clean up dead apps, and remove duplicates. Mastering the Lawnicons guidelines in practice will also allow you to review icons.
 
 [Icon requests dashboard](https://lawnicons-requests.vercel.app/)
 
