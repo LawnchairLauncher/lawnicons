@@ -6,8 +6,7 @@ body:
     attributes:
       value: |
         #### Before you start
-        If an existing icon isn't applying automatically, create a pull request instead.  
-        [Adding icons and missing app IDs to Lawnicons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons)
+        If an existing icon isn't applying automatically, [create a pull request instead](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons).
 
         #### Outdated icons
         When an app's design changes, but Lawnicons still shows the old icon.  
@@ -19,7 +18,7 @@ body:
         ```
         
         #### Low-quality icons
-        Icons don't follow our [icon design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) or are inconsistent with other icons.  
+        Icons don't follow [the Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) or are inconsistent with other icons.  
 
         ```
         https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg
@@ -27,7 +26,7 @@ body:
         ```
         
         #### How to find the current icon and app name  
-        Search the [appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). In the line `drawable="..." name="..."`: `drawable` — icon name, `name` — app name.
+        Search [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). In the line `drawable="..." name="..."`: `drawable` — icon name, `name` — app name.
 
   - type: textarea
     id: outdated-or-low-quality-icon-list
