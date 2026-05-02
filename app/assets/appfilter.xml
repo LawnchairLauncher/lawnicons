@@ -224,6 +224,7 @@
   <item component="ComponentInfo{com.abnamro.nl.mobile.payments/com.abnamro.nl.mobile.payments.ui.activity.main.SplashActivity}" drawable="abn_amro" name="ABN AMRO" />
   <item component="ComponentInfo{de.aboutyou.mobile.app/de.aboutyou.mobile.app.MainActivity}" drawable="about_you" name="ABOUT YOU" />
   <item component="ComponentInfo{org.adblockplus.adblockplussbrowser/org.adblockplus.adblockplussbrowser.app.ui.LauncherActivity}" drawable="abp_for_samsung_internet" name="ABP for Samsung Internet" />
+  <item component="ComponentInfo{com.barnabas.absorb/com.barnabas.absorb.MainActivity}" drawable="absorb" name="Absorb" />
   <item component="ComponentInfo{com.hampusolsson.abstruct/com.hampusolsson.abstruct.splash.SplashActivity}" drawable="abstruct" name="Abstruct" />
   <item component="ComponentInfo{bg.abv.andro.emailapp/bg.abv.andro.emailapp.activities.MainActivity}" drawable="abv_mail" name="ABV Mail" />
   <item component="ComponentInfo{bg.abv.andro.emailapp/bg.abv.andro.emailapp.ui.activities.MainActivity}" drawable="abv_mail" name="ABV Mail" />
@@ -272,7 +273,6 @@
   <item component="ComponentInfo{com.activitymanager/com.sdex.activityrunner.MainActivity}" drawable="activity_manager" name="Activity Manager" />
   <item component="ComponentInfo{wit.android.bcpBankingApp.activoBank/wit.android.bcpBankingApp.ui.activities.SplashScreenActivity}" drawable="activobank" name="ActivoBank" />
   <item component="ComponentInfo{wit.android.bcpBankingApp.activoBank/wit.android.bcpBankingApp.ui.activities.SlidingMenusActivity}" drawable="activobank" name="ActivoBank" />
-  <item component="ComponentInfo{com.barnabas.absorb/com.barnabas.absorb.MainActivity}" drawable="absorb" name="Absorb" />
   <item component="ComponentInfo{com.ada.app/com.ada.MainActivity}" drawable="ada" name="Ada" />
   <item component="ComponentInfo{dev.lexip.hecate/dev.lexip.hecate.ui.MainActivity}" drawable="adaptive_theme" name="Adaptive Theme" />
   <item component="ComponentInfo{com.jndapp.adaptive.material.you.iconpack/com.jndapp.adaptive.material.you.iconpack.MainActivity}" drawable="adaptive_you_icons" name="Adaptive You Icons" />
@@ -336,6 +336,7 @@
   <item component="ComponentInfo{rs.adsregex/rs.adsregex.StarterActivity}" drawable="ads_regex" name="Ads Regex" />
   <item component="ComponentInfo{ro.adservio.app/ro.adservio.app.MainActivity}" drawable="adservio" name="Adservio" />
   <item component="ComponentInfo{com.adt.adtcontrolalarm/com.alarm.alarmmobile.android.feature.auth.login.LoginActivity}" drawable="adt_control" name="ADT Control" />
+  <item component="ComponentInfo{com.adtargentina.adtargentinaalarm/com.alarm.alarmmobile.android.feature.auth.login.LoginActivity}" drawable="adt_interactive" name="ADT Interactive" />
   <item component="ComponentInfo{com.alarm.alarmmobile.android.adt/com.alarm.alarmmobile.android.feature.auth.login.LoginActivity}" drawable="adt_control" name="ADT Interactive Security" />
   <item component="ComponentInfo{com.blogspot.byterevapps.lollipopscreenrecorder/com.blogspot.byterevapps.lollipopscreenrecorder.MainActivity}" drawable="adv_screen_recorder" name="ADV Screen Recorder" />
   <item component="ComponentInfo{mattecarra.accapp/mattecarra.accapp.activities.MainActivity}" drawable="advanced_charging_controller_acca" name="Advanced Charging Controller (ACCA)" />
@@ -1447,6 +1448,8 @@
   <item component="ComponentInfo{co.com.bancofalabella.mobile.omc/net.technisys.android.core.gui.ui.SplashScreen}" drawable="banco_falabella" name="Banco Falabella" />
   <item component="ComponentInfo{cl.android/net.technisys.android.core.gui.ui.SplashScreen}" drawable="banco_falabella" name="Banco Falabella" />
   <item component="ComponentInfo{per.bf.desa/net.technisys.android.core.gui.ui.SplashScreen}" drawable="banco_falabella" name="Banco Falabella" />
+  <item component="ComponentInfo{com.mosync.app_Banco_Galicia/ar.com.galicia.core.ui.splash.SplashActivity}" drawable="banco_galicia" name="Banco Galicia" />
+  <item component="ComponentInfo{com.mosync.app_Banco_Galicia/ar.com.galicia.core.ui.SplashActivity}" drawable="banco_galicia" name="Banco Galicia" />
   <item component="ComponentInfo{pt.cemg.BancoMontepio/pt.cemg.BancoMontepio.MainActivity}" drawable="banco_montepio" name="Banco Montepio" />
   <item component="ComponentInfo{br.com.bancopan.cartoes/br.com.bancopan.bancodigital.presentation.splash.SplashActivity}" drawable="banco_pan" name="Banco PAN" />
   <item component="ComponentInfo{net.inverline.bancosabadell.officelocator.android/net.inverline.bancosabadell.officelocator.android.sab.SplashActivity}" drawable="banco_sabadell" name="Banco Sabadell" />
@@ -2495,6 +2498,7 @@
   <item component="ComponentInfo{cgeo.geocaching/cgeo.geocaching.MainActivity}" drawable="c_geo" name="c:geo" />
   <item component="ComponentInfo{cgeo.geocaching/cgeo.geocaching.SplashActivity}" drawable="c_geo" name="c:geo" />
   <item component="ComponentInfo{pl.creditagricole.nmobi/pl.creditagricole.nmobi.MainActivity}" drawable="credit_agricole" name="CA24" />
+  <item component="ComponentInfo{com.cabify.rider/com.cabify.rider.presentation.splash.SplashActivity}" drawable="cabify" name="Cabify" />
   <item component="ComponentInfo{com.tedmob.cablevision/com.tedmob.cablevision.features.launch.RootActivity}" drawable="cablevision" name="Cablevision" />
   <item component="ComponentInfo{com.github.bmx666.appcachecleaner/com.github.bmx666.appcachecleaner.ui.activity.AppCacheCleanerActivity}" drawable="cache_cleaner" name="Cache Cleaner" />
   <item component="ComponentInfo{com.github.bmx666.appcachecleaner/com.github.bmx666.appcachecleaner.ui.activity.LauncherActivity}" drawable="cache_cleaner" name="Cache Cleaner" />
@@ -4976,6 +4980,7 @@
   <item component="ComponentInfo{com.work.cardinfo/com.work.cardinfo.feature.MainActivity}" drawable="esaldo_info" name="eSaldo Info" />
   <item component="ComponentInfo{org.y20k.escapepod/org.y20k.escapepod.PodcastPlayerActivity}" drawable="escapepod" name="Escapepod" />
   <item component="ComponentInfo{org.y20k.escapepod/org.y20k.escapepod.MainActivity}" drawable="escapepod" name="Escapepod" />
+  <item component="ComponentInfo{com.artech.gestossd.sdlogin/com.genexus.android.core.activities.StartupActivity}" drawable="esencial" name="Esencial" />
   <item component="ComponentInfo{com.eset.ems2.gp/com.eset.ems.gui.AliasSafeLauncherActivity}" drawable="eset_mobile_security_antivirus" name="ESET Mobile Security Antivirus" />
   <item component="ComponentInfo{com.eset.ems2.gp/com.eset.ems.gui.MainActivityAlias}" drawable="eset_mobile_security_antivirus" name="ESET Mobile Security Antivirus" />
   <item component="ComponentInfo{com.f1soft.esewa/com.f1soft.esewa.activity.splash.ui.SplashScreenActivity}" drawable="esewa" name="eSewa" />
@@ -7689,6 +7694,7 @@
   <item component="ComponentInfo{com.icbc/com.icbc.activity.init.NewLoadingActivity}" drawable="icbc" name="ICBC" />
   <item component="ComponentInfo{com.icbc.mobile.abroadbank/com.icbc.mobile.abroadbank.starter.CommonClientStarter}" drawable="icbc" name="ICBC" />
   <item component="ComponentInfo{com.icbc.mobile.abroadARG/com.icbc.mobile.abroadARG.MainActivity}" drawable="icbc" name="ICBC" />
+  <item component="ComponentInfo{com.vusecurity.icbc.token/com.vusecurity.icbc.token.MainActivity}" drawable="icbc_token_virtual" name="ICBC Token Virtual" />
   <item component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.MainActivity}" drawable="ice_box" name="Ice Box" />
   <item component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.mainActivity.MainActivity}" drawable="ice_box" name="Ice Box" />
   <item component="ComponentInfo{com.catchingnow.icebox/com.catchingnow.icebox.activity.mainActivity.MainActivityFakeDrawer}" drawable="ice_box" name="Ice Box" />
@@ -9163,6 +9169,7 @@
   <item component="ComponentInfo{dev.linwood.butterfly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly" name="Linwood Butterfly" />
   <item component="ComponentInfo{dev.linwood.butterfly.nightly/dev.linwood.butterfly.MainActivity}" drawable="linwood_butterfly_nightly" name="Linwood Butterfly Nightly" />
   <item component="ComponentInfo{at.upstream.linzmobil/at.upstream.citymobil.feature.splash.SplashActivity}" drawable="linzmobil" name="LinzMobil" />
+  <item component="ComponentInfo{org.lionbridge.LCXBeta/com.tns.NativeScriptActivity}" drawable="lionbridge_community_jobs" name="Lionbridge Community Jobs" />
   <item component="ComponentInfo{project.listick.fakegps/project.listick.fakegps.UI.SplashActivity}" drawable="lipstick_fake_gps" name="Lipstick Fake GPS" />
   <item component="ComponentInfo{com.woi.liputan6.android/com.woi.liputan6.android.activity.Splash}" drawable="liputan6" name="Liputan6" />
   <item component="ComponentInfo{com.woi.liputan6.android/com.woi.liputan6.android.Launcher}" drawable="liputan6" name="Liputan6" />
@@ -10575,6 +10582,7 @@
   <item component="ComponentInfo{com.letsmoveat.app/com.letsmoveat.app.MainActivity}" drawable="moveat" name="Moveat" />
   <item component="ComponentInfo{com.moveinsync.ets/com.moveinsync.ets.launch.newlaunch.NewLaunchActivity}" drawable="moveinsync" name="MoveInSync" />
   <item component="ComponentInfo{com.moveinsync.ets/com.moveinsync.ets.launch.LaunchActivity}" drawable="moveinsync" name="MoveInSync" />
+  <item component="ComponentInfo{ar.com.crayonweb.movitaxi/ar.com.crayonweb.movitaxi.MainActivity}" drawable="movi_plus" name="Movi+" />
   <item component="ComponentInfo{com.moviebase/com.moviebase.ui.main.MainActivity}" drawable="moviebase" name="Moviebase" />
   <item component="ComponentInfo{com.community.mbox.in/com.transsion.subroom.activity.SplashActivity}" drawable="moviebox" name="MovieBox" />
   <item component="ComponentInfo{com.community.mbox.ke/com.transsion.subroom.activity.SplashActivity}" drawable="moviebox" name="MovieBox" />
@@ -10583,6 +10591,7 @@
   <item component="ComponentInfo{com.quint.turne/com.quint.turne.module_home.HomeActivityNew}" drawable="moviebox" name="MovieBox" />
   <item component="ComponentInfo{com.movielab.mobile/com.movielab.MainActivity}" drawable="movielab" name="Movielab" />
   <item component="ComponentInfo{com.moviesanywhere.goo/com.disney.brooklyn.mobile.ui.main.MainActivity}" drawable="movies_anywhere" name="Movies Anywhere" />
+  <item component="ComponentInfo{com.parkit.selfcare/com.parkit.selfcare.MainActivity}" drawable="movil_tr" name="Movil-TR" />
   <item component="ComponentInfo{com.telefonica.movistar/com.telefonica.movistar.SplashScreen}" drawable="movistar" name="Movistar" />
   <item component="ComponentInfo{com.otecel.mimovistar/com.otecel.mimovistar.activity.SplashActivity}" drawable="movistar" name="Movistar" />
   <item component="ComponentInfo{com.services.movistar.ar/com.services.movistar.ar.MainActivity}" drawable="movistar" name="Movistar" />
