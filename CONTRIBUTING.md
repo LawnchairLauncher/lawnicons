@@ -10,17 +10,17 @@ In case of unclear wording, ask us in our Discord. If you find errors or want to
 
 **Contributors**
 
-The Lawnchair team is focused on development only. Our community (basically everyone who wants to) makes icons and sometimes touches the code too. 
+The Lawnchair team is focused on development only. Our community makes icons and sometimes touches the code too. Anyone can become a contributor — it takes some learning, but it's doable.
 
 [Our contributors](https://github.com/LawnchairLauncher/lawnicons/graphs/contributors) • [Lawnchair](https://github.com/LawnchairLauncher/lawnchair)
 
 **Development**  
 
-The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate organizational processes. Please see our issues for more details.
+The main tasks are to maintain Lawnicons and interaction with launchers, fix bugs, add new features and automate processes. Please see our issues for more details.
 
 **Icons**  
 
-You can contribute your icons, fulfill icon requests, add missing app IDs, refine and update existing icons, clean up dead apps and duplicates. Mastering the Lawnicons design guidelines in practice will allow you to do icon reviews.
+You can contribute icons, fulfill icon requests, add missing app IDs, refine existing icons, clean up dead apps, and remove duplicates. Mastering the Lawnicons guidelines in practice will also allow you to review icons.
 
 [Icon requests dashboard](https://lawnicons-requests.vercel.app/)
 
@@ -53,14 +53,9 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 ### Approach
 
-The Lawnicons style is built on strong fundamentals and a commitment to quality. To minimize the need for rework, please read these guidelines carefully. Our main goal is to create high-quality icons that clearly represent their respective apps. To achieve this goal, you may sometimes need to redesign an icon from scratch.
+Please read these guidelines carefully to minimize rework. The goal is to create high-quality icons that represent their apps, even if it means redesigning from scratch.
 
-Tips
-- Make no more than 5 icons at a time, as long as your PRs require rework.
-- Prioritize quality.
-- Use the Lawnicons style, rather than trying to reproduce the original exactly.
-- Practice on easy-to-make icons to understand the whole process.
-- See how other contributors have made pull requests (PRs).
+Tips: prioritize quality over exact reproduction and practice on simple icons first.
 
 [Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
@@ -77,24 +72,13 @@ a_and_w.svg | A&amp;W
 
 **App name**  
 
-The main app name should be in its main language. It can be found in app stores or primary sources.
+The app name should be in its primary language, sourced from app stores. For non-English names, add a localized or transliterated English version, separated by `~~` (main name first). If the name is mostly English letters, no second name is needed.
 
-Apps with non-English names require an additional name based on the English alphabet. At best it will be a localized official app name. If an app name is mostly made up of letters from the English alphabet, it doesn't need an additional one.
-
-Tips
-- Add localized names if available.
-- Transliterate non-English names when there are no localized ones.
-- Separate app names using `~~`. First, the main app name, then the additional one.
-- Delete things that aren't part of an app name.
-- Use the HTML character references for special symbols: for instance, `&amp;` instead of "&".
+Delete things that aren't part of an app name, and use HTML character references for special symbols (for example, &amp; instead of &).
 
 **Icon name (drawable)**  
 
-Repeat the app name. Use `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit at the beginning of an icon name.
-
-Tips
-- When multiple apps are linked to the same icon, choose the most popular app name for it.
-- Replace non-English letters with English letters.
+Repeat the app name, using `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit if the icon name starts with one. For multiple apps sharing one icon, use the most popular name.
 
 ### Fundamentals
 
@@ -113,11 +97,7 @@ Tips
 
 Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
-Tips
-- Follow the blue guides. 
-- Use existing icons as an example.
-- Aim for pixel-perfect.
-- The margin of error is `<0.1 px`.
+Tips: follow the blue guides, use existing icons as an example, and aim for pixel-perfect.
 
 #### 3 Square icons
 
@@ -125,11 +105,7 @@ Tips
 
 Determine the square icon size before you start. These are icons with `50%` or more of the edges running along the square. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
-Tips
-- Follow the golden guides. 
-- Use existing icons as an example.
-- Aim for pixel-perfect.
-- The margin of error is `<0.1 px`.
+Tips: follow the golden guides, use existing icons as an example, aim for pixel-perfect.
 
 #### 4 Color
 
@@ -146,10 +122,7 @@ Minimal icons: `14 px`
 Dense icons: `10 px`  
 Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`  
 
-Tips
-- No margin of error.
-- Don’t use a fill.
-- Remember to adjust the size of icons when you change the stroke weights. 
+Exact values only, no fill.
 
 #### 6 Caps and joints
 
@@ -161,7 +134,7 @@ Caps and joints should be rounded.
 
 <img src="docs/images/fundamentals-7-corner-radius.png" alt="7 Corner radius" height="200" />
 
-Use `6–32 px` for `90°` angles. Refer to the original icon to select a value from the range. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
+Use no less than `6 px` for `90°` angles. Refer to the original icon to select a value. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
 
 ### Quality
 
@@ -177,20 +150,11 @@ All shapes should be outlined.
 
 Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
-Tips
-- Use a gradual transition if it makes sense. For instance, `12 px` → `10 px` → `8 px`.
-- Change the main stroke weight depending on an icon density.  
-
 #### 3 Black spots
 
 <img src="docs/images/quality-3-black-spots.png" alt="3 Black spots" height="200" />
 
 Avoid black spots as much as possible.
-
-Tips
-- Trim lines.
-- Reduce stroke weights.
-- Simplify or redraw.  
 
 #### 4 Excessive density
 
@@ -199,13 +163,7 @@ Tips
 Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.  
 It’s better to make the distance a little more, especially in closed shapes.
 
-Tips
-- Move lines further apart.
-- Combine parallel lines into one.
-- Trim or extend lines.
-- Reduce stroke weights.
-- Enlarge original icons to make the main features easier to draw.
-- Simplify or redraw.
+Tips: move lines further apart or combine into one, and enlarge original icons to make the main features easier to draw.
 
 #### 5 Alignment
 
@@ -217,7 +175,7 @@ Icons should be centered, but shape-aware. Align them to the optical center as�
 
 <img src="docs/images/quality-6-text-icons.png" alt="6 Text icons" height="200" />
 
-Text longer than `3` letters in `1` line usually don’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
@@ -227,31 +185,21 @@ If you want to keep only a text, then it should be of high quality and occupy at
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
-Sources for creating a recognizable icon
-- Branding guidelines.
-- UI or gameplay.
-- Website’s favicons.
-- In-app icons.
-- Essence of an app or a game.
-- Combination of recognizable features and your own ideas.  
+Recognition sources: branding guidelines, UI or gameplay, website favicons, in-app icons, essence of an app or game, and a combination of recognizable features with your own ideas.
 
 #### 8 Minimal icons
 
 <img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
 
-Some minimal icons should be detailed based on an app design to become more recognizable. Add distinctive features to them when it makes sense.  
+Some minimal icons need distinctive features to aid recognition.
 
 #### 9 Version badges
 
 <img src="docs/images/quality-9-version-badges.png" alt="9 Version badges" height="200" />
 
-Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds, paid apps with a free one available, or lite versions. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
+Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds or paid apps with a free one available. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
 
-Tips
-- Create a safe zone around the version badge by cutting lines (refer to the Excessive density section).
-- The default location for the badge is the lower right corner, but a lot depends on the icon shape.
-- Avoid shifting icons for the sake of the badge.
-- Create an issue if there aren’t enough version badges.
+Tips: cut lines around the badge, place it in the lower right corner when possible, and don't shift icons for it.
 
 ## Icon contribution tools
 
