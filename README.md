@@ -59,8 +59,10 @@ Lawnicons on the Play Store will install as a different app from other sources.
         <img alt="Lawnicons localization issue" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
+If you help us with non-icon issues, we can prioritize your icon request.
+
 ### Development
-You're welcome to work on our issues. Contributors can get a priority icon request—write to us before you help.
+You're welcome to work on our issues.
 
 [Lawnicons developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
