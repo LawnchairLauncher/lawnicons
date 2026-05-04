@@ -26,9 +26,9 @@
     <string name="request_icons">Solicitar iconos</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Todos los iconos son compatibles. Informa sobre rediseños en los iconos originales a través de GitHub.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Se admite solicitar iconos durante un tiempo limitado tras cada lanzamiento de Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Acerca de</string>
     <!-- Contributors section of About page -->
@@ -60,11 +60,11 @@
     <!-- Label for the drawable resource name -->
     <string name="drawable">Elemento gráfico</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">Identificador</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Identificadores asignados</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">Si el icono quedó obsoleto debido a un cambio significativo, reporta el problema en GitHub.</string>
+    <string name="icon_info_outdated_warning">Si el icono quedó obsoleto debido a un rediseño en el icono original, informa sobre el problema en GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
     <string name="view_on_github">Ver en GitHub</string>
     <!-- Share button on icon info popup -->
@@ -86,14 +86,14 @@
     <!-- Content description for the collapsed state of a toggle button -->
     <string name="toggle_button_collapsed">Colapsado</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">Botón de alternar</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
     <string name="share_file">Compartir archivo</string>
     <!-- Option to save the icon request to a file -->
     <string name="save_file">Guardar archivo</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Copiar identificador(es) de aplicación</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Se guardó el archivo</string>
