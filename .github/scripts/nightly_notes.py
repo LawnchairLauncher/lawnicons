@@ -135,6 +135,7 @@ def generate_notes() -> str:
 
     lines = []
     lines.append(f"Build: `{sha}` \u2022 Branch: `{branch}`\n")
+    lines.append("### Summary")
     lines.append(f"- **{total_prs} pull requests** merged")
     lines.append(f"- **~{total_icons} icons** and **~{total_links} links** added")
     lines.append(f"- **{len(dep_prs)} dependency updates** applied")
