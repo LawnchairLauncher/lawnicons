@@ -1,0 +1,165 @@
+#!/usr/bin/env python3
+import subprocess
+import json
+import re
+import os
+from collections import defaultdict
+from datetime import datetime, timedelta, timezone
+
+
+def run(cmd: str) -> str:
+    result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+    if result.returncode != 0:
+        return ""
+    return result.stdout.strip()
+
+
+def get_merged_prs() -> list[dict]:
+    # Get latest stable release tag (exclude nightly)
+    latest_tag = run("git tag --list 'v*' --sort=-version:refname | grep -v 'nightly' | head -1")
+    
+    # Get tag date
+    if latest_tag:
+        tag_date = run(f"git log -1 --format=%aI {latest_tag}")
+    else:
+        tag_date = None
+    
+    # Get all merged PRs
+    cmd = "gh pr list --state merged --json title,number,author,labels,mergedAt,baseRefName --limit 200"
+    output = run(cmd)
+    
+    if not output:
+        return []
+    
+    all_prs = json.loads(output)
+    
+    # Filter by develop branch
+    prs = [pr for pr in all_prs if pr.get("baseRefName") == "develop"]
+    
+    if tag_date:
+        # Filter PRs merged after the stable release tag
+        prs = [pr for pr in prs if pr.get("mergedAt") and pr["mergedAt"] > tag_date]
+    else:
+        # Fallback to 24 hours
+        cutoff = datetime.now(timezone.utc) - timedelta(hours=24)
+        prs = [pr for pr in prs if pr.get("mergedAt") and 
+               datetime.fromisoformat(pr["mergedAt"].replace("Z", "+00:00")) > cutoff]
+    
+    return prs
+
+
+def parse_icon_stats(title: str) -> tuple[int, int, int]:
+    icons = sum(int(x) for x in re.findall(r"\+?(\d+)\s*icons?", title, re.IGNORECASE))
+    links = sum(int(x) for x in re.findall(r"\+?(\d+)\s*links?", title, re.IGNORECASE))
+    updates = sum(int(x) for x in re.findall(r"\+?(\d+)\s*updates?", title, re.IGNORECASE))
+    return icons, links, updates
+
+
+
+def is_first_timer_from_labels(pr: dict) -> bool:
+    labels = [l["name"] for l in pr.get("labels", [])]
+    return "first timer" in labels
+
+
+def get_icon_contributors(prs: list[dict]) -> list[dict]:
+    contributors = defaultdict(lambda: {"icons": 0, "links": 0, "updates": 0, "first_time": False})
+
+    for pr in prs:
+        title = pr.get("title", "")
+        author = pr.get("author", {}).get("login", "unknown")
+
+        if any(word in title.lower() for word in ["icon", "link", "update", "qa"]):
+            icons, links, updates = parse_icon_stats(title)
+
+            if icons > 0 or links > 0 or updates > 0:
+                contributors[author]["icons"] += icons
+                contributors[author]["links"] += links
+                contributors[author]["updates"] += updates
+
+                pr_labels = [l["name"] for l in pr.get("labels", [])]
+                if "first timer" in pr_labels:
+                    contributors[author]["first_time"] = True
+
+    def sort_key(item):
+        stats = item[1]
+        return -(stats["icons"] + stats["links"] + stats["updates"])
+
+    return [
+        {
+            "author": author,
+            "icons": stats["icons"],
+            "links": stats["links"],
+            "updates": stats["updates"],
+            "first_time": stats["first_time"],
+        }
+        for author, stats in sorted(contributors.items(), key=sort_key)
+    ]
+
+
+def generate_notes() -> str:
+    prs = get_merged_prs()
+
+    if not prs:
+        return "No changes in this nightly build."
+
+    total_prs = len(prs)
+
+    icon_prs = [
+        p for p in prs
+        if any(w in p.get("title", "").lower() for w in ["icon", "link", "update", "qa"])
+    ]
+    dep_prs = [
+        p for p in prs
+        if any(w in p.get("title", "").lower() for w in ["dependenc", "update dependency", "bump"])
+    ]
+
+    all_authors = set()
+    for pr in prs:
+        author = pr.get("author", {}).get("login", "")
+        if author:
+            all_authors.add(author)
+
+    total_icons = 0
+    total_links = 0
+    for pr in icon_prs:
+        i, l, u = parse_icon_stats(pr.get("title", ""))
+        total_icons += i
+        total_links += l
+
+    sha = os.getenv("GITHUB_SHA", "unknown")[:7]
+    branch = os.getenv("GITHUB_REF_NAME", "develop")
+    repo = os.getenv("GH_REPO", "Lawnicons/Lawnicons")
+    latest_tag = run("git tag --list 'v*' --sort=-version:refname | grep -v 'nightly' | head -1") or "v2.17.1"
+
+    icon_contributors = get_icon_contributors(icon_prs)
+
+    lines = []
+    lines.append(f"Build: `{sha}` \u2022 Branch: `{branch}`\n")
+    lines.append(f"- **{total_prs} pull requests** merged")
+    lines.append(f"- **~{total_icons} icons** and **~{total_links} links** added")
+    lines.append(f"- **{len(dep_prs)} dependency updates** applied")
+    lines.append(f"- **{len(all_authors)} contributors** participated")
+
+    if icon_contributors:
+        lines.append(f"\n### Top icon contributors")
+        for c in icon_contributors:
+            parts = []
+            if c["icons"] > 0:
+                parts.append(f"{c['icons']} icons")
+            if c["links"] > 0:
+                parts.append(f"{c['links']} links")
+            if c["updates"] > 0:
+                parts.append(f"{c['updates']} updates")
+
+            first_time = " (first timer)" if c["first_time"] else ""
+            lines.append(f"@{c['author']}{first_time}: {' + '.join(parts)}")
+
+    lines.append(
+        f"\nFull Changelog: [{latest_tag}...nightly](https://github.com/{repo}/compare/{latest_tag}...nightly)"
+    )
+
+    return "\n".join(lines)
+
+
+if __name__ == "__main__":
+    print(generate_notes())

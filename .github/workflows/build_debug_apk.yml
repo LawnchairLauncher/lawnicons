@@ -123,18 +123,31 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/download-artifact@v8
         with:
           name: Debug APK
           path: artifacts/debug-apk
-      - name: Export APK_NAME for later use
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Export APK_NAME
         run: echo "APK_NAME=Lawnicons.Nightly.$(echo ${{ github.sha }} | cut -c1-7).apk" >> $GITHUB_ENV
       - name: Rename .apk file
-        run: |
-          mv artifacts/debug-apk/*.apk $APK_NAME
+        run: mv artifacts/debug-apk/*.apk $APK_NAME
+      - name: Generate release notes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: python .github/scripts/nightly_notes.py > release_notes.md
       - name: Delete release if exist then create release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh release view "nightly" && gh release delete "nightly" -y --cleanup-tag
-          gh release create "nightly" "$APK_NAME" -p -t "Lawnicons Nightly" --generate-notes
+          gh release create "nightly" "$APK_NAME" \
+            -p \
+            -t "Lawnicons Nightly" \
+            --notes-file release_notes.md

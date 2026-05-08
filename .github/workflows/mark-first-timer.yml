@@ -1,0 +1,25 @@
+name: "Mark first timer"
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  mark-first-timer:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Check and label first timer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          AUTHOR="${{ github.event.pull_request.user.login }}"
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          
+          COUNT=$(gh pr list --state merged --author "$AUTHOR" --limit 1 --json number --jq "length")
+          
+          if [ "$COUNT" -eq 0 ]; then
+            echo "First timer: $AUTHOR"
+            gh pr edit "$PR_NUMBER" --add-label "first timer"
+          fi
