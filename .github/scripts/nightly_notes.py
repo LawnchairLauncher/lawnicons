@@ -143,6 +143,7 @@ def generate_notes() -> str:
 
     if icon_contributors:
         lines.append(f"\n### Top icon contributors")
+        first_timers_list = []
         for c in icon_contributors:
             parts = []
             if c["icons"] > 0:
@@ -152,8 +153,14 @@ def generate_notes() -> str:
             if c["updates"] > 0:
                 parts.append(f"{c['updates']} updates")
 
-            first_time = " (first timer)" if c["first_time"] else ""
-            lines.append(f"@{c['author']}{first_time}: {' + '.join(parts)}")
+            if c["first_time"]:
+                first_timers_list.append(f"@{c['author']}: {' + '.join(parts)}")
+            
+            lines.append(f"@{c['author']}: {' + '.join(parts)}")
+
+        if first_timers_list:
+            lines.append(f"\n#### First timers")
+            lines.extend(first_timers_list)
 
     lines.append(
         f"\nFull Changelog: [{latest_tag}...nightly](https://github.com/{repo}/compare/{latest_tag}...nightly)"
