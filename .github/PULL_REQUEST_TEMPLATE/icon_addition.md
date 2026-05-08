@@ -1,9 +1,9 @@
-<!-- Title example: "+1 icon, +2 links, +3 icon updates".
+<!-- Title example: "+1 icon, +2 links, +3 updates".
      +1 icon = +1 brand new icon (related links aren't considered).
      +2 links = +2 missing app IDs for existing icons.
-     +3 icon updates = redesign of 3 existing icons.
+     +3 updates = redesign of 3 existing icons.
      In other cases, choose something else to avoid confusion.
-     Don't use "+ 1 icon" because the "+ " will be parsed as an indent. -->
+     -->
 
 ## Icons
 <!-- Please specify in the sections below which apps and packages you have worked on.
