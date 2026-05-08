@@ -21,11 +21,17 @@ def get_merged_prs() -> list[dict]:
     # Get tag date
     if latest_tag:
         tag_date = run(f"git log -1 --format=%aI {latest_tag}")
+        date_only = tag_date[:10] if tag_date else None
     else:
         tag_date = None
+        date_only = None
     
-    # Get all merged PRs
-    cmd = "gh pr list --state merged --json title,number,author,labels,mergedAt,baseRefName --limit 200"
+    # Get all merged PRs since the stable release
+    if date_only:
+        cmd = f'gh pr list --state merged --json title,number,author,labels,mergedAt,baseRefName --limit 1000 --search "base:develop merged:>={date_only}"'
+    else:
+        cmd = "gh pr list --state merged --json title,number,author,labels,mergedAt,baseRefName --limit 200"
+    
     output = run(cmd)
     
     if not output:
@@ -36,8 +42,8 @@ def get_merged_prs() -> list[dict]:
     # Filter by develop branch
     prs = [pr for pr in all_prs if pr.get("baseRefName") == "develop"]
     
+    # Additional filter by exact tag datetime
     if tag_date:
-        # Filter PRs merged after the stable release tag
         prs = [pr for pr in prs if pr.get("mergedAt") and pr["mergedAt"] > tag_date]
     else:
         # Fallback to 24 hours
