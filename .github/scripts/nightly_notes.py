@@ -120,7 +120,7 @@ def generate_notes() -> str:
     ]
     code_prs = [
         p for p in prs
-        if p not in icon_prs and p not in dep_prs
+        if "code" in [l["name"] for l in p.get("labels", [])]
     ]
 
     all_authors = set()
