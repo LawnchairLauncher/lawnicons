@@ -169,8 +169,8 @@ def generate_notes() -> str:
 
             if c["first_time"]:
                 first_timers_list.append(f"@{c['author']}: {' + '.join(parts)}")
-            
-            lines.append(f"@{c['author']}: {' + '.join(parts)}")
+            else:
+                lines.append(f"@{c['author']}: {' + '.join(parts)}")
 
         if first_timers_list:
             lines.append(f"\n#### First timers")
