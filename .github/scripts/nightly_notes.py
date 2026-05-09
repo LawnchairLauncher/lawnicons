@@ -118,6 +118,10 @@ def generate_notes() -> str:
         p for p in prs
         if any(w in p.get("title", "").lower() for w in ["dependenc", "update dependency", "bump"])
     ]
+    code_prs = [
+        p for p in prs
+        if p not in icon_prs and p not in dep_prs
+    ]
 
     all_authors = set()
     for pr in prs:
@@ -143,6 +147,7 @@ def generate_notes() -> str:
     lines.append(f"Build: `{sha}` \u2022 Branch: `{branch}`\n")
     lines.append("### Summary")
     lines.append(f"- **{total_prs} pull requests** merged")
+    lines.append(f"- **{len(code_prs)} code improvements**")
     lines.append(f"- **~{total_icons} icons** and **~{total_links} links** added")
     lines.append(f"- **{len(dep_prs)} dependency updates** applied")
     lines.append(f"- **{len(all_authors)} contributors** participated")
@@ -153,11 +158,14 @@ def generate_notes() -> str:
         for c in icon_contributors:
             parts = []
             if c["icons"] > 0:
-                parts.append(f"{c['icons']} icons")
+                label = "icon" if c["icons"] == 1 else "icons"
+                parts.append(f"{c['icons']} {label}")
             if c["links"] > 0:
-                parts.append(f"{c['links']} links")
+                label = "link" if c["links"] == 1 else "links"
+                parts.append(f"{c['links']} {label}")
             if c["updates"] > 0:
-                parts.append(f"{c['updates']} updates")
+                label = "update" if c["updates"] == 1 else "updates"
+                parts.append(f"{c['updates']} {label}")
 
             if c["first_time"]:
                 first_timers_list.append(f"@{c['author']}: {' + '.join(parts)}")
@@ -167,6 +175,14 @@ def generate_notes() -> str:
         if first_timers_list:
             lines.append(f"\n#### First timers")
             lines.extend(first_timers_list)
+
+    if code_prs:
+        lines.append(f"\n### Code")
+        for pr in code_prs:
+            author = pr.get("author", {}).get("login", "unknown")
+            title = pr.get("title", "")
+            number = pr.get("number", "")
+            lines.append(f"- {title} by @{author} in #{number}")            
 
     lines.append(
         f"\nFull Changelog: [{latest_tag}...nightly](https://github.com/{repo}/compare/{latest_tag}...nightly)"
