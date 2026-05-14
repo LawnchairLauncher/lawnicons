@@ -87,15 +87,21 @@ jobs:
               
               if (!isAlreadyInAppfilter) {
                 const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
-                const regex = new RegExp(`drawable="${drawable}"[^>]*name="([^"]+)"[^>]*component="ComponentInfo\\{([^}]+)\\}"`);
-                const match = appfilterContent.match(regex);
+                const itemRegex = new RegExp(`<item[^>]*drawable="${drawable}"[^>]*/>`);
+                const itemMatch = appfilterContent.match(itemRegex);
                 
-                if (match) {
-                  updatedEntries.push({
-                    name: match[1],
-                    package: match[2].split('/')[0],
-                    drawable: drawable
-                  });
+                if (itemMatch) {
+                  const item = itemMatch[0];
+                  const nameMatch = item.match(/name="([^"]+)"/);
+                  const componentMatch = item.match(/component="ComponentInfo\{([^}]+)\}"/);
+                  
+                  if (nameMatch && componentMatch) {
+                    updatedEntries.push({
+                      name: nameMatch[1],
+                      package: componentMatch[1].split('/')[0],
+                      drawable: drawable
+                    });
+                  }
                 }
               }
             });
