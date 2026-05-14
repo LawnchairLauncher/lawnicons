@@ -1,4 +1,4 @@
-name: Icon Description
+name: Comment icon description
 
 on:
   pull_request_target:
@@ -19,6 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       
       - name: Get changed files
@@ -61,7 +63,8 @@ jobs:
             let linkedEntries = [];
             
             if (appfilterChanged) {
-              const diff = execSync('git diff origin/develop -- app/assets/appfilter.xml', { encoding: 'utf8' });
+              const baseBranch = context.payload.pull_request.base.ref;
+              const diff = execSync(`git diff origin/${baseBranch} -- app/assets/appfilter.xml`, { encoding: 'utf8' });
               const lines = diff.split('\n');
               
               const addedLines = lines.filter(line => line.startsWith('+') && !line.startsWith('+++'));
