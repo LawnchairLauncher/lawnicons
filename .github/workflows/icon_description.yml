@@ -47,11 +47,13 @@ jobs:
             const appfilterChanged = changedFiles.includes('app/assets/appfilter.xml');
             
             const { execSync } = require('child_process');
+            const baseBranch = context.payload.pull_request.base.ref;
+            const baseAppfilter = execSync(`git show origin/${baseBranch}:app/assets/appfilter.xml`, { encoding: 'utf8' });
+            
             let addedEntries = [];
             let linkedEntries = [];
             
             if (appfilterChanged) {
-              const baseBranch = context.payload.pull_request.base.ref;
               const diff = execSync(`git diff origin/${baseBranch} -- app/assets/appfilter.xml`, { encoding: 'utf8' });
               const lines = diff.split('\n');
               
@@ -77,6 +79,36 @@ jobs:
               });
             }
             
+            // Check added SVGs that weren't matched by diff but have new drawables
+            svgAdded.forEach(svgFile => {
+              const drawable = svgFile.replace('svgs/', '').replace('.svg', '');
+              const alreadyHandled = addedEntries.some(e => e.drawable === drawable) || 
+                                     linkedEntries.some(e => e.drawable === drawable);
+              
+              if (!alreadyHandled) {
+                const baseHasDrawable = new RegExp(`drawable="${drawable}"`).test(baseAppfilter);
+                
+                if (!baseHasDrawable) {
+                  const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
+                  const itemRegex = new RegExp(`<item[^>]*drawable="${drawable}"[^>]*/>`);
+                  const itemMatch = appfilterContent.match(itemRegex);
+                  
+                  if (itemMatch) {
+                    const nameMatch = itemMatch[0].match(/name="([^"]+)"/);
+                    const componentMatch = itemMatch[0].match(/component="ComponentInfo\{([^}]+)\}"/);
+                    
+                    if (nameMatch && componentMatch) {
+                      addedEntries.push({
+                        name: nameMatch[1],
+                        package: componentMatch[1].split('/')[0],
+                        drawable: drawable
+                      });
+                    }
+                  }
+                }
+              }
+            });
+            
             const updatedEntries = [];
             const allSvgChanges = [...svgAdded, ...svgModified];
             
@@ -91,7 +123,6 @@ jobs:
                 let itemMatch;
                 let bestMatch = null;
                 
-                // Find all entries with this drawable
                 const allMatches = [];
                 while ((itemMatch = itemRegex.exec(appfilterContent)) !== null) {
                   const item = itemMatch[0];
@@ -107,7 +138,6 @@ jobs:
                     
                     allMatches.push({ name, package: componentMatch[1].split('/')[0], drawable });
                     
-                    // Check if name matches drawable
                     if (normalizedName === drawable.toLowerCase() ||
                         normalizedDrawable === name.toLowerCase() ||
                         normalizedNameAlt === normalizedDrawableAlt) {
@@ -117,7 +147,6 @@ jobs:
                   }
                 }
                 
-                // Use best match or first match
                 const selected = bestMatch || allMatches[0];
                 
                 if (selected) {
@@ -182,10 +211,8 @@ jobs:
               
               let newBody;
               if (existingBody.includes('## Icons')) {
-                // Replace existing ## Icons section
                 newBody = existingBody.replace(/## Icons[\s\S]*?(?=\n##|\n---|$)/, '## Icons\n\n' + iconDescription.trim());
               } else {
-                // Append at the bottom
                 newBody = existingBody.trimEnd() + '\n\n## Icons\n\n' + iconDescription.trim();
               }
               
