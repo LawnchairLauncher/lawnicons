@@ -48,7 +48,6 @@ jobs:
             
             const { execSync } = require('child_process');
             const baseBranch = context.payload.pull_request.base.ref;
-            const baseAppfilter = execSync(`git show origin/${baseBranch}:app/assets/appfilter.xml`, { encoding: 'utf8' });
             
             let addedEntries = [];
             let linkedEntries = [];
@@ -86,7 +85,10 @@ jobs:
                                      linkedEntries.some(e => e.drawable === drawable);
               
               if (!alreadyHandled) {
-                const baseHasDrawable = new RegExp(`drawable="${drawable}"`).test(baseAppfilter);
+                const baseHasDrawable = execSync(
+                  `git grep -q "drawable=\\"${drawable}\\"" origin/${baseBranch} -- app/assets/appfilter.xml && echo "true" || echo "false"`,
+                  { encoding: 'utf8' }
+                ).trim() === 'true';
                 
                 if (!baseHasDrawable) {
                   const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
