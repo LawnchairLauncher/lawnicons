@@ -24,7 +24,7 @@ jobs:
       
       - name: Get changed files
         id: files
-        uses: tj-actions/changed-files@v44
+        uses: tj-actions/changed-files@v46
         with:
           files: |
             svgs/*
