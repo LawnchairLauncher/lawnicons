@@ -1,6 +1,6 @@
 ## Description
 <!--
-- The bot will automatically describe icon changes in a comment.
+- The bot will automatically describe icon changes below your description (if any).
 - You can add extra notes or attach original icons that are hard to find.
 - Please make sure the title is correct.
 
