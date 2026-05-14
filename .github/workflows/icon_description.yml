@@ -11,7 +11,6 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  issues: write
 
 jobs:
   icon-description:
@@ -123,30 +122,44 @@ jobs:
                 .join('\n');
             }
             
-            let comment = '⚠️ Automatic description is currently in beta.\n\n## Icons\n';
-            
+            // Build icon description
+            let iconDescription = '';
+
             if (addedEntries.length > 0) {
-              comment += '### Added\n';
-              comment += formatEntries(addedEntries);
-              comment += '\n\n';
+              iconDescription += '### Added\n';
+              iconDescription += formatEntries(addedEntries);
+              iconDescription += '\n\n';
             }
-            
+
             if (linkedEntries.length > 0) {
-              comment += '### Linked\n';
-              comment += formatEntries(linkedEntries);
-              comment += '\n\n';
+              iconDescription += '### Linked\n';
+              iconDescription += formatEntries(linkedEntries);
+              iconDescription += '\n\n';
             }
-            
+
             if (updatedEntries.length > 0) {
-              comment += '### Updated\n';
-              comment += formatEntries(updatedEntries);
+              iconDescription += '### Updated\n';
+              iconDescription += formatEntries(updatedEntries);
+              iconDescription += '\n\n';
             }
-            
-            if (addedEntries.length > 0 || linkedEntries.length > 0 || updatedEntries.length > 0) {
-              await github.rest.issues.createComment({
+
+            if (iconDescription) {
+              const pr = context.payload.pull_request;
+              const existingBody = pr.body || '';
+              
+              let newBody;
+              if (existingBody.includes('## Icons')) {
+                // Replace existing ## Icons section
+                newBody = existingBody.replace(/## Icons[\s\S]*?(?=\n##|\n---|$)/, '## Icons\n\n' + iconDescription.trim());
+              } else {
+                // Append at the bottom
+                newBody = existingBody + '## Icons\n\n' + iconDescription.trim();
+              }
+              
+              await github.rest.pulls.update({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: context.issue.number,
-                body: comment.trim()
+                pull_number: context.issue.number,
+                body: newBody.trim()
               });
             }
