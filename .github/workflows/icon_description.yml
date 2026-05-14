@@ -34,22 +34,11 @@ jobs:
       - name: Analyze changes and comment
         uses: actions/github-script@v9
         env:
-          EXCLUDED_USERS: ${{ vars.EXCLUDED_USERS }}
           CHANGED_FILES: ${{ steps.files.outputs.all_changed_files }}
           ADDED_FILES: ${{ steps.files.outputs.added_files }}
           MODIFIED_FILES: ${{ steps.files.outputs.modified_files }}
         with:
           script: |
-            const excludedUsers = process.env.EXCLUDED_USERS ? 
-              process.env.EXCLUDED_USERS.split(',').map(user => user.trim()) : [];
-            
-            const prAuthor = context.payload.pull_request.user.login;
-            
-            if (excludedUsers.includes(prAuthor)) {
-              console.log(`Skipping for excluded user: ${prAuthor}`);
-              return;
-            }
-            
             const addedFiles = process.env.ADDED_FILES ? process.env.ADDED_FILES.split(' ') : [];
             const modifiedFiles = process.env.MODIFIED_FILES ? process.env.MODIFIED_FILES.split(' ') : [];
             const changedFiles = process.env.CHANGED_FILES ? process.env.CHANGED_FILES.split(' ') : [];
