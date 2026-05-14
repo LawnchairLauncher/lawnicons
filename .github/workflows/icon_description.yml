@@ -87,29 +87,52 @@ jobs:
               
               if (!isAlreadyInAppfilter) {
                 const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
-                const itemRegex = new RegExp(`<item[^>]*drawable="${drawable}"[^>]*/>`);
-                const itemMatch = appfilterContent.match(itemRegex);
+                const itemRegex = new RegExp(`<item[^>]*drawable="${drawable}"[^>]*/>`, 'g');
+                let itemMatch;
+                let bestMatch = null;
                 
-                if (itemMatch) {
+                // Find all entries with this drawable
+                const allMatches = [];
+                while ((itemMatch = itemRegex.exec(appfilterContent)) !== null) {
                   const item = itemMatch[0];
                   const nameMatch = item.match(/name="([^"]+)"/);
                   const componentMatch = item.match(/component="ComponentInfo\{([^}]+)\}"/);
                   
                   if (nameMatch && componentMatch) {
-                    updatedEntries.push({
-                      name: nameMatch[1],
-                      package: componentMatch[1].split('/')[0],
-                      drawable: drawable
-                    });
+                    const name = nameMatch[1];
+                    const normalizedName = name.toLowerCase().replace(/\s+/g, '_');
+                    const normalizedDrawable = drawable.toLowerCase().replace(/_/g, ' ').trim();
+                    const normalizedNameAlt = name.toLowerCase().replace(/\s+/g, '');
+                    const normalizedDrawableAlt = drawable.toLowerCase().replace(/_/g, '');
+                    
+                    allMatches.push({ name, package: componentMatch[1].split('/')[0], drawable });
+                    
+                    // Check if name matches drawable
+                    if (normalizedName === drawable.toLowerCase() ||
+                        normalizedDrawable === name.toLowerCase() ||
+                        normalizedNameAlt === normalizedDrawableAlt) {
+                      bestMatch = { name, package: componentMatch[1].split('/')[0], drawable };
+                      break;
+                    }
                   }
+                }
+                
+                // Use best match or first match
+                const selected = bestMatch || allMatches[0];
+                
+                if (selected) {
+                  updatedEntries.push({
+                    name: selected.name,
+                    drawable: drawable
+                  });
                 }
               }
             });
             
-            function formatEntries(entries) {
+            function formatEntries(entries, showPackage = true) {
               const grouped = {};
               entries.forEach(entry => {
-                const key = `${entry.name}|${entry.package}|${entry.drawable}`;
+                const key = showPackage ? `${entry.name}|${entry.package}|${entry.drawable}` : `${entry.name}|${entry.drawable}`;
                 if (!grouped[key]) {
                   grouped[key] = { ...entry, count: 0 };
                 }
@@ -119,10 +142,14 @@ jobs:
               return Object.values(grouped)
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map(entry => {
+                  const line = showPackage ? 
+                    `${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)` :
+                    `${entry.name} (\`${entry.drawable}.svg\`)`;
+                  
                   if (entry.count > 1) {
-                    return `${entry.count} × ${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)`;
+                    return `${entry.count} × ${line}`;
                   } else {
-                    return `${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)`;
+                    return line;
                   }
                 })
                 .join('\n');
@@ -133,19 +160,19 @@ jobs:
 
             if (addedEntries.length > 0) {
               iconDescription += '### Added\n';
-              iconDescription += formatEntries(addedEntries);
+              iconDescription += formatEntries(addedEntries, true);
               iconDescription += '\n\n';
             }
 
             if (linkedEntries.length > 0) {
               iconDescription += '### Linked\n';
-              iconDescription += formatEntries(linkedEntries);
+              iconDescription += formatEntries(linkedEntries, true);
               iconDescription += '\n\n';
             }
 
             if (updatedEntries.length > 0) {
               iconDescription += '### Updated\n';
-              iconDescription += formatEntries(updatedEntries);
+              iconDescription += formatEntries(updatedEntries, false);
               iconDescription += '\n\n';
             }
 
@@ -159,7 +186,7 @@ jobs:
                 newBody = existingBody.replace(/## Icons[\s\S]*?(?=\n##|\n---|$)/, '## Icons\n\n' + iconDescription.trim());
               } else {
                 // Append at the bottom
-                newBody = existingBody + '## Icons\n\n' + iconDescription.trim();
+                newBody = existingBody.trimEnd() + '\n\n## Icons\n\n' + iconDescription.trim();
               }
               
               await github.rest.pulls.update({
