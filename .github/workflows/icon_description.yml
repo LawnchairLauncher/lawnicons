@@ -1,0 +1,161 @@
+name: Icon Description
+
+on:
+  pull_request_target:
+    branches: [ develop ]
+    types: [ opened, labeled ]
+    paths:
+      - svgs/*
+      - app/assets/appfilter.xml
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  icon-description:
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'icons')
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      
+      - name: Get changed files
+        id: files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            svgs/*
+            app/assets/appfilter.xml
+          
+      - name: Analyze changes and comment
+        uses: actions/github-script@v9
+        env:
+          EXCLUDED_USERS: ${{ vars.EXCLUDED_USERS }}
+          CHANGED_FILES: ${{ steps.files.outputs.all_changed_files }}
+          ADDED_FILES: ${{ steps.files.outputs.added_files }}
+          MODIFIED_FILES: ${{ steps.files.outputs.modified_files }}
+        with:
+          script: |
+            const excludedUsers = process.env.EXCLUDED_USERS ? 
+              process.env.EXCLUDED_USERS.split(',').map(user => user.trim()) : [];
+            
+            const prAuthor = context.payload.pull_request.user.login;
+            
+            if (excludedUsers.includes(prAuthor)) {
+              console.log(`Skipping for excluded user: ${prAuthor}`);
+              return;
+            }
+            
+            const addedFiles = process.env.ADDED_FILES ? process.env.ADDED_FILES.split(' ') : [];
+            const modifiedFiles = process.env.MODIFIED_FILES ? process.env.MODIFIED_FILES.split(' ') : [];
+            const changedFiles = process.env.CHANGED_FILES ? process.env.CHANGED_FILES.split(' ') : [];
+            
+            const svgAdded = addedFiles.filter(f => f.endsWith('.svg') && f.startsWith('svgs/'));
+            const svgModified = modifiedFiles.filter(f => f.endsWith('.svg') && f.startsWith('svgs/'));
+            const appfilterChanged = changedFiles.includes('app/assets/appfilter.xml');
+            
+            const { execSync } = require('child_process');
+            let addedEntries = [];
+            let linkedEntries = [];
+            
+            if (appfilterChanged) {
+              const diff = execSync('git diff origin/develop -- app/assets/appfilter.xml', { encoding: 'utf8' });
+              const lines = diff.split('\n');
+              
+              const addedLines = lines.filter(line => line.startsWith('+') && !line.startsWith('+++'));
+              
+              addedLines.forEach(line => {
+                const componentMatch = line.match(/component="ComponentInfo\{([^}]+)\}"/);
+                const drawableMatch = line.match(/drawable="([^"]+)"/);
+                const nameMatch = line.match(/name="([^"]+)"/);
+                
+                if (componentMatch && drawableMatch) {
+                  const package = componentMatch[1].split('/')[0];
+                  const drawable = drawableMatch[1];
+                  const name = nameMatch ? nameMatch[1] : package;
+                  
+                  const svgFile = `svgs/${drawable}.svg`;
+                  if (svgAdded.includes(svgFile)) {
+                    addedEntries.push({ name, package, drawable });
+                  } else {
+                    linkedEntries.push({ name, package, drawable });
+                  }
+                }
+              });
+            }
+            
+            const updatedEntries = [];
+            const allSvgChanges = [...svgAdded, ...svgModified];
+            
+            allSvgChanges.forEach(svgFile => {
+              const drawable = svgFile.replace('svgs/', '').replace('.svg', '');
+              const isAlreadyInAppfilter = addedEntries.some(e => e.drawable === drawable) || 
+                                         linkedEntries.some(e => e.drawable === drawable);
+              
+              if (!isAlreadyInAppfilter) {
+                const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
+                const regex = new RegExp(`drawable="${drawable}"[^>]*name="([^"]+)"[^>]*component="ComponentInfo\\{([^}]+)\\}"`);
+                const match = appfilterContent.match(regex);
+                
+                if (match) {
+                  updatedEntries.push({
+                    name: match[1],
+                    package: match[2].split('/')[0],
+                    drawable: drawable
+                  });
+                }
+              }
+            });
+            
+            function formatEntries(entries) {
+              const grouped = {};
+              entries.forEach(entry => {
+                const key = `${entry.name}|${entry.package}|${entry.drawable}`;
+                if (!grouped[key]) {
+                  grouped[key] = { ...entry, count: 0 };
+                }
+                grouped[key].count++;
+              });
+              
+              return Object.values(grouped)
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map(entry => {
+                  if (entry.count > 1) {
+                    return `${entry.count} × ${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)`;
+                  } else {
+                    return `${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)`;
+                  }
+                })
+                .join('\n');
+            }
+            
+            let comment = '⚠️ Automatic description is currently in beta.\n\n## Icons\n';
+            
+            if (addedEntries.length > 0) {
+              comment += '### Added\n';
+              comment += formatEntries(addedEntries);
+              comment += '\n\n';
+            }
+            
+            if (linkedEntries.length > 0) {
+              comment += '### Linked\n';
+              comment += formatEntries(linkedEntries);
+              comment += '\n\n';
+            }
+            
+            if (updatedEntries.length > 0) {
+              comment += '### Updated\n';
+              comment += formatEntries(updatedEntries);
+            }
+            
+            if (addedEntries.length > 0 || linkedEntries.length > 0 || updatedEntries.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: comment.trim()
+              });
+            }
