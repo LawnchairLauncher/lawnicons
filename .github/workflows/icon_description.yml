@@ -3,7 +3,7 @@ name: Icon Description
 on:
   pull_request_target:
     branches: [ develop ]
-    types: [ opened, labeled ]
+    types: [ opened, synchronize ]
     paths:
       - svgs/*
       - app/assets/appfilter.xml
@@ -16,7 +16,6 @@ permissions:
 jobs:
   icon-description:
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'icons')
     steps:
       - uses: actions/checkout@v6
         with:
