@@ -47,13 +47,13 @@ jobs:
             const appfilterChanged = changedFiles.includes('app/assets/appfilter.xml');
             
             const { execSync } = require('child_process');
-            const baseBranch = context.payload.pull_request.base.ref;
+            const baseSha = context.payload.pull_request.base.sha;            
             
             let addedEntries = [];
             let linkedEntries = [];
             
             if (appfilterChanged) {
-              const diff = execSync(`git diff origin/${baseBranch} -- app/assets/appfilter.xml`, { encoding: 'utf8' });
+              const diff = execSync(`git diff ${baseSha} -- app/assets/appfilter.xml`, { encoding: 'utf8' });
               const lines = diff.split('\n');
               
               const addedLines = lines.filter(line => line.startsWith('+') && !line.startsWith('+++'));
@@ -86,8 +86,8 @@ jobs:
               
               if (!alreadyHandled) {
                 const baseHasDrawable = execSync(
-                  `git grep -q "drawable=\\"${drawable}\\"" origin/${baseBranch} -- app/assets/appfilter.xml && echo "true" || echo "false"`,
-                  { encoding: 'utf8' }
+                  `git show ${baseSha}:app/assets/appfilter.xml | grep -q "drawable=\\"${drawable}\\"" && echo "true" || echo "false"`,
+                  { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 }
                 ).trim() === 'true';
                 
                 if (!baseHasDrawable) {
@@ -109,8 +109,8 @@ jobs:
                   }
                 }
               }
-            });
-            
+            });        
+
             const updatedEntries = [];
             const allSvgChanges = [...svgAdded, ...svgModified];
             
