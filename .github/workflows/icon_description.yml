@@ -211,11 +211,16 @@ jobs:
               const pr = context.payload.pull_request;
               const existingBody = pr.body || '';
               
+              const botMarker = '<!-- bot: icons -->';
+              const botSection = `${botMarker}\n## Icons\n\n${iconDescription.trim()}`;
+              
               let newBody;
-              if (existingBody.includes('## Icons')) {
-                newBody = existingBody.replace(/## Icons[\s\S]*?(?=\n##|\n---|$)/, '## Icons\n\n' + iconDescription.trim());
+              if (existingBody.includes(botMarker)) {
+                // Replace existing bot section
+                newBody = existingBody.replace(/<!-- bot: icons -->[\s\S]*$/, botSection);
               } else {
-                newBody = existingBody.trimEnd() + '\n\n## Icons\n\n' + iconDescription.trim();
+                // Append at the bottom
+                newBody = existingBody.trimEnd() + '\n\n' + botSection;
               }
               
               await github.rest.pulls.update({
