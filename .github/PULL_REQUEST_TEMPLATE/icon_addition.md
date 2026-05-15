@@ -1,8 +1,7 @@
-## Description
 <!--
 - The bot will automatically describe icon changes below your description (if any).
 - You can add extra notes or attach original icons that are hard to find.
-- Please make sure the title is correct.
+- Please make sure the title is correct — it's parsed for the Nightly changelog stats.
 
 Title example: "+1 icon, +2 links, +3 updates".
      +1 icon = +1 brand new icon (related links aren't considered).
