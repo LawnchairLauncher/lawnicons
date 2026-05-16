@@ -6,7 +6,8 @@
   <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
   <calendar component="ComponentInfo{com.android.calendar.go/com.android.calendar.go.homepage.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
   <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
-  <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
+  <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Google Calendar" />
+  <calendar component="ComponentInfo{com.google.android.calendar/com.google.android.archive.ReactivateActivity}" prefix="themed_icon_calendar_" name="Google Calendar" />
   <calendar component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
   <calendar component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
   <calendar component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="Calendar" />
@@ -27,7 +28,8 @@
   <!-- Static Calendars -->
   <item drawableIgnore="true" component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" drawable="themed_icon_calendar_31" name="Superb Launcher Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_28" name="ColorOS Calendar" />
-  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Google Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.google.android.archive.ReactivateActivity}" prefix="themed_icon_calendar_31" name="Google Calendar" />  
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
