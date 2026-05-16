@@ -144,7 +144,7 @@ def generate_notes() -> str:
     icon_contributors = get_icon_contributors(icon_prs)
 
     # Reviews by month (excluding @x9136)
-    reviewed_by_month = defaultdict(lambda: {"icons": 0, "links": 0, "link_only": 0})
+    reviewed_by_month = defaultdict(lambda: {"icons": 0, "updates": 0, "links": 0, "link_only": 0})
     for pr in icon_prs:
         author = pr.get("author", {}).get("login", "unknown")
         if author == "x9136":
@@ -153,8 +153,9 @@ def generate_notes() -> str:
         if merged_at:
             month = merged_at[:7]
             i, l, u = parse_icon_stats(pr.get("title", ""))
-            if i > 0:
+            if i > 0 or u > 0:
                 reviewed_by_month[month]["icons"] += i
+                reviewed_by_month[month]["updates"] += u
                 reviewed_by_month[month]["links"] += l
             elif l > 0:
                 reviewed_by_month[month]["link_only"] += 1
@@ -176,6 +177,9 @@ def generate_notes() -> str:
             parts = []
             if stats["icons"] > 0:
                 parts.append(f"{stats['icons']} icons")
+            if stats["updates"] > 0:
+                label = "update" if stats["updates"] == 1 else "updates"
+                parts.append(f"{stats['updates']} {label}")
             if stats["link_only"] > 0:
                 label = "link-only PR" if stats["link_only"] == 1 else "link-only PRs"
                 parts.append(f"{stats['link_only']} {label}")
