@@ -34,11 +34,13 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 ## Contributing icons TL;DR
 
-1. Study the Lawnicons design guidelines in practice (for example, in Figma) and create a suitable icon (*.svg).
-2. Learn how to find the app ID that you will need to link with the created icon.
-3. Learn how to fork the Lawnicons repository and make a local copy for yourself, where you will add the created icon.
-4. Add the created icon and the app ID to your local copy and push the changes to your fork on GitHub.
-5. Create a pull request to the Lawnicons repository and wait for a review.
+1. Create an icon (*.svg) following the Lawnicons design guidelines (for example, in Figma).
+2. Find the app ID to link with your icon.
+3. Fork the Lawnicons repository and make a local copy via GitHub Desktop.
+4. Add the icon and the app ID to your local copy and push the changes.
+5. Create a pull request and wait for review.
+
+[Check app IDs on Dashboard](https://lawnicons-requests.vercel.app/) • [How to find app IDs](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-ids) • [Add icons to Lawnicons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons)
 
 
 ## Lawnicons design guidelines
