@@ -143,6 +143,22 @@ def generate_notes() -> str:
 
     icon_contributors = get_icon_contributors(icon_prs)
 
+    # Reviews by month (excluding @x9136)
+    reviewed_by_month = defaultdict(lambda: {"icons": 0, "links": 0, "link_only": 0})
+    for pr in icon_prs:
+        author = pr.get("author", {}).get("login", "unknown")
+        if author == "x9136":
+            continue
+        merged_at = pr.get("mergedAt", "")
+        if merged_at:
+            month = merged_at[:7]
+            i, l, u = parse_icon_stats(pr.get("title", ""))
+            if i > 0:
+                reviewed_by_month[month]["icons"] += i
+                reviewed_by_month[month]["links"] += l
+            elif l > 0:
+                reviewed_by_month[month]["link_only"] += 1
+
     lines = []
     lines.append(f"Build: `{sha}` \u2022 Branch: `{branch}`\n")
     lines.append("### Summary")
@@ -151,6 +167,19 @@ def generate_notes() -> str:
     lines.append(f"- **~{total_icons} icons** and **~{total_links} links** added")
     lines.append(f"- **{len(dep_prs)} dependency updates** applied")
     lines.append(f"- **{len(all_authors)} contributors** participated")
+
+    if reviewed_by_month:
+        lines.append(f"\n### Reviews")
+        for month in sorted(reviewed_by_month.keys()):
+            stats = reviewed_by_month[month]
+            month_name = datetime.strptime(month, "%Y-%m").strftime("%b")
+            parts = []
+            if stats["icons"] > 0:
+                parts.append(f"{stats['icons']} icons")
+            if stats["link_only"] > 0:
+                label = "link-only PR" if stats["link_only"] == 1 else "link-only PRs"
+                parts.append(f"{stats['link_only']} {label}")
+            lines.append(f"{month_name}: {' and '.join(parts)} reviewed")
 
     if icon_contributors:
         lines.append(f"\n### Top icon contributors")
