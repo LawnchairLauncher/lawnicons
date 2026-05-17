@@ -183,7 +183,15 @@ def generate_notes() -> str:
             if stats["link_only"] > 0:
                 label = "link-only PR" if stats["link_only"] == 1 else "link-only PRs"
                 parts.append(f"{stats['link_only']} {label}")
-            lines.append(f"{month_name}: {' and '.join(parts)} reviewed")
+            
+            if len(parts) > 2:
+                joined = ", ".join(parts[:-1]) + ", " + parts[-1]
+            elif len(parts) == 2:
+                joined = " and ".join(parts)
+            else:
+                joined = parts[0] if parts else ""
+            
+            lines.append(f"  {month_name}: {joined} reviewed")
 
     if icon_contributors:
         lines.append(f"\n### Top icon contributors")
