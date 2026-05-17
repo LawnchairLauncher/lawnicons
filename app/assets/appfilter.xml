@@ -3560,6 +3560,12 @@
   <item component="ComponentInfo{com.coloros.screenrecorder/com.coloros.screenrecorder.MainActivity}" drawable="kimcy_screen_recorder" name="ColorOS Screen Recording" />
   <item component="ComponentInfo{com.coloros.operationtips/com.coloros.operationtips.activities.WelcomeActivity}" drawable="coloros_tips" name="ColorOS Tips" />
   <item component="ComponentInfo{com.coloros.translate/com.coloros.translate.ui.MainActivity}" drawable="coloros_translate" name="ColorOS Translate" />
+  <item component="ComponentInfo{com.coloros.video/com.heytap.video.splash.VideoSplashActivity}" drawable="coloros_videos" name="ColorOS Videos" />
+  <item component="ComponentInfo{com.coloros.video/com.oppo.video.SplashActivity}" drawable="coloros_videos" name="ColorOS Videos" />
+  <item component="ComponentInfo{com.coloros.video/com.oplus.video.VideoListActivity}" drawable="coloros_videos" name="ColorOS Videos" />
+  <item component="ComponentInfo{com.coloros.video/com.oplus.video.ui.VideoListActivity}" drawable="coloros_videos" name="ColorOS Videos" />
+  <item component="ComponentInfo{com.coloros.video/com.oplus.video.SplashActivity}" drawable="coloros_videos" name="ColorOS Videos" />
+  <item component="ComponentInfo{com.coloros.video/com.oppo.video.VideoListActivity}" drawable="coloros_videos" name="ColorOS Videos" />
   <item component="ComponentInfo{com.coloros.weather/com.coloros.weather.OppoMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
   <item component="ComponentInfo{com.coloros.weather2/com.oplus.weather.main.view.WeatherMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
   <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.main.view.WeatherMainActivity}" drawable="coloros_weather" name="ColorOS Weather" />
@@ -5839,25 +5845,25 @@
   <item component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Purple}" drawable="simple_calendar" name="Fossify Calendar" />
   <item component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Red}" drawable="simple_calendar" name="Fossify Calendar" />
   <item component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Teal}" drawable="simple_calendar" name="Fossify Calendar" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Yellow}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Teal}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Purple}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Pink}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Lime}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Light_green}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Light_blue}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Indigo}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Green}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Deep_purple}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Deep_orange}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Cyan}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Brown}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Blue_grey}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Blue}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Amber}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Grey_black}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Orange}" drawable="generic_camera" name="Fossify Camera" />
-  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Red}" drawable="generic_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Yellow}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Teal}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Purple}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Pink}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Lime}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Light_green}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Light_blue}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Indigo}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Green}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Deep_purple}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Deep_orange}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Cyan}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Brown}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Blue_grey}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Blue}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Amber}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Grey_black}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Orange}" drawable="fossify_camera" name="Fossify Camera" />
+  <item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Red}" drawable="fossify_camera" name="Fossify Camera" />
   <item component="ComponentInfo{org.fossify.clock/org.fossify.clock.activities.SplashActivity.Amber}" drawable="generic_clock" name="Fossify Clock" />
   <item component="ComponentInfo{org.fossify.clock/org.fossify.clock.activities.SplashActivity.Blue}" drawable="generic_clock" name="Fossify Clock" />
   <item component="ComponentInfo{org.fossify.clock/org.fossify.clock.activities.SplashActivity.Blue_grey}" drawable="generic_clock" name="Fossify Clock" />
@@ -5896,25 +5902,25 @@
   <item component="ComponentInfo{org.fossify.contacts/org.fossify.contacts.activities.SplashActivity.Red}" drawable="generic_contacts" name="Fossify Contacts" />
   <item component="ComponentInfo{org.fossify.contacts/org.fossify.contacts.activities.SplashActivity.Teal}" drawable="generic_contacts" name="Fossify Contacts" />
   <item component="ComponentInfo{org.fossify.contacts/org.fossify.contacts.activities.SplashActivity.Yellow}" drawable="generic_contacts" name="Fossify Contacts" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Amber}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Blue}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Blue_grey}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Brown}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Cyan}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Deep_orange}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Deep_purple}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Green}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Grey_black}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Indigo}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Light_blue}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Light_green}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Lime}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Orange}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Pink}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Purple}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Red}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Teal}" drawable="generic_files" name="Fossify File Manager" />
-  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Yellow}" drawable="generic_files" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Amber}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Blue}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Blue_grey}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Brown}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Cyan}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Deep_orange}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Deep_purple}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Green}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Grey_black}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Indigo}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Light_blue}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Light_green}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Lime}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Orange}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Pink}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Purple}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Red}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Teal}" drawable="fossify_file_manager" name="Fossify File Manager" />
+  <item component="ComponentInfo{org.fossify.filemanager/org.fossify.filemanager.activities.SplashActivity.Yellow}" drawable="fossify_file_manager" name="Fossify File Manager" />
   <item component="ComponentInfo{org.fossify.gallery/org.fossify.gallery.activities.MainActivity}" drawable="fossify_gallery" name="Fossify Gallery" />
   <item component="ComponentInfo{org.fossify.gallery/org.fossify.gallery.activities.SplashActivity.Amber}" drawable="fossify_gallery" name="Fossify Gallery" />
   <item component="ComponentInfo{org.fossify.gallery/org.fossify.gallery.activities.SplashActivity.Blue}" drawable="fossify_gallery" name="Fossify Gallery" />
@@ -12977,6 +12983,7 @@
   <item component="ComponentInfo{rk.android.app.pixelsearch/rk.android.app.pixelsearch.activities.HomeActivity}" drawable="generic_search" name="Pixel Search" />
   <item component="ComponentInfo{com.studios.pixelstation/com.studios.pixelstation.MainActivity}" drawable="pixel_station" name="Pixel Station" />
   <item component="ComponentInfo{com.PixelStudio/com.unity3d.player.UnityPlayerActivity}" drawable="pixel_studio" name="Pixel Studio" />
+  <item component="ComponentInfo{com.pixelstudio.pro/com.unity3d.player.UnityPlayerActivity}" drawable="pixel_studio_pro" name="Pixel Studio Pro" />
   <item component="ComponentInfo{com.google.android.apps.tips/com.google.android.apps.tips.TipsMain}" drawable="pixel_tips" name="Pixel Tips" />
   <item component="ComponentInfo{it.folgore95.pixeltuner/it.folgore95.pixeltuner.MainActivity}" drawable="pixel_tuner" name="Pixel Tuner" />
   <item component="ComponentInfo{dev.wacko1805.pixel.wallpapers/dev.jahir.frames.app.MainActivity}" drawable="pixel_walls" name="Pixel Walls" />
@@ -14424,7 +14431,7 @@
   <item component="ComponentInfo{com.samsung.dropship_client/com.samsung.dropship_client.MainActivity}" drawable="samsung_dropship" name="Samsung Dropship" />
   <item component="ComponentInfo{com.samsung.android.edgelightingeffectunit/com.samsung.android.edgelightingeffectunit.activity.EdgeLightingUnitActivity}" drawable="samsung_edgelighting" name="Samsung EdgeLighting" />
   <item component="ComponentInfo{com.samsung.android.app.edgetouch/com.samsung.android.app.edgetouch.ui.activity.MainActivity}" drawable="samsung_edgetouch" name="Samsung EdgeTouch" />
-  <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="generic_email" name="Samsung Email" />
+  <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="samsung_email" name="Samsung Email" />
   <item component="ComponentInfo{com.samsung.android.app.galaxyraw/com.samsung.android.app.galaxyraw.GalaxyRaw}" drawable="samsung_expert_raw" name="Samsung Expert RAW" />
   <item component="ComponentInfo{com.samsung.android.app.find/com.samsung.android.app.find.SplashActivity}" drawable="samsung_find" name="Samsung Find" />
   <item component="ComponentInfo{com.samsung.android.app.find/com.samsung.android.app.find.MainActivity}" drawable="samsung_find" name="Samsung Find" />
@@ -14978,6 +14985,7 @@
   <item component="ComponentInfo{com.lenovo.anyshare.gps/com.lenovo.anyshare.ApMainActivity}" drawable="shareit" name="SHAREit" />
   <item component="ComponentInfo{shareit.lite/com.lenovo.anyshare.ApMainActivity}" drawable="shareit" name="SHAREit Lite" />
   <item component="ComponentInfo{shareit.lite/com.lenovo.anyshare.flash.FlashActivity}" drawable="shareit" name="SHAREit Lite" />
+  <item component="ComponentInfo{shareit.premium/com.lenovo.anyshare.flash.FlashActivity}" drawable="shareit_premium" name="SHAREit Premium" />
   <item component="ComponentInfo{com.sharekaro.app/com.sharekaro.app.flash.FlashActivity}" drawable="sharekaro" name="ShareKaro" />
   <item component="ComponentInfo{share.sharekaro.pro/com.sharekaro.app.flash.FlashActivity}" drawable="sharekaro_lite" name="ShareKaro Lite" />
   <item component="ComponentInfo{com.xiaomi.midrop/com.xiaomi.midrop.HomeActivity}" drawable="share_me" name="ShareMe" />
@@ -18359,12 +18367,6 @@
   <item component="ComponentInfo{in.gaffarmart.www.independenttvremote/in.gaffarmart.www.independenttvremote.dispatcher_activity}" drawable="android_tv_remote_service" name="Videocon TV Remote" />
   <item component="ComponentInfo{nl.rtl.videoland.v2/fr.m6.m6replay.activity.SplashActivity}" drawable="videoland" name="Videoland" />
   <item component="ComponentInfo{nl.rtl.videoland.v2/com.bedrockstreaming.shared.mobile.activity.SplashActivity}" drawable="videoland" name="Videoland" />
-  <item component="ComponentInfo{com.coloros.video/com.heytap.video.splash.VideoSplashActivity}" drawable="generic_player" name="Videos" />
-  <item component="ComponentInfo{com.coloros.video/com.oppo.video.SplashActivity}" drawable="generic_player" name="Videos" />
-  <item component="ComponentInfo{com.coloros.video/com.oplus.video.VideoListActivity}" drawable="generic_player" name="Videos" />
-  <item component="ComponentInfo{com.coloros.video/com.oplus.video.ui.VideoListActivity}" drawable="generic_player" name="Videos" />
-  <item component="ComponentInfo{com.coloros.video/com.oplus.video.SplashActivity}" drawable="generic_player" name="Videos" />
-  <item component="ComponentInfo{com.coloros.video/com.oppo.video.VideoListActivity}" drawable="generic_player" name="Videos" />
   <item component="ComponentInfo{com.projectmaterial.videos/com.projectmaterial.videos.activities.NavigationActivity}" drawable="videos" name="Videos" />
   <item component="ComponentInfo{com.projectmaterial.videos/com.projectmaterial.videos.activities.VideoLibraryActivity}" drawable="videos" name="Videos" />
   <item component="ComponentInfo{com.projectmaterial.videos/com.projectmaterial.videos.activity.VideoLibraryActivity}" drawable="videos" name="Videos" />
@@ -20587,7 +20589,6 @@
   <item component="ComponentInfo{com.iloen.melon/com.iloen.melon.MusicBrowserActivity}" drawable="melon" name="멜론 ~~ Melon" />
   <item component="ComponentInfo{com.YoStarKR.Arknights/com.u8.sdk.U8UnityContext}" drawable="arknights" name="명일방주 ~~ Arknights" />
   <item component="ComponentInfo{com.sampleapp/com.baemin.presentation.ui.RouterActivity}" drawable="baemin" name="배달의민족  ~~ Baemin" />
-  <item component="ComponentInfo{com.sampleapp/com.sampleapp.AppIconDefault}" drawable="baemin" name="배달의민족  ~~ Baemin" />
   <item component="ComponentInfo{com.sampleapp/com.sampleapp.AppIconDefault}" drawable="baemin" name="배달의민족  ~~ Baemin" />
   <item component="ComponentInfo{com.lifeplatform.better/com.lifeplatform.better.MainActivity}" drawable="better" name="베터 ~~ Better" />
   <item component="ComponentInfo{com.miHoYo.bh3korea/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_impact_3" name="붕괴3rd ~~ Honkai Impact 3rd" />
