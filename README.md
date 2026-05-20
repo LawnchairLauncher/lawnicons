@@ -73,4 +73,4 @@ It's required to follow the Lawnicons design guidelines. Accepted contributions 
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Icon requests become available on the Lawnicons release day and stay open for a short while.
+The only guaranteed way to get an icon added is to contribute it yourself.
