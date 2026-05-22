@@ -28,8 +28,8 @@
   <!-- Static Calendars -->
   <item drawableIgnore="true" component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" drawable="themed_icon_calendar_31" name="Superb Launcher Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_28" name="ColorOS Calendar" />
-  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Google Calendar" />
-  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.google.android.archive.ReactivateActivity}" drawable="themed_icon_calendar_31" name="Google Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="google_calendar" name="Google Calendar" />
+  <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.google.android.archive.ReactivateActivity}" drawable="google_calendar" name="Google Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oneplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
@@ -4309,7 +4309,7 @@
   <item component="ComponentInfo{dji.mimo/dji.mimo.main.DJILaunchActivity}" drawable="dji" name="DJI Mimo" />
   <item component="ComponentInfo{mimo.sz/dji.mimo.main.DJILaunchActivity}" drawable="dji" name="DJI Mimo" />
   <item component="ComponentInfo{com.dji.ronin/com.dji.ronin.RoninHubActivity}" drawable="dji" name="DJI Ronin" />
-  <item component="ComponentInfo{ru.androidtools.djvureaderdocviewer/ru.androidtools.djvureaderdocviewer.activity.MainActivity}" drawable="google_docs" name="DjVu Reader &amp; Viewer" />
+  <item component="ComponentInfo{ru.androidtools.djvureaderdocviewer/ru.androidtools.djvureaderdocviewer.activity.MainActivity}" drawable="docx_reader" name="DjVu Reader &amp; Viewer" />
   <item component="ComponentInfo{com.dkbcodefactory.banking/com.dkbcodefactory.banking.splash.SplashActivity}" drawable="dkb" name="DKB" />
   <item component="ComponentInfo{com.dkbcodefactory.banking/com.dkbcodefactory.banking.screens.splash.SplashActivity}" drawable="dkb" name="DKB" />
   <item component="ComponentInfo{com.dkbcodefactory.banking/com.dkbcodefactory.banking.screens.home.HomeActivity}" drawable="dkb" name="DKB" />
@@ -4327,12 +4327,12 @@
   <item component="ComponentInfo{ru.dns.shop.android/ru.dns.shop.HostActivity}" drawable="dns" name="DNS" />
   <item component="ComponentInfo{dev.clombardo.dnsnet/dev.clombardo.dnsnet.MainActivity}" drawable="dnsnet" name="DNSNet" />
   <item component="ComponentInfo{at.flobii.doable/at.flobii.doable.MainActivity}" drawable="doable" name="Doable" />
-  <item component="ComponentInfo{com.docx.reader.word.docx.document.office.free.viewer/com.trustedapp.pdfreader.ui.splash.SplashActivity}" drawable="google_docs" name="Doc Reader" />
-  <item component="ComponentInfo{com.docx.reader.word.docx.document.office.free.viewer/com.trustedapp.pdfreader.view.activity.SplashActivity}" drawable="google_docs" name="Doc Reader" />
+  <item component="ComponentInfo{com.docx.reader.word.docx.document.office.free.viewer/com.trustedapp.pdfreader.ui.splash.SplashActivity}" drawable="docx_reader" name="Doc Reader" />
+  <item component="ComponentInfo{com.docx.reader.word.docx.document.office.free.viewer/com.trustedapp.pdfreader.view.activity.SplashActivity}" drawable="docx_reader" name="Doc Reader" />
   <item component="ComponentInfo{be.ixor.doccle.android/be.ixor.doccle.android.main.launcher.LauncherActivity_}" drawable="doccle" name="Doccle" />
   <item component="ComponentInfo{be.ixor.doccle.android/be.ixor.doccle.android.main.launcher.LauncherSplashActivity}" drawable="doccle" name="Doccle" />
   <item component="ComponentInfo{com.along.dockwalls/com.along.dockwalls.activity.MainActivity}" drawable="dockwalls" name="DockWalls" />
-  <item component="ComponentInfo{docsreader.fileopener.word.office.offlineviewer/docsreader.fileopener.word.office.offlineviewer.Activities.WelcomeScreen}" drawable="google_docs" name="Docs Reader" />
+  <item component="ComponentInfo{docsreader.fileopener.word.office.offlineviewer/docsreader.fileopener.word.office.offlineviewer.Activities.WelcomeScreen}" drawable="docx_reader" name="Docs Reader" />
   <item component="ComponentInfo{fr.doctolib.www/fr.doctolib.www.MainActivity}" drawable="doctolib" name="Doctolib" />
   <item component="ComponentInfo{br.com.doctoralia/com.app.MainActivity}" drawable="doctoralia" name="Doctoralia" />
   <item component="ComponentInfo{mx.com.doctoralia/com.app.MainActivity}" drawable="doctoralia" name="Doctoralia" />
@@ -4344,9 +4344,9 @@
   <item component="ComponentInfo{com.docusign.ink/com.docusign.onboarding.OnboardingSplash}" drawable="docusign" name="Docusign" />
   <item component="ComponentInfo{com.docusign.ink/com.google.android.archive.ReactivateActivity}" drawable="docusign" name="Docusign" />
   <item component="ComponentInfo{com.os.docvault/com.coloros.oppodocvault.views.ftu.ui.FTUWelcomeActivity}" drawable="docvault" name="DocVault" />
-  <item component="ComponentInfo{word.office.docxviewer.document.docx.reader/word.office.docxviewer.document.docx.reader.ui.WelcomeAct}" drawable="google_docs" name="Docx Reader" />
-  <item component="ComponentInfo{com.skydot.docxreader.docx.docxviewer.document.doc.office.viewer.reader.word/com.skydot.docxreader.ui.ActivityMain}" drawable="google_docs" name="Docx Reader" />
-  <item component="ComponentInfo{com.skydot.docxreader.docx.docxviewer.document.doc.office.viewer.reader.word/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="google_docs" name="Docx Reader" />
+  <item component="ComponentInfo{word.office.docxviewer.document.docx.reader/word.office.docxviewer.document.docx.reader.ui.WelcomeAct}" drawable="docx_reader" name="Docx Reader" />
+  <item component="ComponentInfo{com.skydot.docxreader.docx.docxviewer.document.doc.office.viewer.reader.word/com.skydot.docxreader.ui.ActivityMain}" drawable="docx_reader" name="Docx Reader" />
+  <item component="ComponentInfo{com.skydot.docxreader.docx.docxviewer.document.doc.office.viewer.reader.word/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="docx_reader" name="Docx Reader" />
   <item component="ComponentInfo{com.alldocumentreader.office.viewer.filesreader/com.alldocumentreader.office.viewer.filesreader.activities.SplashScreenActivity}" drawable="document_reader" name="Docx Reader" />
   <item component="ComponentInfo{com.dodo.app.twa/com.dodo.app.twa.LauncherActivity}" drawable="dodo" name="Dodo" />
   <item component="ComponentInfo{ru.dodopizza.app/ru.dodopizza.app.presentation.main.MainActivity}" drawable="dodo_pizza" name="Dodo Pizza" />
@@ -5129,7 +5129,7 @@
   <item component="ComponentInfo{com.everycircuit.free/com.everycircuit.HomeLauncher}" drawable="everycircuit" name="EveryCircuit" />
   <item component="ComponentInfo{com.everycircuit.free/com.everycircuit.Explorer}" drawable="everycircuit" name="EveryCircuit" />
   <item component="ComponentInfo{com.woolworths.rewards/au.com.woolworths.rewards.Launcher}" drawable="everyday_rewards" name="Everyday Rewards" />
-  <item component="ComponentInfo{de.jepfa.personaltasklogger/de.jepfa.personaltasklogger.MainActivity}" drawable="google_tasks" name="Everyday Tasks" />
+  <item component="ComponentInfo{de.jepfa.personaltasklogger/de.jepfa.personaltasklogger.MainActivity}" drawable="vervedo" name="Everyday Tasks" />
   <item component="ComponentInfo{com.jndapp.material.widgets.pack/com.jndapp.material.widgets.pack.MainActivity}" drawable="everything_material_widgets" name="Everything Material Widgets" />
   <item component="ComponentInfo{com.nothing.icon.pro/com.nothing.icon.pro.MainActivity}" drawable="nothing_icons" name="Everything Pro Icons" />
   <item component="ComponentInfo{kalp.motoport.nothingpro/kalp.motoport.nothingpro.MainActivity}" drawable="nothing_icons" name="Everything Pro Moto Icons" />
@@ -11115,6 +11115,7 @@
   <item component="ComponentInfo{lu.etat.fp.gun.android/crc64c4c5fca87d8f4eb9.MainActivity}" drawable="myguichet_lu" name="MyGuichet.lu" />
   <item component="ComponentInfo{ch.helsana.myHelsana/ch.helsana.mobile.myhelsana.entry.view.EntryActivity}" drawable="myhelsana" name="myHelsana" />
   <item component="ComponentInfo{com.hyundai.oneapp.eu/com.hmg.oneapp.main.MainActivity}" drawable="hyundai_care" name="myHyundai" />
+  <item component="ComponentInfo{com.hmil.myhyundai/com.hmil.myhyundai.ui.SplashActivity}" drawable="hyundai_care" name="myHyundai" />
   <item component="ComponentInfo{au.gov.ato.mygovid.droid/au.gov.ato.myGovID.LaunchActivity}" drawable="myid" name="myID" />
   <item component="ComponentInfo{com.pure.indosat.care/com.digitral.modules.splash.SplashActivity}" drawable="myim3" name="myIM3" />
   <item component="ComponentInfo{com.pure.indosat.care/com.lotusflare.connect.LauncherActivity}" drawable="myim3" name="myIM3" />
@@ -16858,7 +16859,7 @@
   <item component="ComponentInfo{net.dinglisch.android.taskerm/com.joaomgcd.taskerm.util.ActivitySecondaryApp}" drawable="tasker" name="Tasker" />
   <item component="ComponentInfo{net.dinglisch.android.taskerm/net.dinglisch.android.taskerm.Tasker}" drawable="tasker" name="Tasker" />
   <item component="ComponentInfo{com.joaomgcd.taskersettings/com.joaomgcd.taskersettings.MainActivity}" drawable="tasker_settings" name="Tasker Settings" />
-  <item component="ComponentInfo{com.vintia.taskflow/com.vintia.taskflow.MainActivity}" drawable="google_tasks" name="TaskFlow" />
+  <item component="ComponentInfo{com.vintia.taskflow/com.vintia.taskflow.MainActivity}" drawable="vervedo" name="TaskFlow" />
   <item component="ComponentInfo{com.rk.taskmanager/com.rk.taskmanager.MainActivity}" drawable="taskmanager" name="TaskManager" />
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Cyan}" drawable="tasks" name="Tasks" />
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.ShortcutActivity}" drawable="tasks" name="Tasks" />
@@ -17557,7 +17558,6 @@
   <item component="ComponentInfo{ch.tkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="tkb_twint" name="TKB TWINT" />
   <item component="ComponentInfo{com.tcl.android.video/com.tct.video.View.activities.VideoMainActivity}" drawable="generic_player" name="TLC Video" />
   <item component="ComponentInfo{app.tln.plus/app.tln.plus.SplashScreen}" drawable="tln_plus" name="TLN+" />
-  <item component="ComponentInfo{cn.super12138.todo/cn.super12138.todo.ui.activities.MainActivity}" drawable="google_tasks" name="To Do" />
   <item component="ComponentInfo{rocks.poopjournal.todont/rocks.poopjournal.todont.SplashScreenActivity}" drawable="to_dont" name="To Don't" />
   <item component="ComponentInfo{rocks.poopjournal.todont/rocks.poopjournal.todont.MainActivity}" drawable="to_dont" name="To Donʼt" />
   <item component="ComponentInfo{rocks.poopjournal.todont/rocks.poopjournal.todont.Splash_Screen}" drawable="to_dont" name="To Donʼt" />
@@ -18410,6 +18410,7 @@
   <item component="ComponentInfo{asia.versa.cms/asia.versa.cms.MainActivity}" drawable="versa" name="Versa" />
   <item component="ComponentInfo{com.verseview.songbook/com.verseview.songbook.MainActivity}" drawable="apple_music" name="VerseVIEW Christian Song Book" />
   <item component="ComponentInfo{com.phonegap.Hello/com.phonegap.Hello.MainActivity}" drawable="generic_bible" name="VerseVIEWBible" />
+  <item component="ComponentInfo{cn.super12138.todo/cn.super12138.todo.ui.activities.MainActivity}" drawable="vervedo" name="VerveDo" />
   <item component="ComponentInfo{it.very.mobile/it.windtre.dea.view.MainActivity}" drawable="very_mobile" name="Very Mobile" />
   <item component="ComponentInfo{com.watch.life/com.ido.life.module.splash.SplashDefaultActivity}" drawable="veryfit" name="VeryFit" />
   <item component="ComponentInfo{com.vincentengelsoftware.vesandroidimagecompare/com.vincentengelsoftware.androidimagecompare.Activities.MainActivity}" drawable="photo_compare" name="VES" />
