@@ -51,10 +51,10 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Contributing
 <div align="left">
+    <a href="https://lawnicons-requests.vercel.app/">
+        <img alt="Community-requested icons" src="https://img.shields.io/badge/Community--requested%20icons-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
-    <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Requested icons" src="https://img.shields.io/badge/Requested%20icons-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="https://github.com/LawnchairLauncher/lawnicons/issues/3546">
         <img alt="Lawnicons localization issue" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
@@ -73,4 +73,4 @@ It's required to follow the Lawnicons design guidelines. Accepted contributions 
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-Icon requests become available on the Lawnicons release day and stay open for a short while.
+The only guaranteed way to get an icon added is to contribute it yourself.

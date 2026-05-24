@@ -1,16 +1,16 @@
 [versions]
 agp = "9.2.1"
 kotlin = "2.3.21"
-androidx-nav3 = "1.1.1"
+androidx-nav3 = "1.1.2"
 androidx-lifecycle = "2.10.0"
 retrofit = "3.0.0"
-metro = "1.0.0"
+metro = "1.1.1"
 
 [libraries]
 androidx-core-ktx = "androidx.core:core-ktx:1.18.0"
 androidx-core-splashscreen = "androidx.core:core-splashscreen:1.2.0"
 androidx-activity-compose = "androidx.activity:activity-compose:1.13.0"
-androidx-compose-bom = "androidx.compose:compose-bom:2026.05.00"
+androidx-compose-bom = "androidx.compose:compose-bom:2026.05.01"
 androidx-compose-ui = { module = "androidx.compose.ui:ui" }
 androidx-compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-compose-ui-util = { module = "androidx.compose.ui:ui-util" }
@@ -38,7 +38,7 @@ commons-io = "commons-io:commons-io:2.22.0"
 
 # Dummy to get renovate updates, the version is used in rootProject build.gradle with spotless.
 ktlint = "com.pinterest.ktlint:ktlint-cli:1.8.0"
-composeRules = "io.nlopez.compose.rules:ktlint:0.5.8"
+composeRules = "io.nlopez.compose.rules:ktlint:0.5.9"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
@@ -46,5 +46,5 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 licensee = "app.cash.licensee:1.14.1"
-spotless = "com.diffplug.spotless:8.4.0"
+spotless = "com.diffplug.spotless:8.5.1"
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }

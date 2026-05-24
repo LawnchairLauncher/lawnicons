@@ -1,0 +1,232 @@
+name: Comment icon description
+
+on:
+  pull_request_target:
+    branches: [ develop ]
+    types: [ opened, synchronize ]
+    paths:
+      - svgs/*
+      - app/assets/appfilter.xml
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  icon-description:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      
+      - name: Get changed files
+        id: files
+        uses: tj-actions/changed-files@v46
+        with:
+          files: |
+            svgs/*
+            app/assets/appfilter.xml
+          
+      - name: Analyze changes and comment
+        uses: actions/github-script@v9
+        env:
+          CHANGED_FILES: ${{ steps.files.outputs.all_changed_files }}
+          ADDED_FILES: ${{ steps.files.outputs.added_files }}
+          MODIFIED_FILES: ${{ steps.files.outputs.modified_files }}
+        with:
+          script: |
+            const addedFiles = process.env.ADDED_FILES ? process.env.ADDED_FILES.split(' ') : [];
+            const modifiedFiles = process.env.MODIFIED_FILES ? process.env.MODIFIED_FILES.split(' ') : [];
+            const changedFiles = process.env.CHANGED_FILES ? process.env.CHANGED_FILES.split(' ') : [];
+            
+            const svgAdded = addedFiles.filter(f => f.endsWith('.svg') && f.startsWith('svgs/'));
+            const svgModified = modifiedFiles.filter(f => f.endsWith('.svg') && f.startsWith('svgs/'));
+            const appfilterChanged = changedFiles.includes('app/assets/appfilter.xml');
+            
+            const { execSync } = require('child_process');
+            const baseSha = context.payload.pull_request.base.sha;            
+            
+            let addedEntries = [];
+            let linkedEntries = [];
+            
+            if (appfilterChanged) {
+              const diff = execSync(`git diff ${baseSha} -- app/assets/appfilter.xml`, { encoding: 'utf8' });
+              const lines = diff.split('\n');
+              
+              const addedLines = lines.filter(line => line.startsWith('+') && !line.startsWith('+++'));
+              
+              addedLines.forEach(line => {
+                const componentMatch = line.match(/component="ComponentInfo\{([^}]+)\}"/);
+                const drawableMatch = line.match(/drawable="([^"]+)"/);
+                const nameMatch = line.match(/name="([^"]+)"/);
+                
+                if (componentMatch && drawableMatch) {
+                  const package = componentMatch[1].split('/')[0];
+                  const drawable = drawableMatch[1];
+                  const name = nameMatch ? nameMatch[1] : package;
+                  
+                  const svgFile = `svgs/${drawable}.svg`;
+                  if (svgAdded.includes(svgFile)) {
+                    addedEntries.push({ name, package, drawable });
+                  } else {
+                    linkedEntries.push({ name, package, drawable });
+                  }
+                }
+              });
+            }
+            
+            // Check added SVGs that weren't matched by diff but have new drawables
+            svgAdded.forEach(svgFile => {
+              const drawable = svgFile.replace('svgs/', '').replace('.svg', '');
+              const alreadyHandled = addedEntries.some(e => e.drawable === drawable) || 
+                                     linkedEntries.some(e => e.drawable === drawable);
+              
+              if (!alreadyHandled) {
+                const baseHasDrawable = execSync(
+                  `git show ${baseSha}:app/assets/appfilter.xml | grep -q "drawable=\\"${drawable}\\"" && echo "true" || echo "false"`,
+                  { encoding: 'utf8', maxBuffer: 10 * 1024 * 1024 }
+                ).trim() === 'true';
+                
+                if (!baseHasDrawable) {
+                  const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
+                  const itemRegex = new RegExp(`<item[^>]*drawable="${drawable}"[^>]*/>`);
+                  const itemMatch = appfilterContent.match(itemRegex);
+                  
+                  if (itemMatch) {
+                    const nameMatch = itemMatch[0].match(/name="([^"]+)"/);
+                    const componentMatch = itemMatch[0].match(/component="ComponentInfo\{([^}]+)\}"/);
+                    
+                    if (nameMatch && componentMatch) {
+                      addedEntries.push({
+                        name: nameMatch[1],
+                        package: componentMatch[1].split('/')[0],
+                        drawable: drawable
+                      });
+                    }
+                  }
+                }
+              }
+            });        
+
+            const updatedEntries = [];
+            const allSvgChanges = [...svgAdded, ...svgModified];
+            
+            allSvgChanges.forEach(svgFile => {
+              const drawable = svgFile.replace('svgs/', '').replace('.svg', '');
+              const isAlreadyInAppfilter = addedEntries.some(e => e.drawable === drawable) || 
+                                         linkedEntries.some(e => e.drawable === drawable);
+              
+              if (!isAlreadyInAppfilter) {
+                const appfilterContent = require('fs').readFileSync('app/assets/appfilter.xml', 'utf8');
+                const itemRegex = new RegExp(`<item[^>]*drawable="${drawable}"[^>]*/>`, 'g');
+                let itemMatch;
+                let bestMatch = null;
+                
+                const allMatches = [];
+                while ((itemMatch = itemRegex.exec(appfilterContent)) !== null) {
+                  const item = itemMatch[0];
+                  const nameMatch = item.match(/name="([^"]+)"/);
+                  const componentMatch = item.match(/component="ComponentInfo\{([^}]+)\}"/);
+                  
+                  if (nameMatch && componentMatch) {
+                    const name = nameMatch[1];
+                    const normalizedName = name.toLowerCase().replace(/\s+/g, '_');
+                    const normalizedDrawable = drawable.toLowerCase().replace(/_/g, ' ').trim();
+                    const normalizedNameAlt = name.toLowerCase().replace(/\s+/g, '');
+                    const normalizedDrawableAlt = drawable.toLowerCase().replace(/_/g, '');
+                    
+                    allMatches.push({ name, package: componentMatch[1].split('/')[0], drawable });
+                    
+                    if (normalizedName === drawable.toLowerCase() ||
+                        normalizedDrawable === name.toLowerCase() ||
+                        normalizedNameAlt === normalizedDrawableAlt) {
+                      bestMatch = { name, package: componentMatch[1].split('/')[0], drawable };
+                      break;
+                    }
+                  }
+                }
+                
+                const selected = bestMatch || allMatches[0];
+                
+                if (selected) {
+                  updatedEntries.push({
+                    name: selected.name,
+                    drawable: drawable
+                  });
+                }
+              }
+            });
+            
+            function formatEntries(entries, showPackage = true) {
+              const grouped = {};
+              entries.forEach(entry => {
+                const key = showPackage ? `${entry.name}|${entry.package}|${entry.drawable}` : `${entry.name}|${entry.drawable}`;
+                if (!grouped[key]) {
+                  grouped[key] = { ...entry, count: 0 };
+                }
+                grouped[key].count++;
+              });
+              
+              return Object.values(grouped)
+                .sort((a, b) => a.name.localeCompare(b.name))
+                .map(entry => {
+                  const line = showPackage ? 
+                    `${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)` :
+                    `${entry.name} (\`${entry.drawable}.svg\`)`;
+                  
+                  if (entry.count > 1) {
+                    return `${entry.count} × ${line}`;
+                  } else {
+                    return line;
+                  }
+                })
+                .join('\n');
+            }
+            
+            // Build icon description
+            let iconDescription = '';
+
+            if (addedEntries.length > 0) {
+              iconDescription += '### Added\n';
+              iconDescription += formatEntries(addedEntries, true);
+              iconDescription += '\n\n';
+            }
+
+            if (linkedEntries.length > 0) {
+              iconDescription += '### Linked\n';
+              iconDescription += formatEntries(linkedEntries, true);
+              iconDescription += '\n\n';
+            }
+
+            if (updatedEntries.length > 0) {
+              iconDescription += '### Updated\n';
+              iconDescription += formatEntries(updatedEntries, false);
+              iconDescription += '\n\n';
+            }
+
+            if (iconDescription) {
+              const pr = context.payload.pull_request;
+              const existingBody = pr.body || '';
+              
+              const botMarker = '<!-- bot: icons -->';
+              const botSection = `${botMarker}\n## Icons\n\n${iconDescription.trim()}`;
+              
+              let newBody;
+              if (existingBody.includes(botMarker)) {
+                // Replace existing bot section
+                newBody = existingBody.replace(/<!-- bot: icons -->[\s\S]*$/, botSection);
+              } else {
+                // Append at the bottom
+                newBody = existingBody.trimEnd() + '\n\n' + botSection;
+              }
+              
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                body: newBody.trim()
+              });
+            }

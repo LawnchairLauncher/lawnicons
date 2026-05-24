@@ -1,7 +1,7 @@
 Thanks for your contribution!
 
 - Please fix all common issues and ensure Lawnicons builds correctly.
-- You'll get a review within 10 days. First-timers receive a brief review to confirm commitment.
+- First-timers receive a brief review to confirm commitment.
 - Shortly after the merge, you can download Lawnicons Nightly to use your icons.
 
 [Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#lawnicons-design-guidelines) • [Lawnicons Nightly](https://github.com/LawnchairLauncher/lawnicons/releases/tag/nightly)
