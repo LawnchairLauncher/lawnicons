@@ -3,111 +3,111 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">版本 %s</string>
+    <string name="version_x">Version %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">返回</string>
+    <string name="back">Back</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">搜尋 %d 的圖示</string>
+    <string name="search_bar_hint">Search through %d icons</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">選擇一個圖示</string>
+    <string name="search_bar_icon_picker">Pick an icon</string>
     <!-- Accessibility label for the search icon -->
-    <string name="search">搜尋</string>
+    <string name="search">Išči</string>
     <!-- Accessibility label for the clear search button -->
-    <string name="clear">清除</string>
+    <string name="clear">Clear</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">找不到 %s</string>
+    <string name="no_items_found">%s not found</string>
     <!-- Toolbar actions -->
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective repository link-->
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">申請圖示</string>
+    <string name="request_icons">Request icons</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">所選圖示皆已支援。請透過 GitHub issues 回報對應圖示的品牌更新。</string>
+    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">圖示申請僅在每次 Lawnicons 更新時短暫開放。</string>
+    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
     <!-- Label for the About screen and toolbar action -->
-    <string name="about">關於</string>
+    <string name="about">O tem</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">貢獻者</string>
+    <string name="contributors">Contributors</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">核心貢獻者</string>
+    <string name="core_contributors">Core contributors</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">查看所有貢獻者</string>
+    <string name="see_all_contributors">See all contributors</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">核心應用程式</string>
+    <string name="contribution_core">Core app</string>
     <!-- Label for icon contributions -->
-    <string name="contribution_icons">圖示</string>
+    <string name="contribution_icons">Ikone</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">基礎設施</string>
+    <string name="contribution_infra">Infrastructure</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">特別感謝</string>
+    <string name="special_thanks">Special thanks</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">應用程式圖示靈感</string>
+    <string name="special_thanks_icon">For inspiring the app icon</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">應用程式命名</string>
+    <string name="special_thanks_name">For naming the app</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">開放原始碼授權</string>
+    <string name="acknowledgements">Open-source licenses</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">名稱</string>
+    <string name="name">Name</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">可繪製資源</string>
+    <string name="drawable">Drawable</string>
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">對應的 ID</string>
+    <string name="mapped_components">Mapped IDs</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">若圖示因重塑導致失效，請在 GitHub 張貼問題。</string>
+    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">在 GitHub 檢視</string>
+    <string name="view_on_github">View on GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">分享資訊</string>
+    <string name="share">Share details</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">缺少圖示</string>
+    <string name="missing_icons">Missing icons</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">清除已選項</string>
+    <string name="clear_all">Clear selection</string>
     <!-- Button to select all icons -->
-    <string name="select_all">選擇全部</string>
+    <string name="select_all">Select all</string>
     <!-- Split button -->
     <!-- Button to request icons -->
-    <string name="request_icons_button">送出申請</string>
+    <string name="request_icons_button">Request</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">顯示選項</string>
+    <string name="show_options_sheet">Show options sheet</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">展開</string>
+    <string name="toggle_button_expanded">Expanded</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">摺疊</string>
+    <string name="toggle_button_collapsed">Collapsed</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">切換按鈕</string>
+    <string name="toggle_button_content_description">Toggle button</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">以文件分享</string>
+    <string name="share_file">Share file</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">儲存成文件</string>
+    <string name="save_file">Save file</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">複製應用程式 ID</string>
+    <string name="copy_components">Copy app IDs</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">已儲存文件</string>
+    <string name="toast_file_saved_successful">Successfully saved file</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">儲存文件時發生錯誤</string>
+    <string name="toast_file_save_error">Error saving file</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">無法建立圖示申請文件</string>
+    <string name="toast_file_zip_error">Could not create request file</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">沒有對應的應用程式來執行這項操作</string>
+    <string name="toast_no_app_available">No app to handle this action</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">已複製文字</string>
+    <string name="copied_text">Copied text</string>
     <!-- New icons screen -->
     <!-- Title for the new icons screen, with %1$s as the version name -->
-    <string name="new_icons_in_version">版本 %1$s 中的新圖示</string>
+    <string name="new_icons_in_version">New icons in v%1$s</string>
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">新圖示 (%1$s)</string>
+    <string name="new_icons">New icons (%1$s)</string>
 </resources>

@@ -5,11 +5,11 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Versi %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Kembali</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Telusuri melalui %d Ikon</string>
+    <string name="search_bar_hint">Telusuri melalui %d ikon</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">Pilih sebuah ikon</string>
     <!-- Accessibility label for the search icon -->
@@ -26,18 +26,18 @@
     <string name="request_icons">Minta ikon</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Semua ikon didukung. Laporkan perubahan via GitHub issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Permintaan ikon terbuka untuk waktu yang terbatas setiap kali Lawnicons merilis produk baru.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Tentang</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">Kontributor</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Kontributor Inti</string>
+    <string name="core_contributors">Kontributor inti</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">Liat Semua Kontributor</string>
+    <string name="see_all_contributors">Liat semua kontributor</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
     <string name="contribution_core">Inti aplikasi</string>
@@ -47,30 +47,30 @@
     <string name="contribution_infra">Infrastruktur</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Terima kasih Khusus</string>
+    <string name="special_thanks">Terima kasih khusus</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
     <string name="special_thanks_icon">Untuk inspirasi ikon aplikasi</string>
     <!-- Subtitle displayed below the user who named the app -->
     <string name="special_thanks_name">Untuk memberi nama aplikasi</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Ucapan terima kasih</string>
+    <string name="acknowledgements">Lisensi open-source</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
     <string name="name">Nama</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">Dapat digambar</string>
+    <string name="drawable">Drawable</string>
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">ID yang terhubung</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">Jika ikon sudah usang karena rebranding, buatlah masalah di GitHub.</string>
+    <string name="icon_info_outdated_warning">Jika ikon sudah usang karena perubahan, buatlah isu laporan di GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">Lihat di Github</string>
+    <string name="view_on_github">Lihat di GitHub</string>
     <!-- Share button on icon info popup -->
     <string name="share">Bagikan detail</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Ikon hilang</string>
+    <string name="missing_icons">Ikon yang hilang</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
     <string name="clear_all">Bersihkan pilihan</string>
@@ -84,21 +84,21 @@
     <!-- Content description for the expanded state of a toggle button -->
     <string name="toggle_button_expanded">Diperluas</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Runtuh</string>
+    <string name="toggle_button_collapsed">Tutup</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Tombol alih</string>
+    <string name="toggle_button_content_description">Tombol saklar</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Bagikan berkas</string>
+    <string name="share_file">Bagikan file</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Simpan berkas</string>
+    <string name="save_file">Simpan file</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Salin ID aplikasi</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Berhasil menyimpan berkas</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Gagal menyimpan berkas</string>
+    <string name="toast_file_save_error">Gagal menyimpan file</string>
     <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">Tidak dapat membuat file permintaan</string>
     <!-- Toast shown when no app is found to handle an action -->
