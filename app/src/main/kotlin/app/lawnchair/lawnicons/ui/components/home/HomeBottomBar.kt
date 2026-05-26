@@ -33,6 +33,7 @@ import app.lawnchair.lawnicons.ui.theme.icon.Github
 import app.lawnchair.lawnicons.ui.theme.icon.IconRequest
 import app.lawnchair.lawnicons.ui.theme.icon.LawnIcons
 import app.lawnchair.lawnicons.ui.theme.icon.OpenCollective
+import app.lawnchair.lawnicons.ui.theme.icon.Palette
 import app.lawnchair.lawnicons.ui.theme.icon.Search
 import app.lawnchair.lawnicons.ui.util.Constants
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
@@ -46,6 +47,7 @@ fun BoxScope.HomeBottomToolbar(
     onNavigateToAbout: () -> Unit,
     onNavigateToIconRequest: () -> Unit,
     onIconRequestUnavailable: () -> Unit,
+    onApplyToLawnchair: () -> Unit,
     onExpandSearch: () -> Unit,
     scrollBehavior: FloatingToolbarScrollBehavior,
     modifier: Modifier = Modifier,
@@ -139,6 +141,18 @@ fun BoxScope.HomeBottomToolbar(
             }
 
             SimpleTooltipBox(
+                label = stringResource(R.string.apply_to_lawnchair),
+            ) {
+                IconButton(onClick = onApplyToLawnchair) {
+                    Icon(
+                        imageVector = LawnIcons.Palette,
+                        contentDescription = stringResource(R.string.apply_to_lawnchair),
+                        modifier = Modifier.requiredSize(24.dp),
+                    )
+                }
+            }
+
+            SimpleTooltipBox(
                 label = stringResource(id = R.string.about),
             ) {
                 IconButton(onClick = onNavigateToAbout) {
@@ -204,6 +218,7 @@ private fun HomeBottomToolbarPreview() {
                 onNavigateToAbout = {},
                 onNavigateToIconRequest = {},
                 onIconRequestUnavailable = {},
+                onApplyToLawnchair = {},
                 onExpandSearch = {},
                 scrollBehavior = FloatingToolbarDefaults.exitAlwaysScrollBehavior(
                     FloatingToolbarExitDirection.Bottom,
