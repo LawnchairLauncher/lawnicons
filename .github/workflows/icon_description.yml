@@ -21,11 +21,17 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+
+      - name: Fetch base ref
+        run: |
+          git remote add upstream https://github.com/${{ github.repository }}.git
+          git fetch upstream ${{ github.event.pull_request.base.ref }}          
       
       - name: Get changed files
         id: files
         uses: tj-actions/changed-files@v46
         with:
+          base_sha: ${{ github.event.pull_request.base.sha }}
           files: |
             svgs/*
             app/assets/appfilter.xml
