@@ -23,7 +23,7 @@ val version = "2.17.1"
 val versionDisplayName = version + if (!isReleaseBuild) " $devReleaseName" else ""
 
 android {
-    compileSdk = 36
+    compileSdk = 37
     namespace = "app.lawnchair.lawnicons"
 
     defaultConfig {
