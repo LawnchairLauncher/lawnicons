@@ -19,9 +19,13 @@
     <!-- Text shown when there are no search results, with %s as the search query -->
     <string name="no_items_found">%s bulunamadı</string>
     <!-- Toolbar actions -->
+    <!-- New icons button, with %1$s as the version name -->
+    <string name="new_icons_in_version">v%1$s\'daki yeni simgeler</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
-    <!-- Open Collective repository link-->
+    <!-- Open Collective link-->
+    <!-- Icon request dashboard link -->
+    <string name="icon_request_dashboard">Icon request dashboard</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">Simge talep et</string>
     <!-- Snackbar content -->
@@ -77,8 +81,8 @@
     <!-- Button to select all icons -->
     <string name="select_all">Tümünü seç</string>
     <!-- Split button -->
-    <!-- Button to request icons -->
-    <string name="request_icons_button">Talep et</string>
+    <!-- Button to send email -->
+    <string name="send_email">Send email</string>
     <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Seçenekler menüsünü göster</string>
     <!-- Content description for the expanded state of a toggle button -->
@@ -106,8 +110,7 @@
     <!-- Toast message shown when text is copied to the clipboard -->
     <string name="copied_text">Kopyalanmış metin</string>
     <!-- New icons screen -->
-    <!-- Title for the new icons screen, with %1$s as the version name -->
-    <string name="new_icons_in_version">v%1$s\'daki yeni simgeler</string>
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Yeni simgeler (%1$s)</string>
+    <string name="action_menu_overflow_description">More options</string>
 </resources>
