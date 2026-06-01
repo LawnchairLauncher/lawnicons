@@ -37,7 +37,7 @@ if month == 12:
 else:
     end = f"{year}-{month+1:02d}-01"
 
-cmd = f'gh pr list --state merged --json title,author,mergedAt,baseRefName --limit 1000 --search "base:develop merged:{start}..{end}"'
+cmd = f'gh pr list --repo LawnchairLauncher/lawnicons --state merged --json title,author,mergedAt,baseRefName --limit 1000 --search "base:develop merged:{start}..{end}"'
 prs = json.loads(run(cmd)) if run(cmd) else []
 prs = [p for p in prs if p.get("baseRefName") == "develop"]
 
@@ -66,7 +66,7 @@ table_header = "| Month | Icons | Updates | Link-only | Total |\n|-------|------
 month_row = f"| {month_name} | {stats['icons']} | {stats['updates']} | {stats['link_only']} | {month_total} |"
 
 # Find or create issue
-issues_json = run(f'gh issue list --search "{marker}" --state open --json number,body --limit 1')
+issues_json = run(f'gh issue list --repo LawnchairLauncher/lawnicons --search "{marker}" --state open --json number,body --limit 1')
 issues = json.loads(issues_json) if issues_json else []
 issue_number = issues[0]["number"] if issues else None
 is_quarter_end = (quarter == 1 and month == 3) or (quarter == 2 and month == 6) or \
@@ -108,12 +108,12 @@ if issue_number:
         body = "\n".join(lines).rstrip() + f"\n{quarter_row}"
     
     body = body.replace('"', '\\"')
-    run(f'gh issue edit {issue_number} --body "{body}"')
+    run(f'gh issue edit {issue_number} --repo LawnchairLauncher/lawnicons --body "{body}"')
     print(f"Updated issue #{issue_number}")
 else:
     body = f"{marker}\n\n## {issue_title}\n\n{table_header}\n{month_row}"
     body = body.replace('"', '\\"')
-    result = run(f'gh issue create --title "{issue_title}" --body "{body}" --label icons')
+    run(f'gh issue create --repo LawnchairLauncher/lawnicons --title "{issue_title}" --body "{body}" --label icons')
     print(f"Created issue: {result}")
 
 print(f"Stats for {month_name}: {stats['icons']} icons, {stats['updates']} updates, {stats['link_only']} link-only")

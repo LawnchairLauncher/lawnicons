@@ -138,7 +138,7 @@ def generate_notes() -> str:
 
     sha = os.getenv("GITHUB_SHA", "unknown")[:7]
     branch = os.getenv("GITHUB_REF_NAME", "develop")
-    repo = os.getenv("GH_REPO", "Lawnicons/Lawnicons")
+    repo = os.getenv("GH_REPO", "Lawnchair/Lawnicons")
     latest_tag = run("git tag --list 'v*' --sort=-version:refname | grep -v 'nightly' | head -1") or "v2.17.1"
 
     icon_contributors = get_icon_contributors(icon_prs)
