@@ -16,4 +16,4 @@ jobs:
       - name: Update quarterly review stats
         env:
           GH_TOKEN: ${{ github.token }}
-        run: python3 scripts/review_stats.py
+        run: python3 .github/scripts/review_stats.py
