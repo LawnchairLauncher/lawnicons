@@ -26,94 +26,77 @@ if not os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch" and not is_last_day
     exit(0)
 
 now = datetime.now(timezone.utc)
-if now.month == 1:
-    year, month = now.year - 1, 12
-else:
-    year, month = now.year, now.month - 1
-
-start = f"{year}-{month:02d}-01"
-if month == 12:
-    end = f"{year+1}-01-01"
-else:
-    end = f"{year}-{month+1:02d}-01"
-
-cmd = f'gh pr list --repo LawnchairLauncher/lawnicons --state merged --json title,author,mergedAt,baseRefName --limit 1000 --search "base:develop merged:{start}..{end}"'
-prs = json.loads(run(cmd)) if run(cmd) else []
-prs = [p for p in prs if p.get("baseRefName") == "develop"]
-
-stats = {"icons": 0, "updates": 0, "link_only": 0}
-for pr in prs:
-    author = pr.get("author", {}).get("login", "unknown")
-    if author == "x9136":
-        continue
-    title = pr.get("title", "")
-    if any(w in title.lower() for w in ["icon", "link", "update"]):
-        i, l, u = parse_icon_stats(title)
-        if i > 0 or u > 0:
-            stats["icons"] += i
-            stats["updates"] += u
-        elif l > 0:
-            stats["link_only"] += 1
-
-quarter = (month - 1) // 3 + 1
+year = now.year
+quarter = (now.month - 1) // 3 + 1
 quarter_label = f"Q{quarter} {year}"
 marker = f"<!-- quarter: {quarter_label} -->"
 issue_title = f"{quarter_label} review stats"
-month_name = datetime(year, month, 1).strftime("%B")
-month_total = stats["icons"] + stats["updates"] + stats["link_only"]
 
+# Collect stats for all completed months in the quarter
+quarter_start_month = (quarter - 1) * 3 + 1
+all_month_rows = []
+
+for m in range(quarter_start_month, now.month):
+    m_start = f"{year}-{m:02d}-01"
+    if m == 12:
+        m_end = f"{year+1}-01-01"
+    else:
+        m_end = f"{year}-{m+1:02d}-01"
+    
+    cmd = f'gh pr list --repo LawnchairLauncher/lawnicons --state merged --json title,author,mergedAt,baseRefName --limit 1000 --search "base:develop merged:{m_start}..{m_end}"'
+    prs = json.loads(run(cmd)) if run(cmd) else []
+    prs = [p for p in prs if p.get("baseRefName") == "develop"]
+    
+    stats = {"icons": 0, "updates": 0, "link_only": 0}
+    for pr in prs:
+        author = pr.get("author", {}).get("login", "unknown")
+        if author == "x9136":
+            continue
+        title = pr.get("title", "")
+        if any(w in title.lower() for w in ["icon", "link", "update"]):
+            i, l, u = parse_icon_stats(title)
+            if i > 0 or u > 0:
+                stats["icons"] += i
+                stats["updates"] += u
+            elif l > 0:
+                stats["link_only"] += 1
+    
+    m_name = datetime(year, m, 1).strftime("%B")
+    m_total = stats["icons"] + stats["updates"] + stats["link_only"]
+    all_month_rows.append((m_name, stats, m_total))
+    print(f"Stats for {m_name}: {stats['icons']} icons, {stats['updates']} updates, {stats['link_only']} link-only")
+
+if not all_month_rows:
+    print("No completed months in this quarter yet. Skipping.")
+    exit(0)
+
+# Build table
 table_header = "| Month | Icons | Updates | Link-only | Total |\n|-------|-------|---------|-----------|-------|"
-month_row = f"| {month_name} | {stats['icons']} | {stats['updates']} | {stats['link_only']} | {month_total} |"
+table_rows = "\n".join(f"| {name} | {s['icons']} | {s['updates']} | {s['link_only']} | {total} |" for name, s, total in all_month_rows)
+
+is_quarter_end = now.month == quarter_start_month + 2  # March, June, September, December
+
+if is_quarter_end:
+    total_icons = sum(s["icons"] for _, s, _ in all_month_rows)
+    total_updates = sum(s["updates"] for _, s, _ in all_month_rows)
+    total_link_only = sum(s["link_only"] for _, s, _ in all_month_rows)
+    total_all = total_icons + total_updates + total_link_only
+    quarter_row = f"| {quarter_label} | {total_icons} | {total_updates} | {total_link_only} | {total_all} |"
+
+body = f"{marker}\n\n{table_header}\n{table_rows}"
+if is_quarter_end:
+    body += f"\n{quarter_row}"
+
+body = body.replace('"', '\\"')
 
 # Find or create issue
 issues_json = run(f'gh issue list --repo LawnchairLauncher/lawnicons --search "{marker}" --state open --json number,body --limit 1')
 issues = json.loads(issues_json) if issues_json else []
 issue_number = issues[0]["number"] if issues else None
-is_quarter_end = (quarter == 1 and month == 3) or (quarter == 2 and month == 6) or \
-                 (quarter == 3 and month == 9) or (quarter == 4 and month == 12)
 
 if issue_number:
-    body = issues[0]["body"]
-    if f"| {month_name} |" in body:
-        lines = body.split("\n")
-        new_lines = []
-        for line in lines:
-            if line.startswith(f"| {month_name} |"):
-                new_lines.append(month_row)
-            else:
-                new_lines.append(line)
-        body = "\n".join(new_lines)
-    else:
-        if f"| {quarter_label} |" in body:
-            body = body.replace(f"| {quarter_label} |", f"{month_row}\n| {quarter_label} |")
-        else:
-            body = body.rstrip() + f"\n{month_row}"
-    
-    if is_quarter_end:
-        total_icons = 0
-        total_updates = 0
-        total_link_only = 0
-        for line in body.split("\n"):
-            if line.startswith("|") and not line.startswith("| Month") and not line.startswith("| Q"):
-                parts = [p.strip() for p in line.split("|") if p.strip()]
-                if len(parts) >= 4:
-                    total_icons += int(parts[1])
-                    total_updates += int(parts[2])
-                    total_link_only += int(parts[3])
-        
-        total_all = total_icons + total_updates + total_link_only
-        quarter_row = f"| {quarter_label} | {total_icons} | {total_updates} | {total_link_only} | {total_all} |"
-        
-        lines = [l for l in body.split("\n") if not l.startswith(f"| {quarter_label} |")]
-        body = "\n".join(lines).rstrip() + f"\n{quarter_row}"
-    
-    body = body.replace('"', '\\"')
     run(f'gh issue edit {issue_number} --repo LawnchairLauncher/lawnicons --body "{body}"')
     print(f"Updated issue #{issue_number}")
 else:
-    body = f"{marker}\n\n## {issue_title}\n\n{table_header}\n{month_row}"
-    body = body.replace('"', '\\"')
     result = run(f'gh issue create --repo LawnchairLauncher/lawnicons --title "{issue_title}" --body "{body}" --label icons')
     print(f"Created issue: {result}")
-
-print(f"Stats for {month_name}: {stats['icons']} icons, {stats['updates']} updates, {stats['link_only']} link-only")
