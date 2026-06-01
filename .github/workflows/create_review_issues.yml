@@ -1,0 +1,19 @@
+name: Create review issue
+
+on:
+  schedule:
+    - cron: '0 0 28-31 * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Update quarterly review stats
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/review_stats.py
