@@ -113,7 +113,7 @@ if issue_number:
 else:
     body = f"{marker}\n\n## {issue_title}\n\n{table_header}\n{month_row}"
     body = body.replace('"', '\\"')
-    run(f'gh issue create --repo LawnchairLauncher/lawnicons --title "{issue_title}" --body "{body}" --label icons')
+    result = run(f'gh issue create --repo LawnchairLauncher/lawnicons --title "{issue_title}" --body "{body}" --label icons')
     print(f"Created issue: {result}")
 
 print(f"Stats for {month_name}: {stats['icons']} icons, {stats['updates']} updates, {stats['link_only']} link-only")
