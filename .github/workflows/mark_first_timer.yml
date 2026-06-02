@@ -1,7 +1,7 @@
 name: "Mark first timer"
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
 
 jobs:
@@ -10,6 +10,7 @@ jobs:
     permissions:
       pull-requests: write
       issues: write
+      contents: read
     steps:
       - uses: actions/checkout@v6
       - name: Check and label first timer
