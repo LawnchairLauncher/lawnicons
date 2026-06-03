@@ -13,8 +13,8 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 REPO_ROOT = Path(__file__).parent.parent.parent
 APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
 DRAWABLES_DIR = REPO_ROOT / "svgs/"
-SVG_LINTER_PATH = REPO_ROOT / "lint_icons.py"  # UPDATE THIS
-NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"  # UPDATE THIS
+SVG_LINTER_PATH = REPO_ROOT / "lint-icons.py"
+NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"
 
 BOT_SIGNATURE = "--- \n*Linter Bot Report*"
 NEEDS_REVIEW_LABEL = "needs review"
@@ -25,10 +25,18 @@ NEEDS_REVIEW_LABEL = "needs review"
 def get_changed_svgs() -> list[str]:
     """Finds SVG files changed in this PR compared to the target branch."""
     target_branch = os.getenv("GITHUB_BASE_REF")
+    drawables_pathspec = DRAWABLES_DIR.relative_to(REPO_ROOT).as_posix()
     cmd = ["git", "diff", "--name-only",
-           f"origin/{target_branch}", "HEAD", "--", str(DRAWABLES_DIR)]
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    return [line for line in result.stdout.splitlines() if line.endswith('.svg')]
+           f"origin/{target_branch}", "HEAD", "--", drawables_pathspec]
+    result = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        check=False,
+        cwd=REPO_ROOT,
+    )
+    if result.returncode != 0:
+        return []
 
 
 def run_linter(script_path: Path, args: list[str]) -> str:
@@ -39,6 +47,14 @@ def run_linter(script_path: Path, args: list[str]) -> str:
             # check=False to capture output even on failure
             capture_output=True, text=True, check=False
         )
+
+        if result.returncode != 0:
+            error_output = stderr or stdout or "No output captured."
+            return (
+                f"CRITICAL_ERROR: {script_path.name} exited with code "
+                f"{result.returncode}: {error_output}"
+            )
+
         return result.stdout.strip()
     except Exception as e:
         return f"CRITICAL_ERROR: Failed to run {script_path.name}: {e}"

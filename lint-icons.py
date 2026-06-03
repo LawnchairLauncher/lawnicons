@@ -1,19 +1,14 @@
-# WIP. Not pushed yet
-
 import sys
-import re
 import time
 import logging
 import argparse
 import json
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET # lint: ignore
 from pathlib import Path
-from enum import Enum, auto
+from enum import Enum, IntEnum
 from dataclasses import dataclass, field, asdict
 from concurrent.futures import ProcessPoolExecutor
 from abc import ABC, abstractmethod
-from enum import Enum, IntEnum
-from dataclasses import dataclass
 from typing import Callable, List, Dict, Optional, Any, Type
 
 try:
@@ -21,6 +16,8 @@ try:
     HAS_SVGELEMENTS = True
 except ImportError:
     HAS_SVGELEMENTS = False
+    SVG = None
+    SVGPath = None
 
 # --- Configuration ---
 logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
@@ -228,8 +225,8 @@ def rule_rounding_caps(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str
         tag = el.tag.split('}')[-1]
         if not el.get('stroke'):
             continue
-        if tag in ['rect', 'polygon']:
-            continue  # Closed shapes
+        if tag not in ['path', 'line', 'polyline']:
+            continue  # stroke-linecap is only relevant for open-ended shapes
 
         is_open = True
         if tag == 'path':
@@ -277,8 +274,10 @@ def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> tuple[Status, s
     if ctx.xml_tree is None:
         return Status.FAIL, "XML missing."
 
-    ns = "{http://www.w3.org/2000/svg}"
-    for rect in ctx.xml_tree.iter(f'{ns}rect'):
+    for rect in ctx.xml_tree.iter():
+        tag = rect.tag.split('}')[-1]
+        if tag != 'rect':
+            continue
         try:
             rx = rect.get('rx')
             if rx is None:
