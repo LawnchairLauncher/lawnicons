@@ -185,8 +185,8 @@ def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str
         weight = strokes[0]
         if weight == 14.0:
             return Status.REVIEW, "Minimal icon (14px): Confirm optical weight matches set."
-        if weight == 12.0:
-            return Status.REVIEW, "Minimal icon (12px): Confirm it doesn't look too thin."
+        if weight == 10.0:
+            return Status.REVIEW, "Dense     icon (10px): Confirm it doesn't look too thin."
         return Status.REVIEW, f"Minimal icon using fine-detail weight ({weight}px)."
 
     if any(w < 12.0 for w in unique_weights):
