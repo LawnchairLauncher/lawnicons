@@ -9,8 +9,13 @@ from unidecode import unidecode
 
 def slugify_app_name(app_name: str) -> str:
     """Converts an app name from appfilter.xml to a valid drawable filename."""
-    # 1. Handle dual names: "Beijing Card ~~ 北京一卡通" -> "beijing_card"
-    primary_name = app_name.split('~~')[0].strip()
+    primary_name = ""
+
+    try:
+        # 1. Handle dual names: "北京一卡通 ~~ Beijing Card" -> "beijing_card"
+        primary_name = app_name.split('~~')[1].strip()
+    except IndexError:
+        primary_name = app_name
 
     # 2. Handle HTML entities: "A&amp;W" -> "A&W"
     # A simple replacement is safe enough for this specific use case.
@@ -21,9 +26,12 @@ def slugify_app_name(app_name: str) -> str:
 
     # 4. Standard slugification
     slug = slug.lower()
+    slug = slug.replace("'", "")  # Remove apostrophes completely (e.g., Subway's -> subways)
+    slug = slug.replace("&", "and")  # Replace & with 'and' for better readability
+    slug = slug.replace("+", "_plus_")  # Handle plus signs explicitly
+
     slug = re.sub(r'[^a-z0-9]+', '_', slug)  # Replace non-alphanumeric with _
     slug = slug.strip('_')
-
     # 5. Handle leading digits
     if slug and slug[0].isdigit():
         slug = f"_{slug}"
