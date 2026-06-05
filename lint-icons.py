@@ -355,6 +355,14 @@ def rule_placeholder_visual_alignment(ctx: CheckContext, max_speed: Speed) -> tu
     """Quality: [Placeholder] Checks for visual alignment instead of bounding-box alignment."""
     return Status.PASS, "Placeholder: Q04 Not Implemented (Requires SLOW/Geometry)."
 
+# --- Optimization Rules ---
+@register_rule(rule_id="O01", category="Optimization")
+def rule_svg_size(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
+    """Optimization: Flags SVGs larger than 3KB."""
+    if len(ctx.raw_content.encode('utf-8')) > 3 * 1024:
+        return Status.WARN, "SVG file size exceeds 3KB."
+    return Status.PASS, "SVG file size is within limits."
+
 # --- Output System (Modular) ---
 
 class OutputHandler(ABC):
@@ -383,6 +391,9 @@ class ConsoleOutput(OutputHandler):
         Status.EXEMPT: "\033[90m",  # Grey
     }
     RESET = "\033[0m"
+
+    def start(self):
+        pass
 
     def process(self, report: FileReport):
         # 1. Handle Catastrophic Errors
