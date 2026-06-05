@@ -1,3 +1,4 @@
+import re
 import sys
 import time
 import logging
@@ -88,6 +89,14 @@ def register_check(speed: Speed, check_id: str):
         PLUGIN_REGISTRY[speed].append((func, check_id))
         return func
     return decorator
+
+# --- Helper Functions ---
+STYLE_PAIR_RE = re.compile(r'([\w-]+)\s*:\s*([^;]+)')
+
+def parse_style_attribute(style_str: Optional[str]) -> Dict[str, str]:
+    if not style_str:
+        return {}
+    return {k: v.strip() for k, v in STYLE_PAIR_RE.findall(style_str.lower())}
 
 # --- Rules Implementation ---
 
@@ -185,27 +194,60 @@ def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str
 
     return Status.PASS, f"Weights valid: {unique_weights}"
 
-
 @register_rule(rule_id="C07", category="Core")
 def rule_fill_color(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]:
-    """Core: Checks fill state (expects 'none' or no stroke)."""
+    """Core: Checks fill state (expects 'none', no stroke, or black color)."""
     if max_speed < Speed.MEDIUM:
         return Status.PASS, "Skipped fill check."
     if ctx.xml_tree is None:
         return Status.FAIL, "XML missing."
 
-    for el in ctx.xml_tree.iter():
-        tag = el.tag.split('}')[-1]
-        if tag in ['g', 'defs', 'style', 'svg']:
-            continue
-        if not el.get('stroke'):
-            continue  # Skip elements without strokes
+    allowed_colors = {'none', '#000000', '#000', 'black'}
 
-        fill = el.get('fill')
-        if fill is None and 'fill:none' not in el.get('style', ''):
-            return Status.REVIEW, f"<{tag}> has implicit fill (renders black)."
-        if fill not in ['none', None]:
-            return Status.FAIL, f"<{tag}> has explicit fill '{fill}'. Expected 'none'."
+    # The default SVG initial value for fill is technically 'black'
+    root = ctx.xml_tree.getroot() if hasattr(ctx.xml_tree, 'getroot') else ctx.xml_tree
+
+    root_style = parse_style_attribute(root.get('style'))
+    root_fill = root_style.get('fill') or root.get('fill', 'black').lower()
+
+    stack = [(root, root_fill)]
+
+    while stack:
+        el, inherited_fill = stack.pop()
+        tag = el.tag.split('}')[-1]
+
+        local_style = parse_style_attribute(el.get('style'))
+
+        local_stroke = local_style.get('stroke') or el.get('stroke')
+        if local_stroke:
+            local_stroke = local_stroke.lower()
+
+        local_fill = local_style.get('fill') or el.get('fill')
+        current_fill = local_fill.lower() if local_fill else inherited_fill
+
+        if tag in ['defs', 'style', 'clipPath', 'linearGradient', 'radialGradient']:
+            for child in el:
+                stack.append((child, current_fill))
+            continue
+
+        if tag in ['g', 'svg']:
+            for child in el:
+                stack.append((child, current_fill))
+            continue
+
+        if local_stroke:
+            if local_stroke not in allowed_colors:
+                return Status.FAIL, f"<{tag}> has non-black stroke '{local_stroke}'."
+
+            if not local_fill and current_fill == 'black':
+                return Status.REVIEW, f"<{tag}> has implicit fill (renders black because no parent sets 'none')."
+
+            if current_fill not in allowed_colors:
+                return Status.FAIL, f"<{tag}> resolves to unauthorized fill '{current_fill}'. Expected 'none' or black."
+
+        for child in el:
+            stack.append((child, current_fill))
+
     return Status.PASS, "Fill states are compliant."
 
 
