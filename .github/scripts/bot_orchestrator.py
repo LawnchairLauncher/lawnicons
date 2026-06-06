@@ -82,8 +82,11 @@ def get_changed_drawables(base_ref: str) -> list[str]:
                 drawables.append(match.group(1))
     return drawables
 
-def run_linter(script_path: Path, args: list[str]) -> str:
+def run_linter(script_path: Path, args: list[str], accepted_exit_codes: set[int] | None = None) -> str:
     """Runs a linter script and returns its stdout."""
+    if accepted_exit_codes is None:
+        accepted_exit_codes = {0}
+
     try:
         child_env = os.environ.copy()
         child_env["PYTHONUTF8"] = "1"
@@ -100,7 +103,7 @@ def run_linter(script_path: Path, args: list[str]) -> str:
             env=child_env,
         )
 
-        if result.returncode != 0:
+        if result.returncode not in accepted_exit_codes:
             error_output = result.stderr or result.stdout or "No output captured."
             return (
                 f"CRITICAL_ERROR: {script_path.name} exited with code "
@@ -205,13 +208,18 @@ def collect_final_report(base_ref: str) -> str:
     # 2. Run Name Checker (only on changed drawables)
     print("Checking appfilter.xml consistency...")
     changed_drawables = get_changed_drawables(base_ref)
-    name_checker_args = [str(APPFILTER_PATH), str(DRAWABLES_DIR)]
+    name_checker_args = [
+        "--appfilter", str(APPFILTER_PATH),
+        "--drawables-dir", str(DRAWABLES_DIR),
+        "--format", "compact",
+    ]
     if changed_drawables:
         drawable_flag_args = name_checker_args + ["--changed-drawables"]
         for drawable_chunk in chunk_for_command(changed_drawables, drawable_flag_args):
             name_errors = run_linter(
                 NAME_CHECKER_PATH,
                 drawable_flag_args + drawable_chunk,
+                accepted_exit_codes={0, 1},
             )
             if name_errors:
                 all_errors.append(name_errors)
