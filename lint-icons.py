@@ -142,18 +142,37 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> tuple[Status, str]
         return Status.PASS, "Skipped transparency check."
     if ctx.xml_tree is None:
         return Status.FAIL, "XML missing, cannot check transparency."
-    forbidden = ['opacity', 'fill-opacity',
-                 'stroke-opacity', 'stop-opacity', 'filter', 'style']
+
+    forbidden_attrs = ['opacity', 'fill-opacity', 'stroke-opacity', 'stop-opacity', 'filter']
+    forbidden_style_props = set(forbidden_attrs)
+
     for el in ctx.xml_tree.iter():
-        for attr in forbidden:
+        tag = el.tag.split('}')[-1]
+
+        for attr in forbidden_attrs:
             val = el.get(attr)
-            if val:
-                if 'opacity' in attr and val in ['1', '1.0']:
+            if not val:
+                continue
+
+            normalized = val.strip().lower()
+            if 'opacity' in attr and normalized in {'1', '1.0'}:
+                continue
+
+            return Status.FAIL, f"Forbidden effect/transparency '{attr}' in <{tag}>"
+
+        style_val = el.get('style')
+        if style_val:
+            style_map = parse_style_attribute(style_val)
+            for prop, value in style_map.items():
+                if prop not in forbidden_style_props:
                     continue
-                if attr == 'style' and 'opacity:1' in val.replace(' ', ''):
+
+                normalized = value.strip().lower()
+                if 'opacity' in prop and normalized in {'1', '1.0'}:
                     continue
-                tag = el.tag.split('}')[-1]
-                return Status.FAIL, f"Forbidden effect/transparency '{attr}' in <{tag}>"
+
+                return Status.FAIL, f"Forbidden effect/transparency '{prop}' in style on <{tag}>"
+
     return Status.PASS, "No transparency found."
 
 
