@@ -480,12 +480,12 @@ class CompactOutput(OutputHandler):
         if report.error:
             # Handle catastrophic file errors (e.g. unreadable)
             self.dest.write(
-                f"{report.file_path}: CRITICAL_ERROR ({report.error}) \n")
+                f"{Path(report.file_path).name}: CRITICAL_ERROR ({report.error}) \n")
             self.failed_count += 1
         elif failed_ids:
             # Sort IDs for consistent output
             ids_str = ", ".join(sorted(set(failed_ids)))
-            self.dest.write(f"{report.file_path}: {ids_str} \n")
+            self.dest.write(f"{Path(report.file_path).name}: {ids_str} \n")
             self.failed_count += 1
 
     def finish(self):

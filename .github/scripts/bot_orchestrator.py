@@ -211,7 +211,7 @@ def collect_final_report(base_ref: str) -> str:
     name_checker_args = [
         "--appfilter", str(APPFILTER_PATH),
         "--drawables-dir", str(DRAWABLES_DIR),
-        "--format", "compact",
+        "--format", "text",
     ]
     if changed_drawables:
         drawable_flag_args = name_checker_args + ["--changed-drawables"]
@@ -229,41 +229,73 @@ def collect_final_report(base_ref: str) -> str:
     return "\n".join(all_errors).strip()
 
 
-def parse_report_by_file(final_report: str) -> dict[str, list[str]]:
-    error_map: dict[str, list[str]] = {}
+def parse_report_by_file(final_report: str) -> dict[str, dict[str, object]]:
+    error_map: dict[str, dict[str, object]] = {}
     current_file: str | None = None
+    code_pattern = re.compile(r"^[A-Za-z]+\d+$")
+
+    def ensure_bucket(filename: str) -> dict[str, object]:
+        if filename not in error_map:
+            error_map[filename] = {
+                "lint_icons_codes": set(),
+                "name_checker_messages": [],
+                "other_messages": [],
+            }
+        return error_map[filename]
+
+    def add_unique_message(bucket: dict[str, object], key: str, message: str) -> None:
+        if not message:
+            return
+        values = bucket.get(key)
+        if isinstance(values, list) and message not in values:
+            values.append(message)
 
     for raw_line in final_report.splitlines():
-        print(raw_line)
         line = raw_line.strip()
         if not line:
             continue
 
-        # Only first two ':' are structural: meta : info[:rest...]
-        parts = [p.strip() for p in line.split(":", 2)]
+        file_parts = [p.strip() for p in line.split(":", 1)]
+        if len(file_parts) == 2 and file_parts[0].lower().endswith(".svg"):
+            current_file = file_parts[0]
+            bucket = ensure_bucket(current_file)
+            payload = file_parts[1].strip()
+            if not payload:
+                continue
 
-        # No separator -> continuation
-        if len(parts) == 1:
-            if current_file is not None:
-                error_map[current_file].append(normalize_issue_message(parts[0]))
+            # lint-icons compact format: "icon.svg: C01, C05"
+            payload_tokens = [token.strip() for token in payload.split(",") if token.strip()]
+            if payload_tokens and all(code_pattern.fullmatch(token) for token in payload_tokens):
+                cast_codes = bucket["lint_icons_codes"]
+                if isinstance(cast_codes, set):
+                    for token in payload_tokens:
+                        normalized = normalize_issue_message(token)
+                        if normalized.isdigit():
+                            cast_codes.add(normalized)
+                continue
+
+            # name-checker text format: "icon.svg: NR03: Rename: ..."
+            finding_parts = [p.strip() for p in payload.split(":", 1)]
+            if len(finding_parts) == 2 and code_pattern.fullmatch(finding_parts[0]):
+                add_unique_message(bucket, "name_checker_messages", finding_parts[1])
+                continue
+
+            normalized = normalize_issue_message(payload)
+            if normalized.isdigit():
+                cast_codes = bucket["lint_icons_codes"]
+                if isinstance(cast_codes, set):
+                    cast_codes.add(normalized)
+            else:
+                add_unique_message(bucket, "other_messages", payload)
             continue
 
-        meta = parts[0]
-        info = parts[1]
-        if len(parts) == 3:
-            # Keep all remaining ':' inside message body
-            info = f"{info}: {parts[2]}".strip()
-
-        # Start a new file block when meta is an svg path
-        if meta.lower().endswith(".svg"):
-            current_file = meta
-            error_map.setdefault(current_file, [])
-            if info:
-                error_map[current_file].append(normalize_issue_message(info))
-        elif current_file is not None:
-            # Non-file meta lines are continuation details for current file
-            combined = f"{meta}: {info}" if info else meta
-            error_map[current_file].append(normalize_issue_message(combined))
+        if current_file is not None:
+            bucket = ensure_bucket(current_file)
+            continuation_parts = [p.strip() for p in line.split(":", 1)]
+            if len(continuation_parts) == 2 and code_pattern.fullmatch(continuation_parts[0]):
+                add_unique_message(bucket, "name_checker_messages", continuation_parts[1])
+            else:
+                add_unique_message(bucket, "other_messages", line)
 
     return error_map
 
@@ -271,15 +303,33 @@ def parse_report_by_file(final_report: str) -> dict[str, list[str]]:
 def build_comment_body(final_report: str) -> str:
     error_map = parse_report_by_file(final_report)
     comment_body = "**Common issues**\n\n"
+
     if not error_map:
         comment_body += f"{final_report}\n\n{BOT_SIGNATURE}"
         return comment_body
 
-    for filename, issues in sorted(error_map.items()):
+    for filename in sorted(error_map.keys()):
+        bucket = error_map[filename]
+        codes = bucket.get("lint_icons_codes", set())
+        name_messages = bucket.get("name_checker_messages", [])
+        other_messages = bucket.get("other_messages", [])
+
         comment_body += f"{filename}\n"
-        for issue in issues:
-            comment_body += f"{issue}\n"
+
+        if isinstance(codes, set) and codes:
+            sorted_codes = sorted(codes, key=lambda x: int(x))
+            comment_body += f"{', '.join(sorted_codes)}\n"
+
+        if isinstance(name_messages, list):
+            for message in name_messages:
+                comment_body += f"{message}\n"
+
+        if isinstance(other_messages, list):
+            for message in other_messages:
+                comment_body += f"{message}\n"
+
         comment_body += "\n"
+
     comment_body += f"{BOT_SIGNATURE}"
     return comment_body
 
