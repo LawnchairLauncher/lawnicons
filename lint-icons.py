@@ -560,7 +560,7 @@ def analyze_file(filepath_str: str, max_speed: Speed, exceptions: Dict[str, List
 
 def main():
     parser = argparse.ArgumentParser(description="SVG Linter & Optimizer")
-    parser.add_argument("input", help="SVG file or directory")
+    parser.add_argument("inputs", nargs="+", help="One or more SVG files and/or directories")
     parser.add_argument("--verbose", action="store_true",
                         help="Show all checks, including PASS")
     parser.add_argument("--format", choices=OUTPUT_FACTORIES.keys(),
@@ -594,11 +594,24 @@ def main():
     }
     max_speed = speed_map[args.speed]
 
-    input_path = Path(args.input)
-    if input_path.is_file():
-        files = [str(input_path)]
-    else:
-        files = [str(p) for p in input_path.rglob("*.svg")]
+    files: List[str] = []
+    seen: set[str] = set()
+    for raw_input in args.inputs:
+        input_path = Path(raw_input)
+        if input_path.is_file():
+            candidates = [input_path]
+        elif input_path.is_dir():
+            candidates = list(input_path.rglob("*.svg"))
+        else:
+            print(f"Input not found: {input_path}")
+            sys.exit(2)
+
+        for candidate in candidates:
+            candidate_str = str(candidate)
+            if candidate_str in seen:
+                continue
+            seen.add(candidate_str)
+            files.append(candidate_str)
 
     if not files:
         print("No SVG files found.")
