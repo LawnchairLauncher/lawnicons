@@ -18,3 +18,4 @@ a_and_w.svg | A&amp;W
 ### Common issuess
 ![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)
 
+<!-- icon-checklist-posted -->
