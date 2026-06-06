@@ -1,13 +1,16 @@
 name: Icon Linter
 
 on:
-  pull_request:
-    paths:
-      - 'svgs/*.svg'
-      - 'app/assets/appfilter.xml'
+  # Lint icons after commenting checklist
+  workflow_run:
+    workflows: [ "Comment icon checklist" ]
+    types: [ completed ]
 
 jobs:
   lint:
+    if: >
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request_target'
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -30,5 +33,5 @@ jobs:
       - name: Run Linter and Post Comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.number }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
         run: python .github/scripts/bot_orchestrator.py
