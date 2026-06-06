@@ -399,7 +399,9 @@ class ConsoleOutput(OutputHandler):
         # 1. Handle Catastrophic Errors
         if report.error:
             print(
-                f"{self.COLORS[Status.FAIL]}ERR{self.RESET} {report.file_path}: {report.error}")
+                f"{self.COLORS[Status.FAIL]}ERR{self.RESET} {report.file_path}: {report.error}",
+                file=self.dest,
+            )
             self.failed_count += 1
             return
 
@@ -417,18 +419,17 @@ class ConsoleOutput(OutputHandler):
             return
 
         # 3. Printing Logic
-        print(f"\n{report.file_path}")
-        for r in report.results:
+        print(f"\n{report.file_path}", file=self.dest)
             if not self.verbose and r.status == Status.PASS:
                 continue
 
-            color = self.COLORS.get(r.status, "")
-            timing = f" ({r.duration_ms:.2f}ms)" if self.verbose else ""
             print(
-                f"  [{color}{r.status.name:6}{self.RESET}] [{r.category}: {r.id}] {r.message}{timing}")
+                f"  [{color}{r.status.name:6}{self.RESET}] [{r.category}: {r.id}] {r.message}{timing}",
+                file=self.dest,
+            )
 
     def finish(self):
-        print(f"\nAnalysis complete. Failed files: {self.failed_count}")
+        print(f"\nAnalysis complete. Failed files: {self.failed_count}", file=self.dest)
 
 
 class JsonOutput(OutputHandler):
@@ -618,9 +619,9 @@ def main():
         sys.exit(0)
 
     out_stream = sys.stdout
+    out_stream = sys.stdout
     if args.output_file:
-        out_stream = open(args.output_file, 'w')
-
+        out_stream = open(args.output_file, 'w', encoding='utf-8')
     handler = OUTPUT_FACTORIES[args.format](
         out_stream, verbose=args.verbose)
 
@@ -628,10 +629,11 @@ def main():
 
     # imap_unordered is crucial for large file counts: it yields results as they finish.
     # We use a chunksize to reduce IPC overhead.
-    chunk_size = max(1, len(files) // (args.workers * 4))
+    workers = max(1, args.workers)
 
-    with ProcessPoolExecutor(max_workers=args.workers) as executor:
-        # Pass max_speed to every worker
+    chunk_size = max(1, len(files) // (workers * 4))
+
+    with ProcessPoolExecutor(max_workers=workers) as executor:
         # We use a partial or a list comprehension approach
         futures = executor.map(
             analyze_file,

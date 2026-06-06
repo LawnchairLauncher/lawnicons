@@ -365,8 +365,7 @@ def publish_to_github(final_report: str) -> int:
         print("All checks passed.")
         if bot_comment:
             print("Deleting old comment.")
-            bot_comment.edit("All checks passed.")
-
+            bot_comment.edit(f"All checks passed.\n\n{BOT_SIGNATURE}")
         # Add "needs review" label if it's not there.
         if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
