@@ -26,7 +26,7 @@ androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-
 kotlinx-serialization-json = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0"
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit" }
-okhttp = "com.squareup.okhttp3:okhttp:5.3.2"
+okhttp = "com.squareup.okhttp3:okhttp:5.4.0"
 coil-compose = "io.coil-kt:coil-compose:2.7.0"
 coil-svg = "io.coil-kt:coil-svg:2.7.0"
 lazycolumn-scrollbar = "com.github.nanihadesuka:LazyColumnScrollbar:2.2.0"
