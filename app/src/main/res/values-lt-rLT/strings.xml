@@ -3,114 +3,114 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">Versija %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Atgal</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">Ieškoti tarp %d piktogramų</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Išrinkti piktogramą</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Ieškoti</string>
     <!-- Accessibility label for the clear search button -->
-    <string name="clear">Clear</string>
+    <string name="clear">Išvalyti</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">%s Nerasta</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">Naujos piktogramos versijoje v%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Piktogramų užklausų suvestinė</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">Piktogramų užklausa</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Palaikomos visos piktogramos. Apie logotipų pakeitimus praneškite per „GitHub“ užklausas.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Piktogramų užklausos priimamos ribotą laiką po kiekvieno naujo „Lawnicons“ leidinio.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Apie</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Prisidėjo</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Pagrindiniai prisidėjusieji</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Peržiūrėti visus prisidėjusius</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Pagrindinė programa</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">Piktogramos</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktūra</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Ypatinga padėka</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Už Įkvėpimą sukuriant programėlės piktogramą</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Už programos pavadinimą</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Atvirojo kodo licencijos</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Name</string>
+    <string name="name">Pavadinimas</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">Piešiamas objektas</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">Identifikatorius</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Susieti identifikatoriai</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Jei piktograma yra pasenusi dėl logotipo atnaujinimo, sukurkite problemos užklausą „GitHub“ platformoje.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Peržiūrėti „GitHub“ platformoje</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">Pasidalinti informacija</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Trūkstamos piktogramos</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">Panaikinti pasirinkimą</string>
     <!-- Button to select all icons -->
     <string name="select_all">Pasirinkti visus</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Išsiųsti el. paštu</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Rodyti nustatymų langą</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Išskleista</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">Sutraukta</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">Jungiklis</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">Bendrinti failą</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">Išsaugoti failą</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Kopijuoti programų identifikatorius</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">Sėkmingai išsaugotas failas</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">Klaida išsaugant failą</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">Nepavyko sukurti užklausos failo</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">Nėra programos, galinčios atlikti šį veiksmą</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Copied text</string>
+    <string name="copied_text">Kopijuotas tekstas</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">New icons (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="new_icons">Naujos piktogramos (%1$s)</string>
+    <string name="action_menu_overflow_description">Daugiau nustatymų</string>
 </resources>
