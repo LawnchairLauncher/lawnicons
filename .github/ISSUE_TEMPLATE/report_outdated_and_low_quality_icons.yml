@@ -8,7 +8,10 @@ body:
         #### Before you start
         If an existing icon isn't applying automatically, [create a pull request instead](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons).
 
-        #### Outdated icons
+        #### How to find the current icon and app name  
+        Search [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). In the line `drawable="..." name="..."`: `drawable` — icon name, `name` — app name.
+        
+        #### Sample response for outdated icons
         When an app's design changes, but Lawnicons still shows the old icon.  
 
         ```
@@ -17,16 +20,13 @@ body:
         New: https://cdn.cms-twdigitalassets.com/content/dam/about-twitter/x/brand-toolkit/logo-black.png.twimg.2560.png  
         ```
         
-        #### Low-quality icons
+        #### Sample response for low-quality icons
         Icons don't follow [the Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md) or are inconsistent with other icons.  
 
         ```
         https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg
         Wrong color.
         ```
-        
-        #### How to find the current icon and app name  
-        Search [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). In the line `drawable="..." name="..."`: `drawable` — icon name, `name` — app name.
 
   - type: textarea
     id: outdated-or-low-quality-icon-list
