@@ -49,6 +49,13 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 [Open Collective](https://opencollective.com/lawnchair) • [GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
+### Token of appreciation
+<div align="left">
+    <a href="https://store.steampowered.com/wishlist/id/x9136/?sort=price">
+        <img alt="x9136 • Steam Wishlist" src="https://img.shields.io/badge/x9136_•_Steam_Wishlist-2a475e?logo=steam&logoColor=ffffff">
+    </a>
+</div>
+
 ## Contributing
 <div align="left">
     <a href="https://lawnicons-requests.vercel.app/">
