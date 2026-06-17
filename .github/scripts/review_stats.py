@@ -13,18 +13,6 @@ def parse_icon_stats(title):
     updates = sum(int(x) for x in re.findall(r"\+?(\d+)\s*updates?", title, re.IGNORECASE))
     return icons, links, updates
 
-def is_last_day_of_month():
-    tomorrow = datetime.now(timezone.utc).replace(day=1).replace(month=datetime.now(timezone.utc).month % 12 + 1)
-    if datetime.now(timezone.utc).month == 12:
-        tomorrow = tomorrow.replace(year=datetime.now(timezone.utc).year + 1, month=1)
-    last_day = (tomorrow - timedelta(days=1)).day
-    return datetime.now(timezone.utc).day == last_day
-
-# Only run on last day of month (unless dispatch)
-if not os.getenv("GITHUB_EVENT_NAME") == "workflow_dispatch" and not is_last_day_of_month():
-    print("Not the last day of month. Skipping.")
-    exit(0)
-
 now = datetime.now(timezone.utc)
 year = now.year
 quarter = (now.month - 1) // 3 + 1

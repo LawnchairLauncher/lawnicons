@@ -2,7 +2,7 @@ name: Create review issue
 
 on:
   schedule:
-    - cron: '0 0 28-31 * *'
+    - cron: '0 0 * * 5'
   workflow_dispatch:
 
 permissions:
