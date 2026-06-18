@@ -78,7 +78,7 @@ if is_quarter_end:
 body = body.replace('"', '\\"')
 
 # Find or create issue
-issues_json = run(f'gh issue list --repo LawnchairLauncher/lawnicons --search "{marker}" --state open --json number,body --limit 1')
+issues_json = run(f'gh issue list --repo LawnchairLauncher/lawnicons --search "{marker}" --state all --json number,body --limit 1')
 issues = json.loads(issues_json) if issues_json else []
 issue_number = issues[0]["number"] if issues else None
 
