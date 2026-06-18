@@ -13,7 +13,7 @@ jobs:
     outputs:
       skip_steps: ${{ steps.filter.outputs.workflows == 'false' }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: true
           fetch-depth: 0
@@ -39,7 +39,7 @@ jobs:
     if: needs.check-paths.outputs.skip_steps != 'true'
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - uses: actions/setup-java@v5
@@ -72,7 +72,7 @@ jobs:
     needs: check-paths
     if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - uses: actions/setup-java@v5
@@ -90,7 +90,7 @@ jobs:
     needs: check-paths
     if: needs.check-paths.outputs.skip_steps != 'true'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: true
       - uses: actions/setup-java@v5
@@ -105,7 +105,7 @@ jobs:
     needs: [ build-debug-apk, run-unit-tests, check-style, check-paths ]
     if: always() && needs.check-paths.result == 'success'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           submodules: true
           fetch-depth: 0
@@ -140,7 +140,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/download-artifact@v8
