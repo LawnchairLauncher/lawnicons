@@ -56,14 +56,14 @@ jobs:
             if (!found) core.warning("Checklist comment not found before timeout; continuing anyway.");
 
       - name: Checkout trusted base code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.event.pull_request.base.sha }}
           path: trusted
           fetch-depth: 0 # Needed to compare with base branch
 
       - name: Checkout PR merge snapshot
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
           path: pr
