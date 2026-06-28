@@ -1,5 +1,4 @@
-# TODO: Add signing key and build app bundle
-name: Build release APK
+name: Build release APK and bundle
 
 on:
   workflow_dispatch:
@@ -43,6 +42,45 @@ jobs:
         with:
           name: Release APK
           path: app/build/outputs/apk/app/release/*.apk
+
+  build-release-bundle:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: true
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'zulu'
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-encryption-key: Da25KUVSE5jbGds2zXmfXw==
+      - name: Write play store sign info
+        if: github.event.repository.fork == false
+        env:
+          KEYSTORE_PLAY: ${{ secrets.KEYSTORE_PLAY }}
+          KEYSTORE_PASSWORD_PLAY: ${{ secrets.KEYSTORE_PASSWORD_PLAY }}
+          KEY_ALIAS_PLAY: ${{ secrets.KEY_ALIAS_PLAY }}
+          KEY_PASSWORD_PLAY: ${{ secrets.KEY_PASSWORD_PLAY }}
+        run: |
+          if [ ! -z "$KEYSTORE_PLAY" ]; then
+            echo storePassword="$KEYSTORE_PASSWORD_PLAY" >> keystore.properties
+            echo keyAlias="$KEY_ALIAS_PLAY" >> keystore.properties
+            echo keyPassword="$KEY_PASSWORD_PLAY" >> keystore.properties
+            echo storeFile="${{ github.workspace }}/key.jks" >> keystore.properties
+            echo "$KEYSTORE_PLAY" | base64 --decode > "${{ github.workspace }}/key.jks"
+          fi
+      - name: Assign needed environment variables
+        run: echo "CUSTOM_TAG=${{ github.event.inputs.customTag }}" >> $GITHUB_ENV
+      - name: Build release app bundle
+        run: ./gradlew clean app:bundlePlay
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: Release App Bundle
+          path: app/build/outputs/bundle/release/*.aab
 
   send-notifications:
     runs-on: ubuntu-latest
