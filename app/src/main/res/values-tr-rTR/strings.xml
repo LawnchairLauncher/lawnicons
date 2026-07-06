@@ -9,7 +9,7 @@
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">%d simgeler arasına arayın</string>
+    <string name="search_bar_hint">%d simgeler arasında arayın</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">Bir simge seçin</string>
     <!-- Accessibility label for the search icon -->
@@ -25,7 +25,7 @@
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Simge isteği panosu</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">Simge talep et</string>
     <!-- Snackbar content -->
@@ -41,7 +41,7 @@
     <!-- Core Contributors label -->
     <string name="core_contributors">Katkıda bulunanlar</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">Bürün katkıda bulunanları gör</string>
+    <string name="see_all_contributors">Katkıda bulunanların tümünü gör</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
     <string name="contribution_core">Çekirdek uygulama</string>
@@ -64,9 +64,9 @@
     <!-- Label for the drawable resource name -->
     <string name="drawable">Çizilebilir</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">Kimlik</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Eşlenmiş ID\'ler</string>
+    <string name="mapped_components">Eşlenmiş kimlikler</string>
     <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">Simge, marka yenileme nedeniyle güncelliğini yitirmişse GitHub\'da bir issue oluşturun.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
@@ -82,7 +82,7 @@
     <string name="select_all">Tümünü seç</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">E-posta gönder</string>
     <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Seçenekler menüsünü göster</string>
     <!-- Content description for the expanded state of a toggle button -->
@@ -97,7 +97,7 @@
     <!-- Option to save the icon request to a file -->
     <string name="save_file">Dosyayı kaydet</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Uygulama ID\'lerini kopyala</string>
+    <string name="copy_components">Uygulama kimliklerini kopyala</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Dosya başarıyla kaydedildi</string>
@@ -112,5 +112,5 @@
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Yeni simgeler (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="action_menu_overflow_description">Daha fazla</string>
 </resources>
