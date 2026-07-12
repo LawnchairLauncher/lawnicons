@@ -52,7 +52,6 @@
   <!-- Lawnicons -->
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MainActivity}" drawable="mono" name="#mono" />
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MonoInstallerActivity}" drawable="mono" name="#mono" />
-  <item component="ComponentInfo{com.dek.compass/com.dek.compass.ui.activity.MainActivity}" drawable="compass_synapsetech" name="Compass" />
   <item component="ComponentInfo{jp.co.a_tm.android.launcher/jp.co.a_tm.android.launcher.Launcher}" drawable="plus_home" name="+HOME" />
   <item component="ComponentInfo{jp.co.a_tm.android.launcher/jp.co.a_tm.android.launcher.theme.mypage.MyPageActivity}" drawable="plus_home_my_page" name="+HOME My Page" />
   <item component="ComponentInfo{jp.co.a_tm.android.launcher/jp.co.a_tm.android.launcher.theme.ThemesActivity}" drawable="plus_home_store" name="+HOME Store" />
@@ -2550,6 +2549,8 @@
   <item component="ComponentInfo{com.maleo.bussimulatorid/com.membo.MainActivity}" drawable="bus_simulator_indonesia" name="Bus Simulator Indonesia" />
   <item component="ComponentInfo{com.maleo.hendra.channel/com.hendrachannel.MainActivity}" drawable="bus_simulator_indonesia" name="Bus Simulator Indonesia" />
   <item component="ComponentInfo{hearsilent.busplus/hearsilent.busplus.activity.SplashActivity}" drawable="bus_plus" name="Bus+" />
+  <item component="ComponentInfo{br.com.buser.AppBuser/br.com.buser.SplashActivity}" drawable="buser" name="Buser" />
+  <item component="ComponentInfo{br.com.buser.AppBuser/br.com.buser.AppBuser.splash.SplashActivity}" drawable="buser" name="Buser" />
   <item component="ComponentInfo{com.appgenix.bizcal/com.appgenix.bizcal.LaunchActivity}" drawable="business_calendar" name="Business Calendar" />
   <item component="ComponentInfo{de.hafas.android.db.business/de.bahn.dbtickets.ui.DBNavLauncherActivity}" drawable="business_db_navigator" name="Business DB Navigator" />
   <item component="ComponentInfo{pl.mobicore.mobilempk/pl.mobicore.mobilempk.ui.SplashScreen}" drawable="busnavi" name="BusNavi" />
@@ -3623,6 +3624,7 @@
   <item component="ComponentInfo{photoeditor.layout.collagemaker/com.google.android.archive.ReactivateActivity}" drawable="collage_maker" name="Collage Maker" />
   <item component="ComponentInfo{com.collectrinc.collectr/com.collectrinc.collectr.MainActivity}" drawable="collectr" name="Collectr" />
   <item component="ComponentInfo{com.jura.coloring.page/com.unity3d.player.UnityPlayerActivity}" drawable="color_asmr" name="Color ASMR" />
+  <item component="ComponentInfo{jp.co.goodroid.hyper.puzzle.colorblockbuilder/com.unity3d.player.UnityPlayerActivity}" drawable="color_block_builder" name="Color Block Builder" />
   <item component="ComponentInfo{theindusdeveloper.com.colorcamera/com.theindusdeveloper.colorcamera.MainActivity}" drawable="color_changing_camera" name="Color Changing Camera" />
   <item component="ComponentInfo{com.socialnmobile.hd.flashlight/com.socialnmobile.hd.flashlight.Flashlight}" drawable="color_flashlight" name="Color Flashlight" />
   <item component="ComponentInfo{com.loomatix.colorgrab/com.loomatix.colorgrab.SplashActivity}" drawable="color_grab" name="Color Grab" />
@@ -3695,6 +3697,7 @@
   <item component="ComponentInfo{de.commerzbanking.mobil/com.neugelb.banking.features.startup.SplashActivity}" drawable="commerzbank_banking" name="Commerzbank Banking" />
   <item component="ComponentInfo{com.superpaninbros.glng/com.superpaninbros.glng.ui.MainActivity}" drawable="companion_for_gltools" name="Companion for GLTools" />
   <item component="ComponentInfo{devsimon.recipe.newworld/devsimon.recipe.newworld.Menu}" drawable="companion_for_new_world" name="Companion For New World" />
+  <item component="ComponentInfo{com.dek.compass/com.dek.compass.ui.activity.MainActivity}" drawable="compass_synapsetech" name="Compass" />
   <item component="ComponentInfo{app.melon.icompass/app.melon.icompass.CompassActivi}" drawable="generic_compass" name="Compass" />
   <item component="ComponentInfo{com.sprd.compass/com.sprd.compass.CompassActivity}" drawable="generic_compass" name="Compass" />
   <item component="ComponentInfo{com.vivo.compass/com.vivo.compass.CalibrationActivity}" drawable="generic_compass" name="Compass" />
@@ -6398,6 +6401,7 @@
   <item component="ComponentInfo{net.slions.fulguris.full.fdroid/fulguris.activity.IncognitoActivity}" drawable="fulguris" name="Fulguris" />
   <item component="ComponentInfo{apps.syrupy.fullbatterychargealarm/apps.syrupy.fullbatterychargealarm.MainActivity}" drawable="battery_calibration" name="Full Battery Charge Alarm" />
   <item component="ComponentInfo{com.agooday.fullscreengestures/com.agooday.fullscreengestures.MainActivity}" drawable="full_screen_gestures" name="Full Screen Gestures" />
+  <item component="ComponentInfo{in.fulldive.shell/com.fulldive.ui.OnboardingActivity}" drawable="fulldive_vr" name="Fulldive VR" />
   <item component="ComponentInfo{com.fun.mxw/io.dcloud.PandoraEntry}" drawable="fun_print" name="Fun Print" />
   <item component="ComponentInfo{com.avcrbt.funimate/com.avcrbt.funimate.feature.social.auth.StartActivity}" drawable="funimate" name="Funimate" />
   <item component="ComponentInfo{com.Funimation.FunimationNow/com.Funimation.FunimationNow.activities.FunLauncherActivity}" drawable="funimation" name="Funimation" />
@@ -11409,6 +11413,7 @@
   <item component="ComponentInfo{com.safaricom.mysafaricom/com.safaricom.mysafaricom.ui.main.MainActivity}" drawable="m_pesa_safaricom" name="MySafaricom" />
   <item component="ComponentInfo{au.gov.sa.my/au.gov.sa.my.MainActivity}" drawable="mysagov" name="mySAGOV" />
   <item component="ComponentInfo{de.santander.presentation/de.santander.presentation.launcher_831074a3b7d145936d0f5f6bd9d22c4dab85da4fe3b97b6d3be4262839725fb1}" drawable="santander" name="MySantander" />
+  <item component="ComponentInfo{in.gov.negd.myscheme/in.gov.negd.myscheme.ui.splash.SplashActivity}" drawable="myscheme" name="myScheme" />
   <item component="ComponentInfo{my.gov.onegovappstore.mysejahtera/my.gov.onegovappstore.mysejahtera.MainActivity}" drawable="mysejahtera" name="MySejahtera" />
   <item component="ComponentInfo{com.slt.selfcare/com.slt.selfcare.SplashActivity}" drawable="mobitel_selfcare" name="MySLT" />
   <item component="ComponentInfo{com.solaredge.homeowner/com.solaredge.homeowner.ui.SplashScreenActivity}" drawable="mysolaredge" name="mySolarEdge" />
@@ -12215,6 +12220,7 @@
   <item component="ComponentInfo{com.accordion.analogcam/com.lightcone.analogcam.activity.SplashActivity}" drawable="oldroll" name="OldRoll" />
   <item component="ComponentInfo{com.accordion.analogcam/com.min.n.MainActivity}" drawable="oldroll" name="OldRoll" />
   <item component="ComponentInfo{me.mikecroall.oledbuddy/me.mikecroall.oledbuddy.HomeActivity}" drawable="oledbuddy" name="OLEDBuddy" />
+  <item component="ComponentInfo{in.oliveboard.prep/in.oliveboard.prep.ui.component.splash.SplashScreenActivity}" drawable="oliveboard" name="Oliveboard" />
   <item component="ComponentInfo{vn.olm.olmapp/vn.olm.olmapp.MainActivity}" drawable="olm" name="OLM" />
   <item component="ComponentInfo{com.schibsted.bomnegocio.androidApp/com.olxbr.home.implementation.HomeActivity}" drawable="olx" name="OLX" />
   <item component="ComponentInfo{com.olx.pk/com.olx.pk.MainActivity}" drawable="olx" name="OLX" />
@@ -14627,6 +14633,7 @@
   <item component="ComponentInfo{com.tinybyteapps.robyte/com.tinybyteapps.robyte.MainActivity}" drawable="roku" name="RoByte" />
   <item component="ComponentInfo{com.mlk.rockamring/com.appmiral.splash.SplashActivity}" drawable="rock_am_ring" name="Rock am Ring" />
   <item component="ComponentInfo{com.picturerock.rock/com.glority.android.picturexx.splash.SplashActivity}" drawable="rock_identifier" name="Rock Identifier" />
+  <item component="ComponentInfo{com.dbbl.mbs.apps.main/com.dbbl.mbs.apps.main.view.activity.startup.AppStartupActivity}" drawable="rocket" name="Rocket" />
   <item component="ComponentInfo{com.Psyonix.RL2D/com.epicgames.ue4.SplashActivity}" drawable="rocket_league_sideswipe" name="Rocket League Sideswipe" />
   <item component="ComponentInfo{com.Psyonix.RL2D/com.epicgames.unreal.SplashActivity}" drawable="rocket_league_sideswipe" name="Rocket League Sideswipe" />
   <item component="ComponentInfo{com.truebill/com.truebill.MainActivity}" drawable="rocket_money" name="Rocket Money" />
@@ -17252,6 +17259,7 @@
   <item component="ComponentInfo{vn.com.techcombank.bb.app/com.techcombank.retail.DEFAULT}" drawable="techcombank" name="Techcombank" />
   <item component="ComponentInfo{com.technisat.multiplay.main/com.technisat.multiplay.main.TechniHomeStartActivity}" drawable="technisat_connect" name="TechniSat CONNECT" />
   <item component="ComponentInfo{com.transsion.tecnospot/com.transsion.tecnospot.newactivity.StartPageActivity}" drawable="tecno_spot" name="TECNO SPOT" />
+  <item component="ComponentInfo{br.com.tecnonutri.app/br.com.tecnonutri.app.activity.splash.SplashActivity}" drawable="tecnonutri" name="Tecnonutri" />
   <item component="ComponentInfo{com.ted.android/com.ted.android.view.activity.SplashScreenActivity}" drawable="ted" name="TED" />
   <item component="ComponentInfo{com.ted.android/com.ted.android.view.splash.SplashActivity}" drawable="ted" name="TED" />
   <item component="ComponentInfo{com.ted.android/com.ted.android.MainActivity}" drawable="ted" name="TED" />
@@ -19430,6 +19438,7 @@
   <item component="ComponentInfo{com.what3words.android/com.what3words.android.ui.main.MainActivity}" drawable="what3words" name="what3words" />
   <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.StartingScreenActivity}" drawable="whatauto" name="Whatauto" />
   <item component="ComponentInfo{com.guibais.whatsauto/com.guibais.whatsauto.HomeActivity}" drawable="whatauto" name="Whatauto" />
+  <item component="ComponentInfo{br.com.music.wlisten2.app/br.com.fabiano.developer.appmusic.Main}" drawable="whatlisten" name="Whatlisten" />
   <item component="ComponentInfo{com.whatnot_mobile/com.whatnot.MainActivity}" drawable="whatnot" name="Whatnot" />
   <item component="ComponentInfo{in.whatsaga.whatsapplongerstatus/in.whatsaga.whatsapplongerstatus.activities.StartupActivity}" drawable="whatsaga" name="WhatSaga" />
   <item component="ComponentInfo{com.whatsapp/com.whatsapp.Icon0}" drawable="whatsapp" name="WhatsApp" />
@@ -19707,6 +19716,8 @@
   <item component="ComponentInfo{com.wolt.android/com.wolt.android.activities.MainActivity}" drawable="wolt" name="Wolt" />
   <item component="ComponentInfo{com.wolt.android/com.wolt.android.activities.LauncherActivity}" drawable="wolt" name="Wolt" />
   <item component="ComponentInfo{com.wolt.courierapp/com.wolt.courierapp.MainActivity}" drawable="wolt" name="Wolt Courier Partner" />
+  <item component="ComponentInfo{co.com.myWom/co.com.myWom.MainActivity}" drawable="wom" name="WOM" />
+  <item component="ComponentInfo{cl.wom.transformacion.appwommobile/cl.wom.transformacion.appwommobile.enrolamiento.activity.SplashActivity}" drawable="wom" name="WOM" />
   <item component="ComponentInfo{com.bestweatherfor.bibleoffline_pt_mulher/com.bestweatherfor.bibleoffline_pt_ra.bibleoffline.splash.Splash}" drawable="generic_bible" name="Woman Bible" />
   <item component="ComponentInfo{com.womboai.wombodream/com.womboai.wombodream.MainActivity}" drawable="wombo_dream" name="WOMBO Dream" />
   <item component="ComponentInfo{id.bni.wondr/id.bni.maverick.MainActivity}" drawable="wondr_by_bni" name="wondr by BNI" />
@@ -20816,6 +20827,7 @@
   <item component="ComponentInfo{com.voyagegroup.kotobank/com.voyagegroup.kotobank.LaunchScreenActivity}" drawable="kotobank" name="コトバンク ~~ Kotobank" />
   <item component="ComponentInfo{com.daisojapan/com.locationvalue.ma2.app.SplashActivity}" drawable="daiso" name="ダイソー ~~ DAISO" />
   <item component="ComponentInfo{jp.hamitv.hamiand1/jp.hamitv.hamiand1.tver.ui.activities.MainActivity}" drawable="tver" name="ティーバー ~~ TVer" />
+  <item component="ComponentInfo{jp.go.digital.auth_and_sign/jp.go.digital.auth_and_sign.ui.main.MainActivity}" drawable="digital_authentication" name="デジタル認証 ~~ Digital Authentication" />
   <item component="ComponentInfo{jp.showa_shell_dmp.shellpass/jp.co.dropsystem.shell_android.MainActivity}" drawable="drive_on" name="ドライブオン ~~ Drive On" />
   <item component="ComponentInfo{numberplace.ohte/com.withprize.numpl.MainActivity}" drawable="generic_sudoku" name="ナンプレde懸賞 ~~ Sudoku de Sweepstakes" />
   <item component="ComponentInfo{jp.co.dwango.nicocas/jp.co.dwango.nicocas.ui.RootActivity}" drawable="niconico" name="ニコニコ ~~ Niconico" />
