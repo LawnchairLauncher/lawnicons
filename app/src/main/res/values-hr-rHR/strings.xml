@@ -3,70 +3,70 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">Verzija %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Nazad</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
     <string name="search_bar_hint">Search through %d icons</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Odaberite ikonu</string>
     <!-- Accessibility label for the search icon -->
-    <string name="search">Search</string>
+    <string name="search">Pretraži</string>
     <!-- Accessibility label for the clear search button -->
-    <string name="clear">Clear</string>
+    <string name="clear">Očisti</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
     <string name="no_items_found">%s not found</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">Nove ikone u v%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Nadzorna ploča za zatraživanje ikona</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">Zatražite ikone</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Sve su ikone podržane. Prijavite rebrandiranje putem Github issue-a.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Zatraživanje ikona otvara se na ograničeno vrijeme uz svako novo izdanje.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">O</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Prinosnici</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Glavni prinosnici</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Vidite sve prinosnike</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Glavna aplikacija</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">Ikone</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktura</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Posebna zahvala</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Za inspiraciju pri izradi ikone aplikacije</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Za imenovanje aplikacije</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Licence otvorenoga izvora</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Name</string>
+    <string name="name">Ime</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">Crtano</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">Identifikator</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Mapirani identifikatori</string>
     <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
