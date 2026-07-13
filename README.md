@@ -45,14 +45,14 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Supporting
 
 > [!IMPORTANT]
-> Support us on Lawnchair's Open Collective or its GitHub to help maintain Lawnicons, add new icons, and review PRs. Supporter icon requests receive higher priority.
+> Support us to help maintain Lawnicons, add new icons, and review PRs. Supporter icon requests receive higher priority.
 
 [Open Collective](https://opencollective.com/lawnchair) • [GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ## Contributing
 <div align="left">
     <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Community-requested icons" src="https://img.shields.io/badge/Community--requested%20icons-94009E?logo=vercel&logoColor=ffffff"></a>
+        <img alt="Icon request dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
     <a href="https://lawnchair.crowdin.com/lawnicons">
@@ -73,4 +73,4 @@ It's required to follow the Lawnicons design guidelines. Accepted contributions 
 
 `Open Lawnicons → Tap "Request icons" → Select and request icons`
 
-The only guaranteed way to get an icon added is to contribute it yourself.
+Feel free to learn the Lawnicons design guidelines and contribute icons.
