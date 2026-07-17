@@ -68,6 +68,7 @@ jobs:
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
           path: pr
           fetch-depth: 0 # Needed to compare with base branch
+          allow-unsafe-pr-checkout: true
 
       - name: Set up Python
         uses: actions/setup-python@v6
