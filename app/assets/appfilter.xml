@@ -1742,6 +1742,7 @@
   <item component="ComponentInfo{com.plumewifi.plume.iguana/com.plume.residential.ui.main.MainActivity}" drawable="bell_wi_fi" name="Bell Wi-Fi" />
   <item component="ComponentInfo{ru.bellinigroup.restaurantapp/ru.bellinigroup.restaurantapp.MainActivity}" drawable="bellini" name="BELLINI" />
   <item component="ComponentInfo{com.belo.android/com.belo.android.MainActivity}" drawable="belo" name="belo" />
+  <item component="ComponentInfo{nl.dcentralize.beltegoed.ben_nl/nl.dcentralize.beltegoed.ben_nl.MainActivity}" drawable="ben" name="Ben" />
   <item component="ComponentInfo{com.bennyco.app/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="benny_and_co" name="Benny &amp; Co." />
   <item component="ComponentInfo{com.bereal.ft/com.bereal.ft.MainActivity}" drawable="bereal" name="BeReal." />
   <item component="ComponentInfo{com.bereal.ft/bereal.app.MainActivity}" drawable="bereal" name="BeReal." />
@@ -8397,6 +8398,8 @@
   <item component="ComponentInfo{eu.iserv.webapp/eu.iserv.webapp.presentation.main.MainActivity}" drawable="iserv" name="IServ" />
   <item component="ComponentInfo{com.projectstar.ishredder.android.standard/com.protectstar.ishredder.activity.ActivityFirstlaunch}" drawable="ishredder" name="iShredder" />
   <item component="ComponentInfo{com.projectstar.ishredder.android.standard/com.protectstar.ishredder.firstlaunch.Firstlaunch}" drawable="ishredder" name="iShredder" />
+  <item component="ComponentInfo{nl.jool.isic/cz.synetech.app.presentation.MainActivity}" drawable="isic" name="ISIC" />
+  <item component="ComponentInfo{nl.jool.isic/cz.synetech.app.MainActivityISIC}" drawable="isic" name="ISIC" />
   <item component="ComponentInfo{pl.ising.player/com.ising.StartActivity}" drawable="ising" name="iSing" />
   <item component="ComponentInfo{islam.islamapp/islam.islamapp.presentation.mainactivity.MainActivity}" drawable="islamapp" name="IslamApp" />
   <item component="ComponentInfo{zad.com.islamqa/com.zadgroup.islamqa.MainActivity}" drawable="islamqa" name="islamQA" />
@@ -9657,6 +9660,7 @@
   <item component="ComponentInfo{com.anysoftkeyboard.languagepack.luxembourgish/com.anysoftkeyboard.languagepack.luxembourgish.MainActivity}" drawable="anysoftkeyboard" name="Luxembourgish for AnySoftKeyboard" />
   <item component="ComponentInfo{com.BenPaul.LiveWallShortcut/com.BenPaul.LiveWallShortcut.LiveWallshortcutActivity}" drawable="lwp_plus" name="LWP" />
   <item component="ComponentInfo{com.lb.lwp_plus/com.lb.lwp_plus.activities.main.MainActivity}" drawable="lwp_plus" name="LWP+" />
+  <item component="ComponentInfo{cn.toside.music.mobile/cn.toside.music.mobile.MainActivity}" drawable="lx_music" name="LX Music" />
   <item component="ComponentInfo{io.gitlab.coolreader_ng.lxreader.fdroid/io.gitlab.coolreader_ng.project_s.ReaderActivity}" drawable="lxreader" name="LxReader" />
   <item component="ComponentInfo{io.gitlab.coolreader_ng.lxreader.gplay/io.gitlab.coolreader_ng.project_s.ReaderActivity}" drawable="lxreader" name="LxReader" />
   <item component="ComponentInfo{fr.lyceeconnecte.mobile/com.ode.appe.SplashActivity}" drawable="lycee_connecte" name="Lycée Connecté" />
@@ -9759,6 +9763,7 @@
   <item component="ComponentInfo{io.github.huskydg.magisk/com.topjohnwu.magisk.ui.MainActivity}" drawable="magisk" name="Magisk Delta" />
   <item component="ComponentInfo{com.dergoogler.mmrl/com.dergoogler.mmrl.ui.activity.MainActivity}" drawable="magisk_module_repo_loader" name="Magisk Module Repo Loader" />
   <item component="ComponentInfo{com.dergoogler.mmrl/com.dergoogler.mmrl.MainActivity}" drawable="magisk_module_repo_loader" name="Magisk Module Repo Loader" />
+  <item component="ComponentInfo{nl.schoolmaster.magister.mobile/crc641c9ab02bb2548546.MainActivity}" drawable="magister" name="Magister" />
   <item component="ComponentInfo{com.google.android.apps.accessibility.magnifier/com.google.android.apps.accessibility.magnifier.home.HomeActivity}" drawable="magnifier" name="Magnifier" />
   <item component="ComponentInfo{com.msedcl.app/com.msedcl.callcenter.src.SplashActivity}" drawable="mahavitaran" name="Mahavitaran" />
   <item component="ComponentInfo{com.microsoft.mahjong/com.smokingguninc.engine.framework.SgiLauncherActivity}" drawable="generic_mahjong" name="Mahjong" />
@@ -12068,7 +12073,13 @@
   <item component="ComponentInfo{com.nu.production/br.com.nubank.app.valhalla.ValhallaSplashScreenActivity}" drawable="nubank" name="Nubank" />
   <item component="ComponentInfo{com.nu.production/br.com.nubank.app.LegacySplashActivity}" drawable="nubank" name="Nubank" />
   <item component="ComponentInfo{com.nu.production/br.com.nubank.app.LegacyUvSplashActivity}" drawable="nubank" name="Nubank" />
+  <item component="ComponentInfo{cn.nubia.deskclock.preset/zte.com.cn.alarmclock.activity.AlarmClockActivity}" drawable="nubia_clock" name="Nubia Clock" />
+  <item component="ComponentInfo{cn.nubia.contacts/cn.nubia.contacts.mainlist.PeopleActivity}" drawable="nubia_contacts" name="Nubia Contacts" />
   <item component="ComponentInfo{cn.nubia.myfile/zte.com.cn.filer.FileMgrActivity}" drawable="generic_files" name="Nubia File Manager" />
+  <item component="ComponentInfo{cn.nubia.gallery3d/cn.nubia.gallery3d.app.Gallery}" drawable="nubia_gallery" name="Nubia Gallery" />
+  <item component="ComponentInfo{cn.nubia.notepad.preset/cn.nubia.notepad.NoteListActivity}" drawable="nubia_notepad" name="Nubia NotePad" />
+  <item component="ComponentInfo{cn.nubia.contacts/cn.nubia.contacts.DialerActivity}" drawable="nubia_phone" name="Nubia Phone" />
+  <item component="ComponentInfo{cn.nubia.soundrecorder.preset/cn.zte.recorder.RecordHomeActivity}" drawable="nubia_voice_recorder" name="Nubia Voice Recorder" />
   <item component="ComponentInfo{br.com.easynvest.rendafixa/br.com.easynvest.rendafixa.features.splash.activity.SplashActivity}" drawable="nuinvest" name="NuInvest" />
   <item component="ComponentInfo{io.nuki/io.nuki.main.MainActivity}" drawable="nuki_smart_lock" name="Nuki Smart Lock" />
   <item component="ComponentInfo{io.nuki/io.nuki.ui.activity.MainActivity}" drawable="nuki_smart_lock" name="Nuki Smart Lock" />
@@ -13689,6 +13700,7 @@
   <item component="ComponentInfo{org.projectsolutus.pomozen/org.projectsolutus.pomozen.MainActivity}" drawable="pomozen" name="Pomozen" />
   <item component="ComponentInfo{com.pons.onlinedictionary/com.pons.onlinedictionary.splashscreen.SplashScreen}" drawable="pons_translate" name="Pons Translate" />
   <item component="ComponentInfo{com.billiards.city.pool.nation.club/org.cocos2dx.cpp.AppActivity}" drawable="pooking_billiards_city" name="Pooking - Billiards City" />
+  <item component="ComponentInfo{cn.gem.android/cn.gem.cpnt_startup.main.MainActivity}" drawable="popup" name="PopUp" />
   <item component="ComponentInfo{com.ss.popupWidget/com.ss.popupWidget.MainActivity}" drawable="popup_widget" name="Popup Widget" />
   <item component="ComponentInfo{com.ss.popupWidget/com.ss.popupWidget.PopupWidgetActivity}" drawable="popup_widget" name="Popup Widget" />
   <item component="ComponentInfo{com.aaronjwood.portauthority.free/com.aaronjwood.portauthority.activity.MainActivity}" drawable="port_authority" name="Port Authority" />
@@ -16551,6 +16563,7 @@
   <item component="ComponentInfo{com.ccssoftwareinc.splitscreenlauncher/com.ccssoftwareinc.splitscreenlauncher.SplashScreen}" drawable="split_screen" name="Split Screen" />
   <item component="ComponentInfo{any.splitscreen/any.splitscreen.ui.MainActivity}" drawable="split_screen" name="Split Screen" />
   <item component="ComponentInfo{com.bsquare.splitkaro/com.bsquare.splitkaro.MainActivity}" drawable="splitkaro" name="splitkaro" />
+  <item component="ComponentInfo{nl.wiebetaaltwat.webapp/com.wiebetaaltwat.MainActivity}" drawable="splitser" name="Splitser" />
   <item component="ComponentInfo{com.Splitwise.SplitwiseMobile/com.Splitwise.SplitwiseMobile.views.SplitwiseSplashScreen_}" drawable="splitwise" name="Splitwise" />
   <item component="ComponentInfo{com.Splitwise.SplitwiseMobile/com.Splitwise.SplitwiseMobile.views.SplitwiseSplashScreen}" drawable="splitwise" name="Splitwise" />
   <item component="ComponentInfo{com.toasterofbread.spmp/com.toasterofbread.spmp.MainActivity}" drawable="spmp" name="SpMp" />
