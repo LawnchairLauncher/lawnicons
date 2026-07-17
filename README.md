@@ -55,8 +55,8 @@ Lawnicons on the Play Store will install as a different app from other sources.
         <img alt="Icon request dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
-    <a href="https://lawnchair.crowdin.com/lawnicons">
-        <img alt="Lawnicons localization issue" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
+    <a href="https://github.com/LawnchairLauncher/lawnicons/issues/3546">
+        <img alt="Lawnicons localization" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
 ### Development
