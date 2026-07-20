@@ -3547,6 +3547,8 @@
   <item component="ComponentInfo{com.pranshulgg.clockmaster/com.pranshulgg.clockmaster.MainActivity}" drawable="desk_clock" name="Clock Master" />
   <item component="ComponentInfo{rk.android.app.clockwidget/rk.android.app.clockwidget.activity.HomeActivity}" drawable="clock_widget" name="Clock Widget" />
   <item component="ComponentInfo{com.bnyro.clock/com.bnyro.clock.ui.MainActivity}" drawable="generic_clock" name="Clock You" />
+  <item component="ComponentInfo{com.bnyro.clock/com.bnyro.clock.ui.MainActivityDefault}" drawable="generic_clock" name="Clock You" />
+  <item component="ComponentInfo{com.bnyro.clock/com.bnyro.clock.ui.MainActivityAlternative}" drawable="generic_clock" name="Clock You" />
   <item component="ComponentInfo{me.clockify.android/me.clockify.android.presenter.screens.main.MainActivity}" drawable="clockify" name="Clockify" />
   <item component="ComponentInfo{com.pengyou.cloneapp/com.pengyou.cloneapp.SplashActivity}" drawable="clone_app" name="Clone App" />
   <item component="ComponentInfo{com.srylain.CloneHero/com.unity3d.player.UnityPlayerActivity}" drawable="clone_hero" name="Clone Hero" />
@@ -4721,6 +4723,7 @@
   <item component="ComponentInfo{com.dropbox.android/com.dropbox.android.activity.DbxMainActivity}" drawable="dropbox" name="Dropbox" />
   <item component="ComponentInfo{com.dropbox.android/com.dropbox.android.activity.DropboxBrowser}" drawable="dropbox" name="Dropbox" />
   <item component="ComponentInfo{com.dropbox.android/com.dropbox.android.FileBrowser}" drawable="dropbox" name="Dropbox" />
+  <item component="ComponentInfo{com.dropbox.dash/com.dropbox.dash.auth.impl.view.AuthActivity}" drawable="dropbox" name="Dropbox Dash" />
   <item component="ComponentInfo{com.collegehumor.chdropout/tv.vhx.LauncherActivity}" drawable="dropout" name="Dropout" />
   <item component="ComponentInfo{com.languagedrops.drops.international/com.languagedrops.drops.international.MainActivity}" drawable="drops" name="Drops" />
   <item component="ComponentInfo{org.yoki.android.drops/org.yoki.android.buienalarm.activity.LaunchActivity}" drawable="buienalarm" name="Drops" />
@@ -6295,6 +6298,7 @@
   <item component="ComponentInfo{com.fox2code.mmm.fdroid/com.fox2code.mmm.MainActivity}" drawable="foxs_magisk_module_manager" name="Fox's Magisk Module Manager" />
   <item component="ComponentInfo{com.fox2code.mmm/com.fox2code.mmm.MainActivity}" drawable="foxs_magisk_module_manager" name="Fox's Magisk Module Manager" />
   <item component="ComponentInfo{com.fox.foxapp/com.fox.foxapp.ui.activity.LauncherLogActivity}" drawable="foxcloud" name="FoxCloud" />
+  <item component="ComponentInfo{com.fox.foxapp.two/com.fox.foxcloud.ui.view.main.new_register.LauncherActivity}" drawable="foxcloud" name="FoxCloud2.0" />
   <item component="ComponentInfo{com.foxit.mobile.pdf.lite/com.fuxin.app.frame.AppActivity}" drawable="foxit" name="Foxit" />
   <item component="ComponentInfo{com.foxit.mobile.pdf.lite/com.fx.app.ui.AppActivity}" drawable="foxit" name="Foxit" />
   <item component="ComponentInfo{nya.kitsunyan.foxydroid/nya.kitsunyan.foxydroid.MainActivity}" drawable="foxy_droid" name="Foxy Droid" />
@@ -10857,6 +10861,8 @@
   <item component="ComponentInfo{app.morphe.manager/app.revanced.manager.MainActivity_Dark_2}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Dark_2}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Default}" drawable="morphe" name="Morphe" />
+  <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Light_2}" drawable="morphe" name="Morphe" />
+  <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Light_3}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.revanced.manager.MainActivity_Dark_1}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.revanced.manager.MainActivity_Dark_3}" drawable="morphe" name="Morphe" />
   <item component="ComponentInfo{app.morphe.manager/app.morphe.manager.MainActivity_Dark_3}" drawable="morphe" name="Morphe" />
@@ -17118,6 +17124,7 @@
   <item component="ComponentInfo{com.github.catfriend1.syncthingandroid/com.nutomic.syncthingandroid.activities.MainActivity}" drawable="syncthing" name="Syncthing" />
   <item component="ComponentInfo{com.github.catfriend1.syncthingandroid/com.nutomic.syncthingandroid.activities.PhotoShootActivity}" drawable="syncthing" name="Syncthing" />
   <item component="ComponentInfo{com.github.catfriend1.syncthingfork/com.nutomic.syncthingandroid.activities.FirstStartActivity}" drawable="syncthing" name="Syncthing" />
+  <item component="ComponentInfo{com.github.catfriend1.syncthingfork/com.nutomic.syncthingandroid.onboarding.OnboardingActivity}" drawable="syncthing" name="Syncthing" />
   <item component="ComponentInfo{com.nutomic.syncthingandroid/com.nutomic.syncthingandroid.activities.FirstStartActivity}" drawable="syncthing" name="Syncthing" />
   <item component="ComponentInfo{com.nutomic.syncthingandroid/com.nutomic.syncthingandroid.activities.MainActivity}" drawable="syncthing" name="Syncthing" />
   <item component="ComponentInfo{com.github.catfriend1.syncthingandroid.debug/com.nutomic.syncthingandroid.activities.FirstStartActivity}" drawable="syncthing" name="Syncthing Debug" />
