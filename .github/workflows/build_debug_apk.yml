@@ -110,7 +110,7 @@ jobs:
           submodules: true
           fetch-depth: 0
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: '3.x'
       - name: Install Python packages
@@ -148,7 +148,7 @@ jobs:
           name: Debug APK
           path: artifacts/debug-apk
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: '3.x'
       - name: Export APK_NAME
