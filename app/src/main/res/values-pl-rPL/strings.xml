@@ -9,15 +9,15 @@
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Przeszukaj %d Ikon</string>
+    <string name="search_bar_hint">Przeszukaj %d ikon</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Wybierz ikonkę</string>
+    <string name="search_bar_icon_picker">Wybierz ikonę</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Szukaj</string>
     <!-- Accessibility label for the clear search button -->
     <string name="clear">Wyczyść</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">Nie znalezione było %s</string>
+    <string name="no_items_found">Nie znaleziono %s</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
     <string name="new_icons_in_version">Nowe ikony w v%1$s</string>
@@ -25,7 +25,7 @@
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Panel próśb o ikony</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">Poproś o ikony</string>
     <!-- Snackbar content -->
@@ -41,7 +41,7 @@
     <!-- Core Contributors label -->
     <string name="core_contributors">Główni współautorzy</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">Zobacz wszystkich Współtwórców</string>
+    <string name="see_all_contributors">Zobacz wszystkich współautorów</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
     <string name="contribution_core">Aplikacja bazowa</string>
@@ -53,11 +53,11 @@
     <!-- Special thanks label -->
     <string name="special_thanks">Specjalne podziękowania</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Za zainspirowanie ikony aplikacji.</string>
+    <string name="special_thanks_icon">Za zainspirowanie ikony aplikacji</string>
     <!-- Subtitle displayed below the user who named the app -->
     <string name="special_thanks_name">Za nazwanie aplikacji</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Podziękowanie</string>
+    <string name="acknowledgements">Licencje open-source</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
     <string name="name">Nazwa</string>
@@ -68,7 +68,7 @@
     <!-- Title for the section showing IDs mapped to an icon -->
     <string name="mapped_components">Zmapowane ID</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">Jeśli ikona jest przestarzała z powodu rebrandingu, utwórz problem na GitHubie.</string>
+    <string name="icon_info_outdated_warning">Jeśli ikona jest przestarzała z powodu rebrandingu, utwórz issue na GitHubie.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
     <string name="view_on_github">Zobacz na GitHubie</string>
     <!-- Share button on icon info popup -->
@@ -82,7 +82,7 @@
     <string name="select_all">Wybierz wszystko</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Wyślij e-mail</string>
     <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Pokaż opcje</string>
     <!-- Content description for the expanded state of a toggle button -->
@@ -112,5 +112,5 @@
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Nowe ikony (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="action_menu_overflow_description">Więcej opcji</string>
 </resources>
