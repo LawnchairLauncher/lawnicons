@@ -5,13 +5,13 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Versie %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Terug</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Zoeken door %d pictogrammen</string>
+    <string name="search_bar_hint">Zoeken door %d iconen</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Kies een pictogram</string>
+    <string name="search_bar_icon_picker">Kies een icoon</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Zoeken</string>
     <!-- Accessibility label for the clear search button -->
@@ -20,19 +20,19 @@
     <string name="no_items_found">%s niet gevonden</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">Nieuwe pictogrammen in v%1$s</string>
+    <string name="new_icons_in_version">Nieuwe iconen in v%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Icoon-verzoek dashboard</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Pictogrammen aanvragen</string>
+    <string name="request_icons">Iconen aanvragen</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">Alle pictogrammen worden ondersteund. Rapporteer herbranding via GitHub-issues.</string>
+    <string name="icon_requests_fulfilled">Alle Iconen worden ondersteund. Rapporteer herbranding via GitHub-issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Pictogramverzoeken zijn bij elke nieuwe Lawnicons-release slechts gedurende een beperkte tijd geopend.</string>
+    <string name="icon_requests_suspended">Icoonverzoeken zijn bij elke nieuwe Lawnicons-release slechts gedurende een beperkte tijd geopend.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Over</string>
     <!-- Contributors section of About page -->
@@ -53,9 +53,9 @@
     <!-- Special thanks label -->
     <string name="special_thanks">Bijzondere dank</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Voor inspiratie voor het app-pictogram</string>
+    <string name="special_thanks_icon">Voor inspiratie voor het app-icoon</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Voor het noemen van de app</string>
+    <string name="special_thanks_name">Voor het benoemen van de app</string>
     <!-- List item that links to the Acknowledgements page -->
     <string name="acknowledgements">Open-source licenties</string>
     <!-- Icon information popup sheet -->
@@ -66,7 +66,7 @@
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">In kaart gebrachte iconen</string>
     <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">Als het pictogram verouderd is, meld dan een probleem op GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
@@ -74,7 +74,7 @@
     <!-- Share button on icon info popup -->
     <string name="share">Details delen</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Ontbrekende pictogrammen</string>
+    <string name="missing_icons">Ontbrekende iconen</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
     <string name="clear_all">Selectie wissen</string>
@@ -82,7 +82,7 @@
     <string name="select_all">Alles selecteren</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Verstuur E-mail</string>
     <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Optieblad weergeven</string>
     <!-- Content description for the expanded state of a toggle button -->
@@ -97,7 +97,7 @@
     <!-- Option to save the icon request to a file -->
     <string name="save_file">Bestand opslaan</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Kopieer app-ID\'s</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
     <string name="toast_file_saved_successful">Bestand met succes opgeslagen</string>
@@ -111,6 +111,6 @@
     <string name="copied_text">Tekst gekopieerd</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">Nieuwe pictogrammen (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="new_icons">Nieuwe iconen (%1$s)</string>
+    <string name="action_menu_overflow_description">Meer opties</string>
 </resources>

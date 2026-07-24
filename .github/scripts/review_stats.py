@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect monthly review stats and update/create quarterly issue in Lawnicons repo."""
+"""Collect weekly review stats and update/create quarterly issue in Lawnicons repo."""
 import subprocess, json, re, os
 from datetime import datetime, timezone, timedelta
 
@@ -20,16 +20,19 @@ quarter_label = f"Q{quarter} {year}"
 marker = f"<!-- quarter: {quarter_label} -->"
 issue_title = f"{quarter_label} review stats"
 
-# Collect stats for all completed months in the quarter
 quarter_start_month = (quarter - 1) * 3 + 1
 all_month_rows = []
 
-for m in range(quarter_start_month, now.month):
+for m in range(quarter_start_month, now.month + 1):
     m_start = f"{year}-{m:02d}-01"
     if m == 12:
         m_end = f"{year+1}-01-01"
     else:
         m_end = f"{year}-{m+1:02d}-01"
+    
+    # For current month, use today as end date
+    if m == now.month:
+        m_end = now.strftime("%Y-%m-%d")
     
     cmd = f'gh pr list --repo LawnchairLauncher/lawnicons --state merged --json title,author,mergedAt,baseRefName --limit 1000 --search "base:develop merged:{m_start}..{m_end}"'
     prs = json.loads(run(cmd)) if run(cmd) else []
@@ -55,14 +58,13 @@ for m in range(quarter_start_month, now.month):
     print(f"Stats for {m_name}: {stats['icons']} icons, {stats['updates']} updates, {stats['link_only']} link-only")
 
 if not all_month_rows:
-    print("No completed months in this quarter yet. Skipping.")
+    print("No data for this quarter yet. Skipping.")
     exit(0)
 
-# Build table
 table_header = "| Month | Icons | Updates | Link-only | Total |\n|-------|-------|---------|-----------|-------|"
 table_rows = "\n".join(f"| {name} | {s['icons']} | {s['updates']} | {s['link_only']} | {total} |" for name, s, total in all_month_rows)
 
-is_quarter_end = now.month == quarter_start_month + 2  # March, June, September, December
+is_quarter_end = now.month == quarter_start_month + 2
 
 if is_quarter_end:
     total_icons = sum(s["icons"] for _, s, _ in all_month_rows)
@@ -77,7 +79,6 @@ if is_quarter_end:
 
 body = body.replace('"', '\\"')
 
-# Find or create issue
 issues_json = run(f'gh issue list --repo LawnchairLauncher/lawnicons --search "{marker}" --state all --json number,body --limit 1')
 issues = json.loads(issues_json) if issues_json else []
 issue_number = issues[0]["number"] if issues else None
