@@ -1,5 +1,5 @@
 [versions]
-agp = "9.3.0"
+agp = "9.3.1"
 kotlin = "2.4.10"
 androidx-nav3 = "1.1.4"
 androidx-lifecycle = "2.11.0"
@@ -32,7 +32,7 @@ coil-svg = "io.coil-kt:coil-svg:2.7.0"
 lazycolumn-scrollbar = "com.github.nanihadesuka:LazyColumnScrollbar:2.2.0"
 material-motion-compose-core = "io.github.fornewid:material-motion-compose-core:2.0.1"
 metrox-viewmodel-compose = { module = "dev.zacsweers.metro:metrox-viewmodel-compose", version.ref = "metro" }
-android-tools-sdk-common = "com.android.tools:sdk-common:32.3.0"
+android-tools-sdk-common = "com.android.tools:sdk-common:32.3.1"
 dom4j = "org.dom4j:dom4j:2.2.0"
 commons-io = "commons-io:commons-io:2.22.0"
 
@@ -52,5 +52,5 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 licensee = "app.cash.licensee:1.14.1"
-spotless = "com.diffplug.spotless:8.8.0"
+spotless = "com.diffplug.spotless:8.9.0"
 metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
