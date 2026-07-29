@@ -17,9 +17,9 @@
 
 <br/>
 
-Lawnicons is an icon pack developed by the Lawnchair team and supported by our community. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons, it can now be used on many launchers.
+Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings.
 
-Try Lawnicons on the latest version of Lawnchair. You can enable themed icons by going to `Home Settings → General → Icon Style` and choosing the desired option.
+You can enable themed icons in Lawnchair by going to `Home Settings → General → Icon Style`.
 
 [Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
 
@@ -45,14 +45,14 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Supporting
 
 > [!IMPORTANT]
-> Support us to help maintain Lawnicons, add new icons, and review PRs. Supporter icon requests receive higher priority.
+> Support us to help maintain Lawnicons. Supporter icon requests are fulfilled many times faster.
 
 [Open Collective](https://opencollective.com/lawnchair) • [GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ## Contributing
 <div align="left">
     <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Icon request dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
+        <img alt="Lawnicons requests dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
     <a href="https://github.com/LawnchairLauncher/lawnicons/issues/3546">
@@ -62,12 +62,12 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ### Development
 You're welcome to work on our issues. Contributors can get a priority icon request—write to us before you help.
 
-[Lawnicons developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
+[Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-It's required to follow the Lawnicons design guidelines. Accepted contributions include: new icons capped at 5 per pull request, missing app IDs, rebranding reports, and updates for outdated icons. 
+It's required to follow the Lawnicons design guidelines. It's strongly recommended to start with 1–2 simple icons to get familiar with the process. Accepted contributions include: new icons capped at 5 per pull request, missing app IDs, rebranding reports, and updates for outdated icons.
 
-[Lawnicons design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Report outdated and low-quality icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_and_low_quality_icons.yml)
+[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Easy-to-make icons](https://lawnicons-requests.vercel.app/?filters=easy) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
 
 ### Icon requests
 
