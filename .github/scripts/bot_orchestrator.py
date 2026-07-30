@@ -263,9 +263,8 @@ def build_comment_body(file_messages: dict[str, list[str]], is_first_review: boo
         lines.append(f"**{filename}**")
         lines.append(f"{', '.join(unique_msgs)}\n")
 
-    if is_first_review:
-        lines.append("### Common issues\n")
-        lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
+    lines.append("### Common issues\n")
+    lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
 
     lines.append(BOT_SIGNATURE)
     return "\n".join(lines)
