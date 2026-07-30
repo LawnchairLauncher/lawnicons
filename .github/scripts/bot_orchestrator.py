@@ -3,6 +3,7 @@ import argparse
 import re
 import subprocess
 import sys
+import json
 from pathlib import Path
 
 # --- Configuration ---
@@ -55,7 +56,10 @@ def get_changed_svgs(base_ref: str) -> list[str]:
     if result.returncode != 0:
         return []
     changed_files = result.stdout.strip().splitlines()
-    return [str(DRAWABLES_DIR / Path(f).name) for f in changed_files if f.endswith(".svg")]
+    return [
+        str(DRAWABLES_DIR / Path(f).name)
+        for f in changed_files if f.endswith(".svg") and (DRAWABLES_DIR / Path(f).name).exists()
+    ]
 
 def get_changed_drawables(base_ref: str) -> list[str]:
     """Extracts drawable names from added/modified lines in appfilter.xml diff."""
@@ -123,15 +127,6 @@ def find_bot_comment(pr):
     return None
 
 
-def normalize_issue_message(message: str) -> str:
-    """Convert internal check IDs (e.g. C01, Q04) to plain numbers."""
-    token = message.strip()
-    match = re.fullmatch(r"[A-Za-z]+(\d+)", token)
-    if match:
-        return str(int(match.group(1)))
-    return token
-
-
 def chunk_for_command(values: list[str], fixed_args: list[str], max_chars: int = 7000) -> list[list[str]]:
     """Split dynamic CLI values into safe chunks to avoid command-line length errors."""
     if not values:
@@ -192,149 +187,76 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
     return "main"
 
 
-def collect_final_report(base_ref: str) -> str:
+def collect_final_report(base_ref: str) -> dict[str, list[str]]:
     changed_svg_files = get_changed_svgs(base_ref)
-    all_errors = []
+    final_file_messages: dict[str, list[str]] = {}
 
-    # 1. Run SVG Linter on changed files only
+    # 1. Run SVG Linter
     if changed_svg_files:
         print(f"Checking {len(changed_svg_files)} changed SVG files...")
-        svg_base_args = ["--format", "compact"]
+        svg_base_args = ["--format", "json"]
         for svg_chunk in chunk_for_command(changed_svg_files, svg_base_args):
-            svg_errors = run_linter(SVG_LINTER_PATH, svg_base_args + svg_chunk)
-            if svg_errors:
-                all_errors.append(svg_errors)
+            raw_json = run_linter(SVG_LINTER_PATH, svg_base_args + svg_chunk)
+            if not raw_json:
+                continue
+            try:
+                reports = json.loads(raw_json)
+                for report in reports:
+                    filename = Path(report["file_path"]).name
+                    messages = [res["message"] for res in report["results"] if res.get("status") == "FAIL" and res.get("message")]
+                    if messages:
+                        final_file_messages.setdefault(filename, []).extend(messages)
+            except Exception as e:
+                print(f"Error parsing SVG linter JSON: {e}")
+                print(f"Raw JSON was: {raw_json[:100]}...")
 
-    # 2. Run Name Checker (only on changed drawables)
+    # 2. Run Name Checker
     print("Checking appfilter.xml consistency...")
     changed_drawables = get_changed_drawables(base_ref)
     name_checker_args = [
         "--appfilter", str(APPFILTER_PATH),
         "--drawables-dir", str(DRAWABLES_DIR),
-        "--format", "text",
+        "--format", "json",
     ]
     if changed_drawables:
         drawable_flag_args = name_checker_args + ["--changed-drawables"]
         for drawable_chunk in chunk_for_command(changed_drawables, drawable_flag_args):
-            name_errors = run_linter(
-                NAME_CHECKER_PATH,
-                drawable_flag_args + drawable_chunk,
-                accepted_exit_codes={0, 1},
-            )
-            if name_errors:
-                all_errors.append(name_errors)
-    else:
-        print("No changed drawables detected; skipping name checker.")
-
-    return "\n".join(all_errors).strip()
-
-
-def parse_report_by_file(final_report: str) -> dict[str, dict[str, object]]:
-    error_map: dict[str, dict[str, object]] = {}
-    current_file: str | None = None
-    code_pattern = re.compile(r"^[A-Za-z]+\d+$")
-
-    def ensure_bucket(filename: str) -> dict[str, object]:
-        if filename not in error_map:
-            error_map[filename] = {
-                "lint_icons_codes": set(),
-                "name_checker_messages": [],
-                "other_messages": [],
-            }
-        return error_map[filename]
-
-    def add_unique_message(bucket: dict[str, object], key: str, message: str) -> None:
-        if not message:
-            return
-        values = bucket.get(key)
-        if isinstance(values, list) and message not in values:
-            values.append(message)
-
-    for raw_line in final_report.splitlines():
-        line = raw_line.strip()
-        if not line:
-            continue
-
-        file_parts = [p.strip() for p in line.split(":", 1)]
-        if len(file_parts) == 2 and file_parts[0].lower().endswith(".svg"):
-            current_file = file_parts[0]
-            bucket = ensure_bucket(current_file)
-            payload = file_parts[1].strip()
-            if not payload:
+            raw_json = run_linter(NAME_CHECKER_PATH, drawable_flag_args + drawable_chunk, accepted_exit_codes={0, 1})
+            if not raw_json:
                 continue
+            try:
+                report = json.loads(raw_json)
+                for res in report.get("results", []):
+                    if res.get("status") == "FAIL":
+                        filename = res.get("target", "unknown.svg")
+                        msg = res.get("message")
+                        if msg:
+                            final_file_messages.setdefault(filename, []).append(msg)
+            except Exception as e:
+                print(f"Error parsing name checker JSON: {e}")
 
-            # lint-icons compact format: "icon.svg: C01, C05"
-            payload_tokens = [token.strip() for token in payload.split(",") if token.strip()]
-            if payload_tokens and all(code_pattern.fullmatch(token) for token in payload_tokens):
-                cast_codes = bucket["lint_icons_codes"]
-                if isinstance(cast_codes, set):
-                    for token in payload_tokens:
-                        normalized = normalize_issue_message(token)
-                        if normalized.isdigit():
-                            cast_codes.add(normalized)
-                continue
-
-            # name-checker text format: "icon.svg: NR03: Rename: ..."
-            finding_parts = [p.strip() for p in payload.split(":", 1)]
-            if len(finding_parts) == 2 and code_pattern.fullmatch(finding_parts[0]):
-                add_unique_message(bucket, "name_checker_messages", finding_parts[1])
-                continue
-
-            normalized = normalize_issue_message(payload)
-            if normalized.isdigit():
-                cast_codes = bucket["lint_icons_codes"]
-                if isinstance(cast_codes, set):
-                    cast_codes.add(normalized)
-            else:
-                add_unique_message(bucket, "other_messages", payload)
-            continue
-
-        if current_file is not None:
-            bucket = ensure_bucket(current_file)
-            continuation_parts = [p.strip() for p in line.split(":", 1)]
-            if len(continuation_parts) == 2 and code_pattern.fullmatch(continuation_parts[0]):
-                add_unique_message(bucket, "name_checker_messages", continuation_parts[1])
-            else:
-                add_unique_message(bucket, "other_messages", line)
-
-    return error_map
+    return final_file_messages
 
 
-def build_comment_body(final_report: str) -> str:
-    error_map = parse_report_by_file(final_report)
-    comment_body = "**Common issues**\n\n"
+def build_comment_body(file_messages: dict[str, list[str]]) -> str:
+    if not file_messages:
+        return f"All checks passed.\n\n{BOT_SIGNATURE}"
 
-    if not error_map:
-        comment_body += f"{final_report}\n\n{BOT_SIGNATURE}"
-        return comment_body
+    lines = ["**Common issues**\n"]
+    for filename in sorted(file_messages.keys()):
+        unique_msgs = []
+        for m in file_messages[filename]:
+            if m not in unique_msgs:
+                unique_msgs.append(m)
 
-    for filename in sorted(error_map.keys()):
-        bucket = error_map[filename]
-        codes = bucket.get("lint_icons_codes", set())
-        name_messages = bucket.get("name_checker_messages", [])
-        other_messages = bucket.get("other_messages", [])
+        lines.append(f"**{filename}**")
+        lines.append(f"{', '.join(unique_msgs)}\n")
 
-        comment_body += f"{filename}\n"
-
-        if isinstance(codes, set) and codes:
-            sorted_codes = sorted(codes, key=lambda x: int(x))
-            comment_body += f"{', '.join(sorted_codes)}\n"
-
-        if isinstance(name_messages, list):
-            for message in name_messages:
-                comment_body += f"{message}\n"
-
-        if isinstance(other_messages, list):
-            for message in other_messages:
-                comment_body += f"{message}\n"
-
-        comment_body += "\n"
-
-    comment_body += f"{BOT_SIGNATURE}"
-    return comment_body
+    lines.append(BOT_SIGNATURE)
+    return "\n".join(lines)
 
 
-def publish_to_github(final_report: str) -> int:
+def publish_to_github(file_messages: dict[str, list[str]]) -> int:
     if not (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None):
         print("Missing GitHub environment variables for GitHub mode.")
         return 2
@@ -347,10 +269,9 @@ def publish_to_github(final_report: str) -> int:
     pr = repo.get_pull(PR_NUMBER)
 
     bot_comment = find_bot_comment(pr)
+    comment_body = build_comment_body(file_messages)
 
-    if final_report:
-        comment_body = build_comment_body(final_report)
-
+    if file_messages:
         if bot_comment:
             print("Updating existing comment.")
             bot_comment.edit(comment_body)
@@ -364,8 +285,8 @@ def publish_to_github(final_report: str) -> int:
     else:
         print("All checks passed.")
         if bot_comment:
-            print("Deleting old comment.")
-            bot_comment.edit(f"All checks passed.\n\n{BOT_SIGNATURE}")
+            print("Updating old comment to success.")
+            bot_comment.edit(comment_body)
         # Add "needs review" label if it's not there.
         if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
@@ -373,13 +294,9 @@ def publish_to_github(final_report: str) -> int:
     return 0
 
 
-def run_cli_output(final_report: str) -> int:
-    if final_report:
-        print(build_comment_body(final_report))
-        return 1
-
-    print("All checks passed.")
-    return 0
+def run_cli_output(file_messages: dict[str, list[str]]) -> int:
+    print(build_comment_body(file_messages))
+    return 1 if file_messages else 0
 
 
 # --- Orchestration ---
@@ -407,14 +324,14 @@ if __name__ == "__main__":
 
     configure_repo_paths(args.repo_dir)
     base_ref = resolve_base_ref(args.base_ref)
-    final_report = collect_final_report(base_ref)
+    file_messages = collect_final_report(base_ref)
 
     mode = args.mode
     if mode == "auto":
         mode = "github" if (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None) else "cli"
 
     if mode == "github":
-        sys.exit(publish_to_github(final_report))
+        sys.exit(publish_to_github(file_messages))
 
-    sys.exit(run_cli_output(final_report))
+    sys.exit(run_cli_output(file_messages))
 
