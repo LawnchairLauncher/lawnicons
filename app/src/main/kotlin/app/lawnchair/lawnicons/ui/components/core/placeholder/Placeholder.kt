@@ -177,7 +177,8 @@ private class PlaceholderNode(
     private var highlight: PlaceholderHighlight?,
     private var placeholderFadeTransitionSpec: Transition.Segment<Boolean>.() -> FiniteAnimationSpec<Float>,
     private var contentFadeTransitionSpec: Transition.Segment<Boolean>.() -> FiniteAnimationSpec<Float>,
-) : Modifier.Node(), DrawModifierNode {
+) : Modifier.Node(),
+    DrawModifierNode {
     // Values used for caching purposes
     private var lastSize: Size? = null
     private var lastLayoutDirection: LayoutDirection? = null
