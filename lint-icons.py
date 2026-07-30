@@ -105,18 +105,6 @@ class FileReport:
     def has_failure(self):
         return any(r.status == Status.FAIL for r in self.results)
 
-
-# --- Plugin System ---
-PLUGIN_REGISTRY: Dict[Speed, List[tuple[Callable, str]]] = {
-    s: [] for s in Speed}
-
-
-def register_check(speed: Speed, check_id: str):
-    def decorator(func):
-        PLUGIN_REGISTRY[speed].append((func, check_id))
-        return func
-    return decorator
-
 # --- Helper Functions ---
 STYLE_PAIR_RE = re.compile(r'([\w-]+)\s*:\s*([^;]+)')
 
@@ -555,30 +543,9 @@ class JsonOutput(OutputHandler):
         self.dest.write("\n]\n")
 
 
-class CompactOutput(OutputHandler):
-    def start(self):
-        pass
-
-    def process(self, report: FileReport):
-        failed = [r for r in report.results if r.status == Status.FAIL]
-        if report.error:
-            self.dest.write(f"**{Path(report.file_path).name}**\nCRITICAL_ERROR: {report.error}\n\n")
-            self.failed_count += 1
-        elif failed:
-            self.dest.write(f"**{Path(report.file_path).name}**\n")
-            messages = [r.message for r in failed if r.message]
-            self.dest.write(f"{', '.join(messages)}\n\n")
-            self.failed_count += 1
-
-    def finish(self):
-        if self.failed_count > 0:
-            print(f"\nFound {self.failed_count} files with failures.", file=sys.stderr)
-
-
 OUTPUT_FACTORIES: Dict[str, Type[OutputHandler]] = {
     'text': ConsoleOutput,
     'json': JsonOutput,
-    'compact': CompactOutput
 }
 
 # --- Worker Logic ---
