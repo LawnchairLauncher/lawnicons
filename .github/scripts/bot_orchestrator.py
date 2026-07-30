@@ -191,9 +191,9 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
     return "main"
 
 
-def collect_final_report(base_ref: str) -> dict[str, list[str]]:
+def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
     changed_svg_files = get_changed_svgs(base_ref)
-    final_file_messages: dict[str, list[str]] = {}
+    final_file_messages: dict[str, list[dict[str, str]]] = {}
 
     # 1. Run SVG Linter
     if changed_svg_files:
@@ -207,9 +207,13 @@ def collect_final_report(base_ref: str) -> dict[str, list[str]]:
                 reports = json.loads(raw_json)
                 for report in reports:
                     filename = Path(report["file_path"]).name
-                    messages = [res["message"] for res in report["results"] if res.get("status") == "FAIL" and res.get("message")]
-                    if messages:
-                        final_file_messages.setdefault(filename, []).extend(messages)
+                    for res in report["results"]:
+                        if res.get("status") == "FAIL" and res.get("message"):
+                            msg_obj = {
+                                "message": res["message"],
+                                "category": res.get("category", "Core")
+                            }
+                            final_file_messages.setdefault(filename, []).append(msg_obj)
             except Exception as e:
                 print(f"Error parsing SVG linter JSON: {e}")
                 print(f"Raw JSON was: {raw_json[:100]}...")
@@ -235,14 +239,18 @@ def collect_final_report(base_ref: str) -> dict[str, list[str]]:
                         filename = res.get("target", "unknown.svg")
                         msg = res.get("message")
                         if msg:
-                            final_file_messages.setdefault(filename, []).append(msg)
+                            msg_obj = {
+                                "message": msg,
+                                "category": res.get("category", "Naming")
+                            }
+                            final_file_messages.setdefault(filename, []).append(msg_obj)
             except Exception as e:
                 print(f"Error parsing name checker JSON: {e}")
 
     return final_file_messages
 
 
-def build_comment_body(file_messages: dict[str, list[str]], is_first_review: bool) -> str:
+def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
     if not file_messages:
         return f"All checks passed.\n\n{BOT_SIGNATURE}"
 
@@ -255,13 +263,28 @@ def build_comment_body(file_messages: dict[str, list[str]], is_first_review: boo
     lines.append(SPEC_MESSAGE + "\n")
 
     for filename in sorted(file_messages.keys()):
+        all_msgs = file_messages[filename]
+
+        # De-duplicate messages
+        seen_msgs = set()
         unique_msgs = []
-        for m in file_messages[filename]:
-            if m not in unique_msgs:
+        for m in all_msgs:
+            msg_key = (m["message"], m["category"])
+            if msg_key not in seen_msgs:
                 unique_msgs.append(m)
+                seen_msgs.add(msg_key)
+
+        general_msgs = [m["message"] for m in unique_msgs if m["category"] != "Naming"]
+        naming_msgs = [m["message"] for m in unique_msgs if m["category"] == "Naming"]
 
         lines.append(f"**{filename}**")
-        lines.append(f"{', '.join(unique_msgs)}\n")
+        if general_msgs:
+            lines.append(", ".join(general_msgs))
+
+        for n_msg in naming_msgs:
+            lines.append(n_msg)
+
+        lines.append("") # Empty line between files
 
     lines.append("### Common issues\n")
     lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
@@ -270,7 +293,7 @@ def build_comment_body(file_messages: dict[str, list[str]], is_first_review: boo
     return "\n".join(lines)
 
 
-def publish_to_github(file_messages: dict[str, list[str]]) -> int:
+def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     if not (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None):
         print("Missing GitHub environment variables for GitHub mode.")
         return 2
@@ -308,7 +331,7 @@ def publish_to_github(file_messages: dict[str, list[str]]) -> int:
     return 0
 
 
-def run_cli_output(file_messages: dict[str, list[str]]) -> int:
+def run_cli_output(file_messages: dict[str, list[dict[str, str]]]) -> int:
     print(build_comment_body(file_messages, is_first_review=True))
     return 1 if file_messages else 0
 
