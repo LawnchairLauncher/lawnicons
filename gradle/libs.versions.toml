@@ -45,6 +45,7 @@ junit = "junit:junit:4.13.2"
 mockito = "org.mockito:mockito-core:5.23.0"
 mockito-kotlin = "org.mockito.kotlin:mockito-kotlin:6.3.0"
 kotlinx-coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0"
+okhttp-mockwebserver = "com.squareup.okhttp3:mockwebserver:5.4.0"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
