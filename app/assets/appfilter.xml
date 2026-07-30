@@ -419,6 +419,8 @@
   <item component="ComponentInfo{ahaflix.tv/ahaflix.tv.SplashActivity}" drawable="aha" name="aha" />
   <item component="ComponentInfo{net.bat.store/net.bat.store.view.activity.MainActivity}" drawable="aha_games" name="AHA Games" />
   <item component="ComponentInfo{net.bat.store/net.bat.store.view.activity.SplashActivity}" drawable="aha_games" name="AHA Games" />
+  <item component="ComponentInfo{net.bat.store/net.bat.store.ThreeDayRecallIconAliasActivity}" drawable="aha_games" name="AHA Games" />
+  <item component="ComponentInfo{net.bat.store/net.bat.store.DefaultIconAliasActivity}" drawable="aha_games" name="AHA Games" />
   <item component="ComponentInfo{facebook.video.downloader.savefrom.fb.saver.fast/com.atlasv.android.fbdownloader.ui.activity.StartupActivity}" drawable="generic_download_shelf" name="Ahafast" />
   <item component="ComponentInfo{facebook.video.downloader.savefrom.fb.saver.fast/com.atlasv.android.downloader.scaffold.ui.feature.splash.SplashActivity}" drawable="generic_download_shelf" name="Ahafast" />
   <item component="ComponentInfo{free.video.downloader.converter.music/free.video.downloader.converter.music.view.activity.StartupActivity}" drawable="download_progress_plus_plus" name="AhaSave Downloader" />
@@ -5812,6 +5814,7 @@
   <item component="ComponentInfo{com.cube.gdpc.che/com.cube.gdpc.fa.BootActivity}" drawable="generic_aid" name="First Aid" />
   <item component="ComponentInfo{com.cube.rca/com.cube.rca.activity.BootActivity}" drawable="generic_aid" name="First aid by British Red Cross" />
   <item component="ComponentInfo{com.firstgroup.first.bus/com.firstgroup.splash.controller.SplashActivity}" drawable="first_bus" name="First Bus" />
+  <item component="ComponentInfo{com.firstgroup.first.bus/com.firstgroup.MainActivity}" drawable="first_bus" name="First Bus" />
   <item component="ComponentInfo{com.mcom.firstcitizens/com.q2.app.core.ui.MainActivity}" drawable="first_citizens_bank" name="First Citizens Bank" />
   <item component="ComponentInfo{com.mcom.firstcitizens/com.q2.app.core.ui.LauncherActivity}" drawable="first_citizens_bank" name="First Citizens Bank" />
   <item component="ComponentInfo{com.firstiraqibank.personal/com.lawrencespring.personal.view.PersonalActivity}" drawable="first_iraqi_bank" name="First Iraqi Bank" />
@@ -9820,6 +9823,7 @@
   <item component="ComponentInfo{lt.registrucentras.ltid/crc6419820ee77e27dddd.MainActivity}" drawable="lt_id" name="LT ID" />
   <item component="ComponentInfo{io.mdp43140.ltecleaner/io.mdp43140.ltecleaner.MainActivity}" drawable="lte_cleaner" name="LTE Cleaner" />
   <item component="ComponentInfo{net.simplyadvanced.ltediscovery/com2020.ltediscovery.ui.LtedMainActivity}" drawable="lte_discovery" name="LTE Discovery" />
+  <item component="ComponentInfo{net.simplyadvanced.ltediscovery/net.simplyadvanced.ltediscovery.MainActivity}" drawable="lte_discovery" name="LTE Discovery" />
   <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.MainActivity}" drawable="ltecleanerfoss" name="LTECleanerFOSS" />
   <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.controllers.MainActivity}" drawable="ltecleanerfoss" name="LTECleanerFOSS" />
   <item component="ComponentInfo{rs.ltt.android/rs.ltt.android.ui.activity.MainActivity}" drawable="generic_email" name="Ltt.rs" />
@@ -12696,6 +12700,8 @@
   <item component="ComponentInfo{com.oplus.tips/com.oplus.tips.activity.MainActivity}" drawable="oneplus_tips" name="OnePlus Tips" />
   <item component="ComponentInfo{net.oneplus.weather/com.oplus.weather.main.view.WeatherMainActivity}" drawable="weather_google_shortcuts_launcher" name="OnePlus Weather" />
   <item component="ComponentInfo{net.oneplus.weather/net.oneplus.weather.app.MainActivity}" drawable="weather" name="OnePlus Weather" />
+  <item component="ComponentInfo{com.oneplus.brickmode/com.oneplus.brickmode.activity.MainControlActivity}" drawable="oneplus_zen_space" name="OnePlus Zen Space" />
+  <item component="ComponentInfo{com.oneplus.brickmode/com.oneplus.brickmode.activity.HomeActivity}" drawable="oneplus_zen_space" name="OnePlus Zen Space" />
   <item component="ComponentInfo{com.eatos.onepro/com.eatos.onepro.MainActivity}" drawable="onepro_8_icons" name="OnePro 8 Icons" />
   <item component="ComponentInfo{com.eatos.onedarkpro/com.eatos.onedarkpro.MainActivity}" drawable="onepro_dark_icons" name="OnePro Dark Icons" />
   <item component="ComponentInfo{com.eatos.oneyoupro/com.eatos.oneyoupro.activities.MainActivity}" drawable="onepro_you_icons" name="OnePro You Icons" />
@@ -13209,6 +13215,7 @@
   <item component="ComponentInfo{com.pcloud.pcloud/com.pcloud.screens.Main}" drawable="pcloud" name="pCloud" />
   <item component="ComponentInfo{com.kohei.android.pcmrecorder/com.kohei.android.pcmrecorder.MainActivity}" drawable="pcm_recorder" name="PCM Recorder" />
   <item component="ComponentInfo{com.maxxt.pcradio/com.maxxt.pcradio.SplashActivity}" drawable="pcradio" name="PCRADIO" />
+  <item component="ComponentInfo{com.maxxt.pcradio/com.maxxt.pcradio.MainActivity}" drawable="pcradio" name="PCRADIO" />
   <item component="ComponentInfo{id.co.limasakti.pdaminfo/id.co.limasakti.pdaminfo.feature.activity.SplashScreenActivity}" drawable="pdam_info" name="PDAM INFO" />
   <item component="ComponentInfo{com.vayunmathur.pdf/com.vayunmathur.pdf.MainActivity}" drawable="pdf_viewer_plus" name="PDF" />
   <item component="ComponentInfo{swati4star.createpdf/swati4star.createpdf.activity.MainActivity}" drawable="pdf_converter" name="PDF CONVERTER" />
@@ -13785,6 +13792,10 @@
   <item component="ComponentInfo{com.ph.egypt/com.americana.me.ui.onboarding.splash.SplashActivity}" drawable="pizza_hut" name="Pizza Hut" />
   <item component="ComponentInfo{com.pizzahutau/com.pizzahutau.MainActivity}" drawable="pizza_hut" name="Pizza Hut" />
   <item component="ComponentInfo{com.mx.pizzahutuk.orderingApp/com.mx.pizzahutuk.orderingApp.MainActivity}" drawable="pizza_hut" name="Pizza Hut" />
+  <item component="ComponentInfo{com.pizzahut.malaysia/com.pizzahut.MainActivity}" drawable="pizza_hut" name="Pizza Hut" />
+  <item component="ComponentInfo{com.pizzahutpl/com.pizzahut_pl.MainActivity}" drawable="pizza_hut" name="Pizza Hut" />
+  <item component="ComponentInfo{com.pizzahut.ksa/com.americana.me.ui.onboarding.splash.SplashActivity}" drawable="pizza_hut" name="Pizza Hut" />
+  <item component="ComponentInfo{com.imc.pizzahut/com.imc.pizzahut.MainActivity}" drawable="pizza_hut" name="Pizza Hut" />
   <item component="ComponentInfo{com.paytronix.client.android.app.pizzaranch/com.paytronix.nexgenfl.MainActivity}" drawable="pizza_ranch" name="Pizza Ranch" />
   <item component="ComponentInfo{ca.mealsy.onlineordering.pizzasalvatore/crc64725d112ca099db26.MainActivity}" drawable="pizza_salvatore" name="Pizza Salvatoré" />
   <item component="ComponentInfo{pkp.ic.eicmobile/pkp.ic.eicmobile.MainActivity}" drawable="pkp_intercity" name="PKP INTERCITY" />
@@ -15132,14 +15143,15 @@
   <item component="ComponentInfo{sa.saco.mobile/sa.saco.mobile.SplashActivity}" drawable="saco" name="SACO" />
   <item component="ComponentInfo{com.sadapay.app/com.sadapay.app.ui.main.MainActivity}" drawable="sadapay" name="SadaPay" />
   <item component="ComponentInfo{com.greentech.sadiq/com.greentech.sadiq.MainActivity}" drawable="sadiq" name="Sadiq" />
+  <item component="ComponentInfo{com.safeincloud/com.safeincloud.ui.EntryActivity}" drawable="safe" name="Safe" />
+  <item component="ComponentInfo{com.safeincloud.free/com.safeincloud.ui.EntryActivity}" drawable="safe" name="Safe" />
+  <item component="ComponentInfo{com.safeincloud.free/com.safeincloud.EntryActivity}" drawable="safe" name="Safe" />
+  <item component="ComponentInfo{com.safeincloud.free/com.safeincloud.ui.login.EntryActivity}" drawable="safe" name="Safe" />
   <item component="ComponentInfo{com.jazibkhan.noiseuncanceller/com.jazibkhan.noiseuncanceller.ui.activities.main.MainActivity}" drawable="safe_headphones" name="Safe Headphones" />
   <item component="ComponentInfo{com.jazibkhan.noiseuncanceller/com.jazibkhan.noiseuncanceller.MainActivity}" drawable="safe_headphones" name="Safe Headphones" />
   <item component="ComponentInfo{org.privacymatters.safespace/org.privacymatters.safespace.AuthActivity}" drawable="safe_space" name="Safe Space" />
   <item component="ComponentInfo{org.privacymatters.safespace/org.privacymatters.safespace.auth.AuthActivity}" drawable="safe_space" name="Safe Space" />
   <item component="ComponentInfo{com.safeboda.passenger/com.safeboda.presentation.ui.splash.StartActivity}" drawable="safeboda" name="SafeBoda" />
-  <item component="ComponentInfo{com.safeincloud/com.safeincloud.ui.EntryActivity}" drawable="safeincloud" name="SafeInCloud" />
-  <item component="ComponentInfo{com.safeincloud.free/com.safeincloud.ui.EntryActivity}" drawable="safeincloud" name="SafeInCloud" />
-  <item component="ComponentInfo{com.safeincloud.free/com.safeincloud.EntryActivity}" drawable="safeincloud" name="SafeInCloud" />
   <item component="ComponentInfo{de.safenow.user/de.safenow.user.MainActivity}" drawable="safenow" name="SafeNow" />
   <item component="ComponentInfo{io.safepal.wallet/io.safepal.safepalapp.MainActivity}" drawable="safepal" name="SafePal" />
   <item component="ComponentInfo{com.flinkapps.safteynet/com.flinkapps.safteynet.ui.MainActivity}" drawable="safetynet" name="SafetyNet" />
@@ -20720,7 +20732,6 @@
   <item component="ComponentInfo{com.loudtalks/com.zello.ui.AtividadePrincipal}" drawable="zello" name="Zello" />
   <item component="ComponentInfo{com.mad.zenflipclock/com.mad.zenflipclock.ui.MainActivity}" drawable="zen_flip_clock" name="Zen Flip Clock" />
   <item component="ComponentInfo{com.mad.zenflipclock/com.mad.zenflipclock.compose.MainComposeActivity}" drawable="zen_flip_clock" name="Zen Flip Clock" />
-  <item component="ComponentInfo{com.oneplus.brickmode/com.oneplus.brickmode.activity.MainControlActivity}" drawable="zen_space" name="Zen Space" />
   <item component="ComponentInfo{ru.zenden.android/io.imshop.development.MainActivity}" drawable="zenden" name="Zenden" />
   <item component="ComponentInfo{mx.zenfi.app/mx.zenfi.app.MainActivity}" drawable="zenfi" name="Zenfi" />
   <item component="ComponentInfo{app.zenly.locator/app.zenly.locator.MainActivity}" drawable="zenly" name="Zenly" />
@@ -21142,6 +21153,7 @@
   <item component="ComponentInfo{ua.ukrposhta.android.app/ua.ukrposhta.android.app.ui.main.main.MainActivity}" drawable="ukrposhta" name="Укрпошта ~~ Ukrposhta" />
   <item component="ComponentInfo{com.ertelecom.smarthome/com.ertelecom.smarthome.feature.auth.launch.presentation.LaunchActivity}" drawable="smart_dom_ru" name="Умный Дом.ру ~~ Smart Dom.ru" />
   <item component="ComponentInfo{ua.fora.android/ua.silpo.android.ui.activity.DynamicLinksRouteActivity}" drawable="fora" name="Фора ~~ Fora" />
+  <item component="ComponentInfo{ua.fora.android/ua.fora.android.ui.main.MainActivity}" drawable="fora" name="Фора ~~ Fora" />
   <item component="ComponentInfo{ru.holodilnik.android/com.holo.MainActivity}" drawable="holodilnik_ru" name="ХОЛОДИЛЬНИК.РУ ~~ holodilnik.ru" />
   <item component="ComponentInfo{com.bankffin.portfolio/com.bankffin.portfolio.MainActivity}" drawable="cifra_bank" name="Цифра банк ~~ Cifra Bank" />
   <item component="ComponentInfo{ru.crptech.mark/com.app.checker.view.screen.splash.SplashActivity}" drawable="chestny_znak" name="Честный ЗНАК ~~ Chestny ZNAK" />
