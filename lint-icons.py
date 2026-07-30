@@ -196,7 +196,17 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     forbidden_attrs = ['opacity', 'fill-opacity', 'stroke-opacity', 'stop-opacity', 'filter']
     forbidden_style_props = set(forbidden_attrs)
 
-    max_opacity = 1.0
+    def parse_opacity(val: str) -> Optional[int]:
+        val = val.strip().lower()
+        try:
+            if val.endswith('%'):
+                return int(float(val[:-1]))
+            opacity_val = float(val)
+            if opacity_val >= 1.0:
+                return None
+            return int(opacity_val * 100)
+        except ValueError:
+            return None
 
     for el in ctx.xml_tree.iter():
         for attr in forbidden_attrs:
@@ -206,14 +216,10 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
             normalized = val.strip().lower()
             if 'opacity' in attr:
-                try:
-                    opacity_val = float(normalized)
-                    if opacity_val < 1.0:
-                        max_opacity = min(max_opacity, opacity_val)
-                except ValueError:
-                    pass
-                if normalized in {'1', '1.0'}:
-                    continue
+                opacity_pct = parse_opacity(normalized)
+                if opacity_pct is not None:
+                    findings.append(Finding(C05Outcomes.OPACITY, {"opacity": opacity_pct}))
+                continue
 
             if attr == 'filter':
                 findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "shadow" if "shadow" in normalized or "blur" in normalized else "filter"}))
@@ -229,22 +235,15 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
                 normalized = value.strip().lower()
                 if 'opacity' in prop:
-                    try:
-                        opacity_val = float(normalized)
-                        if opacity_val < 1.0:
-                            max_opacity = min(max_opacity, opacity_val)
-                    except ValueError:
-                        pass
-                    if normalized in {'1', '1.0'}:
-                        continue
+                    opacity_pct = parse_opacity(normalized)
+                    if opacity_pct is not None:
+                        findings.append(Finding(C05Outcomes.OPACITY, {"opacity": opacity_pct}))
+                    continue
 
                 if prop == 'filter':
                     findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "filter"}))
                 else:
                     findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": prop}))
-
-    if max_opacity < 1.0:
-        findings.append(Finding(C05Outcomes.OPACITY, {"opacity": int(max_opacity * 100)}))
 
     return findings
 
