@@ -43,7 +43,7 @@ interface PlaceholderHighlight {
     /**
      * Return a [Brush] to draw for the given [progress] and [size].
      *
-     * @param progress the current animated progress in the range of 0f..1f.
+     * @param progress the current animated progress in the range of `0f..1f`.
      * @param size The size of the current layout to draw in.
      */
     fun brush(
@@ -54,7 +54,7 @@ interface PlaceholderHighlight {
     /**
      * Return the desired alpha value used for drawing the [Brush] returned from [brush].
      *
-     * @param progress the current animated progress in the range of 0f..1f.
+     * @param progress the current animated progress in the range of `0f..1f`.
      */
     @FloatRange(from = 0.0, to = 1.0)
     fun alpha(progress: Float): Float
@@ -81,8 +81,8 @@ fun PlaceholderHighlight.Companion.fade(
  * Creates a [PlaceholderHighlight] which 'shimmers', using the given [highlightColor].
  *
  * The highlight starts at the top-start, and then grows to the bottom-end during the animation.
- * During that time it is also faded in, from 0f..progressForMaxAlpha, and then faded out from
- * progressForMaxAlpha..1f.
+ * During that time it is also faded in, from `0f..progressForMaxAlpha`, and then faded out from
+ * `progressForMaxAlpha..1f`.
  *
  * @param highlightColor the color of the highlight 'shimmer'.
  * @param animationSpec the [AnimationSpec] to configure the animation.
@@ -100,7 +100,7 @@ fun PlaceholderHighlight.Companion.shimmer(
 )
 
 /**
- * Returns the value used as the the `highlightColor` parameter value of
+ * Returns the value used as the `highlightColor` parameter value of
  * [PlaceholderHighlight.Companion.fade].
  *
  * @param backgroundColor The current background color of the layout. Defaults to
