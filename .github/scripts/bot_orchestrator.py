@@ -20,8 +20,12 @@ DRAWABLES_DIR = REPO_ROOT / "svgs/"
 SVG_LINTER_PATH = REPO_ROOT / "lint-icons.py"
 NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"
 
-BOT_SIGNATURE = "--- \n*Linter Bot Report*"
+BOT_SIGNATURE = "<!-- Linter bot report -->"
 NEEDS_REVIEW_LABEL = "needs review"
+
+SPEC_MESSAGE = """> [!TIP]
+> **Spec**
+> canvas: 192×192 px, color: #000000, opacity: 100%, shadow: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
 
 # --- Main Logic ---
 
@@ -238,11 +242,18 @@ def collect_final_report(base_ref: str) -> dict[str, list[str]]:
     return final_file_messages
 
 
-def build_comment_body(file_messages: dict[str, list[str]]) -> str:
+def build_comment_body(file_messages: dict[str, list[str]], is_first_review: bool) -> str:
     if not file_messages:
         return f"All checks passed.\n\n{BOT_SIGNATURE}"
 
-    lines = ["**Common issues**\n"]
+    lines = []
+    if is_first_review:
+        lines.append("Thanks for your contribution!\n")
+        lines.append("Please fix all bot-detected issues to get a human review — and the rest to merge. Ensure Lawnicons builds correctly.\n")
+
+    lines.append("### Bot-detected issues")
+    lines.append(SPEC_MESSAGE + "\n")
+
     for filename in sorted(file_messages.keys()):
         unique_msgs = []
         for m in file_messages[filename]:
@@ -251,6 +262,10 @@ def build_comment_body(file_messages: dict[str, list[str]]) -> str:
 
         lines.append(f"**{filename}**")
         lines.append(f"{', '.join(unique_msgs)}\n")
+
+    if is_first_review:
+        lines.append("### Common issues\n")
+        lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
 
     lines.append(BOT_SIGNATURE)
     return "\n".join(lines)
@@ -269,7 +284,7 @@ def publish_to_github(file_messages: dict[str, list[str]]) -> int:
     pr = repo.get_pull(PR_NUMBER)
 
     bot_comment = find_bot_comment(pr)
-    comment_body = build_comment_body(file_messages)
+    comment_body = build_comment_body(file_messages, is_first_review=(bot_comment is None))
 
     if file_messages:
         if bot_comment:
@@ -295,7 +310,7 @@ def publish_to_github(file_messages: dict[str, list[str]]) -> int:
 
 
 def run_cli_output(file_messages: dict[str, list[str]]) -> int:
-    print(build_comment_body(file_messages))
+    print(build_comment_body(file_messages, is_first_review=True))
     return 1 if file_messages else 0
 
 
