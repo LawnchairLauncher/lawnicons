@@ -105,18 +105,6 @@ class FileReport:
     def has_failure(self):
         return any(r.status == Status.FAIL for r in self.results)
 
-
-# --- Plugin System ---
-PLUGIN_REGISTRY: Dict[Speed, List[tuple[Callable, str]]] = {
-    s: [] for s in Speed}
-
-
-def register_check(speed: Speed, check_id: str):
-    def decorator(func):
-        PLUGIN_REGISTRY[speed].append((func, check_id))
-        return func
-    return decorator
-
 # --- Helper Functions ---
 STYLE_PAIR_RE = re.compile(r'([\w-]+)\s*:\s*([^;]+)')
 
@@ -196,7 +184,17 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     forbidden_attrs = ['opacity', 'fill-opacity', 'stroke-opacity', 'stop-opacity', 'filter']
     forbidden_style_props = set(forbidden_attrs)
 
-    max_opacity = 1.0
+    def parse_opacity(val: str) -> Optional[int]:
+        val = val.strip().lower()
+        try:
+            if val.endswith('%'):
+                return int(float(val[:-1]))
+            opacity_val = float(val)
+            if opacity_val >= 1.0:
+                return None
+            return int(opacity_val * 100)
+        except ValueError:
+            return None
 
     for el in ctx.xml_tree.iter():
         for attr in forbidden_attrs:
@@ -206,14 +204,10 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
             normalized = val.strip().lower()
             if 'opacity' in attr:
-                try:
-                    opacity_val = float(normalized)
-                    if opacity_val < 1.0:
-                        max_opacity = min(max_opacity, opacity_val)
-                except ValueError:
-                    pass
-                if normalized in {'1', '1.0'}:
-                    continue
+                opacity_pct = parse_opacity(normalized)
+                if opacity_pct is not None:
+                    findings.append(Finding(C05Outcomes.OPACITY, {"opacity": opacity_pct}))
+                continue
 
             if attr == 'filter':
                 findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "shadow" if "shadow" in normalized or "blur" in normalized else "filter"}))
@@ -229,22 +223,15 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
                 normalized = value.strip().lower()
                 if 'opacity' in prop:
-                    try:
-                        opacity_val = float(normalized)
-                        if opacity_val < 1.0:
-                            max_opacity = min(max_opacity, opacity_val)
-                    except ValueError:
-                        pass
-                    if normalized in {'1', '1.0'}:
-                        continue
+                    opacity_pct = parse_opacity(normalized)
+                    if opacity_pct is not None:
+                        findings.append(Finding(C05Outcomes.OPACITY, {"opacity": opacity_pct}))
+                    continue
 
                 if prop == 'filter':
                     findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "filter"}))
                 else:
                     findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": prop}))
-
-    if max_opacity < 1.0:
-        findings.append(Finding(C05Outcomes.OPACITY, {"opacity": int(max_opacity * 100)}))
 
     return findings
 
@@ -556,30 +543,9 @@ class JsonOutput(OutputHandler):
         self.dest.write("\n]\n")
 
 
-class CompactOutput(OutputHandler):
-    def start(self):
-        pass
-
-    def process(self, report: FileReport):
-        failed = [r for r in report.results if r.status == Status.FAIL]
-        if report.error:
-            self.dest.write(f"**{Path(report.file_path).name}**\nCRITICAL_ERROR: {report.error}\n\n")
-            self.failed_count += 1
-        elif failed:
-            self.dest.write(f"**{Path(report.file_path).name}**\n")
-            messages = [r.message for r in failed if r.message]
-            self.dest.write(f"{', '.join(messages)}\n\n")
-            self.failed_count += 1
-
-    def finish(self):
-        if self.failed_count > 0:
-            print(f"\nFound {self.failed_count} files with failures.", file=sys.stderr)
-
-
 OUTPUT_FACTORIES: Dict[str, Type[OutputHandler]] = {
     'text': ConsoleOutput,
     'json': JsonOutput,
-    'compact': CompactOutput
 }
 
 # --- Worker Logic ---
