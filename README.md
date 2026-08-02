@@ -60,7 +60,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Development
-You're welcome to work on our issues. Contributors can get a priority icon request—write to us before you help.
+You're welcome to work on our issues. Contributors can get a priority icon request.
 
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
