@@ -117,13 +117,15 @@ object SvgFilesProcessor {
             .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
         root.addElement("background")
             .addAttribute("android:drawable", bgColor)
-        root.addElement("foreground").addElement("inset")
+        root.addElement("foreground").addElement("layer-list").addElement("item")
+            .addElement("inset")
             .addAttribute("android:inset", "32%")
             .addAttribute(
                 "android:drawable",
                 "@drawable/" + FilenameUtils.getBaseName(foregroundXml),
             )
-        root.addElement("monochrome").addElement("inset")
+        root.addElement("monochrome").addElement("layer-list").addElement("item")
+            .addElement("inset")
             .addAttribute("android:inset", "28%")
             .addAttribute(
                 "android:drawable",

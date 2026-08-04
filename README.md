@@ -47,7 +47,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 > [!IMPORTANT]
 > Support us to help maintain Lawnicons. Supporter icon requests are fulfilled many times faster.
 
-[Open Collective](https://opencollective.com/lawnchair) • [GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
+[Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml) • [Fund community requests](https://opencollective.com/lawnchair/projects/lawnicons)
 
 ## Contributing
 <div align="left">
@@ -60,7 +60,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 </div> 
 
 ### Development
-You're welcome to work on our issues. Contributors can get a priority icon request—write to us before you help.
+You're welcome to work on our issues. Contributors can get a priority icon request.
 
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
