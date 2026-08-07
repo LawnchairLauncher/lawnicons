@@ -453,7 +453,7 @@ class O01Outcomes:
 def rule_svg_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     size_kb = len(ctx.raw_content.encode('utf-8')) / 1024
     if size_kb > 3:
-        return [Finding(O01Outcomes.TOO_LARGE, {"size": round(size_kb, 1)}, Status.WARN)]
+        return [Finding(O01Outcomes.TOO_LARGE, {"size": round(size_kb, 1)}, Status.FAIL)]
     return []
 
 # --- Output System (Modular) ---
