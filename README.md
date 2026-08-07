@@ -50,7 +50,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ### Request priority
 Supporter icon requests are fulfilled many times faster.
 
-[Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
+[Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ### Say thanks
 Extra icons in every release, thanks to you.
