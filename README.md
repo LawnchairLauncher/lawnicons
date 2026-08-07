@@ -55,7 +55,7 @@ Supporter icon requests are fulfilled many times faster.
 ### Say thanks
 Extra icons in every release, thanks to you.
 
-[Fund community requests](https://opencollective.com/lawnchair/projects/lawnicons)
+[Fund community requests](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
 
 ## Contributing
 <div align="left">
