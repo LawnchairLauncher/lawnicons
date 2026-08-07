@@ -1,15 +1,15 @@
+import argparse
+import json
+import logging
 import re
 import sys
 import time
-import logging
-import argparse
-import json
-import xml.etree.ElementTree as ET # lint: ignore
-from pathlib import Path
-from enum import Enum, IntEnum
-from dataclasses import dataclass, field, asdict
-from concurrent.futures import ProcessPoolExecutor
+import xml.etree.ElementTree as ET  # lint: ignore
 from abc import ABC, abstractmethod
+from concurrent.futures import ProcessPoolExecutor
+from dataclasses import dataclass, field, asdict
+from enum import Enum, IntEnum
+from pathlib import Path
 from typing import Callable, List, Dict, Optional, Any, Type
 
 try:
@@ -172,11 +172,11 @@ class C05Outcomes:
 
 @register_rule(
     id="C05",
-    name="Transparency",
+    name="Effects",
     description="Bans transparency and opacity effects.",
     outcomes=C05Outcomes
 )
-def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+def rule_effects(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
         return []
 
@@ -197,6 +197,26 @@ def rule_transparency(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
             return None
 
     for el in ctx.xml_tree.iter():
+        tag = el.tag.split('}')[-1]
+        if tag == 'filter':
+            findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "filter"}))
+        elif tag.startswith('fe'):
+            effect = tag[2:].lower()
+            # Map common filter primitives to more readable names
+            fe_mapping = {
+                'gaussianblur': 'blur',
+                'dropshadow': 'shadow',
+                'colormatrix': 'color matrix',
+                'componenttransfer': 'component transfer',
+                'mergenode': 'merge node',
+                'diffuselighting': 'diffuse lighting',
+                'specularlighting': 'specular lighting',
+                'convolvematrix': 'convolve matrix',
+                'displacementmap': 'displacement map',
+            }
+            effect = fe_mapping.get(effect, effect)
+            findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": effect}))
+
         for attr in forbidden_attrs:
             val = el.get(attr)
             if not val:
