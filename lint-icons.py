@@ -336,7 +336,7 @@ def rule_fill_color(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
         return []
 
-    allowed_colors = {'none', '#000000', '#000', 'black'}
+    allowed_colors = {'none', 'transparent', '#000000', '#000', 'black'}
     findings = []
 
     # The default SVG initial value for fill is technically 'black'
@@ -370,6 +370,9 @@ def rule_fill_color(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
         if current_fill not in {'none', 'transparent'}:
             has_fill = True
 
+        if current_fill not in allowed_colors:
+            findings.append(Finding(C07Outcomes.UNAUTHORIZED_FILL, {"fill": current_fill}))
+
         if local_stroke:
             if local_stroke not in allowed_colors:
                 findings.append(Finding(C07Outcomes.NON_BLACK_STROKE, {"color": local_stroke}))
@@ -377,14 +380,11 @@ def rule_fill_color(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
             if not local_fill and current_fill == 'black':
                 findings.append(Finding(C07Outcomes.IMPLICIT_FILL, status=Status.REVIEW))
 
-            if current_fill not in allowed_colors:
-                findings.append(Finding(C07Outcomes.UNAUTHORIZED_FILL, {"fill": current_fill}))
-
         for child in el:
             stack.append((child, current_fill))
 
     if has_fill:
-        findings.append(Finding(C07Outcomes.HAS_FILL, status=Status.PASS))
+        findings.append(Finding(C07Outcomes.HAS_FILL, status=Status.REVIEW))
 
     return findings
 
