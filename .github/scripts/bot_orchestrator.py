@@ -14,11 +14,14 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_BASE_REF = os.getenv("GITHUB_BASE_REF")
 
 # Assuming a standard project structure
-REPO_ROOT = Path(__file__).parent.parent.parent
-APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
-DRAWABLES_DIR = REPO_ROOT / "svgs/"
-SVG_LINTER_PATH = REPO_ROOT / "lint_icons.py"
-NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"
+SCRIPT_REPO_ROOT = Path(__file__).parent.parent.parent
+DATA_REPO_ROOT = SCRIPT_REPO_ROOT
+
+# We separate data repo root to prevent PWN attacks in the CI
+APPFILTER_PATH = DATA_REPO_ROOT / "app/assets/appfilter.xml"
+DRAWABLES_DIR = DATA_REPO_ROOT / "svgs/"
+SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
+NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
 BOT_SIGNATURE = "<!-- Linter bot report -->"
 NEEDS_REVIEW_LABEL = "needs review"
@@ -30,22 +33,27 @@ SPEC_MESSAGE = """> [!TIP]
 # --- Main Logic ---
 
 
-def configure_repo_paths(repo_dir: str | None) -> None:
+def configure_paths(data_repo_dir: str | None, script_repo_dir: str | None) -> None:
     """Override repository-relative paths for local testing runs."""
-    global REPO_ROOT, APPFILTER_PATH, DRAWABLES_DIR
+    global SCRIPT_REPO_ROOT, DATA_REPO_ROOT, APPFILTER_PATH, DRAWABLES_DIR, SVG_LINTER_PATH, NAME_CHECKER_PATH
 
-    if not repo_dir:
-        return
+    if script_repo_dir:
+        SCRIPT_REPO_ROOT = Path(script_repo_dir).expanduser().resolve()
+        SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
+        NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
-    resolved_repo_root = Path(repo_dir).expanduser().resolve()
-    REPO_ROOT = resolved_repo_root
-    APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
-    DRAWABLES_DIR = REPO_ROOT / "svgs/"
+    if data_repo_dir:
+        DATA_REPO_ROOT = Path(data_repo_dir).expanduser().resolve()
+    elif script_repo_dir:
+        DATA_REPO_ROOT = SCRIPT_REPO_ROOT
+
+    APPFILTER_PATH = DATA_REPO_ROOT / "app/assets/appfilter.xml"
+    DRAWABLES_DIR = DATA_REPO_ROOT / "svgs/"
 
 
 def get_changed_svgs(base_ref: str) -> list[str]:
     """Finds SVG files changed in this PR compared to the target branch."""
-    drawables_pathspec = DRAWABLES_DIR.relative_to(REPO_ROOT).as_posix()
+    drawables_pathspec = DRAWABLES_DIR.relative_to(DATA_REPO_ROOT).as_posix()
     cmd = ["git", "diff", "--name-only",
            f"origin/{base_ref}", "HEAD", "--", drawables_pathspec]
     result = subprocess.run(
@@ -55,7 +63,7 @@ def get_changed_svgs(base_ref: str) -> list[str]:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode != 0:
         return []
@@ -76,7 +84,7 @@ def get_changed_drawables(base_ref: str) -> list[str]:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode != 0:
         return []
@@ -181,7 +189,7 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode == 0:
         ref = result.stdout.strip()
@@ -348,18 +356,24 @@ if __name__ == "__main__":
         help="Output mode. 'auto' uses GitHub mode if required env vars are present.",
     )
     parser.add_argument(
+        "--data-repo-dir", "--repo-dir",
+        dest="data_repo_dir",
+        default=None,
+        help="Data repository root directory (default: same as script repo).",
+    )
+    parser.add_argument(
+        "--script-repo-dir",
+        default=None,
+        help="Script repository root directory (default: auto-detected from __file__).",
+    )
+    parser.add_argument(
         "--base-ref",
         default=None,
         help="Base branch to diff against (default: GITHUB_BASE_REF, origin/HEAD, or main).",
     )
-    parser.add_argument(
-        "--repo-dir",
-        default=None,
-        help="Repository root directory to run against (default: script-based auto-detection).",
-    )
     args = parser.parse_args()
 
-    configure_repo_paths(args.repo_dir)
+    configure_paths(args.data_repo_dir, args.script_repo_dir)
     base_ref = resolve_base_ref(args.base_ref)
     file_messages = collect_final_report(base_ref)
 

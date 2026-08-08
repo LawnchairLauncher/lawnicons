@@ -43,4 +43,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: python trusted/.github/scripts/bot_orchestrator.py --repo-dir pr
+        run: python trusted/.github/scripts/bot_orchestrator.py --data-repo-dir pr
