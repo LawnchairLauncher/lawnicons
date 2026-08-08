@@ -15,46 +15,7 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
-    # Only run on user for testing
-    if: ${{ github.event.pull_request.user.login == 'x9136' }}
     steps:
-      - name: Wait for checklist comment
-        id: wait_checklist
-        uses: actions/github-script@v9
-        env:
-          EXCLUDED_USERS: ${{ vars.EXCLUDED_USERS }}    
-        with:
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const issue_number = context.payload.pull_request.number;
-            const marker = "<!-- icon-checklist-posted -->";
-            const maxAttempts = 24;  // 24 * 5s = 2 minutes
-            const sleepMs = 5000;
-
-            const excludedUsers = process.env.EXCLUDED_USERS ?
-            process.env.EXCLUDED_USERS.split(',').map(user => user.trim()) : [];
-
-            const prAuthor = context.payload.pull_request.user.login;
-
-            if (excludedUsers.includes(prAuthor)) {
-              console.log(`Skipping wait for excluded user: ${prAuthor}`);
-              return;
-            }
-
-            let found = false;
-            for (let i = 0; i < maxAttempts; i++) {
-              const { data: comments } = await github.rest.issues.listComments({
-                owner, repo, issue_number, per_page: 100
-              });
-              found = comments.some(c => (c.body || "").includes(marker));
-              if (found) break;
-              await new Promise(r => setTimeout(r, sleepMs));
-            }
-
-            core.setOutput("checklist_found", String(found));
-            if (!found) core.warning("Checklist comment not found before timeout; continuing anyway.");
-
       - name: Checkout trusted base code
         uses: actions/checkout@v7
         with:
