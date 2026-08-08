@@ -378,13 +378,13 @@ def rule_fill_color(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
                 findings.append(Finding(C07Outcomes.NON_BLACK_STROKE, {"color": local_stroke}))
 
             if not local_fill and current_fill == 'black':
-                findings.append(Finding(C07Outcomes.IMPLICIT_FILL, status=Status.REVIEW))
+                findings.append(Finding(C07Outcomes.IMPLICIT_FILL))
 
         for child in el:
             stack.append((child, current_fill))
 
     if has_fill:
-        findings.append(Finding(C07Outcomes.HAS_FILL, status=Status.REVIEW))
+        findings.append(Finding(C07Outcomes.HAS_FILL))
 
     return findings
 
