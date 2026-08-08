@@ -75,7 +75,7 @@ You're welcome to work on our issues. Contributors can get a priority icon reque
 ### Icons
 It's required to follow the Lawnicons design guidelines. It's strongly recommended to start with 1–2 simple icons to get familiar with the process. Accepted contributions include: new icons capped at 5 per pull request, missing app IDs, rebranding reports, and updates for outdated icons.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Easy-to-make icons](https://lawnicons-requests.vercel.app/?filters=easy) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
+[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Icon review](https://lawnicons-requests.vercel.app/?page=icon-review) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
 
 ### Icon requests
 
