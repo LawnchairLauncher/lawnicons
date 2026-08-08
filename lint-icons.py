@@ -209,26 +209,15 @@ def rule_effects(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
         except ValueError:
             return None
 
+    effects = set()
+    opacities = set()
+
     for el in ctx.xml_tree.iter():
         tag = el.tag.split('}')[-1]
         if tag == 'filter':
-            findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "filter"}))
+            effects.add('filter')
         elif tag.startswith('fe'):
-            effect = tag[2:].lower()
-            # Map common filter primitives to more readable names
-            fe_mapping = {
-                'gaussianblur': 'blur',
-                'dropshadow': 'shadow',
-                'colormatrix': 'color matrix',
-                'componenttransfer': 'component transfer',
-                'mergenode': 'merge node',
-                'diffuselighting': 'diffuse lighting',
-                'specularlighting': 'specular lighting',
-                'convolvematrix': 'convolve matrix',
-                'displacementmap': 'displacement map',
-            }
-            effect = fe_mapping.get(effect, effect)
-            findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": effect}))
+            effects.add('shadow or effect')
 
         for attr in forbidden_attrs:
             val = el.get(attr)
@@ -239,14 +228,13 @@ def rule_effects(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
             if 'opacity' in attr:
                 opacity_pct = parse_opacity(normalized)
                 if opacity_pct is not None:
-                    findings.append(Finding(C05Outcomes.OPACITY, {"opacity": opacity_pct}))
+                    opacities.add(opacity_pct)
                 continue
 
             if attr == 'filter':
-                findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {
-                    "effect": "shadow" if "shadow" in normalized or "blur" in normalized else "filter"}))
+                effects.add("shadow or effect" if any(x in normalized for x in ["shadow", "blur"]) else "filter")
             else:
-                findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": attr}))
+                effects.add(attr)
 
         style_val = el.get('style')
         if style_val:
@@ -259,13 +247,25 @@ def rule_effects(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
                 if 'opacity' in prop:
                     opacity_pct = parse_opacity(normalized)
                     if opacity_pct is not None:
-                        findings.append(Finding(C05Outcomes.OPACITY, {"opacity": opacity_pct}))
+                        opacities.add(opacity_pct)
                     continue
 
                 if prop == 'filter':
-                    findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "filter"}))
+                    effects.add("shadow or effect" if any(x in normalized for x in ["shadow", "blur"]) else "filter")
                 else:
-                    findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": prop}))
+                    effects.add(prop)
+
+    for op in sorted(opacities):
+        findings.append(Finding(C05Outcomes.OPACITY, {"opacity": op}))
+
+    if effects:
+        if "shadow or effect" in effects:
+            findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "shadow or effect"}))
+        elif "filter" in effects:
+            findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": "filter"}))
+        else:
+            for effect in sorted(effects):
+                findings.append(Finding(C05Outcomes.FORBIDDEN_EFFECT, {"effect": effect}))
 
     return findings
 

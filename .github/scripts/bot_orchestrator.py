@@ -1,9 +1,9 @@
-import os
 import argparse
+import json
+import os
 import re
 import subprocess
 import sys
-import json
 from pathlib import Path
 
 # --- Configuration ---
@@ -25,7 +25,7 @@ NEEDS_REVIEW_LABEL = "needs review"
 
 SPEC_MESSAGE = """> [!TIP]
 > **Spec**
-> canvas: 192×192 px, color: #000000, opacity: 100%, shadow: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
+> canvas: 192×192 px, color: #000000, opacity: 100%, shadow or effect: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
 
 # --- Main Logic ---
 
