@@ -19,11 +19,11 @@ jobs:
       - name: Checkout trusted base code
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
           path: trusted
-          fetch-depth: 0 # Needed to compare with base branch
 
       - name: Checkout PR merge snapshot
+        # Fetch full history of the main repository, then checkout the
+        # PR merge commit for diffing against the base branch.
         uses: actions/checkout@v7
         with:
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
