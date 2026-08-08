@@ -6,6 +6,12 @@ on:
     types: [ opened, synchronize, reopened ]
     paths:
       - svgs/*
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to lint'
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -15,6 +21,8 @@ permissions:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    env:
+      PR_ID: ${{ github.event.pull_request.number || inputs.pr_number }}
     steps:
       - name: Checkout trusted base code
         uses: actions/checkout@v7
@@ -26,7 +34,7 @@ jobs:
         # PR merge commit for diffing against the base branch.
         uses: actions/checkout@v7
         with:
-          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          ref: refs/pull/${{ env.PR_ID }}/merge
           path: pr
           fetch-depth: 0 # Needed to compare with base branch
           allow-unsafe-pr-checkout: true
@@ -42,5 +50,6 @@ jobs:
       - name: Run Linter and Post Comment
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_NUMBER: ${{ env.PR_ID }}
+          GITHUB_BASE_REF: ${{ github.event.pull_request.base.ref || 'develop' }}
         run: python trusted/.github/scripts/bot_orchestrator.py --data-repo-dir pr
