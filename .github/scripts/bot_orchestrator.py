@@ -52,10 +52,14 @@ def configure_paths(data_repo_dir: str | None, script_repo_dir: str | None) -> N
 
 
 def get_changed_svgs(base_ref: str) -> list[str]:
-    """Finds SVG files changed in this PR compared to the target branch."""
+    """
+    Finds SVG files changed in this PR compared to the target branch.
+    We use triple-dot here and in `get_changed_drawables` to get only the changes
+    introduced by the PR branch relative to the common ancestor.
+    """
     drawables_pathspec = DRAWABLES_DIR.relative_to(DATA_REPO_ROOT).as_posix()
     cmd = ["git", "diff", "--name-only",
-           f"origin/{base_ref}", "HEAD", "--", drawables_pathspec]
+           f"origin/{base_ref}...HEAD", "--", drawables_pathspec]
     result = subprocess.run(
         cmd,
         capture_output=True,
@@ -75,7 +79,7 @@ def get_changed_svgs(base_ref: str) -> list[str]:
 
 def get_changed_drawables(base_ref: str) -> list[str]:
     """Extracts drawable names from added/modified lines in appfilter.xml diff."""
-    cmd = ["git", "diff", f"origin/{base_ref}", "HEAD", "--",
+    cmd = ["git", "diff", f"origin/{base_ref}...HEAD", "--",
            str(APPFILTER_PATH.as_posix())]
     result = subprocess.run(
         cmd,

@@ -29,12 +29,12 @@ jobs:
         with:
           path: trusted
 
-      - name: Checkout PR merge snapshot
+      - name: Checkout PR head
         # Fetch full history of the main repository, then checkout the
-        # PR merge commit for diffing against the base branch.
+        # PR head commit for diffing against the base branch.
         uses: actions/checkout@v7
         with:
-          ref: refs/pull/${{ env.PR_ID }}/merge
+          ref: refs/pull/${{ env.PR_ID }}/head
           path: pr
           fetch-depth: 0 # Needed to compare with base branch
           allow-unsafe-pr-checkout: true
