@@ -17,7 +17,7 @@ GITHUB_BASE_REF = os.getenv("GITHUB_BASE_REF")
 REPO_ROOT = Path(__file__).parent.parent.parent
 APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
 DRAWABLES_DIR = REPO_ROOT / "svgs/"
-SVG_LINTER_PATH = REPO_ROOT / "lint-icons.py"
+SVG_LINTER_PATH = REPO_ROOT / "lint_icons.py"
 NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"
 
 BOT_SIGNATURE = "<!-- Linter bot report -->"

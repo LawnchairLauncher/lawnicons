@@ -1,10 +1,11 @@
+#!/usr/bin/env python3
 import argparse
 import json
 import logging
 import re
 import sys
 import time
-import xml.etree.ElementTree as ET  # lint: ignore
+import xml.etree.ElementTree as ET
 from abc import ABC, abstractmethod
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass, field, asdict
