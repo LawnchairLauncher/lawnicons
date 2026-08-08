@@ -11,7 +11,7 @@ REPO_NAME = os.getenv("GITHUB_REPOSITORY")
 PR_NUMBER_RAW = os.getenv("PR_NUMBER")
 PR_NUMBER = int(PR_NUMBER_RAW) if PR_NUMBER_RAW else None
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_BASE_REF = os.getenv("GITHUB_BASE_REF")
+BASE_REF = os.getenv("BASE_REF")
 
 # Assuming a standard project structure
 SCRIPT_REPO_ROOT = Path(__file__).parent.parent.parent
@@ -182,10 +182,10 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
     if explicit_base_ref:
         return normalize_ref(explicit_base_ref)
 
-    if GITHUB_BASE_REF:
-        return normalize_ref(GITHUB_BASE_REF)
+    if BASE_REF:
+        return normalize_ref(BASE_REF)
 
-    # Fallback for local CLI runs where GITHUB_BASE_REF is not set.
+    # Fallback for local CLI runs where BASE_REF is not set.
     result = subprocess.run(
         ["git", "symbolic-ref", "refs/remotes/origin/HEAD"],
         capture_output=True,
@@ -200,7 +200,7 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
         if "/" in ref:
             return ref.rsplit("/", 1)[-1]
 
-    return "main"
+    return "develop"
 
 
 def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
@@ -373,7 +373,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--base-ref",
         default=None,
-        help="Base branch to diff against (default: GITHUB_BASE_REF, origin/HEAD, or main).",
+        help="Base branch to diff against (default: BASE_REF, origin/HEAD, or develop).",
     )
     args = parser.parse_args()
 

@@ -51,5 +51,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ env.PR_ID }}
-          GITHUB_BASE_REF: ${{ github.event.pull_request.base.ref || 'develop' }}
+          BASE_REF: ${{ github.base_ref || 'develop' }}
         run: python trusted/.github/scripts/bot_orchestrator.py --data-repo-dir pr
