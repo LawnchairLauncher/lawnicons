@@ -93,7 +93,7 @@ The best way to learn the design guidelines is to read them through once, then r
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-The exact abstract icon size is determined by the stroke's position, weight, and the graphic editor used.
+The exact abstract icon size is determined by the stroke's position, weight, and the graphic editor used.  
 For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
 Tips: follow the blue guides, use existing icons as an example, and aim for pixel-perfect.
@@ -102,7 +102,7 @@ Tips: follow the blue guides, use existing icons as an example, and aim for pixe
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
-These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used.
+These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used.  
 For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
 Tips: follow the golden guides, use existing icons as an example, and aim for pixel-perfect.
@@ -227,24 +227,21 @@ You can use it to find app IDs. If you fulfill icon requests from our table, all
 An app ID is a record consisting of a package and an activity, separated by `/`. App IDs allow you to link icons and apps. 
 
 Sample (Lawnicons)  
+App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 Package: `app.lawnchair.lawnicons`  
 Activity: `app.lawnchair.lawnicons.MainActivity`  
-App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
 **Lawnicons**  
 
-This method is suitable if you are interested in installed apps that aren't supported in Lawnicons.
-1. Install and open Lawnicons.
-2. Long press our logo.
-3. Swipe down.
-4. Copy missing app IDs to clipboard.
-5. Save it wherever it's convenient.
+This method is suitable if you are interested in installed apps that aren't supported in Lawnicons.  
+
+Install and open Lawnicons. → Tap `⋮` → Tap `Request icons` → Select icons → Tap `Copy App IDs` in the split button's menu and save it wherever it's convenient.
 
 [Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
 
 **Icon Request**  
 
-1. Download and launch Icon Request.
+1. Install and open Icon Request.
 2. Tap one of the options:
 - UPDATE EXISTING — to copy app IDs.
 - REQUEST NEW — to save icon images and app IDs. This option is better if you are creating icons.
@@ -255,7 +252,7 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 **Icon Pusher**  
 
-1. Download and launch Icon Pusher.
+1. Install and open Icon Pusher.
 2. Select the icons you want to upload or select all by pressing the square in the top right.
 3. Submit the selected apps.
 4. View your submission on the Icon Pusher website.
@@ -286,17 +283,17 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 ## Adding icons and missing app IDs to Lawnicons
 
+You need to link SVGs and app IDs correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
+
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
-
-You need to link SVGs and app IDs correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
 Tips
 - Avoid name conflicts.
 - Add missing app IDs to icons that are identical to the originals.
 - Make sure your icons or missing app IDs haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [How to find app IDs](#how-to-find-app-ids) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[Plan contributions on our dashboard](https://lawnicons-requests.vercel.app/) • [How to find app IDs](#how-to-find-app-ids) • [Icon contribution tools](#icon-contribution-tools)
 
 ### Manual process
 
@@ -321,8 +318,8 @@ Template
 ```
 
 6. Save changes and push it to your fork via GitHub Desktop.
-7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`. Describe your PR according to our templates.
-8. Make sure that the build went without errors and await a review (better to do a self-review).
+7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`.
+8. Make sure that the build went without errors and common issues are fixed, then await review.
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
 **Clean commit history**  
