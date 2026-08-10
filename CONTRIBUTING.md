@@ -93,7 +93,8 @@ The best way to learn the design guidelines is to read them through once, then r
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-The exact abstract icon size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
+The exact abstract icon size is determined by the stroke's position, weight, and the graphic editor used.
+For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
 Tips: follow the blue guides, use existing icons as an example, and aim for pixel-perfect.
 
@@ -101,7 +102,8 @@ Tips: follow the blue guides, use existing icons as an example, and aim for pixe
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
-These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used.
+For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
 Tips: follow the golden guides, use existing icons as an example, and aim for pixel-perfect.
 
@@ -166,7 +168,9 @@ Icons should be centered, but shape-aware. Align them to the optical center as�
 
 <img src="docs/images/quality-5-text-icons.png" alt="5 Text icons" height="200" />
 
-Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Apps and games with text icons often need to be studied in order to create a recognizable Lawnicons-style icon. If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
+Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Apps and games with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+
+If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
 #### 6 Complex icons
 
@@ -186,7 +190,7 @@ Tips: cut lines around the badge, place it in the lower right corner when possib
 
 #### 8 Minimal generic icons
 
-<img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
+<img src="docs/images/quality-8-minimal-generic-icons.png" alt="8 Minimal icons" height="200" />
 
 Minimal generic icons need distinctive features to aid recognition.
 
