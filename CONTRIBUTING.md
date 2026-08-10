@@ -102,8 +102,7 @@ Tips: follow the blue guides, use existing icons as an example, and aim for pixe
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
-These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used.  
-For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
 Tips: follow the golden guides, use existing icons as an example, and aim for pixel-perfect.
 
@@ -146,7 +145,7 @@ Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke an
 
 #### 2 Black spots
 
-<img src="docs/images/quality-3-black-spots.png" alt="2 Black spots" height="200" />
+<img src="docs/images/quality-2-black-spots.png" alt="2 Black spots" height="200" />
 
 Avoid black spots as much as possible.
 
@@ -174,7 +173,7 @@ If you want to keep only a text, then it should be of high quality and occupy at
 
 #### 6 Complex icons
 
-<img src="docs/images/quality-8-complex-icons.png" alt="6 Complex icons" height="200" />
+<img src="docs/images/quality-6-complex-icons.png" alt="6 Complex icons" height="200" />
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
