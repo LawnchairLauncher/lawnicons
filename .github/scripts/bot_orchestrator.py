@@ -264,7 +264,16 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
 
 def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
     if not file_messages:
-        return f"All checks passed.\n\n{BOT_SIGNATURE}"
+        lines = []
+        if is_first_review:
+            lines.append("Thanks for your contribution!\n")
+            lines.append("Please fix all issues and ensure Lawnicons builds correctly.\n")
+        
+        lines.append("### Common issues\n")
+        lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
+        
+        lines.append(BOT_SIGNATURE)
+        return "\n".join(lines)
 
     lines = []
     if is_first_review:
