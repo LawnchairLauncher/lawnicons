@@ -63,7 +63,7 @@ Extra icons in every release, thanks to you.
         <img alt="Lawnicons requests dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
-    <a href="https://github.com/LawnchairLauncher/lawnicons/issues/3546">
+    <a href="https://lawnchair.crowdin.com/lawnicons">
         <img alt="Lawnicons localization" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
