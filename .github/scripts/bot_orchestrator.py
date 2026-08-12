@@ -267,7 +267,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
         lines = []
         if is_first_review:
             lines.append("Thanks for your contribution!\n")
-            lines.append("Please fix all issues and ensure Lawnicons builds correctly.\n")
+            lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
         
         lines.append("### Common issues\n")
         lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
@@ -345,6 +345,9 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
         if bot_comment:
             print("Updating old comment to success.")
             bot_comment.edit(comment_body)
+        else:
+            print("Posting success comment.")
+            pr.create_issue_comment(comment_body)
         # Add "needs review" label if it's not there.
         if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
