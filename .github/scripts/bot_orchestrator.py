@@ -1,5 +1,6 @@
-import os
 import argparse
+import json
+import os
 import re
 import subprocess
 import sys
@@ -10,39 +11,55 @@ REPO_NAME = os.getenv("GITHUB_REPOSITORY")
 PR_NUMBER_RAW = os.getenv("PR_NUMBER")
 PR_NUMBER = int(PR_NUMBER_RAW) if PR_NUMBER_RAW else None
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_BASE_REF = os.getenv("GITHUB_BASE_REF")
+BASE_REF = os.getenv("BASE_REF")
 
 # Assuming a standard project structure
-REPO_ROOT = Path(__file__).parent.parent.parent
-APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
-DRAWABLES_DIR = REPO_ROOT / "svgs/"
-SVG_LINTER_PATH = REPO_ROOT / "lint-icons.py"
-NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"
+SCRIPT_REPO_ROOT = Path(__file__).parent.parent.parent
+DATA_REPO_ROOT = SCRIPT_REPO_ROOT
 
-BOT_SIGNATURE = "--- \n*Linter Bot Report*"
+# We separate data repo root to prevent PWN attacks in the CI
+APPFILTER_PATH = DATA_REPO_ROOT / "app/assets/appfilter.xml"
+DRAWABLES_DIR = DATA_REPO_ROOT / "svgs/"
+SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
+NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
+
+BOT_SIGNATURE = "<!-- Linter bot report -->"
 NEEDS_REVIEW_LABEL = "needs review"
+
+SPEC_MESSAGE = """> [!TIP]
+> **Spec**
+> canvas: 192×192 px, color: #000000, opacity: 100%, shadow or effect: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
 
 # --- Main Logic ---
 
 
-def configure_repo_paths(repo_dir: str | None) -> None:
+def configure_paths(data_repo_dir: str | None, script_repo_dir: str | None) -> None:
     """Override repository-relative paths for local testing runs."""
-    global REPO_ROOT, APPFILTER_PATH, DRAWABLES_DIR
+    global SCRIPT_REPO_ROOT, DATA_REPO_ROOT, APPFILTER_PATH, DRAWABLES_DIR, SVG_LINTER_PATH, NAME_CHECKER_PATH
 
-    if not repo_dir:
-        return
+    if script_repo_dir:
+        SCRIPT_REPO_ROOT = Path(script_repo_dir).expanduser().resolve()
+        SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
+        NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
-    resolved_repo_root = Path(repo_dir).expanduser().resolve()
-    REPO_ROOT = resolved_repo_root
-    APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
-    DRAWABLES_DIR = REPO_ROOT / "svgs/"
+    if data_repo_dir:
+        DATA_REPO_ROOT = Path(data_repo_dir).expanduser().resolve()
+    elif script_repo_dir:
+        DATA_REPO_ROOT = SCRIPT_REPO_ROOT
+
+    APPFILTER_PATH = DATA_REPO_ROOT / "app/assets/appfilter.xml"
+    DRAWABLES_DIR = DATA_REPO_ROOT / "svgs/"
 
 
 def get_changed_svgs(base_ref: str) -> list[str]:
-    """Finds SVG files changed in this PR compared to the target branch."""
-    drawables_pathspec = DRAWABLES_DIR.relative_to(REPO_ROOT).as_posix()
+    """
+    Finds SVG files changed in this PR compared to the target branch.
+    We use triple-dot here and in `get_changed_drawables` to get only the changes
+    introduced by the PR branch relative to the common ancestor.
+    """
+    drawables_pathspec = DRAWABLES_DIR.relative_to(DATA_REPO_ROOT).as_posix()
     cmd = ["git", "diff", "--name-only",
-           f"origin/{base_ref}", "HEAD", "--", drawables_pathspec]
+           f"origin/{base_ref}...HEAD", "--", drawables_pathspec]
     result = subprocess.run(
         cmd,
         capture_output=True,
@@ -50,16 +67,19 @@ def get_changed_svgs(base_ref: str) -> list[str]:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode != 0:
         return []
     changed_files = result.stdout.strip().splitlines()
-    return [str(DRAWABLES_DIR / Path(f).name) for f in changed_files if f.endswith(".svg")]
+    return [
+        str(DRAWABLES_DIR / Path(f).name)
+        for f in changed_files if f.endswith(".svg") and (DRAWABLES_DIR / Path(f).name).exists()
+    ]
 
 def get_changed_drawables(base_ref: str) -> list[str]:
     """Extracts drawable names from added/modified lines in appfilter.xml diff."""
-    cmd = ["git", "diff", f"origin/{base_ref}", "HEAD", "--",
+    cmd = ["git", "diff", f"origin/{base_ref}...HEAD", "--",
            str(APPFILTER_PATH.as_posix())]
     result = subprocess.run(
         cmd,
@@ -68,7 +88,7 @@ def get_changed_drawables(base_ref: str) -> list[str]:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode != 0:
         return []
@@ -123,15 +143,6 @@ def find_bot_comment(pr):
     return None
 
 
-def normalize_issue_message(message: str) -> str:
-    """Convert internal check IDs (e.g. C01, Q04) to plain numbers."""
-    token = message.strip()
-    match = re.fullmatch(r"[A-Za-z]+(\d+)", token)
-    if match:
-        return str(int(match.group(1)))
-    return token
-
-
 def chunk_for_command(values: list[str], fixed_args: list[str], max_chars: int = 7000) -> list[list[str]]:
     """Split dynamic CLI values into safe chunks to avoid command-line length errors."""
     if not values:
@@ -171,10 +182,10 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
     if explicit_base_ref:
         return normalize_ref(explicit_base_ref)
 
-    if GITHUB_BASE_REF:
-        return normalize_ref(GITHUB_BASE_REF)
+    if BASE_REF:
+        return normalize_ref(BASE_REF)
 
-    # Fallback for local CLI runs where GITHUB_BASE_REF is not set.
+    # Fallback for local CLI runs where BASE_REF is not set.
     result = subprocess.run(
         ["git", "symbolic-ref", "refs/remotes/origin/HEAD"],
         capture_output=True,
@@ -182,159 +193,128 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode == 0:
         ref = result.stdout.strip()
         if "/" in ref:
             return ref.rsplit("/", 1)[-1]
 
-    return "main"
+    return "develop"
 
 
-def collect_final_report(base_ref: str) -> str:
+def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
     changed_svg_files = get_changed_svgs(base_ref)
-    all_errors = []
+    final_file_messages: dict[str, list[dict[str, str]]] = {}
 
-    # 1. Run SVG Linter on changed files only
+    # 1. Run SVG Linter
     if changed_svg_files:
         print(f"Checking {len(changed_svg_files)} changed SVG files...")
-        svg_base_args = ["--format", "compact"]
+        svg_base_args = ["--format", "json"]
         for svg_chunk in chunk_for_command(changed_svg_files, svg_base_args):
-            svg_errors = run_linter(SVG_LINTER_PATH, svg_base_args + svg_chunk)
-            if svg_errors:
-                all_errors.append(svg_errors)
+            raw_json = run_linter(SVG_LINTER_PATH, svg_base_args + svg_chunk)
+            if not raw_json:
+                continue
+            try:
+                reports = json.loads(raw_json)
+                for report in reports:
+                    filename = Path(report["file_path"]).name
+                    for res in report["results"]:
+                        if res.get("status") == "FAIL" and res.get("message"):
+                            msg_obj = {
+                                "message": res["message"],
+                                "category": res.get("category", "Core")
+                            }
+                            final_file_messages.setdefault(filename, []).append(msg_obj)
+            except Exception as e:
+                print(f"Error parsing SVG linter JSON: {e}")
+                print(f"Raw JSON was: {raw_json[:100]}...")
 
-    # 2. Run Name Checker (only on changed drawables)
+    # 2. Run Name Checker
     print("Checking appfilter.xml consistency...")
     changed_drawables = get_changed_drawables(base_ref)
     name_checker_args = [
         "--appfilter", str(APPFILTER_PATH),
         "--drawables-dir", str(DRAWABLES_DIR),
-        "--format", "text",
+        "--format", "json",
     ]
     if changed_drawables:
         drawable_flag_args = name_checker_args + ["--changed-drawables"]
         for drawable_chunk in chunk_for_command(changed_drawables, drawable_flag_args):
-            name_errors = run_linter(
-                NAME_CHECKER_PATH,
-                drawable_flag_args + drawable_chunk,
-                accepted_exit_codes={0, 1},
-            )
-            if name_errors:
-                all_errors.append(name_errors)
-    else:
-        print("No changed drawables detected; skipping name checker.")
-
-    return "\n".join(all_errors).strip()
-
-
-def parse_report_by_file(final_report: str) -> dict[str, dict[str, object]]:
-    error_map: dict[str, dict[str, object]] = {}
-    current_file: str | None = None
-    code_pattern = re.compile(r"^[A-Za-z]+\d+$")
-
-    def ensure_bucket(filename: str) -> dict[str, object]:
-        if filename not in error_map:
-            error_map[filename] = {
-                "lint_icons_codes": set(),
-                "name_checker_messages": [],
-                "other_messages": [],
-            }
-        return error_map[filename]
-
-    def add_unique_message(bucket: dict[str, object], key: str, message: str) -> None:
-        if not message:
-            return
-        values = bucket.get(key)
-        if isinstance(values, list) and message not in values:
-            values.append(message)
-
-    for raw_line in final_report.splitlines():
-        line = raw_line.strip()
-        if not line:
-            continue
-
-        file_parts = [p.strip() for p in line.split(":", 1)]
-        if len(file_parts) == 2 and file_parts[0].lower().endswith(".svg"):
-            current_file = file_parts[0]
-            bucket = ensure_bucket(current_file)
-            payload = file_parts[1].strip()
-            if not payload:
+            raw_json = run_linter(NAME_CHECKER_PATH, drawable_flag_args + drawable_chunk, accepted_exit_codes={0, 1})
+            if not raw_json:
                 continue
+            try:
+                report = json.loads(raw_json)
+                for res in report.get("results", []):
+                    if res.get("status") == "FAIL":
+                        filename = res.get("target", "unknown.svg")
+                        msg = res.get("message")
+                        if msg:
+                            msg_obj = {
+                                "message": msg,
+                                "category": res.get("category", "Naming")
+                            }
+                            final_file_messages.setdefault(filename, []).append(msg_obj)
+            except Exception as e:
+                print(f"Error parsing name checker JSON: {e}")
 
-            # lint-icons compact format: "icon.svg: C01, C05"
-            payload_tokens = [token.strip() for token in payload.split(",") if token.strip()]
-            if payload_tokens and all(code_pattern.fullmatch(token) for token in payload_tokens):
-                cast_codes = bucket["lint_icons_codes"]
-                if isinstance(cast_codes, set):
-                    for token in payload_tokens:
-                        normalized = normalize_issue_message(token)
-                        if normalized.isdigit():
-                            cast_codes.add(normalized)
-                continue
-
-            # name-checker text format: "icon.svg: NR03: Rename: ..."
-            finding_parts = [p.strip() for p in payload.split(":", 1)]
-            if len(finding_parts) == 2 and code_pattern.fullmatch(finding_parts[0]):
-                add_unique_message(bucket, "name_checker_messages", finding_parts[1])
-                continue
-
-            normalized = normalize_issue_message(payload)
-            if normalized.isdigit():
-                cast_codes = bucket["lint_icons_codes"]
-                if isinstance(cast_codes, set):
-                    cast_codes.add(normalized)
-            else:
-                add_unique_message(bucket, "other_messages", payload)
-            continue
-
-        if current_file is not None:
-            bucket = ensure_bucket(current_file)
-            continuation_parts = [p.strip() for p in line.split(":", 1)]
-            if len(continuation_parts) == 2 and code_pattern.fullmatch(continuation_parts[0]):
-                add_unique_message(bucket, "name_checker_messages", continuation_parts[1])
-            else:
-                add_unique_message(bucket, "other_messages", line)
-
-    return error_map
+    return final_file_messages
 
 
-def build_comment_body(final_report: str) -> str:
-    error_map = parse_report_by_file(final_report)
-    comment_body = "**Common issues**\n\n"
+def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
+    if not file_messages:
+        lines = []
+        if is_first_review:
+            lines.append("Thanks for your contribution!\n")
+            lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
+        
+        lines.append("### Common issues\n")
+        lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
+        
+        lines.append(BOT_SIGNATURE)
+        return "\n".join(lines)
 
-    if not error_map:
-        comment_body += f"{final_report}\n\n{BOT_SIGNATURE}"
-        return comment_body
+    lines = []
+    if is_first_review:
+        lines.append("Thanks for your contribution!\n")
+        lines.append("Please fix all bot-detected issues to get a human review — and the rest to merge. Ensure Lawnicons builds correctly.\n")
 
-    for filename in sorted(error_map.keys()):
-        bucket = error_map[filename]
-        codes = bucket.get("lint_icons_codes", set())
-        name_messages = bucket.get("name_checker_messages", [])
-        other_messages = bucket.get("other_messages", [])
+    lines.append("### Bot-detected issues")
+    lines.append(SPEC_MESSAGE + "\n")
 
-        comment_body += f"{filename}\n"
+    for filename in sorted(file_messages.keys()):
+        all_msgs = file_messages[filename]
 
-        if isinstance(codes, set) and codes:
-            sorted_codes = sorted(codes, key=lambda x: int(x))
-            comment_body += f"{', '.join(sorted_codes)}\n"
+        # De-duplicate messages
+        seen_msgs = set()
+        unique_msgs = []
+        for m in all_msgs:
+            msg_key = (m["message"], m["category"])
+            if msg_key not in seen_msgs:
+                unique_msgs.append(m)
+                seen_msgs.add(msg_key)
 
-        if isinstance(name_messages, list):
-            for message in name_messages:
-                comment_body += f"{message}\n"
+        general_msgs = [m["message"] for m in unique_msgs if m["category"] != "Naming"]
+        naming_msgs = [m["message"] for m in unique_msgs if m["category"] == "Naming"]
 
-        if isinstance(other_messages, list):
-            for message in other_messages:
-                comment_body += f"{message}\n"
+        lines.append(f"**{filename}**")
+        if general_msgs:
+            lines.append(", ".join(general_msgs))
 
-        comment_body += "\n"
+        for n_msg in naming_msgs:
+            lines.append(n_msg)
 
-    comment_body += f"{BOT_SIGNATURE}"
-    return comment_body
+        lines.append("") # Empty line between files
+
+    lines.append("### Common issues\n")
+    lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
+
+    lines.append(BOT_SIGNATURE)
+    return "\n".join(lines)
 
 
-def publish_to_github(final_report: str) -> int:
+def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     if not (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None):
         print("Missing GitHub environment variables for GitHub mode.")
         return 2
@@ -347,10 +327,9 @@ def publish_to_github(final_report: str) -> int:
     pr = repo.get_pull(PR_NUMBER)
 
     bot_comment = find_bot_comment(pr)
+    comment_body = build_comment_body(file_messages, is_first_review=(bot_comment is None))
 
-    if final_report:
-        comment_body = build_comment_body(final_report)
-
+    if file_messages:
         if bot_comment:
             print("Updating existing comment.")
             bot_comment.edit(comment_body)
@@ -364,8 +343,11 @@ def publish_to_github(final_report: str) -> int:
     else:
         print("All checks passed.")
         if bot_comment:
-            print("Deleting old comment.")
-            bot_comment.edit(f"All checks passed.\n\n{BOT_SIGNATURE}")
+            print("Updating old comment to success.")
+            bot_comment.edit(comment_body)
+        else:
+            print("Posting success comment.")
+            pr.create_issue_comment(comment_body)
         # Add "needs review" label if it's not there.
         if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
@@ -373,13 +355,9 @@ def publish_to_github(final_report: str) -> int:
     return 0
 
 
-def run_cli_output(final_report: str) -> int:
-    if final_report:
-        print(build_comment_body(final_report))
-        return 1
-
-    print("All checks passed.")
-    return 0
+def run_cli_output(file_messages: dict[str, list[dict[str, str]]]) -> int:
+    print(build_comment_body(file_messages, is_first_review=True))
+    return 1 if file_messages else 0
 
 
 # --- Orchestration ---
@@ -394,27 +372,33 @@ if __name__ == "__main__":
         help="Output mode. 'auto' uses GitHub mode if required env vars are present.",
     )
     parser.add_argument(
-        "--base-ref",
+        "--data-repo-dir", "--repo-dir",
+        dest="data_repo_dir",
         default=None,
-        help="Base branch to diff against (default: GITHUB_BASE_REF, origin/HEAD, or main).",
+        help="Data repository root directory (default: same as script repo).",
     )
     parser.add_argument(
-        "--repo-dir",
+        "--script-repo-dir",
         default=None,
-        help="Repository root directory to run against (default: script-based auto-detection).",
+        help="Script repository root directory (default: auto-detected from __file__).",
+    )
+    parser.add_argument(
+        "--base-ref",
+        default=None,
+        help="Base branch to diff against (default: BASE_REF, origin/HEAD, or develop).",
     )
     args = parser.parse_args()
 
-    configure_repo_paths(args.repo_dir)
+    configure_paths(args.data_repo_dir, args.script_repo_dir)
     base_ref = resolve_base_ref(args.base_ref)
-    final_report = collect_final_report(base_ref)
+    file_messages = collect_final_report(base_ref)
 
     mode = args.mode
     if mode == "auto":
         mode = "github" if (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None) else "cli"
 
     if mode == "github":
-        sys.exit(publish_to_github(final_report))
+        sys.exit(publish_to_github(file_messages))
 
-    sys.exit(run_cli_output(final_report))
+    sys.exit(run_cli_output(file_messages))
 

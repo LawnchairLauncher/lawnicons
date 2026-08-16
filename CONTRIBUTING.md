@@ -45,6 +45,8 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 ## Lawnicons design guidelines
 
+Please read these guidelines carefully to avoid rework. The goal is to create high-quality icons that represent their apps, even if it means redesigning from scratch. Prioritize quality over exact reproduction, and make it pixel-perfect.
+
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
 > [!TIP]
@@ -52,14 +54,6 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 > [View in Figma](https://www.figma.com/community/file/1544976260626797886)
 
 [Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
-
-### Approach
-
-Please read these guidelines carefully to minimize rework. The goal is to create high-quality icons that represent their apps, even if it means redesigning from scratch.
-
-Tips: prioritize quality over exact reproduction and practice on simple icons first.
-
-[Merged PRs](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+is%3Amerged+label%3Aicons)
 
 ### Naming
 
@@ -84,6 +78,8 @@ Repeat the app name, using `a–z`, `0–9`, and `_` for spaces. Insert `_` befo
 
 ### Fundamentals
 
+The best way to learn the design guidelines is to read them through once, then refer back to each point as you work on each icon.
+
 > [!TIP]
 > [View on YouTube](https://youtu.be/XO-5IwowonQ)
 
@@ -97,7 +93,8 @@ Repeat the app name, using `a–z`, `0–9`, and `_` for spaces. Insert `_` befo
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
-Determine the abstract icon size before you start. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
+The exact abstract icon size is determined by the stroke's position, weight, and the graphic editor used.  
+For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`.
 
 Tips: follow the blue guides, use existing icons as an example, and aim for pixel-perfect.
 
@@ -105,9 +102,9 @@ Tips: follow the blue guides, use existing icons as an example, and aim for pixe
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
-Determine the square icon size before you start. These are icons with `50%` or more of the edges running along the square. The exact size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
+These are icons with `50%` or more of the edges running along the square. The square icon size is determined by the stroke's position, weight, and the graphic editor used. For a `12 px` center stroke in Figma, the square icon content area is `142 × 142 px`.
 
-Tips: follow the golden guides, use existing icons as an example, aim for pixel-perfect.
+Tips: follow the golden guides, use existing icons as an example, and aim for pixel-perfect.
 
 #### 4 Color
 
@@ -124,7 +121,7 @@ Minimal icons: `14 px`
 Dense icons: `10 px`  
 Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`  
 
-Exact values only, no fill.
+Exact values only, no fill. Shapes should be outlined.
 
 #### 6 Caps and joints
 
@@ -140,68 +137,61 @@ Use no less than `6 px` for `90°` angles. Refer to the original icon to select 
 
 ### Quality
 
-#### 1 Consistency
+#### 1 Visual balance
 
-<img src="docs/images/quality-1-consistency.png" alt="*1 Consistency" height="200" />
-
-All shapes should be outlined.
-
-#### 2 Visual balance
-
-<img src="docs/images/quality-2-visual-balance.png" alt="2 Visual balance" height="200" />
+<img src="docs/images/quality-1-visual-balance.png" alt="1 Visual balance" height="200" />
 
 Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
-#### 3 Black spots
+#### 2 Black spots
 
-<img src="docs/images/quality-3-black-spots.png" alt="3 Black spots" height="200" />
+<img src="docs/images/quality-2-black-spots.png" alt="2 Black spots" height="200" />
 
 Avoid black spots as much as possible.
 
-#### 4 Excessive density
+#### 3 Excessive density
 
-<img src="docs/images/quality-4-excessive-density.png" alt="4 Excessive density" height="200" />
+<img src="docs/images/quality-3-excessive-density.png" alt="3 Excessive density" height="200" />
 
-Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing.  
-It’s better to make the distance a little more, especially in closed shapes.
+Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify the spacing. It’s better to make the distance a little more, especially in closed shapes.
 
 Tips: move lines further apart or combine into one, and enlarge original icons to make the main features easier to draw.
 
-#### 5 Alignment
+#### 4 Alignment
 
-<img src="docs/images/quality-5-alignment.png" alt="5 Alignment" height="200" />
+<img src="docs/images/quality-4-alignment.png" alt="4 Alignment" height="200" />
 
 Icons should be centered, but shape-aware. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
 
-#### 6 Text icons
+#### 5 Text icons
 
-<img src="docs/images/quality-6-text-icons.png" alt="6 Text icons" height="200" />
+<img src="docs/images/quality-5-text-icons.png" alt="5 Text icons" height="200" />
 
-Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Brands and apps with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
+Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Apps and games with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
-#### 7 Complex icons
+#### 6 Complex icons
 
-<img src="docs/images/quality-7-complex-icons.png" alt="7 Complex icons" height="200" />
+<img src="docs/images/quality-6-complex-icons.png" alt="6 Complex icons" height="200" />
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
 Recognition sources: branding guidelines, UI or gameplay, website favicons, in-app icons, essence of an app or game, and a combination of recognizable features with your own ideas.
 
-#### 8 Minimal icons
+#### 7 Version badges
 
-<img src="docs/images/quality-8-minimal-icons.png" alt="8 Minimal icons" height="200" />
+<img src="docs/images/quality-7-version-badges.png" alt="7 Version badges" height="200" />
 
-Some minimal icons need distinctive features to aid recognition.
-
-#### 9 Version badges
-
-<img src="docs/images/quality-9-version-badges.png" alt="9 Version badges" height="200" />
-
-Use one of our version badges to highlight a separate version of an app if the original icons are indistinguishable. For instance, it could be nightly builds or paid apps with a free one available. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
+Use one of our version badges to highlight a separate version of an app. For instance, it could be nightly builds or paid apps with a free one available. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
 
 Tips: cut lines around the badge, place it in the lower right corner when possible, and don't shift icons for it.
+
+#### 8 Minimal generic icons
+
+<img src="docs/images/quality-8-minimal-generic-icons.png" alt="8 Minimal icons" height="200" />
+
+Minimal generic icons need distinctive features to aid recognition.
 
 ## Icon contribution tools
 
@@ -236,24 +226,21 @@ You can use it to find app IDs. If you fulfill icon requests from our table, all
 An app ID is a record consisting of a package and an activity, separated by `/`. App IDs allow you to link icons and apps. 
 
 Sample (Lawnicons)  
+App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 Package: `app.lawnchair.lawnicons`  
 Activity: `app.lawnchair.lawnicons.MainActivity`  
-App ID: `app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity`  
 
 **Lawnicons**  
 
-This method is suitable if you are interested in installed apps that aren't supported in Lawnicons.
-1. Install and open Lawnicons.
-2. Long press our logo.
-3. Swipe down.
-4. Copy missing app IDs to clipboard.
-5. Save it wherever it's convenient.
+This method is suitable if you are interested in installed apps that aren't supported in Lawnicons.  
+
+Install and open Lawnicons. → Tap `⋮` → Tap `Request icons` → Select icons → Tap `Copy App IDs` in the split button's menu and save it wherever it's convenient.
 
 [Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
 
 **Icon Request**  
 
-1. Download and launch Icon Request.
+1. Install and open Icon Request.
 2. Tap one of the options:
 - UPDATE EXISTING — to copy app IDs.
 - REQUEST NEW — to save icon images and app IDs. This option is better if you are creating icons.
@@ -264,7 +251,7 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 **Icon Pusher**  
 
-1. Download and launch Icon Pusher.
+1. Install and open Icon Pusher.
 2. Select the icons you want to upload or select all by pressing the square in the top right.
 3. Submit the selected apps.
 4. View your submission on the Icon Pusher website.
@@ -295,17 +282,17 @@ This method is suitable if you are interested in installed apps that aren't supp
 
 ## Adding icons and missing app IDs to Lawnicons
 
+You need to link SVGs and app IDs correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
+
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
-
-You need to link SVGs and app IDs correctly, create a PR to our repository through your fork, and wait for it to be reviewed.
 
 Tips
 - Avoid name conflicts.
 - Add missing app IDs to icons that are identical to the originals.
 - Make sure your icons or missing app IDs haven't been added earlier: search the `appfilter.xml` and check PRs.
 
-[Simplified icon contribution](https://docs.google.com/spreadsheets/d/11YoKFuksS3Tmi_UNoSTtrqfYydhDqbR-2t0Fnsr7wL4/edit?usp=sharing) • [How to find app IDs](#how-to-find-app-ids) • [Icon contribution tools](#icon-contribution-tools) • [appfilter.xml](app/assets/appfilter.xml) • [PRs](https://github.com/LawnchairLauncher/lawnicons/pulls)
+[Plan contributions on our dashboard](https://lawnicons-requests.vercel.app/) • [How to find app IDs](#how-to-find-app-ids) • [Icon contribution tools](#icon-contribution-tools)
 
 ### Manual process
 
@@ -330,8 +317,8 @@ Template
 ```
 
 6. Save changes and push it to your fork via GitHub Desktop.
-7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`. Describe your PR according to our templates.
-8. Make sure that the build went without errors and await a review (better to do a self-review).
+7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`.
+8. Make sure that the build went without errors and common issues are fixed, then await review.
 9. We will merge your PR, fix the little things, or leave a comment asking you to rework.
 
 **Clean commit history**  
