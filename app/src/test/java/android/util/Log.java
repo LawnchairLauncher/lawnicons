@@ -37,4 +37,13 @@ public class Log {
         return 0;
     }
 
+    public static boolean isLoggable(String tag, int level) {
+        int defaultLevel = 4;
+
+        if (tag != null && tag.length() > 23) {
+            throw new IllegalArgumentException("Tagging length exceeds limit of 23 characters");
+        }
+
+        return level >= defaultLevel;
+    }
 }
