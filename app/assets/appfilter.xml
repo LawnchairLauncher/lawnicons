@@ -25,6 +25,7 @@
   <calendar component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" prefix="themed_icon_calendar_" name="네이버 캘린더 ~~ Naver Calendar" />
   <calendar component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="ColorOS Calendar" />
   <calendar component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" prefix="themed_icon_calendar_" name="Superb Launcher Calendar" />
+  <calendar component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDefault}" prefix="themed_icon_calendar_" name="KashCal" />
   <!-- Static Calendars -->
   <item drawableIgnore="true" component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" drawable="themed_icon_calendar_31" name="Superb Launcher Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_28" name="ColorOS Calendar" />
@@ -49,6 +50,7 @@
   <item drawableIgnore="true" component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" drawable="themed_icon_calendar_31" name="네이버 캘린더 ~~ Naver Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar.go/com.android.calendar.go.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.asus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="ASUS Calendar" />
+  <item component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDefault}" drawable="simple_calendar" name="KashCal" />
   <!-- Lawnicons -->
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MainActivity}" drawable="mono" name="#mono" />
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MonoInstallerActivity}" drawable="mono" name="#mono" />
@@ -5236,7 +5238,6 @@
   <item component="ComponentInfo{com.eksiteknoloji.eksisozluk/md5ca6cfc07e22d3c2c787aa5e94848191a.SplashActivity}" drawable="eksi_sozluk" name="ekşi sözlük" />
   <item component="ComponentInfo{com.fenerama.eksicep/com.fenerama.eksicep.MainActivity}" drawable="eksicep" name="ekşicep" />
   <item component="ComponentInfo{es.eldiario.app/es.eldiario.app.MainActivity}" drawable="eldiario_es" name="ElDiario.es" />
-  <item component="ComponentInfo{me.ele/me.ele.Launcher}" drawable="ele_me" name="ele.me" />
   <item component="ComponentInfo{com.mahersafadi.electron/com.mahersafadi.electron.MainActivity}" drawable="electron" name="Electron" />
   <item component="ComponentInfo{com.mahersafadi.electron/com.example.electron.MainActivity}" drawable="electron" name="Electron" />
   <item component="ComponentInfo{org.electroncash.wallet/org.electroncash.electroncash3.MainActivity}" drawable="electron_cash" name="Electron Cash" />
@@ -5374,6 +5375,7 @@
   <item component="ComponentInfo{com.epicgames.portal/com.epicgames.portal.ui.MainActivity}" drawable="epic_games" name="Epic Games" />
   <item component="ComponentInfo{com.epicgames.ega/com.epicgames.portal.ui.MainActivity}" drawable="epic_games" name="Epic Games" />
   <item component="ComponentInfo{com.snowcorp.epik/com.yrk.photovision.SplashActivity}" drawable="epik" name="EPIK" />
+  <item component="ComponentInfo{com.aryan.reader.oss/com.aryan.reader.MainActivity}" drawable="episteme" name="Episteme" />
   <item component="ComponentInfo{com.epocrates/com.epocrates.launcher.LauncherActivity}" drawable="epocrates" name="Epocrates" />
   <item component="ComponentInfo{epson.print/epson.print.WellcomeScreenActivity}" drawable="generic_printer" name="Epson iPrint" />
   <item component="ComponentInfo{com.epson.mobilephone.android.epsonprintserviceplugin/com.epson.mobilephone.android.epsonprintserviceplugin.WelcomeScreenActivity}" drawable="epson_print_enabler" name="Epson Print Enabler" />
@@ -14284,6 +14286,7 @@
   <item component="ComponentInfo{pl.polregio/pl.astarium.polregio.ui.startscreen.StartScreenActivity}" drawable="polregio" name="POLREGIO" />
   <item component="ComponentInfo{ai.socialapps.speakmaster/com.snapquiz.app.InitActivity}" drawable="polybuzz" name="PolyBuzz" />
   <item component="ComponentInfo{ai.polycam/ai.polycam.MainActivity}" drawable="polycam" name="Polycam" />
+  <item component="ComponentInfo{com.polymarket.android/com.polymarket.android.MainActivity}" drawable="polymarket" name="Polymarket" />
   <item component="ComponentInfo{co.impactstd.K4/com.unity3d.player.UnityPlayerActivity}" drawable="polytone" name="polytone" />
   <item component="ComponentInfo{co.impactstd.K4/co.impactstd.PolytoneMainActivity}" drawable="polytone" name="polytone" />
   <item component="ComponentInfo{com.pomodrone.app/com.pomodrone.app.activities.ClockActivity}" drawable="pomodoro" name="Pomodoro" />
@@ -17472,6 +17475,7 @@
   <item component="ComponentInfo{com.stepsappgmbh.stepsapp/com.stepsappgmbh.stepsapp.steps.MainActivity}" drawable="stepsapp" name="StepsApp" />
   <item component="ComponentInfo{com.nvllz.stepsy/com.nvllz.stepsy.ui.MainActivity}" drawable="stepsy" name="Stepsy" />
   <item component="ComponentInfo{com.stern.insiderconnected.android/com.stern.insiderconnected.android.MainActivity}" drawable="stern_pinball_ic" name="Stern Pinball IC" />
+  <item component="ComponentInfo{app.sterna/app.sterna.MainActivity}" drawable="sterna_mail" name="Sterna" />
   <item component="ComponentInfo{com.trickshotlabs.stickwithit/com.unity3d.player.UnityPlayerActivity}" drawable="stick_with_it" name="Stick With It" />
   <item component="ComponentInfo{com.marsvard.stickermakerforwhatsapp/com.marsvard.stickermakerforwhatsapp.MainActivity}" drawable="sticker_maker" name="Sticker Maker" />
   <item component="ComponentInfo{com.marsvard.stickermakerforwhatsapp/com.marsvard.stickermakerforwhatsapp.main.MainActivity}" drawable="sticker_maker" name="Sticker Maker" />
@@ -21642,6 +21646,7 @@
   <item component="ComponentInfo{com.yunxiao.haofenshu/com.yunxiao.haofenshu.start.launcher.StudentSplashActivity}" drawable="haofenshu" name="好分数 ~~ Haofenshu" />
   <item component="ComponentInfo{com.hpicorp.vieshow/com.hpicorp.vieshow.MainActivity}" drawable="vieshow_cinemas" name="威秀影城 ~~ Vieshow Cinemas" />
   <item component="ComponentInfo{fontweight.adjustment/fontweight.adjustment.MainActivity}" drawable="fontweight_adjustment" name="字体粗细调节 ~~ Fontweight Adjustment" />
+  <item component="ComponentInfo{com.storage.redirect.x/com.storage.redirect.x.MainActivity}" drawable="storage_redirect_x" name="存储重定向 X ~~ Storage Redirect X" />
   <item component="ComponentInfo{cn.xuexi.android/com.alibaba.android.rimet.biz.SplashActivity}" drawable="xuexi_qiangguo" name="学习强国 ~~ Xuexi Qiangguo" />
   <item component="ComponentInfo{com.chaoxing.mobile/com.chaoxing.mobile.activity.SplashActivity}" drawable="chaoxing" name="学习通 ~~ Chaoxing" />
   <item component="ComponentInfo{cn.com.chsi.chsiapp/cn.com.chsi.chsiapp.GuideActivity}" drawable="chsi" name="学信网 ~~ CHSI" />
@@ -21731,6 +21736,7 @@
   <item component="ComponentInfo{com.taobao.taobao/com.taobao.tao.Welcome}" drawable="taobao" name="淘宝 ~~ Taobao" />
   <item component="ComponentInfo{com.taobao.taobao/com.androlua.Welcome}" drawable="taobao" name="淘宝 ~~ Taobao" />
   <item component="ComponentInfo{com.taobao.taobao/com.taobao.tao.welcome.Welcome}" drawable="taobao" name="淘宝 ~~ Taobao" />
+  <item component="ComponentInfo{me.ele/me.ele.Launcher}" drawable="taobao_flash_shopping" name="淘宝闪购 ~~ Taobao Flash Shopping" />
   <item component="ComponentInfo{com.taobao.movie.android/com.taobao.movie.android.app.home.activity.MainActivity}" drawable="taopiaopiao" name="淘票票 ~~ Taopiaopiao" />
   <item component="ComponentInfo{com.farplace.qingzhuo/com.farplace.qingzhuo.views.SplashActivity}" drawable="qingzhuo" name="清浊 ~~ Qingzhuo" />
   <item component="ComponentInfo{cn.ticktick.task/cn.ticktick.task.HomeAlia_1}" drawable="ticktick" name="滴答清单 ~~ TickTick" />
