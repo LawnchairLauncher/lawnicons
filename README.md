@@ -17,9 +17,7 @@
 
 <br/>
 
-Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings.
-
-You can enable themed icons in Lawnchair by going to `Home Settings → General → Icon Style`.
+Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings. In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
 
 [Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
 
@@ -73,12 +71,10 @@ You're welcome to work on our issues.
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-Study the Lawnicons design guidelines and start with 1–2 icons to avoid unnecessary rework later. You can contribute: up to 5 new icons per PR, missing app IDs, and updates for outdated icons. When fulfilling community requests, focus on high-ROI icons to help Lawnicons grow.
+Study the Lawnicons design guidelines and start with 1–2 icons to avoid unnecessary rework later. You can contribute: up to 5 new icons per PR, missing app IDs, and updates for outdated icons.  
 
 [Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
 
 ### Icon requests
 
-`Open Lawnicons → Tap "Request icons" → Select and request icons`
-
-Feel free to learn the Lawnicons design guidelines and contribute icons.
+Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
