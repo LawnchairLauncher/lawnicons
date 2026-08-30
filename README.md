@@ -17,7 +17,9 @@
 
 <br/>
 
-Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings. In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
+Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings.
+
+In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
 
 [Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
 
