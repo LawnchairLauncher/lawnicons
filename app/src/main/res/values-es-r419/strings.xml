@@ -3,114 +3,114 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Različica %s</string>
+    <string name="version_x">Versión %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Nazaj</string>
+    <string name="back">Volver</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Išči med %d ikonami</string>
+    <string name="search_bar_hint">Busca entre los %d íconos</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Izberi ikono</string>
+    <string name="search_bar_icon_picker">Selecciona un ícono</string>
     <!-- Accessibility label for the search icon -->
-    <string name="search">Išči</string>
+    <string name="search">Buscar</string>
     <!-- Accessibility label for the clear search button -->
-    <string name="clear">Briši</string>
+    <string name="clear">Limpiar</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s ni bila najdena</string>
+    <string name="no_items_found">%s no se encontraron resultados</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">Nove ikone v različici v%1$s</string>
+    <string name="new_icons_in_version">Nuevos íconos en la versión %1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Panel de solicitud de íconos</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Zaprosi za ikone</string>
+    <string name="request_icons">Solicitar íconos</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Todos los íconos son compatibles. Informe sobre cambios de marca a través de las incidencias de GitHub.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Solicitudes de íconos abiertas por tiempo limitado junto a cada nueva actualización de Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
-    <string name="about">O tem</string>
+    <string name="about">Acerca de</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Colaboradores</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Colaboradores principales</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Mostrar a todos los colaboradores</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Aplicación principal</string>
     <!-- Label for icon contributions -->
-    <string name="contribution_icons">Ikone</string>
+    <string name="contribution_icons">Íconos</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastruktura</string>
+    <string name="contribution_infra">Infraestructura</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Posebna zahvala</string>
+    <string name="special_thanks">Agradecumientos especiales</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">Za navdih za ikono aplikacije</string>
+    <string name="special_thanks_icon">Por inspirar el icono de la aplicación</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">Za poimenovanje aplikacije</string>
+    <string name="special_thanks_name">Por nombrar la aplicación</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Odprtokodne licence</string>
+    <string name="acknowledgements">Licencias de código abierto</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Ime</string>
+    <string name="name">Nombre</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">Dibujable</string>
     <!-- Label for the component ID -->
-    <string name="component">Identifikator</string>
+    <string name="component">Identificación</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Identificadores mapeados</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Si el icono está desactualizado debido a un cambio de marca, crea una incidencia en GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">Oglejte si na GitHubu</string>
+    <string name="view_on_github">Ver en GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Deli podrobnosti</string>
+    <string name="share">Compartir detalles</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Manjkajoče ikone</string>
+    <string name="missing_icons">Íconos faltantes</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Počisti izbrano</string>
+    <string name="clear_all">Limpiar selección</string>
     <!-- Button to select all icons -->
-    <string name="select_all">Izberi vse</string>
+    <string name="select_all">Seleccionar todo</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Pošlji e-poštno sporočilo</string>
+    <string name="send_email">Enviar correo electrónico</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Mostrar hoja de opciones</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Expandido</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">Colapsado</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">Interruptor</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Deli datoteko</string>
+    <string name="share_file">Compartir archivo</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Shrani datoteko</string>
+    <string name="save_file">Guardar archivo</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Copiar identificadores de la aplicación</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Datoteka uspešno shranjena</string>
+    <string name="toast_file_saved_successful">Archivo guardado exitosamente</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Napaka pri shranjevanju datoteke</string>
+    <string name="toast_file_save_error">Error al guardar el archivo</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">No se pudo crear el archivo de solicitud</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">Ni aplikacije za izvedbo tega dejanja</string>
+    <string name="toast_no_app_available">No hay ninguna aplicación para gestionar esta acción</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Besedilo kopirano</string>
+    <string name="copied_text">Texto copiado</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">Nove ikone(%1$s)</string>
-    <string name="action_menu_overflow_description">Več možnosti</string>
+    <string name="new_icons">Nuevos íconos (%1$s)</string>
+    <string name="action_menu_overflow_description">Más opciones</string>
 </resources>

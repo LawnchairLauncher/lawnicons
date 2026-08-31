@@ -5,112 +5,112 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Version %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Tillbaka</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">Sök igenom %d ikoner</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Välj en ikon</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Sök</string>
     <!-- Accessibility label for the clear search button -->
     <string name="clear">Rensa</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">%s Inte funnen</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">Nya ikoner i v%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Anslagstavla för ikon-förfrågningar</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">Begär ikoner</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Alla ikoner stöds. Anmäl omprofileringar via GitHub ärenden.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Ikon-beställningar kan göras under en begränsad tid efter att en ny version av Lawnicons släppts.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Om</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Bidragsgivare</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Huvudsakliga bidragsgivare</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Se alla bidragsgivare</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Kärn-app</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">Ikoner</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infrastruktur</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Särskilt tack</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">För att ha inspirerat till app-ikonen</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">För namngivning av appen</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Öppen källkods-licenser</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Name</string>
+    <string name="name">Namn</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">Rit-bar</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">Entitet</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">Matchade entiteter</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Skapa ett ärende på GitHub om ikonen är inaktuell på grund av omprofilering.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Se på GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">Dela detaljer</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Saknade ikoner</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">Rensa val</string>
     <!-- Button to select all icons -->
     <string name="select_all">Markera alla</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Skicka e-post</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Visa alternativ</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Utökad</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">Hopfällt</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">Växlingsknapp</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">Dela fil</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">Spara fil</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Kopiera app-identiteter</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">Sparade filen framgångsrikt</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">Fel vid sparande av fil</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">Kunde inte skapa förfrågnings-fil</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">Ingen app att hantera denna åtgärd</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Copied text</string>
+    <string name="copied_text">Kopierad text</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">New icons (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="new_icons">Nya ikoner (%1$s)</string>
+    <string name="action_menu_overflow_description">Fler alternativ</string>
 </resources>
