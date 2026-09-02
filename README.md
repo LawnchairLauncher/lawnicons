@@ -21,7 +21,7 @@ Lawnicons is a free, community-driven, open-source icon pack built by the Lawnch
 
 In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
 
-[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
+[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download) • [Leave feedback](https://forms.gle/DLiBCVUtLz99GJzH9)
 
 ## Download
 
