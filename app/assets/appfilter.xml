@@ -821,6 +821,7 @@
   <item component="ComponentInfo{pro.vitalii.andropods/pro.vitalii.andropods.PreferencesActivity}" drawable="andropods" name="AndroPods" />
   <item component="ComponentInfo{com.dokeraj.androtainer/com.dokeraj.androtainer.MainActiviy}" drawable="androtainer" name="AndroTainer" />
   <item component="ComponentInfo{com.androvid/com.androvid.videokit.home.HomeActivity}" drawable="androvid" name="AndroVid" />
+  <item component="ComponentInfo{org.nqmgaming.aneko/org.nqmgaming.aneko.presentation.ANekoActivity}" drawable="aneko_reborn" name="ANeko Reborn" />
   <item component="ComponentInfo{exe.bbllw8.anemo/exe.bbllw8.anemo.shell.LauncherActivity}" drawable="anemo" name="Anemo" />
   <item component="ComponentInfo{org.angelauramc.amethyst/net.kdt.pojavlaunch.TestStorageActivity}" drawable="angel_aura_amethyst" name="Angel Aura Amethyst" />
   <item component="ComponentInfo{org.angelauramc.amethyst.debug/net.kdt.pojavlaunch.TestStorageActivity}" drawable="angel_aura_amethyst_debug" name="Angel Aura Amethyst Debug" />
@@ -1158,13 +1159,18 @@
   <item component="ComponentInfo{com.google.ar.unity.arcore_depth_lab/com.unity3d.player.UnityPlayerActivity}" drawable="arcore_depth_lab" name="ARCore Depth Lab" />
   <item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.light.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.daynight/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Day &amp; Night" />
+  <item component="ComponentInfo{com.donnnno.arcticons.daynight.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Day &amp; Night" />
+  <item component="ComponentInfo{com.donnnno.arcticons.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Line Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Line Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_line_icons" name="Arcticons Line Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you.play.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.steelseries.arctiscompanion/com.steelseries.arctiscompanion.activities.MainActivity}" drawable="arctis" name="Arctis" />
   <item component="ComponentInfo{de.ard.audiothek/de.ard.audiothek.MainActivity}" drawable="ard_mediathek" name="ARD Audiothek" />
   <item component="ComponentInfo{de.swr.avp.ard/de.ard.ardmediathek.ui.main.MainActivity}" drawable="ard_mediathek" name="ARD Mediathek" />
@@ -3845,6 +3851,11 @@
   <item component="ComponentInfo{app.comaps/app.organicmaps.DownloadResourcesActivity}" drawable="comaps" name="CoMaps" />
   <item component="ComponentInfo{app.comaps.google/app.organicmaps.DownloadResourcesActivity}" drawable="comaps" name="CoMaps" />
   <item component="ComponentInfo{app.comaps.fdroid/app.organicmaps.DownloadResourcesActivity}" drawable="comaps" name="CoMaps" />
+  <item component="ComponentInfo{app.comaps.huawei/app.organicmaps.DownloadResourcesActivity}" drawable="comaps" name="CoMaps" />
+  <item component="ComponentInfo{app.comaps.debug/app.organicmaps.DownloadResourcesActivity}" drawable="comaps_debug" name="CoMaps Debug" />
+  <item component="ComponentInfo{app.comaps.google.debug/app.organicmaps.DownloadResourcesActivity}" drawable="comaps_debug" name="CoMaps Debug" />
+  <item component="ComponentInfo{app.comaps.fdroid.debug/app.organicmaps.DownloadResourcesActivity}" drawable="comaps_debug" name="CoMaps Debug" />
+  <item component="ComponentInfo{app.comaps.huawei.debug/app.organicmaps.DownloadResourcesActivity}" drawable="comaps_debug" name="CoMaps Debug" />
   <item component="ComponentInfo{com.draco.comatose/com.draco.comatose.views.MainActivity}" drawable="comatose" name="Comatose" />
   <item component="ComponentInfo{de.peterge.combined/com.godot.game.GodotApp}" drawable="combined" name="Combined!" />
   <item component="ComponentInfo{pt.cp.mobiapp/pt.cp.mobiapp.MainActivity}" drawable="comboios_de_portugal_cp" name="Comboios de Portugal (CP)" />
@@ -5886,6 +5897,7 @@
   <item component="ComponentInfo{com.nutspace.trangjan.findeasy/com.nutspace.nutapp.ui.WelcomeActivity}" drawable="vernet" name="Find Easy" />
   <item component="ComponentInfo{de.nulide.findmydevice/de.nulide.findmydevice.MainActivity}" drawable="find_my_device_fmd" name="Find My Device (FMD)" />
   <item component="ComponentInfo{de.nulide.findmydevice/de.nulide.findmydevice.ui.MainActivity}" drawable="find_my_device_fmd" name="Find My Device (FMD)" />
+  <item component="ComponentInfo{de.nulide.findmydevice.edge/de.nulide.findmydevice.ui.MainActivity}" drawable="find_my_device_fmd_edge" name="Find My Device (FMD) Edge" />
   <item component="ComponentInfo{com.find.out.hidden.objects/com.eyewind.tj.findsister.MainActivity}" drawable="find_out" name="Find Out" />
   <item component="ComponentInfo{org.findmykids.app/org.findmykids.app.activityes.launcher.LauncherActivity}" drawable="findmykids" name="Findmykids" />
   <item component="ComponentInfo{dev.jdtech.jellyfin/dev.jdtech.jellyfin.MainActivity}" drawable="findroid" name="Findroid" />
@@ -12167,6 +12179,7 @@
   <item component="ComponentInfo{uk.co.nationalrail.google/uk.co.nationalrail.google.MainActivity}" drawable="national_rail" name="National Rail" />
   <item component="ComponentInfo{com.abhyas.nta.com/com.embibe.app.activities.SplashActivity}" drawable="national_test_abhyas" name="National Test Abhyas" />
   <item component="ComponentInfo{cris.icms.ntes/cris.icms.ntes.LaunchApp}" drawable="national_train_enquiry_system" name="National Train Enquiry System" />
+  <item component="ComponentInfo{nl.nn.nationalenederlanden/nl.nn.nationalenederlanden.MainActivity}" drawable="nationale_nederlanden" name="Nationale Nederlanden" />
   <item component="ComponentInfo{co.uk.Nationwide.Mobile/co.uk.Nationwide.Mobile.ui.MainActivity}" drawable="nationwide_bank" name="Nationwide Bank" />
   <item component="ComponentInfo{co.uk.Nationwide.Mobile/uk.co.nationwide.mobile.ui.MainActivity}" drawable="nationwide_bank" name="Nationwide Bank" />
   <item component="ComponentInfo{com.cylonid.nativealpha/com.cylonid.nativealpha.MainActivity}" drawable="native_alpha_plus" name="Native Alpha Plus" />
@@ -19234,6 +19247,7 @@
   <item component="ComponentInfo{com.raafiya.universalacremotecontrol/com.raafiya.universalacremotecontrol.remotecontrol.SplashActivity}" drawable="generic_power" name="Universal AC Remote Control" />
   <item component="ComponentInfo{com.camel.corp.universalcopy/com.camel.corp.universalcopy.SettingsActivity}" drawable="universal_copy" name="Universal Copy" />
   <item component="ComponentInfo{com.camel.corp.universalcopy/com.camel.corp.universalcopy.settings.SettingsActivity}" drawable="universal_copy" name="Universal Copy" />
+  <item component="ComponentInfo{app.pwhs.universalinstaller/app.pwhs.universalinstaller.presentation.splash.SplashActivity}" drawable="universal_installer" name="Universal Installer" />
   <item component="ComponentInfo{com.letscontrol.universalprojectorremotecontrol/com.letscontrol.universalprojectorremotecontrol.remotecontrol.SplashActivity}" drawable="generic_power" name="Universal Projector Remote Control" />
   <item component="ComponentInfo{co.leanremote.universalremotecontrol.remotecontrol/com.google.android.archive.ReactivateActivity}" drawable="universal_remote_control" name="Universal Remote Control" />
   <item component="ComponentInfo{co.leanremote.universalremotecontrol.remotecontrol/co.leanremote.universalremotecontrol.remotecontrol.SplashActivity}" drawable="universal_remote_control" name="Universal Remote Control" />
