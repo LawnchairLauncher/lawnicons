@@ -9,7 +9,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v10
+      - uses: actions/stale@v11
         with:
           stale-pr-message: This pull request is now stale. Please resolve the remaining issues before it closes in 4 days, or comment if you are still on it.
           days-before-pr-stale: 60
