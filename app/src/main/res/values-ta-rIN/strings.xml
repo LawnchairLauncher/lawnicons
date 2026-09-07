@@ -3,114 +3,114 @@
     <!-- General -->
     <!-- Application name -->
     <!-- Version name, with %s as the version code -->
-    <string name="version_x">Version %s</string>
+    <string name="version_x">வகை %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">பின்</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">%d ஐகான்கள் தேடல்</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">ஐகான் தேர்ந்தெடு</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">தேடல்</string>
     <!-- Accessibility label for the clear search button -->
-    <string name="clear">Clear</string>
+    <string name="clear">சுத்தம்</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">%s கண்டுபிடிக்கப்படவில்லை</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">புது ஐகான்கள் வகை%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">ஐகான் கோரிக்கை இடம்</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">ஐகான்கள் கோரிக்கை</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">அனைத்து ஐகான்களும் ஆதரிக்கப்படுகின்றன. GitHub issues மூலம் புதுப்பித்தல்லைப் புகாரளிக்கவும்.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">ஒவ்வொரு புதிய Lawnicons வெளியீட்டிலும் ஐகான்கள் கோரிக்கைகள் குறிப்பிட்ட காலத்திற்கு திறக்கப்படும்.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">விவர பெயர்கள்</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">பங்களிப்பாளர்கள்</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">முக்கிய பங்களிப்பாளர்கள்</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">அனைத்து பங்களிப்பாளர்கள்</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">முக்கியமான பயன்பாடு</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">சின்னங்கள்</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">உள்கட்டமைப்பு</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">சிறப்பான நன்றிகள்</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">உற்சாகம் ஊட்டும் ஐகான்காக</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">பயன்பாடு பெயர் சூட்டுவதற்காக</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">சுதந்திர உரிமைகள்</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Name</string>
+    <string name="name">பெயர்</string>
     <!-- Label for the drawable resource name -->
-    <string name="drawable">Drawable</string>
+    <string name="drawable">வரையக்கூடியது</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">அடையாளம்</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">மேப் எங்கள்</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">ஐகான் காலாவதியாக இருந்தால், Github isuue உருவாக்கவும்.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">GitHub யில் பார்க்கவும்</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">விவரம் பகிர்</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">காணாத ஐகான்கள்</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">மீட்டமை</string>
     <!-- Button to select all icons -->
-    <string name="select_all">Select all</string>
+    <string name="select_all">அனைத்து</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">மின்னஞ்சல்</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">விருப்பங்கள் தாள</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">விரிவடைந்தது</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">சேர்க்கப்பட்டது</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">பட்டன்</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">File பகிர்வு</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">File சேமிப்பு</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">பயன்பாடு என்</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">காகிதங்கள் சேமிக்கப்பட்டது</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">காகிதம் சேமிப்பதில் பிரச்சனை</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">காகிதம் கோரிக்கையை உருவாக்க இயலவில்லை</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">செயலை ஊக்கவிக்க பயன்பாடு இல்லை</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Copied text</string>
+    <string name="copied_text">நகலெடுக்கப்பட்ட உரை</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">New icons (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="new_icons">புதிய ஐகான்கள் (%1$s)</string>
+    <string name="action_menu_overflow_description">மேலும் விருப்பங்கள்</string>
 </resources>
