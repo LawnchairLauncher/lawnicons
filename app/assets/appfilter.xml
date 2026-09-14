@@ -1163,15 +1163,19 @@
   <item component="ComponentInfo{moe.rukamori.archivetune/moe.rukamori.archivetune.launcher.IconAliasbf8bd3c3adfb819408994c22}" drawable="archivetune" name="ArchiveTune" />
   <item component="ComponentInfo{com.kanedias.archforums/com.kanedias.archforums.MainActivity}" drawable="archlinux_forums" name="Archlinux Forums" />
   <item component="ComponentInfo{com.google.ar.unity.arcore_depth_lab/com.unity3d.player.UnityPlayerActivity}" drawable="arcore_depth_lab" name="ARCore Depth Lab" />
-  <item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.light.nightly/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Black Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.daynight/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Day &amp; Night" />
+  <item component="ComponentInfo{com.donnnno.arcticons.daynight.nightly/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Day &amp; Night" />
   <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Line Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.nightly/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_line_icons" name="Arcticons Line Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_line_icons" name="Arcticons Line Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
+  <item component="ComponentInfo{com.donnnno.arcticons.you.nightly/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you_icons" name="Arcticons Material You Icons" />
   <item component="ComponentInfo{com.steelseries.arctiscompanion/com.steelseries.arctiscompanion.activities.MainActivity}" drawable="arctis" name="Arctis" />
   <item component="ComponentInfo{de.ard.audiothek/de.ard.audiothek.MainActivity}" drawable="ard_mediathek" name="ARD Audiothek" />
   <item component="ComponentInfo{de.swr.avp.ard/de.ard.ardmediathek.ui.main.MainActivity}" drawable="ard_mediathek" name="ARD Mediathek" />
@@ -1503,6 +1507,7 @@
   <item component="ComponentInfo{com.hecorat.screenrecorder.free/com.hecorat.screenrecorder.free.activities.MainActivity}" drawable="az_screen_recorder" name="AZ Screen Recorder" />
   <item component="ComponentInfo{io.github.lime3ds.android/io.github.lime3ds.android.ui.main.MainActivity}" drawable="azahar_emulator" name="Azahar Emulator" />
   <item component="ComponentInfo{io.github.lime3ds.android/org.citra.citra_emu.ui.main.MainActivity}" drawable="azahar_emulator" name="Azahar Emulator" />
+  <item component="ComponentInfo{org.azahar_emu.azahar/org.citra.citra_emu.ui.main.MainActivity}" drawable="azahar_emulator" name="Azahar Emulator" />
   <item component="ComponentInfo{com.azarlive.android/com.azarlive.android.presentation.login.LoginActivity}" drawable="azar" name="Azar" />
   <item component="ComponentInfo{cn.com.blackview.azdome/cn.com.blackview.azdome.ui.activity.FlashActivity}" drawable="azdome" name="AZDOME" />
   <item component="ComponentInfo{tn.aziza.app/tn.aziza.app.MainActivity}" drawable="aziza" name="Aziza" />
@@ -19978,8 +19983,46 @@
   <item component="ComponentInfo{com.videoeditorpro.android/com.quvideo.vivacut.app.splash.SplashActivity}" drawable="vivacut" name="VivaCut" />
   <item component="ComponentInfo{com.vivaldi.browser/com.google.android.apps.chrome.Main}" drawable="vivaldi" name="Vivaldi" />
   <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt0}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt1}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt2}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt3}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt4}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt5}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt6}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt7}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt8}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt9}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt10}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt11}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt12}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt13}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt14}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt15}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt16}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt17}" drawable="vivaldi" name="Vivaldi" />
+  <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt18}" drawable="vivaldi" name="Vivaldi" />
   <item component="ComponentInfo{com.vivaldi.browser/com.vivaldi.browser.IconAlt19}" drawable="vivaldi" name="Vivaldi" />
   <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.google.android.apps.chrome.Main}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt0}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt1}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt2}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt3}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt4}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt5}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt6}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt7}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt8}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt9}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt10}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt11}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt12}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt13}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt14}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt15}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt16}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt17}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt18}" drawable="vivaldi" name="Vivaldi Snapshot" />
+  <item component="ComponentInfo{com.vivaldi.browser.snapshot/com.vivaldi.browser.snapshot.IconAlt19}" drawable="vivaldi" name="Vivaldi Snapshot" />
   <item component="ComponentInfo{com.quvideo.xiaoying/com.quvideo.xiaoying.app.splash.SplashActivity}" drawable="vivavideo" name="VivaVideo" />
   <item component="ComponentInfo{com.vivi.vivimusic/com.music.vivi.MainActivityAlias}" drawable="vivi_music" name="VIVI Music" />
   <item component="ComponentInfo{com.vivi.vivimusic/com.music.vivi.MainActivity}" drawable="vivi_music" name="VIVI Music" />
