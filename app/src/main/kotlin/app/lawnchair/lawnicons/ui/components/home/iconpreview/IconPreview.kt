@@ -116,7 +116,7 @@ fun IconPreview(
         if (LocalInspectionMode.current) {
             Icon(
                 iconInfo.fallbackImage,
-                contentDescription = null,
+                contentDescription = iconInfo.drawableName,
                 modifier = Modifier.fillMaxSize(0.6f),
                 tint = if (showSheet) {
                     MaterialTheme.colorScheme.onSurfaceVariant
@@ -127,7 +127,7 @@ fun IconPreview(
         } else {
             Icon(
                 painter = painterResource(iconInfo.drawableId),
-                contentDescription = null,
+                contentDescription = iconInfo.drawableName,
                 modifier = Modifier.fillMaxSize(0.6f),
                 tint = if (showSheet) {
                     MaterialTheme.colorScheme.onSurfaceVariant
