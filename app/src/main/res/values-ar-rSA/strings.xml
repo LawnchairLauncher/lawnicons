@@ -5,7 +5,7 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">النسخة %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">رجوع</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
@@ -25,23 +25,23 @@
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">لوحة طلبات الأيقونات</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">طلب أيقونات</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">جميع الأيقونات مدعومة. يُرجى الإبلاغ عن عمليات تجديدها عبر قسم المشكلات في GitHub.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">تُفتح طلبات الأيقونات لفترة محدودة مع كل إصدار جديد من Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">حول التطبيق</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
     <string name="contributors">المساهمون</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">المساهمون الأساسيون</string>
+    <string name="core_contributors">المساهمون الأَسَاسيُّون</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">أنظر لكل المساهمون</string>
+    <string name="see_all_contributors">أنظر لكل المساهمين</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
     <string name="contribution_core">التطبيق الأساسي</string>
@@ -64,53 +64,53 @@
     <!-- Label for the drawable resource name -->
     <string name="drawable">مرسوم</string>
     <!-- Label for the component ID -->
-    <string name="component">ID</string>
+    <string name="component">المُعرّف</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">المعرفات المُحددة</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">إذا كانت الأيقونة قديمة بسبب تغير هوية التطبيق, اعمل ملاحظة علي Github.</string>
+    <string name="icon_info_outdated_warning">إذا كانت الأيقونة قديمة بسبب تغير هُويّة التطبيق, حرر ملاحظة على Github.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
     <string name="view_on_github">أظهر في Github</string>
     <!-- Share button on icon info popup -->
     <string name="share">شارك التفاصيل</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">أيقونات ناقصة</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">مسح التحديد</string>
     <!-- Button to select all icons -->
     <string name="select_all">حدد الكل</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">أرسل بريدًا إلكترونيًا</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">عرض ورقة الخيارات</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">زر التبديل مُوَسّع</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">زر التبديل مُصغّر</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">زر التبديل</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">مشاركة المِلف</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">حفظ المِلف</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">نسخ معرّفات التطبيق</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">تم حفظ المِلف</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">حدث خطأ أَثْنَاء حفظ المِلف</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">تعذر إنشاء المِلف</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">لا يوجد تطبيق للتعامل مع هذا الإجراء</string>
     <!-- Toast message shown when text is copied to the clipboard -->
     <string name="copied_text">نص منسوخ</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">أيقونات جديدة(%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="action_menu_overflow_description">خيارات أكثر</string>
 </resources>
