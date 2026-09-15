@@ -80,3 +80,5 @@ Study the Lawnicons design guidelines and start with 1–2 icons to avoid unnece
 ### Icon requests
 
 Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
+
+[Help identify request countries](https://github.com/LawnchairLauncher/lawnicons/issues/4073)
