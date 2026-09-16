@@ -232,10 +232,31 @@ def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
 
 
-@register_rule(id="C03", name="Outside content", outcomes={},
-               description="Checks for elements outside the content area.")
-def rule_placeholder_outside_content(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    return []
+class C03Outcomes:
+    OUTSIDE = Outcome("OUTSIDE", "Outside content", "outside content: bbox extends past canvas")
+
+
+@register_rule(id="C03", name="Outside content", outcomes=C03Outcomes,
+               description="Flags content whose bounding box leaves the 192×192 canvas.")
+def rule_outside_content(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or not HAS_SVGELEMENTS or SVG is None:
+        return []
+    try:
+        doc = ctx.svg_doc
+        if doc is None:
+            doc = SVG.parse(ctx.raw_content)  # type: ignore
+            ctx.svg_doc = doc
+        bbox = doc.bbox()
+        if bbox is None:
+            return []
+        x0, y0, x1, y1 = bbox
+        # small tolerance for anti-alias / path precision
+        pad = 0.5
+        if x0 < -pad or y0 < -pad or x1 > 192 + pad or y1 > 192 + pad:
+            return [Finding(C03Outcomes.OUTSIDE, status=Status.FAIL)]
+        return []
+    except Exception:
+        return []
 
 
 
