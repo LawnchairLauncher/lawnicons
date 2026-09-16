@@ -1,15 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="none" viewBox="0 0 192 192">
-<!-- Lawnicons template for War Era - globe with flames -->
-<!-- Canvas 192x192, content 148x148 centered, stroke 12px rounded -->
-<!-- Outer flames outline -->
-<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M 96 32 C 98 38 105 42 112 48 C 118 54 122 62 118 70 C 124 66 132 68 134 76 C 138 64 148 58 152 46 C 150 58 146 70 152 82 C 156 92 160 104 150 114 C 140 124 126 128 114 122 C 102 130 86 128 76 118 C 66 108 66 94 74 84 C 72 72 64 62 60 50 C 66 58 78 62 84 52 C 90 44 96 40 96 32 Z"/>
-<!-- Main globe -->
-<circle cx="96" cy="100" r="44" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"/>
-<!-- Continents simplified outlines -->
-<!-- South America like shape left -->
-<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 78 92 C 72 96 70 104 74 112 C 78 118 82 124 80 132"/>
-<!-- Africa like shape right -->
-<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="M 102 88 C 108 90 114 94 116 100 C 118 108 114 116 110 122 C 106 126 102 128 102 134"/>
-<!-- Top highlight stroke -->
-<path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M 76 82 C 84 74 96 70 108 76"/>
+<!-- War Era v2 - minimal globe + spaced flames - 8px+ gaps -->
+<circle cx="96" cy="100" r="40" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- continents - thin, spaced -->
+<path d="M82 90 C78 96 78 106 84 112 C88 116 86 124 84 130" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M103 86 C108 88 114 92 116 100 C118 110 112 118 108 126" stroke="#000" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- outer flames - single outline kept 12-14px away from globe -->
+<path d="M96 28 C92 36 84 42 78 50 C70 40 58 46 62 62 C54 60 50 70 58 80 C52 92 56 104 68 110 C56 120 64 136 78 138 C86 128 92 118 96 106 C100 118 110 128 118 138 C132 136 140 120 128 110 C140 104 144 92 138 80 C146 70 142 60 134 62 C138 46 126 40 118 50 C112 42 104 36 96 28 Z" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
