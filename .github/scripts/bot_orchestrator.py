@@ -262,6 +262,14 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
     return final_file_messages
 
 
+def has_hard_errors(file_messages: dict[str, list[dict[str, str]]]) -> bool:
+    """True if any message is NOT a naming-only warning."""
+    for msgs in file_messages.values():
+        for m in msgs:
+            if m.get("category") != "Naming":
+                return True
+    return False
+
 def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
     if not file_messages:
         lines = []
@@ -329,6 +337,8 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     bot_comment = find_bot_comment(pr)
     comment_body = build_comment_body(file_messages, is_first_review=(bot_comment is None))
 
+    has_errors = has_hard_errors(file_messages)
+
     if file_messages:
         if bot_comment:
             print("Updating existing comment.")
@@ -336,10 +346,6 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
         else:
             print("Posting new comment.")
             pr.create_issue_comment(comment_body)
-
-        # Ensure "needs review" label is removed if errors are found.
-        if NEEDS_REVIEW_LABEL in [label.name for label in pr.get_labels()]:
-            pr.remove_from_labels(NEEDS_REVIEW_LABEL)
     else:
         print("All checks passed.")
         if bot_comment:
@@ -348,8 +354,17 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
         else:
             print("Posting success comment.")
             pr.create_issue_comment(comment_body)
-        # Add "needs review" label if it's not there.
-        if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
+
+    current_labels = [label.name for label in pr.get_labels()]
+    has_needs_review = NEEDS_REVIEW_LABEL in current_labels
+
+    if has_errors:
+        # hard errors — remove needs review
+        if has_needs_review:
+            pr.remove_from_labels(NEEDS_REVIEW_LABEL)
+    else:
+        # no hard errors (either clean or naming-only) — add needs review
+        if not has_needs_review:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
 
     return 0
