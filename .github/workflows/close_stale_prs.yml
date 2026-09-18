@@ -18,3 +18,4 @@ jobs:
           exempt-draft-pr: true
           operations-per-run: 500
           labels-to-remove-when-unstale: stale
+          only-pr-labels: icons
