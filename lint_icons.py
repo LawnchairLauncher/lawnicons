@@ -161,22 +161,103 @@ def rule_canvas_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     return [Finding(C01Outcomes.WRONG_SIZE, {"width": w or "?", "height": h or "?"})]
 
 
-@register_rule(id="C02", name="Icon too small", outcomes={},
-               description="Checks if icons are too small.")
-def rule_placeholder_too_small(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    return []
+
+class C02Outcomes:
+    TOO_SMALL = Outcome("TOO_SMALL", "Icon too small", "icon size: {width}×{height} px")
+    SIZE_INFO = Outcome("SIZE_INFO", "Icon size", "icon size: {width}×{height} px")
 
 
-@register_rule(id="C03", name="Outside content", outcomes={},
-               description="Checks for elements outside the content area.")
-def rule_placeholder_outside_content(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    return []
+@register_rule(id="C02", name="Icon too small", outcomes=C02Outcomes,
+               description="Flags content bounding boxes that are unusually small.")
+def rule_icon_too_small(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    """Use geometry bbox when available (#3997)."""
+    if max_speed < Speed.SLOW or not HAS_SVGELEMENTS or SVG is None:
+        return []
+    try:
+        doc = ctx.svg_doc
+        if doc is None:
+            doc = SVG.parse(ctx.raw_content)  # type: ignore
+            ctx.svg_doc = doc
+        bbox = doc.bbox()
+        if bbox is None:
+            return []
+        x0, y0, x1, y1 = bbox
+        w = abs(x1 - x0)
+        h = abs(y1 - y0)
+        # Lawnicons canvas is 192; content much under ~48px is hard to see at launcher sizes
+        if w < 48 or h < 48:
+            return [Finding(
+                C02Outcomes.TOO_SMALL,
+                {"width": round(w, 1), "height": round(h, 1)},
+                Status.FAIL,
+            )]
+        return []
+    except Exception:
+        return []
 
 
-@register_rule(id="C04", name="Square size", outcomes={},
-               description="Checks size of square icons.")
-def rule_placeholder_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    return []
+class C04Outcomes:
+    SQUARE_SIZE = Outcome("SQUARE_SIZE", "Square icon size", "square icon size: {width}×{height} px")
+
+
+@register_rule(id="C04", name="Square size", outcomes=C04Outcomes,
+               description="Reports size when the icon is predominantly square (#3997).")
+def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or not HAS_SVGELEMENTS or SVG is None:
+        return []
+    try:
+        doc = ctx.svg_doc
+        if doc is None:
+            doc = SVG.parse(ctx.raw_content)  # type: ignore
+            ctx.svg_doc = doc
+        bbox = doc.bbox()
+        if bbox is None:
+            return []
+        x0, y0, x1, y1 = bbox
+        w = abs(x1 - x0)
+        h = abs(y1 - y0)
+        if w < 1 or h < 1:
+            return []
+        # "Square" when aspect is close to 1 (within 15%)
+        ratio = min(w, h) / max(w, h)
+        if ratio >= 0.85:
+            return [Finding(
+                C04Outcomes.SQUARE_SIZE,
+                {"width": round(w, 1), "height": round(h, 1)},
+                Status.REVIEW,  # informational for reviewers
+            )]
+        return []
+    except Exception:
+        return []
+
+
+
+class C03Outcomes:
+    OUTSIDE = Outcome("OUTSIDE", "Outside content", "outside content: bbox extends past canvas")
+
+
+@register_rule(id="C03", name="Outside content", outcomes=C03Outcomes,
+               description="Flags content whose bounding box leaves the 192×192 canvas.")
+def rule_outside_content(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or not HAS_SVGELEMENTS or SVG is None:
+        return []
+    try:
+        doc = ctx.svg_doc
+        if doc is None:
+            doc = SVG.parse(ctx.raw_content)  # type: ignore
+            ctx.svg_doc = doc
+        bbox = doc.bbox()
+        if bbox is None:
+            return []
+        x0, y0, x1, y1 = bbox
+        # small tolerance for anti-alias / path precision
+        pad = 0.5
+        if x0 < -pad or y0 < -pad or x1 > 192 + pad or y1 > 192 + pad:
+            return [Finding(C03Outcomes.OUTSIDE, status=Status.FAIL)]
+        return []
+    except Exception:
+        return []
+
 
 
 class C05Outcomes:
