@@ -60,15 +60,8 @@ def parse_icon_stats(title: str) -> tuple[int, int, int]:
     updates = sum(int(x) for x in re.findall(r"\+?(\d+)\s*updates?", title, re.IGNORECASE))
     return icons, links, updates
 
-
-
-def is_first_timer_from_labels(pr: dict) -> bool:
-    labels = [l["name"] for l in pr.get("labels", [])]
-    return "first timer" in labels
-
-
 def get_icon_contributors(prs: list[dict]) -> list[dict]:
-    contributors = defaultdict(lambda: {"icons": 0, "links": 0, "updates": 0, "first_time": False})
+    contributors = defaultdict(lambda: {"icons": 0, "links": 0, "updates": 0})
 
     for pr in prs:
         title = pr.get("title", "")
@@ -82,10 +75,6 @@ def get_icon_contributors(prs: list[dict]) -> list[dict]:
                 contributors[author]["links"] += links
                 contributors[author]["updates"] += updates
 
-                pr_labels = [l["name"] for l in pr.get("labels", [])]
-                if "first timer" in pr_labels:
-                    contributors[author]["first_time"] = True
-
     def sort_key(item):
         stats = item[1]
         return -(stats["icons"] + stats["links"] + stats["updates"])
@@ -96,7 +85,6 @@ def get_icon_contributors(prs: list[dict]) -> list[dict]:
             "icons": stats["icons"],
             "links": stats["links"],
             "updates": stats["updates"],
-            "first_time": stats["first_time"],
         }
         for author, stats in sorted(contributors.items(), key=sort_key)
     ]
@@ -154,7 +142,6 @@ def generate_notes() -> str:
 
     if icon_contributors:
         lines.append(f"\n### Top icon contributors")
-        first_timers_list = []
         for c in icon_contributors:
             parts = []
             if c["icons"] > 0:
@@ -167,14 +154,7 @@ def generate_notes() -> str:
                 label = "update" if c["updates"] == 1 else "updates"
                 parts.append(f"{c['updates']} {label}")
 
-            if c["first_time"]:
-                first_timers_list.append(f"@{c['author']}: {' + '.join(parts)}")
-            else:
-                lines.append(f"@{c['author']}: {' + '.join(parts)}")
-
-        if first_timers_list:
-            lines.append(f"\n#### First timers")
-            lines.extend(first_timers_list)
+            lines.append(f"@{c['author']}: {' + '.join(parts)}")
 
     if code_prs:
         lines.append(f"\n### Code")
