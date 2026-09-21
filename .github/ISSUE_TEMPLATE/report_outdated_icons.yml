@@ -5,15 +5,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        #### Before you start
-        If an existing icon isn't applying automatically, [create a pull request instead](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons).
+        > [!NOTE]
+        > If an existing icon isn't applying automatically, [create a pull request instead](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons).
 
         #### How to find the current icon and app name  
         Search [the appfilter.xml](https://github.com/LawnchairLauncher/lawnicons/blob/develop/app/assets/appfilter.xml). In the line `drawable="..." name="..."`: `drawable` — icon name, `name` — app name.
         
         #### Sample response
-        When an app's design changes, but Lawnicons still shows the old icon.  
-
         ```
         X (formerly Twitter)  
         Now: https://github.com/LawnchairLauncher/lawnicons/tree/develop/svgs/twitter.svg  
