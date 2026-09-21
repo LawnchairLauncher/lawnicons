@@ -42,6 +42,21 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 [Check app IDs on Dashboard](https://lawnicons-requests.vercel.app/) • [How to find app IDs](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-ids) • [Add icons to Lawnicons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-and-missing-app-ids-to-lawnicons)
 
+## Icon reviews
+
+Reviews serve two goals: keeping icon quality high and weeding out unmotivated contributors. A softer approach always wastes time for everyone involved.
+
+### Review stages
+
+1. Our review bot runs its checks and gives feedback. If the contributor doesn't fix the icon issues, the PR isn't worth pursuing.
+2. If the bot finds no issues, a maintainer does a detailed review — up to 5 icons at a time, depending on how many issues are left.
+3. The maintainer merges the PR once all issues are fixed.
+
+PRs with long-ignored issues are closed automatically.
+
+### Become a reviewer
+
+If you want to review icons and have the time, you need solid knowledge of the Lawnicons design guidelines. That usually means being able to create icons yourself, as learning by doing works best. Since reviews often take longer than creating an icon, it's quicker to replace a few incorrect icons than to review them and explain what's wrong. To be specific, you should be able to create 20 random icons flawlessly in one go.
 
 ## Lawnicons design guidelines
 
