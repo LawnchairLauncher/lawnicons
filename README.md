@@ -73,12 +73,10 @@ You're welcome to work on our issues.
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-Study the Lawnicons design guidelines and start with 1–2 icons to avoid unnecessary rework later. You can contribute: up to 5 new icons per PR, missing app IDs, and updates for outdated icons.  
+Study the design guidelines and contribute up to 5 new icons per PR.  
 
 [Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
 
 ### Icon requests
 
 Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
-
-[Help identify request countries](https://github.com/LawnchairLauncher/lawnicons/issues/4073)
