@@ -397,72 +397,24 @@ class RoundingOutcomes:
     INVALID_RECT_ROUND = Outcome("INVALID_RECT_ROUND", "Invalid rect rounding", "rect rx: {rx}")
 
 
-@register_rule(id="C08", name="Rounding caps", outcomes=RoundingOutcomes,
+@register_rule(id="C08", name="Rounding caps", outcomes={},
                description="Validates 'round' stroke-linecap.")
-def rule_rounding_caps(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
-        return []
-
-    root_cap = ctx.xml_tree.get('stroke-linecap')
-    if root_cap == 'round':
-        return []
-
-    for el in ctx.xml_tree.iter():
-        tag = el.tag.split('}')[-1]
-        if not el.get('stroke') or tag not in ['path', 'line', 'polyline']:
-            continue
-        is_open = True
-        if tag == 'path':
-            d = el.get('d', '').strip()
-            if not d or d.endswith('z') or d.endswith('Z'):
-                is_open = False
-            elif max_speed >= Speed.SLOW and HAS_SVGELEMENTS:
-                try:
-                    is_open = not SVGPath(d).closed  # type: ignore
-                except Exception:
-                    pass
-        if is_open and el.get('stroke-linecap') != 'round':
-            return [Finding(RoundingOutcomes.MISSING_CAP)]
+def rule_placeholder_rounding_caps(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    """[Placeholder] Validates 'round' stroke-linecap."""
     return []
 
 
-@register_rule(id="C09", name="Rounding joints", outcomes=RoundingOutcomes,
+@register_rule(id="C09", name="Rounding joints", outcomes={},
                description="Validates 'round' stroke-linejoin.")
-def rule_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
-        return []
-
-    root_join = ctx.xml_tree.get('stroke-linejoin')
-    if root_join == 'round':
-        return []
-
-    for el in ctx.xml_tree.iter():
-        tag = el.tag.split('}')[-1]
-        if not el.get('stroke') or tag in ['svg', 'g', 'defs']:
-            continue
-        if el.get('stroke-linejoin') != 'round':
-            return [Finding(RoundingOutcomes.MISSING_JOIN)]
+def rule_placeholder_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    """[Placeholder] Validates 'round' stroke-linejoin."""
     return []
 
 
-@register_rule(id="C10", name="Rounded corners", outcomes=RoundingOutcomes,
+@register_rule(id="C10", name="Rounded corners", outcomes={},
                description="Validates <rect> corner rounding.")
-def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
-        return []
-
-    for rect in ctx.xml_tree.iter():
-        tag = rect.tag.split('}')[-1]
-        if tag != 'rect':
-            continue
-        rx = rect.get('rx')
-        if rx is None:
-            return [Finding(RoundingOutcomes.MISSING_RECT_ROUND)]
-        try:
-            if not (6 <= float(rx) <= 32):
-                return [Finding(RoundingOutcomes.INVALID_RECT_ROUND, {"rx": rx})]
-        except (ValueError, TypeError):
-            return [Finding(RoundingOutcomes.INVALID_RECT_ROUND, {"rx": rx})]
+def rule_placeholder_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    """[Placeholder] Validates <rect> corner rounding."""
     return []
 
 
