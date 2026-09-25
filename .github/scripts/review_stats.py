@@ -21,7 +21,10 @@ marker = f"<!-- quarter: {quarter_label} -->"
 issue_title = f"{quarter_label} review stats"
 
 quarter_start_month = (quarter - 1) * 3 + 1
-all_month_rows = []
+
+total_icons = 0
+total_updates = 0
+total_link_only = 0
 
 for m in range(quarter_start_month, now.month + 1):
     m_start = f"{year}-{m:02d}-01"
@@ -35,7 +38,8 @@ for m in range(quarter_start_month, now.month + 1):
         m_end = now.strftime("%Y-%m-%d")
     
     cmd = f'gh pr list --repo LawnchairLauncher/lawnicons --state merged --json title,author,mergedAt,baseRefName --limit 1000 --search "base:develop merged:{m_start}..{m_end}"'
-    prs = json.loads(run(cmd)) if run(cmd) else []
+    output = run(cmd)
+    prs = json.loads(output) if output else []
     prs = [p for p in prs if p.get("baseRefName") == "develop"]
     
     stats = {"icons": 0, "updates": 0, "link_only": 0}
@@ -53,30 +57,22 @@ for m in range(quarter_start_month, now.month + 1):
                 stats["link_only"] += 1
     
     m_name = datetime(year, m, 1).strftime("%B")
-    m_total = stats["icons"] + stats["updates"] + stats["link_only"]
-    all_month_rows.append((m_name, stats, m_total))
     print(f"Stats for {m_name}: {stats['icons']} icons, {stats['updates']} updates, {stats['link_only']} link-only")
+    
+    total_icons += stats["icons"]
+    total_updates += stats["updates"]
+    total_link_only += stats["link_only"]
 
-if not all_month_rows:
-    print("No data for this quarter yet. Skipping.")
+total_all = total_icons + total_updates + total_link_only
+
+if total_all == 0:
+    print("No PRs merged this quarter. Skipping.")
     exit(0)
 
-table_header = "| Month | Icons | Updates | Link-only | Total |\n|-------|-------|---------|-----------|-------|"
-table_rows = "\n".join(f"| {name} | {s['icons']} | {s['updates']} | {s['link_only']} | {total} |" for name, s, total in all_month_rows)
+table_header = "| Quarter | Icons | Updates | Link-only | Total |\n|-------|-------|---------|-----------|-------|"
+quarter_row = f"| {quarter_label} | {total_icons} | {total_updates} | {total_link_only} | {total_all} |"
 
-is_quarter_end = now.month == quarter_start_month + 2
-
-if is_quarter_end:
-    total_icons = sum(s["icons"] for _, s, _ in all_month_rows)
-    total_updates = sum(s["updates"] for _, s, _ in all_month_rows)
-    total_link_only = sum(s["link_only"] for _, s, _ in all_month_rows)
-    total_all = total_icons + total_updates + total_link_only
-    quarter_row = f"| {quarter_label} | {total_icons} | {total_updates} | {total_link_only} | {total_all} |"
-
-body = f"{marker}\n\n{table_header}\n{table_rows}"
-if is_quarter_end:
-    body += f"\n{quarter_row}"
-
+body = f"{marker}\n\n{table_header}\n{quarter_row}"
 body = body.replace('"', '\\"')
 
 issues_json = run(f'gh issue list --repo LawnchairLauncher/lawnicons --search "{marker}" --state all --json number,body --limit 1')

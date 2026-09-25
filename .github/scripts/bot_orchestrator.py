@@ -262,9 +262,26 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
     return final_file_messages
 
 
+def has_hard_errors(file_messages: dict[str, list[dict[str, str]]]) -> bool:
+    """True if any message is NOT a naming-only warning."""
+    for msgs in file_messages.values():
+        for m in msgs:
+            if m.get("category") != "Naming":
+                return True
+    return False
+
 def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
     if not file_messages:
-        return f"All checks passed.\n\n{BOT_SIGNATURE}"
+        lines = []
+        if is_first_review:
+            lines.append("Thanks for your contribution!\n")
+            lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
+        
+        lines.append("### Common issues\n")
+        lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
+        
+        lines.append(BOT_SIGNATURE)
+        return "\n".join(lines)
 
     lines = []
     if is_first_review:
@@ -320,6 +337,8 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     bot_comment = find_bot_comment(pr)
     comment_body = build_comment_body(file_messages, is_first_review=(bot_comment is None))
 
+    has_errors = has_hard_errors(file_messages)
+
     if file_messages:
         if bot_comment:
             print("Updating existing comment.")
@@ -327,17 +346,25 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
         else:
             print("Posting new comment.")
             pr.create_issue_comment(comment_body)
-
-        # Ensure "needs review" label is removed if errors are found.
-        if NEEDS_REVIEW_LABEL in [label.name for label in pr.get_labels()]:
-            pr.remove_from_labels(NEEDS_REVIEW_LABEL)
     else:
         print("All checks passed.")
         if bot_comment:
             print("Updating old comment to success.")
             bot_comment.edit(comment_body)
-        # Add "needs review" label if it's not there.
-        if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
+        else:
+            print("Posting success comment.")
+            pr.create_issue_comment(comment_body)
+
+    current_labels = [label.name for label in pr.get_labels()]
+    has_needs_review = NEEDS_REVIEW_LABEL in current_labels
+
+    if has_errors:
+        # hard errors — remove needs review
+        if has_needs_review:
+            pr.remove_from_labels(NEEDS_REVIEW_LABEL)
+    else:
+        # no hard errors (either clean or naming-only) — add needs review
+        if not has_needs_review:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
 
     return 0
