@@ -47,15 +47,15 @@ Lawnicons on the Play Store will install as a different app from other sources.
 > [!IMPORTANT]
 > Help us develop Lawnicons and create more icons.
 
-### Request priority
+### Increase request priority
 Supporter icon requests are fulfilled many times faster, with at least 25 non-easy or 100 easy icons fulfilled per quarter across all supporters.
 
 [Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ### Say thanks
-Extra icons in every release, thanks to you.
+A way to show appreciation.
 
-[Fund community requests](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
+[Donate](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
 
 ## Contributing
 <div align="left">
