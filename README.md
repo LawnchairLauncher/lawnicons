@@ -44,9 +44,6 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Support Lawnicons
 
-> [!IMPORTANT]
-> Help us develop Lawnicons and create more icons.
-
 ### Increase request priority
 Supporter icon requests are fulfilled many times faster, with at least 25 non-easy or 100 easy icons fulfilled per quarter across all supporters.
 
