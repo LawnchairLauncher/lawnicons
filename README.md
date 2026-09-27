@@ -1,4 +1,4 @@
-ds<p align="center">
+<p align="center">
 <img src="docs/images/repo-cover.webp" alt="Lawnicons repository cover" width="340" />
 </p>
 
