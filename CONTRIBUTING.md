@@ -44,7 +44,7 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 ## Icon reviews
 
-Reviews serve two goals: keeping icon quality high and weeding out unmotivated contributors. A softer approach always wastes time for everyone involved.
+Reviews serve two goals: keeping icon quality high and filtering out low-effort attempts. This saves time for everyone involved.
 
 ### Review stages
 
