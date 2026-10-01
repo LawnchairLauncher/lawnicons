@@ -72,7 +72,7 @@ You're welcome to work on our issues.
 ### Icons
 To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR.  
 
-[Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/1438b7a35840fb94513e2474ec895dce717ab86d/CONTRIBUTING.md#icon-reviews)
+[Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
 
 ### Icon requests
 
