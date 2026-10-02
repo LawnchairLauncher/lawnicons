@@ -164,7 +164,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release view "nightly" && gh release delete "nightly" -y --cleanup-tag
+          gh release delete "nightly" -y 2>/dev/null || true
+          sleep 5
+          git push origin :refs/tags/nightly 2>/dev/null || true
+          git tag -f nightly ${{ github.sha }}
+          git push origin -f nightly
+          sleep 3
           gh release create "nightly" "$APK_NAME" \
             -p \
             -t "Lawnicons Nightly" \
