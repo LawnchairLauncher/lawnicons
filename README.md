@@ -77,3 +77,14 @@ To add icons, you need to know the Lawnicons design guidelines, vector graphics,
 ### Icon requests
 
 Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
+
+## Hall of Fame
+
+These people have made a significant contribution to Lawnicons.
+
+| Contributor | Notes |
+| :--- | :--- |
+| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
+| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
+| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
+| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
