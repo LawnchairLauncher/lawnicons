@@ -81,10 +81,42 @@ Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and
 ## Hall of Fame
 
 These people have made a significant contribution to Lawnicons.
+<table>
+  <thead>
+    <tr>
+      <th width="200" align="left">Contributor</th>
+      <th align="left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="https://github.com/airon-main.png?size=128" width="12" height="12" alt="airon-main">
+        <a href="https://github.com/airon-main"><strong>airon-main</strong></a>
+      </td>
+      <td>Added 100+ new icons.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/Hamster45105.png?size=128" width="12" height="12" alt="Hamster45105">
+        <a href="https://github.com/Hamster45105"><strong>Hamster45105</strong></a>
+      </td>
+      <td>Added 100+ new icons, set up Nightly releases, and helped with various tasks.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/KTibow.png?size=128" width="12" height="12" alt="KTibow">
+        <a href="https://github.com/KTibow"><strong>KTibow</strong></a>
+      </td>
+      <td>Helped simplify icon request handling in Google Sheets, making it possible to create thousands of icons much faster.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/TechniKris.png?size=128" width="12" height="12" alt="TechniKris">
+        <a href="https://github.com/TechniKris"><strong>TechniKris</strong></a>
+      </td>
+      <td>Added about 500 new app IDs and has high quality standards.</td>
+    </tr>
+  </tbody>
+</table>
 
-| Contributor | Notes |
-| :--- | :--- |
-| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
-| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
-| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
-| <img src="https://github.com/username.png?size=12" width="12" height="12" alt="username" style="border-radius:50%"> [**username**](https://github.com/username1) | Reason |
