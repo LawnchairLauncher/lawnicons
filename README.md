@@ -45,7 +45,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Support Lawnicons
 
 ### Increase request priority
-Supporter icon requests are fulfilled many times faster, with at least 25 non-easy or 100 easy icons fulfilled per quarter across all supporters.
+Requests from Lawnicons supporters get fulfilled much faster than if you just wait.
 
 [Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
