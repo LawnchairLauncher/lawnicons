@@ -25,14 +25,14 @@
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Painel de controle de requisição de ícones</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">Solicitar ícones</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Todos os ícones são suportados. Reporte renovações de marca via problemas do GitHub.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Pedidos de ícone são abertos por um tempo limitado para cada novo lançamento do Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Sobre</string>
     <!-- Contributors section of About page -->
@@ -66,7 +66,7 @@
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">IDs mapeados</string>
     <!-- Outdated icon info warning -->
     <string name="icon_info_outdated_warning">Se o ícone estiver desatualizado devido a uma renovação da marca, registre um problema no GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
@@ -74,43 +74,43 @@
     <!-- Share button on icon info popup -->
     <string name="share">Compartilhar detalhes</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Ícones faltantes</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">Limpar seleção</string>
     <!-- Button to select all icons -->
     <string name="select_all">Selecionar tudo</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Enviar e-mail</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Mostrar folha de opções</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Expandido</string>
     <!-- Content description for the collapsed state of a toggle button -->
     <string name="toggle_button_collapsed">Collapsed</string>
     <!-- Content description for a toggle button -->
     <string name="toggle_button_content_description">Toggle button</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">Compartilhar arquivo</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">Salvar arquivo</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Copiar IDs de Aplicativo</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">Arquivo salvo com sucesso</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">Erro ao salvar arquivo</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">Não foi possível criar o arquivo requisitado</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">Não há aplicativos para gerenciar esta ação</string>
     <!-- Toast message shown when text is copied to the clipboard -->
     <string name="copied_text">Texto copiado</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Novos ícones (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="action_menu_overflow_description">Mais opções</string>
 </resources>
