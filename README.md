@@ -1,5 +1,5 @@
 <p align="center">
-<img src="docs/images/repo-cover.png" alt="Lawnicons repository cover" width="340" />
+<img src="docs/images/repo-cover.webp" alt="Lawnicons repository cover" width="340" />
 </p>
 
 <h1 align="center" style="margin-top: 0px;">Lawnicons</h1>
@@ -19,9 +19,9 @@
 
 Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings.
 
-You can enable themed icons in Lawnchair by going to `Home Settings → General → Icon Style`.
+In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
 
-[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
+[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download) • [Leave feedback](https://forms.gle/DLiBCVUtLz99GJzH9)
 
 ## Download
 
@@ -44,18 +44,15 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Support Lawnicons
 
-> [!IMPORTANT]
-> Help us develop Lawnicons and create more icons.
-
-### Request priority
-Supporter icon requests are fulfilled many times faster.
+### Increase request priority
+Requests from Lawnicons supporters get fulfilled much faster than if you just wait.
 
 [Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ### Say thanks
-Extra icons in every release, thanks to you.
+A way to show appreciation.
 
-[Fund community requests](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
+[Donate](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
 
 ## Contributing
 <div align="left">
@@ -73,12 +70,53 @@ You're welcome to work on our issues.
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-Study the Lawnicons design guidelines and start with 1–2 icons to avoid unnecessary rework later. You can contribute: up to 5 new icons per PR, missing app IDs, and updates for outdated icons.
+To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. The maintainer does reviews around Saturday.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
+[Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
 
 ### Icon requests
 
-`Open Lawnicons → Tap "Request icons" → Select and request icons`
+Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
 
-Feel free to learn the Lawnicons design guidelines and contribute icons.
+## Hall of Fame
+
+These people have made a significant contribution to Lawnicons.
+<table>
+  <thead>
+    <tr>
+      <th width="200" align="left">Contributor</th>
+      <th align="left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="https://github.com/airon-main.png?size=128" width="12" height="12" alt="airon-main">
+        <a href="https://github.com/airon-main"><strong>airon-main</strong></a>
+      </td>
+      <td>Added 100+ new icons.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/Hamster45105.png?size=128" width="12" height="12" alt="Hamster45105">
+        <a href="https://github.com/Hamster45105"><strong>Hamster45105</strong></a>
+      </td>
+      <td>Added 100+ new icons, set up Nightly releases, and helped with various tasks.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/KTibow.png?size=128" width="12" height="12" alt="KTibow">
+        <a href="https://github.com/KTibow"><strong>KTibow</strong></a>
+      </td>
+      <td>Helped simplify icon request handling in Google Sheets, making it possible to create thousands of icons much faster.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/TechniKris.png?size=128" width="12" height="12" alt="TechniKris">
+        <a href="https://github.com/TechniKris"><strong>TechniKris</strong></a>
+      </td>
+      <td>Added about 500 new app IDs and has high quality standards.</td>
+    </tr>
+  </tbody>
+</table>
+
