@@ -23,40 +23,45 @@ import org.dom4j.Element
 object ClockProcessor {
     private const val DYNAMIC_CLOCK = "dynamic-clock"
     private const val DRAWABLE = "drawable"
-    private const val HOUR_LAYER_INDEX = "hourLayerIndex"
-    private const val MINUTE_LAYER_INDEX = "minuteLayerIndex"
-    private const val SECOND_LAYER_INDEX = "secondLayerIndex"
+    private const val DIAL = "dial"
 
-    // Launchers drive the hands through the drawable level, which RotateDrawable maps onto
-    // 0..10000. The hour layer gets 720 levels per turn, the minute layer 60 and the second
-    // layer 600, so these are the degrees a hand would cover over the full level range.
-    private const val HOUR_DEGREES = "5000"
-    private const val MINUTE_DEGREES = "60000"
-    private const val SECOND_DEGREES = "6000"
+    /**
+     * A rotating layer of a dynamic clock. Launchers move the hands by setting the layer's
+     * level, which RotateDrawable maps onto 0..10000. One level is a minute for the hour and
+     * minute layers and a tenth of a second for the second layer, so [degrees] is the rotation
+     * that the full level range would cover.
+     */
+    private enum class Hand(val part: String, val indexAttribute: String, val degrees: String) {
+        HOUR("hour", "hourLayerIndex", "5000"),
+        MINUTE("minute", "minuteLayerIndex", "60000"),
+        SECOND("second", "secondLayerIndex", "6000"),
+    }
 
     /**
      * Rewrites the adaptive icon of every `<dynamic-clock>` drawable so that its hands are
-     * separate, rotatable layers built from `<drawable>_dial.svg`, `<drawable>_hour.svg`,
-     * `<drawable>_minute.svg` and, if a second layer is declared, `<drawable>_second.svg`.
+     * separate, rotatable layers. Layer 0 is `<drawable>_dial.svg`, the layers above it are
+     * `<drawable>_hour.svg`, `<drawable>_minute.svg` and `<drawable>_second.svg`, in the order
+     * given by the layer indices. A hand without a layer index is left out.
      */
     fun createClockDrawables(appFilterFile: String, resDir: String) {
         val appFilterDocument = XmlUtil.getDocument(appFilterFile)
         for (element in XmlUtil.getElements(appFilterDocument, DYNAMIC_CLOCK)) {
             val drawable = element.attributeValue(DRAWABLE)
-            val layers = buildMap {
-                put(0, "dial" to null)
-                put(element.layerIndex(HOUR_LAYER_INDEX), "hour" to HOUR_DEGREES)
-                put(element.layerIndex(MINUTE_LAYER_INDEX), "minute" to MINUTE_DEGREES)
-                put(element.layerIndex(SECOND_LAYER_INDEX), "second" to SECOND_DEGREES)
-            }.filterKeys { it >= 0 }.toSortedMap()
+            val hands = Hand.entries
+                .map { (element.attributeValue(it.indexAttribute)?.toIntOrNull() ?: -1) to it }
+                .filter { (index, _) -> index >= 0 }
+                .sortedBy { (index, _) -> index }
 
-            require(layers.keys.toList() == layers.keys.indices.toList()) {
-                "Layer indices of dynamic clock $drawable must be consecutive, with 0 left for the dial"
+            require(hands.map { (index, _) -> index } == (1..hands.size).toList()) {
+                "Layer indices of dynamic clock $drawable must count up from 1, layer 0 is the dial"
             }
-            layers.values.forEach { (part, _) ->
-                require(File("$resDir/drawable/${drawable}_${part}_foreground.xml").exists()) {
-                    "Dynamic clock $drawable is missing ${drawable}_$part.svg"
+            val parts = listOf(DIAL) + hands.map { (_, hand) -> hand.part }
+            parts.forEach {
+                require(File("$resDir/drawable/${drawable}_${it}_foreground.xml").exists()) {
+                    "Dynamic clock $drawable is missing ${drawable}_$it.svg"
                 }
+                // The parts are only used as layers, they don't need an adaptive icon of their own
+                File("$resDir/drawable/${drawable}_$it.xml").delete()
             }
 
             val document = DocumentHelper.createDocument()
@@ -64,33 +69,29 @@ object ClockProcessor {
                 .addAttribute("xmlns:android", "http://schemas.android.com/apk/res/android")
             root.addElement("background")
                 .addAttribute("android:drawable", "@color/primaryBackground")
-            root.addElement("foreground").addLayers(drawable, layers.values, "32%")
-            root.addElement("monochrome").addLayers(drawable, layers.values, "28%")
+            root.addElement("foreground").addLayers(drawable, hands.map { (_, hand) -> hand }, "32%")
+            root.addElement("monochrome").addLayers(drawable, hands.map { (_, hand) -> hand }, "28%")
             XmlUtil.writeDocumentToFile(document, "$resDir/drawable/$drawable.xml")
             println("Created dynamic clock $drawable")
         }
     }
 
-    private fun Element.layerIndex(attribute: String): Int = attributeValue(attribute)?.toIntOrNull() ?: -1
-
-    private fun Element.addLayers(
-        drawable: String,
-        layers: Collection<Pair<String, String?>>,
-        inset: String,
-    ) {
+    private fun Element.addLayers(drawable: String, hands: List<Hand>, inset: String) {
         val layerList = addElement("layer-list")
-        layers.forEach { (part, degrees) ->
-            var parent = layerList.addElement("item")
-            if (degrees != null) {
-                parent = parent.addElement("rotate")
-                    .addAttribute("android:fromDegrees", "0")
-                    .addAttribute("android:toDegrees", degrees)
-                    .addAttribute("android:pivotX", "50%")
-                    .addAttribute("android:pivotY", "50%")
-            }
-            parent.addElement("inset")
-                .addAttribute("android:inset", inset)
-                .addAttribute("android:drawable", "@drawable/${drawable}_${part}_foreground")
+        layerList.addElement("item").addInset(inset, "${drawable}_$DIAL")
+        hands.forEach {
+            layerList.addElement("item").addElement("rotate")
+                .addAttribute("android:fromDegrees", "0")
+                .addAttribute("android:toDegrees", it.degrees)
+                .addAttribute("android:pivotX", "50%")
+                .addAttribute("android:pivotY", "50%")
+                .addInset(inset, "${drawable}_${it.part}")
         }
+    }
+
+    private fun Element.addInset(inset: String, drawable: String) {
+        addElement("inset")
+            .addAttribute("android:inset", inset)
+            .addAttribute("android:drawable", "@drawable/${drawable}_foreground")
     }
 }

@@ -67,6 +67,7 @@ class CheckContext:
     xml_items: Dict[str, str]
     disk_svgs: set[str]
     changed_set: Optional[set[str]]
+    clock_layers: set[str] = field(default_factory=set)
 
     @property
     def xml_drawables(self) -> set[str]:
@@ -95,6 +96,8 @@ class RunReport:
     def has_failures(self) -> bool:
         return any(f.status == Status.FAIL for f in self.findings)
 
+
+CLOCK_LAYERS = ("dial", "hour", "minute", "second")
 
 RuleFunc = Callable[[CheckContext], List[Finding]]
 RULES_REGISTRY: List[tuple[RuleFunc, RuleDefinition]] = []
@@ -138,7 +141,7 @@ class NamingOutcomes:
 
 @register_rule(id="NR01", name="Orphaned file", outcomes=NamingOutcomes)
 def rule_orphan_file(ctx: CheckContext) -> List[Finding]:
-    orphaned_svgs = sorted(ctx.disk_svgs_to_check - ctx.xml_drawables)
+    orphaned_svgs = sorted(ctx.disk_svgs_to_check - ctx.xml_drawables - ctx.clock_layers)
     return [Finding(NamingOutcomes.ORPHAN, f"{drawable}.svg") for drawable in orphaned_svgs]
 
 
@@ -236,8 +239,15 @@ def load_context(appfilter_path: Path, drawables_path: Path, changed_set: Option
         for item in root.findall(".//item")
         if (drawable := item.get("drawable"))
     }
+    # The layers of a dynamic clock are referenced by its drawable name, not by an item
+    clock_layers = {
+        f"{drawable}_{layer}"
+        for clock in root.findall(".//dynamic-clock")
+        if (drawable := clock.get("drawable"))
+        for layer in CLOCK_LAYERS
+    }
     disk_svgs = {p.stem for p in drawables_path.glob("*.svg")}
-    return CheckContext(xml_items=xml_items, disk_svgs=disk_svgs, changed_set=changed_set)
+    return CheckContext(xml_items=xml_items, disk_svgs=disk_svgs, changed_set=changed_set, clock_layers=clock_layers)
 
 
 def run_checks(ctx: CheckContext) -> RunReport:

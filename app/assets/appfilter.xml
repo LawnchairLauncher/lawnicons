@@ -50,7 +50,7 @@
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar.go/com.android.calendar.go.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.asus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="ASUS Calendar" />
   <!-- Dynamic Clocks -->
-  <dynamic-clock drawable="generic_clock" hourLayerIndex="1" minuteLayerIndex="2" secondLayerIndex="-1" defaultHour="3" defaultMinute="0" defaultSecond="0" />
+  <dynamic-clock drawable="generic_clock" hourLayerIndex="1" minuteLayerIndex="2" secondLayerIndex="-1" defaultHour="0" defaultMinute="21" defaultSecond="0" />
   <!-- Lawnicons -->
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MonoInstallerActivity}" drawable="mono" name="#mono" />
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MainActivity}" drawable="mono" name="#mono" />
