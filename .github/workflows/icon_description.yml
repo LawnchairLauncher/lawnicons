@@ -180,9 +180,10 @@ jobs:
               return Object.values(grouped)
                 .sort((a, b) => a.name.localeCompare(b.name))
                 .map(entry => {
-                  const line = showPackage ? 
-                    `${entry.name} (\`${entry.package}\` → \`${entry.drawable}.svg\`)` :
-                    `${entry.name} (\`${entry.drawable}.svg\`)`;
+                  const imagesUrl = `https://www.google.com/search?udm=imgs&q=%22${encodeURIComponent(entry.package)}%22`;
+                  const line = showPackage
+                    ? `${entry.name} ([\`${entry.package}\`](${imagesUrl}) → \`${entry.drawable}.svg\`)`
+                    : `${entry.name} (\`${entry.drawable}.svg\`)`;
                   
                   if (entry.count > 1) {
                     return `${entry.count} × ${line}`;
