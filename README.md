@@ -44,11 +44,8 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Support Lawnicons
 
-> [!IMPORTANT]
-> Help us develop Lawnicons and create more icons.
-
 ### Increase request priority
-Supporter icon requests are fulfilled many times faster, with at least 25 non-easy or 100 easy icons fulfilled per quarter across all supporters.
+Requests from Lawnicons supporters get fulfilled much faster than if you just wait.
 
 [Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
@@ -73,10 +70,53 @@ You're welcome to work on our issues.
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-Study the design guidelines and contribute up to 5 new icons per PR.  
+To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. The maintainer does reviews around Saturday.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/1438b7a35840fb94513e2474ec895dce717ab86d/CONTRIBUTING.md#icon-reviews)
+[Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
 
 ### Icon requests
 
 Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
+
+## Hall of Fame
+
+These people have made a significant contribution to Lawnicons.
+<table>
+  <thead>
+    <tr>
+      <th width="200" align="left">Contributor</th>
+      <th align="left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="https://github.com/airon-main.png?size=128" width="12" height="12" alt="airon-main">
+        <a href="https://github.com/airon-main"><strong>airon-main</strong></a>
+      </td>
+      <td>Added 100+ new icons.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/Hamster45105.png?size=128" width="12" height="12" alt="Hamster45105">
+        <a href="https://github.com/Hamster45105"><strong>Hamster45105</strong></a>
+      </td>
+      <td>Added 100+ new icons, set up Nightly releases, and helped with various tasks.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/KTibow.png?size=128" width="12" height="12" alt="KTibow">
+        <a href="https://github.com/KTibow"><strong>KTibow</strong></a>
+      </td>
+      <td>Helped simplify icon request handling in Google Sheets, making it possible to create thousands of icons much faster.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/TechniKris.png?size=128" width="12" height="12" alt="TechniKris">
+        <a href="https://github.com/TechniKris"><strong>TechniKris</strong></a>
+      </td>
+      <td>Added about 500 new app IDs and has high quality standards.</td>
+    </tr>
+  </tbody>
+</table>
+
