@@ -1,9 +1,9 @@
-import os
 import argparse
+import json
+import os
 import re
 import subprocess
 import sys
-import json
 from pathlib import Path
 
 # --- Configuration ---
@@ -11,43 +11,55 @@ REPO_NAME = os.getenv("GITHUB_REPOSITORY")
 PR_NUMBER_RAW = os.getenv("PR_NUMBER")
 PR_NUMBER = int(PR_NUMBER_RAW) if PR_NUMBER_RAW else None
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_BASE_REF = os.getenv("GITHUB_BASE_REF")
+BASE_REF = os.getenv("BASE_REF")
 
 # Assuming a standard project structure
-REPO_ROOT = Path(__file__).parent.parent.parent
-APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
-DRAWABLES_DIR = REPO_ROOT / "svgs/"
-SVG_LINTER_PATH = REPO_ROOT / "lint-icons.py"
-NAME_CHECKER_PATH = REPO_ROOT / ".github/scripts/name_checker.py"
+SCRIPT_REPO_ROOT = Path(__file__).parent.parent.parent
+DATA_REPO_ROOT = SCRIPT_REPO_ROOT
+
+# We separate data repo root to prevent PWN attacks in the CI
+APPFILTER_PATH = DATA_REPO_ROOT / "app/assets/appfilter.xml"
+DRAWABLES_DIR = DATA_REPO_ROOT / "svgs/"
+SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
+NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
 BOT_SIGNATURE = "<!-- Linter bot report -->"
 NEEDS_REVIEW_LABEL = "needs review"
 
 SPEC_MESSAGE = """> [!TIP]
 > **Spec**
-> canvas: 192×192 px, color: #000000, opacity: 100%, shadow: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
+> canvas: 192×192 px, color: #000000, opacity: 100%, shadow or effect: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
 
 # --- Main Logic ---
 
 
-def configure_repo_paths(repo_dir: str | None) -> None:
+def configure_paths(data_repo_dir: str | None, script_repo_dir: str | None) -> None:
     """Override repository-relative paths for local testing runs."""
-    global REPO_ROOT, APPFILTER_PATH, DRAWABLES_DIR
+    global SCRIPT_REPO_ROOT, DATA_REPO_ROOT, APPFILTER_PATH, DRAWABLES_DIR, SVG_LINTER_PATH, NAME_CHECKER_PATH
 
-    if not repo_dir:
-        return
+    if script_repo_dir:
+        SCRIPT_REPO_ROOT = Path(script_repo_dir).expanduser().resolve()
+        SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
+        NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
-    resolved_repo_root = Path(repo_dir).expanduser().resolve()
-    REPO_ROOT = resolved_repo_root
-    APPFILTER_PATH = REPO_ROOT / "app/assets/appfilter.xml"
-    DRAWABLES_DIR = REPO_ROOT / "svgs/"
+    if data_repo_dir:
+        DATA_REPO_ROOT = Path(data_repo_dir).expanduser().resolve()
+    elif script_repo_dir:
+        DATA_REPO_ROOT = SCRIPT_REPO_ROOT
+
+    APPFILTER_PATH = DATA_REPO_ROOT / "app/assets/appfilter.xml"
+    DRAWABLES_DIR = DATA_REPO_ROOT / "svgs/"
 
 
 def get_changed_svgs(base_ref: str) -> list[str]:
-    """Finds SVG files changed in this PR compared to the target branch."""
-    drawables_pathspec = DRAWABLES_DIR.relative_to(REPO_ROOT).as_posix()
+    """
+    Finds SVG files changed in this PR compared to the target branch.
+    We use triple-dot here and in `get_changed_drawables` to get only the changes
+    introduced by the PR branch relative to the common ancestor.
+    """
+    drawables_pathspec = DRAWABLES_DIR.relative_to(DATA_REPO_ROOT).as_posix()
     cmd = ["git", "diff", "--name-only",
-           f"origin/{base_ref}", "HEAD", "--", drawables_pathspec]
+           f"origin/{base_ref}...HEAD", "--", drawables_pathspec]
     result = subprocess.run(
         cmd,
         capture_output=True,
@@ -55,7 +67,7 @@ def get_changed_svgs(base_ref: str) -> list[str]:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode != 0:
         return []
@@ -67,7 +79,7 @@ def get_changed_svgs(base_ref: str) -> list[str]:
 
 def get_changed_drawables(base_ref: str) -> list[str]:
     """Extracts drawable names from added/modified lines in appfilter.xml diff."""
-    cmd = ["git", "diff", f"origin/{base_ref}", "HEAD", "--",
+    cmd = ["git", "diff", f"origin/{base_ref}...HEAD", "--",
            str(APPFILTER_PATH.as_posix())]
     result = subprocess.run(
         cmd,
@@ -76,7 +88,7 @@ def get_changed_drawables(base_ref: str) -> list[str]:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode != 0:
         return []
@@ -170,10 +182,10 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
     if explicit_base_ref:
         return normalize_ref(explicit_base_ref)
 
-    if GITHUB_BASE_REF:
-        return normalize_ref(GITHUB_BASE_REF)
+    if BASE_REF:
+        return normalize_ref(BASE_REF)
 
-    # Fallback for local CLI runs where GITHUB_BASE_REF is not set.
+    # Fallback for local CLI runs where BASE_REF is not set.
     result = subprocess.run(
         ["git", "symbolic-ref", "refs/remotes/origin/HEAD"],
         capture_output=True,
@@ -181,14 +193,14 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
         encoding="utf-8",
         errors="replace",
         check=False,
-        cwd=REPO_ROOT,
+        cwd=DATA_REPO_ROOT,
     )
     if result.returncode == 0:
         ref = result.stdout.strip()
         if "/" in ref:
             return ref.rsplit("/", 1)[-1]
 
-    return "main"
+    return "develop"
 
 
 def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
@@ -250,9 +262,26 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
     return final_file_messages
 
 
+def has_hard_errors(file_messages: dict[str, list[dict[str, str]]]) -> bool:
+    """True if any message is NOT a naming-only warning."""
+    for msgs in file_messages.values():
+        for m in msgs:
+            if m.get("category") != "Naming":
+                return True
+    return False
+
 def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
     if not file_messages:
-        return f"All checks passed.\n\n{BOT_SIGNATURE}"
+        lines = []
+        if is_first_review:
+            lines.append("Thanks for your contribution!\n")
+            lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
+        
+        lines.append("### Common issues\n")
+        lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
+        
+        lines.append(BOT_SIGNATURE)
+        return "\n".join(lines)
 
     lines = []
     if is_first_review:
@@ -308,6 +337,8 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     bot_comment = find_bot_comment(pr)
     comment_body = build_comment_body(file_messages, is_first_review=(bot_comment is None))
 
+    has_errors = has_hard_errors(file_messages)
+
     if file_messages:
         if bot_comment:
             print("Updating existing comment.")
@@ -315,17 +346,25 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
         else:
             print("Posting new comment.")
             pr.create_issue_comment(comment_body)
-
-        # Ensure "needs review" label is removed if errors are found.
-        if NEEDS_REVIEW_LABEL in [label.name for label in pr.get_labels()]:
-            pr.remove_from_labels(NEEDS_REVIEW_LABEL)
     else:
         print("All checks passed.")
         if bot_comment:
             print("Updating old comment to success.")
             bot_comment.edit(comment_body)
-        # Add "needs review" label if it's not there.
-        if NEEDS_REVIEW_LABEL not in [label.name for label in pr.get_labels()]:
+        else:
+            print("Posting success comment.")
+            pr.create_issue_comment(comment_body)
+
+    current_labels = [label.name for label in pr.get_labels()]
+    has_needs_review = NEEDS_REVIEW_LABEL in current_labels
+
+    if has_errors:
+        # hard errors — remove needs review
+        if has_needs_review:
+            pr.remove_from_labels(NEEDS_REVIEW_LABEL)
+    else:
+        # no hard errors (either clean or naming-only) — add needs review
+        if not has_needs_review:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
 
     return 0
@@ -348,18 +387,24 @@ if __name__ == "__main__":
         help="Output mode. 'auto' uses GitHub mode if required env vars are present.",
     )
     parser.add_argument(
-        "--base-ref",
+        "--data-repo-dir", "--repo-dir",
+        dest="data_repo_dir",
         default=None,
-        help="Base branch to diff against (default: GITHUB_BASE_REF, origin/HEAD, or main).",
+        help="Data repository root directory (default: same as script repo).",
     )
     parser.add_argument(
-        "--repo-dir",
+        "--script-repo-dir",
         default=None,
-        help="Repository root directory to run against (default: script-based auto-detection).",
+        help="Script repository root directory (default: auto-detected from __file__).",
+    )
+    parser.add_argument(
+        "--base-ref",
+        default=None,
+        help="Base branch to diff against (default: BASE_REF, origin/HEAD, or develop).",
     )
     args = parser.parse_args()
 
-    configure_repo_paths(args.repo_dir)
+    configure_paths(args.data_repo_dir, args.script_repo_dir)
     base_ref = resolve_base_ref(args.base_ref)
     file_messages = collect_final_report(base_ref)
 

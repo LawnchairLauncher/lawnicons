@@ -1,5 +1,5 @@
 <p align="center">
-<img src="docs/images/repo-cover.png" alt="Lawnicons repository cover" width="340" />
+<img src="docs/images/repo-cover.webp" alt="Lawnicons repository cover" width="340" />
 </p>
 
 <h1 align="center" style="margin-top: 0px;">Lawnicons</h1>
@@ -19,9 +19,9 @@
 
 Lawnicons is a free, community-driven, open-source icon pack built by the Lawnchair team and contributors worldwide. Originally an addon for Lawnchair 12 Alpha 5 and above to implement themed icons. Works with most third-party launchers — apply it in your launcher's settings.
 
-You can enable themed icons in Lawnchair by going to `Home Settings → General → Icon Style`.
+In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
 
-[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download)
+[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download) • [Leave feedback](https://forms.gle/DLiBCVUtLz99GJzH9)
 
 ## Download
 
@@ -42,12 +42,17 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 [nightly.link](https://nightly.link/LawnchairLauncher/lawnicons/workflows/build_debug_apk/develop/Debug%20APK) • [Obtainium](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.lawnchair.lawnicons%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FLawnchairLauncher%2Flawnicons%22%2C%22author%22%3A%22LawnchairLauncher%22%2C%22name%22%3A%22Lawnicons%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22Lawnicons%20Nightly%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Lawnicons%20Nightly%5C%22%2C%5C%22shizukuPretendToBeGooglePlay%5C%22%3Afalse%2C%5C%22allowInsecure%5C%22%3Afalse%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%2C%22overrideSource%22%3Anull%7D) • [GitHub](https://github.com/LawnchairLauncher/lawnicons/releases/tag/nightly)
 
-## Supporting
+## Support Lawnicons
 
-> [!IMPORTANT]
-> Support us to help maintain Lawnicons. Supporter icon requests are fulfilled many times faster.
+### Increase request priority
+Requests from Lawnicons supporters get fulfilled much faster than if you just wait.
 
-[Open Collective](https://opencollective.com/lawnchair) • [GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
+[Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
+
+### Say thanks
+A way to show appreciation.
+
+[Donate](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
 
 ## Contributing
 <div align="left">
@@ -55,22 +60,63 @@ Lawnicons on the Play Store will install as a different app from other sources.
         <img alt="Lawnicons requests dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
-    <a href="https://github.com/LawnchairLauncher/lawnicons/issues/3546">
+    <a href="https://lawnchair.crowdin.com/lawnicons">
         <img alt="Lawnicons localization" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
 </div> 
 
 ### Development
-You're welcome to work on our issues. Contributors can get a priority icon request.
+You're welcome to work on our issues.  
 
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
 ### Icons
-It's required to follow the Lawnicons design guidelines. It's strongly recommended to start with 1–2 simple icons to get familiar with the process. Accepted contributions include: new icons capped at 5 per pull request, missing app IDs, rebranding reports, and updates for outdated icons.
+To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. The maintainer does reviews around Saturday.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [Easy-to-make icons](https://lawnicons-requests.vercel.app/?filters=easy) • [Report outdated icons](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=report_outdated_icons.yml)
+[Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
 
 ### Icon requests
 
-`Open Lawnicons → Tap "Request icons" → Select and request icons`
+Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
 
-Feel free to learn the Lawnicons design guidelines and contribute icons.
+## Hall of Fame
+
+These people have made a significant contribution to Lawnicons.
+<table>
+  <thead>
+    <tr>
+      <th width="200" align="left">Contributor</th>
+      <th align="left">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="https://github.com/airon-main.png?size=128" width="12" height="12" alt="airon-main">
+        <a href="https://github.com/airon-main"><strong>airon-main</strong></a>
+      </td>
+      <td>Added 100+ new icons.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/Hamster45105.png?size=128" width="12" height="12" alt="Hamster45105">
+        <a href="https://github.com/Hamster45105"><strong>Hamster45105</strong></a>
+      </td>
+      <td>Added 100+ new icons, set up Nightly releases, and helped with various tasks.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/KTibow.png?size=128" width="12" height="12" alt="KTibow">
+        <a href="https://github.com/KTibow"><strong>KTibow</strong></a>
+      </td>
+      <td>Helped simplify icon request handling in Google Sheets, making it possible to create thousands of icons much faster.</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/TechniKris.png?size=128" width="12" height="12" alt="TechniKris">
+        <a href="https://github.com/TechniKris"><strong>TechniKris</strong></a>
+      </td>
+      <td>Added about 500 new app IDs and has high quality standards.</td>
+    </tr>
+  </tbody>
+</table>
+

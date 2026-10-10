@@ -8,6 +8,7 @@ from dataclasses import asdict, dataclass, field
 from enum import Enum
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, TextIO, Type
+
 from unidecode import unidecode
 
 
@@ -212,26 +213,9 @@ class JsonOutput(OutputHandler):
         self.dest.write("\n")
 
 
-class CompactOutput(OutputHandler):
-    def emit(self, report: RunReport) -> None:
-        if report.fatal_error:
-            self.dest.write(f"FATAL_ERROR: {report.fatal_error}\n")
-            return
-
-        grouped: Dict[str, List[str]] = {}
-        for res in report.results:
-            if res.status == Status.FAIL:
-                grouped.setdefault(res.target, []).append(res.message)
-
-        for target in sorted(grouped.keys()):
-            self.dest.write(f"**{target}**\n")
-            self.dest.write(f"{', '.join(grouped[target])}\n\n")
-
-
 OUTPUT_FACTORIES: Dict[str, Type[OutputHandler]] = {
     "text": ConsoleOutput,
     "json": JsonOutput,
-    "compact": CompactOutput,
 }
 
 
