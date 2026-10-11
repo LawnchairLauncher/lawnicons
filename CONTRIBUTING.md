@@ -44,19 +44,17 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 ## Icon reviews
 
-Reviews serve two goals: keeping icon quality high and filtering out low-effort attempts. This saves time for everyone involved.
+Reviews serve two goals: keeping icon quality high and filtering out rushed attempts that skip the guidelines. This saves time for everyone involved.
+
+To review contributions, you should be able to create at least 20 random icons flawlessly in one go. That demonstrates solid knowledge of the design guidelines. Reviews often take longer than making an icon, so fixing a few incorrect ones is faster than explaining the issues.
 
 ### Review stages
 
 1. Our review bot runs its checks and gives feedback. If the contributor doesn't fix the icon issues, the PR isn't worth pursuing.
 2. If the bot finds no issues, a maintainer does a detailed review — up to 5 icons at a time, depending on how many issues are left.
-3. The maintainer merges the PR once all issues are fixed.
+3. The maintainer merges the PR once all issues are resolved, sometimes fixing them directly to speed things up.
 
 PRs with long-ignored issues are closed automatically.
-
-### Become a reviewer
-
-If you want to review icons and have the time, you need solid knowledge of the Lawnicons design guidelines. That usually means being able to create icons yourself, as learning by doing works best. Since reviews often take longer than creating an icon, it's quicker to replace a few incorrect icons than to review them and explain what's wrong. To be specific, you should be able to create 20 random icons flawlessly in one go.
 
 ## Lawnicons design guidelines
 
