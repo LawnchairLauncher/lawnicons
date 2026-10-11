@@ -77,7 +77,11 @@ object ClockProcessor {
     }
 
     private fun Element.addLayers(drawable: String, hands: List<Hand>, inset: String) {
+        // An inset counts as padding, and by default every layer is nested inside the padding of
+        // the layers below it. That shrinks the hands in launchers that copy the drawable after
+        // it has been given bounds, so the layers have to be stacked instead.
         val layerList = addElement("layer-list")
+            .addAttribute("android:paddingMode", "stack")
         layerList.addElement("item").addInset(inset, "${drawable}_$DIAL")
         hands.forEach {
             layerList.addElement("item").addElement("rotate")
