@@ -57,7 +57,7 @@ A way to show appreciation.
 ## Contributing
 <div align="left">
     <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Lawnicons requests dashboard" src="https://img.shields.io/badge/Icon%20request%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
+        <img alt="Lawnicons dashboard" src="https://img.shields.io/badge/Lawnicons%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
         <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
     <a href="https://lawnchair.crowdin.com/lawnicons">
@@ -72,7 +72,7 @@ You're welcome to work on our issues.
 ### Icons
 To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. The maintainer does reviews around Saturday.
 
-[Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons-tldr) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
+[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [About icon reviews](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
 
 ### Icon requests
 
