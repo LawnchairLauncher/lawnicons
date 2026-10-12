@@ -100,14 +100,6 @@ App ID: app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity
 7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`.
 8. Make sure that the build went without errors and common issues are fixed, then await review.
 
-#### Future contributions
-
-Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag the commit history through all your PRs. There are two main ways to do this:
-- Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
-- Or delete your repository and start the contribution process from scratch.
-
-If you plan to contribute icons regularly, it's worth learning [icontool.py](/docs/icontool_guide.md).
-
 ### Icon reviews
 
 1. Our review bot runs its checks and gives feedback. If the contributor doesn't fix the icon issues, the PR isn't worth pursuing.
@@ -117,3 +109,11 @@ If you plan to contribute icons regularly, it's worth learning [icontool.py](/do
 PRs with long-ignored issues are closed automatically.
 
 Reviews serve two goals: keeping icon quality high and filtering out rushed attempts that skip the guidelines. This saves time for everyone involved. To review icons, you should be able to create at least 20 random icons flawlessly in one go. That demonstrates solid knowledge of the design guidelines. Reviews often take longer than making an icon, so fixing a few incorrect ones is faster than explaining the issues.
+
+### Future contributions
+
+Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag the commit history through all your PRs. There are two main ways to do this:
+- Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
+- Or delete your repository and start the contribution process from scratch.
+
+If you plan to contribute icons regularly, it's worth learning [icontool.py](/docs/icontool_guide.md).
