@@ -7,8 +7,6 @@ Please read these guidelines carefully to avoid rework. The goal is to create hi
 
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
-[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/images/common-issues-to-fix.png)
-
 ## Naming
 
 ### TL;DR
@@ -141,7 +139,7 @@ Use one of our version badges to highlight a separate version of an app. For in
 
 Tips: cut lines around the badge, place it in the lower right corner when possible, and don't shift icons for it.
 
-#### 8 Minimal generic icons
+### 8 Minimal generic icons
 
 <img src="images/quality-8-minimal-generic-icons.png" alt="8 Minimal icons" height="200" />
 
