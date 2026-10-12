@@ -7,8 +7,6 @@ Please read these guidelines carefully to avoid rework. The goal is to create hi
 
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
 
-[Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/images/common-issues-to-fix.png)
-
 ## Naming
 
 ### TL;DR
