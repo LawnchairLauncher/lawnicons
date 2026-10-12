@@ -26,13 +26,13 @@ You can contribute icons, fulfill icon requests, add missing app IDs, refine exi
 
 [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
-## Create icons
+### Create icons
 
 Create icons in a vector graphics editor and save them as SVG. We recommend Figma because it has easier quality control. You can use Advanced SVG Export to save optimized SVGs in Figma.
 
 [Design guidelines](/docs/design_guidelines.md) • [Figma](https://www.figma.com/) • [Advanced SVG Export](https://www.figma.com/community/plugin/782713260363070260)
 
-## How to find app IDs
+### How to find app IDs
 
 Every app has a unique app ID, which consists of a package and an activity separated by `/`. App IDs allow you to link icons and apps. 
 
@@ -42,17 +42,17 @@ Package: app.lawnchair.lawnicons
 Activity: app.lawnchair.lawnicons.MainActivity
 ```
 
-### Lawnicons
+#### Lawnicons
 
 Install and open Lawnicons → Tap `⋮` → Tap `Request icons` → Select icons → Tap `Copy App IDs` in the split button's menu and save it wherever it's convenient.
 
 [Download Lawnicons](https://github.com/LawnchairLauncher/lawnicons#download)
 
-### Alternatives
+#### Alternatives
 
 [Icon Request](https://play.google.com/store/apps/details?id=de.kaiserdragon.iconrequest) • [Icon Pusher](https://play.google.com/store/apps/details?id=dev.southpaw.iconpusher)
 
-### Android Debug Bridge (adb)
+#### Android Debug Bridge (adb)
 
 1. Connect your Android device or emulator to your laptop/desktop PC that has `adb` installed.
 2. Open the app whose details you want to inspect (e.g. Telegram).
@@ -74,7 +74,7 @@ Install and open Lawnicons → Tap `⋮` → Tap `Request icons` → Select icon
   ```
   ![](docs/images/contributing-image-3.png)
 
-## Adding icons to Lawnicons
+### Adding icons to Lawnicons
 
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
@@ -100,7 +100,7 @@ App ID: app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity
 7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`.
 8. Make sure that the build went without errors and common issues are fixed, then await review.
 
-### Future contributions
+#### Future contributions
 
 Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag the commit history through all your PRs. There are two main ways to do this:
 - Open `Terminal` on the local copy of your repository via GitHub Desktop. Run `git reset --hard upstream/develop`. Overwrite your repository with your local copy via GitHub Desktop: `Force push origin`.
@@ -108,7 +108,7 @@ Please keep your repository up to date if you plan to create more than one PR, o
 
 If you plan to contribute icons regularly, it's worth learning [icontool.py](/docs/icontool_guide.md).
 
-## Icon reviews
+### Icon reviews
 
 1. Our review bot runs its checks and gives feedback. If the contributor doesn't fix the icon issues, the PR isn't worth pursuing.
 2. If the bot finds no issues, a maintainer does a detailed review — up to 5 icons at a time, depending on how many issues are left.
