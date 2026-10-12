@@ -1,12 +1,11 @@
 ## Lawnicons design guidelines
 
+> [!TIP]
+> [View in Figma](https://www.figma.com/community/file/1544976260626797886)
+
 Please read these guidelines carefully to avoid rework. The goal is to create high-quality icons that represent their apps, even if it means redesigning from scratch. Prioritize quality over exact reproduction, and make it pixel-perfect.
 
 The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabstertv) and [Chefski](https://github.com/Chefski).
-
-> [!TIP]
-> The design guidelines are also available in Figma, you can practice there.  
-> [View in Figma](https://www.figma.com/community/file/1544976260626797886)
 
 [Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
 
