@@ -1,4 +1,4 @@
-## Lawnicons design guidelines
+# Lawnicons design guidelines
 
 > [!TIP]
 > [View in Figma](https://www.figma.com/community/file/1544976260626797886)
@@ -9,9 +9,9 @@ The contributors who laid the foundations: [GrabsterTV](https://github.com/Grabs
 
 [Common issues](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/images/common-issues-to-fix.png)
 
-### Naming
+## Naming
 
-**TL;DR**
+### TL;DR
 ```
 _2048.svg | 2048
 lawnicons.svg | Lawnicons
@@ -20,30 +20,30 @@ beijing_card.svg | 北京一卡通 ~~ Beijing Card
 a_and_w.svg | A&amp;W
 ```
 
-**App name**  
+### App name
 
 The app name should be in its primary language, sourced from app stores. For non-English names, add a localized or transliterated English version, separated by `~~` (main name first). If the name is mostly English letters, no second name is needed.
 
 Delete things that aren't part of an app name, and use HTML character references for special symbols (for example, &amp; instead of &).
 
-**Icon name (drawable)**  
+### Icon name (drawable)
 
 Repeat the app name, using `a–z`, `0–9`, and `_` for spaces. Insert `_` before a digit if the icon name starts with one. For multiple apps sharing one icon, use the most popular name.
 
-### Fundamentals
+## Fundamentals
 
 The best way to learn the design guidelines is to read them through once, then refer back to each point as you work on each icon.
 
 > [!TIP]
 > [View on YouTube](https://youtu.be/XO-5IwowonQ)
 
-#### 1 Canvas
+### 1 Canvas
 
 <img src="docs/images/fundamentals-1-canvas.png" alt="1 Canvas" height="200" />
 
 `192 × 192 px`. Use the correct canvas size to create a safe zone around icons.  
 
-#### 2 Abstract icons
+### 2 Abstract icons
 
 <img src="docs/images/fundamentals-2-abstract-icons.png" alt="2 Abstract icons" height="200" />
 
@@ -52,7 +52,7 @@ For a `12 px` center stroke in Figma, the icon content area is `148 × 148 px`
 
 Tips: follow the blue guides, use existing icons as an example, and aim for pixel-perfect.
 
-#### 3 Square icons
+### 3 Square icons
 
 <img src="docs/images/fundamentals-3-square-icons.png" alt="3 Square icons" height="200" />
 
@@ -60,13 +60,13 @@ These are icons with `50%` or more of the edges running along the square. The 
 
 Tips: follow the golden guides, use existing icons as an example, and aim for pixel-perfect.
 
-#### 4 Color
+### 4 Color
 
 <img src="docs/images/fundamentals-4-color.png" alt="4 Color" height="200" />
 
 All lines must be non-transparent black color: `#000000`.  
 
-#### 5 Stroke weights
+### 5 Stroke weights
 
 <img src="docs/images/fundamentals-5-stroke-weights.png" alt="5 Stroke weights" height="200" />
 
@@ -77,33 +77,33 @@ Ellipses, rectangles and fine details: `12 px`, `10 px`, `8 px`, `6 px`
 
 Exact values only, no fill. Shapes should be outlined.
 
-#### 6 Caps and joints
+### 6 Caps and joints
 
 <img src="docs/images/fundamentals-6-caps-and-joints.png" alt="6 Caps and joints" height="200" />
 
 Caps and joints should be rounded.  
 
-#### 7 Corner radius
+### 7 Corner radius
 
 <img src="docs/images/fundamentals-7-corner-radius.png" alt="7 Corner radius" height="200" />
 
 Use no less than `6 px` for `90°` angles. Refer to the original icon to select a value. It's allowed to leave a `0 px` radius in cases when the others spoil the shape: for instance, when `90°` angles are formed of short lines.
 
-### Quality
+## Quality
 
-#### 1 Visual balance
+### 1 Visual balance
 
 <img src="docs/images/quality-1-visual-balance.png" alt="1 Visual balance" height="200" />
 
 Avoid drastic changes in stroke weights. For instance, using a `12 px` stroke and suddenly decreasing it to `8 px` creates an unbalanced visual effect.
 
-#### 2 Black spots
+### 2 Black spots
 
 <img src="docs/images/quality-2-black-spots.png" alt="2 Black spots" height="200" />
 
 Avoid black spots as much as possible.
 
-#### 3 Excessive density
+### 3 Excessive density
 
 <img src="docs/images/quality-3-excessive-density.png" alt="3 Excessive density" height="200" />
 
@@ -111,13 +111,13 @@ Keep at least `8 px` between lines, using an `8 × 8 px` rectangle to verify t
 
 Tips: move lines further apart or combine into one, and enlarge original icons to make the main features easier to draw.
 
-#### 4 Alignment
+### 4 Alignment
 
 <img src="docs/images/quality-4-alignment.png" alt="4 Alignment" height="200" />
 
 Icons should be centered, but shape-aware. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
 
-#### 5 Text icons
+### 5 Text icons
 
 <img src="docs/images/quality-5-text-icons.png" alt="5 Text icons" height="200" />
 
@@ -125,7 +125,7 @@ Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons sty
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
-#### 6 Complex icons
+### 6 Complex icons
 
 <img src="docs/images/quality-6-complex-icons.png" alt="6 Complex icons" height="200" />
 
@@ -133,7 +133,7 @@ First, try to make a complex icon based on the original. When it’s clear that 
 
 Recognition sources: branding guidelines, UI or gameplay, website favicons, in-app icons, essence of an app or game, and a combination of recognizable features with your own ideas.
 
-#### 7 Version badges
+### 7 Version badges
 
 <img src="docs/images/quality-7-version-badges.png" alt="7 Version badges" height="200" />
 
