@@ -25,7 +25,7 @@
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Painel de ícones solicitados</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">Solicitar ícones</string>
     <!-- Snackbar content -->
@@ -68,7 +68,7 @@
     <!-- Title for the section showing IDs mapped to an icon -->
     <string name="mapped_components">IDs mapeados</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">Se o ícone estiver desatualizado devido a uma renovação da marca, crie um Issue no GitHub.</string>
+    <string name="icon_info_outdated_warning">Se o ícone estiver desatualizado devido a uma renovação da marca, abra um Issue no GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
     <string name="view_on_github">Ver no GitHub</string>
     <!-- Share button on icon info popup -->
@@ -82,7 +82,7 @@
     <string name="select_all">Selecionar Todos</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Enviar email</string>
     <!-- Accessibility action to show the options sheet -->
     <string name="show_options_sheet">Mostrar Definições</string>
     <!-- Content description for the expanded state of a toggle button -->
@@ -106,11 +106,11 @@
     <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">Não foi possível criar ficheiro</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">Não há aplicações para esta ação</string>
+    <string name="toast_no_app_available">Não há aplicações para realizar esta ação</string>
     <!-- Toast message shown when text is copied to the clipboard -->
     <string name="copied_text">Texto copiado</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">Novos ícones (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="action_menu_overflow_description">Mais opções</string>
 </resources>
