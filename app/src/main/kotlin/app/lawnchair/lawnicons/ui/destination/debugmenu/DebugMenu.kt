@@ -103,6 +103,7 @@ fun DebugMenu(
 
     val boolPrefs = listOf(
         prefs.forceEnableIconRequest,
+        prefs.isFirstLaunch,
     )
 
     DebugMenuScreen(

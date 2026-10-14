@@ -24,6 +24,7 @@ import app.lawnchair.lawnicons.data.model.AnnouncementLocation
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.data.repository.NewIconsRepository
+import app.lawnchair.lawnicons.data.repository.PreferenceManager
 import app.lawnchair.lawnicons.data.repository.home.AnnouncementsRepository
 import app.lawnchair.lawnicons.data.repository.home.IconRepository
 import app.lawnchair.lawnicons.data.repository.iconrequest.IconRequestRepository
@@ -34,6 +35,7 @@ import dev.zacsweers.metrox.viewmodel.ViewModelKey
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.stateIn
@@ -50,15 +52,16 @@ sealed interface HomeUiState {
 }
 
 interface HomeViewModel {
+    val isFirstLaunch: StateFlow<Boolean>
     val uiState: StateFlow<HomeUiState>
 
     val searchResults: StateFlow<IconInfoModel>
     val searchMode: StateFlow<SearchMode>
     val searchTermTextState: TextFieldState
-
     fun searchIcons(query: String)
     fun changeMode(mode: SearchMode)
     fun clearSearch()
+    fun setFirstLaunch(isFirstLaunch: Boolean)
 }
 
 @ViewModelKey
@@ -68,8 +71,22 @@ class HomeViewModelImpl(
     private val newIconsRepository: NewIconsRepository,
     private val iconRequestRepository: IconRequestRepository,
     private val announcementsRepository: AnnouncementsRepository,
+    private val preferenceManager: PreferenceManager,
 ) : ViewModel(),
     HomeViewModel {
+
+    override val isFirstLaunch: StateFlow<Boolean> = preferenceManager.isFirstLaunch
+        .asFlow()
+        .map { it }
+        .stateIn(
+            viewModelScope,
+            SharingStarted.WhileSubscribed(5000),
+            preferenceManager.isFirstLaunch.get(),
+        )
+
+    override fun setFirstLaunch(isFirstLaunch: Boolean) {
+        preferenceManager.isFirstLaunch.set(!isFirstLaunch)
+    }
 
     private val _searchMode = MutableStateFlow(SearchMode.LABEL)
     override val searchMode = _searchMode.stateIn(

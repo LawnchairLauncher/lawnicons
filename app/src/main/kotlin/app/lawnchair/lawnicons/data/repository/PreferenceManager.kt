@@ -8,6 +8,9 @@ import androidx.core.content.edit
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.Inject
 import dev.zacsweers.metro.SingleIn
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
 
 fun interface PreferenceChangeListener {
     fun onPreferenceChanged(key: String)
@@ -94,6 +97,9 @@ class InMemoryPreferenceStore : PreferenceStore {
 abstract class BasePreferenceManager(
     private val store: PreferenceStore,
 ) {
+    fun registerListener(listener: PreferenceChangeListener) = store.registerListener(listener)
+    fun unregisterListener(listener: PreferenceChangeListener) = store.unregisterListener(listener)
+
     /**
      * A class that represents a boolean preference
      * @param key The key of the preference
@@ -107,6 +113,19 @@ abstract class BasePreferenceManager(
         fun set(value: Boolean) = store.putBoolean(key, value)
 
         fun toggle() = set(!get())
+
+        fun asFlow(): Flow<Boolean> = callbackFlow {
+            trySend(get())
+            val listener = PreferenceChangeListener { changedKey ->
+                if (changedKey == key) {
+                    trySend(get())
+                }
+            }
+            registerListener(listener)
+            awaitClose {
+                unregisterListener(listener)
+            }
+        }
 
         @Composable
         fun asState(): State<Boolean> {
@@ -159,4 +178,5 @@ class PreferenceManager(
     store: PreferenceStore,
 ) : BasePreferenceManager(store) {
     val forceEnableIconRequest = BoolPref("force_icon_request", false)
+    val isFirstLaunch = BoolPref("first_launch", true)
 }
