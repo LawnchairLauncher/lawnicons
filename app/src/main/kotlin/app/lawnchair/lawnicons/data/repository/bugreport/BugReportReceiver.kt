@@ -12,10 +12,10 @@ import android.content.Intent
 import android.graphics.drawable.Icon
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import app.lawnchair.lawnicons.BuildConfig
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.ui.util.copyTextToClipboard
-import androidx.core.net.toUri
 
 class BugReportReceiver : BroadcastReceiver() {
 

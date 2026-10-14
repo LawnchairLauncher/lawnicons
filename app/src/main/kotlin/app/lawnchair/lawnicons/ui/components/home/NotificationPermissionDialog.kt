@@ -88,7 +88,7 @@ private fun NotificationPermissionDialogPreview() {
     PreviewProviders {
         Scaffold {
             Column(
-                Modifier.padding(it)
+                Modifier.padding(it),
             ) {
                 var showDialog by remember {
                     mutableStateOf(false)

@@ -146,7 +146,7 @@ private fun DebugMenuScreen(
                     label = "Crash app",
                     onClick = {
                         throw RuntimeException("User triggered crash")
-                    }
+                    },
                 )
             }
             item {
