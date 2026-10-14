@@ -17,6 +17,7 @@
 package app.lawnchair.lawnicons
 
 import android.app.Application
+import app.lawnchair.lawnicons.di.AppInitializer
 import app.lawnchair.lawnicons.di.MetroViewModelFactoryImpl
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.DependencyGraph
@@ -28,6 +29,7 @@ import dev.zacsweers.metrox.viewmodel.ViewModelGraph
 @DependencyGraph(AppScope::class)
 interface LawniconsGraph : ViewModelGraph {
     val viewModelFactory: MetroViewModelFactoryImpl
+    val initializers: Set<AppInitializer>
 
     @DependencyGraph.Factory
     fun interface Factory {

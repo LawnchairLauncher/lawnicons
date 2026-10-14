@@ -28,9 +28,9 @@ import app.lawnchair.lawnicons.R
  *
  * @param text The text to be copied.
  */
-fun Context.copyTextToClipboard(text: String) {
+fun Context.copyTextToClipboard(text: String, label: String = getString(R.string.copied_text)) {
     val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-    val clip = ClipData.newPlainText(getString(R.string.copied_text), text)
+    val clip = ClipData.newPlainText(label, text)
     clipboard.setPrimaryClip(clip)
 }
 

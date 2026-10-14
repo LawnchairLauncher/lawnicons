@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.licensee)
     alias(libs.plugins.metro)
 }
@@ -33,6 +34,7 @@ android {
         versionCode = 26
         versionName = versionDisplayName
         vectorDrawables.useSupportLibrary = true
+        buildConfigField("String", "COMMIT_HASH", "\"${buildCommit}\"")
     }
 
     androidResources {

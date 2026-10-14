@@ -140,6 +140,17 @@ private fun DebugMenuScreen(
         LazyColumn(
             contentPadding = paddingValues,
         ) {
+            item {
+                SimpleListRow(
+                    label = "Crash app",
+                    onClick = {
+                        throw RuntimeException("User triggered crash")
+                    }
+                )
+            }
+            item {
+                Spacer(Modifier.height(4.dp))
+            }
             itemsIndexed(debugList) { index, it ->
                 SimpleListRow(
                     label = it.label,
