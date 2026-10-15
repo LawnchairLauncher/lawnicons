@@ -67,6 +67,9 @@ fun ResolveInfo.getHighResIcon(packageManager: PackageManager): Drawable? {
             )
         }
         null
+    } catch (e: PackageManager.NameNotFoundException) {
+        Log.d(TAG, "$e")
+        null
     } catch (e: Resources.NotFoundException) {
         Log.d(TAG, "$e")
         null
