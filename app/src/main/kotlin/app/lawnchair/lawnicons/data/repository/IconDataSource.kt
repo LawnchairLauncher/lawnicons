@@ -23,6 +23,7 @@ import app.lawnchair.lawnicons.data.repository.home.getIconInfo
 import dev.zacsweers.metro.AppScope
 import dev.zacsweers.metro.ContributesBinding
 import dev.zacsweers.metro.Qualifier
+import dev.zacsweers.metro.SingleIn
 
 @Qualifier
 annotation class AppFilter
@@ -35,13 +36,23 @@ interface IconDataSource {
 }
 
 @AppFilter
+@SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)
 class AppFilterIconDataSource(private val application: Application) : IconDataSource {
-    override fun getIconInfo(): List<IconInfo> = application.getIconInfo(R.xml.appfilter)
+    private val cachedIconInfo: List<IconInfo> by lazy {
+        application.getIconInfo(R.xml.appfilter)
+    }
+
+    override fun getIconInfo(): List<IconInfo> = cachedIconInfo
 }
 
 @AppFilterDiff
+@SingleIn(AppScope::class)
 @ContributesBinding(AppScope::class)
 class AppFilterDiffIconDataSource(private val application: Application) : IconDataSource {
-    override fun getIconInfo(): List<IconInfo> = application.getIconInfo(R.xml.appfilter_diff)
+    private val cachedIconInfo: List<IconInfo> by lazy {
+        application.getIconInfo(R.xml.appfilter_diff)
+    }
+
+    override fun getIconInfo(): List<IconInfo> = cachedIconInfo
 }

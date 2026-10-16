@@ -44,7 +44,8 @@ class NewIconsRepositoryImpl(
 
     init {
         coroutineScope.launch {
-            val iconInfo = iconDataSource.getIconInfo().sortedBy { it.label.lowercase() }
+            val iconInfo = iconDataSource.getIconInfo()
+                .sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.label })
             _newIconsInfoModel.value = IconInfoModel(
                 iconInfo,
                 iconInfo.size,

@@ -20,20 +20,36 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.Log
 import androidx.annotation.XmlRes
+import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.Component
 import app.lawnchair.lawnicons.data.model.IconInfo
 import app.lawnchair.lawnicons.data.model.LabelAndComponent
-import app.lawnchair.lawnicons.data.model.mergeByDrawableName
 import org.xmlpull.v1.XmlPullParser
+
+private val drawableIdMap: Map<String, Int> by lazy {
+    try {
+        R.drawable::class.java.fields.associate { field ->
+            field.name to field.getInt(null)
+        }
+    } catch (_: Exception) {
+        emptyMap()
+    }
+}
+
+private class IconInfoGroup(
+    val drawableName: String,
+    val drawableId: Int,
+    val componentNames: MutableList<LabelAndComponent> = mutableListOf(),
+)
 
 @SuppressLint("DiscouragedApi")
 fun Context.getIconInfo(
     @XmlRes xmlId: Int,
 ): List<IconInfo> {
-    val iconInfo = mutableListOf<IconInfo>()
-    val componentInfoPrefixLength = "ComponentInfo{".length
-
     if (xmlId == 0) return emptyList()
+
+    val iconInfoGroups = LinkedHashMap<String, IconInfoGroup>()
+    val componentInfoPrefixLength = "ComponentInfo{".length
 
     try {
         val parser = resources.getXml(xmlId)
@@ -57,19 +73,16 @@ fun Context.getIconInfo(
                 componentString.substring(componentInfoPrefixLength, componentString.length - 1)
 
             Component.unflattenFromString(parsedComponentString)?.let { componentName ->
-                val iconId = "${drawableName}_foreground"
-                val iconDrawable = resources.getIdentifier(iconId, "drawable", packageName)
-
-                iconInfo.add(
-                    IconInfo(
-                        drawableName = drawableName,
-                        componentNames = listOf(
-                            LabelAndComponent(
-                                label = iconName,
-                                component = componentName,
-                            ),
-                        ),
-                        drawableId = iconDrawable,
+                val group = iconInfoGroups.getOrPut(drawableName) {
+                    val iconId = "${drawableName}_foreground"
+                    val iconDrawable = drawableIdMap[iconId]
+                        ?: resources.getIdentifier(iconId, "drawable", packageName)
+                    IconInfoGroup(drawableName, iconDrawable)
+                }
+                group.componentNames.add(
+                    LabelAndComponent(
+                        label = iconName,
+                        component = componentName,
                     ),
                 )
             } ?: run {
@@ -83,5 +96,11 @@ fun Context.getIconInfo(
         Log.e("IconInfoParser", "A critical error occurred during XML parsing.", e)
     }
 
-    return iconInfo.mergeByDrawableName()
+    return iconInfoGroups.values.map { group ->
+        IconInfo(
+            drawableName = group.drawableName,
+            componentNames = group.componentNames,
+            drawableId = group.drawableId,
+        )
+    }
 }

@@ -56,7 +56,8 @@ class IconRepositoryImpl(
 
     init {
         coroutineScope.launch {
-            val iconList = iconDataSource.getIconInfo().sortedBy { it.label.lowercase() }
+            val iconList = iconDataSource.getIconInfo()
+                .sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.label })
             val groupedIcons = iconList.associateBy { it.label }.values
             val iconCount = groupedIcons.size
 

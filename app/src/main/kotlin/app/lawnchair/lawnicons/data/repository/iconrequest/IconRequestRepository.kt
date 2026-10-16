@@ -81,9 +81,9 @@ class IconRequestRepositoryImpl(
             }
 
             val iconList = iconDataSource.getIconInfo()
-                .sortedBy { it.label.lowercase() }
-            val systemPackageList = application.getSystemIconInfo()
-                .sortedBy { it.label.lowercase() }
+                .sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.label })
+            val systemPackageList = application.getSystemIconInfo(iconList)
+                .sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.label })
 
             _isEnabled.value = enabledDeferred.await()
 
