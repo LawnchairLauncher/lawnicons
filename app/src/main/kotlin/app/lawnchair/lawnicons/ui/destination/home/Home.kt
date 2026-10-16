@@ -64,6 +64,7 @@ import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
 import app.lawnchair.lawnicons.data.model.SearchMode
 import app.lawnchair.lawnicons.ui.components.AnnouncementList
+import app.lawnchair.lawnicons.ui.components.ShowNavbarScrim
 import app.lawnchair.lawnicons.ui.components.home.HomeBottomBar
 import app.lawnchair.lawnicons.ui.components.home.HomeTopBar
 import app.lawnchair.lawnicons.ui.components.home.NotificationPermissionDialog
@@ -294,6 +295,7 @@ private fun HomeScreen(
             PlaceholderUI(horizontalPadding = horizontalPadding)
         }
     }
+    ShowNavbarScrim(isExpandedScreen = isExpandedScreen)
 }
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
