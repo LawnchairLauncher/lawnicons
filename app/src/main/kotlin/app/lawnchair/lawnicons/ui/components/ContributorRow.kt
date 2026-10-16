@@ -2,7 +2,6 @@ package app.lawnchair.lawnicons.ui.components
 
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItemShapes
 import androidx.compose.runtime.Composable
@@ -21,7 +20,6 @@ import app.lawnchair.lawnicons.ui.util.visitUrl
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun ContributorRow(
     name: String,
@@ -68,7 +66,6 @@ fun ContributorRow(
     )
 }
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @PreviewLawnicons
 @Composable
 private fun ContributorRowPreview() {

@@ -37,7 +37,6 @@ import androidx.compose.material3.Checkbox
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.FlexibleBottomAppBar
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -110,7 +109,6 @@ fun EntryProviderScope<NavKey>.iconRequestDestination(
     }
 }
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class, ExperimentalMaterial3Api::class)
 @Composable
 private fun IconRequest(
     isExpandedScreen: Boolean,
@@ -261,7 +259,6 @@ private fun IconRequest(
 }
 
 @Composable
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 private fun IconRequestButton(
     enabled: Boolean,
     onRequest: () -> Unit,
@@ -369,7 +366,7 @@ data class MenuItemRow(
     val icon: @Composable () -> Unit,
 )
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ResponsiveMenu(
     menuItems: List<MenuItemRow>,
@@ -422,7 +419,6 @@ fun ResponsiveMenu(
     }
 }
 
-@OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
 fun IconRequestRow(
     systemIconInfo: SystemIconInfo,

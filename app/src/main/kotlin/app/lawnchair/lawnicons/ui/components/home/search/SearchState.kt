@@ -17,7 +17,6 @@
 package app.lawnchair.lawnicons.ui.components.home.search
 
 import androidx.compose.foundation.text.input.TextFieldState
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.SearchBarState
 import androidx.compose.material3.rememberSearchBarState
 import androidx.compose.runtime.Composable
@@ -27,7 +26,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import app.lawnchair.lawnicons.data.model.SearchMode
 
-@OptIn(ExperimentalMaterial3Api::class)
 class SearchState(
     val textFieldState: TextFieldState,
     val searchBarState: SearchBarState,
@@ -43,7 +41,6 @@ class SearchState(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun rememberSearchState(
     textFieldState: TextFieldState = remember { TextFieldState() },

@@ -22,7 +22,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ExpandedDockedSearchBar
 import androidx.compose.material3.ExpandedFullScreenSearchBar
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.ListItem
@@ -55,7 +54,6 @@ import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ResponsiveSearchBarContents(
     isExpandedScreen: Boolean,
@@ -198,7 +196,7 @@ private fun IconInfoListItem(
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         ListItem(
-            headlineContent = { Text(iconInfo.getFirstLabelAndComponent().label) },
+            content = { Text(iconInfo.getFirstLabelAndComponent().label) },
             supportingContent = {
                 Text(
                     iconInfo.getFirstLabelAndComponent().component.flattenToString(),
@@ -315,7 +313,6 @@ private fun SearchModeSelector(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @PreviewLawnicons
 @Composable
 private fun SearchBarContentsPreview() {

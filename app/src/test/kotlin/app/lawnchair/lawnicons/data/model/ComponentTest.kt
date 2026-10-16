@@ -51,14 +51,14 @@ class ComponentTest {
     fun `unflattenFromString parses fully qualified class name`() {
         val parsed = Component.unflattenFromString("com.example/com.example.MainActivity")
 
-        assertEquals(Component("com.example", "com.example.MainActivity"), parsed)
+        assertEquals(parsed, Component("com.example", "com.example.MainActivity"))
     }
 
     @Test
     fun `unflattenFromString expands relative class name with package`() {
         val parsed = Component.unflattenFromString("com.example/.MainActivity")
 
-        assertEquals(Component("com.example", "com.example.MainActivity"), parsed)
+        assertEquals(parsed, Component("com.example", "com.example.MainActivity"))
     }
 
     @Test

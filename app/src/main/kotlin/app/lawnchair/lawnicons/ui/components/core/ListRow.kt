@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.ExperimentalMaterial3ExpressiveApi
 import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.ListItemShapes
 import androidx.compose.material3.MaterialTheme
@@ -20,7 +19,6 @@ import app.lawnchair.lawnicons.ui.components.core.ListRowDefaults.basePadding
 object ListRowDefaults {
     val basePadding = 16.dp
 
-    @OptIn(ExperimentalMaterial3ExpressiveApi::class)
     val singleItemShapes: ListItemShapes
         @Composable get() = ListItemDefaults.shapes(
             shape = MaterialTheme.shapes.large,

@@ -18,7 +18,6 @@ package app.lawnchair.lawnicons.ui.components.home.search
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.foundation.text.input.clearText
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.SearchBarDefaults
 import androidx.compose.material3.SearchBarValue
@@ -36,7 +35,6 @@ import app.lawnchair.lawnicons.ui.theme.icon.Search
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewProviders
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchBarInputField(
     state: SearchState,
@@ -75,7 +73,6 @@ fun SearchBarInputField(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @PreviewLawnicons
 @Composable
 private fun SearchbarInputFieldPreview() {

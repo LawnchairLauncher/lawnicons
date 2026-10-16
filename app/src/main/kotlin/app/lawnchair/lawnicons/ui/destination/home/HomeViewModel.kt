@@ -68,8 +68,8 @@ interface HomeViewModel {
 @ContributesIntoMap(AppScope::class, binding = binding<ViewModel>())
 class HomeViewModelImpl(
     private val iconRepository: IconRepository,
-    private val newIconsRepository: NewIconsRepository,
-    private val iconRequestRepository: IconRequestRepository,
+    newIconsRepository: NewIconsRepository,
+    iconRequestRepository: IconRequestRepository,
     private val announcementsRepository: AnnouncementsRepository,
     private val preferenceManager: PreferenceManager,
 ) : ViewModel(),

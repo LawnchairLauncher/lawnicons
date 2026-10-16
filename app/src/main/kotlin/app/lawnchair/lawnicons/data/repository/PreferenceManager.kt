@@ -144,7 +144,7 @@ abstract class BasePreferenceManager(
     }
 
     /**
-     * A class that represents a integer preference
+     * A class that represents an integer preference
      * @param key The key of the preference
      * @param defaultValue The default value of the preference
      */

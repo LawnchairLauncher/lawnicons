@@ -95,7 +95,7 @@ object PlaceholderDefaults {
  * A version of this modifier which uses appropriate values for Material themed apps is available
  * in the 'Placeholder Material' library.
  *
- * You can provide a [PlaceholderHighlight] which runs an highlight animation on the placeholder.
+ * You can provide a [PlaceholderHighlight] which runs a highlight animation on the placeholder.
  * The [shimmer] and [fade] implementations are provided for easy usage.
  *
  * A cross-fade transition will be applied to the content and placeholder UI when the [visible]
@@ -111,9 +111,9 @@ object PlaceholderDefaults {
  * @param shape desired shape of the placeholder. Defaults to [RectangleShape].
  * @param highlight optional highlight animation.
  * @param placeholderFadeTransitionSpec The transition spec to use when fading the placeholder
- * on/off screen. The boolean parameter defined for the transition is [visible].
+ * on/off -creen. The boolean parameter defined for the transition is [visible].
  * @param contentFadeTransitionSpec The transition spec to use when fading the content
- * on/off screen. The boolean parameter defined for the transition is [visible].
+ * on/off-screen. The boolean parameter defined for the transition is [visible].
  */
 @Composable
 fun Modifier.placeholder(

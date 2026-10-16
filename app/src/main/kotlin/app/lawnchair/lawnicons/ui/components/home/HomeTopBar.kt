@@ -38,6 +38,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import app.lawnchair.lawnicons.R
 import app.lawnchair.lawnicons.data.model.IconInfoModel
@@ -111,7 +112,7 @@ fun HomeTopBar(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 8.dp)
-                .offset(y = offsetY),
+                .offset { IntOffset(0, offsetY.roundToPx()) },
         )
 
         ResponsiveSearchBarContents(
@@ -129,7 +130,6 @@ fun HomeTopBar(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @PreviewLawnicons
 @Composable
 private fun HomeTopBarPreview() {

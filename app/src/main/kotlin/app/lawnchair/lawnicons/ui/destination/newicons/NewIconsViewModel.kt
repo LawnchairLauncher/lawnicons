@@ -25,7 +25,7 @@ import dev.zacsweers.metrox.viewmodel.ViewModelKey
 @ViewModelKey
 @ContributesIntoMap(AppScope::class)
 class NewIconsViewModel(
-    private val newIconsRepository: NewIconsRepository,
+    newIconsRepository: NewIconsRepository,
 ) : ViewModel() {
 
     @JvmField
