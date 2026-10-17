@@ -25,6 +25,10 @@ fun main(args: Array<String>) {
     SvgFilesProcessor.process(svgDir, "$resDir/drawable")
     println("SvgToVectorDrawable task completed")
 
+    // Split the hands of dynamic clocks into rotatable layers
+    ClockProcessor.createClockDrawables(appFilterFile, resDir)
+    println("ClockProcessor task completed")
+
     // Read appfilter xml and create icon, drawable xml file.
     ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir)
     println("ConfigProcessor task completed")

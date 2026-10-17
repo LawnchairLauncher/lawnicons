@@ -14,6 +14,7 @@ APPFILTER_PATH = "./app/assets/appfilter.xml"
 SVGS_FOLDER = "./svgs/"
 CALENDARS_PATTERN = r'(  <!-- Dynamic Calendars -->.*?<!-- Lawnicons -->)'
 LAWNICONS_PATTERN = r'<!-- Lawnicons -->\s*(.*?)\s*</resources>'
+CLOCK_LAYERS = ("dial", "hour", "minute", "second")
 
 
 #####
@@ -172,16 +173,19 @@ def find_logic(mode):
     svgs = os.listdir(SVGS_FOLDER)
 
     def find_duplicates(root_file):
-        packages = [item.attrib["component"] for item in root_file]
+        packages = [item.attrib["component"] for item in root_file if "component" in item.attrib]
         duplicate_elements = {pkg for pkg in packages if
                               packages.count(pkg) > 1 and "calendar" not in pkg}
         return duplicate_elements
 
     def find_unused_icons(root_file, svgs_list):
         drawables = [f"{item.attrib.get('drawable', None)}.svg" for item in root_file]
+        clock_layers = [f"{clock.attrib['drawable']}_{layer}.svg"
+                        for clock in root_file.iter("dynamic-clock") for layer in CLOCK_LAYERS]
         unused_list = [
             svg_item for svg_item in svgs_list
             if (svg_item not in drawables and not svg_item.startswith("themed_icon_calendar_")
+                and svg_item not in clock_layers
                 )
         ]
         return unused_list
