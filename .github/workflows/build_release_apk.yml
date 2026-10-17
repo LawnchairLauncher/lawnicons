@@ -80,7 +80,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: Release App Bundle
-          path: app/build/outputs/bundle/release/*.aab
+          path: app/build/outputs/bundle/appPlay/*.aab
 
   send-notifications:
     runs-on: ubuntu-latest
