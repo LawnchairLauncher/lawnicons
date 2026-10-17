@@ -2,6 +2,7 @@ package app.lawnchair.lawnicons.data.repository
 
 import android.content.SharedPreferences
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.Stable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.produceState
 import androidx.core.content.edit
@@ -105,6 +106,7 @@ abstract class BasePreferenceManager(
      * @param key The key of the preference
      * @param defaultValue The default value of the preference
      */
+    @Stable
     inner class BoolPref(
         val key: String,
         private val defaultValue: Boolean,
@@ -148,6 +150,7 @@ abstract class BasePreferenceManager(
      * @param key The key of the preference
      * @param defaultValue The default value of the preference
      */
+    @Stable
     inner class IntPref(
         val key: String,
         private val defaultValue: Int,
