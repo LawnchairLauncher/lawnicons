@@ -65,7 +65,7 @@ A way to show appreciation.
 </div> 
 
 ### Development
-You're welcome to work on our issues.  
+You're welcome to work on our issues. In exchange for resolving issues, we fulfill simple icon requests — yours or from the public queue.
 
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
 
