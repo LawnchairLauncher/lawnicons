@@ -67,7 +67,7 @@ A way to show appreciation.
 ### Development
 You're welcome to work on our issues. In exchange for resolving issues, we fulfill simple icon requests — yours or from the public queue.
 
-[Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki)
+[Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki) • [Contribution quality](https://docs.lawnchair.app/community/about/quality-guidelines)
 
 ### Icons
 To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. The maintainer does reviews around Saturday.
