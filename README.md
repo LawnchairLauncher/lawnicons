@@ -44,7 +44,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Support Lawnicons
 
 ### Increase request priority
-Requests from Lawnicons supporters get fulfilled much faster than if you just wait.
+Requests from Lawnicons supporters get fulfilled much faster than if you just wait. Priority requests are open until April 2027.
 
 [Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
