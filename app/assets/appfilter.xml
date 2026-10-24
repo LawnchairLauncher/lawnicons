@@ -25,7 +25,6 @@
   <calendar component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" prefix="themed_icon_calendar_" name="네이버 캘린더 ~~ Naver Calendar" />
   <calendar component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" prefix="themed_icon_calendar_" name="ColorOS Calendar" />
   <calendar component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" prefix="themed_icon_calendar_" name="Superb Launcher Calendar" />
-  <calendar component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDefault}" prefix="themed_icon_calendar_" name="KashCal" />
   <!-- Static Calendars -->
   <item drawableIgnore="true" component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" drawable="themed_icon_calendar_31" name="Superb Launcher Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_28" name="ColorOS Calendar" />
@@ -50,7 +49,6 @@
   <item drawableIgnore="true" component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" drawable="themed_icon_calendar_31" name="네이버 캘린더 ~~ Naver Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.android.calendar.go/com.android.calendar.go.homepage.AllInOneActivity}" drawable="themed_icon_calendar_31" name="Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.asus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_31" name="ASUS Calendar" />
-  <item component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDefault}" drawable="kashcal" name="KashCal" />
   <!-- Lawnicons -->
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MonoInstallerActivity}" drawable="mono" name="#mono" />
   <item component="ComponentInfo{fonts.mono.oneui_2_0/fonts.mono.oneui_2_0.MainActivity}" drawable="mono" name="#mono" />
@@ -9447,6 +9445,40 @@
   <item component="ComponentInfo{com.karyakarsa/com.karyakarsa.MainActivity}" drawable="karyakarsa" name="KaryaKarsa" />
   <item component="ComponentInfo{com.tplink.kasa_android/com.tplink.hellotp.activity.SplashScreenActivity}" drawable="kasa" name="Kasa" />
   <item component="ComponentInfo{com.tplink.kasa_android/com.tplink.iot.view.welcome.StartupActivity}" drawable="kasa" name="Kasa" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay1}" drawable="themed_icon_calendar_1" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay2}" drawable="themed_icon_calendar_2" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay3}" drawable="themed_icon_calendar_3" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay4}" drawable="themed_icon_calendar_4" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay5}" drawable="themed_icon_calendar_5" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay6}" drawable="themed_icon_calendar_6" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay7}" drawable="themed_icon_calendar_7" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay8}" drawable="themed_icon_calendar_8" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay9}" drawable="themed_icon_calendar_9" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay10}" drawable="themed_icon_calendar_10" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay11}" drawable="themed_icon_calendar_11" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay12}" drawable="themed_icon_calendar_12" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay13}" drawable="themed_icon_calendar_13" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay14}" drawable="themed_icon_calendar_14" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay15}" drawable="themed_icon_calendar_15" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay16}" drawable="themed_icon_calendar_16" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay17}" drawable="themed_icon_calendar_17" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay18}" drawable="themed_icon_calendar_18" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay19}" drawable="themed_icon_calendar_19" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay20}" drawable="themed_icon_calendar_20" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay21}" drawable="themed_icon_calendar_21" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay22}" drawable="themed_icon_calendar_22" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay23}" drawable="themed_icon_calendar_23" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay24}" drawable="themed_icon_calendar_24" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay25}" drawable="themed_icon_calendar_25" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay26}" drawable="themed_icon_calendar_26" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay27}" drawable="themed_icon_calendar_27" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay28}" drawable="themed_icon_calendar_28" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay29}" drawable="themed_icon_calendar_29" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay30}" drawable="themed_icon_calendar_30" name="KashCal" />
+  <item drawableIgnore="true" component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDay31}" drawable="themed_icon_calendar_31" name="KashCal" />
+  <item component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDefault}" drawable="kashcal" name="KashCal" />
+  <item component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivitySupporterCalendar}" drawable="kashcal" name="KashCal" />
+  <item component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivitySupporter}" drawable="kashcal" name="KashCal" />
   <item component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivity}" drawable="kashcal" name="KashCal" />
   <item component="ComponentInfo{com.kaskus.android/com.kaskus.forum.SplashActivity}" drawable="kaskus" name="KASKUS" />
   <item component="ComponentInfo{com.kms.free/com.kms.free.PermissionsActivityLauncher}" drawable="kaspersky" name="Kaspersky" />
@@ -18642,6 +18674,13 @@
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Yellow}" drawable="tasks" name="Tasks" />
   <item component="ComponentInfo{org.tasks/org.tasks.activities.TimePickerActivity}" drawable="tasks" name="Tasks" />
   <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Green}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Red}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Pink}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Indigo}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Lime}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.DeepOrange}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Brown}" drawable="tasks" name="Tasks" />
+  <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Grey}" drawable="tasks" name="Tasks" />
   <item component="ComponentInfo{com.thatsmanmeet.taskyapp/com.thatsmanmeet.taskyapp.MainActivity}" drawable="tasky" name="Tasky" />
   <item component="ComponentInfo{com.aranoah.healthkart.plus/com.aranoah.healthkart.plus.startup.splash.SplashActivity}" drawable="tata_1mg" name="TATA 1mg" />
   <item component="ComponentInfo{com.tul.tatacliq/com.tul.tatacliq.activities.SplashActivity}" drawable="tata_cliq" name="Tata CLiQ" />
