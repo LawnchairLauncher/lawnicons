@@ -27,6 +27,7 @@
   <calendar component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" prefix="themed_icon_calendar_" name="Superb Launcher Calendar" />
   <calendar component="ComponentInfo{org.onekash.kashcal/org.onekash.kashcal.MainActivityDefault}" prefix="themed_icon_calendar_" name="KashCal" />
   <!-- Static Calendars -->
+  <item component="ComponentInfo{com.help.deafhelp/com.help.deafhelp.feature.main.MainActivity}" drawable="generic_112" name="Alarm 112" />
   <item drawableIgnore="true" component="ComponentInfo{com.superb.launcher/com.calendar.schedule.taskapp.activities.SplashActivity}" drawable="themed_icon_calendar_31" name="Superb Launcher Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.oplus.calendar/com.android.calendar.AllInOneActivity}" drawable="themed_icon_calendar_28" name="ColorOS Calendar" />
   <item drawableIgnore="true" component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="google_calendar" name="Google Calendar" />
@@ -18813,6 +18814,7 @@
   <item component="ComponentInfo{com.tenda.router.app/com.tenda.login.splash.FullscreenActivity}" drawable="tenda_wifi" name="Tenda WiFi" />
   <item component="ComponentInfo{com.tenda.router.app/com.tenda.router.app.activity.Anew.Splash.SplashActivity}" drawable="tenda_wifi" name="Tenda WiFi" />
   <item component="ComponentInfo{ph.tendopay.app.android/ph.tendopay.app.android.MainActivity}" drawable="tendopay" name="TendoPay" />
+  <item component="ComponentInfo{pl.tenis4u.android.free/pl.tenis4u.app.MainActivity}" drawable="tennis4u" name="Tennis4U" />
   <item component="ComponentInfo{com.krealo.tenpo/com.krealo.tenpo.MainActivity}" drawable="tenpo" name="Tenpo" />
   <item component="ComponentInfo{com.eightbitlab.teo/com.eightbitlab.teo.ui.MainActivity}" drawable="teo" name="Teo" />
   <item component="ComponentInfo{com.comeco.teo/crc64753b843c3502ab2c.SplashActivity}" drawable="teo_by_comeco" name="TEO by COMECO" />
@@ -19602,6 +19604,7 @@
   <item component="ComponentInfo{com.mdv.TranslinkCompanion/com.mdv.TranslinkCompanion.MainActivity}" drawable="translink_ni" name="Translink NI" />
   <item component="ComponentInfo{com.transloc.microtransit/com.transloc.android.rider.updatecheck.UpdateCheckActivity}" drawable="transloc" name="TransLoc" />
   <item component="ComponentInfo{au.gov.wa.pta.transperth/au.gov.wa.pta.transperth.MainActivity}" drawable="transperth" name="Transperth" />
+  <item component="ComponentInfo{pl.assecods.innompa.m2go/pl.assecods.innompa.module.core.ui.splash.SplashActivity}" drawable="transport_gzm" name="Transport GZM" />
   <item component="ComponentInfo{de.grobox.liberario/de.grobox.transportr.map.MainActivity}" drawable="transportr" name="Transportr" />
   <item component="ComponentInfo{de.grobox.liberario/de.grobox.liberario.activities.MainActivity}" drawable="transportr" name="Transportr" />
   <item component="ComponentInfo{de.grobox.liberario/de.grobox.transportr.map.MapActivity}" drawable="transportr" name="Transportr" />
