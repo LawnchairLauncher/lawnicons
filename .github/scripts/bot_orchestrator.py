@@ -308,7 +308,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
 
         lines.append(f"**{filename}**")
         if general_msgs:
-            lines.append(", ".join(general_msgs))
+            lines.append(" • ".join(general_msgs))
 
         for n_msg in naming_msgs:
             lines.append(n_msg)
