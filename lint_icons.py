@@ -616,8 +616,7 @@ def rule_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
 
 class C10Outcomes:
-    UNROUNDED = Outcome("UNROUNDED", "Unrounded corners", "90° corners: unrounded")
-    SMALL_RADIUS = Outcome("SMALL_RADIUS", "Corner radius too small", "corner radius: {radius} px")
+    UNROUNDED = Outcome("UNROUNDED", "Unrounded corners", "90° corners: {value} px")
 
 
 @register_rule(
@@ -651,10 +650,8 @@ def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
         except (TypeError, ValueError):
             continue
 
-        if val <= 0:
-            findings.append(Finding(C10Outcomes.UNROUNDED))
-        elif val < 6:
-            findings.append(Finding(C10Outcomes.SMALL_RADIUS, {"radius": val}))
+        if val < 6:
+            findings.append(Finding(C10Outcomes.UNROUNDED, {"value": val}))
 
     return findings
 
