@@ -277,7 +277,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
             lines.append("Thanks for your contribution!\n")
             lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
         
-        lines.append("### Common issues\n")
+        lines.append("## Make sure you don't have any of these issues\n")
         lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
         
         lines.append(BOT_SIGNATURE)
@@ -288,7 +288,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
         lines.append("Thanks for your contribution!\n")
         lines.append("Please fix all bot-detected issues to get a human review — and the rest to merge. Ensure Lawnicons builds correctly.\n")
 
-    lines.append("### Bot-detected issues")
+    lines.append("## Bot-detected issues")
     lines.append(SPEC_MESSAGE + "\n")
 
     for filename in sorted(file_messages.keys()):
