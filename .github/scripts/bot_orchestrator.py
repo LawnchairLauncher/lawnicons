@@ -24,7 +24,7 @@ SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
 NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
 BOT_SIGNATURE = "<!-- Linter bot report -->"
-NEEDS_REVIEW_LABEL = "⏳"
+NEEDS_REVIEW_LABEL = ":hourglass_flowing_sand:"
 
 SPEC_MESSAGE = """> [!TIP]
 > **Spec**
