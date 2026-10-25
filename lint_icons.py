@@ -122,6 +122,34 @@ def parse_style_attribute(style_str: Optional[str]) -> Dict[str, str]:
     return {k: v.strip() for k, v in STYLE_PAIR_RE.findall(style_str.lower())}
 
 
+def _visual_dimensions(svg) -> Optional[tuple[float, float, float, float]]:
+    """Return (total_w, total_h, max_side, min_side) including stroke-width."""
+    min_x = min_y = float('inf')
+    max_x = max_y = float('-inf')
+
+    for el in svg.elements():
+        if isinstance(el, SVG):
+            continue
+        try:
+            sw = float(el.values.get('stroke-width', 0) or 0)
+        except (TypeError, ValueError):
+            sw = 0.0
+        el_bbox = el.bbox()
+        if not el_bbox:
+            continue
+        min_x = min(min_x, el_bbox[0] - sw / 2)
+        min_y = min(min_y, el_bbox[1] - sw / 2)
+        max_x = max(max_x, el_bbox[2] + sw / 2)
+        max_y = max(max_y, el_bbox[3] + sw / 2)
+
+    if min_x == float('inf'):
+        return None
+
+    total_w = max_x - min_x
+    total_h = max_y - min_y
+    return total_w, total_h, max(total_w, total_h), min(total_w, total_h)
+
+
 # --- Rules Implementation ---
 
 # --- Core Rules ---
@@ -161,10 +189,33 @@ def rule_canvas_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     return [Finding(C01Outcomes.WRONG_SIZE, {"width": w or "?", "height": h or "?"})]
 
 
-@register_rule(id="C02", name="Icon too small", outcomes={},
-               description="Checks if icons are too small.")
-def rule_placeholder_too_small(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    return []
+class C02Outcomes:
+    WRONG_SIZE = Outcome("WRONG_SIZE", "Wrong icon size", "icon size: {width}×{height} px")
+
+
+@register_rule(
+    id="C02",
+    name="Icon size",
+    description="Checks visual icon size including stroke-width (valid: 160px max side or 154×154 square).",
+    outcomes=C02Outcomes
+)
+def rule_icon_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or ctx.svg_doc is None:
+        return []
+
+    dims = _visual_dimensions(ctx.svg_doc)
+    if dims is None:
+        return []
+
+    _, _, max_side, min_side = dims
+
+    is_160 = abs(max_side - 160) < 1.0
+    is_154 = abs(max_side - 154) < 1.0 and abs(min_side - 154) < 1.0
+
+    if is_160 or is_154:
+        return []
+
+    return [Finding(C02Outcomes.WRONG_SIZE, {"width": round(max_side), "height": round(min_side)})]
 
 
 @register_rule(id="C03", name="Outside content", outcomes={},
@@ -173,9 +224,96 @@ def rule_placeholder_outside_content(ctx: CheckContext, max_speed: Speed) -> Lis
     return []
 
 
-@register_rule(id="C04", name="Square size", outcomes={},
-               description="Checks size of square icons.")
-def rule_placeholder_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+class C04Outcomes:
+    SQUARE_TOO_BIG = Outcome("SQUARE_TOO_BIG", "Square icon too large", "square icon size: {size}×{size} px")
+
+
+@register_rule(
+    id="C04",
+    name="Square size",
+    description="Square icons should be 154×154, not 160×160.",
+    outcomes=C04Outcomes
+)
+def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or ctx.svg_doc is None:
+        return []
+
+    svg = ctx.svg_doc
+
+    dims = _visual_dimensions(svg)
+    if dims is None:
+        return []
+
+    total_w, total_h, max_side, min_side = dims
+
+    # Skip icons that are not valid sizes (C02 handles those).
+    is_160 = abs(max_side - 160) < 1.0
+    is_154 = abs(max_side - 154) < 1.0 and abs(min_side - 154) < 1.0
+    if not is_160 and not is_154:
+        return []
+
+    # 154×154 icons are square by definition.
+    if is_154:
+        return []
+
+    # Only check square-looking icons; non-square 160×N are valid abstract icons.
+    if abs(total_w - total_h) > 3:
+        return []
+
+    bbox = svg.bbox()
+    if not bbox:
+        return []
+
+    bw = bbox[2] - bbox[0]
+    bh = bbox[3] - bbox[1]
+
+    content_area = int(round(max_side))
+    perimeter = 4 * content_area
+    if perimeter <= 0:
+        return []
+
+    sides_found: set[str] = set()
+    total_fill = 0.0
+
+    for el in svg.elements():
+        if not isinstance(el, SVGPath):
+            continue
+
+        try:
+            sw = float(el.values.get('stroke-width', 0) or 0)
+        except (TypeError, ValueError):
+            sw = 0.0
+        if sw == 0:
+            continue
+
+        for seg in el:
+            if seg.start is None or seg.end is None:
+                continue
+
+            x1, y1 = seg.start.x, seg.start.y
+            x2, y2 = seg.end.x, seg.end.y
+            seg_len = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+
+            if abs(y1 - y2) < 2:
+                if abs(y1 - bbox[1]) < 5 and 'top' not in sides_found:
+                    total_fill += (bw + sw) if seg_len >= 0.9 * bw else (seg_len + sw)
+                    sides_found.add('top')
+                elif abs(y1 - bbox[3]) < 5 and 'bottom' not in sides_found:
+                    total_fill += (bw + sw) if seg_len >= 0.9 * bw else (seg_len + sw)
+                    sides_found.add('bottom')
+
+            if abs(x1 - x2) < 2:
+                if abs(x1 - bbox[0]) < 5 and 'left' not in sides_found:
+                    total_fill += (bh + sw) if seg_len >= 0.9 * bh else (seg_len + sw)
+                    sides_found.add('left')
+                elif abs(x1 - bbox[2]) < 5 and 'right' not in sides_found:
+                    total_fill += (bh + sw) if seg_len >= 0.9 * bh else (seg_len + sw)
+                    sides_found.add('right')
+
+    pct = total_fill / perimeter * 100
+    if pct >= 50:
+        return [Finding(C04Outcomes.SQUARE_TOO_BIG, {"size": content_area})]
+
     return []
 
 
