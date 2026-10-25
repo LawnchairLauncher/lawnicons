@@ -275,6 +275,8 @@ class C06Outcomes:
     FORBIDDEN_WEIGHT = Outcome("FORBIDDEN_WEIGHT", "Forbidden stroke weight", "stroke: {weight} px")
     NON_NUMERIC = Outcome("NON_NUMERIC", "Non-numeric stroke weight", "stroke: {weight}")
     MINIMAL_ICON = Outcome("MINIMAL_ICON", "Minimal icon", "stroke: {weight} px (review)")
+    ONLY_THIN_STROKES = Outcome("ONLY_THIN_STROKES", "Only thin strokes", "stroke: 6/8px only not allowed")
+    COMBINED_ERROR = Outcome("COMBINED_ERROR", "Combined stroke error", "stroke: {weight} px, 6/8px only not allowed")
 
 
 @register_rule(
@@ -287,7 +289,9 @@ def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
         return []
 
-    valid = {6.0, 8.0, 10.0, 12.0, 14.0}
+    allowed_any = {6.0, 8.0, 10.0, 12.0, 14.0}
+    allowed_core = {10.0, 12.0, 14.0}
+    
     strokes = []
     findings = []
     for el in ctx.xml_tree.iter():
@@ -303,10 +307,18 @@ def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
         return findings
 
     unique_weights = set(strokes)
-    forbidden = unique_weights - valid
-    if forbidden:
-        findings.append(Finding(C06Outcomes.FORBIDDEN_WEIGHT,
-                                {"weight": ", ".join(map(str, sorted(forbidden)))}))
+    
+    forbidden = unique_weights - allowed_any
+    has_core = bool(unique_weights & allowed_core)
+    
+    forbidden_str = ", ".join(map(str, sorted(forbidden)))
+
+    if forbidden and not has_core:
+        findings.append(Finding(C06Outcomes.COMBINED_ERROR, {"weight": forbidden_str}))
+    elif forbidden:
+        findings.append(Finding(C06Outcomes.FORBIDDEN_WEIGHT, {"weight": forbidden_str}))
+    elif not has_core:
+        findings.append(Finding(C06Outcomes.ONLY_THIN_STROKES))
 
     if len(strokes) == 1:
         weight = strokes[0]
