@@ -547,25 +547,116 @@ class RoundingOutcomes:
     INVALID_RECT_ROUND = Outcome("INVALID_RECT_ROUND", "Invalid rect rounding", "rect rx: {rx}")
 
 
-@register_rule(id="C08", name="Rounding caps", outcomes={},
-               description="Validates 'round' stroke-linecap.")
-def rule_placeholder_rounding_caps(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """[Placeholder] Validates 'round' stroke-linecap."""
-    return []
+class C08Outcomes:
+    BAD_CAP = Outcome("BAD_CAP", "Wrong stroke-linecap", "rounded caps: no")
 
 
-@register_rule(id="C09", name="Rounding joints", outcomes={},
-               description="Validates 'round' stroke-linejoin.")
-def rule_placeholder_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """[Placeholder] Validates 'round' stroke-linejoin."""
-    return []
+@register_rule(
+    id="C08",
+    name="Rounding caps",
+    description="Validates 'round' stroke-linecap.",
+    outcomes=C08Outcomes
+)
+def rule_rounding_caps(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
+        return []
+
+    root = ctx.xml_tree.getroot() if hasattr(ctx.xml_tree, 'getroot') else ctx.xml_tree
+    findings: List[Finding] = []
+
+    # Explicit stroke-linecap only; inherited values are not flagged.
+    stack = [root]
+    while stack:
+        el = stack.pop()
+        tag = el.tag.split('}')[-1]
+
+        style_map = parse_style_attribute(el.get('style'))
+        cap = el.get('stroke-linecap') or style_map.get('stroke-linecap')
+
+        if cap is not None and cap.strip().lower() != 'round':
+            findings.append(Finding(C08Outcomes.BAD_CAP))
+
+        for child in el:
+            stack.append(child)
+
+    return findings
 
 
-@register_rule(id="C10", name="Rounded corners", outcomes={},
-               description="Validates <rect> corner rounding.")
-def rule_placeholder_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """[Placeholder] Validates <rect> corner rounding."""
-    return []
+class C09Outcomes:
+    BAD_JOIN = Outcome("BAD_JOIN", "Wrong stroke-linejoin", "rounded joins: no")
+
+
+@register_rule(
+    id="C09",
+    name="Rounding joints",
+    description="Validates 'round' stroke-linejoin.",
+    outcomes=C09Outcomes
+)
+def rule_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
+        return []
+
+    root = ctx.xml_tree.getroot() if hasattr(ctx.xml_tree, 'getroot') else ctx.xml_tree
+    findings: List[Finding] = []
+
+    stack = [root]
+    while stack:
+        el = stack.pop()
+
+        style_map = parse_style_attribute(el.get('style'))
+        join = el.get('stroke-linejoin') or style_map.get('stroke-linejoin')
+
+        if join is not None and join.strip().lower() != 'round':
+            findings.append(Finding(C09Outcomes.BAD_JOIN))
+
+        for child in el:
+            stack.append(child)
+
+    return findings
+
+
+class C10Outcomes:
+    UNROUNDED = Outcome("UNROUNDED", "Unrounded corners", "90° corners: unrounded")
+    SMALL_RADIUS = Outcome("SMALL_RADIUS", "Corner radius too small", "corner radius: {radius} px")
+
+
+@register_rule(
+    id="C10",
+    name="Rounded corners",
+    description="Validates <rect> corner rounding (min 6px).",
+    outcomes=C10Outcomes
+)
+def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
+        return []
+
+    findings: List[Finding] = []
+
+    for el in ctx.xml_tree.iter():
+        tag = el.tag.split('}')[-1]
+        if tag != 'rect':
+            continue
+
+        style_map = parse_style_attribute(el.get('style'))
+        rx = el.get('rx') or style_map.get('rx')
+        ry = el.get('ry') or style_map.get('ry')
+
+        # Only check rects with exactly one of rx/ry set.
+        if (rx is None) == (ry is None):
+            continue
+
+        raw = rx if rx is not None else ry
+        try:
+            val = float(raw.replace('px', '').strip())
+        except (TypeError, ValueError):
+            continue
+
+        if val <= 0:
+            findings.append(Finding(C10Outcomes.UNROUNDED))
+        elif val < 6:
+            findings.append(Finding(C10Outcomes.SMALL_RADIUS, {"radius": val}))
+
+    return findings
 
 
 # --- Quality Rules ---
