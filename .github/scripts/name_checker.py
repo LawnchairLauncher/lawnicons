@@ -124,7 +124,7 @@ def slugify_app_name(app_name: str) -> str:
     slug = unidecode(primary_name)
     slug = slug.lower()
     slug = slug.replace("'", "")
-    slug = slug.replace("&", "and")
+    slug = slug.replace("&", "_and_")
     slug = slug.replace("+", "_plus_")
     slug = re.sub(r"[^a-z0-9]+", "_", slug)
     slug = slug.strip("_")
