@@ -113,4 +113,35 @@
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">新圖示 (%1$s)</string>
     <string name="action_menu_overflow_description">更多選項</string>
+    <!-- Bug report -->
+    <!-- Title shown for the bug report -->
+    <string name="bug_report">Lawnicons bug report</string>
+    <!-- Notification title shown when %1$s crashes -->
+    <string name="crash_report_notif_title">%1$s 已崩潰</string>
+    <!-- Action to upload a crash log -->
+    <string name="action_upload">上傳錯誤報告</string>
+    <!-- Action to copy text -->
+    <string name="action_copy">複製</string>
+    <!-- Action to copy a link -->
+    <string name="action_copy_link">複製連結</string>
+    <!-- Message shown when uploading fails -->
+    <string name="action_upload_error">上傳失敗</string>
+    <!-- Status shown while a bug report is being uploaded -->
+    <string name="dogbin_uploading">正在上傳…</string>
+    <!-- Name of the notification channel for bug reports -->
+    <string name="bugreport_channel_name">回報問題</string>
+    <!-- Name of the notification channel for upload status updates -->
+    <string name="status_channel_name">上傳狀態</string>
+    <!-- Summary of a group of bug report notifications, with %d as the number of reports -->
+    <string name="bugreport_group_summary">%d 個新問題</string>
+    <!-- Summary shown for a group of multiple bug report notifications -->
+    <string name="bugreport_group_summary_multiple">多個新問題</string>
+    <!-- Label for the notification permission prompt -->
+    <string name="notification_permission_label">Notifications permission needed</string>
+    <!-- Explanation of why the app needs notification permission -->
+    <string name="notification_permission_desc">To notify you when %1$s experiences an issue, %1$s needs permission to send notifications</string>
+    <!-- Button to grant notification permission -->
+    <string name="notification_permission_grant">Allow</string>
+    <!-- Button to dismiss the notification permission prompt -->
+    <string name="notification_permission_dismiss">Not now</string>
 </resources>
