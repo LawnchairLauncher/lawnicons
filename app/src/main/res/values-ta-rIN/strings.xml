@@ -113,4 +113,35 @@
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">புதிய ஐகான்கள் (%1$s)</string>
     <string name="action_menu_overflow_description">மேலும் விருப்பங்கள்</string>
+    <!-- Bug report -->
+    <!-- Title shown for the bug report -->
+    <string name="bug_report">Lawnicons bug report</string>
+    <!-- Notification title shown when %1$s crashes -->
+    <string name="crash_report_notif_title">%1$s சிதைந்தது</string>
+    <!-- Action to upload a crash log -->
+    <string name="action_upload">செயலிழப்பு பதிவைப் பதிவேற்றவும்</string>
+    <!-- Action to copy text -->
+    <string name="action_copy">நகலெடு</string>
+    <!-- Action to copy a link -->
+    <string name="action_copy_link">இணைப்பை நகலெடு</string>
+    <!-- Message shown when uploading fails -->
+    <string name="action_upload_error">பதிவேற்றம் தோல்வி</string>
+    <!-- Status shown while a bug report is being uploaded -->
+    <string name="dogbin_uploading">பதிவேற்றுகிறது…</string>
+    <!-- Name of the notification channel for bug reports -->
+    <string name="bugreport_channel_name">பிழை அறிக்கைகள்</string>
+    <!-- Name of the notification channel for upload status updates -->
+    <string name="status_channel_name">பதிவேற்ற நிலை</string>
+    <!-- Summary of a group of bug report notifications, with %d as the number of reports -->
+    <string name="bugreport_group_summary">%d புதிய அறிக்கைகள்</string>
+    <!-- Summary shown for a group of multiple bug report notifications -->
+    <string name="bugreport_group_summary_multiple">பல புதிய அறிக்கைகள்</string>
+    <!-- Label for the notification permission prompt -->
+    <string name="notification_permission_label">Notifications permission needed</string>
+    <!-- Explanation of why the app needs notification permission -->
+    <string name="notification_permission_desc">To notify you when %1$s experiences an issue, %1$s needs permission to send notifications</string>
+    <!-- Button to grant notification permission -->
+    <string name="notification_permission_grant">Allow</string>
+    <!-- Button to dismiss the notification permission prompt -->
+    <string name="notification_permission_dismiss">Not now</string>
 </resources>
