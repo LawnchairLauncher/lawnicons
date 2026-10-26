@@ -43,15 +43,12 @@ Lawnicons on the Play Store will install as a different app from other sources.
 
 ## Support Lawnicons
 
-### Increase request priority
-Requests from Lawnicons supporters get fulfilled much faster than if you just wait. Priority requests are open until April 2027.
+> [!Important]
+> Priority requests are open until April 2027.
 
-[Support on Open Collective](https://opencollective.com/lawnchair) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
+Requests from Lawnchair supporters get fulfilled much faster than if you just wait. 
 
-### Say thanks
-A way to show appreciation.
-
-[Donate](https://opencollective.com/lawnchair/projects/lawnicons) • [View funded contributions](https://github.com/LawnchairLauncher/lawnicons/pulls?q=is%3Apr+label%3AOC+is%3Aclosed)
+[Support on Open Collective](https://opencollective.com/lawnchair) • [Become a sponsor on GitHub](https://github.com/sponsors/LawnchairLauncher) • [Submit supporter request](https://github.com/LawnchairLauncher/lawnicons/issues/new?template=submit_supporter_request.yml)
 
 ## Contributing
 <div align="left">
