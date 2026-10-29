@@ -115,32 +115,34 @@ Tips: move lines further apart or combine into one, and enlarge original icons t
 
 Icons should be centered, but shape-aware. Align them to the optical center as much as possible within the icon content area. The optical aligment is where your icon looks and feels centered.
 
-### 5 Text icons
+## Special cases
 
-<img src="images/quality-5-text-icons.png" alt="5 Text icons" height="200" />
+### 1 Text icons
+
+<img src="images/special-cases-1-text-icons.png" alt="1 Text icons" height="200" />
 
 Text longer than `3` letters in `1` line usually doesn’t fit the Lawnicons style. Apps and games with text icons often need to be studied in order to create a recognizable Lawnicons-style icon.
 
 If you want to keep only a text, then it should be of high quality and occupy at least `¹⁄₃` of the icon content area.
 
-### 6 Complex icons
+### 2 Complex icons
 
-<img src="images/quality-6-complex-icons.png" alt="6 Complex icons" height="200" />
+<img src="images/special-cases-2-complex-icons.png" alt="2 Complex icons" height="200" />
 
 First, try to make a complex icon based on the original. When it’s clear that the original icon can’t be conveyed in the Lawnicons style, you need to study the visual part of an app or a game. Whatever you come to, the result should be at least logical and high-quality.
 
 Recognition sources: branding guidelines, UI or gameplay, website favicons, in-app icons, essence of an app or game, and a combination of recognizable features with your own ideas.
 
-### 7 Version badges
+### 3 Version badges
 
-<img src="images/quality-7-version-badges.png" alt="7 Version badges" height="200" />
+<img src="images/special-cases-3-version-badges.png" alt="3 Version badges" height="200" />
 
 Use one of our version badges to highlight a separate version of an app. For instance, it could be nightly builds or paid apps with a free one available. Keep in mind that cases such as Opera Mini or Firefox Klar are different.
 
 Tips: cut lines around the badge, place it in the lower right corner when possible, and don't shift icons for it.
 
-### 8 Minimal generic icons
+### 4 Minimal generic icons
 
-<img src="images/quality-8-minimal-generic-icons.png" alt="8 Minimal icons" height="200" />
+<img src="images/special-cases-4-minimal-generic-icons.png" alt="4 Minimal icons" height="200" />
 
 Minimal generic icons need distinctive features to aid recognition.
