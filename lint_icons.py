@@ -121,6 +121,10 @@ def parse_style_attribute(style_str: Optional[str]) -> Dict[str, str]:
         return {}
     return {k: v.strip() for k, v in STYLE_PAIR_RE.findall(style_str.lower())}
 
+def _fmt_size(v: float):
+    """Format a size value: integer if whole, one decimal otherwise."""
+    r = round(v, 1)
+    return int(r) if r.is_integer() else r
 
 def _visual_dimensions(svg) -> Optional[tuple[float, float, float, float]]:
     """Return (total_w, total_h, max_side, min_side) including stroke-width."""
@@ -209,13 +213,16 @@ def rule_icon_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
     _, _, max_side, min_side = dims
 
-    is_160 = abs(max_side - 160) < 1.0
-    is_154 = abs(max_side - 154) < 1.0 and abs(min_side - 154) < 1.0
+    is_160 = abs(max_side - 160) < 0.5
+    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
 
     if is_160 or is_154:
         return []
 
-    return [Finding(C02Outcomes.WRONG_SIZE, {"width": round(max_side), "height": round(min_side)})]
+    return [Finding(C02Outcomes.WRONG_SIZE, {
+        "width": _fmt_size(max_side),
+        "height": _fmt_size(min_side),
+    })]
 
 
 @register_rule(id="C03", name="Outside content", outcomes={},
@@ -247,8 +254,8 @@ def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     total_w, total_h, max_side, min_side = dims
 
     # Skip icons that are not valid sizes (C02 handles those).
-    is_160 = abs(max_side - 160) < 1.0
-    is_154 = abs(max_side - 154) < 1.0 and abs(min_side - 154) < 1.0
+    is_160 = abs(max_side - 160) < 0.5
+    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
     if not is_160 and not is_154:
         return []
 
