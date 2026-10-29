@@ -591,6 +591,7 @@
   <item component="ComponentInfo{com.unilever.algida/com.unilever.algida.adesso.main.MainActivity}" drawable="algida" name="Algida" />
   <item component="ComponentInfo{com.abdo.algo/com.abdo.algo.MainActivity}" drawable="algo" name="Algo" />
   <item component="ComponentInfo{com.iov.lordofalgorithms/com.unity3d.player.UnityPlayerActivity}" drawable="algorithms_and_data_structures" name="Algorithms and Data Structures" />
+  <item component="ComponentInfo{net.aliasvault.app/net.aliasvault.app.MainActivity}" drawable="aliasvault" name="AliasVault" />
   <item component="ComponentInfo{com.alibaba.intl.android.apps.poseidon/com.alibaba.intl.android.apps.poseidon.app.activity.ActivityMainMaterial}" drawable="alibaba_com" name="Alibaba.com" />
   <item component="ComponentInfo{app.myzel394.alibi/app.myzel394.alibi.MainActivity}" drawable="alibi" name="Alibi" />
   <item component="ComponentInfo{com.multicastgames.venomSurvive/com.unity3d.player.UnityPlayerActivity}" drawable="alien_invasion" name="Alien Invasion" />
@@ -7706,6 +7707,7 @@
   <item component="ComponentInfo{com.google.android.apps.meetings/com.google.android.apps.meetings.splash.SplashActivity}" drawable="google_meet" name="Google Meet" />
   <item component="ComponentInfo{com.google.android.apps.messaging/com.kyant.vanilla.MainActivity}" drawable="google_messages" name="Google Messages" />
   <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.main.MainActivity}" drawable="google_messages" name="Google Messages" />
+  <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.dittosatellite.impl.DittoWebActivity}" drawable="google_messages" name="Google Messages" />
   <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="google_messages" name="Google Messages" />
   <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.archive.ReactivateActivity}" drawable="google_messages" name="Google Messages" />
   <item component="ComponentInfo{com.google.android.apps.magazines/com.google.android.archive.ReactivateActivity}" drawable="google_news" name="Google News" />
@@ -10114,7 +10116,6 @@
   <item component="ComponentInfo{org.proninyaroslav.libretorrent/org.proninyaroslav.libretorrent.ui.main.MainActivity}" drawable="libretorrent" name="LibreTorrent" />
   <item component="ComponentInfo{org.proninyaroslav.libretrack/org.proninyaroslav.libretrack.MainActivity}" drawable="libretrack" name="LibreTrack" />
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.Default}" drawable="libretube" name="LibreTube" />
-  <item component="ComponentInfo{com.github.libretube/com.github.libretube.Defaultpl.mobicore.mobilempk}" drawable="libretube" name="LibreTube" />
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.activities.MainActivity}" drawable="libretube" name="LibreTube" />
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.DefaultLight}" drawable="libretube" name="LibreTube" />
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.IconBird}" drawable="libretube" name="LibreTube" />
@@ -10126,7 +10127,18 @@
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.IconTorch}" drawable="libretube" name="LibreTube" />
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.MainActivity}" drawable="libretube" name="LibreTube" />
   <item component="ComponentInfo{com.github.libretube/com.github.libretube.ui.activities.MainActivity}" drawable="libretube" name="LibreTube" />
-  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.Default}" drawable="libretube" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.Default}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.activities.MainActivity}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.DefaultLight}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconBird}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconFire}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconFlame}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconGradient}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconLegacy}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconShaped}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.IconTorch}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.MainActivity}" drawable="libretube_debug" name="LibreTube Debug" />
+  <item component="ComponentInfo{com.github.libretube.debug/com.github.libretube.ui.activities.MainActivity}" drawable="libretube_debug" name="LibreTube Debug" />
   <item component="ComponentInfo{fm.libro.librofm/fm.libro.presentation.screens.MainActivity.default}" drawable="libro_fm" name="Libro.fm" />
   <item component="ComponentInfo{pl.librus.synergiaDru2/pl.librus.synergiaDru2.MainActivity}" drawable="librus" name="Librus" />
   <item component="ComponentInfo{org.lichess.mobileapp.free/org.lichess.mobileapp.MainActivity}" drawable="lichess" name="Lichess" />
@@ -11700,6 +11712,7 @@
   <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.NekoTurboIcon}" drawable="nekogram" name="Momogram" />
   <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.ThemedClassicIcon}" drawable="nekogram" name="Momogram" />
   <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.ThemedXEyeIcon}" drawable="nekogram" name="Momogram" />
+  <item component="ComponentInfo{com.momondo.flightsearch/com.kayak.android.splash.SplashActivity}" drawable="momondo" name="momondo" />
   <item component="ComponentInfo{de.momox/de.momox.ui.component.splash.SplashActivity}" drawable="momox" name="momox" />
   <item component="ComponentInfo{de.momox/de.momox.inbound.ui.MainActivity}" drawable="momox" name="momox" />
   <item component="ComponentInfo{com.infomil.bill/crc641d2f0cb11ae9d69e.MainActivity}" drawable="mon_e_leclerc" name="Mon E.Leclerc" />
@@ -18867,6 +18880,7 @@
   <item component="ComponentInfo{com.tenda.router.app/com.tenda.router.app.activity.Anew.Splash.SplashActivity}" drawable="tenda_wifi" name="Tenda WiFi" />
   <item component="ComponentInfo{ph.tendopay.app.android/ph.tendopay.app.android.MainActivity}" drawable="tendopay" name="TendoPay" />
   <item component="ComponentInfo{com.krealo.tenpo/com.krealo.tenpo.MainActivity}" drawable="tenpo" name="Tenpo" />
+  <item component="ComponentInfo{com.sidhant.tents/com.sidhant.tents.MainActivity}" drawable="tents" name="Tents" />
   <item component="ComponentInfo{com.eightbitlab.teo/com.eightbitlab.teo.ui.MainActivity}" drawable="teo" name="Teo" />
   <item component="ComponentInfo{com.comeco.teo/crc64753b843c3502ab2c.SplashActivity}" drawable="teo_by_comeco" name="TEO by COMECO" />
   <item component="ComponentInfo{com.dubox.drive/com.dubox.drive.ui.LogoNewLauncherActivity}" drawable="terabox" name="TeraBox" />
@@ -19552,6 +19566,7 @@
   <item component="ComponentInfo{de.touchtomorrow.app/de.touchtomorrow.app.MainActivity}" drawable="touchtomorrow" name="TouchTomorrow" />
   <item component="ComponentInfo{com.touchtunes.android/com.touchtunes.android.MainActivity}" drawable="touchtunes" name="TouchTunes" />
   <item component="ComponentInfo{com.tovala.tovala/com.tovala.tovala.start.splash.SplashActivity}" drawable="tovala" name="Tovala" />
+  <item component="ComponentInfo{com.toverland.app/com.toverland.app.MainActivity}" drawable="toverland" name="Toverland" />
   <item component="ComponentInfo{info.zamojski.soft.towercollector/info.zamojski.soft.towercollector.SplashActivity}" drawable="tower_collector" name="Tower Collector" />
   <item component="ComponentInfo{jp.wifishare.townwifi/jp.wifishare.townwifi.activity.LauncherActivity}" drawable="townwifi_bygmo" name="TownWiFi byGMO" />
   <item component="ComponentInfo{com.toyota.oneapp/com.toyota.oneapp.ui.splash.SplashActivity}" drawable="toyota" name="Toyota" />
@@ -19709,6 +19724,7 @@
   <item component="ComponentInfo{org.deluge.trireme/org.deluge.trireme.MainActivity}" drawable="trireme_for_deluge" name="Trireme for Deluge" />
   <item component="ComponentInfo{com.apptriunfo/com.apptriunfo.SplashActivity}" drawable="triunfo_seguros" name="Triunfo Seguros" />
   <item component="ComponentInfo{com.trivago/com.trivago.ft.main.frontend.MainActivity}" drawable="trivago" name="trivago" />
+  <item component="ComponentInfo{com.trivago/com.trivago.app.MainActivity}" drawable="trivago" name="trivago" />
   <item component="ComponentInfo{com.trivago/com.trivago.ft.splash.frontend.SplashActivity}" drawable="trivago" name="trivago" />
   <item component="ComponentInfo{com.etermax.preguntados.lite/com.etermax.preguntados.splash.presentation.SplashActivity}" drawable="trivia_crack" name="Trivia Crack" />
   <item component="ComponentInfo{com.etermax.trivia.preguntados2/com.etermax.mainactivity.EtermaxUnityPlayerActivity}" drawable="trivia_crack_2" name="Trivia Crack 2" />
