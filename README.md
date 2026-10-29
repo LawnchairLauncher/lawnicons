@@ -9,9 +9,9 @@
   <a href="https://github.com/LawnchairLauncher/lawnicons/actions/workflows/build_release_apk.yml">
     <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/LawnchairLauncher/lawnicons/build_release_apk.yml?label=Release%20APK&logo=github&color=3F9E00"></a>
   <a href="https://discord.gg/3x8qNWxgGZ">
-    <img alt="Discord" src="https://img.shields.io/discord/803299970169700402?logo=discord&logoColor=white&label=Discord&color=5165f6"></a>
+    <img alt="Discord" src="https://img.shields.io/badge/Discord-5865F2?logo=discord&logoColor=ffffff"></a>    
   <a href="https://t.me/lccommunity">
-    <img alt="Telegram" src="https://img.shields.io/badge/Telegram-0088CC?logo=telegram&logoColor=ffffff"></a>    
+    <img alt="Telegram" src="https://img.shields.io/badge/Telegram-0088CC?logo=telegram&logoColor=ffffff"></a>
 </div>
 
 <br/>
