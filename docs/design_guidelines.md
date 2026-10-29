@@ -146,3 +146,28 @@ Tips: cut lines around the badge, place it in the lower right corner when possib
 <img src="images/special-cases-4-minimal-generic-icons.png" alt="4 Minimal icons" height="200" />
 
 Minimal generic icons need distinctive features to aid recognition.
+
+## Review bot specs
+
+| ID | Rule | Spec |
+|---|---|---|
+| C01 | Canvas size | canvas: 192×192 px |
+| C02 | Icon size | icon size: 160 px (W or H, incl. stroke) |
+| C03 | Outside content | — |
+| C04 | Square size | square icon size: 154×154 px |
+| C05 | Effects | opacity: 100% |
+| C05 | Effects | shadow or effect: none |
+| C06 | Stroke weight | stroke: 12 px (core) |
+| C07 | Fill color | color: #000000 |
+| C07 | Fill color | fill: none |
+| C08 | Rounding caps | caps: rounded |
+| C09 | Rounding joints | joins: rounded |
+| C10 | Rounded corners | 90° corners: rounded (6+ px) |
+| Q01 | Visual balance | stroke: 12 px (core) |
+| Q02 | Black spots | — |
+| Q03 | Excessive density | — |
+| Q04 | Alignment | — |
+| O01 | SVG size | size: max 3 KB |
+| NR01 | Orphaned file | — |
+| NR02 | Missing file | — |
+| NR03 | Naming mismatch | — |
