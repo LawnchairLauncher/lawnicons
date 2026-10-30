@@ -66,7 +66,7 @@ You're welcome to work on our issues. In exchange for resolving issues, we fulfi
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki) • [Contribution quality](https://docs.lawnchair.app/community/about/quality-guidelines)
 
 ### Icons
-To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. The maintainer does reviews around Saturday, with a limit of 100 icons per quarter.
+To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. If most icons in your latest merged PRs were flawless, you can submit up to 10. The maintainer does reviews around Saturday, with a limit of 100 icons per quarter.
 
 [Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [Review stats](https://github.com/LawnchairLauncher/lawnicons/issues?q=is%3Aissue+state%3Aopen+review+stats)
 
