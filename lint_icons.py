@@ -121,6 +121,38 @@ def parse_style_attribute(style_str: Optional[str]) -> Dict[str, str]:
         return {}
     return {k: v.strip() for k, v in STYLE_PAIR_RE.findall(style_str.lower())}
 
+def _fmt_size(v: float):
+    """Format a size value: integer if whole, one decimal otherwise."""
+    r = round(v, 1)
+    return int(r) if r.is_integer() else r
+
+def _visual_dimensions(svg) -> Optional[tuple[float, float, float, float]]:
+    """Return (total_w, total_h, max_side, min_side) including stroke-width."""
+    min_x = min_y = float('inf')
+    max_x = max_y = float('-inf')
+
+    for el in svg.elements():
+        if isinstance(el, SVG):
+            continue
+        try:
+            sw = float(el.values.get('stroke-width', 0) or 0)
+        except (TypeError, ValueError):
+            sw = 0.0
+        el_bbox = el.bbox()
+        if not el_bbox:
+            continue
+        min_x = min(min_x, el_bbox[0] - sw / 2)
+        min_y = min(min_y, el_bbox[1] - sw / 2)
+        max_x = max(max_x, el_bbox[2] + sw / 2)
+        max_y = max(max_y, el_bbox[3] + sw / 2)
+
+    if min_x == float('inf'):
+        return None
+
+    total_w = max_x - min_x
+    total_h = max_y - min_y
+    return total_w, total_h, max(total_w, total_h), min(total_w, total_h)
+
 
 # --- Rules Implementation ---
 
@@ -161,10 +193,36 @@ def rule_canvas_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     return [Finding(C01Outcomes.WRONG_SIZE, {"width": w or "?", "height": h or "?"})]
 
 
-@register_rule(id="C02", name="Icon too small", outcomes={},
-               description="Checks if icons are too small.")
-def rule_placeholder_too_small(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    return []
+class C02Outcomes:
+    WRONG_SIZE = Outcome("WRONG_SIZE", "Wrong icon size", "icon size: {width}×{height} px")
+
+
+@register_rule(
+    id="C02",
+    name="Icon size",
+    description="Checks visual icon size including stroke-width (valid: 160px max side or 154×154 square).",
+    outcomes=C02Outcomes
+)
+def rule_icon_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or ctx.svg_doc is None:
+        return []
+
+    dims = _visual_dimensions(ctx.svg_doc)
+    if dims is None:
+        return []
+
+    _, _, max_side, min_side = dims
+
+    is_160 = abs(max_side - 160) < 0.5
+    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
+
+    if is_160 or is_154:
+        return []
+
+    return [Finding(C02Outcomes.WRONG_SIZE, {
+        "width": _fmt_size(max_side),
+        "height": _fmt_size(min_side),
+    })]
 
 
 @register_rule(id="C03", name="Outside content", outcomes={},
@@ -173,9 +231,96 @@ def rule_placeholder_outside_content(ctx: CheckContext, max_speed: Speed) -> Lis
     return []
 
 
-@register_rule(id="C04", name="Square size", outcomes={},
-               description="Checks size of square icons.")
-def rule_placeholder_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+class C04Outcomes:
+    SQUARE_TOO_BIG = Outcome("SQUARE_TOO_BIG", "Square icon too large", "square icon size: {size}×{size} px")
+
+
+@register_rule(
+    id="C04",
+    name="Square size",
+    description="Square icons should be 154×154, not 160×160.",
+    outcomes=C04Outcomes
+)
+def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or ctx.svg_doc is None:
+        return []
+
+    svg = ctx.svg_doc
+
+    dims = _visual_dimensions(svg)
+    if dims is None:
+        return []
+
+    total_w, total_h, max_side, min_side = dims
+
+    # Skip icons that are not valid sizes (C02 handles those).
+    is_160 = abs(max_side - 160) < 0.5
+    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
+    if not is_160 and not is_154:
+        return []
+
+    # 154×154 icons are square by definition.
+    if is_154:
+        return []
+
+    # Only check square-looking icons; non-square 160×N are valid abstract icons.
+    if abs(total_w - total_h) > 3:
+        return []
+
+    bbox = svg.bbox()
+    if not bbox:
+        return []
+
+    bw = bbox[2] - bbox[0]
+    bh = bbox[3] - bbox[1]
+
+    content_area = int(round(max_side))
+    perimeter = 4 * content_area
+    if perimeter <= 0:
+        return []
+
+    sides_found: set[str] = set()
+    total_fill = 0.0
+
+    for el in svg.elements():
+        if not isinstance(el, SVGPath):
+            continue
+
+        try:
+            sw = float(el.values.get('stroke-width', 0) or 0)
+        except (TypeError, ValueError):
+            sw = 0.0
+        if sw == 0:
+            continue
+
+        for seg in el:
+            if seg.start is None or seg.end is None:
+                continue
+
+            x1, y1 = seg.start.x, seg.start.y
+            x2, y2 = seg.end.x, seg.end.y
+            seg_len = ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+
+            if abs(y1 - y2) < 2:
+                if abs(y1 - bbox[1]) < 5 and 'top' not in sides_found:
+                    total_fill += (bw + sw) if seg_len >= 0.9 * bw else (seg_len + sw)
+                    sides_found.add('top')
+                elif abs(y1 - bbox[3]) < 5 and 'bottom' not in sides_found:
+                    total_fill += (bw + sw) if seg_len >= 0.9 * bw else (seg_len + sw)
+                    sides_found.add('bottom')
+
+            if abs(x1 - x2) < 2:
+                if abs(x1 - bbox[0]) < 5 and 'left' not in sides_found:
+                    total_fill += (bh + sw) if seg_len >= 0.9 * bh else (seg_len + sw)
+                    sides_found.add('left')
+                elif abs(x1 - bbox[2]) < 5 and 'right' not in sides_found:
+                    total_fill += (bh + sw) if seg_len >= 0.9 * bh else (seg_len + sw)
+                    sides_found.add('right')
+
+    pct = total_fill / perimeter * 100
+    if pct >= 50:
+        return [Finding(C04Outcomes.SQUARE_TOO_BIG, {"size": content_area})]
+
     return []
 
 
@@ -275,6 +420,7 @@ class C06Outcomes:
     FORBIDDEN_WEIGHT = Outcome("FORBIDDEN_WEIGHT", "Forbidden stroke weight", "stroke: {weight} px")
     NON_NUMERIC = Outcome("NON_NUMERIC", "Non-numeric stroke weight", "stroke: {weight}")
     MINIMAL_ICON = Outcome("MINIMAL_ICON", "Minimal icon", "stroke: {weight} px (review)")
+    ONLY_THIN_STROKES = Outcome("ONLY_THIN_STROKES", "Only thin strokes", "stroke: 6/8px only not allowed")
 
 
 @register_rule(
@@ -287,7 +433,9 @@ def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
         return []
 
-    valid = {6.0, 8.0, 10.0, 12.0, 14.0}
+    allowed_any = {6.0, 8.0, 10.0, 12.0, 14.0}
+    allowed_core = {10.0, 12.0, 14.0}
+    
     strokes = []
     findings = []
     for el in ctx.xml_tree.iter():
@@ -303,10 +451,16 @@ def rule_stroke_weight(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
         return findings
 
     unique_weights = set(strokes)
-    forbidden = unique_weights - valid
+    
+    forbidden = unique_weights - allowed_any
+    has_core = bool(unique_weights & allowed_core)
+
+    forbidden_str = ", ".join(map(str, sorted(forbidden)))
+
     if forbidden:
-        findings.append(Finding(C06Outcomes.FORBIDDEN_WEIGHT,
-                                {"weight": ", ".join(map(str, sorted(forbidden)))}))
+        findings.append(Finding(C06Outcomes.FORBIDDEN_WEIGHT, {"weight": forbidden_str}))
+    elif not has_core:
+        findings.append(Finding(C06Outcomes.ONLY_THIN_STROKES))
 
     if len(strokes) == 1:
         weight = strokes[0]
@@ -397,25 +551,113 @@ class RoundingOutcomes:
     INVALID_RECT_ROUND = Outcome("INVALID_RECT_ROUND", "Invalid rect rounding", "rect rx: {rx}")
 
 
-@register_rule(id="C08", name="Rounding caps", outcomes={},
-               description="Validates 'round' stroke-linecap.")
-def rule_placeholder_rounding_caps(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """[Placeholder] Validates 'round' stroke-linecap."""
-    return []
+class C08Outcomes:
+    BAD_CAP = Outcome("BAD_CAP", "Wrong stroke-linecap", "rounded caps: no")
 
 
-@register_rule(id="C09", name="Rounding joints", outcomes={},
-               description="Validates 'round' stroke-linejoin.")
-def rule_placeholder_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """[Placeholder] Validates 'round' stroke-linejoin."""
-    return []
+@register_rule(
+    id="C08",
+    name="Rounding caps",
+    description="Validates 'round' stroke-linecap.",
+    outcomes=C08Outcomes
+)
+def rule_rounding_caps(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
+        return []
+
+    root = ctx.xml_tree.getroot() if hasattr(ctx.xml_tree, 'getroot') else ctx.xml_tree
+    findings: List[Finding] = []
+
+    # Explicit stroke-linecap only; inherited values are not flagged.
+    stack = [root]
+    while stack:
+        el = stack.pop()
+        tag = el.tag.split('}')[-1]
+
+        style_map = parse_style_attribute(el.get('style'))
+        cap = el.get('stroke-linecap') or style_map.get('stroke-linecap')
+
+        if cap is not None and cap.strip().lower() != 'round':
+            findings.append(Finding(C08Outcomes.BAD_CAP))
+
+        for child in el:
+            stack.append(child)
+
+    return findings
 
 
-@register_rule(id="C10", name="Rounded corners", outcomes={},
-               description="Validates <rect> corner rounding.")
-def rule_placeholder_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """[Placeholder] Validates <rect> corner rounding."""
-    return []
+class C09Outcomes:
+    BAD_JOIN = Outcome("BAD_JOIN", "Wrong stroke-linejoin", "rounded joins: no")
+
+
+@register_rule(
+    id="C09",
+    name="Rounding joints",
+    description="Validates 'round' stroke-linejoin.",
+    outcomes=C09Outcomes
+)
+def rule_rounding_joints(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
+        return []
+
+    root = ctx.xml_tree.getroot() if hasattr(ctx.xml_tree, 'getroot') else ctx.xml_tree
+    findings: List[Finding] = []
+
+    stack = [root]
+    while stack:
+        el = stack.pop()
+
+        style_map = parse_style_attribute(el.get('style'))
+        join = el.get('stroke-linejoin') or style_map.get('stroke-linejoin')
+
+        if join is not None and join.strip().lower() != 'round':
+            findings.append(Finding(C09Outcomes.BAD_JOIN))
+
+        for child in el:
+            stack.append(child)
+
+    return findings
+
+
+class C10Outcomes:
+    UNROUNDED = Outcome("UNROUNDED", "Unrounded corners", "90° corners: {value} px")
+
+
+@register_rule(
+    id="C10",
+    name="Rounded corners",
+    description="Validates <rect> corner rounding (min 6px).",
+    outcomes=C10Outcomes
+)
+def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.MEDIUM or ctx.xml_tree is None:
+        return []
+
+    findings: List[Finding] = []
+
+    for el in ctx.xml_tree.iter():
+        tag = el.tag.split('}')[-1]
+        if tag != 'rect':
+            continue
+
+        style_map = parse_style_attribute(el.get('style'))
+        rx = el.get('rx') or style_map.get('rx')
+        ry = el.get('ry') or style_map.get('ry')
+
+        # Only check rects with exactly one of rx/ry set.
+        if (rx is None) == (ry is None):
+            continue
+
+        raw = rx if rx is not None else ry
+        try:
+            val = float(raw.replace('px', '').strip())
+        except (TypeError, ValueError):
+            continue
+
+        if val < 6:
+            findings.append(Finding(C10Outcomes.UNROUNDED, {"value": val}))
+
+    return findings
 
 
 # --- Quality Rules ---
