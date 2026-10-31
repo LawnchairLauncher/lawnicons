@@ -16,6 +16,10 @@ class Status(Enum):
     PASS = "PASS"
     FAIL = "FAIL"
 
+IGNORED_PREFIXES = (
+    "generic_",
+    "themed_icon_calendar_",
+)
 
 @dataclass(frozen=True)
 class Outcome:
@@ -120,7 +124,7 @@ def slugify_app_name(app_name: str) -> str:
     slug = unidecode(primary_name)
     slug = slug.lower()
     slug = slug.replace("'", "")
-    slug = slug.replace("&", "and")
+    slug = slug.replace("&", "_and_")
     slug = slug.replace("+", "_plus_")
     slug = re.sub(r"[^a-z0-9]+", "_", slug)
     slug = slug.strip("_")
@@ -152,6 +156,9 @@ def rule_missing_file(ctx: CheckContext) -> List[Finding]:
 def rule_naming_mismatch(ctx: CheckContext) -> List[Finding]:
     findings: List[Finding] = []
     for drawable in sorted(ctx.xml_drawables_to_check):
+        if any(drawable.startswith(prefix) for prefix in IGNORED_PREFIXES):
+            continue
+            
         if drawable not in ctx.disk_svgs:
             continue
         app_name = ctx.xml_items.get(drawable, "")

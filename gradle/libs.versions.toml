@@ -1,10 +1,10 @@
 [versions]
-agp = "9.4.1"
+agp = "9.5.0"
 kotlin = "2.4.21"
 androidx-nav3 = "1.2.0"
 androidx-lifecycle = "2.11.0"
 retrofit = "3.0.0"
-metro = "1.4.5"
+metro = "1.5.1"
 
 [libraries]
 androidx-core-ktx = "androidx.core:core-ktx:1.19.1"
@@ -32,7 +32,7 @@ coil-svg = "io.coil-kt:coil-svg:2.7.0"
 lazycolumn-scrollbar = "com.github.nanihadesuka.LazyColumnScrollbar:lazycolumnscrollbar:3.0.0"
 material-motion-compose-core = "io.github.fornewid:material-motion-compose-core:2.0.1"
 metrox-viewmodel-compose = { module = "dev.zacsweers.metro:metrox-viewmodel-compose", version.ref = "metro" }
-android-tools-sdk-common = "com.android.tools:sdk-common:32.4.1"
+android-tools-sdk-common = "com.android.tools:sdk-common:32.5.0"
 dom4j = "org.dom4j:dom4j:2.2.0"
 commons-io = "commons-io:commons-io:2.22.0"
 

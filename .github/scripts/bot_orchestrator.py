@@ -24,11 +24,30 @@ SVG_LINTER_PATH = SCRIPT_REPO_ROOT / "lint_icons.py"
 NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 
 BOT_SIGNATURE = "<!-- Linter bot report -->"
-NEEDS_REVIEW_LABEL = "needs review"
+NEEDS_REVIEW_LABEL = ":hourglass_flowing_sand:"
 
-SPEC_MESSAGE = """> [!TIP]
-> **Spec**
-> canvas: 192×192 px, color: #000000, opacity: 100%, shadow or effect: none, stroke: 12 px (core), fill: none, size: max 3 KB"""
+# (rule_id, outcome_id) -> spec line
+SPEC_BY_RULE_OUTCOME = {
+    ("C01", "WRONG_SIZE"): "canvas: 192×192 px",
+    ("C01", "MISSING"): "canvas: 192×192 px",
+    ("C01", "MALFORMED"): "canvas: 192×192 px",
+    ("C02", "WRONG_SIZE"): "icon size: 160 px (W or H, incl. stroke)",
+    ("C04", "SQUARE_TOO_BIG"): "square icon size: 154×154 px",
+    ("C05", "OPACITY"): "opacity: 100%",
+    ("C05", "FORBIDDEN_EFFECT"): "shadow or effect: none",
+    ("C06", "FORBIDDEN_WEIGHT"): "stroke: 12 px (core)",
+    ("C06", "NON_NUMERIC"): "stroke: 12 px (core)",
+    ("C06", "ONLY_THIN_STROKES"): "stroke: 12 px (core)",
+    ("C06", "MINIMAL_ICON"): "stroke: 12 px (core)",
+    ("C07", "NON_BLACK_STROKE"): "color: #000000",
+    ("C07", "IMPLICIT_FILL"): "fill: none",
+    ("C07", "UNAUTHORIZED_FILL"): "fill: none",
+    ("C07", "HAS_FILL"): "fill: none",
+    ("C08", "BAD_CAP"): "caps and joins: rounded",
+    ("C09", "BAD_JOIN"): "caps and joins: rounded",
+    ("C10", "UNROUNDED"): "90° corners: rounded (6+ px)",
+    ("O01", "TOO_LARGE"): "size: max 3 KB",
+}
 
 # --- Main Logic ---
 
@@ -223,7 +242,9 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
                         if res.get("status") == "FAIL" and res.get("message"):
                             msg_obj = {
                                 "message": res["message"],
-                                "category": res.get("category", "Core")
+                                "category": res.get("category", "Core"),
+                                "rule_id": res.get("id", ""),
+                                "outcome_id": res.get("outcome_id", ""),
                             }
                             final_file_messages.setdefault(filename, []).append(msg_obj)
             except Exception as e:
@@ -253,7 +274,9 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
                         if msg:
                             msg_obj = {
                                 "message": msg,
-                                "category": res.get("category", "Naming")
+                                "category": res.get("category", "Naming"),
+                                "rule_id": res.get("id", ""),
+                                "outcome_id": res.get("outcome_id", ""),
                             }
                             final_file_messages.setdefault(filename, []).append(msg_obj)
             except Exception as e:
@@ -277,7 +300,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
             lines.append("Thanks for your contribution!\n")
             lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
         
-        lines.append("### Common issues\n")
+        lines.append("## Make sure you don't have any of these issues\n")
         lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
         
         lines.append(BOT_SIGNATURE)
@@ -288,8 +311,24 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
         lines.append("Thanks for your contribution!\n")
         lines.append("Please fix all bot-detected issues to get a human review — and the rest to merge. Ensure Lawnicons builds correctly.\n")
 
-    lines.append("### Bot-detected issues")
-    lines.append(SPEC_MESSAGE + "\n")
+    lines.append("## Bot-detected issues")
+
+    # Collect relevant spec lines for the rules that actually fired.
+    relevant = []
+    seen_specs = set()
+    for msgs in file_messages.values():
+        for m in msgs:
+            key = (m.get("rule_id", ""), m.get("outcome_id", ""))
+            spec = SPEC_BY_RULE_OUTCOME.get(key)
+            if spec and spec not in seen_specs:
+                seen_specs.add(spec)
+                relevant.append(spec)
+
+    if relevant:
+        lines.append("> [!TIP]")
+        lines.append("> **Spec** [Full list](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md#review-bot-specs)")
+        lines.append("> " + " • ".join(relevant))
+        lines.append("")
 
     for filename in sorted(file_messages.keys()):
         all_msgs = file_messages[filename]
@@ -308,14 +347,14 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
 
         lines.append(f"**{filename}**")
         if general_msgs:
-            lines.append(", ".join(general_msgs))
+            lines.append(" • ".join(general_msgs))
 
         for n_msg in naming_msgs:
             lines.append(n_msg)
 
         lines.append("") # Empty line between files
 
-    lines.append("### Common issues\n")
+    lines.append("### Make sure you don't have any of these issues\n")
     lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
 
     lines.append(BOT_SIGNATURE)
