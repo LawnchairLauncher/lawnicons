@@ -213,8 +213,8 @@ def rule_icon_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
     _, _, max_side, min_side = dims
 
-    is_160 = abs(max_side - 160) < 0.5
-    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
+    is_160 = abs(max_side - 160) < 0.1
+    is_154 = abs(max_side - 154) < 0.1 and abs(min_side - 154) < 0.1
 
     if is_160 or is_154:
         return []
@@ -254,8 +254,8 @@ def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     total_w, total_h, max_side, min_side = dims
 
     # Skip icons that are not valid sizes (C02 handles those).
-    is_160 = abs(max_side - 160) < 0.5
-    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
+    is_160 = abs(max_side - 160) < 0.1
+    is_154 = abs(max_side - 154) < 0.1 and abs(min_side - 154) < 0.1
     if not is_160 and not is_154:
         return []
 
