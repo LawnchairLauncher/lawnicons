@@ -5,32 +5,32 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Versió %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Tornar</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">Buscar entre %d icones</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Tria una icona</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Cerca</string>
     <!-- Accessibility label for the clear search button -->
     <string name="clear">Netejar</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">%s no trobat</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">Nous icones en v%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Taulell de sol·licituds d\'icones</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">Sol·licitar icones</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Totes les icones són compatibles. Reporta canvis a través de GitHub Issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
     <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
     <!-- Label for the About screen and toolbar action -->
@@ -113,4 +113,35 @@
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">New icons (%1$s)</string>
     <string name="action_menu_overflow_description">More options</string>
+    <!-- Bug report -->
+    <!-- Title shown for the bug report -->
+    <string name="bug_report">Lawnicons bug report</string>
+    <!-- Notification title shown when %1$s crashes -->
+    <string name="crash_report_notif_title">%1$s crashed</string>
+    <!-- Action to upload a crash log -->
+    <string name="action_upload">Upload crash log</string>
+    <!-- Action to copy text -->
+    <string name="action_copy">Copia</string>
+    <!-- Action to copy a link -->
+    <string name="action_copy_link">Copia l\'enllaç</string>
+    <!-- Message shown when uploading fails -->
+    <string name="action_upload_error">La pujada ha fallat</string>
+    <!-- Status shown while a bug report is being uploaded -->
+    <string name="dogbin_uploading">Pujant…</string>
+    <!-- Name of the notification channel for bug reports -->
+    <string name="bugreport_channel_name">Bug reports</string>
+    <!-- Name of the notification channel for upload status updates -->
+    <string name="status_channel_name">Upload status</string>
+    <!-- Summary of a group of bug report notifications, with %d as the number of reports -->
+    <string name="bugreport_group_summary">%d new reports</string>
+    <!-- Summary shown for a group of multiple bug report notifications -->
+    <string name="bugreport_group_summary_multiple">Multiple new reports</string>
+    <!-- Label for the notification permission prompt -->
+    <string name="notification_permission_label">Notifications permission needed</string>
+    <!-- Explanation of why the app needs notification permission -->
+    <string name="notification_permission_desc">To notify you when %1$s experiences an issue, %1$s needs permission to send notifications</string>
+    <!-- Button to grant notification permission -->
+    <string name="notification_permission_grant">Allow</string>
+    <!-- Button to dismiss the notification permission prompt -->
+    <string name="notification_permission_dismiss">Not now</string>
 </resources>
