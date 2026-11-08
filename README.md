@@ -44,7 +44,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Support Lawnicons
 
 > [!Important]
-> Priority requests are open until April 2027.
+> Priority requests are available through the end of 2026 and may be extended to April 2027 if there's demand.
 
 Requests from Lawnchair supporters get fulfilled much faster than if you just wait. 
 
