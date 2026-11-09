@@ -5,112 +5,143 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">Versió %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">Back</string>
+    <string name="back">Torna</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">Search through %d icons</string>
+    <string name="search_bar_hint">Busca entre %d icones</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
-    <string name="search_bar_icon_picker">Pick an icon</string>
+    <string name="search_bar_icon_picker">Tria una icona</string>
     <!-- Accessibility label for the search icon -->
     <string name="search">Cerca</string>
     <!-- Accessibility label for the clear search button -->
     <string name="clear">Netejar</string>
     <!-- Text shown when there are no search results, with %s as the search query -->
-    <string name="no_items_found">%s not found</string>
+    <string name="no_items_found">No s\'ha trobat %s</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">Noves icones a la v%1$s</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">Icon request dashboard</string>
+    <string name="icon_request_dashboard">Taulell de sol·licituds d\'icones</string>
     <!-- Label for the icon request action in the toolbar -->
-    <string name="request_icons">Request icons</string>
+    <string name="request_icons">Sol·licita icones</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">All icons are supported. Report rebrandings via GitHub issues.</string>
+    <string name="icon_requests_fulfilled">Totes les icones són compatibles. Reporta canvis a través de GitHub Issues.</string>
     <!-- When icon requests are turned off via the JSON in the website -->
-    <string name="icon_requests_suspended">Icon requests open for a limited time with every new Lawnicons release.</string>
+    <string name="icon_requests_suspended">Les sol·licituds d\'icones estan obertes durant un temps limitat amb cada nou llançament de Lawnicons.</string>
     <!-- Label for the About screen and toolbar action -->
     <string name="about">Quant a</string>
     <!-- Contributors section of About page -->
     <!-- Contributors label -->
-    <string name="contributors">Contributors</string>
+    <string name="contributors">Contribuïdors</string>
     <!-- Core Contributors label -->
-    <string name="core_contributors">Core contributors</string>
+    <string name="core_contributors">Contribuïdors principals</string>
     <!-- Item that links to the Contributors page -->
-    <string name="see_all_contributors">See all contributors</string>
+    <string name="see_all_contributors">Veure tots els col·laboradors</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">Aplicació principal</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">Icones</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">Infraestructura</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
-    <string name="special_thanks">Special thanks</string>
+    <string name="special_thanks">Agraïments especials</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">For inspiring the app icon</string>
+    <string name="special_thanks_icon">Per inspirar la icona de l\'aplicació</string>
     <!-- Subtitle displayed below the user who named the app -->
-    <string name="special_thanks_name">For naming the app</string>
+    <string name="special_thanks_name">Per posar nom a l\'aplicació</string>
     <!-- List item that links to the Acknowledgements page -->
-    <string name="acknowledgements">Open-source licenses</string>
+    <string name="acknowledgements">Llicències de codi obert</string>
     <!-- Icon information popup sheet -->
     <!-- Label for the icon name -->
-    <string name="name">Name</string>
+    <string name="name">Nom</string>
     <!-- Label for the drawable resource name -->
     <string name="drawable">Drawable</string>
     <!-- Label for the component ID -->
     <string name="component">ID</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">Mapped IDs</string>
+    <string name="mapped_components">ID mapats</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">If the icon is outdated due to rebranding, create an issue on GitHub.</string>
+    <string name="icon_info_outdated_warning">Si la icona ha quedat obsoleta a causa d\'un canvi de marca, obriu una incidència a GitHub.</string>
     <!-- Label for the action to view the icon's source on GitHub -->
-    <string name="view_on_github">View on GitHub</string>
+    <string name="view_on_github">Veure a GitHub</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">Comparteix detalls</string>
     <!-- Title for the screen showing apps with missing icons -->
-    <string name="missing_icons">Missing icons</string>
+    <string name="missing_icons">Falten icones</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">Esborra selecció</string>
     <!-- Button to select all icons -->
-    <string name="select_all">Select all</string>
+    <string name="select_all">Selecciona totes</string>
     <!-- Split button -->
     <!-- Button to send email -->
-    <string name="send_email">Send email</string>
+    <string name="send_email">Enviar correu electrònic</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">Mostra el full d\'opcions</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">Expandit</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">Plegat</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">Botó de commutació</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">Comparteix el fitxer</string>
     <!-- Option to save the icon request to a file -->
-    <string name="save_file">Save file</string>
+    <string name="save_file">Desa el fitxer</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">Copia els ID de les aplicacions</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">Fitxer desat correctament</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">Error en desar el fitxer</string>
     <!-- Toast shown when there is an error creating a zip file -->
-    <string name="toast_file_zip_error">Could not create request file</string>
+    <string name="toast_file_zip_error">No s\'ha pogut crear el fitxer de sol·licitud</string>
     <!-- Toast shown when no app is found to handle an action -->
-    <string name="toast_no_app_available">No app to handle this action</string>
+    <string name="toast_no_app_available">No hi ha cap aplicació per gestionar aquesta acció</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Copied text</string>
+    <string name="copied_text">Text copiat</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
-    <string name="new_icons">New icons (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="new_icons">Noves icones (%1$s)</string>
+    <string name="action_menu_overflow_description">Més opcions</string>
+    <!-- Bug report -->
+    <!-- Title shown for the bug report -->
+    <string name="bug_report">Informe d\'error de Lawnicons</string>
+    <!-- Notification title shown when %1$s crashes -->
+    <string name="crash_report_notif_title">%1$s ha deixat de funcionar</string>
+    <!-- Action to upload a crash log -->
+    <string name="action_upload">Puja el registre d\'errors</string>
+    <!-- Action to copy text -->
+    <string name="action_copy">Copia</string>
+    <!-- Action to copy a link -->
+    <string name="action_copy_link">Copia l\'enllaç</string>
+    <!-- Message shown when uploading fails -->
+    <string name="action_upload_error">La pujada ha fallat</string>
+    <!-- Status shown while a bug report is being uploaded -->
+    <string name="dogbin_uploading">Pujant…</string>
+    <!-- Name of the notification channel for bug reports -->
+    <string name="bugreport_channel_name">Informes d\'errors</string>
+    <!-- Name of the notification channel for upload status updates -->
+    <string name="status_channel_name">Estat de la pujada</string>
+    <!-- Summary of a group of bug report notifications, with %d as the number of reports -->
+    <string name="bugreport_group_summary">%d informes nous</string>
+    <!-- Summary shown for a group of multiple bug report notifications -->
+    <string name="bugreport_group_summary_multiple">Diversos informes nous</string>
+    <!-- Label for the notification permission prompt -->
+    <string name="notification_permission_label">Cal el permís de notificacions</string>
+    <!-- Explanation of why the app needs notification permission -->
+    <string name="notification_permission_desc">Per avisar-te quan %1$s tingui un problema, %1$s necessita permís per enviar notificacions</string>
+    <!-- Button to grant notification permission -->
+    <string name="notification_permission_grant">Permet</string>
+    <!-- Button to dismiss the notification permission prompt -->
+    <string name="notification_permission_dismiss">Ara no</string>
 </resources>
