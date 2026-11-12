@@ -136,7 +136,7 @@ def slugify_app_name(app_name: str) -> str:
 
 
 class NamingOutcomes:
-    ORPHAN = Outcome("ORPHAN", "Orphaned file", "Not declared in `appfilter.xml`")
+    ORPHAN = Outcome("ORPHAN", "Orphaned file", "missing `appfilter.xml` entry: link this icon to the corresponding app's ID")
     MISSING = Outcome("MISSING", "Missing file", "Declared in `appfilter.xml` but file not found")
     MISMATCH = Outcome("MISMATCH", "Naming mismatch", "naming needs check: {app_name} ≠ {filename}.svg")
 
