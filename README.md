@@ -44,7 +44,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Support Lawnicons
 
 > [!Important]
-> Priority requests are open until April 2027.
+> Priority requests are available through the end of 2026 and may be extended to April 2027 if there's demand.
 
 Requests from Lawnchair supporters get fulfilled much faster than if you just wait. 
 
@@ -68,7 +68,7 @@ You're welcome to work on our issues. In exchange for resolving issues, we fulfi
 ### Icons
 
 > [!NOTE]
-> Icon PRs opened from November through the end of the year will go to review in January, as we've reached this quarter's review limit.
+> Reviews of icon PRs will resume in January, as we've reached this quarter's review limit.
 
 To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. If most icons in your latest merged PRs were flawless, you can submit up to 10. The maintainer does reviews around Saturday, with a limit of 100 icons per quarter.
 
