@@ -68,9 +68,11 @@ You're welcome to work on our issues. In exchange for resolving issues, we fulfi
 ### Icons
 
 > [!NOTE]
-> Reviews of icon PRs will resume in January, as we've reached this quarter's review limit.
+> Reviews of icon PRs will resume in January.
 
-To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. If most icons in your latest merged PRs were flawless, you can submit up to 10. The maintainer does reviews around Saturday, with a limit of 100 icons per quarter.
+To add icons, you should be able to create an SVG in a vector graphics editor, open a PR on GitHub, and follow the Lawnicons design guidelines. You can add up to 5 new icons per PR (10 if you're a trusted contributor).
+
+Reviews happen once a month, with a quarterly limit of 100 icons.
 
 [Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [Review stats](https://github.com/LawnchairLauncher/lawnicons/issues?q=is%3Aissue+state%3Aopen+review+stats)
 
