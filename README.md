@@ -55,13 +55,11 @@ Requests from Lawnchair supporters get fulfilled much faster than if you just wa
     <a href="https://lawnicons-requests.vercel.app/">
         <img alt="Lawnicons dashboard" src="https://img.shields.io/badge/Lawnicons%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
-        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
-    <a href="https://lawnchair.crowdin.com/lawnicons">
-        <img alt="Lawnicons localization" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
+        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>     
 </div> 
 
 ### Development
-You're welcome to work on our issues. In exchange for resolving issues, we fulfill simple icon requests — yours or from the public queue.
+You're welcome to work on our issues, maybe something will interest you.
 
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki) • [Contribution quality](https://docs.lawnchair.app/community/about/quality-guidelines)
 
@@ -70,11 +68,15 @@ You're welcome to work on our issues. In exchange for resolving issues, we fulfi
 > [!NOTE]
 > Reviews of icon PRs will resume in January.
 
-To add icons, you should be able to create an SVG in a vector graphics editor, open a PR on GitHub, and follow the Lawnicons design guidelines. You can add up to 5 new icons per PR (10 if you're a trusted contributor).
-
-Reviews happen once a month, with a quarterly limit of 100 icons.
+To add icons, you should be able to create an SVG in a vector graphics editor, open a PR on GitHub, and follow the Lawnicons design guidelines. You can add up to 5 new icons per PR until you can create flawless icons.
 
 [Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [Review stats](https://github.com/LawnchairLauncher/lawnicons/issues?q=is%3Aissue+state%3Aopen+review+stats)
+
+### Localization
+
+You're welcome to help with Lawnicons localization if you're fluent in English and another language.
+
+[Lawnicons localization](https://lawnchair.crowdin.com/lawnicons)
 
 ### Icon requests
 
