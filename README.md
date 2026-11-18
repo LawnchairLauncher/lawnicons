@@ -70,7 +70,7 @@ You're welcome to work on our issues, maybe something will interest you.
 
 To add icons, you should be able to create an SVG in a vector graphics editor, open a PR on GitHub, and follow the Lawnicons design guidelines. You can add up to 5 new icons per PR until you're able to create flawless icons.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [Review stats](https://github.com/LawnchairLauncher/lawnicons/issues?q=is%3Aissue+state%3Aopen+review+stats)
+[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons)
 
 ### Localization
 
