@@ -163,7 +163,7 @@ Minimal generic icons need distinctive features to aid recognition.
 | C08 | Rounding caps | caps: rounded |
 | C09 | Rounding joints | joins: rounded |
 | C10 | Rounded corners | 90° corners: rounded (6+ px) |
-| Q01 | Visual balance | stroke: 12 px (core) |
+| Q01 | Visual balance | adjacent strokes: avoid drastic changes |
 | Q02 | Black spots | — |
 | Q03 | Excessive density | — |
 | Q04 | Alignment | — |

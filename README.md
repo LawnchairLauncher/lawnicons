@@ -44,7 +44,7 @@ Lawnicons on the Play Store will install as a different app from other sources.
 ## Support Lawnicons
 
 > [!Important]
-> Priority requests are open until April 2027.
+> Priority requests are available through the end of 2026 and may be extended to April 2027 if there's demand.
 
 Requests from Lawnchair supporters get fulfilled much faster than if you just wait. 
 
@@ -55,24 +55,28 @@ Requests from Lawnchair supporters get fulfilled much faster than if you just wa
     <a href="https://lawnicons-requests.vercel.app/">
         <img alt="Lawnicons dashboard" src="https://img.shields.io/badge/Lawnicons%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
-        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>
-    <a href="https://lawnchair.crowdin.com/lawnicons">
-        <img alt="Lawnicons localization" src="https://img.shields.io/badge/Localization-3F9E00?logo=crowdin&logoColor=ffffff"></a>        
+        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>     
 </div> 
 
 ### Development
-You're welcome to work on our issues. In exchange for resolving issues, we fulfill simple icon requests — yours or from the public queue.
+You're welcome to work on our issues, maybe something will interest you.
 
 [Developer wiki](https://github.com/LawnchairLauncher/lawnicons/wiki) • [Contribution quality](https://docs.lawnchair.app/community/about/quality-guidelines)
 
 ### Icons
 
 > [!NOTE]
-> Icon PRs opened from November through the end of the year will go to review in January, as we've reached this quarter's review limit.
+> Reviews of icon PRs will resume in January.
 
-To add icons, you need to know the Lawnicons design guidelines, vector graphics, and some GitHub. Contribute up to 5 new icons per PR. If most icons in your latest merged PRs were flawless, you can submit up to 10. The maintainer does reviews around Saturday, with a limit of 100 icons per quarter.
+To add icons, you should be able to create an SVG in a vector graphics editor, open a PR on GitHub, and follow the Lawnicons design guidelines. You can add up to 5 new icons per PR until you're able to create flawless icons.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [Review stats](https://github.com/LawnchairLauncher/lawnicons/issues?q=is%3Aissue+state%3Aopen+review+stats)
+[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons)
+
+### Localization
+
+You're welcome to help with Lawnicons localization if you're fluent in English and another language.
+
+[Lawnicons localization](https://lawnchair.crowdin.com/lawnicons)
 
 ### Icon requests
 

@@ -153,6 +153,36 @@ def _visual_dimensions(svg) -> Optional[tuple[float, float, float, float]]:
     total_h = max_y - min_y
     return total_w, total_h, max(total_w, total_h), min(total_w, total_h)
 
+def _path_subpaths(el) -> list[tuple[list, bool]]:
+    """Split a svgelements Path into subpaths: (segments, is_closed)."""
+    subpaths = []
+    current = []
+    for seg in el:
+        name = seg.__class__.__name__
+        if name == 'Move':
+            if current:
+                subpaths.append((current, False))
+            current = [seg]
+        elif name == 'Close':
+            current.append(seg)
+            subpaths.append((current, True))
+            current = []
+        else:
+            current.append(seg)
+    if current:
+        subpaths.append((current, False))
+
+    # Treat start ≈ end as closed even without an explicit Close.
+    result = []
+    for segs, closed in subpaths:
+        if not closed and len(segs) > 1:
+            start = segs[0].end
+            end = segs[-1].end
+            if start and end and abs(start.x - end.x) < 1 and abs(start.y - end.y) < 1:
+                closed = True
+        result.append((segs, closed))
+    return result
+
 
 # --- Rules Implementation ---
 
@@ -213,8 +243,8 @@ def rule_icon_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
     _, _, max_side, min_side = dims
 
-    is_160 = abs(max_side - 160) < 0.5
-    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
+    is_160 = abs(max_side - 160) < 0.1
+    is_154 = abs(max_side - 154) < 0.1 and abs(min_side - 154) < 0.1
 
     if is_160 or is_154:
         return []
@@ -254,8 +284,8 @@ def rule_square_size(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
     total_w, total_h, max_side, min_side = dims
 
     # Skip icons that are not valid sizes (C02 handles those).
-    is_160 = abs(max_side - 160) < 0.5
-    is_154 = abs(max_side - 154) < 0.5 and abs(min_side - 154) < 0.5
+    is_160 = abs(max_side - 160) < 0.1
+    is_154 = abs(max_side - 154) < 0.1 and abs(min_side - 154) < 0.1
     if not is_160 and not is_154:
         return []
 
@@ -662,12 +692,65 @@ def rule_rounded_corners(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
 
 # --- Quality Rules ---
 
-@register_rule(id="Q01", name="Adjacent stroke weight", outcomes={},
-               description="Checks for large differences in adjacent stroke weights.",
+class Q01Outcomes:
+    STROKE_DIFF = Outcome(
+        "STROKE_DIFF", "Large stroke weight difference",
+        "adjacent strokes: {thin} / {core} px"
+    )
+
+
+@register_rule(id="Q01", name="Adjacent stroke weight", outcomes=Q01Outcomes,
+               description="Checks for large differences in stroke weights between core lines and thin lines.",
                category="Quality")
-def rule_placeholder_adjacent_stroke_weight(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
-    """Quality: [Placeholder] Checks for large differences in adjacent stroke weights."""
-    return []
+def rule_adjacent_stroke_weight(ctx: CheckContext, max_speed: Speed) -> List[Finding]:
+    if max_speed < Speed.SLOW or ctx.svg_doc is None:
+        return []
+
+    svg = ctx.svg_doc
+    line_strokes = []
+
+    for el in svg.elements():
+        if isinstance(el, SVG):
+            continue
+
+        try:
+            sw = float(el.values.get('stroke-width', 0) or 0)
+        except (TypeError, ValueError):
+            sw = 0.0
+        if sw == 0:
+            continue
+
+        tag = el.__class__.__name__
+
+        # Closed shapes are allowed to be thinner than the core stroke.
+        if tag in ('Rect', 'Circle', 'Ellipse'):
+            continue
+
+        if tag in ('Line', 'Polyline'):
+            line_strokes.append(sw)
+            continue
+
+        if isinstance(el, SVGPath):
+            for _segs, is_closed in _path_subpaths(el):
+                if not is_closed:
+                    line_strokes.append(sw)
+
+    if not line_strokes:
+        return []
+
+    core = max(line_strokes)
+    findings = []
+    seen = set()
+
+    for thin in line_strokes:
+        if core - thin >= 4 and thin not in seen:
+            seen.add(thin)
+            findings.append(Finding(Q01Outcomes.STROKE_DIFF, {
+                "thin": _fmt_size(thin),
+                "core": _fmt_size(core),
+            }, Status.FAIL))
+
+    return findings
 
 
 @register_rule(id="Q02", name="Black spots", outcomes={},

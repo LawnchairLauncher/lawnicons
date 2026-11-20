@@ -46,6 +46,7 @@ SPEC_BY_RULE_OUTCOME = {
     ("C08", "BAD_CAP"): "caps and joins: rounded",
     ("C09", "BAD_JOIN"): "caps and joins: rounded",
     ("C10", "UNROUNDED"): "90° corners: rounded (6+ px)",
+    ("Q01", "STROKE_DIFF"): "adjacent strokes: avoid drastic changes",
     ("O01", "TOO_LARGE"): "size: max 3 KB",
 }
 
@@ -322,12 +323,20 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
             spec = SPEC_BY_RULE_OUTCOME.get(key)
             if spec and spec not in seen_specs:
                 seen_specs.add(spec)
-                relevant.append(spec)
+                relevant.append((key, spec))
+
+    # Sort: C -> Q -> O -> N, then by rule id.
+    def _spec_sort(item):
+        rule_id, _ = item[0]
+        prefix_order = {"C": 0, "Q": 1, "O": 2, "N": 3}
+        return (prefix_order.get(rule_id[:1], 9), rule_id)
+
+    relevant.sort(key=_spec_sort)
 
     if relevant:
         lines.append("> [!TIP]")
         lines.append("> **Spec** [Full list](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md#review-bot-specs)")
-        lines.append("> " + " • ".join(relevant))
+        lines.append("> " + " • ".join(spec for _, spec in relevant))
         lines.append("")
 
     for filename in sorted(file_messages.keys()):
@@ -354,7 +363,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
 
         lines.append("") # Empty line between files
 
-    lines.append("### Make sure you don't have any of these issues\n")
+    lines.append("## Make sure you don't have any of these issues\n")
     lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
 
     lines.append(BOT_SIGNATURE)
