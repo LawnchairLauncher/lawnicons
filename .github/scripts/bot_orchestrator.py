@@ -122,6 +122,35 @@ def get_changed_drawables(base_ref: str) -> list[str]:
                 drawables.append(match.group(1))
     return drawables
 
+def get_added_or_removed_svg_names(base_ref: str) -> list[str]:
+    """
+    Returns the drawable names (file stems) of SVGs added to or deleted from the
+    drawables directory by this PR.
+
+    The name checker is otherwise driven only by `appfilter.xml` additions, so a PR
+    that adds an SVG without linking it (or deletes one that is still linked) would
+    never be checked. Renames are reported as a delete plus an add.
+    """
+    drawables_pathspec = DRAWABLES_DIR.relative_to(DATA_REPO_ROOT).as_posix()
+    cmd = ["git", "diff", "--name-only", "--no-renames", "--diff-filter=AD",
+           f"origin/{base_ref}...HEAD", "--", drawables_pathspec]
+    result = subprocess.run(
+        cmd,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=False,
+        cwd=DATA_REPO_ROOT,
+    )
+    if result.returncode != 0:
+        return []
+    return [
+        Path(f).stem
+        for f in result.stdout.strip().splitlines() if f.endswith(".svg")
+    ]
+
+
 def run_linter(script_path: Path, args: list[str], accepted_exit_codes: set[int] | None = None) -> str:
     """Runs a linter script and returns its stdout."""
     if accepted_exit_codes is None:
@@ -254,7 +283,11 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
 
     # 2. Run Name Checker
     print("Checking appfilter.xml consistency...")
-    changed_drawables = get_changed_drawables(base_ref)
+    # Also check SVGs that were added or deleted without a matching appfilter.xml
+    # change, so unlinked icons are reported instead of silently skipped.
+    changed_drawables = list(dict.fromkeys(
+        get_changed_drawables(base_ref) + get_added_or_removed_svg_names(base_ref)
+    ))
     name_checker_args = [
         "--appfilter", str(APPFILTER_PATH),
         "--drawables-dir", str(DRAWABLES_DIR),
