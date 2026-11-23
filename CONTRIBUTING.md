@@ -22,7 +22,7 @@ You can contribute icons, fulfill icon requests, add missing app IDs, refine exi
 2. Find the app ID to link with your icon. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-ids)
 3. On the Lawnicons repo page, click `Fork`, then clone it locally with GitHub Desktop.
 4. Add the icon and the app ID to your local copy and push the changes. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-to-lawnicons)
-5. Create a pull request and wait for review. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
+5. Create a pull request, fix all issues, and wait for review.
 
 [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
