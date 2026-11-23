@@ -97,14 +97,6 @@ Let's imagine that you have an icon in SVG format, an app name and an app ID.
 
 [GitHub Desktop](https://github.com/apps/desktop) • [How to find app IDs](#how-to-find-app-ids)
 
-### Icon reviews
-
-1. The review bot gives feedback on most of the common issues, and you'll need to check [the rest](docs/images/common-issues-to-fix.png) yourself. Please fix all issues.
-2. Once the bot has nothing left to flag, a maintainer will give you a list of the unfixed issue numbers and assess the overall quality.
-3. Icons get added to Lawnicons when all issues are resolved. PRs with long-ignored issues are closed automatically.
-
-Strict reviews keep icon quality high and save time for everyone involved. To review other people's icons, you should be able to create at least 20 random icons flawlessly in one go.
-
 ### Future contributions
 
 Please keep your repository up to date if you plan to create more than one PR, otherwise you may drag the commit history through all your PRs. There are two main ways to do this:
