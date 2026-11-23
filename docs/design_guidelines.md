@@ -149,7 +149,7 @@ Minimal generic icons need distinctive features to aid recognition.
 
 ## Icon reviews
 
-1. The review bot gives feedback on most of the common issues, and you'll need to check [the rest](docs/images/common-issues-to-fix.png) yourself. Please fix all issues.
+1. The review bot gives feedback on most of the common issues, and you'll need to check [the rest](images/common-issues-to-fix.png) yourself. Please fix all issues.
 2. Once the bot has nothing left to flag, a maintainer will give you a list of the unfixed issue numbers and assess the overall quality.
 3. Icons get added to Lawnicons when all issues are resolved. PRs with long-ignored issues are closed automatically.
 
