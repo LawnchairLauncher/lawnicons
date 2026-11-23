@@ -16,7 +16,7 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 ## Contributing icons
 
-You can contribute icons, fulfill icon requests, add missing app IDs, refine existing icons, clean up dead apps, and remove duplicates.
+You can contribute icons, fulfill icon requests, add missing app IDs, refine existing icons, clean up dead apps, and remove duplicates. 
 
 1. Create an icon (*.svg) following the design guidelines. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#create-icons)
 2. Find the app ID to link with your icon. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-ids)
@@ -99,13 +99,11 @@ Let's imagine that you have an icon in SVG format, an app name and an app ID.
 
 ### Icon reviews
 
-1. The review bot gives feedback on most of the common issues. The contributor is expected to fix them.
-2. Once the bot has nothing left to flag, a maintainer reviews the remaining issues (5 icons at a time) or fixes minor things directly.
-3. Icons get added to Lawnicons when all issues are resolved.
+1. The review bot gives feedback on most of the common issues, and you'll need to check [the rest](docs/images/common-issues-to-fix.png) yourself. Please fix all issues.
+2. Once the bot has nothing left to flag, a maintainer will give you a list of the unfixed issue numbers and assess the overall quality.
+3. Icons get added to Lawnicons when all issues are resolved. PRs with long-ignored issues are closed automatically.
 
-PRs with long-ignored issues are closed automatically.
-
-Reviews keep icon quality high and filter out rushed attempts. This saves time for everyone involved. To review icons, you should be able to create at least 20 random icons flawlessly in one go. That demonstrates solid knowledge of the design guidelines.
+Strict reviews keep icon quality high and save time for everyone involved. To review other people's icons, you should be able to create at least 20 random icons flawlessly in one go.
 
 ### Future contributions
 
