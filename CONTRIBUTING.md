@@ -90,7 +90,7 @@ Let's imagine that you have an icon in SVG format, an app name and an app ID.
 5. Open `app/assets/appfilter.xml` and add a new line using the same template as the existing lines.
 6. Save changes and push it to your fork via GitHub Desktop.
 7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`.
-8. Make sure that the build went without errors and common issues are fixed, then await review.
+8. Make sure that the build went without errors and all issues are fixed, then await review.
 
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
