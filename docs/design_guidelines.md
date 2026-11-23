@@ -147,6 +147,14 @@ Tips: cut lines around the badge, place it in the lower right corner when possib
 
 Minimal generic icons need distinctive features to aid recognition.
 
+## Icon reviews
+
+1. The review bot gives feedback on most of the common issues, and you'll need to check [the rest](images/common-issues-to-fix.png) yourself. Please fix all issues.
+2. Once the bot has nothing left to flag, a maintainer will give you a list of the unfixed issue numbers and assess the overall quality.
+3. Icons get added to Lawnicons when all issues are resolved. PRs with long-ignored issues are closed automatically.
+
+Strict reviews keep icon quality high and save time for everyone involved. To review other people's icons, you should be able to create at least 20 random icons flawlessly in one go.
+
 ## Review bot specs
 
 | ID | Rule | Spec |

@@ -16,13 +16,13 @@ Visit the Lawnicons developer wiki for developer information regarding Lawnicons
 
 ## Contributing icons
 
-You can contribute icons, fulfill icon requests, add missing app IDs, refine existing icons, clean up dead apps, and remove duplicates.
+You can contribute icons, fulfill icon requests, add missing app IDs, refine existing icons, clean up dead apps, and remove duplicates. 
 
 1. Create an icon (*.svg) following the design guidelines. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#create-icons)
 2. Find the app ID to link with your icon. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#how-to-find-app-ids)
 3. On the Lawnicons repo page, click `Fork`, then clone it locally with GitHub Desktop.
 4. Add the icon and the app ID to your local copy and push the changes. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#adding-icons-to-lawnicons)
-5. Create a pull request and wait for review. [#](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#icon-reviews)
+5. Create a pull request, fix all issues, and wait for review.
 
 [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
@@ -90,22 +90,12 @@ Let's imagine that you have an icon in SVG format, an app name and an app ID.
 5. Open `app/assets/appfilter.xml` and add a new line using the same template as the existing lines.
 6. Save changes and push it to your fork via GitHub Desktop.
 7. Open your fork in a web browser and create a PR: `Contribute → Open pull request`.
-8. Make sure that the build went without errors and common issues are fixed, then await review.
+8. Make sure that the build went without errors and all issues are fixed, then await review.
 
 > [!TIP]
 > [View on YouTube](https://youtu.be/UXic1zy-CiQ)
 
 [GitHub Desktop](https://github.com/apps/desktop) • [How to find app IDs](#how-to-find-app-ids)
-
-### Icon reviews
-
-1. The review bot gives feedback on most of the common issues. The contributor is expected to fix them.
-2. Once the bot has nothing left to flag, a maintainer reviews the remaining issues (5 icons at a time) or fixes minor things directly.
-3. Icons get added to Lawnicons when all issues are resolved.
-
-PRs with long-ignored issues are closed automatically.
-
-Reviews keep icon quality high and filter out rushed attempts. This saves time for everyone involved. To review icons, you should be able to create at least 20 random icons flawlessly in one go. That demonstrates solid knowledge of the design guidelines.
 
 ### Future contributions
 
