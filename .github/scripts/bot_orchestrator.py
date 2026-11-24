@@ -26,6 +26,10 @@ NAME_CHECKER_PATH = SCRIPT_REPO_ROOT / ".github/scripts/name_checker.py"
 BOT_SIGNATURE = "<!-- Linter bot report -->"
 NEEDS_REVIEW_LABEL = ":hourglass_flowing_sand:"
 
+# Icon limits per PR
+MAX_ICONS = 5
+TRUSTED_CONTRIBUTORS = {"Agroqirax", "airon-main", "asrieldashie", "Hamster45105", "x9136"}
+
 # (rule_id, outcome_id) -> spec line
 SPEC_BY_RULE_OUTCOME = {
     ("C01", "WRONG_SIZE"): "canvas: 192×192 px",
@@ -223,7 +227,7 @@ def resolve_base_ref(explicit_base_ref: str | None) -> str:
     return "develop"
 
 
-def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
+def collect_final_report(base_ref: str) -> tuple[dict[str, list[dict[str, str]]], int]:
     changed_svg_files = get_changed_svgs(base_ref)
     final_file_messages: dict[str, list[dict[str, str]]] = {}
 
@@ -283,7 +287,7 @@ def collect_final_report(base_ref: str) -> dict[str, list[dict[str, str]]]:
             except Exception as e:
                 print(f"Error parsing name checker JSON: {e}")
 
-    return final_file_messages
+    return final_file_messages, len(changed_svg_files)
 
 
 def has_hard_errors(file_messages: dict[str, list[dict[str, str]]]) -> bool:
@@ -294,25 +298,23 @@ def has_hard_errors(file_messages: dict[str, list[dict[str, str]]]) -> bool:
                 return True
     return False
 
-def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_review: bool) -> str:
+def build_comment_body(file_messages: dict[str, list[dict[str, str]]]) -> str:
+    lines = []
+    lines.append("Thanks for your contribution!\n")
+    lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
+
     if not file_messages:
-        lines = []
-        if is_first_review:
-            lines.append("Thanks for your contribution!\n")
-            lines.append("Please fix all common issues and ensure Lawnicons builds correctly.\n")
-        
         lines.append("## Make sure you don't have any of these issues\n")
         lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
-        
         lines.append(BOT_SIGNATURE)
         return "\n".join(lines)
 
-    lines = []
-    if is_first_review:
-        lines.append("Thanks for your contribution!\n")
-        lines.append("Please fix all bot-detected issues to get a human review — and the rest to merge. Ensure Lawnicons builds correctly.\n")
-
     lines.append("## Bot-detected issues")
+
+    limit_msgs = file_messages.get("_limit", [])
+    if limit_msgs:
+        for m in limit_msgs:
+            lines.append(f"> [!WARNING]\n> {m['message']}\n")
 
     # Collect relevant spec lines for the rules that actually fired.
     relevant = []
@@ -340,6 +342,9 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
         lines.append("")
 
     for filename in sorted(file_messages.keys()):
+        if filename == "_limit":
+            continue
+
         all_msgs = file_messages[filename]
 
         # De-duplicate messages
@@ -361,7 +366,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
         for n_msg in naming_msgs:
             lines.append(n_msg)
 
-        lines.append("") # Empty line between files
+        lines.append("")  # Empty line between files
 
     lines.append("## Make sure you don't have any of these issues\n")
     lines.append("![](https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/develop/docs/images/common-issues-to-fix.png)\n")
@@ -370,7 +375,7 @@ def build_comment_body(file_messages: dict[str, list[dict[str, str]]], is_first_
     return "\n".join(lines)
 
 
-def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
+def publish_to_github(file_messages: dict[str, list[dict[str, str]]], icon_count: int) -> int:
     if not (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None):
         print("Missing GitHub environment variables for GitHub mode.")
         return 2
@@ -382,10 +387,18 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     repo = g.get_repo(REPO_NAME)
     pr = repo.get_pull(PR_NUMBER)
 
-    bot_comment = find_bot_comment(pr)
-    comment_body = build_comment_body(file_messages, is_first_review=(bot_comment is None))
+    # Enforce icon limit for non-trusted contributors
+    is_trusted = pr.user.login in TRUSTED_CONTRIBUTORS
+    if not is_trusted and icon_count > MAX_ICONS:
+        file_messages["_limit"] = [{
+            "message": "To keep reviews manageable, please keep no more than the 5 icons you're most confident about.",
+            "category": "Core",
+        }]
 
-    has_errors = has_hard_errors(file_messages)
+    bot_comment = find_bot_comment(pr)
+    comment_body = build_comment_body(file_messages)
+
+    has_errors = has_hard_errors(file_messages) or "_limit" in file_messages
 
     if file_messages:
         if bot_comment:
@@ -407,11 +420,9 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
     has_needs_review = NEEDS_REVIEW_LABEL in current_labels
 
     if has_errors:
-        # hard errors — remove needs review
         if has_needs_review:
             pr.remove_from_labels(NEEDS_REVIEW_LABEL)
     else:
-        # no hard errors (either clean or naming-only) — add needs review
         if not has_needs_review:
             pr.add_to_labels(NEEDS_REVIEW_LABEL)
 
@@ -419,7 +430,7 @@ def publish_to_github(file_messages: dict[str, list[dict[str, str]]]) -> int:
 
 
 def run_cli_output(file_messages: dict[str, list[dict[str, str]]]) -> int:
-    print(build_comment_body(file_messages, is_first_review=True))
+    print(build_comment_body(file_messages))
     return 1 if file_messages else 0
 
 
@@ -454,14 +465,13 @@ if __name__ == "__main__":
 
     configure_paths(args.data_repo_dir, args.script_repo_dir)
     base_ref = resolve_base_ref(args.base_ref)
-    file_messages = collect_final_report(base_ref)
+    file_messages, icon_count = collect_final_report(base_ref)
 
     mode = args.mode
     if mode == "auto":
         mode = "github" if (REPO_NAME and GITHUB_TOKEN and PR_NUMBER is not None) else "cli"
 
     if mode == "github":
-        sys.exit(publish_to_github(file_messages))
+        sys.exit(publish_to_github(file_messages, icon_count))
 
     sys.exit(run_cli_output(file_messages))
-
