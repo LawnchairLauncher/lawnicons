@@ -72,6 +72,12 @@ To add icons, you should be able to create an SVG in a vector graphics editor, o
 
 [Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons)
 
+### Share your home screen
+
+Share your home screens to help grow our collection! What matters most is a clean, cohesive look with readable text and a polished layout. Setups made with apps like Icon Pack Studio or Renkin are especially welcome.
+
+[Home screens featuring Lawnicons](https://lawnicons-requests.vercel.app/?tab=homescreens) 
+
 ### Localization
 
 You're welcome to help with Lawnicons localization if you're fluent in English and another language.
