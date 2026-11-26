@@ -84,10 +84,6 @@ You're welcome to help with Lawnicons localization if you're fluent in English a
 
 [Lawnicons localization](https://lawnchair.crowdin.com/lawnicons)
 
-### Icon requests
-
-Open Lawnicons → Tap `Request icons` in the bottom toolbar menu → Select and request icons.
-
 ## Hall of Fame
 
 These people have made a significant contribution to Lawnicons.
