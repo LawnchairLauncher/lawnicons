@@ -18,9 +18,12 @@ APP_ID_RE = re.compile(
 )
 NUMBER_RE = re.compile(r"\d+")
 AWARD_RE = re.compile(
-    r"\+(\d+)\s+points\s+for\s+pr\s+(\d+)\s+with\s+(\d+)\s+(icons?|updates?)"
+    r"\+(\d+)\s+points\s+for\s+pr\s+(\d+)\s+with\s+(\d+)\s+(icons?/updates?|icons?|updates?)"
 )
-PR_TITLE_RE = re.compile(r"\+\s*(\d+)\s+(icons?|updates?)\b", re.IGNORECASE)
+PR_TITLE_RE = re.compile(
+    r"(?:\+\s*)?(?:(?:added|add|new)\s+)?(\d+)\s+(?:new\s+)?(icons?|updates?|adds?)(?:\s+added)?\b",
+    re.IGNORECASE,
+)
 COMPONENT_RE = re.compile(r'component="ComponentInfo\{([^}]+)\}"')
 HEADER_KEYS = ("earned", "spent", "balance")
 SECTIONS = ("spends", "fulfilled", "awards")
@@ -130,8 +133,11 @@ def parse_awards(lines: list[str], start_line: int, comments: list[str]) -> list
             )
         points, pr, count = int(match.group(1)), int(match.group(2)), int(match.group(3))
         word = match.group(4).lower()
-        singular = word[:-1] if word.endswith("s") else word
-        noun = singular if count == 1 else singular + "s"
+        if "/" in word:
+            noun = word if count > 1 else "icon/update"
+        else:
+            singular = word[:-1] if word.endswith("s") else word
+            noun = singular if count == 1 else singular + "s"
         if points <= 0 or count <= 0:
             raise FormatError("points and count must be positive", line_number)
         if points != count * POINTS_PER_ICON:
@@ -270,17 +276,45 @@ def write_summary(
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+COUNT_VERBS = ("added", "add", "new")
+SKIP_VERBS = (
+    "fix", "fixed", "link", "linked", "remove", "removed",
+    "delete", "deleted", "revert", "reverted", "replace", "replaced",
+)
+
+
+def parse_pr_title_matches(title: str) -> list[tuple[int, int, str]]:
+    results = []
+    for match in PR_TITLE_RE.finditer(title):
+        prefix = title[: match.start()].rsplit(",", 1)[-1].lower()
+        verbs = list(re.finditer(
+            r"\b(?:" + "|".join((*COUNT_VERBS, *SKIP_VERBS)) + r")\b", prefix
+        ))
+        if verbs and verbs[-1].group(0) in SKIP_VERBS:
+            continue
+        count = int(match.group(1))
+        if count <= 0:
+            continue
+        word = match.group(2).lower()
+        singular = "icon" if word.startswith("add") else word[:-1] if word.endswith("s") else word
+        noun = singular if count == 1 else singular + "s"
+        results.append((count * POINTS_PER_ICON, count, noun))
+    return results
+
+
 def parse_pr_title(title: str) -> tuple[int, int, str] | None:
-    match = PR_TITLE_RE.search(title)
-    if not match:
+    matches = parse_pr_title_matches(title)
+    if not matches:
         return None
-    count = int(match.group(1))
-    if count <= 0:
-        return None
-    word = match.group(2).lower()
-    singular = word[:-1] if word.endswith("s") else word
-    noun = singular if count == 1 else singular + "s"
-    return count * POINTS_PER_ICON, count, noun
+    points = sum(item[0] for item in matches)
+    count = sum(item[1] for item in matches)
+    singulars = {item[2].rstrip("s") for item in matches}
+    if len(singulars) == 1:
+        singular = next(iter(singulars))
+        noun = singular if count == 1 else singular + "s"
+    else:
+        noun = "icon/update" if count == 1 else "icons/updates"
+    return points, count, noun
 
 
 def github_get(repo: str, path: str, token: str | None):
@@ -334,7 +368,7 @@ def credit_pull(
     number = pull["number"]
     award_info = parse_pr_title(pull.get("title") or "")
     if award_info is None:
-        print(f"PR #{number}: no '+X icons/updates' in title, skipping award")
+        print(f"PR #{number}: no counted icons/updates in title, skipping award")
         return
     if number in all_prs:
         print(f"PR #{number}: already credited to {all_prs[number]}, skipping award")

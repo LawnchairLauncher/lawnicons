@@ -1,6 +1,6 @@
 # Contributor points
 
-Contributors get points for new icons and updates. They can spend points to increase icon request priority on the Lawnicons dashboard.
+Contributors get points for new icons and icon updates. They can spend points to increase icon request priority on the Lawnicons dashboard.
 
 [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
