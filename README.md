@@ -126,3 +126,7 @@ These people have made a significant contribution to Lawnicons.
   </tbody>
 </table>
 
+<a href="https://github.com/LawnchairLauncher/lawnicons/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=LawnchairLauncher/lawnicons&columns=20" width="1100" />
+</a>
+
