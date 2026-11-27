@@ -6,7 +6,7 @@ Contributors get points for new icons and updates. They can spend points to incr
 
 ## Example
 
-`contributor_points/nickname.txt`
+`contribution-points/nickname.txt`
 
 ```text
 earned 25
@@ -21,6 +21,6 @@ fulfilled
 com.github.android/com.github.android.main.MainActivity 10
 
 awards
-+5 pr 1234 +1 icon
-+20 pr 1240 +4 updates
++5 points for pr 1234 with 1 icon
++20 points for pr 1240 with 4 updates
 ```
