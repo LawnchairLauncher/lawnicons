@@ -1,12 +1,12 @@
 # Contributor points
 
-Contributors get points for new icons and updates. They can spend points to increase icon requests on the Lawnicons dashboard.
+Contributors get points for new icons and updates. They can spend points to increase icon request priority on the Lawnicons dashboard.
 
 [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
 ## Example
 
-`contributor_points/nickname.txt`:
+`contributor_points/nickname.txt`
 
 ```text
 balance 0
