@@ -20,7 +20,7 @@ Lawnicons is a free, community-driven, open-source icon pack built by the Lawnch
 
 In Lawnchair, you can enable themed icons under `Home Settings` → `General` → `Icon Style`.
 
-[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download) • [Leave feedback](https://forms.gle/DLiBCVUtLz99GJzH9)
+[Try Lawnchair](https://github.com/LawnchairLauncher/lawnchair#download) • [Leave feedback](https://forms.gle/DLiBCVUtLz99GJzH9) • [Home screens featuring Lawnicons](https://lawnicons-requests.vercel.app/?tab=homescreens) 
 
 ## Download
 
@@ -52,10 +52,8 @@ Requests from Lawnchair supporters get fulfilled much faster than if you just wa
 
 ## Contributing
 <div align="left">
-    <a href="https://lawnicons-requests.vercel.app/">
-        <img alt="Lawnicons dashboard" src="https://img.shields.io/badge/Lawnicons%20dashboard-94009E?logo=vercel&logoColor=ffffff"></a>
     <a href="CONTRIBUTING.md">
-        <img alt="Lawnicons guidelines" src="https://img.shields.io/badge/Lawnicons%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>     
+        <img alt="Contributing guidelines" src="https://img.shields.io/badge/Contributing%20guidelines-3F9E00?logo=gitbook&logoColor=ffffff"></a>     
 </div> 
 
 ### Development
@@ -70,13 +68,7 @@ You're welcome to work on our issues, maybe something will interest you.
 
 To add icons, you should be able to create an SVG in a vector graphics editor, open a PR on GitHub, and follow the Lawnicons design guidelines. You can add up to 5 new icons per PR until you're able to create flawless icons.
 
-[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons)
-
-### Share your home screen
-
-Share your home screens to help grow our collection! What matters most is a clean, cohesive look with readable text and a polished layout. Setups made with apps like Icon Pack Studio or Renkin are especially welcome.
-
-[Home screens featuring Lawnicons](https://lawnicons-requests.vercel.app/?tab=homescreens) 
+[Design guidelines](https://github.com/LawnchairLauncher/lawnicons/blob/develop/docs/design_guidelines.md) • [Contributing icons](https://github.com/LawnchairLauncher/lawnicons/blob/develop/CONTRIBUTING.md#contributing-icons) • [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
 ### Localization
 
