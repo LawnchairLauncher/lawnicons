@@ -78,7 +78,7 @@ jobs:
         with:
           commit-message: Update contributor points
           title: Update contributor points
-          body_path: ${{ runner.temp }}/contributor-points-body.md
+          body-path: ${{ runner.temp }}/contributor-points-body.md
           branch: actions/contributor-points
           delete-branch: true
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
