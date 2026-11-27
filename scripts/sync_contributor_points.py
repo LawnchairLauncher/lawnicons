@@ -20,12 +20,11 @@ NUMBER_RE = re.compile(r"\d+")
 AWARD_RE = re.compile(r"\+(\d+) pr (\d+) (.+)")
 PR_TITLE_RE = re.compile(r"\+\s*(\d+)\s+(icons?|updates?)\b", re.IGNORECASE)
 COMPONENT_RE = re.compile(r'component="ComponentInfo\{([^}]+)\}"')
-HEADER_KEYS = ("balance", "earned", "spent")
-SECTIONS = ("awards", "spends", "fulfilled")
+HEADER_KEYS = ("earned", "spent", "balance")
+SECTIONS = ("spends", "fulfilled", "awards")
 POINTS_PER_ICON = 5
 DEFAULT_REPO = "LawnchairLauncher/lawnicons"
 TEMPLATE_COMMENTS = {
-    "awards": [],
     "spends": [
         "# To spend points, add one line: appID weight",
         "# Weight: 1, 2, 3, 4, 5 or a multiple of 5 for higher priority.",
@@ -33,6 +32,7 @@ TEMPLATE_COMMENTS = {
         "# Balance is recalculated automatically.",
     ],
     "fulfilled": [],
+    "awards": [],
 }
 
 
@@ -107,7 +107,7 @@ def split_sections(lines: list[str]) -> tuple[dict[str, list[str]], dict[str, in
                 raise FormatError(f"expected a blank line after '{name}'", position + 1)
             position += 1
         elif position != len(lines):
-            raise FormatError("unexpected lines after 'fulfilled'", position + 1)
+            raise FormatError(f"unexpected lines after '{name}'", position + 1)
     return sections, start_lines
 
 
@@ -170,8 +170,6 @@ def parse_contributor(path: Path) -> ContributorFile:
     header = parse_header(lines, path)
     sections, start_lines = split_sections(lines)
     comments = {name: [] for name in SECTIONS}
-    awards = parse_awards(sections["awards"], start_lines["awards"], comments["awards"])
-
     seen_app_ids = set()
     spends = parse_spends(
         sections["spends"], start_lines["spends"], "spends", seen_app_ids, comments["spends"]
@@ -180,6 +178,7 @@ def parse_contributor(path: Path) -> ContributorFile:
         sections["fulfilled"], start_lines["fulfilled"], "fulfilled", seen_app_ids,
         comments["fulfilled"],
     )
+    awards = parse_awards(sections["awards"], start_lines["awards"], comments["awards"])
 
     return ContributorFile(path, login, header, awards, spends, fulfilled, comments)
 
@@ -191,7 +190,7 @@ def totals(contributor: ContributorFile) -> tuple[int, int, int]:
 
 
 def render(contributor: ContributorFile, header: tuple[int, int, int]) -> str:
-    lines = [f"balance {header[0]}", f"earned {header[1]}", f"spent {header[2]}"]
+    lines = [f"earned {header[1]}", f"spent {header[2]}", f"balance {header[0]}"]
     entries = {
         "awards": [f"+{award.points} pr {award.pr} {award.title}" for award in contributor.awards],
         "spends": [f"{spend.app_id} {spend.weight}" for spend in contributor.spends],
@@ -291,8 +290,6 @@ def main() -> int:
     points_dir = args.root / "contributor_points"
     errors = []
     contributors = load_contributors(points_dir, errors)
-    if not contributors and not errors:
-        errors.append(f"no contributor files found in {points_dir}")
 
     all_prs = {}
     for contributor in contributors:
@@ -317,23 +314,22 @@ def main() -> int:
                 raise ValueError(f"PR #{args.pr} is not merged")
             points = parse_pr_title(pull.get("title") or "")
             if points is None:
-                raise ValueError(
-                    f"PR title {pull.get('title')!r} has no '+X icon(s)/update(s)' pattern"
-                )
-            login = (pull.get("user") or {}).get("login") or ""
-            if not LOGIN_RE.fullmatch(login):
-                raise ValueError(f"invalid GitHub login in PR response: {login!r}")
-            if args.pr in all_prs:
-                raise ValueError(f"PR #{args.pr} is already credited to {all_prs[args.pr]}")
+                print(f"PR #{args.pr}: no '+X icons/updates' in title, skipping award")
+            elif args.pr in all_prs:
+                print(f"PR #{args.pr}: already credited to {all_prs[args.pr]}, skipping award")
+            else:
+                login = (pull.get("user") or {}).get("login") or ""
+                if not LOGIN_RE.fullmatch(login):
+                    raise ValueError(f"invalid GitHub login in PR response: {login!r}")
 
-            path = points_dir / f"{login}.txt"
-            contributor = next((item for item in contributors if item.login == login), None)
-            if contributor is None:
-                contributor = new_contributor_file(path, login)
-                contributors.append(contributor)
-            contributor.awards.append(
-                Award(args.pr, points, " ".join((pull.get("title") or "").split()))
-            )
+                path = points_dir / f"{login}.txt"
+                contributor = next((item for item in contributors if item.login == login), None)
+                if contributor is None:
+                    contributor = new_contributor_file(path, login)
+                    contributors.append(contributor)
+                contributor.awards.append(
+                    Award(args.pr, points, " ".join((pull.get("title") or "").split()))
+                )
         except ValueError as error:
             errors.append(str(error))
     elif args.mark_fulfilled:
