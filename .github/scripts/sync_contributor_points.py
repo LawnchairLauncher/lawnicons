@@ -451,7 +451,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    points_dir = resolve_points_dir(args.root) / "contributors"
+    points_dir = resolve_points_dir(args.root)
     errors = []
     contributors = load_contributors(points_dir, errors)
     before = {contributor.login: contributor.header for contributor in contributors}
