@@ -5,11 +5,11 @@
     <!-- Version name, with %s as the version code -->
     <string name="version_x">संस्करण %s</string>
     <!-- Accessibility label for Back button -->
-    <string name="back">वापस</string>
+    <string name="back">वापस जायें</string>
     <!-- Search bar -->
     <!-- The hint shown in the search bar, with %d as the number of icons. -->
     <!-- We don't currently provide a singular form, because it's always guaranteed that there will be at least 2 or more icons. -->
-    <string name="search_bar_hint">%d चिन्ह मे से खोजें</string>
+    <string name="search_bar_hint">%d चिन्ह में से खोजें</string>
     <!-- Hint shown in the search bar when picking an icon for a specific app -->
     <string name="search_bar_icon_picker">एक आइकन चुनें</string>
     <!-- Accessibility label for the search icon -->
@@ -20,17 +20,17 @@
     <string name="no_items_found">कोई चिन्ह नहीं मिला</string>
     <!-- Toolbar actions -->
     <!-- New icons button, with %1$s as the version name -->
-    <string name="new_icons_in_version">New icons in v%1$s</string>
+    <string name="new_icons_in_version">v%1$s में नये आइकन</string>
     <!-- Discord link -->
     <!-- GitHub repository link-->
     <!-- Open Collective link-->
     <!-- Icon request dashboard link -->
-    <string name="icon_request_dashboard">आइकन अनुरोध केंद्र</string>
+    <string name="icon_request_dashboard">आइकन अनुरोध पृष्ट</string>
     <!-- Label for the icon request action in the toolbar -->
     <string name="request_icons">आइकन का अनुरोध करें</string>
     <!-- Snackbar content -->
     <!-- When all icons are fulfilled -->
-    <string name="icon_requests_fulfilled">सभी अनुरोधित आइकन पूरे हो गए हैं। गिटहब समस्याओं के माध्यम से पुनःब्रांडिंग की जानकारी दें।</string>
+    <string name="icon_requests_fulfilled">सभी आइकन समर्थित हैं। रीब्रांडिंग की रिपोर्ट गिटहब इश्यूज़ के माध्यम से करें।</string>
     <!-- When icon requests are turned off via the JSON in the website -->
     <string name="icon_requests_suspended">हर नए लॉनआइकन्स रिलीज़ के साथ सीमित समय के लिए आइकन अनुरोध स्वीकार किए जाते हैं।</string>
     <!-- Label for the About screen and toolbar action -->
@@ -44,16 +44,16 @@
     <string name="see_all_contributors">सभी योगदानकर्ता देखें</string>
     <!-- Subtitles below users who contributed to the app -->
     <!-- Label for core app code contributions -->
-    <string name="contribution_core">Core app</string>
+    <string name="contribution_core">मुख्य एप</string>
     <!-- Label for icon contributions -->
     <string name="contribution_icons">चिह्न</string>
     <!-- Label for infrastructure contributions -->
-    <string name="contribution_infra">Infrastructure</string>
+    <string name="contribution_infra">बुनियादी ढांचा (इन्फ्रास्ट्रक्चर)</string>
     <!-- Special thanks section of About screen -->
     <!-- Special thanks label -->
     <string name="special_thanks">विशेष धन्यवाद</string>
     <!-- Subtitle displayed below the user who inspired the app icon -->
-    <string name="special_thanks_icon">ऐप के चिन्ह को प्रेरित करने के लिए।</string>
+    <string name="special_thanks_icon">ऐप आइकन को प्रेरित करने के लिए।</string>
     <!-- Subtitle displayed below the user who named the app -->
     <string name="special_thanks_name">ऐप का नामकरण करने के लिए।</string>
     <!-- List item that links to the Acknowledgements page -->
@@ -64,53 +64,53 @@
     <!-- Label for the drawable resource name -->
     <string name="drawable">ड्रॉएबल</string>
     <!-- Label for the component ID -->
-    <string name="component">आईडी</string>
+    <string name="component">आई-डी</string>
     <!-- Title for the section showing IDs mapped to an icon -->
-    <string name="mapped_components">संबंधित आईडी</string>
+    <string name="mapped_components">संबंधित आई-डी</string>
     <!-- Outdated icon info warning -->
-    <string name="icon_info_outdated_warning">यदि पुनःब्रांडिंग के कारण आइकन पुराना हो गया है, तो गिटहब पर समस्या दर्ज करें।</string>
+    <string name="icon_info_outdated_warning">यदि रीब्रांडिंग के कारण आइकन पुराना हो गया है, तो गिटहब पर एक इश्यू बनाएं।</string>
     <!-- Label for the action to view the icon's source on GitHub -->
     <string name="view_on_github">गिटहब पर देखें</string>
     <!-- Share button on icon info popup -->
-    <string name="share">Share details</string>
+    <string name="share">विवरण साझा करें</string>
     <!-- Title for the screen showing apps with missing icons -->
     <string name="missing_icons">अनुपलब्ध आइकन</string>
     <!-- Leftmost button, to control selection of state -->
     <!-- Button to clear the selection of icons -->
-    <string name="clear_all">Clear selection</string>
+    <string name="clear_all">चयन हटाएं</string>
     <!-- Button to select all icons -->
     <string name="select_all">सभी चुनें</string>
     <!-- Split button -->
     <!-- Button to send email -->
     <string name="send_email">ईमेल भेजें</string>
     <!-- Accessibility action to show the options sheet -->
-    <string name="show_options_sheet">Show options sheet</string>
+    <string name="show_options_sheet">विकल्प शीट दिखाएं</string>
     <!-- Content description for the expanded state of a toggle button -->
-    <string name="toggle_button_expanded">Expanded</string>
+    <string name="toggle_button_expanded">विस्तारित</string>
     <!-- Content description for the collapsed state of a toggle button -->
-    <string name="toggle_button_collapsed">Collapsed</string>
+    <string name="toggle_button_collapsed">संकुचित</string>
     <!-- Content description for a toggle button -->
-    <string name="toggle_button_content_description">Toggle button</string>
+    <string name="toggle_button_content_description">स्विच बटन</string>
     <!-- Dropdown items in split button -->
     <!-- Option to share the icon request as a file -->
-    <string name="share_file">Share file</string>
+    <string name="share_file">फ़ाइल साझा करें</string>
     <!-- Option to save the icon request to a file -->
     <string name="save_file">फ़ाइल सहेजें</string>
     <!-- Option to copy the component IDs for the selected icons -->
-    <string name="copy_components">Copy app IDs</string>
+    <string name="copy_components">एप आई-डी कॉपी करें</string>
     <!-- Toasts -->
     <!-- Toast shown when a file is successfully saved -->
-    <string name="toast_file_saved_successful">Successfully saved file</string>
+    <string name="toast_file_saved_successful">फ़ाइल सफलतापूर्वक सहेजी गई</string>
     <!-- Toast shown when there is an error saving a file -->
-    <string name="toast_file_save_error">Error saving file</string>
+    <string name="toast_file_save_error">फ़ाइल सहेजने में त्रुटि</string>
     <!-- Toast shown when there is an error creating a zip file -->
     <string name="toast_file_zip_error">अनुरोध फ़ाइल नहीं बनाई जा सकी।</string>
     <!-- Toast shown when no app is found to handle an action -->
     <string name="toast_no_app_available">इस कार्य के लिए कोई ऐप नहीं मिला।</string>
     <!-- Toast message shown when text is copied to the clipboard -->
-    <string name="copied_text">Copied text</string>
+    <string name="copied_text">कॉपी किया गया टेक्स्ट</string>
     <!-- New icons screen -->
     <!-- Label for the new icons section, with %1$s as the count of new icons -->
     <string name="new_icons">New icons (%1$s)</string>
-    <string name="action_menu_overflow_description">More options</string>
+    <string name="action_menu_overflow_description">अधिक विकल्प</string>
 </resources>
