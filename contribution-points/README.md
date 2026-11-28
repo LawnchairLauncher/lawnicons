@@ -6,7 +6,7 @@ Contributors get points for new icons and icon updates. They can spend points to
 
 ## Example
 
-`contribution-points/nickname.txt`
+`contribution-points/contributors/nickname.txt`
 
 ```text
 earned 25
@@ -18,9 +18,11 @@ app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity 5
 app.lawnchair/app.lawnchair.LawnchairLauncher 10
 
 fulfilled
+# Filled automatically when the request is added to appfilter.xml
 com.github.android/com.github.android.main.MainActivity 10
 
 awards
+# Filled automatically from merged PR titles
 +5 points for pr 1234 with 1 icon
 +20 points for pr 1240 with 4 updates
 ```
