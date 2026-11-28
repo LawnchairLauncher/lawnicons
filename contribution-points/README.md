@@ -13,6 +13,7 @@ To increase the priority of icon requests, add their app IDs to the `spends` sec
 3. In the selection bar menu, choose `Copy → app IDs`.
 4. Open your `nickname.txt` file in [contribution-points/contributors](https://github.com/LawnchairLauncher/lawnicons/tree/develop/contribution-points/contributors).
 5. Add one line per app ID under `spends` in this format: `appID points`.
+6. Create a pull request.
 
 The points must be `1`, `2`, `3`, `4`, `5`, or a multiple of `5` for higher priority. `earned`, `spent`, and `balance` are recalculated automatically. When a request is added to `appfilter.xml`, the workflow moves its line from `spends` to `fulfilled`.
 
