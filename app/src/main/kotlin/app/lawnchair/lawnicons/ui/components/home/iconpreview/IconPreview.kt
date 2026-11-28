@@ -34,7 +34,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -43,14 +42,17 @@ import app.lawnchair.lawnicons.ui.LocalLawniconsActions
 import app.lawnchair.lawnicons.ui.util.PreviewLawnicons
 import app.lawnchair.lawnicons.ui.util.PreviewProviders
 import app.lawnchair.lawnicons.ui.util.SampleData
-import kotlin.math.ln
 
+/**
+ * Background for icon tiles in the grid.
+ *
+ * Previously used a low-alpha primary elevation overlay on [surface], which
+ * often matched [onPrimaryContainer] icon tints under dark dynamic color and
+ * made glyphs hard to see (see #3867). Prefer an explicit container step so
+ * both light and dark themes keep clear shape/glyph separation.
+ */
 val ColorScheme.iconColor: Color
-    get() {
-        val elevation = 3.dp
-        val alpha = ((4.5f * ln(elevation.value + 1)) + 2f) / 100f
-        return primary.copy(alpha = alpha).compositeOver(surface)
-    }
+    get() = surfaceContainerHigh
 
 @Composable
 fun IconPreview(
@@ -121,7 +123,7 @@ fun IconPreview(
                 tint = if (showSheet) {
                     MaterialTheme.colorScheme.onSurfaceVariant
                 } else {
-                    MaterialTheme.colorScheme.onPrimaryContainer
+                    MaterialTheme.colorScheme.onSurface
                 },
             )
         } else {
@@ -132,7 +134,7 @@ fun IconPreview(
                 tint = if (showSheet) {
                     MaterialTheme.colorScheme.onSurfaceVariant
                 } else {
-                    MaterialTheme.colorScheme.onPrimaryContainer
+                    MaterialTheme.colorScheme.onSurface
                 },
             )
         }
