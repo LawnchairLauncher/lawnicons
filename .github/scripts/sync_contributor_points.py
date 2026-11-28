@@ -407,8 +407,8 @@ def main() -> int:
     parser.add_argument(
         "--root",
         type=Path,
-        default=Path(__file__).resolve().parent.parent,
-        help="repository root (default: parent of the scripts directory)",
+        default=Path(__file__).resolve().parents[2],
+        help="repository root (default: parent of the .github directory)",
     )
     parser.add_argument(
         "--check",
