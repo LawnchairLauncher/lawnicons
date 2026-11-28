@@ -1,0 +1,20 @@
+earned 340
+spent 0
+balance 340
+
+spends
+# To spend points, add one line: appID weight
+# Weight: 1, 2, 3, 4, 5 or a multiple of 5 for higher priority.
+# Example: app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity 3
+# Balance is recalculated automatically.
+
+fulfilled
+# Filled automatically when the request is added to appfilter.xml
+
+awards
+# Filled automatically from merged PR titles
++15 points for pr 1245 with 3 icons
++115 points for pr 1255 with 23 icons
++115 points for pr 1265 with 23 icons
++85 points for pr 1350 with 17 icons
++10 points for pr 1420 with 2 icons

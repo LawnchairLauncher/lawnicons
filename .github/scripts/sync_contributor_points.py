@@ -36,8 +36,12 @@ TEMPLATE_COMMENTS = {
         "# Example: app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity 3",
         "# Balance is recalculated automatically.",
     ],
-    "fulfilled": [],
-    "awards": [],
+    "fulfilled": [
+        "# Filled automatically when the request is added to appfilter.xml",
+    ],
+    "awards": [
+        "# Filled automatically from merged PR titles",
+    ],
 }
 
 
@@ -392,6 +396,14 @@ def appfilter_app_ids(appfilter_path: Path) -> set[str]:
     return set(COMPONENT_RE.findall(appfilter_path.read_text(encoding="utf-8")))
 
 
+def resolve_points_dir(root: Path) -> Path:
+    """Prefer contributors/, fall back to the legacy flat layout."""
+    nested = root / "contribution-points" / "contributors"
+    if any(nested.glob("*.txt")):
+        return nested
+    return root / "contribution-points"
+
+
 def load_contributors(points_dir: Path, errors: list[str]) -> list[ContributorFile]:
     contributors = []
     for path in sorted(points_dir.glob("*.txt")):
@@ -439,7 +451,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    points_dir = args.root / "contribution-points"
+    points_dir = resolve_points_dir(args.root)
     errors = []
     contributors = load_contributors(points_dir, errors)
     before = {contributor.login: contributor.header for contributor in contributors}
