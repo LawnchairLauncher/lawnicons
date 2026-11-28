@@ -31,10 +31,10 @@ POINTS_PER_ICON = 5
 DEFAULT_REPO = "LawnchairLauncher/lawnicons"
 TEMPLATE_COMMENTS = {
     "spends": [
-        "# To spend points, add one line: appID weight",
-        "# Weight: 1, 2, 3, 4, 5 or a multiple of 5 for higher priority.",
-        "# Example: app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity 3",
         "# Balance is recalculated automatically.",
+        "# Points: 1, 2, 3, 4, 5 or a multiple of 5 for higher priority.",
+        "# Example: app.lawnchair.lawnicons/app.lawnchair.lawnicons.MainActivity 3",
+        "# To spend points, add app IDs below: appID points",
     ],
     "fulfilled": [
         "# Filled automatically when the request is added to appfilter.xml",
