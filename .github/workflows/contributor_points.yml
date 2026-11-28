@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_SHA: ${{ github.sha }}
           SUMMARY_FILE: ${{ runner.temp }}/contributor-points-body.md
-        run: python3 scripts/sync_contributor_points.py --repo "$GITHUB_REPOSITORY" --commit "$COMMIT_SHA" --summary-file "$SUMMARY_FILE"
+        run: python3 .github/scripts/sync_contributor_points.py --repo "$GITHUB_REPOSITORY" --commit "$COMMIT_SHA" --summary-file "$SUMMARY_FILE"
 
       - name: Credit PR manually
         if: github.event_name == 'workflow_dispatch' && inputs.pr_number != ''
@@ -59,7 +59,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER: ${{ inputs.pr_number }}
           SUMMARY_FILE: ${{ runner.temp }}/contributor-points-body.md
-        run: python3 scripts/sync_contributor_points.py --repo "$GITHUB_REPOSITORY" --pr "$PR_NUMBER" --summary-file "$SUMMARY_FILE"
+        run: python3 .github/scripts/sync_contributor_points.py --repo "$GITHUB_REPOSITORY" --pr "$PR_NUMBER" --summary-file "$SUMMARY_FILE"
 
       - name: Mark fulfilled requests
         if: >-
@@ -67,10 +67,10 @@ jobs:
           (github.event_name == 'workflow_dispatch' && inputs.pr_number == '')
         env:
           SUMMARY_FILE: ${{ runner.temp }}/contributor-points-body.md
-        run: python3 scripts/sync_contributor_points.py --mark-fulfilled --summary-file "$SUMMARY_FILE"
+        run: python3 .github/scripts/sync_contributor_points.py --mark-fulfilled --summary-file "$SUMMARY_FILE"
 
       - name: Validate
-        run: python3 scripts/sync_contributor_points.py --check
+        run: python3 .github/scripts/sync_contributor_points.py --check
 
       - name: Create Pull Request
         id: create_pr
