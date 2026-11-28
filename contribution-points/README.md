@@ -4,6 +4,18 @@ Contributors get points for new icons and icon updates. They can spend points to
 
 [Lawnicons dashboard](https://lawnicons-requests.vercel.app/)
 
+## Spending points
+
+To increase the priority of icon requests, add their app IDs to the `spends` section of your points file.
+
+1. Open the [Lawnicons dashboard](https://lawnicons-requests.vercel.app/).
+2. Select the requests you want to prioritize.
+3. In the selection bar menu, choose `Copy → app IDs`.
+4. Open your `nickname.txt` file in [contribution-points/contributors](https://github.com/LawnchairLauncher/lawnicons/tree/develop/contribution-points/contributors).
+5. Add one line per app ID under `spends` in this format: `appID points`.
+
+The points must be `1`, `2`, `3`, `4`, `5`, or a multiple of `5` for higher priority. `earned`, `spent`, and `balance` are recalculated automatically. When a request is added to `appfilter.xml`, the workflow moves its line from `spends` to `fulfilled`.
+
 ## Example
 
 `contribution-points/contributors/nickname.txt`
